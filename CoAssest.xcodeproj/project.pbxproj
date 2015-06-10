@@ -40,6 +40,8 @@
 		0ECA887F1B27D5B800B5656F /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA887D1B27D5B800B5656F /* SettingViewController.xib */; };
 		0ECA88831B27DD5200B5656F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88811B27DD5200B5656F /* RegisterViewController.m */; };
 		0ECA88841B27DD5200B5656F /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA88821B27DD5200B5656F /* RegisterViewController.xib */; };
+		0ECA88891B27E09A00B5656F /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88871B27E09A00B5656F /* ForgotPasswordViewController.m */; };
+		0ECA888A1B27E09A00B5656F /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA88881B27E09A00B5656F /* ForgotPasswordViewController.xib */; };
 		0EFEB4D31B2724B2001195B7 /* CoAssestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB4D21B2724B2001195B7 /* CoAssestTests.m */; };
 		0EFEB5091B2729E0001195B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB4F91B2729E0001195B7 /* AppDelegate.m */; };
 		0EFEB50C1B2729E0001195B7 /* CoAssest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB4FF1B2729E0001195B7 /* CoAssest.xcdatamodeld */; };
@@ -122,6 +124,9 @@
 		0ECA88801B27DD5200B5656F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		0ECA88811B27DD5200B5656F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		0ECA88821B27DD5200B5656F /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		0ECA88861B27E09A00B5656F /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		0ECA88871B27E09A00B5656F /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		0ECA88881B27E09A00B5656F /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		0EFEB4B01B2724B2001195B7 /* CoAssest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoAssest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFEB4CC1B2724B2001195B7 /* CoAssestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoAssestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFEB4D11B2724B2001195B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,6 +245,7 @@
 			children = (
 				0ECA88641B27D27900B5656F /* Login */,
 				0ECA88651B27D27900B5656F /* Register */,
+				0ECA88851B27E08100B5656F /* ForgotPassWord */,
 			);
 			path = "Login + Register";
 			sourceTree = "<group>";
@@ -306,6 +312,16 @@
 				0ECA88701B27D45900B5656F /* HomeListViewController.xib */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		0ECA88851B27E08100B5656F /* ForgotPassWord */ = {
+			isa = PBXGroup;
+			children = (
+				0ECA88861B27E09A00B5656F /* ForgotPasswordViewController.h */,
+				0ECA88871B27E09A00B5656F /* ForgotPasswordViewController.m */,
+				0ECA88881B27E09A00B5656F /* ForgotPasswordViewController.xib */,
+			);
+			path = ForgotPassWord;
 			sourceTree = "<group>";
 		};
 		0EFEB4A71B2724B2001195B7 = {
@@ -591,6 +607,7 @@
 				0ECA887F1B27D5B800B5656F /* SettingViewController.xib in Resources */,
 				0ECA887A1B27D57800B5656F /* ProfileViewController.xib in Resources */,
 				0ECA886D1B27D2A700B5656F /* LoginViewController.xib in Resources */,
+				0ECA888A1B27E09A00B5656F /* ForgotPasswordViewController.xib in Resources */,
 				0EFEB50D1B2729E0001195B7 /* LaunchScreen.xib in Resources */,
 				0EFEB5101B2729E0001195B7 /* Images.xcassets in Resources */,
 				0EFEB50E1B2729E0001195B7 /* Info.plist in Resources */,
@@ -641,6 +658,7 @@
 				0ECA88571B27CB4C00B5656F /* BaseCollectionViewCell.m in Sources */,
 				0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */,
 				0ECA88441B27CA7100B5656F /* NSFileManager+Directories.m in Sources */,
+				0ECA88891B27E09A00B5656F /* ForgotPasswordViewController.m in Sources */,
 				0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,
 				0ECA887E1B27D5B800B5656F /* SettingViewController.m in Sources */,

@@ -11,6 +11,7 @@
 #import "ProfileViewController.h"
 #import "SettingViewController.h"
 #import "RegisterViewController.h"
+#import "ForgotPasswordViewController.h"
 
 @interface LoginViewController ()
 
@@ -65,6 +66,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)__actionForgotPassword:(id)sender {
+    ForgotPasswordViewController *vc = [[ForgotPasswordViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark - Delegate
 
 @end

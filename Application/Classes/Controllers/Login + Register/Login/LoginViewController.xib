@@ -46,12 +46,30 @@
                         <action selector="__actionRegister:" destination="-1" eventType="touchUpInside" id="sMr-1u-Ocd"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zin-M9-Ryl">
+                    <rect key="frame" x="110" y="269" width="101" height="43"/>
+                    <color key="backgroundColor" red="0.87058823529999996" green="0.1647058824" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="BEa-c1-KaV"/>
+                        <constraint firstAttribute="width" constant="101" id="Zyg-HJ-sxg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Forgot PW">
+                        <color key="titleColor" red="0.97254901959999995" green="0.95686274510000002" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="__actionForgotPassword:" destination="-1" eventType="touchUpInside" id="E56-VP-mm8"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="aeo-kS-MWZ" firstAttribute="centerX" secondItem="QhF-RE-7dR" secondAttribute="centerX" id="I2B-fB-rmj"/>
                 <constraint firstAttribute="centerX" secondItem="QhF-RE-7dR" secondAttribute="centerX" id="L7X-Lh-Va4"/>
+                <constraint firstItem="zin-M9-Ryl" firstAttribute="centerX" secondItem="aeo-kS-MWZ" secondAttribute="centerX" id="W1b-Qy-A1J"/>
                 <constraint firstAttribute="bottom" secondItem="QhF-RE-7dR" secondAttribute="bottom" constant="62" id="exB-hi-HXU"/>
+                <constraint firstItem="aeo-kS-MWZ" firstAttribute="top" secondItem="zin-M9-Ryl" secondAttribute="bottom" constant="10" id="nA6-Qg-R8u"/>
                 <constraint firstItem="QhF-RE-7dR" firstAttribute="top" secondItem="aeo-kS-MWZ" secondAttribute="bottom" constant="10" id="wGk-fG-bWa"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
