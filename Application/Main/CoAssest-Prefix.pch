@@ -1,0 +1,30 @@
+//
+//  CoAssest-Prefix.pch
+//  CoAssest
+//
+//  Created by Macintosh HD on 6/9/15.
+//  Copyright (c) 2015 Sanyi. All rights reserved.
+//
+
+#import <Availability.h>
+#import "AppDelegate.h"
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef DEBUG
+#    define DBGS            NSLog(@"%s START", __func__)
+#    define DBG(fmt, ...)   NSLog(@"%s: " fmt, __func__, ##__VA_ARGS__)
+#else
+#    define DBGS            while(0){}
+#    define DBG(fmt, ...)   while(0){}
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "AppDefines.h"
+#import "NikmeDefine.h"
+#endif
