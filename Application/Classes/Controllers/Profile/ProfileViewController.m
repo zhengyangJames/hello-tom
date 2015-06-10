@@ -22,6 +22,7 @@
 #pragma mark - Setup
 - (void)_setupUI {
    self.navigationItem.title = m_string(@"Profile");
+    
 }
 
 @end
