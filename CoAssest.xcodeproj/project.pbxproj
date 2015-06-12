@@ -49,6 +49,11 @@
 		0EFEB50E1B2729E0001195B7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEB5051B2729E0001195B7 /* Info.plist */; };
 		0EFEB50F1B2729E0001195B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB5061B2729E0001195B7 /* main.m */; };
 		0EFEB5101B2729E0001195B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEB5081B2729E0001195B7 /* Images.xcassets */; };
+		7FDA51011B2A8518001CA7E1 /* COLineBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51001B2A8518001CA7E1 /* COLineBottomView.m */; };
+		7FDA510B1B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51041B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m */; };
+		7FDA510C1B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51061B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m */; };
+		7FDA510D1B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51081B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.m */; };
+		7FDA510E1B2A9930001CA7E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA510A1B2A9930001CA7E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +145,16 @@
 		0EFEB5081B2729E0001195B7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0EFEB5191B272B36001195B7 /* CoAssest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoAssest-Prefix.pch"; sourceTree = "<group>"; };
 		0EFEB51A1B272C40001195B7 /* AppDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDefines.h; sourceTree = "<group>"; };
+		7FDA50FF1B2A8518001CA7E1 /* COLineBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLineBottomView.h; sourceTree = "<group>"; };
+		7FDA51001B2A8518001CA7E1 /* COLineBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLineBottomView.m; sourceTree = "<group>"; };
+		7FDA51031B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		7FDA51041B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		7FDA51051B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		7FDA51061B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		7FDA51071B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		7FDA51081B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		7FDA51091B2A9930001CA7E1 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		7FDA510A1B2A9930001CA7E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +402,7 @@
 			children = (
 				0EFEB4F71B2729E0001195B7 /* AppDelegate */,
 				0EFEB5111B272A92001195B7 /* Base */,
+				7FDA50FD1B2A83FA001CA7E1 /* View */,
 				0EFEB5131B272A92001195B7 /* Controls */,
 				0EFEB4FA1B2729E0001195B7 /* Controllers */,
 				0EFEB5141B272A92001195B7 /* Defines */,
@@ -431,6 +447,7 @@
 		0EFEB5011B2729E0001195B7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				7FDA51021B2A9930001CA7E1 /* TPKeyboardAvoiding */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -483,6 +500,7 @@
 		0EFEB5131B272A92001195B7 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				7FDA50FE1B2A84D7001CA7E1 /* COLineBottomView */,
 				0ECA885C1B27CC8F00B5656F /* CODropList */,
 			);
 			path = Controls;
@@ -522,6 +540,37 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7FDA50FD1B2A83FA001CA7E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FDA50FE1B2A84D7001CA7E1 /* COLineBottomView */ = {
+			isa = PBXGroup;
+			children = (
+				7FDA50FF1B2A8518001CA7E1 /* COLineBottomView.h */,
+				7FDA51001B2A8518001CA7E1 /* COLineBottomView.m */,
+			);
+			path = COLineBottomView;
+			sourceTree = "<group>";
+		};
+		7FDA51021B2A9930001CA7E1 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				7FDA51031B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.h */,
+				7FDA51041B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m */,
+				7FDA51051B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.h */,
+				7FDA51061B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m */,
+				7FDA51071B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.h */,
+				7FDA51081B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.m */,
+				7FDA51091B2A9930001CA7E1 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				7FDA510A1B2A9930001CA7E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -648,16 +697,21 @@
 				0ECA88711B27D45900B5656F /* HomeListViewController.m in Sources */,
 				0ECA88431B27CA7100B5656F /* NSDictionary+NotNULL.m in Sources */,
 				0EFEB50F1B2729E0001195B7 /* main.m in Sources */,
+				7FDA510B1B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				0ECA885F1B27CC8F00B5656F /* CODropListVC.m in Sources */,
 				0ECA88581B27CB4C00B5656F /* BaseNavigationController.m in Sources */,
+				7FDA510D1B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.m in Sources */,
+				7FDA510C1B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				0ECA88791B27D57800B5656F /* ProfileViewController.m in Sources */,
 				0EFEB5091B2729E0001195B7 /* AppDelegate.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
 				0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */,
 				0ECA88571B27CB4C00B5656F /* BaseCollectionViewCell.m in Sources */,
+				7FDA510E1B2A9930001CA7E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */,
 				0ECA88441B27CA7100B5656F /* NSFileManager+Directories.m in Sources */,
+				7FDA51011B2A8518001CA7E1 /* COLineBottomView.m in Sources */,
 				0ECA88891B27E09A00B5656F /* ForgotPasswordViewController.m in Sources */,
 				0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,

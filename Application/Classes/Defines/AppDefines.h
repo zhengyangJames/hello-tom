@@ -22,4 +22,6 @@
 ///////////////////////////////////////////////////////////////////
 #define KNAV_BG_COLOR                       [UIColor colorWithRed:54/255.0f green:55/255.0f blue:59/255.0f alpha:1.0]
 
+#define BUTTON_COLOR                       [UIColor colorWithRed:231/255.0f green:75/255.0f blue:71/255.0f alpha:1.0]
+
 #endif
