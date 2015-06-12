@@ -49,6 +49,17 @@
 		0EFEB50E1B2729E0001195B7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEB5051B2729E0001195B7 /* Info.plist */; };
 		0EFEB50F1B2729E0001195B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB5061B2729E0001195B7 /* main.m */; };
 		0EFEB5101B2729E0001195B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEB5081B2729E0001195B7 /* Images.xcassets */; };
+		7F03EBE21B2ABEE6009D7985 /* COPositive&NagitiveButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03EBE11B2ABEE6009D7985 /* COPositive&NagitiveButton.m */; };
+		7F03EBEA1B2AD2E7009D7985 /* ic_Check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBE41B2AD2E7009D7985 /* ic_Check.png */; };
+		7F03EBEB1B2AD2E7009D7985 /* ic_Check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBE51B2AD2E7009D7985 /* ic_Check@2x.png */; };
+		7F03EBEC1B2AD2E7009D7985 /* ic_Check@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBE61B2AD2E7009D7985 /* ic_Check@3x.png */; };
+		7F03EBED1B2AD2E7009D7985 /* ic_uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBE71B2AD2E7009D7985 /* ic_uncheck.png */; };
+		7F03EBEE1B2AD2E7009D7985 /* ic_uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBE81B2AD2E7009D7985 /* ic_uncheck@2x.png */; };
+		7F03EBEF1B2AD2E7009D7985 /* ic_uncheck@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBE91B2AD2E7009D7985 /* ic_uncheck@3x.png */; };
+		7F03EBF31B2AD933009D7985 /* ic_droplist.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBF01B2AD933009D7985 /* ic_droplist.png */; };
+		7F03EBF41B2AD933009D7985 /* ic_droplist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBF11B2AD933009D7985 /* ic_droplist@2x.png */; };
+		7F03EBF51B2AD933009D7985 /* ic_droplist@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBF21B2AD933009D7985 /* ic_droplist@3x.png */; };
+		7F03EBF91B2AE86F009D7985 /* CoDropListButtom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03EBF81B2AE86F009D7985 /* CoDropListButtom.m */; };
 		7FDA51011B2A8518001CA7E1 /* COLineBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51001B2A8518001CA7E1 /* COLineBottomView.m */; };
 		7FDA510B1B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51041B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m */; };
 		7FDA510C1B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51061B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m */; };
@@ -145,6 +156,19 @@
 		0EFEB5081B2729E0001195B7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0EFEB5191B272B36001195B7 /* CoAssest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoAssest-Prefix.pch"; sourceTree = "<group>"; };
 		0EFEB51A1B272C40001195B7 /* AppDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDefines.h; sourceTree = "<group>"; };
+		7F03EBE01B2ABEE6009D7985 /* COPositive&NagitiveButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "COPositive&NagitiveButton.h"; sourceTree = "<group>"; };
+		7F03EBE11B2ABEE6009D7985 /* COPositive&NagitiveButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "COPositive&NagitiveButton.m"; sourceTree = "<group>"; };
+		7F03EBE41B2AD2E7009D7985 /* ic_Check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_Check.png; sourceTree = "<group>"; };
+		7F03EBE51B2AD2E7009D7985 /* ic_Check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Check@2x.png"; sourceTree = "<group>"; };
+		7F03EBE61B2AD2E7009D7985 /* ic_Check@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Check@3x.png"; sourceTree = "<group>"; };
+		7F03EBE71B2AD2E7009D7985 /* ic_uncheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_uncheck.png; sourceTree = "<group>"; };
+		7F03EBE81B2AD2E7009D7985 /* ic_uncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_uncheck@2x.png"; sourceTree = "<group>"; };
+		7F03EBE91B2AD2E7009D7985 /* ic_uncheck@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_uncheck@3x.png"; sourceTree = "<group>"; };
+		7F03EBF01B2AD933009D7985 /* ic_droplist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_droplist.png; sourceTree = "<group>"; };
+		7F03EBF11B2AD933009D7985 /* ic_droplist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_droplist@2x.png"; sourceTree = "<group>"; };
+		7F03EBF21B2AD933009D7985 /* ic_droplist@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_droplist@3x.png"; sourceTree = "<group>"; };
+		7F03EBF71B2AE86F009D7985 /* CoDropListButtom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoDropListButtom.h; sourceTree = "<group>"; };
+		7F03EBF81B2AE86F009D7985 /* CoDropListButtom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoDropListButtom.m; sourceTree = "<group>"; };
 		7FDA50FF1B2A8518001CA7E1 /* COLineBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLineBottomView.h; sourceTree = "<group>"; };
 		7FDA51001B2A8518001CA7E1 /* COLineBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLineBottomView.m; sourceTree = "<group>"; };
 		7FDA51031B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
@@ -466,6 +490,7 @@
 		0EFEB5071B2729E0001195B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7F03EBE31B2AD2E7009D7985 /* Images */,
 				0EFEB5081B2729E0001195B7 /* Images.xcassets */,
 			);
 			path = Resources;
@@ -500,6 +525,8 @@
 		0EFEB5131B272A92001195B7 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				7F03EBF61B2AE858009D7985 /* CoDropListButton */,
+				7F03EBDF1B2ABEB5009D7985 /* COPositive&NegativeButton */,
 				7FDA50FE1B2A84D7001CA7E1 /* COLineBottomView */,
 				0ECA885C1B27CC8F00B5656F /* CODropList */,
 			);
@@ -540,6 +567,40 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7F03EBDF1B2ABEB5009D7985 /* COPositive&NegativeButton */ = {
+			isa = PBXGroup;
+			children = (
+				7F03EBE01B2ABEE6009D7985 /* COPositive&NagitiveButton.h */,
+				7F03EBE11B2ABEE6009D7985 /* COPositive&NagitiveButton.m */,
+			);
+			path = "COPositive&NegativeButton";
+			sourceTree = "<group>";
+		};
+		7F03EBE31B2AD2E7009D7985 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7F03EBF01B2AD933009D7985 /* ic_droplist.png */,
+				7F03EBF11B2AD933009D7985 /* ic_droplist@2x.png */,
+				7F03EBF21B2AD933009D7985 /* ic_droplist@3x.png */,
+				7F03EBE41B2AD2E7009D7985 /* ic_Check.png */,
+				7F03EBE51B2AD2E7009D7985 /* ic_Check@2x.png */,
+				7F03EBE61B2AD2E7009D7985 /* ic_Check@3x.png */,
+				7F03EBE71B2AD2E7009D7985 /* ic_uncheck.png */,
+				7F03EBE81B2AD2E7009D7985 /* ic_uncheck@2x.png */,
+				7F03EBE91B2AD2E7009D7985 /* ic_uncheck@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		7F03EBF61B2AE858009D7985 /* CoDropListButton */ = {
+			isa = PBXGroup;
+			children = (
+				7F03EBF71B2AE86F009D7985 /* CoDropListButtom.h */,
+				7F03EBF81B2AE86F009D7985 /* CoDropListButtom.m */,
+			);
+			path = CoDropListButton;
 			sourceTree = "<group>";
 		};
 		7FDA50FD1B2A83FA001CA7E1 /* View */ = {
@@ -655,12 +716,21 @@
 			files = (
 				0ECA887F1B27D5B800B5656F /* SettingViewController.xib in Resources */,
 				0ECA887A1B27D57800B5656F /* ProfileViewController.xib in Resources */,
+				7F03EBEC1B2AD2E7009D7985 /* ic_Check@3x.png in Resources */,
+				7F03EBEB1B2AD2E7009D7985 /* ic_Check@2x.png in Resources */,
 				0ECA886D1B27D2A700B5656F /* LoginViewController.xib in Resources */,
 				0ECA888A1B27E09A00B5656F /* ForgotPasswordViewController.xib in Resources */,
+				7F03EBED1B2AD2E7009D7985 /* ic_uncheck.png in Resources */,
+				7F03EBEA1B2AD2E7009D7985 /* ic_Check.png in Resources */,
 				0EFEB50D1B2729E0001195B7 /* LaunchScreen.xib in Resources */,
 				0EFEB5101B2729E0001195B7 /* Images.xcassets in Resources */,
 				0EFEB50E1B2729E0001195B7 /* Info.plist in Resources */,
+				7F03EBF41B2AD933009D7985 /* ic_droplist@2x.png in Resources */,
 				0ECA88721B27D45900B5656F /* HomeListViewController.xib in Resources */,
+				7F03EBEF1B2AD2E7009D7985 /* ic_uncheck@3x.png in Resources */,
+				7F03EBF51B2AD933009D7985 /* ic_droplist@3x.png in Resources */,
+				7F03EBEE1B2AD2E7009D7985 /* ic_uncheck@2x.png in Resources */,
+				7F03EBF31B2AD933009D7985 /* ic_droplist.png in Resources */,
 				0ECA88841B27DD5200B5656F /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,8 +771,10 @@
 				0ECA885F1B27CC8F00B5656F /* CODropListVC.m in Sources */,
 				0ECA88581B27CB4C00B5656F /* BaseNavigationController.m in Sources */,
 				7FDA510D1B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.m in Sources */,
+				7F03EBE21B2ABEE6009D7985 /* COPositive&NagitiveButton.m in Sources */,
 				7FDA510C1B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
+				7F03EBF91B2AE86F009D7985 /* CoDropListButtom.m in Sources */,
 				0ECA88791B27D57800B5656F /* ProfileViewController.m in Sources */,
 				0EFEB5091B2729E0001195B7 /* AppDelegate.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
