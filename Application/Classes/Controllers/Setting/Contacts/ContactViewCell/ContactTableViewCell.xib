@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="KGk-i7-Jjw" customClass="ContactTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoAssets Pte Ltd" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f92-ib-oEU">
+                        <rect key="frame" x="8" y="5" width="304" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="WzD-TS-Vv0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(reg #:201310357R)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgH-Sy-8Sh">
+                        <rect key="frame" x="8" y="27" width="304" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="EgF-IS-pOc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38C North Canal Road, Singapore 059294" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRa-BJ-s27">
+                        <rect key="frame" x="8" y="49" width="304" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Ev0-3j-2ly"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tel: +65-6532 7008" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKz-IH-LKP">
+                        <rect key="frame" x="8" y="71" width="304" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="CVr-8W-aEd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kKz-IH-LKP" firstAttribute="top" secondItem="sRa-BJ-s27" secondAttribute="bottom" constant="5" id="2o3-C7-GPW"/>
+                    <constraint firstItem="rgH-Sy-8Sh" firstAttribute="trailing" secondItem="f92-ib-oEU" secondAttribute="trailing" id="5d3-US-2jp"/>
+                    <constraint firstItem="rgH-Sy-8Sh" firstAttribute="leading" secondItem="sRa-BJ-s27" secondAttribute="leading" id="5eC-kX-Edt"/>
+                    <constraint firstItem="rgH-Sy-8Sh" firstAttribute="trailing" secondItem="sRa-BJ-s27" secondAttribute="trailing" id="FR9-Fw-XpD"/>
+                    <constraint firstItem="sRa-BJ-s27" firstAttribute="top" secondItem="rgH-Sy-8Sh" secondAttribute="bottom" constant="5" id="Sro-GN-3ux"/>
+                    <constraint firstItem="rgH-Sy-8Sh" firstAttribute="leading" secondItem="f92-ib-oEU" secondAttribute="leading" id="TKe-9a-vsI"/>
+                    <constraint firstItem="f92-ib-oEU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="Xss-Zk-glO"/>
+                    <constraint firstItem="f92-ib-oEU" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="emV-3D-Cvn"/>
+                    <constraint firstItem="kKz-IH-LKP" firstAttribute="trailing" secondItem="sRa-BJ-s27" secondAttribute="trailing" id="hm0-Hk-vM1"/>
+                    <constraint firstItem="kKz-IH-LKP" firstAttribute="leading" secondItem="sRa-BJ-s27" secondAttribute="leading" id="leD-LO-PgK"/>
+                    <constraint firstItem="f92-ib-oEU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ols-lW-FfT"/>
+                    <constraint firstItem="rgH-Sy-8Sh" firstAttribute="top" secondItem="f92-ib-oEU" secondAttribute="bottom" constant="5" id="xtG-0G-2cj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblAdress" destination="sRa-BJ-s27" id="m37-LA-hfD"/>
+                <outlet property="lblCoAssets" destination="f92-ib-oEU" id="jM7-6C-3yd"/>
+                <outlet property="lblReg" destination="rgH-Sy-8Sh" id="Wbe-tn-rHk"/>
+                <outlet property="lblTell" destination="kKz-IH-LKP" id="qaD-Uf-TNV"/>
+            </connections>
+            <point key="canvasLocation" x="227" y="163.5"/>
+        </tableViewCell>
+    </objects>
+</document>

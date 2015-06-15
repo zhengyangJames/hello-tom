@@ -12,5 +12,5 @@
 
 + (instancetype)shared;
 - (NSArray*)arrayListHomeObj;
-
+- (NSArray*)arrayContactObj;
 @end

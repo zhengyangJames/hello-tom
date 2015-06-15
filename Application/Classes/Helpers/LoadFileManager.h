@@ -12,4 +12,6 @@
 
 + (NSArray*)loadFileJsonWithName:(NSString*)fileName;
 
++ (NSArray*)loadFilePlistWithName:(NSString*)fileName;
+
 @end

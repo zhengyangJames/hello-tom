@@ -4,9 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeListViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContacViewController">
             <connections>
-                <outlet property="_tableView" destination="0CD-e3-SEk" id="OCZ-qa-rsC"/>
+                <outlet property="_tableView" destination="CMO-A3-msm" id="rWB-XR-WhM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,26 +15,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="248" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0CD-e3-SEk">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CMO-A3-msm">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="51n-hZ-GPE"/>
-                        <outlet property="delegate" destination="-1" id="epa-hN-o5m"/>
+                        <outlet property="dataSource" destination="-1" id="Uml-G4-BeJ"/>
+                        <outlet property="delegate" destination="-1" id="sJ2-QW-kas"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="0CD-e3-SEk" secondAttribute="trailing" id="713-Ha-3Wq"/>
-                <constraint firstAttribute="bottom" secondItem="0CD-e3-SEk" secondAttribute="bottom" id="XLH-al-BF2"/>
-                <constraint firstItem="0CD-e3-SEk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qFV-Ix-L6f"/>
-                <constraint firstItem="0CD-e3-SEk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rDJ-y5-g9D"/>
+                <constraint firstAttribute="bottom" secondItem="CMO-A3-msm" secondAttribute="bottom" id="2PR-Bg-Cgk"/>
+                <constraint firstItem="CMO-A3-msm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2RQ-wI-T2G"/>
+                <constraint firstItem="CMO-A3-msm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="891-gB-FDN"/>
+                <constraint firstAttribute="trailing" secondItem="CMO-A3-msm" secondAttribute="trailing" id="ToP-Xg-XrT"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="176" y="342"/>
         </view>
     </objects>
 </document>

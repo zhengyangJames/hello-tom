@@ -8,6 +8,7 @@
 
 #import "CODummyDataManager.h"
 #import "ListHomeObject.h"
+#import "ContactObject.h"
 
 @implementation CODummyDataManager
 
@@ -158,5 +159,31 @@
     return array;
 }
 
+
+- (NSArray*)arrayContactObj {
+    NSMutableArray *array = [[NSMutableArray alloc]init];
+    ContactObject *obj = [[ContactObject alloc]init];
+    obj.lblCoAssets = @"CoAssets Pte Ltd ";
+    obj.lblReg = @"(reg #:201310357R)";
+    obj.lblAdress = @"38C North Canal Road, Singapore 059294";
+    obj.lblTell = @"Tel: +65-6532 7008";
+    [array addObject:obj];
+    
+    ContactObject *obj1 = [[ContactObject alloc]init];
+    obj1.lblCoAssets = @"CoAssets Sdn Bhd";
+    obj1.lblReg = @"(reg #: 1058756K)";
+    obj1.lblAdress = @"Level 30, The Gardens North Tower,Mid Valley City, Lingkaran Syed Putra, 59200 Kuala Lumpur, Malaysia";
+    obj1.lblTell = @"Tel: +60-320 359 662";
+    [array addObject:obj1];
+    
+    ContactObject *obj2 = [[ContactObject alloc]init];
+    obj2.lblCoAssets = @"CoAssets Ltd  ";
+    obj2.lblReg = @"(ACN 604 341 826)";
+    obj2.lblAdress = @"Office J, Level 2,1139 Hay Street West Perth WA 6005";
+    obj2.lblTell = @"";
+    [array addObject:obj2];
+    
+    return array;
+}
 
 @end

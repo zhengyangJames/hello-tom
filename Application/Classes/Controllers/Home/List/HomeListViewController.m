@@ -10,6 +10,8 @@
 #import "HomeListViewCell.h"
 #import "CODummyDataManager.h"
 #import "ListHomeObject.h"
+#import "LoadFileManager.h"
+#import "CODropListVC.h"
 
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -60,7 +62,10 @@
 
 #pragma mark - Action
 - (void)__actionFilter {
-    
+    NSArray *array = [LoadFileManager loadFilePlistWithName:@"FilterList"];
+    [CODropListVC presentWithTitle:m_string(@"Filter") data:array selectedIndex:0 parentVC:self didSelect:^(NSInteger index) {
+        
+    }];
 }
 
 #pragma mark - TableView Delegate

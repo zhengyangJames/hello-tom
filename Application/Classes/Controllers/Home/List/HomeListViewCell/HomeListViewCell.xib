@@ -88,7 +88,7 @@
                 <outlet property="_lblDetail" destination="eYX-1R-Afg" id="Ts8-bv-RGp"/>
                 <outlet property="_lblSate" destination="rDF-YH-2XB" id="Uoo-uP-T8h"/>
             </connections>
-            <point key="canvasLocation" x="302" y="84"/>
+            <point key="canvasLocation" x="211" y="98"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -60,6 +60,15 @@
 		7F03EBF41B2AD933009D7985 /* ic_droplist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBF11B2AD933009D7985 /* ic_droplist@2x.png */; };
 		7F03EBF51B2AD933009D7985 /* ic_droplist@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03EBF21B2AD933009D7985 /* ic_droplist@3x.png */; };
 		7F03EBF91B2AE86F009D7985 /* CoDropListButtom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03EBF81B2AE86F009D7985 /* CoDropListButtom.m */; };
+		7F3D87BF1B2EAE0700A6B969 /* FilterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D87BE1B2EAE0700A6B969 /* FilterList.plist */; };
+		7F3D88421B2EB05E00A6B969 /* HomeListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D88401B2EB05E00A6B969 /* HomeListViewCell.m */; };
+		7F3D88431B2EB05E00A6B969 /* HomeListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D88411B2EB05E00A6B969 /* HomeListViewCell.xib */; };
+		7F3D88451B2EB73B00A6B969 /* SettingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D88441B2EB73B00A6B969 /* SettingPlist.plist */; };
+		7F3D88511B2EC13B00A6B969 /* ContacViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D884F1B2EC13B00A6B969 /* ContacViewController.m */; };
+		7F3D88521B2EC13B00A6B969 /* ContacViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D88501B2EC13B00A6B969 /* ContacViewController.xib */; };
+		7F3D88571B2EC2B400A6B969 /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D88551B2EC2B400A6B969 /* ContactTableViewCell.m */; };
+		7F3D88581B2EC2B400A6B969 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D88561B2EC2B400A6B969 /* ContactTableViewCell.xib */; };
+		7F3D885B1B2EC83200A6B969 /* ContactObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D885A1B2EC83200A6B969 /* ContactObject.m */; };
 		7F46FDC61B2B146A003BB1C4 /* COCheckBoxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F46FDC51B2B146A003BB1C4 /* COCheckBoxButton.m */; };
 		7FDA51011B2A8518001CA7E1 /* COLineBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51001B2A8518001CA7E1 /* COLineBottomView.m */; };
 		7FDA510B1B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51041B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m */; };
@@ -87,8 +96,6 @@
 		7FF06DFB1B2E6953009DEDEC /* ic_setting_heightline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF06DEF1B2E6953009DEDEC /* ic_setting_heightline@3x.png */; };
 		7FF06DFC1B2E6953009DEDEC /* ic_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF06DF01B2E6953009DEDEC /* ic_setting@2x.png */; };
 		7FF06DFD1B2E6953009DEDEC /* ic_setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF06DF11B2E6953009DEDEC /* ic_setting@3x.png */; };
-		7FF06E021B2E723A009DEDEC /* HomeListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF06E001B2E723A009DEDEC /* HomeListViewCell.m */; };
-		7FF06E031B2E723A009DEDEC /* HomeListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF06E011B2E723A009DEDEC /* HomeListViewCell.xib */; };
 		7FF06E191B2E76C9009DEDEC /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FF06E051B2E76C9009DEDEC /* 1.jpg */; };
 		7FF06E1A1B2E76C9009DEDEC /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FF06E061B2E76C9009DEDEC /* 10.jpg */; };
 		7FF06E1B1B2E76C9009DEDEC /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FF06E071B2E76C9009DEDEC /* 11.jpg */; };
@@ -216,6 +223,19 @@
 		7F03EBF21B2AD933009D7985 /* ic_droplist@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_droplist@3x.png"; sourceTree = "<group>"; };
 		7F03EBF71B2AE86F009D7985 /* CoDropListButtom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoDropListButtom.h; sourceTree = "<group>"; };
 		7F03EBF81B2AE86F009D7985 /* CoDropListButtom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoDropListButtom.m; sourceTree = "<group>"; };
+		7F3D87BE1B2EAE0700A6B969 /* FilterList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterList.plist; sourceTree = "<group>"; };
+		7F3D883F1B2EB05E00A6B969 /* HomeListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListViewCell.h; sourceTree = "<group>"; };
+		7F3D88401B2EB05E00A6B969 /* HomeListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListViewCell.m; sourceTree = "<group>"; };
+		7F3D88411B2EB05E00A6B969 /* HomeListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeListViewCell.xib; sourceTree = "<group>"; };
+		7F3D88441B2EB73B00A6B969 /* SettingPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingPlist.plist; sourceTree = "<group>"; };
+		7F3D884E1B2EC13B00A6B969 /* ContacViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContacViewController.h; sourceTree = "<group>"; };
+		7F3D884F1B2EC13B00A6B969 /* ContacViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContacViewController.m; sourceTree = "<group>"; };
+		7F3D88501B2EC13B00A6B969 /* ContacViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContacViewController.xib; sourceTree = "<group>"; };
+		7F3D88541B2EC2B400A6B969 /* ContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableViewCell.h; sourceTree = "<group>"; };
+		7F3D88551B2EC2B400A6B969 /* ContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableViewCell.m; sourceTree = "<group>"; };
+		7F3D88561B2EC2B400A6B969 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		7F3D88591B2EC83200A6B969 /* ContactObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactObject.h; sourceTree = "<group>"; };
+		7F3D885A1B2EC83200A6B969 /* ContactObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactObject.m; sourceTree = "<group>"; };
 		7F46FDC41B2B146A003BB1C4 /* COCheckBoxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COCheckBoxButton.h; sourceTree = "<group>"; };
 		7F46FDC51B2B146A003BB1C4 /* COCheckBoxButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COCheckBoxButton.m; sourceTree = "<group>"; };
 		7FDA50FF1B2A8518001CA7E1 /* COLineBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLineBottomView.h; sourceTree = "<group>"; };
@@ -253,9 +273,6 @@
 		7FF06DEF1B2E6953009DEDEC /* ic_setting_heightline@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_setting_heightline@3x.png"; sourceTree = "<group>"; };
 		7FF06DF01B2E6953009DEDEC /* ic_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_setting@2x.png"; sourceTree = "<group>"; };
 		7FF06DF11B2E6953009DEDEC /* ic_setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_setting@3x.png"; sourceTree = "<group>"; };
-		7FF06DFF1B2E723A009DEDEC /* HomeListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListViewCell.h; sourceTree = "<group>"; };
-		7FF06E001B2E723A009DEDEC /* HomeListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListViewCell.m; sourceTree = "<group>"; };
-		7FF06E011B2E723A009DEDEC /* HomeListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeListViewCell.xib; sourceTree = "<group>"; };
 		7FF06E051B2E76C9009DEDEC /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		7FF06E061B2E76C9009DEDEC /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		7FF06E071B2E76C9009DEDEC /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = "<group>"; };
@@ -380,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				0ECA88681B27D28300B5656F /* List */,
-				0ECA88671B27D28300B5656F /* Filters */,
 				0ECA88661B27D28300B5656F /* Details */,
 			);
 			path = Home;
@@ -409,6 +425,7 @@
 		0ECA88631B27D1CB00B5656F /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				7F3D884D1B2EC13B00A6B969 /* Contacts */,
 				0ECA887B1B27D5B800B5656F /* SettingViewController.h */,
 				0ECA887C1B27D5B800B5656F /* SettingViewController.m */,
 				0ECA887D1B27D5B800B5656F /* SettingViewController.xib */,
@@ -443,17 +460,10 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
-		0ECA88671B27D28300B5656F /* Filters */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Filters;
-			sourceTree = "<group>";
-		};
 		0ECA88681B27D28300B5656F /* List */ = {
 			isa = PBXGroup;
 			children = (
-				7FF06DFE1B2E7209009DEDEC /* Cell */,
+				7F3D883E1B2EB05E00A6B969 /* HomeListViewCell */,
 				0ECA886E1B27D45900B5656F /* HomeListViewController.h */,
 				0ECA886F1B27D45900B5656F /* HomeListViewController.m */,
 				0ECA88701B27D45900B5656F /* HomeListViewController.xib */,
@@ -735,6 +745,37 @@
 			path = CoDropListButton;
 			sourceTree = "<group>";
 		};
+		7F3D883E1B2EB05E00A6B969 /* HomeListViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D883F1B2EB05E00A6B969 /* HomeListViewCell.h */,
+				7F3D88401B2EB05E00A6B969 /* HomeListViewCell.m */,
+				7F3D88411B2EB05E00A6B969 /* HomeListViewCell.xib */,
+			);
+			path = HomeListViewCell;
+			sourceTree = "<group>";
+		};
+		7F3D884D1B2EC13B00A6B969 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D88531B2EC29400A6B969 /* ContactViewCell */,
+				7F3D884E1B2EC13B00A6B969 /* ContacViewController.h */,
+				7F3D884F1B2EC13B00A6B969 /* ContacViewController.m */,
+				7F3D88501B2EC13B00A6B969 /* ContacViewController.xib */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		7F3D88531B2EC29400A6B969 /* ContactViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D88541B2EC2B400A6B969 /* ContactTableViewCell.h */,
+				7F3D88551B2EC2B400A6B969 /* ContactTableViewCell.m */,
+				7F3D88561B2EC2B400A6B969 /* ContactTableViewCell.xib */,
+			);
+			path = ContactViewCell;
+			sourceTree = "<group>";
+		};
 		7F46FDC31B2B146A003BB1C4 /* COCheckBoxButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,18 +846,10 @@
 		7FE21F041B2D7638009B78DF /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				7F3D87BE1B2EAE0700A6B969 /* FilterList.plist */,
+				7F3D88441B2EB73B00A6B969 /* SettingPlist.plist */,
 			);
 			path = Plist;
-			sourceTree = "<group>";
-		};
-		7FF06DFE1B2E7209009DEDEC /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				7FF06DFF1B2E723A009DEDEC /* HomeListViewCell.h */,
-				7FF06E001B2E723A009DEDEC /* HomeListViewCell.m */,
-				7FF06E011B2E723A009DEDEC /* HomeListViewCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		7FF06E041B2E76C9009DEDEC /* Images Other */ = {
@@ -852,6 +885,8 @@
 			children = (
 				7FF06E331B2E7CBC009DEDEC /* ListHomeObject.h */,
 				7FF06E341B2E7CBC009DEDEC /* ListHomeObject.m */,
+				7F3D88591B2EC83200A6B969 /* ContactObject.h */,
+				7F3D885A1B2EC83200A6B969 /* ContactObject.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -955,6 +990,7 @@
 				7FF06E1D1B2E76C9009DEDEC /* 13.jpg in Resources */,
 				7FE21F021B2D7435009B78DF /* DropListCell.xib in Resources */,
 				0ECA887A1B27D57800B5656F /* ProfileViewController.xib in Resources */,
+				7F3D88581B2EC2B400A6B969 /* ContactTableViewCell.xib in Resources */,
 				7F03EBEC1B2AD2E7009D7985 /* ic_Check@3x.png in Resources */,
 				7FF06E211B2E76C9009DEDEC /* 17.jpg in Resources */,
 				7FE21EF61B2D1F64009B78DF /* Close_Circle_Line@3x.png in Resources */,
@@ -968,19 +1004,21 @@
 				7F03EBED1B2AD2E7009D7985 /* ic_uncheck.png in Resources */,
 				7FF06DF51B2E6953009DEDEC /* ic_home@3x.png in Resources */,
 				7FF06DF41B2E6953009DEDEC /* ic_home@2x.png in Resources */,
+				7F3D88521B2EC13B00A6B969 /* ContacViewController.xib in Resources */,
 				7FF06E251B2E76C9009DEDEC /* 20.jpg in Resources */,
 				7FF06E291B2E76C9009DEDEC /* 6.jpg in Resources */,
 				7FF06DFB1B2E6953009DEDEC /* ic_setting_heightline@3x.png in Resources */,
 				7FF06E1E1B2E76C9009DEDEC /* 14.jpg in Resources */,
 				7FF06E281B2E76C9009DEDEC /* 5.jpg in Resources */,
 				7F03EBEA1B2AD2E7009D7985 /* ic_Check.png in Resources */,
+				7F3D87BF1B2EAE0700A6B969 /* FilterList.plist in Resources */,
 				7FF06E2C1B2E76C9009DEDEC /* 9.jpg in Resources */,
-				7FF06E031B2E723A009DEDEC /* HomeListViewCell.xib in Resources */,
 				0EFEB50D1B2729E0001195B7 /* LaunchScreen.xib in Resources */,
 				0EFEB5101B2729E0001195B7 /* Images.xcassets in Resources */,
 				0EFEB50E1B2729E0001195B7 /* Info.plist in Resources */,
 				7F03EBF41B2AD933009D7985 /* ic_droplist@2x.png in Resources */,
 				0ECA88721B27D45900B5656F /* HomeListViewController.xib in Resources */,
+				7F3D88431B2EB05E00A6B969 /* HomeListViewCell.xib in Resources */,
 				7FF06DF71B2E6953009DEDEC /* ic_peopel@3x.png in Resources */,
 				7FF06DF61B2E6953009DEDEC /* ic_peopel@2x.png in Resources */,
 				7FF06DF31B2E6953009DEDEC /* ic_home_heightline@3x.png in Resources */,
@@ -988,6 +1026,7 @@
 				7FF06E1A1B2E76C9009DEDEC /* 10.jpg in Resources */,
 				7FF06DFD1B2E6953009DEDEC /* ic_setting@3x.png in Resources */,
 				7F03EBF51B2AD933009D7985 /* ic_droplist@3x.png in Resources */,
+				7F3D88451B2EB73B00A6B969 /* SettingPlist.plist in Resources */,
 				7FF06E201B2E76C9009DEDEC /* 16.jpg in Resources */,
 				7F03EBEE1B2AD2E7009D7985 /* ic_uncheck@2x.png in Resources */,
 				7FF06E2A1B2E76C9009DEDEC /* 7.jpg in Resources */,
@@ -1018,6 +1057,7 @@
 				0ECA886C1B27D2A700B5656F /* LoginViewController.m in Sources */,
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
 				0ECA88591B27CB4C00B5656F /* BaseTableViewCell.m in Sources */,
+				7F3D88511B2EC13B00A6B969 /* ContacViewController.m in Sources */,
 				0ECA88401B27CA7100B5656F /* NMTableViewCell.m in Sources */,
 				0ECA88751B27D52A00B5656F /* BaseTabBarController.m in Sources */,
 				0ECA88481B27CA7100B5656F /* UIView+Identifier.m in Sources */,
@@ -1038,19 +1078,21 @@
 				0ECA88581B27CB4C00B5656F /* BaseNavigationController.m in Sources */,
 				7FDA510D1B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.m in Sources */,
 				7F03EBE21B2ABEE6009D7985 /* COPositive&NagitiveButton.m in Sources */,
+				7F3D88421B2EB05E00A6B969 /* HomeListViewCell.m in Sources */,
 				7FDA510C1B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F03EBF91B2AE86F009D7985 /* CoDropListButtom.m in Sources */,
 				0ECA88791B27D57800B5656F /* ProfileViewController.m in Sources */,
 				7FF06E351B2E7CBC009DEDEC /* ListHomeObject.m in Sources */,
 				0EFEB5091B2729E0001195B7 /* AppDelegate.m in Sources */,
-				7FF06E021B2E723A009DEDEC /* HomeListViewCell.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
+				7F3D88571B2EC2B400A6B969 /* ContactTableViewCell.m in Sources */,
 				0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */,
 				0ECA88571B27CB4C00B5656F /* BaseCollectionViewCell.m in Sources */,
 				7FDA510E1B2A9930001CA7E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */,
 				0ECA88441B27CA7100B5656F /* NSFileManager+Directories.m in Sources */,
+				7F3D885B1B2EC83200A6B969 /* ContactObject.m in Sources */,
 				7FDA51011B2A8518001CA7E1 /* COLineBottomView.m in Sources */,
 				0ECA88891B27E09A00B5656F /* ForgotPasswordViewController.m in Sources */,
 				7FE21EF01B2D0FF1009B78DF /* CODropListView.m in Sources */,

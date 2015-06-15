@@ -39,7 +39,7 @@
 }
 
 - (void)_setupUI {
-    [UIView animateWithDuration:1.195
+    [UIView animateWithDuration:1.095
                           delay:0.0
          usingSpringWithDamping:0.495
           initialSpringVelocity:0.0
@@ -146,21 +146,21 @@
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     if(selectedCell) {
         selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
-        self.selectedIndex = indexPath.row;
+        self.selectedIndex         = indexPath.row;
     }
 }
 
 #pragma mark - Public
 
 + (void)presentWithTitle:(NSString*)title data:(NSArray*)data selectedIndex:(NSInteger)index didSelect:(void (^)(NSInteger))didSelect {
-    CODropListView *dropList = [CODropListView autoLayoutView];
-    dropList.tableView.delegate = dropList;
-    dropList.tableView.dataSource = dropList;
+    CODropListView *dropList           = [CODropListView autoLayoutView];
+    dropList.tableView.delegate        = dropList;
+    dropList.tableView.dataSource      = dropList;
     dropList.tableView.tableFooterView = [UIView new];
-    dropList.dataArray = data;
-    dropList.selectedIndex = index;
-    dropList.title.text = title;
-    dropList.didSelect = [didSelect copy];
+    dropList.dataArray                 = data;
+    dropList.selectedIndex             = index;
+    dropList.title.text                = title;
+    dropList.didSelect                 = [didSelect copy];
     [[kAppDelegate window] addSubview:dropList];
     [dropList pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
 }
