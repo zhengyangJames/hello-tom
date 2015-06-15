@@ -16,24 +16,28 @@
     [self.layer setBorderColor:[UIColor blackColor].CGColor];
 }
 
-//- (void)setImageName:(NSString *)imageName {
-//    _imageName = imageName;
-//    [self setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-//    if (self.contentHorizontalAlignment == UIControlContentHorizontalAlignmentCenter) {
-//        [self setTitleEdgeInsets:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 10.0f)];
-//    } else {
-////        [self setTitleEdgeInsets:UIEdgeInsetsMake(0.0f, 10.0f, 0.0f, 0.0f)];
-//        [self setImageEdgeInsets:UIEdgeInsetsMake(0.0f, 100.0f, 0.0f, 0.0f)];
-//    }
-//    UIImageView *ic = [UIImageView autoLayoutView];
-//    ic.image = [UIImage imageNamed:imageName];
-//    ic.contentMode = UIViewContentModeCenter;
-//    [self addSubview:ic];
-//    [ic constrainToHeight:12];
-//    [ic constrainToWidth:12];
-//    [ic pinAttribute:NSLayoutAttributeCenterY toAttribute:NSLayoutAttributeCenterY ofItem:self];
-//    [ic pinToSuperviewEdges:JRTViewPinLeftEdge inset:23];
-//}
+- (void)setImageName:(NSString *)imageName {
+    _imageName = imageName;
+    [self setImage:[UIImage imageNamed:@"ic_droplist"] forState:UIControlStateNormal];
+}
 
+- (CGRect)imageRectForContentRect:(CGRect)contentRect
+{
+    CGRect frame = [super imageRectForContentRect:contentRect];
+    frame.origin.x = self.frame.size.width -20;
+    frame.size.height = frame.size.height;
+    frame.size.width = frame.size.width;
+    return frame;
+}
+
+- (CGRect)titleRectForContentRect:(CGRect)contentRect
+{
+    CGRect frame = [super titleRectForContentRect:contentRect];
+    frame.origin.x = 10;
+    frame.origin.y = 0;
+    frame.size.height = CGRectGetHeight(contentRect);
+    frame.size.width = CGRectGetWidth(contentRect);
+    return frame;
+}
 
 @end

@@ -10,4 +10,15 @@
 
 @implementation BaseViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self _initUI];
+}
+
+- (void)_initUI
+{
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
+}
+
 @end
