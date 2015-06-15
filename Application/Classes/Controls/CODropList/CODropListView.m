@@ -39,8 +39,7 @@
 }
 
 - (void)_setupUI {
-    [self.tableView registerNib:[UINib nibWithNibName:[DropListCell identifier] bundle:nil] forCellReuseIdentifier:[DropListCell identifier]];
-    [UIView animateWithDuration:1.095
+    [UIView animateWithDuration:1.195
                           delay:0.0
          usingSpringWithDamping:0.495
           initialSpringVelocity:0.0
@@ -84,6 +83,7 @@
     if (_dataArray && _dataArray.count) {
         if ([_dataArray[0] isKindOfClass:[NSDictionary class]]) {
             _arrayListCustomCell = [_dataArray copy];
+            [self.tableView registerNib:[UINib nibWithNibName:[DropListCell identifier] bundle:nil] forCellReuseIdentifier:[DropListCell identifier]];
         }
     }
     [_tableView reloadData];

@@ -7,8 +7,15 @@
 //
 
 #import "HomeListViewController.h"
+#import "HomeListViewCell.h"
+#import "CODummyDataManager.h"
+#import "ListHomeObject.h"
 
-@interface HomeListViewController ()
+@interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate>
+{
+    __weak IBOutlet UITableView *_tableView;
+}
+@property (strong, nonatomic) NSArray *arrayData;
 
 @end
 
@@ -34,7 +41,48 @@
 #pragma mark - Setup
 - (void)_setupUI {
     self.navigationItem.title = m_string(@"CoAssest");
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Filter") style:UIBarButtonItemStyleDone target:self action:@selector(__actionFilter)];
+    [self.navigationItem setLeftBarButtonItem:leftButton];
+    
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil] forCellReuseIdentifier:[HomeListViewCell identifier]];
 }
 
+#pragma mark - Setter Getter
+- (NSArray*)arrayData {
+    if (!_arrayData) {
+        _arrayData = [[CODummyDataManager shared] arrayListHomeObj];
+        return _arrayData;
+    }
+    return _arrayData;
+}
+
+#pragma mark - Action
+- (void)__actionFilter {
+    
+}
+
+#pragma mark - TableView Delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrayData.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HomeListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeListViewCell identifier]];
+    
+    cell.object = self.arrayData[indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return  248;
+}
 
 @end

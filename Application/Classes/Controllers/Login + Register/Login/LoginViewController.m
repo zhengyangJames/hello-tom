@@ -31,7 +31,34 @@
 
 #pragma mark - Privace
 - (void)_login {
+    //Setup Home
+    HomeListViewController *homeVC = [[HomeListViewController alloc] init];
+    BaseNavigationController *homeNAV = [[BaseNavigationController alloc] initWithRootViewController:homeVC];
+    UITabBarItem *tabbarHome = [[UITabBarItem alloc]initWithTitle:m_string(@"Home")
+                                                            image:[UIImage imageNamed:@"ic_home"]
+                                                    selectedImage:[UIImage imageNamed:@"ic_home_heightline"]];
+    homeNAV.tabBarItem = tabbarHome;
     
+    //Setup Profile
+    ProfileViewController *profileVC = [[ProfileViewController alloc] init];
+    BaseNavigationController *profileNAV = [[BaseNavigationController alloc] initWithRootViewController:profileVC];
+    UITabBarItem *tabbarProfile = [[UITabBarItem alloc]initWithTitle:m_string(@"Profile")
+                                                               image:[UIImage imageNamed:@"ic_peopel"]
+                                                       selectedImage:[UIImage imageNamed:@"ic_people_heightline"]];
+    profileNAV.tabBarItem = tabbarProfile;
+    
+    //Setup Setting
+    SettingViewController *settingVC = [[SettingViewController alloc] init];
+    BaseNavigationController *settingNAV = [[BaseNavigationController alloc] initWithRootViewController:settingVC];
+    UITabBarItem *tabbarSetting = [[UITabBarItem alloc]initWithTitle:m_string(@"Setting")
+                                                               image:[UIImage imageNamed:@"ic_setting"]
+                                                       selectedImage:[UIImage imageNamed:@"ic_setting_heightline"]];
+    settingNAV.tabBarItem = tabbarSetting;
+    
+    BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
+    NSArray *arrayNAV = @[homeNAV, profileNAV, settingNAV];
+    tabBar.viewControllers = arrayNAV;
+    [self.navigationController pushViewController:tabBar animated:YES];
 }
 
 #pragma mark - Setter, Getter
@@ -44,22 +71,7 @@
 
 #pragma mark - Action
 - (IBAction)__actionLogin:(id)sender {
-    HomeListViewController *homeVC = [[HomeListViewController alloc] init];
-    ProfileViewController *profileVC = [[ProfileViewController alloc] init];
-    SettingViewController *settingVC = [[SettingViewController alloc] init];
-    
-    BaseNavigationController *homeNAV = [[BaseNavigationController alloc] initWithRootViewController:homeVC];
-    BaseNavigationController *profileNAV = [[BaseNavigationController alloc] initWithRootViewController:profileVC];
-    BaseNavigationController *settingNAV = [[BaseNavigationController alloc] initWithRootViewController:settingVC];
-    
-    homeNAV.tabBarItem.title = m_string(@"Home");
-    profileNAV.tabBarItem.title = m_string(@"Profile");
-    settingNAV.tabBarItem.title =  m_string(@"Setting");
-    
-    BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
-    NSArray *arrayNAV = @[homeNAV, profileNAV, settingNAV];
-    tabBar.viewControllers = arrayNAV;
-    [self.navigationController pushViewController:tabBar animated:YES];
+    [self _login];
 }
 
 - (IBAction)__actionRegister:(id)sender {

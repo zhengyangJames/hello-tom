@@ -14,9 +14,9 @@
     [super awakeFromNib];
     if (self.nagitiveButton) {
         [self setBackgroundColor:[UIColor whiteColor]];
-        [self setTitleColor:BUTTON_COLOR forState:UIControlStateNormal];
+        [self setTitleColor:KBUTTON_COLOR forState:UIControlStateNormal];
     }else {
-        [self setBackgroundColor:BUTTON_COLOR];
+        [self setBackgroundColor:KBUTTON_COLOR];
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
 }
@@ -25,7 +25,7 @@
     [self.layer setCornerRadius:CORNERRADIUS];
     if (self.nagitiveButton) {
         [self.layer setBorderWidth:BORDER];
-        [self.layer setBorderColor:BUTTON_COLOR.CGColor];
+        [self.layer setBorderColor:KBUTTON_COLOR.CGColor];
     }
     [super layoutSubviews];
 }
