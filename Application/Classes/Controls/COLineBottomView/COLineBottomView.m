@@ -28,6 +28,7 @@
     UIView *separatorView = [[UIView alloc] initWithFrame:CGRectMake(self.edgeInsetLeft, self.frame.size.height - SEPARATOR_HEIGHT, self.frame.size.width - self.edgeInsetLeft - self.edgeInsetRight, SEPARATOR_HEIGHT)];
     [separatorView setBackgroundColor:self.color];
     [self addSubview:separatorView];
+    [self setNeedsLayout];
     
 }
 

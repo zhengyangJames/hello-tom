@@ -42,6 +42,7 @@
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.tableFooterView = [UIView new];
     [_tableView registerNib:[UINib nibWithNibName:[ContactTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[ContactTableViewCell identifier]];
     _contactCell = [_tableView dequeueReusableCellWithIdentifier:[ContactTableViewCell identifier]];
 }

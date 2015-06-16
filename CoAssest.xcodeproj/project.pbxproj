@@ -70,6 +70,16 @@
 		7F3D88581B2EC2B400A6B969 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D88561B2EC2B400A6B969 /* ContactTableViewCell.xib */; };
 		7F3D885B1B2EC83200A6B969 /* ContactObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D885A1B2EC83200A6B969 /* ContactObject.m */; };
 		7F46FDC61B2B146A003BB1C4 /* COCheckBoxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F46FDC51B2B146A003BB1C4 /* COCheckBoxButton.m */; };
+		7F56B3891B2FB83900245225 /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F56B3881B2FB83900245225 /* TableHeaderView.m */; };
+		7F56B38C1B2FB84F00245225 /* TableBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F56B38B1B2FB84F00245225 /* TableBottomView.m */; };
+		7F56B3901B2FB8A100245225 /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F56B38E1B2FB8A100245225 /* AboutTableViewCell.m */; };
+		7F56B3911B2FB8A100245225 /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F56B38F1B2FB8A100245225 /* AboutTableViewCell.xib */; };
+		7F56B3951B2FB8B900245225 /* CompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F56B3931B2FB8B900245225 /* CompanyTableViewCell.m */; };
+		7F56B3961B2FB8B900245225 /* CompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F56B3941B2FB8B900245225 /* CompanyTableViewCell.xib */; };
+		7F56B39A1B2FB8D100245225 /* PasswordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F56B3981B2FB8D100245225 /* PasswordTableViewCell.m */; };
+		7F56B39B1B2FB8D100245225 /* PasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F56B3991B2FB8D100245225 /* PasswordTableViewCell.xib */; };
+		7F56B39D1B2FCFE300245225 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F56B39C1B2FCFE300245225 /* TableHeaderView.xib */; };
+		7F56B39F1B2FE1B200245225 /* TableBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F56B39E1B2FE1B200245225 /* TableBottomView.xib */; };
 		7FDA51011B2A8518001CA7E1 /* COLineBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51001B2A8518001CA7E1 /* COLineBottomView.m */; };
 		7FDA510B1B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51041B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m */; };
 		7FDA510C1B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA51061B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m */; };
@@ -238,6 +248,21 @@
 		7F3D885A1B2EC83200A6B969 /* ContactObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactObject.m; sourceTree = "<group>"; };
 		7F46FDC41B2B146A003BB1C4 /* COCheckBoxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COCheckBoxButton.h; sourceTree = "<group>"; };
 		7F46FDC51B2B146A003BB1C4 /* COCheckBoxButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COCheckBoxButton.m; sourceTree = "<group>"; };
+		7F56B3871B2FB83900245225 /* TableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableHeaderView.h; sourceTree = "<group>"; };
+		7F56B3881B2FB83900245225 /* TableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableHeaderView.m; sourceTree = "<group>"; };
+		7F56B38A1B2FB84F00245225 /* TableBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableBottomView.h; sourceTree = "<group>"; };
+		7F56B38B1B2FB84F00245225 /* TableBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableBottomView.m; sourceTree = "<group>"; };
+		7F56B38D1B2FB8A100245225 /* AboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell.h; sourceTree = "<group>"; };
+		7F56B38E1B2FB8A100245225 /* AboutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell.m; sourceTree = "<group>"; };
+		7F56B38F1B2FB8A100245225 /* AboutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell.xib; sourceTree = "<group>"; };
+		7F56B3921B2FB8B900245225 /* CompanyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyTableViewCell.h; sourceTree = "<group>"; };
+		7F56B3931B2FB8B900245225 /* CompanyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyTableViewCell.m; sourceTree = "<group>"; };
+		7F56B3941B2FB8B900245225 /* CompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyTableViewCell.xib; sourceTree = "<group>"; };
+		7F56B3971B2FB8D100245225 /* PasswordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordTableViewCell.h; sourceTree = "<group>"; };
+		7F56B3981B2FB8D100245225 /* PasswordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordTableViewCell.m; sourceTree = "<group>"; };
+		7F56B3991B2FB8D100245225 /* PasswordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordTableViewCell.xib; sourceTree = "<group>"; };
+		7F56B39C1B2FCFE300245225 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
+		7F56B39E1B2FE1B200245225 /* TableBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableBottomView.xib; path = Application/Classes/Controllers/Home/TableBottomView.xib; sourceTree = SOURCE_ROOT; };
 		7FDA50FF1B2A8518001CA7E1 /* COLineBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLineBottomView.h; sourceTree = "<group>"; };
 		7FDA51001B2A8518001CA7E1 /* COLineBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLineBottomView.m; sourceTree = "<group>"; };
 		7FDA51031B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
@@ -418,6 +443,11 @@
 				0ECA88761B27D57800B5656F /* ProfileViewController.h */,
 				0ECA88771B27D57800B5656F /* ProfileViewController.m */,
 				0ECA88781B27D57800B5656F /* ProfileViewController.xib */,
+				7F56B3861B2FB7DB00245225 /* TableHeaderView */,
+				7F56B3851B2FB7DB00245225 /* TableBottomView */,
+				7F56B3821B2FB7DB00245225 /* AboutTableViewCell */,
+				7F56B3831B2FB7DB00245225 /* CompanyTableViewCell */,
+				7F56B3841B2FB7DB00245225 /* PasswordTableViewCell */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -785,6 +815,56 @@
 			path = COCheckBoxButton;
 			sourceTree = "<group>";
 		};
+		7F56B3821B2FB7DB00245225 /* AboutTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F56B38D1B2FB8A100245225 /* AboutTableViewCell.h */,
+				7F56B38E1B2FB8A100245225 /* AboutTableViewCell.m */,
+				7F56B38F1B2FB8A100245225 /* AboutTableViewCell.xib */,
+			);
+			path = AboutTableViewCell;
+			sourceTree = "<group>";
+		};
+		7F56B3831B2FB7DB00245225 /* CompanyTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F56B3921B2FB8B900245225 /* CompanyTableViewCell.h */,
+				7F56B3931B2FB8B900245225 /* CompanyTableViewCell.m */,
+				7F56B3941B2FB8B900245225 /* CompanyTableViewCell.xib */,
+			);
+			path = CompanyTableViewCell;
+			sourceTree = "<group>";
+		};
+		7F56B3841B2FB7DB00245225 /* PasswordTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F56B3971B2FB8D100245225 /* PasswordTableViewCell.h */,
+				7F56B3981B2FB8D100245225 /* PasswordTableViewCell.m */,
+				7F56B3991B2FB8D100245225 /* PasswordTableViewCell.xib */,
+			);
+			path = PasswordTableViewCell;
+			sourceTree = "<group>";
+		};
+		7F56B3851B2FB7DB00245225 /* TableBottomView */ = {
+			isa = PBXGroup;
+			children = (
+				7F56B38A1B2FB84F00245225 /* TableBottomView.h */,
+				7F56B38B1B2FB84F00245225 /* TableBottomView.m */,
+				7F56B39E1B2FE1B200245225 /* TableBottomView.xib */,
+			);
+			path = TableBottomView;
+			sourceTree = "<group>";
+		};
+		7F56B3861B2FB7DB00245225 /* TableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				7F56B3871B2FB83900245225 /* TableHeaderView.h */,
+				7F56B3881B2FB83900245225 /* TableHeaderView.m */,
+				7F56B39C1B2FCFE300245225 /* TableHeaderView.xib */,
+			);
+			path = TableHeaderView;
+			sourceTree = "<group>";
+		};
 		7FDA50FD1B2A83FA001CA7E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,6 +1054,7 @@
 				7FF06E2B1B2E76C9009DEDEC /* 8.jpg in Resources */,
 				7FF06E221B2E76C9009DEDEC /* 18.jpg in Resources */,
 				7FF06E1C1B2E76C9009DEDEC /* 12.jpg in Resources */,
+				7F56B39D1B2FCFE300245225 /* TableHeaderView.xib in Resources */,
 				7FF06E1B1B2E76C9009DEDEC /* 11.jpg in Resources */,
 				7FF06E191B2E76C9009DEDEC /* 1.jpg in Resources */,
 				0ECA887F1B27D5B800B5656F /* SettingViewController.xib in Resources */,
@@ -982,6 +1063,7 @@
 				7FF06E241B2E76C9009DEDEC /* 2.jpg in Resources */,
 				7FE21F0B1B2D83FD009B78DF /* JsonPhoneCode.json in Resources */,
 				7FF06E231B2E76C9009DEDEC /* 19.jpg in Resources */,
+				7F56B3911B2FB8A100245225 /* AboutTableViewCell.xib in Resources */,
 				7FF06DFA1B2E6953009DEDEC /* ic_setting_heightline@2x.png in Resources */,
 				7FF06DF91B2E6953009DEDEC /* ic_people_heightline@3x.png in Resources */,
 				7FF06DF21B2E6953009DEDEC /* ic_home_heightline@2x.png in Resources */,
@@ -994,6 +1076,7 @@
 				7F03EBEC1B2AD2E7009D7985 /* ic_Check@3x.png in Resources */,
 				7FF06E211B2E76C9009DEDEC /* 17.jpg in Resources */,
 				7FE21EF61B2D1F64009B78DF /* Close_Circle_Line@3x.png in Resources */,
+				7F56B3961B2FB8B900245225 /* CompanyTableViewCell.xib in Resources */,
 				7FF06DF81B2E6953009DEDEC /* ic_people_heightline@2x.png in Resources */,
 				7F03EBEB1B2AD2E7009D7985 /* ic_Check@2x.png in Resources */,
 				7FF06E2E1B2E797E009DEDEC /* Earth_256.png in Resources */,
@@ -1001,6 +1084,8 @@
 				7FF06E271B2E76C9009DEDEC /* 4.jpg in Resources */,
 				0ECA888A1B27E09A00B5656F /* ForgotPasswordViewController.xib in Resources */,
 				7FE21EF51B2D1F64009B78DF /* Close_Circle_Line@2x.png in Resources */,
+				7F56B39B1B2FB8D100245225 /* PasswordTableViewCell.xib in Resources */,
+				7F56B39F1B2FE1B200245225 /* TableBottomView.xib in Resources */,
 				7F03EBED1B2AD2E7009D7985 /* ic_uncheck.png in Resources */,
 				7FF06DF51B2E6953009DEDEC /* ic_home@3x.png in Resources */,
 				7FF06DF41B2E6953009DEDEC /* ic_home@2x.png in Resources */,
@@ -1052,11 +1137,13 @@
 				0ECA884A1B27CA7100B5656F /* NMImageHelper.m in Sources */,
 				0ECA88491B27CA7100B5656F /* NMDeviceHelper.m in Sources */,
 				7F46FDC61B2B146A003BB1C4 /* COCheckBoxButton.m in Sources */,
+				7F56B39A1B2FB8D100245225 /* PasswordTableViewCell.m in Sources */,
 				0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */,
 				0ECA88411B27CA7100B5656F /* NMView.m in Sources */,
 				0ECA886C1B27D2A700B5656F /* LoginViewController.m in Sources */,
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
 				0ECA88591B27CB4C00B5656F /* BaseTableViewCell.m in Sources */,
+				7F56B38C1B2FB84F00245225 /* TableBottomView.m in Sources */,
 				7F3D88511B2EC13B00A6B969 /* ContacViewController.m in Sources */,
 				0ECA88401B27CA7100B5656F /* NMTableViewCell.m in Sources */,
 				0ECA88751B27D52A00B5656F /* BaseTabBarController.m in Sources */,
@@ -1075,14 +1162,17 @@
 				0EFEB50F1B2729E0001195B7 /* main.m in Sources */,
 				7FDA510B1B2A9930001CA7E1 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				0ECA885F1B27CC8F00B5656F /* CODropListVC.m in Sources */,
+				7F56B3891B2FB83900245225 /* TableHeaderView.m in Sources */,
 				0ECA88581B27CB4C00B5656F /* BaseNavigationController.m in Sources */,
 				7FDA510D1B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.m in Sources */,
 				7F03EBE21B2ABEE6009D7985 /* COPositive&NagitiveButton.m in Sources */,
+				7F56B3901B2FB8A100245225 /* AboutTableViewCell.m in Sources */,
 				7F3D88421B2EB05E00A6B969 /* HomeListViewCell.m in Sources */,
 				7FDA510C1B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F03EBF91B2AE86F009D7985 /* CoDropListButtom.m in Sources */,
 				0ECA88791B27D57800B5656F /* ProfileViewController.m in Sources */,
+				7F56B3951B2FB8B900245225 /* CompanyTableViewCell.m in Sources */,
 				7FF06E351B2E7CBC009DEDEC /* ListHomeObject.m in Sources */,
 				0EFEB5091B2729E0001195B7 /* AppDelegate.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,

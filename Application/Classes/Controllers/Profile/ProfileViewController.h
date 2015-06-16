@@ -8,6 +8,12 @@
 
 #import "BaseViewController.h"
 
+typedef NS_ENUM(NSInteger, TableViewCellStyle) {
+    TableViewCellStyleAbout,        //0
+    TableViewCellStyleCompany,      //1
+    TableViewCellStylePasswork      //2
+};
+
 @interface ProfileViewController : BaseViewController
 
 @end

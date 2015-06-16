@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
             <connections>
+                <outlet property="_tableView" destination="SoM-d1-Ede" id="zdQ-Ba-Kb4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,9 +14,25 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SoM-d1-Ede" customClass="TPKeyboardAvoidingTableView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="7uo-C2-b4h"/>
+                        <outlet property="delegate" destination="-1" id="ExR-a3-2cB"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="SoM-d1-Ede" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Glo-f1-Ogv"/>
+                <constraint firstAttribute="trailing" secondItem="SoM-d1-Ede" secondAttribute="trailing" id="SqI-qZ-7QN"/>
+                <constraint firstAttribute="bottom" secondItem="SoM-d1-Ede" secondAttribute="bottom" id="dNi-qw-RPl"/>
+                <constraint firstItem="SoM-d1-Ede" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jn2-qN-7Nf"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="129" y="327"/>
+            <point key="canvasLocation" x="-35" y="289"/>
         </view>
     </objects>
 </document>
