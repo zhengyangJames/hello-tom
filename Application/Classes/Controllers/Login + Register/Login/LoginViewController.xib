@@ -4,6 +4,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
+        </mutableArray>
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
@@ -22,24 +34,24 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGu-Gw-UBe" userLabel="Top_View" customClass="COLineBottomView">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOG IN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="789-VG-TZg">
-                                            <rect key="frame" x="20" y="80" width="87" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="789-VG-TZg">
+                                            <rect key="frame" x="20" y="65" width="220" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="THf-sJ-mKe"/>
+                                                <constraint firstAttribute="height" constant="40" id="THf-sJ-mKe"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="33"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="789-VG-TZg" secondAttribute="trailing" constant="213" id="NIZ-3t-IQz"/>
-                                        <constraint firstItem="789-VG-TZg" firstAttribute="top" secondItem="tGu-Gw-UBe" secondAttribute="top" constant="80" id="R4K-p7-FbL"/>
+                                        <constraint firstAttribute="trailing" secondItem="789-VG-TZg" secondAttribute="trailing" constant="80" id="NIZ-3t-IQz"/>
+                                        <constraint firstItem="789-VG-TZg" firstAttribute="top" secondItem="tGu-Gw-UBe" secondAttribute="top" constant="65" id="R4K-p7-FbL"/>
                                         <constraint firstItem="789-VG-TZg" firstAttribute="leading" secondItem="tGu-Gw-UBe" secondAttribute="leading" constant="20" id="aIF-Tu-IIP"/>
-                                        <constraint firstAttribute="bottom" secondItem="789-VG-TZg" secondAttribute="bottom" constant="10" id="nJW-sQ-CXc"/>
+                                        <constraint firstAttribute="bottom" secondItem="789-VG-TZg" secondAttribute="bottom" constant="5" id="nJW-sQ-CXc"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="color">
@@ -54,15 +66,15 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yf-Kx-suh" userLabel="Center_View">
-                                    <rect key="frame" x="0.0" y="111" width="320" height="207"/>
+                                    <rect key="frame" x="0.0" y="110" width="320" height="207"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7X-d9-PzU">
                                             <rect key="frame" x="20" y="40" width="91" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="WvS-Qo-Jal"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" User name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NYk-8q-Utd" userLabel="User name Text Field">
@@ -79,8 +91,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="xnb-Z0-CcQ"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gle-ZJ-jaQ" userLabel="Password Text Field">
@@ -90,10 +102,10 @@
                                             </constraints>
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" spellCheckingType="yes" secureTextEntry="YES"/>
                                         </textField>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="gle-ZJ-jaQ" secondAttribute="trailing" constant="20" id="0aH-MV-P2G"/>
                                         <constraint firstItem="F7X-d9-PzU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2yf-Kx-suh" secondAttribute="top" constant="30" id="3aq-T7-IfT"/>
@@ -111,15 +123,15 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiP-Vr-Se0" userLabel="Bottom_View">
-                                    <rect key="frame" x="0.0" y="318" width="320" height="240"/>
+                                    <rect key="frame" x="0.0" y="317" width="320" height="241"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhF-RE-7dR" customClass="COPositive_NagitiveButton">
-                                            <rect key="frame" x="85" y="10" width="150" height="50"/>
+                                            <rect key="frame" x="85" y="11" width="150" height="50"/>
                                             <color key="backgroundColor" red="0.90588235294117647" green="0.29411764705882354" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="oUw-UJ-jaw"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="19"/>
                                             <state key="normal" title="Login">
                                                 <color key="titleColor" red="0.97254901959999995" green="0.95686274510000002" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,11 +144,11 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeo-kS-MWZ">
-                                            <rect key="frame" x="85" y="73" width="150" height="27"/>
+                                            <rect key="frame" x="85" y="74" width="150" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="Fap-ld-t2Q"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                             <state key="normal" title="New User Signup">
                                                 <color key="titleColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,11 +158,11 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zin-M9-Ryl">
-                                            <rect key="frame" x="85" y="103" width="150" height="27"/>
+                                            <rect key="frame" x="85" y="104" width="150" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="d9U-hQ-qcG"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                             <state key="normal" title="Forgot password?">
                                                 <color key="titleColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,7 +172,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="QhF-RE-7dR" secondAttribute="trailing" constant="85" id="2Nq-k4-Xoq"/>
                                         <constraint firstItem="zin-M9-Ryl" firstAttribute="top" secondItem="aeo-kS-MWZ" secondAttribute="bottom" constant="3" id="2WL-bP-d46"/>
@@ -174,7 +186,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="tGu-Gw-UBe" firstAttribute="leading" secondItem="qPe-Ca-rcQ" secondAttribute="leading" id="3k2-55-ghU"/>
                                 <constraint firstAttribute="trailing" secondItem="tGu-Gw-UBe" secondAttribute="trailing" id="6BG-8P-JqC"/>
@@ -208,7 +220,7 @@
                 <constraint firstAttribute="bottom" secondItem="T7n-jw-l5P" secondAttribute="bottom" id="qo6-Gg-Fb6"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="115" y="169"/>
+            <point key="canvasLocation" x="122" y="128"/>
         </view>
     </objects>
 </document>

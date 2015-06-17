@@ -41,16 +41,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invest in Canyon de Boracay Premier to own a piece" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-1R-Afg">
-                                <rect key="frame" x="60" y="13" width="260" height="33"/>
+                                <rect key="frame" x="60" y="5" width="260" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="yNL-50-cVF"/>
+                                    <constraint firstAttribute="height" constant="38" id="yNL-50-cVF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afghanistan" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDF-YH-2XB">
-                                <rect key="frame" x="60" y="46" width="260" height="18"/>
+                                <rect key="frame" x="60" y="48" width="260" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="ecU-Tw-gwW"/>
                                 </constraints>
@@ -63,9 +63,9 @@
                         <constraints>
                             <constraint firstItem="rDF-YH-2XB" firstAttribute="leading" secondItem="eYX-1R-Afg" secondAttribute="leading" id="IIC-Eq-HRx"/>
                             <constraint firstAttribute="trailing" secondItem="eYX-1R-Afg" secondAttribute="trailing" id="LmP-KC-5le"/>
-                            <constraint firstItem="eYX-1R-Afg" firstAttribute="top" secondItem="DTf-jo-hPN" secondAttribute="top" constant="13" id="UDF-Y2-D3Q"/>
+                            <constraint firstItem="eYX-1R-Afg" firstAttribute="top" secondItem="DTf-jo-hPN" secondAttribute="top" constant="5" id="UDF-Y2-D3Q"/>
                             <constraint firstAttribute="centerY" secondItem="K6M-I6-nv9" secondAttribute="centerY" constant="-5" id="Vdj-lb-8ss"/>
-                            <constraint firstItem="rDF-YH-2XB" firstAttribute="top" secondItem="eYX-1R-Afg" secondAttribute="bottom" id="edd-q2-otK"/>
+                            <constraint firstItem="rDF-YH-2XB" firstAttribute="top" secondItem="eYX-1R-Afg" secondAttribute="bottom" constant="5" id="edd-q2-otK"/>
                             <constraint firstItem="K6M-I6-nv9" firstAttribute="leading" secondItem="DTf-jo-hPN" secondAttribute="leading" id="epI-dC-qWj"/>
                             <constraint firstItem="eYX-1R-Afg" firstAttribute="leading" secondItem="K6M-I6-nv9" secondAttribute="trailing" constant="8" id="v7x-i3-Cq9"/>
                             <constraint firstItem="rDF-YH-2XB" firstAttribute="trailing" secondItem="eYX-1R-Afg" secondAttribute="trailing" id="znD-E9-c3A"/>

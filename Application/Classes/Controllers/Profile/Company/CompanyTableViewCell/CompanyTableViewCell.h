@@ -10,4 +10,8 @@
 
 @interface CompanyTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *lblname;
+@property (weak, nonatomic) IBOutlet UILabel *lblDetail;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+
 @end

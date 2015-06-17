@@ -32,7 +32,9 @@
     self.tableView = tableView;
     
     UIBarButtonItem *btDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(__actionDone:)];
+    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(__actionDCancel:)];
     self.navigationItem.rightBarButtonItem = btDone;
+    self.navigationItem.leftBarButtonItem = btCancel;
 }
 
 #pragma mark - Actions
@@ -40,6 +42,13 @@
     if(self.didSelect) {
         self.didSelect(self.selectedIndex);
     }
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+- (void)__actionDCancel:(id)sender {
+
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];

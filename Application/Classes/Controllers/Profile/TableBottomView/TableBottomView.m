@@ -41,7 +41,7 @@
 
 - (IBAction)__actionButtonUpdate:(id)sender {
     if (self.actionButtonUpdate) {
-        self.actionButtonUpdate();
+        self.actionButtonUpdate(_btnUpdate.titleLabel.text);
     }
 }
 

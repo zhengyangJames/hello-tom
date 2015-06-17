@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -21,7 +23,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self gotoHome];
     [self.window makeKeyAndVisible];
-    
+    [self _setUp3rdSDKs];
     return YES;
 }
 
@@ -36,6 +38,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application {}
 
 #pragma mark - Method
+
+- (void)_setUp3rdSDKs {
+    [Fabric with:@[CrashlyticsKit]];
+}
 
 - (void)gotoHome {
     LoginViewController *vc = [[LoginViewController alloc] init];

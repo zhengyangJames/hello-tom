@@ -9,6 +9,7 @@
 #import "CODummyDataManager.h"
 #import "ListHomeObject.h"
 #import "ContactObject.h"
+#import "ProfileObject.h"
 
 @implementation CODummyDataManager
 
@@ -185,5 +186,22 @@
     
     return array;
 }
+
+- (NSArray*)arrayAboutProfileObj {
+    NSMutableArray *array = [[NSMutableArray alloc]init];
+    ProfileObject *obj = [[ProfileObject alloc]init];
+    obj.salutation = @"Mr";
+    obj.firstname = @"Daniel";
+    obj.lastnameurname = @"NGUYEN";
+    obj.email = @"email@example.com";
+    obj.phone = @"+6501010101";
+    obj.address = @"1st street 2rd NewYork";
+    obj.image = @"6.jpg";
+    obj.orgname = @"Nikmesoft Ltd";
+    [array addObject:obj];
+     
+    return array;
+}
+
 
 @end

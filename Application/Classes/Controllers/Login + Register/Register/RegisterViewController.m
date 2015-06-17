@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self _setupUI];
 }
 
 #pragma mark - Private

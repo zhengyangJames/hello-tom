@@ -24,4 +24,16 @@
 
 #define KBUTTON_COLOR                       [UIColor colorWithRed:231/255.0f green:75/255.0f blue:71/255.0f alpha:1.0]
 
+///////////////////////////////////////////////////////////////////
+#pragma mark - STRING
+///////////////////////////////////////////////////////////////////
+#define KSALUTATION @"salutation"
+#define KFRIST_NAME @"firstname"
+#define KLAST_NAME  @"lastnameurname"
+#define KEMAIL      @"email"
+#define KPHONE      @"phone"
+#define KADDRESS    @"address"
+#define KORGNAME    @"orgname"
+#define KIMAGE      @"image"
+
 #endif

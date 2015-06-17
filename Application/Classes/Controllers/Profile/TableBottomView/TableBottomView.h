@@ -9,7 +9,7 @@
 #import "BaseView.h"
 #define CORNERRADIUS 5.5
 
-typedef void(^ActionButtonUpdate)();
+typedef void(^ActionButtonUpdate)(NSString *string);
 
 @interface TableBottomView : BaseView
 
