@@ -7,10 +7,12 @@
 //
 
 #import "WebViewSetting.h"
+#import "UIWebView+AFNetworking.h"
 
 @interface WebViewSetting () <UIWebViewDelegate>
 {
     __weak IBOutlet UIWebView *_webView;
+    UIRefreshControl *_refreshControl;
 }
 
 @end
@@ -51,6 +53,13 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     _webView.delegate = self;
     [_webView loadRequest:request];
+//    [_webView loadRequest:request progress:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+//        DBG(@"%tu",bytesWritten);
+//    } success:^NSString *(NSHTTPURLResponse *response, NSString *HTML) {
+//        [_webView loadHTMLString:HTML baseURL:nil];
+//    } failure:^(NSError *error) {
+//        [_webView loadHTMLString:error.debugDescription baseURL:nil];
+//    }];
 }
 
 #pragma mark - Private
@@ -61,7 +70,7 @@
     _titler = titler;
 }
 
-#pragma mark - Webview
+#pragma mark - Webview Delegate
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

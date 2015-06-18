@@ -10,13 +10,19 @@
 #import "CODummyDataManager.h"
 #import "ContactTableViewCell.h"
 
+#define TitleSection0  @"SINGAPORE OFFICE"
+#define TitleSection1  @"MALAYSIA OFFICE"
+#define TitleSection2  @"AUSTRALIA OFFICE"
+#define HIEGHT_FOOTER  500
+
+#define IS_IOS8_OR_ABOVE    [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
+
 @interface ContacViewController () <UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
-    ContactTableViewCell *_contactCell;
 }
 @property (strong, nonatomic) NSArray *arrayData;
-
+@property (strong, nonatomic) NSArray *listSection;
 @end
 
 @implementation ContacViewController
@@ -42,9 +48,11 @@
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.tableFooterView = [UIView new];
+    
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HIEGHT_FOOTER)];
+    [footerView setBackgroundColor:KGRAY_COLOR];
+    _tableView.tableFooterView = footerView;
     [_tableView registerNib:[UINib nibWithNibName:[ContactTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[ContactTableViewCell identifier]];
-    _contactCell = [_tableView dequeueReusableCellWithIdentifier:[ContactTableViewCell identifier]];
 }
 
 #pragma mark - Action 
@@ -61,23 +69,60 @@
     return _arrayData;
 }
 
+- (NSArray*)listSection {
+    if (!_listSection) {
+        return _listSection = @[TitleSection0,TitleSection1,TitleSection2];
+    }
+    return _listSection;
+}
+
+#pragma mark - Private
+
+- (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return cellSize.height;
+}
 
 #pragma mark - TableView Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view   = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
+    UILabel *label = [UILabel autoLayoutView];
+    [label setFont:[UIFont fontWithName:@"Raleway-Medium" size:16]];
+    [label setTextColor:KGREEN_COLOR];
+    [label setText:[self.listSection objectAtIndex:section]];
+    [view addSubview:label];
+    [label pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:16];
+    [label pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinBottomEdge inset:0];
+    [view setBackgroundColor:KGRAY_COLOR];
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arrayData.count;
+    return 1;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    ContactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ContactTableViewCell identifier]];
-    [self configureCell:cell atIndexPath:indexPath];
-    return cell;
+    if (indexPath.section == 0) {
+        return [self _setupContactCell:tableView indexPath:0];
+    } else if (indexPath.section == 1) {
+        return [self _setupContactCell:tableView indexPath:1];
+    } else {
+        return [self _setupContactCell:tableView indexPath:2];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -86,19 +131,27 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGSize size = [_contactCell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-
-    return size.height;
+    CGFloat height = 0;
+    if(IS_IOS8_OR_ABOVE) {
+        return UITableViewAutomaticDimension;
+    } else {
+        id cell = [self _setupContactCell:tableView indexPath:0];
+        CGFloat height = [self _heightForTableView:tableView cell:cell atIndexPath:indexPath];
+        return height;
+    }
+    return height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 95.f;
+    return 98.0f;
 }
 
-- (void)configureCell:(ContactTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    cell.contactObj = self.arrayData[indexPath.row];
+- (ContactTableViewCell*)_setupContactCell:(UITableView*)tableView indexPath:(NSInteger)indexPath {
+    ContactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ContactTableViewCell identifier]];
+    cell.contactObj = self.arrayData[indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 @end

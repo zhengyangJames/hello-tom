@@ -14,8 +14,7 @@
 #import "ForgotPasswordViewController.h"
 
 @interface LoginViewController ()
-
-@end
+ @end
 
 @implementation LoginViewController
 
@@ -26,7 +25,7 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    
+    [self setEdgesForExtendedLayout:UIRectEdgeNone];
 }
 
 #pragma mark - Privace

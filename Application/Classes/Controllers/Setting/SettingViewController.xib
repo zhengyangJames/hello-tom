@@ -33,7 +33,7 @@
             </constraints>
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="206" y="305"/>
+            <point key="canvasLocation" x="100" y="304"/>
         </view>
     </objects>
 </document>

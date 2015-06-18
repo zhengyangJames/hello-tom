@@ -17,8 +17,12 @@
 }
 @end
 
-
 @implementation ContactTableViewCell
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+}
 
 - (void)setContactObj:(ContactObject *)contactObj {
     _contactObj = contactObj;
@@ -26,6 +30,8 @@
     lblReg.text = _contactObj.lblReg;
     lblAdress.text = _contactObj.lblAdress;
     lblTell.text = _contactObj.lblTell;
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
 }
 
 @end

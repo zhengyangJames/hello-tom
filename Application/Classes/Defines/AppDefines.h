@@ -24,6 +24,9 @@
 
 #define KBUTTON_COLOR                       [UIColor colorWithRed:231/255.0f green:75/255.0f blue:71/255.0f alpha:1.0]
 
+#define KGREEN_COLOR                        [UIColor colorWithRed:0/255.0f green:200/255.0f blue:250/255.0f alpha:1.0]
+
+#define KGRAY_COLOR                       [UIColor colorWithRed:230/255.0f green:230/255.0f blue:230/255.0f alpha:1.0]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - STRING
 ///////////////////////////////////////////////////////////////////
