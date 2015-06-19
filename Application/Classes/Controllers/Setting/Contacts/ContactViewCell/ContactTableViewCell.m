@@ -24,14 +24,33 @@
 
 }
 
+- (void)setBounds:(CGRect)bounds
+{
+    [super setBounds:bounds];
+    self.contentView.frame = self.bounds;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];;
+    lblTell.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
+    lblAdress.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
+}
+
 - (void)setContactObj:(ContactObject *)contactObj {
     _contactObj = contactObj;
     lblCoAssets.text = _contactObj.lblCoAssets;
     lblReg.text = _contactObj.lblReg;
     lblAdress.text = _contactObj.lblAdress;
-    lblTell.text = _contactObj.lblTell;
+    if ([_contactObj.lblTell isEqual:nil]) {
+        [lblTell setNeedsUpdateConstraints];
+        [lblTell setNeedsDisplay];
+    }else {
+        lblTell.text = _contactObj.lblTell;
+    }
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
 
+
 @end
+

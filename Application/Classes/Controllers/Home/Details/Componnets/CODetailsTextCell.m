@@ -23,12 +23,19 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
+- (void)setBounds:(CGRect)bounds
+{
+    [super setBounds:bounds];
+    self.contentView.frame = self.bounds;
+}
 
 #pragma mark - Set Get
 - (void)setObject:(NSDictionary *)object {
     _object = object;
-    _detailsTextView.text = @"";
-    _headerLabel.text = @"";
+    _detailsTextView.text = [object valueForKeyNotNull:@"details"];
+    _headerLabel.text = [object valueForKeyNotNull:@"status"];
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
 }
 
 @end

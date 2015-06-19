@@ -30,8 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -144,7 +142,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 98.0f;
+    return UITableViewAutomaticDimension;
 }
 
 - (ContactTableViewCell*)_setupContactCell:(UITableView*)tableView indexPath:(NSInteger)indexPath {

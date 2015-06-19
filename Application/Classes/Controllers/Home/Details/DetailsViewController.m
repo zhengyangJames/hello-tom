@@ -7,11 +7,15 @@
 //
 
 #import "DetailsViewController.h"
+#import "CODetailsDataSource.h"
+#import "CODetailsDelegate.h"
 
-@interface DetailsViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface DetailsViewController () <CODetailsAccessoryCellDelegate,CODetailsProjectCellDelegate,CODetailsController>
 {
-    __weak IBOutlet UITableView *_tableView;
+
 }
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -20,8 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -33,8 +35,13 @@
 #pragma mark - Setup
 - (void)_setupUI {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
+    
+    CODetailsDataSource *dataSource = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
+    self.tableView.dataSource = dataSource;
+    
+    CODetailsDelegate *deleGate = [[CODetailsDelegate alloc]initWithController:self];
+    self.tableView.delegate = deleGate;
+    [self.tableView reloadData];
 }
 
 @end

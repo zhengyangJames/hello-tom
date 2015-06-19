@@ -17,9 +17,9 @@
 
 
 #pragma mark - Set Get
-- (void)setObject:(NSDictionary *)object {
+- (void)setObject:(NSString *)object {
     _object = object;
-    self.detailsLabel.text = @"";
+    self.detailsLabel.text = _object;
 }
 
 #pragma mark - Action

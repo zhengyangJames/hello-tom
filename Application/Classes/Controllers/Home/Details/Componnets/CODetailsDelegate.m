@@ -7,12 +7,15 @@
 //
 
 #import "CODetailsDelegate.h"
+#import "CODetailsSectionCell.h"
+#import "CODetailsDataSource.h"
 
 @interface CODetailsDelegate ()
 {
     
 }
 @property (nonatomic, weak) id<CODetailsController> controller;
+@property (strong, nonatomic) NSArray *arraySection;
 
 @end
 
@@ -26,6 +29,14 @@
     return self;
 }
 
+#pragma mark - Set get
+- (NSArray*)arraySection {
+    if (!_arraySection) {
+        return _arraySection = @[@"",@"DECLARATION FORM",@"COMPANY REGISTRATION",@"OTHER DOCUMENTS",@""];
+    }
+    return _arraySection;
+}
+
 #pragma mark - Private
 
 - (CGFloat)_heightForTableView:(UITableView*)tableView contentCell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -36,38 +47,93 @@
     return cellSize.height;
 }
 
-
 #pragma mark - UITableViewDelegate
 
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CODetailsSectionCell *view   = [[CODetailsSectionCell alloc] initWithNibName:[CODetailsSectionCell identifier]];
+    UILabel *label = [UILabel autoLayoutView];
+    [label setFont:[UIFont fontWithName:@"Raleway-Medium" size:16]];
+    [label setTextColor:KGREEN_COLOR];
+    [label setText:[_arraySection objectAtIndex:section]];
+    [view addSubview:label];
+    [label pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:16];
+    [label pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinBottomEdge inset:0];
+    [view setBackgroundColor:KGRAY_COLOR];
+    return view;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
     CGFloat height = 0;
+    CODetailsDataSource *dataSource = tableView.dataSource;
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            if (IS_IOS8_OR_ABOVE) {
+                return UITableViewAutomaticDimension;
+            } else {
+                id cell = [dataSource _photoCellForTableView:tableView indexPath:indexPath];
+                return height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
+            }
+        } else if(indexPath.row == 1) {
+            return height = 408;
+        } else {
+            if (IS_IOS8_OR_ABOVE) {
+                return  UITableViewAutomaticDimension;
+            } else {
+                id cell = [dataSource _textCellForTableView:tableView indexPath:indexPath];
+                return height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
+            }
+        }
+    } else if(indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3) {
+        return height = 44;
+    } else {
+        if (indexPath.row == 0) {
+            if (IS_IOS8_OR_ABOVE) {
+                return  UITableViewAutomaticDimension;
+            } else {
+                id cell = [dataSource _textCellForTableView:tableView indexPath:indexPath];
+                return height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
+            }
+        } else {
+            return height = 215;
+        }
+    }
+}
 
-    return height;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return 0;
+    } else if (section == 1) {
+        return 44;
+    } else if (section == 2) {
+        return 44;
+    } else if (section == 3) {
+        return 44;
+    } else {
+        return 0;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    return 0;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 8.0f;
-}
-
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *view = [UIView new];
-    view.backgroundColor = [UIColor clearColor];
-    return view;
+    if (indexPath.section == 0) {
+        if (indexPath.row == 1) {
+            return 408;
+        } else {
+            return 85;
+        }
+    } else if(indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3) {
+        return  44;
+    } else {
+        if (indexPath.row == 0) {
+            return 85;
+        } else {
+            return 215;
+        }
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if([self.controller respondsToSelector:@selector(feedController:didSelectObject:atIndexPath:)]) {
-//        ALNewsFeedDataSource *dataSource = tableView.dataSource;
-//        NewsFeedObj *feedObj = [dataSource newsFeedObjectAtSection:indexPath.section];
-//        [self.controller feedController:self didSelectObject:feedObj atIndexPath:indexPath];
-//    }
+
 }
 
 @end

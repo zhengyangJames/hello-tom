@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel  *detailsLabel;
 @property (weak, nonatomic) id<CODetailsAccessoryCellDelegate> delegate;
-@property (strong, nonatomic) NSDictionary *object;
+@property (strong, nonatomic) NSString *object;
 
 @end
 

@@ -32,8 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

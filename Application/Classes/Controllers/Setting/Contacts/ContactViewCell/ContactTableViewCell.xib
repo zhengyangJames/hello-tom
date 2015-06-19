@@ -14,26 +14,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoAssets Pte Ltd" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="f92-ib-oEU">
-                        <rect key="frame" x="8" y="9" width="304" height="16.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="CoAssets Pte Ltd" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="f92-ib-oEU">
+                        <rect key="frame" x="8" y="8" width="304" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="kHn-BS-GfD"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(reg #:201310357R)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="rgH-Sy-8Sh">
-                        <rect key="frame" x="8" y="29" width="304" height="16.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(reg #:201310357R)" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="rgH-Sy-8Sh">
+                        <rect key="frame" x="8" y="29" width="304" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="KdQ-IF-nix"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38C North Canal Road, Singapore 059294" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="sRa-BJ-s27">
-                        <rect key="frame" x="8" y="50" width="304" height="16.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="38C North Canal Road, Singapore 059294" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="sRa-BJ-s27">
+                        <rect key="frame" x="8" y="50" width="304" height="17"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tel: +65-6532 7008" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="kKz-IH-LKP">
-                        <rect key="frame" x="8" y="70" width="304" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Tel: +65-6532 7008" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="kKz-IH-LKP">
+                        <rect key="frame" x="8" y="71" width="304" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -45,12 +51,12 @@
                     <constraint firstItem="sRa-BJ-s27" firstAttribute="top" secondItem="rgH-Sy-8Sh" secondAttribute="bottom" constant="4" id="EjY-fK-o4T"/>
                     <constraint firstItem="rgH-Sy-8Sh" firstAttribute="top" secondItem="f92-ib-oEU" secondAttribute="bottom" constant="4" id="Fau-E1-Os2"/>
                     <constraint firstItem="f92-ib-oEU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="GoJ-JA-RR4"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="kKz-IH-LKP" secondAttribute="bottom" constant="2" id="JLd-qP-9op"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kKz-IH-LKP" secondAttribute="bottom" id="JLd-qP-9op"/>
                     <constraint firstItem="sRa-BJ-s27" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Uht-6r-9jx"/>
                     <constraint firstItem="kKz-IH-LKP" firstAttribute="top" secondItem="sRa-BJ-s27" secondAttribute="bottom" constant="4" id="X1a-RO-J6B"/>
                     <constraint firstItem="rgH-Sy-8Sh" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ent-Cm-72G"/>
                     <constraint firstItem="f92-ib-oEU" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fS3-fX-Coo"/>
-                    <constraint firstItem="f92-ib-oEU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="j2y-75-h67"/>
+                    <constraint firstItem="f92-ib-oEU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="j2y-75-h67"/>
                     <constraint firstItem="rgH-Sy-8Sh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ph2-1R-Xxk"/>
                     <constraint firstItem="kKz-IH-LKP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="s0w-Oe-pIs"/>
                 </constraints>

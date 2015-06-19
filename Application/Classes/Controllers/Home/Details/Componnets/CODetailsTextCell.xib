@@ -51,7 +51,7 @@ Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist 
                 <outlet property="_detailsTextView" destination="toN-I8-BVM" id="MMT-F7-KTs"/>
                 <outlet property="_headerLabel" destination="eAq-0U-7fu" id="AKR-nZ-SFl"/>
             </connections>
-            <point key="canvasLocation" x="300" y="242.5"/>
+            <point key="canvasLocation" x="285" y="390.5"/>
         </tableViewCell>
     </objects>
 </document>

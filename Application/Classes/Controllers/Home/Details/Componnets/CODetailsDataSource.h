@@ -7,7 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CODetailsAccessoryCell.h"
+#import "CODetailsMapCell.h"
+#import "CODetailsPhotoCell.h"
+#import "CODetailsProjectCell.h"
+#import "CODetailsTextCell.h"
+
+@protocol CODetailsAccessoryCellDelegate;
+@protocol CODetailsProjectCellDelegate;
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
+
+@property (strong, nonatomic) NSDictionary *object;
+
+- (instancetype)initWithController:(id<CODetailsProjectCellDelegate,CODetailsAccessoryCellDelegate>)controller tableView:(UITableView*)tableView ;
+
+- (CODetailsTextCell*)_textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
+- (CODetailsPhotoCell*)_photoCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
 
 @end

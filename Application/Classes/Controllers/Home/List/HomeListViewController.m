@@ -12,6 +12,7 @@
 #import "ListHomeObject.h"
 #import "LoadFileManager.h"
 #import "CODropListVC.h"
+#import "DetailsViewController.h"
 
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -30,8 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -83,7 +82,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    DetailsViewController *vc = [[DetailsViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

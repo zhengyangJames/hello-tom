@@ -37,9 +37,21 @@
     [self setNeedsDisplay];
 }
 
+- (void)setBounds:(CGRect)bounds
+{
+    [super setBounds:bounds];
+    self.contentView.frame = self.bounds;
+}
+
 #pragma mark - Set Get
 - (void)setObject:(NSDictionary *)object {
     _object = object;
+    _lbltype.text = [_object valueForKeyNotNull:@"type"];
+    _lblSite.text = [_object valueForKeyNotNull:@"site"];
+    _lblDeveloper.text = [_object valueForKeyNotNull:@"developer"];
+    _lblStatus.text = [_object valueForKeyNotNull:@"status"];
+    _lblInterested.text = [_object valueForKeyNotNull:@"interested"];
+    _lblInvesterment.text = [_object valueForKeyNotNull:@"investerment"];
 }
 
 #pragma mark - Action
