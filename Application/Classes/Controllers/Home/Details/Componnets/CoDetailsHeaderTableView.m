@@ -20,7 +20,9 @@
 
 #pragma mark - Action 
 - (IBAction)__actionBack :(id)sender {
-    
+    if (self.actionPopView) {
+        self.actionPopView();
+    }
 }
 
 

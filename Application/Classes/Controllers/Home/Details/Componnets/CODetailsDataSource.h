@@ -12,6 +12,7 @@
 #import "CODetailsPhotoCell.h"
 #import "CODetailsProjectCell.h"
 #import "CODetailsTextCell.h"
+#import "CODetailsSectionCell.h"
 
 @protocol CODetailsAccessoryCellDelegate;
 @protocol CODetailsProjectCellDelegate;
@@ -22,7 +23,7 @@
 
 - (instancetype)initWithController:(id<CODetailsProjectCellDelegate,CODetailsAccessoryCellDelegate>)controller tableView:(UITableView*)tableView ;
 
-- (CODetailsTextCell*)_textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
-- (CODetailsPhotoCell*)_photoCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
+- (CODetailsTextCell*)textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
+- (CODetailsPhotoCell*)photoCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
 
 @end

@@ -26,6 +26,7 @@
     [super setBounds:bounds];
 }
 
+
 #pragma mark - Set Get
 - (void)setTitleSection:(NSString *)titleSection {
     _titleSection = titleSection;

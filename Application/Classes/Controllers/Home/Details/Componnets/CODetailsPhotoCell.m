@@ -23,11 +23,12 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    _image.layer.cornerRadius = kCORNER_RADIUS_IMAGE;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.imageView.layer.cornerRadius = kCORNER_RADIUS_IMAGE;
+    _image.layer.cornerRadius = kCORNER_RADIUS_IMAGE;
     [self setNeedsDisplay];
 }
 

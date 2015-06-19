@@ -15,7 +15,7 @@
     
 }
 @property (nonatomic, weak) id<CODetailsController> controller;
-@property (strong, nonatomic) NSArray *arraySection;
+
 
 @end
 
@@ -30,12 +30,7 @@
 }
 
 #pragma mark - Set get
-- (NSArray*)arraySection {
-    if (!_arraySection) {
-        return _arraySection = @[@"",@"DECLARATION FORM",@"COMPANY REGISTRATION",@"OTHER DOCUMENTS",@""];
-    }
-    return _arraySection;
-}
+
 
 #pragma mark - Private
 
@@ -47,88 +42,53 @@
     return cellSize.height;
 }
 
-#pragma mark - UITableViewDelegate
 
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    CODetailsSectionCell *view   = [[CODetailsSectionCell alloc] initWithNibName:[CODetailsSectionCell identifier]];
-    UILabel *label = [UILabel autoLayoutView];
-    [label setFont:[UIFont fontWithName:@"Raleway-Medium" size:16]];
-    [label setTextColor:KGREEN_COLOR];
-    [label setText:[_arraySection objectAtIndex:section]];
-    [view addSubview:label];
-    [label pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:16];
-    [label pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinBottomEdge inset:0];
-    [view setBackgroundColor:KGRAY_COLOR];
-    return view;
-}
+
+#pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0;
     CODetailsDataSource *dataSource = tableView.dataSource;
-    if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            if (IS_IOS8_OR_ABOVE) {
-                return UITableViewAutomaticDimension;
-            } else {
-                id cell = [dataSource _photoCellForTableView:tableView indexPath:indexPath];
-                return height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
-            }
-        } else if(indexPath.row == 1) {
-            return height = 408;
+    if (indexPath.row == 0) {
+        if (IS_IOS8_OR_ABOVE) {
+            return UITableViewAutomaticDimension;
         } else {
-            if (IS_IOS8_OR_ABOVE) {
-                return  UITableViewAutomaticDimension;
-            } else {
-                id cell = [dataSource _textCellForTableView:tableView indexPath:indexPath];
-                return height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
-            }
+            id cell = [dataSource photoCellForTableView:tableView indexPath:indexPath];
+            height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
         }
-    } else if(indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3) {
-        return height = 44;
-    } else {
-        if (indexPath.row == 0) {
-            if (IS_IOS8_OR_ABOVE) {
-                return  UITableViewAutomaticDimension;
-            } else {
-                id cell = [dataSource _textCellForTableView:tableView indexPath:indexPath];
-                return height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
-            }
+    } else if(indexPath.row == 1) {
+        return 408;
+    } else if (indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 16 ){
+        if (IS_IOS8_OR_ABOVE) {
+            return  UITableViewAutomaticDimension;
         } else {
-            return height = 215;
+            id cell = [dataSource textCellForTableView:tableView indexPath:indexPath];
+            height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
         }
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return 0;
-    } else if (section == 1) {
+    } else if (indexPath.row == 5 || indexPath.row == 7 || indexPath.row == 10) {
         return 44;
-    } else if (section == 2) {
-        return 44;
-    } else if (section == 3) {
-        return 44;
+    } else if (indexPath.row == 17) {
+        return 215;
     } else {
-        return 0;
+        return 44;
     }
+    return height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        if (indexPath.row == 1) {
-            return 408;
-        } else {
-            return 85;
-        }
-    } else if(indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3) {
-        return  44;
+    if (indexPath.row == 0) {
+        return 67;
+    } else if(indexPath.row == 1) {
+        return 408;
+    } else if (indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 16 ){
+        return 84;
+    } else if (indexPath.row == 5 || indexPath.row == 7 || indexPath.row == 10) {
+        return 44;
+    } else if (indexPath.row == 17) {
+        return 215;
     } else {
-        if (indexPath.row == 0) {
-            return 85;
-        } else {
-            return 215;
-        }
+        return 44;
     }
 }
 

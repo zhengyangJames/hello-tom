@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,14 +15,15 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="KGk-i7-Jjw" customClass="CODetailsPhotoCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-SD-EoN">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-SD-EoN">
                         <rect key="frame" x="8" y="8" width="51" height="51"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="O7n-SD-EoN" secondAttribute="height" multiplier="1:1" id="Z9F-3M-1AX"/>
+                            <constraint firstAttribute="height" constant="51" id="A2r-XC-PL1"/>
+                            <constraint firstAttribute="width" constant="51" id="Uz7-7i-9Yq"/>
                         </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay" translatesAutoresizingMaskIntoConstraints="NO" id="SmK-Me-p6f">
@@ -46,7 +46,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="_detailsTextView" destination="SmK-Me-p6f" id="MQ7-TI-kVw"/>
-                <outlet property="_image" destination="O7n-SD-EoN" id="7JS-Jr-KxL"/>
+                <outlet property="_image" destination="O7n-SD-EoN" id="DJN-MJ-CJ7"/>
             </connections>
             <point key="canvasLocation" x="242" y="186.5"/>
         </tableViewCell>

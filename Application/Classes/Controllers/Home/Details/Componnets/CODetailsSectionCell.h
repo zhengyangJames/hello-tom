@@ -8,7 +8,7 @@
 
 #import "BaseView.h"
 
-@interface CODetailsSectionCell : BaseView
+@interface CODetailsSectionCell : UITableViewCell
 
 @property (nonatomic, strong) NSString *titleSection;
 

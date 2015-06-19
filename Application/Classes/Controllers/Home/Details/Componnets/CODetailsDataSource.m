@@ -25,15 +25,11 @@
     if (self) {
         self.controller = controller;
         [tableView registerNib:[UINib nibWithNibName:[CODetailsPhotoCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsPhotoCell identifier]];
-        
         [tableView registerNib:[UINib nibWithNibName:[CODetailsMapCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsMapCell identifier]];
-        
         [tableView registerNib:[UINib nibWithNibName:[CODetailsAccessoryCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsAccessoryCell identifier]];
-        
         [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectCell identifier]];
-        
         [tableView registerNib:[UINib nibWithNibName:[CODetailsTextCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsTextCell identifier]];
-        
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsSectionCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsSectionCell identifier]];
     }
     return self;
 }
@@ -48,7 +44,7 @@
 
 #pragma mark - Private
 
-- (CODetailsTextCell*)_textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
+- (CODetailsTextCell*)textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
     CODetailsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsTextCell identifier] forIndexPath:indexPath];
     if (indexPath.section == 0) {
         if (indexPath.row == 2) {
@@ -89,9 +85,9 @@
             cell.object = @"Location - Shopping Centers nearby";
         } else if (indexPath.row == 1) {
             cell.object = @"Location - Schools nearby";
-        } else if (indexPath.row == 1) {
+        } else if (indexPath.row == 2) {
             cell.object = @"Location - Hospital nearby";
-        } else if (indexPath.row == 1) {
+        } else if (indexPath.row == 3) {
             cell.object = @"Brochure pg 2";
         } else {
             cell.object = @"Brochure pg 1";
@@ -106,49 +102,46 @@
     return cell;
 }
 
-- (CODetailsPhotoCell*)_photoCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
+- (CODetailsSectionCell*)_sectionCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
+    CODetailsSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsSectionCell identifier] forIndexPath:indexPath];
+    if (indexPath.row == 5) {
+        cell.titleSection = @"DECLARATION FORM";
+    } else if (indexPath.row == 7) {
+        cell.titleSection = @"COMPANY REGISTRATION";
+    } else {
+        cell.titleSection = @"OTHER DOCUMENTS";
+    }
+    return cell;
+}
+
+- (CODetailsPhotoCell*)photoCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
     CODetailsPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsPhotoCell identifier] forIndexPath:indexPath];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay",@"details",@"8.jpg",@"images", nil];
     cell.object = dic;
     return cell;
 }
 
-- (NSInteger)_detailsNumberOfSection {
-    DBG(@"%tu",self.arraySection.count);
-    return @[@"abc",@"DECLARATION FORM",@"COMPANY REGISTRATION",@"OTHER DOCUMENTS",@"abc"].count;
+- (NSInteger)_detailsnumberOfSections:(UITableView *)tableView {
+    return 1;
 }
 
 - (NSInteger)_detailsNumberOfRowInSection:(NSInteger)section {
-    if (section == 0) {
-        return 5;
-    } else if(section == 1) {
-        return 1;
-    } else if (section == 2) {
-        return 2;
-    } else if (section == 3) {
-        return 5;
-    } else {
-        return 2;
-    }
+    return 18;
 }
 
 - (UITableViewCell*)_tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            return [self _photoCellForTableView:tableView indexPath:indexPath];
-        } else if(indexPath.row == 1) {
-            return [self _projectCellForTableView:tableView indexPath:indexPath];
-        } else {
-            return [self _textCellForTableView:tableView indexPath:indexPath];
-        }
-    } else if(indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3) {
-        return [self _accessoryCellForTableView:tableView indexPath:indexPath];
+    if (indexPath.row == 0) {
+        return [self photoCellForTableView:tableView indexPath:indexPath];
+    } else if(indexPath.row == 1) {
+        return [self _projectCellForTableView:tableView indexPath:indexPath];
+    } else if (indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 16 ){
+        return [self textCellForTableView:tableView indexPath:indexPath];
+    } else if (indexPath.row == 5 || indexPath.row == 7 || indexPath.row == 10) {
+        return [self _sectionCellForTableView:tableView indexPath:indexPath];
+    } else if (indexPath.row == 17) {
+        return [self _mapCellForTableView:tableView indexPath:indexPath];
     } else {
-        if (indexPath.row == 0) {
-            return [self _textCellForTableView:tableView indexPath:indexPath];
-        } else {
-            return [self _mapCellForTableView:tableView indexPath:indexPath];
-        }
+        return [self _accessoryCellForTableView:tableView indexPath:indexPath];
     }
     return  nil;
 }
@@ -156,7 +149,7 @@
 #pragma mark - TableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self _detailsNumberOfSection];
+    return [self _detailsnumberOfSections:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

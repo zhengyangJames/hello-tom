@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "CODetailsAccessoryCell.h"
+#import "CODetailsProjectCell.h"
+#import "CODetailsDelegate.h"
 
-@interface DetailsViewController : BaseViewController
+@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsProjectCellDelegate,CODetailsController>
 
 @end

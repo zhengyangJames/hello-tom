@@ -21,6 +21,7 @@
 
 @protocol CODetailsController <NSObject>
 
+@optional
 - (instancetype)detailsController:(CODetailsDelegate*)feedController
        didSelectObject:(id)feedObj atIndexPath:(NSIndexPath*)indexPath;
 
