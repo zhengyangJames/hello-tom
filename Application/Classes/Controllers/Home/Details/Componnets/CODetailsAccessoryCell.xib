@@ -5,8 +5,8 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Raleway-Medium.ttf">
-            <string>Raleway-Medium</string>
+        <mutableArray key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -21,7 +21,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Declaration Form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="ir6-Xa-zq9">
                         <rect key="frame" x="8" y="11" width="234" height="21"/>
-                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>

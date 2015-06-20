@@ -11,6 +11,7 @@
 #import "CODetailsDelegate.h"
 #import "CoDetailsHeaderTableView.h"
 
+
 @interface DetailsViewController () 
 {
     CoDetailsHeaderTableView *_tableheaderView;
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) CODetailsDataSource *detailsDataSource;
 @property (strong, nonatomic) CODetailsDelegate *detailsDelegate;
+@property (nonatomic, strong) IBOutlet UIImageView *headerImageView;
 
 
 @end
@@ -40,8 +42,8 @@
 #pragma mark - Setup
 - (void)_setupUI {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
-    [self _setupHeaderTableView];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
+    [self _setupHeaderView];
     self.detailsDataSource = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
     
@@ -51,19 +53,17 @@
     [self.tableView reloadData];
 }
 
-#pragma mark - Private
-- (void)_setupHeaderTableView {
-    __weak __typeof__(self) weakSelf = self;
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 185)];
-    _tableheaderView   = [[CoDetailsHeaderTableView alloc] initWithNibName:[CoDetailsHeaderTableView identifier]];
-    [_tableheaderView setActionPopView:^(){
-        __typeof__(self) strongSelf = weakSelf;
-        [strongSelf.navigationController popViewControllerAnimated:YES];
-    } ];
-    _tableheaderView.translatesAutoresizingMaskIntoConstraints = NO;
-    [headerView addSubview:_tableheaderView];
-    [_tableheaderView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
+#pragma mark - Action 
+- (IBAction)__actionBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - Private 
+- (void)_setupHeaderView {
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 200)];
+    [headerView setBackgroundColor:[UIColor clearColor]];
     self.tableView.tableHeaderView = headerView;
 }
 
 @end
+

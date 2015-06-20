@@ -39,9 +39,9 @@
 }
 
 - (void)_setupUI {
-    [UIView animateWithDuration:1.095
+    [UIView animateWithDuration:0.7
                           delay:0.0
-         usingSpringWithDamping:0.495
+         usingSpringWithDamping:0.595
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{

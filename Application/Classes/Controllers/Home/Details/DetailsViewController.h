@@ -14,3 +14,4 @@
 @interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsProjectCellDelegate,CODetailsController>
 
 @end
+

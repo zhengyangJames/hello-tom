@@ -13,7 +13,6 @@
 @interface CODetailsDataSource ()
 
 @property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectCellDelegate> controller;
-@property (strong, nonatomic) NSArray *arraySection;
 
 @end
 
@@ -35,28 +34,21 @@
 }
 
 #pragma mark - Set get
-- (NSArray*)arraySection {
-    if (!_arraySection) {
-       return _arraySection = @[@"abc",@"DECLARATION FORM",@"COMPANY REGISTRATION",@"OTHER DOCUMENTS",@"abc"];
-    }
-    return _arraySection;
-}
+
 
 #pragma mark - Private
 
 - (CODetailsTextCell*)textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
     CODetailsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsTextCell identifier] forIndexPath:indexPath];
-    if (indexPath.section == 0) {
-        if (indexPath.row == 2) {
-            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist destination, known for its Powder - Fine Sands and Prestine Watersy",@"details",@"OFFER",@"status", nil];
-            cell.object = dic;
-        } else if(indexPath.row == 3) {
-            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:K_String_Project,@"details",@"PROJECT",@"status", nil];
-            cell.object = dic;
-        } else {
-            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.",@"details",@"DOCUMENTS",@"status", nil];
-            cell.object = dic;
-        }
+    if (indexPath.row == 2) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist destination, known for its Powder - Fine Sands and Prestine Watersy",@"details",@"OFFER",@"status", nil];
+        cell.object = dic;
+    } else if(indexPath.row == 3) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:K_String_Project,@"details",@"PROJECT",@"status", nil];
+        cell.object = dic;
+    } else if(indexPath.row == 4) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.",@"details",@"DOCUMENTS",@"status", nil];
+        cell.object = dic;
     } else {
         NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"Sitio Sinagpa, Balabag, Malay Aklan 5608 Boracay Philippines",@"details",@"ADDRESS",@"status", nil];
         cell.object = dic;
@@ -72,26 +64,22 @@
 
 - (CODetailsAccessoryCell*)_accessoryCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
     CODetailsAccessoryCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsAccessoryCell identifier] forIndexPath:indexPath];
-    if(indexPath.section == 1) {
+    if (indexPath.row == 6) {
         cell.object = @"Declaration Form";
-    } else if(indexPath.section == 2) {
-        if (indexPath.row == 0) {
-            cell.object = @"Company Registration";
-        }else {
-            cell.object = @"Company Registration - PRIVATE DOCUMENT";
-        }
-    }else {
-        if (indexPath.row == 0) {
-            cell.object = @"Location - Shopping Centers nearby";
-        } else if (indexPath.row == 1) {
-            cell.object = @"Location - Schools nearby";
-        } else if (indexPath.row == 2) {
-            cell.object = @"Location - Hospital nearby";
-        } else if (indexPath.row == 3) {
-            cell.object = @"Brochure pg 2";
-        } else {
-            cell.object = @"Brochure pg 1";
-        }
+    }else if (indexPath.row == 8) {
+        cell.object = @"Company Registration";
+    } else if (indexPath.row == 9) {
+        cell.object = @"Company Registration - PRIVATE DOCUMENT";
+    } else if (indexPath.row == 11) {
+        cell.object = @"Location - Shopping Centers nearby";
+    } else if (indexPath.row == 12) {
+        cell.object = @"Location - Schools nearby";
+    } else if (indexPath.row == 13) {
+        cell.object = @"Location - Hospital nearby";
+    } else if (indexPath.row == 14) {
+        cell.object = @"Brochure pg 2";
+    } else {
+        cell.object = @"Brochure pg 1";
     }
     return cell;
 }

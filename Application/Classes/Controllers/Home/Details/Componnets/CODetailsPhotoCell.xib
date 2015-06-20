@@ -5,8 +5,8 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Raleway-Medium.ttf">
-            <string>Raleway-Medium</string>
+        <mutableArray key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -22,33 +22,33 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-SD-EoN">
                         <rect key="frame" x="8" y="8" width="51" height="51"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="51" id="A2r-XC-PL1"/>
-                            <constraint firstAttribute="width" constant="51" id="Uz7-7i-9Yq"/>
+                            <constraint firstAttribute="width" constant="51" id="oYi-DS-JEq"/>
+                            <constraint firstAttribute="height" constant="51" id="t0t-wI-pAb"/>
                         </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay" translatesAutoresizingMaskIntoConstraints="NO" id="SmK-Me-p6f">
-                        <rect key="frame" x="67" y="8" width="245" height="50.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="13"/>
+                        <rect key="frame" x="67" y="8" width="245" height="50"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="13"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
+                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="O7n-SD-EoN" firstAttribute="centerY" secondItem="SmK-Me-p6f" secondAttribute="centerY" id="2Go-cw-TI1"/>
-                    <constraint firstItem="SmK-Me-p6f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="DD7-SF-9t1"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="SmK-Me-p6f" secondAttribute="trailing" id="Lec-zN-pJF"/>
-                    <constraint firstItem="O7n-SD-EoN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="OUX-uV-BJz"/>
-                    <constraint firstItem="O7n-SD-EoN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="TZ5-b9-NbY"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="O7n-SD-EoN" secondAttribute="bottom" id="XDv-U5-MWe"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="SmK-Me-p6f" secondAttribute="bottom" id="XIu-ic-EWU"/>
-                    <constraint firstItem="SmK-Me-p6f" firstAttribute="leading" secondItem="O7n-SD-EoN" secondAttribute="trailing" constant="8" id="bCB-mw-zBI"/>
+                    <constraint firstItem="SmK-Me-p6f" firstAttribute="centerY" secondItem="O7n-SD-EoN" secondAttribute="centerY" constant="-0.5" id="8eq-A4-T1I"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="SmK-Me-p6f" secondAttribute="bottom" id="MTC-NA-Dk9"/>
+                    <constraint firstItem="SmK-Me-p6f" firstAttribute="leading" secondItem="O7n-SD-EoN" secondAttribute="trailing" constant="8" id="Oex-II-VSj"/>
+                    <constraint firstItem="O7n-SD-EoN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="hYx-1u-Nt5"/>
+                    <constraint firstItem="SmK-Me-p6f" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="uvn-ER-xkB"/>
+                    <constraint firstItem="SmK-Me-p6f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="xqB-NH-U16"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="_detailsTextView" destination="SmK-Me-p6f" id="MQ7-TI-kVw"/>
                 <outlet property="_image" destination="O7n-SD-EoN" id="DJN-MJ-CJ7"/>
             </connections>
-            <point key="canvasLocation" x="242" y="186.5"/>
+            <point key="canvasLocation" x="97" y="147.5"/>
         </tableViewCell>
     </objects>
     <resources>

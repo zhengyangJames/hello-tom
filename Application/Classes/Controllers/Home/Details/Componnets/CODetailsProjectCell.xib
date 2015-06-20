@@ -373,6 +373,7 @@
                     <constraint firstItem="aRh-D7-zFe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="f1Z-BK-urn"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="_backGroundView" destination="aRh-D7-zFe" id="uyT-UD-W2T"/>
                 <outlet property="_lblDeveloper" destination="4c2-qe-DU8" id="ZyH-DO-QW5"/>
@@ -382,7 +383,7 @@
                 <outlet property="_lblStatus" destination="LmA-RZ-bLZ" id="8gb-yR-GXE"/>
                 <outlet property="_lbltype" destination="xTq-Hg-GqB" id="j3P-Fo-jnx"/>
             </connections>
-            <point key="canvasLocation" x="234" y="289.5"/>
+            <point key="canvasLocation" x="340" y="247.5"/>
         </tableViewCell>
     </objects>
     <resources>

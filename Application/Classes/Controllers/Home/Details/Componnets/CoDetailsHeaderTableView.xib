@@ -41,7 +41,7 @@
             <connections>
                 <outlet property="_imageView" destination="R5R-XH-ZRd" id="SG1-bD-uqb"/>
             </connections>
-            <point key="canvasLocation" x="123" y="293.5"/>
+            <point key="canvasLocation" x="163" y="207.5"/>
         </view>
     </objects>
     <resources>
