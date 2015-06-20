@@ -100,7 +100,7 @@
     [view addSubview:label];
     [label pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:16];
     [label pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinBottomEdge inset:0];
-    [view setBackgroundColor:KLIGHT_GRAY_COLOR];
+    [view setBackgroundColor:KBACKGROUND_COLOR];
     return view;
 }
 

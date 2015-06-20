@@ -21,7 +21,7 @@
 @implementation TableHeaderView
 
 - (void)viewDidLoad {
-
+    [self _setupView];
 }
 
 - (void)layoutSubviews {
@@ -31,7 +31,9 @@
 
 #pragma mark - SetUp UI
 - (void)_setupView {
-    
+    [self.segmentControl setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular"
+                                                                                      size:16]}
+                                       forState:UIControlStateNormal];
 }
 
 - (void)_setCornerRadius {
@@ -47,30 +49,8 @@
 - (IBAction)__actionSwitchSegment:(id)sender {
     _segmentControl = (UISegmentedControl*)sender;
     NSInteger indexSegmentSelect = _segmentControl.selectedSegmentIndex;
-    switch (indexSegmentSelect) {
-        case 0:
-        {
-            if (self.actionSegment) {
-                self.actionSegment(indexSegmentSelect);
-            }
-        }
-            break;
-        case 1:
-        {
-            if (self.actionSegment) {
-                self.actionSegment(indexSegmentSelect);
-            }
-        }
-            break;
-        case 2:
-        {
-            if (self.actionSegment) {
-                self.actionSegment(indexSegmentSelect);
-            }
-        }
-            break;
-        default:
-            break;
+    if (self.actionSegment) {
+        self.actionSegment(indexSegmentSelect);
     }
 }
 

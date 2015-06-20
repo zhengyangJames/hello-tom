@@ -17,7 +17,7 @@
         <tableViewCell contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="0.0" id="KGk-i7-Jjw" customClass="HomeListViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="248"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -27,7 +27,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-MO-Zfl" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="175"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9eY-VV-xUo">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9eY-VV-xUo">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="171"/>
                                     </imageView>
                                 </subviews>
@@ -40,23 +40,23 @@
                                     <constraint firstAttribute="height" constant="175" id="rpw-XN-Qmx"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTf-jo-hPN" userLabel="BottomView">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTf-jo-hPN" userLabel="BottomView">
                                 <rect key="frame" x="0.0" y="175" width="304" height="64.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth_256.png" translatesAutoresizingMaskIntoConstraints="NO" id="K6M-I6-nv9">
-                                        <rect key="frame" x="0.0" y="5" width="52" height="52"/>
+                                        <rect key="frame" x="4" y="5" width="48" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="54K-qb-0cq"/>
-                                            <constraint firstAttribute="width" constant="52" id="omT-JG-d62"/>
+                                            <constraint firstAttribute="height" constant="48" id="54K-qb-0cq"/>
+                                            <constraint firstAttribute="width" constant="48" id="omT-JG-d62"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invest in Canyon de Boracay Premier to own a piece" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-1R-Afg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invest in Canyon de Boracay Premier to own a piece" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-1R-Afg">
                                         <rect key="frame" x="60" y="5" width="244" height="38"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afghanistan" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDF-YH-2XB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afghanistan" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="rDF-YH-2XB">
                                         <rect key="frame" x="60" y="42.5" width="244" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="ecU-Tw-gwW"/>
@@ -72,7 +72,7 @@
                                     <constraint firstAttribute="trailing" secondItem="eYX-1R-Afg" secondAttribute="trailing" id="LmP-KC-5le"/>
                                     <constraint firstItem="eYX-1R-Afg" firstAttribute="top" secondItem="DTf-jo-hPN" secondAttribute="top" constant="5" id="UDF-Y2-D3Q"/>
                                     <constraint firstItem="rDF-YH-2XB" firstAttribute="top" secondItem="eYX-1R-Afg" secondAttribute="bottom" id="edd-q2-otK"/>
-                                    <constraint firstItem="K6M-I6-nv9" firstAttribute="leading" secondItem="DTf-jo-hPN" secondAttribute="leading" id="epI-dC-qWj"/>
+                                    <constraint firstItem="K6M-I6-nv9" firstAttribute="leading" secondItem="DTf-jo-hPN" secondAttribute="leading" constant="4" id="epI-dC-qWj"/>
                                     <constraint firstItem="K6M-I6-nv9" firstAttribute="top" secondItem="eYX-1R-Afg" secondAttribute="top" id="rSm-2D-ozs"/>
                                     <constraint firstItem="eYX-1R-Afg" firstAttribute="leading" secondItem="K6M-I6-nv9" secondAttribute="trailing" constant="8" id="v7x-i3-Cq9"/>
                                     <constraint firstItem="rDF-YH-2XB" firstAttribute="trailing" secondItem="eYX-1R-Afg" secondAttribute="trailing" id="znD-E9-c3A"/>
@@ -106,7 +106,7 @@
                 <outlet property="_lblDetail" destination="eYX-1R-Afg" id="Ts8-bv-RGp"/>
                 <outlet property="_lblSate" destination="rDF-YH-2XB" id="Uoo-uP-T8h"/>
             </connections>
-            <point key="canvasLocation" x="211" y="98"/>
+            <point key="canvasLocation" x="116" y="17"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -31,8 +31,17 @@
     [tableView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
     self.tableView = tableView;
     
-    UIBarButtonItem *btDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(__actionDone:)];
-    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(__actionDCancel:)];
+    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
+                                                                  style:UIBarButtonItemStyleDone
+                                                                 target:self
+                                                                 action:@selector(__actionDone:)];
+    [btDone setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}forState:UIControlStateNormal];
+    
+    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Cancel")
+                                                              style:UIBarButtonItemStyleDone
+                                                             target:self
+                                                             action:@selector(__actionDCancel:)];
+    [btCancel setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = btDone;
     self.navigationItem.leftBarButtonItem = btCancel;
 }

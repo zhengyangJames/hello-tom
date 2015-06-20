@@ -22,7 +22,7 @@
 
 - (void)_setupUI {
     [self.tabBar setTranslucent:NO];
-    [self.tabBar setBarTintColor:[UIColor whiteColor]];
+    [self.tabBar setBarTintColor:KBACKGROUND_COLOR];
     [self.tabBar setTintColor:KNAV_BG_COLOR];
 }
 

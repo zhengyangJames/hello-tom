@@ -48,7 +48,7 @@
                     <constraint firstAttribute="centerY" secondItem="5hX-HY-RtP" secondAttribute="centerY" id="XHH-cc-28i"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="lblDetail" destination="5hX-HY-RtP" id="Zir-2O-D2X"/>
                 <outlet property="lblname" destination="vRS-yq-ieB" id="CY4-84-T1w"/>

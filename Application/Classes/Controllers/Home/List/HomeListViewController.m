@@ -43,12 +43,24 @@
 #pragma mark - Setup
 - (void)_setupUI {
     self.navigationItem.title = m_string(@"CoAssests");
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Filter") style:UIBarButtonItemStyleDone target:self action:@selector(__actionFilter)];
-    [self.navigationItem setLeftBarButtonItem:leftButton];
-    
+    [self _setupLeftBarButton];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil] forCellReuseIdentifier:[HomeListViewCell identifier]];
+    
+    [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil]
+     forCellReuseIdentifier:[HomeListViewCell identifier]];
+}
+
+- (void)_setupLeftBarButton {
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Filter")
+                                                                  style:UIBarButtonItemStyleDone
+                                                                 target:self
+                                                                 action:@selector(__actionFilter)];
+    [leftButton setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular"
+                                                                             size:17]}
+                              forState:UIControlStateNormal];
+    
+    [self.navigationItem setLeftBarButtonItem:leftButton];
 }
 
 #pragma mark - Setter Getter
@@ -82,11 +94,7 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HomeListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeListViewCell identifier]];
-    
-    cell.object = self.arrayData[indexPath.row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
+    return [self _setupHomeListCell:tableView cellForRowAtIndexPath:indexPath];;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,10 +103,20 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  248;
+    CGFloat height = 248;
+//    if(IS_IOS8_OR_ABOVE) {
+//        return UITableViewAutomaticDimension;
+//    } else {
+//        id cell = [self _setupHomeListCell:tableView cellForRowAtIndexPath:indexPath];
+//        height = [self _heightForTableView:tableView cell:cell atIndexPath:indexPath];
+//    }
+    return height;
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 248;
+}
 
 - (HomeListViewCell*)_setupHomeListCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeListViewCell identifier]];

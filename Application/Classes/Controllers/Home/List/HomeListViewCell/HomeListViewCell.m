@@ -17,10 +17,18 @@
 }
 
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
+- (void)setBounds:(CGRect)bounds
+{
+    [super setBounds:bounds];
+    self.contentView.frame = self.bounds;
 }
+
+- (void)layoutSubviews {
+    [super layoutSubviews];;
+    _lblDetail.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
+    _lblSate.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
+}
+
 
 - (void)setObject:(ListHomeObject *)object {
     _object = object;
@@ -28,6 +36,8 @@
     [_imageLogo setImage:[UIImage imageNamed:_object.imageNameLogo]];
     [_lblDetail setText:_object.lableDetail];
     [_lblSate setText:_object.lableSate];
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
 }
 
 

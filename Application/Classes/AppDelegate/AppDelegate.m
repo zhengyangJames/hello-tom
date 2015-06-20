@@ -22,6 +22,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self gotoHome];
+    
     [self.window makeKeyAndVisible];
     [self _setUp3rdSDKs];
     return YES;

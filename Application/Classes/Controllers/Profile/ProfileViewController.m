@@ -143,7 +143,7 @@
         BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
         [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
     } else {
-        DBG(@" Update Password");
+        [UIHelper showAleartViewWithTitle:m_string(@"CoAssests") message:m_string(@"Update Password Success") cancelButton:m_string(@"OK") delegate:nil tag:0 arrayTitleButton:nil];
     }
 }
 
