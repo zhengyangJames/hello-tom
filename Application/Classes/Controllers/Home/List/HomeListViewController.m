@@ -44,7 +44,7 @@
 - (void)_setupUI {
     self.navigationItem.title = m_string(@"CoAssests");
     [self _setupLeftBarButton];
-    _tableView.delegate = self;
+    _tableView.delegate   = self;
     _tableView.dataSource = self;
     
     [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil]

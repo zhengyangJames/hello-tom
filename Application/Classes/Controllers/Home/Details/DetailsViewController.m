@@ -10,6 +10,7 @@
 #import "CODetailsDataSource.h"
 #import "CODetailsDelegate.h"
 #import "CoDetailsHeaderTableView.h"
+#import "COSlidingView.h"
 
 
 @interface DetailsViewController () 
@@ -20,7 +21,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) CODetailsDataSource *detailsDataSource;
 @property (strong, nonatomic) CODetailsDelegate *detailsDelegate;
-@property (nonatomic, strong) IBOutlet UIImageView *headerImageView;
+@property (nonatomic, weak) IBOutlet COSlidingView *headerSliderView;
 
 
 @end
@@ -44,6 +45,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     [self _setupHeaderView];
+    [self _setSliderHeaderView];
     self.detailsDataSource = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
     
@@ -63,6 +65,15 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 200)];
     [headerView setBackgroundColor:[UIColor clearColor]];
     self.tableView.tableHeaderView = headerView;
+}
+
+- (void)_setSliderHeaderView {
+    COSlidingView *viewSliding = [[COSlidingView alloc] initWithNibName:[COSlidingView identifier]];
+    viewSliding.translatesAutoresizingMaskIntoConstraints = NO;
+    viewSliding.arrayImage = @[@"19.jpg",@"9.jpg",@"17.jpg",@"17.jpg",@"1.jpg",@"15.jpg",@"6.jpg",@"8.jpg",@"11.jpg",@"13.jpg"];
+    [_headerSliderView addSubview:viewSliding];
+    [viewSliding pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
+    [self setEdgesForExtendedLayout:UIRectEdgeNone];
 }
 
 @end

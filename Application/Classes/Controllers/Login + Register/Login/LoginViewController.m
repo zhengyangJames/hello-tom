@@ -50,7 +50,7 @@
     //Setup Setting
     SettingViewController *settingVC = [[SettingViewController alloc] init];
     BaseNavigationController *settingNAV = [[BaseNavigationController alloc] initWithRootViewController:settingVC];
-    UITabBarItem *tabbarSetting = [[UITabBarItem alloc]initWithTitle:m_string(@"Setting")
+    UITabBarItem *tabbarSetting = [[UITabBarItem alloc]initWithTitle:m_string(@"Settings")
                                                                image:[UIImage imageNamed:@"ic_setting"]
                                                        selectedImage:[UIImage imageNamed:@"ic_setting_heightline"]];
     settingNAV.tabBarItem = tabbarSetting;

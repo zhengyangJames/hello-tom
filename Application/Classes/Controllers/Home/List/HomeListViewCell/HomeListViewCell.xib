@@ -21,7 +21,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSq-5M-Jcg">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSq-5M-Jcg">
                         <rect key="frame" x="8" y="4" width="304" height="239.5"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-MO-Zfl" userLabel="TopView">
@@ -105,8 +105,9 @@
                 <outlet property="_imageLogo" destination="K6M-I6-nv9" id="o3e-ig-2z1"/>
                 <outlet property="_lblDetail" destination="eYX-1R-Afg" id="Ts8-bv-RGp"/>
                 <outlet property="_lblSate" destination="rDF-YH-2XB" id="Uoo-uP-T8h"/>
+                <outlet property="_viewImage" destination="RSq-5M-Jcg" id="II8-3n-6tR"/>
             </connections>
-            <point key="canvasLocation" x="116" y="17"/>
+            <point key="canvasLocation" x="48" y="18"/>
         </tableViewCell>
     </objects>
     <resources>

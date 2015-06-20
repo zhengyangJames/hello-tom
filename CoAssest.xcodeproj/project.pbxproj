@@ -64,6 +64,10 @@
 		7F2D8A891B310B9D000DE953 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2D8A871B310B9D000DE953 /* Fabric.framework */; };
 		7F3276211B3546A400FE5FE1 /* ic_Left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F32761F1B3546A400FE5FE1 /* ic_Left@2x.png */; };
 		7F3276221B3546A400FE5FE1 /* ic_Left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3276201B3546A400FE5FE1 /* ic_Left@3x.png */; };
+		7F3276271B356E9400FE5FE1 /* COSlidingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3276251B356E9400FE5FE1 /* COSlidingView.m */; };
+		7F3276281B356E9400FE5FE1 /* COSlidingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3276261B356E9400FE5FE1 /* COSlidingView.xib */; };
+		7F32762C1B356EFB00FE5FE1 /* COSlidingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F32762A1B356EFB00FE5FE1 /* COSlidingCell.m */; };
+		7F32762D1B356EFB00FE5FE1 /* COSlidingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F32762B1B356EFB00FE5FE1 /* COSlidingCell.xib */; };
 		7F3D87BF1B2EAE0700A6B969 /* FilterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D87BE1B2EAE0700A6B969 /* FilterList.plist */; };
 		7F3D88421B2EB05E00A6B969 /* HomeListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D88401B2EB05E00A6B969 /* HomeListViewCell.m */; };
 		7F3D88431B2EB05E00A6B969 /* HomeListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D88411B2EB05E00A6B969 /* HomeListViewCell.xib */; };
@@ -320,6 +324,12 @@
 		7F2D8A871B310B9D000DE953 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		7F32761F1B3546A400FE5FE1 /* ic_Left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Left@2x.png"; sourceTree = "<group>"; };
 		7F3276201B3546A400FE5FE1 /* ic_Left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Left@3x.png"; sourceTree = "<group>"; };
+		7F3276241B356E9400FE5FE1 /* COSlidingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSlidingView.h; sourceTree = "<group>"; };
+		7F3276251B356E9400FE5FE1 /* COSlidingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSlidingView.m; sourceTree = "<group>"; };
+		7F3276261B356E9400FE5FE1 /* COSlidingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COSlidingView.xib; sourceTree = "<group>"; };
+		7F3276291B356EFB00FE5FE1 /* COSlidingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSlidingCell.h; sourceTree = "<group>"; };
+		7F32762A1B356EFB00FE5FE1 /* COSlidingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSlidingCell.m; sourceTree = "<group>"; };
+		7F32762B1B356EFB00FE5FE1 /* COSlidingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COSlidingCell.xib; sourceTree = "<group>"; };
 		7F3D87BE1B2EAE0700A6B969 /* FilterList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterList.plist; sourceTree = "<group>"; };
 		7F3D883F1B2EB05E00A6B969 /* HomeListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListViewCell.h; sourceTree = "<group>"; };
 		7F3D88401B2EB05E00A6B969 /* HomeListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListViewCell.m; sourceTree = "<group>"; };
@@ -900,6 +910,7 @@
 		0EFEB5131B272A92001195B7 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				7F3276231B356E9400FE5FE1 /* COSliderView */,
 				7FB248331B35175800F8C605 /* COBorderTextField */,
 				7F46FDC31B2B146A003BB1C4 /* COCheckBoxButton */,
 				7F03EBF61B2AE858009D7985 /* CODropListButton */,
@@ -1003,6 +1014,19 @@
 			);
 			name = CODropListButton;
 			path = CoDropListButton;
+			sourceTree = "<group>";
+		};
+		7F3276231B356E9400FE5FE1 /* COSliderView */ = {
+			isa = PBXGroup;
+			children = (
+				7F3276291B356EFB00FE5FE1 /* COSlidingCell.h */,
+				7F32762A1B356EFB00FE5FE1 /* COSlidingCell.m */,
+				7F32762B1B356EFB00FE5FE1 /* COSlidingCell.xib */,
+				7F3276241B356E9400FE5FE1 /* COSlidingView.h */,
+				7F3276251B356E9400FE5FE1 /* COSlidingView.m */,
+				7F3276261B356E9400FE5FE1 /* COSlidingView.xib */,
+			);
+			path = COSliderView;
 			sourceTree = "<group>";
 		};
 		7F3D883E1B2EB05E00A6B969 /* HomeListViewCell */ = {
@@ -1510,6 +1534,7 @@
 				7FF06E261B2E76C9009DEDEC /* 3.jpg in Resources */,
 				7FF06E1F1B2E76C9009DEDEC /* 15.jpg in Resources */,
 				7FAB20921B3188310008B686 /* Raleway-SemiBoldItalic.ttf in Resources */,
+				7F3276281B356E9400FE5FE1 /* COSlidingView.xib in Resources */,
 				7FF06E241B2E76C9009DEDEC /* 2.jpg in Resources */,
 				7FE21F0B1B2D83FD009B78DF /* JsonPhoneCode.json in Resources */,
 				7FF06E231B2E76C9009DEDEC /* 19.jpg in Resources */,
@@ -1579,6 +1604,7 @@
 				7FF06DF71B2E6953009DEDEC /* ic_peopel@3x.png in Resources */,
 				7FE32ABC1B30650100D2DEFE /* CompanyTableViewCell.xib in Resources */,
 				7F3276221B3546A400FE5FE1 /* ic_Left@3x.png in Resources */,
+				7F32762D1B356EFB00FE5FE1 /* COSlidingCell.xib in Resources */,
 				7FF06DF61B2E6953009DEDEC /* ic_peopel@2x.png in Resources */,
 				7FF06DF31B2E6953009DEDEC /* ic_home_heightline@3x.png in Resources */,
 				7F03EBEF1B2AD2E7009D7985 /* ic_uncheck@3x.png in Resources */,
@@ -1639,6 +1665,7 @@
 				7FC3D3391B32644E0072B269 /* CODetailsTextCell.m in Sources */,
 				7FE32ABD1B30650100D2DEFE /* PasswordTableViewCell.m in Sources */,
 				7FB799111B31BE520032DC1A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				7F32762C1B356EFB00FE5FE1 /* COSlidingCell.m in Sources */,
 				7FB799171B31BE520032DC1A /* UIWebView+AFNetworking.m in Sources */,
 				0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */,
 				7FB799121B31BE520032DC1A /* UIAlertView+AFNetworking.m in Sources */,
@@ -1684,6 +1711,7 @@
 				7FDA510D1B2A9930001CA7E1 /* TPKeyboardAvoidingTableView.m in Sources */,
 				7F03EBE21B2ABEE6009D7985 /* COPositive&NagitiveButton.m in Sources */,
 				7FE32AB91B30650100D2DEFE /* AboutTableViewCell.m in Sources */,
+				7F3276271B356E9400FE5FE1 /* COSlidingView.m in Sources */,
 				7FC3D3101B325FB50072B269 /* DetailsViewController.m in Sources */,
 				7F3D88421B2EB05E00A6B969 /* HomeListViewCell.m in Sources */,
 				7FDA510C1B2A9930001CA7E1 /* TPKeyboardAvoidingScrollView.m in Sources */,

@@ -25,7 +25,7 @@
 - (NSArray*)arrayListHomeObj {
     NSMutableArray *array = [[NSMutableArray alloc]init];
     ListHomeObject *obj = [[ListHomeObject alloc]init];
-    obj.imageNameBig = @"1.jpg";
+    obj.imageNameBig = @"17.jpg";
     obj.imageNameLogo = @"Earth_256.png";
     obj.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
     obj.lableSate = @"Abkhazia";
@@ -34,49 +34,49 @@
     ListHomeObject *obj1 = [[ListHomeObject alloc]init];
     obj1.imageNameBig = @"2.jpg";
     obj1.imageNameLogo = @"Earth_256.png";
-    obj1.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
+    obj1.lableDetail = @"Interview with Umar Munshi, Director & Founding Partner";
     obj1.lableSate = @"Afghanistan";
     [array addObject:obj1];
     
     ListHomeObject *obj2 = [[ListHomeObject alloc]init];
     obj2.imageNameBig = @"3.jpg";
     obj2.imageNameLogo = @"Earth_256.png";
-    obj2.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
+    obj2.lableDetail = @"SNIFFR: It’s All About Design. Bridging Designers and Funders";
     obj2.lableSate = @"Albania";
     [array addObject:obj2];
     
     ListHomeObject *obj3 = [[ListHomeObject alloc]init];
     obj3.imageNameBig = @"4.jpg";
     obj3.imageNameLogo = @"Earth_256.png";
-    obj3.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
+    obj3.lableDetail = @"Tropicana announces the retirement of its Founder";
     obj3.lableSate = @"Algeria";
     [array addObject:obj3];
     
     ListHomeObject *obj4 = [[ListHomeObject alloc]init];
     obj4.imageNameBig = @"5.jpg";
     obj4.imageNameLogo = @"Earth_256.png";
-    obj4.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
+    obj4.lableDetail = @"Week in Review - 19 Jun 2015Week in Review - 19 Jun 2015";
     obj4.lableSate = @"American Samoa";
     [array addObject:obj4];
     
     ListHomeObject *obj5 = [[ListHomeObject alloc]init];
     obj5.imageNameBig = @"6.jpg";
     obj5.imageNameLogo = @"Earth_256.png";
-    obj5.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
+    obj5.lableDetail = @"Aspen Group and OCBC Group sign agreement to kick off";
     obj5.lableSate = @"Andorra";
     [array addObject:obj5];
     
     ListHomeObject *obj6 = [[ListHomeObject alloc]init];
     obj6.imageNameBig = @"7.jpg";
     obj6.imageNameLogo = @"Earth_256.png";
-    obj6.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
+    obj6.lableDetail = @"Columbia Asia Invests RM185 Million In Batu Kawan Hospital";
     obj6.lableSate = @"Angola";
     [array addObject:obj6];
     
     ListHomeObject *obj7 = [[ListHomeObject alloc]init];
     obj7.imageNameBig = @"8.jpg";
     obj7.imageNameLogo = @"Earth_256.png";
-    obj7.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
+    obj7.lableDetail = @"Country Heights Hopes Selangor, Negeri Sembilan Relook Into New";
     obj7.lableSate = @"Anguilla";
     [array addObject:obj7];
     
@@ -130,7 +130,7 @@
     [array addObject:obj15];
     
     ListHomeObject *obj16 = [[ListHomeObject alloc]init];
-    obj16.imageNameBig = @"17.jpg";
+    obj16.imageNameBig = @"1.jpg";
     obj16.imageNameLogo = @"Earth_256.png";
     obj16.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
     obj16.lableSate = @"Azerbaijan";

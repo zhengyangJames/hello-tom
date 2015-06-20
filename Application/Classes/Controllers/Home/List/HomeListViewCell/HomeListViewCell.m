@@ -14,6 +14,7 @@
     __weak IBOutlet UIImageView *_imageLogo;
     __weak IBOutlet UILabel *_lblDetail;
     __weak IBOutlet UILabel *_lblSate;
+    __weak IBOutlet UIView *_viewImage;
 }
 
 
@@ -27,6 +28,8 @@
     [super layoutSubviews];;
     _lblDetail.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
     _lblSate.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
+    [_viewImage.layer setCornerRadius:8];
+    [self setNeedsDisplay];
 }
 
 
