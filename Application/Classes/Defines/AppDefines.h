@@ -27,6 +27,8 @@
 #define KGREEN_COLOR                        [UIColor colorWithRed:0/255.0f green:200/255.0f blue:250/255.0f alpha:1.0]
 
 #define KGRAY_COLOR                       [UIColor colorWithRed:230/255.0f green:230/255.0f blue:230/255.0f alpha:1.0]
+
+#define KLIGHT_GRAY_COLOR                 [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - STRING
 ///////////////////////////////////////////////////////////////////

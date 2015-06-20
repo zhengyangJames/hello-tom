@@ -13,7 +13,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self.layer setBorderWidth:BORDER];
-    [self.layer setBorderColor:[UIColor blackColor].CGColor];
+    [self.layer setBorderColor:KLIGHT_GRAY_COLOR.CGColor];
 }
 
 - (void)setImageName:(NSString *)imageName {

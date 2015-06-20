@@ -14,7 +14,8 @@
 #import "ForgotPasswordViewController.h"
 
 @interface LoginViewController ()
- @end
+
+@end
 
 @implementation LoginViewController
 

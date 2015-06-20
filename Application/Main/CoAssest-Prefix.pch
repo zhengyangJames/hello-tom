@@ -28,4 +28,5 @@
 #import "AppDefines.h"
 #import "NikmeDefine.h"
 #import "AFNetworking.h"
+#import "UIHelper.h"
 #endif

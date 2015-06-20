@@ -100,6 +100,9 @@
 		7FAB20931B3188310008B686 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB20811B3188310008B686 /* Raleway-Thin.ttf */; };
 		7FAB20941B3188310008B686 /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB20821B3188310008B686 /* Raleway-ThinItalic.ttf */; };
 		7FAB20961B318ACB0008B686 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAB20951B318ACB0008B686 /* Crashlytics.framework */; };
+		7FB248361B35177C00F8C605 /* COBorderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB248351B35177C00F8C605 /* COBorderTextField.m */; };
+		7FB2483C1B35250600F8C605 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2483B1B35250600F8C605 /* NSString+Validation.m */; };
+		7FB248431B3525E900F8C605 /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB248411B3525E900F8C605 /* UIHelper.m */; };
 		7FB798FF1B31BE520032DC1A /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB798D01B31BE520032DC1A /* AFHTTPRequestOperation.m */; };
 		7FB799001B31BE520032DC1A /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB798D21B31BE520032DC1A /* AFHTTPRequestOperationManager.m */; };
 		7FB799011B31BE520032DC1A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB798D41B31BE520032DC1A /* AFHTTPSessionManager.m */; };
@@ -361,6 +364,12 @@
 		7FAB20811B3188310008B686 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
 		7FAB20821B3188310008B686 /* Raleway-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ThinItalic.ttf"; sourceTree = "<group>"; };
 		7FAB20951B318ACB0008B686 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		7FB248341B35177C00F8C605 /* COBorderTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COBorderTextField.h; sourceTree = "<group>"; };
+		7FB248351B35177C00F8C605 /* COBorderTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COBorderTextField.m; sourceTree = "<group>"; };
+		7FB2483A1B35250600F8C605 /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
+		7FB2483B1B35250600F8C605 /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validation.m"; sourceTree = "<group>"; };
+		7FB248401B3525E900F8C605 /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
+		7FB248411B3525E900F8C605 /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 		7FB798CF1B31BE520032DC1A /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		7FB798D01B31BE520032DC1A /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		7FB798D11B31BE520032DC1A /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -878,6 +887,8 @@
 		0EFEB5121B272A92001195B7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7FB2483A1B35250600F8C605 /* NSString+Validation.h */,
+				7FB2483B1B35250600F8C605 /* NSString+Validation.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -885,6 +896,7 @@
 		0EFEB5131B272A92001195B7 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				7FB248331B35175800F8C605 /* COBorderTextField */,
 				7F46FDC31B2B146A003BB1C4 /* COCheckBoxButton */,
 				7F03EBF61B2AE858009D7985 /* CODropListButton */,
 				7F03EBDF1B2ABEB5009D7985 /* COPositive&NegativeButton */,
@@ -905,6 +917,8 @@
 		0EFEB5151B272A92001195B7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7FB248401B3525E900F8C605 /* UIHelper.h */,
+				7FB248411B3525E900F8C605 /* UIHelper.m */,
 				7FE21F061B2D7B79009B78DF /* LoadFileManager.h */,
 				7FE21F071B2D7B79009B78DF /* LoadFileManager.m */,
 			);
@@ -1078,6 +1092,15 @@
 				7FAB20821B3188310008B686 /* Raleway-ThinItalic.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		7FB248331B35175800F8C605 /* COBorderTextField */ = {
+			isa = PBXGroup;
+			children = (
+				7FB248341B35177C00F8C605 /* COBorderTextField.h */,
+				7FB248351B35177C00F8C605 /* COBorderTextField.m */,
+			);
+			path = COBorderTextField;
 			sourceTree = "<group>";
 		};
 		7FB798CE1B31BE520032DC1A /* AFNetworking */ = {
@@ -1671,6 +1694,7 @@
 				0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */,
 				0ECA88571B27CB4C00B5656F /* BaseCollectionViewCell.m in Sources */,
 				7FC3D34A1B3264C00072B269 /* CODetailsDataSource.m in Sources */,
+				7FB248361B35177C00F8C605 /* COBorderTextField.m in Sources */,
 				7FDA510E1B2A9930001CA7E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				7FC3D33E1B3264620072B269 /* CODetailsAccessoryCell.m in Sources */,
 				7FB799141B31BE520032DC1A /* UIImageView+AFNetworking.m in Sources */,
@@ -1681,8 +1705,10 @@
 				7F3D885B1B2EC83200A6B969 /* ContactObject.m in Sources */,
 				7FDA51011B2A8518001CA7E1 /* COLineBottomView.m in Sources */,
 				7FE32AC21B30658200D2DEFE /* EditAboutProfileVC.m in Sources */,
+				7FB248431B3525E900F8C605 /* UIHelper.m in Sources */,
 				0ECA88891B27E09A00B5656F /* ForgotPasswordViewController.m in Sources */,
 				7FE21EF01B2D0FF1009B78DF /* CODropListView.m in Sources */,
+				7FB2483C1B35250600F8C605 /* NSString+Validation.m in Sources */,
 				7FB799031B31BE520032DC1A /* AFSecurityPolicy.m in Sources */,
 				0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,

@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    
 }
 
 - (IBAction)__actionCancel:(id)sender {

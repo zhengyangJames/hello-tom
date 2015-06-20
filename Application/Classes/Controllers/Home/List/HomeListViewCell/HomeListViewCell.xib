@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9eY-VV-xUo" firstAttribute="leading" secondItem="Brc-MO-Zfl" secondAttribute="leading" id="8GH-V4-Zaz"/>
                             <constraint firstItem="9eY-VV-xUo" firstAttribute="top" secondItem="Brc-MO-Zfl" secondAttribute="top" id="9XD-Ns-VK7"/>
@@ -59,7 +59,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rDF-YH-2XB" firstAttribute="leading" secondItem="eYX-1R-Afg" secondAttribute="leading" id="IIC-Eq-HRx"/>
                             <constraint firstAttribute="trailing" secondItem="eYX-1R-Afg" secondAttribute="trailing" id="LmP-KC-5le"/>
@@ -72,6 +72,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="DTf-jo-hPN" firstAttribute="top" secondItem="Brc-MO-Zfl" secondAttribute="bottom" id="FhZ-LE-Aje"/>
                     <constraint firstAttribute="trailingMargin" secondItem="DTf-jo-hPN" secondAttribute="trailing" constant="-8" id="K1y-qm-qzk"/>
