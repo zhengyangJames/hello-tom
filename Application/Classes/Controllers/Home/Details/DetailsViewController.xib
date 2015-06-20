@@ -24,7 +24,7 @@
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NpH-LC-QrY">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="567"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhd-4b-wZT" userLabel="BackButton">
                     <rect key="frame" x="0.0" y="20" width="65" height="45"/>
@@ -33,7 +33,7 @@
                         <constraint firstAttribute="height" constant="45" id="bLD-kY-csR"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" image="Ic_back.png">
+                    <state key="normal" image="ic_Left.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -41,7 +41,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Zhd-4b-wZT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="82X-KG-WB0"/>
                 <constraint firstAttribute="trailing" secondItem="vDA-nV-Lsy" secondAttribute="trailing" id="MW0-od-dOh"/>
@@ -54,11 +54,11 @@
                 <constraint firstItem="Zhd-4b-wZT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wBk-Ma-CqI"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="103" y="336"/>
+            <point key="canvasLocation" x="11" y="245"/>
         </view>
     </objects>
     <resources>
         <image name="19.jpg" width="1920" height="1200"/>
-        <image name="Ic_back.png" width="25" height="29"/>
+        <image name="ic_Left.png" width="8" height="17"/>
     </resources>
 </document>

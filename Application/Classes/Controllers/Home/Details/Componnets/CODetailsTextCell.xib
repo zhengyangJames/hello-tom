@@ -30,16 +30,16 @@
                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toN-I8-BVM">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="toN-I8-BVM">
                         <rect key="frame" x="8" y="28" width="304" height="48.5"/>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <string key="text">Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay
 Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist destination, known for its Powder - Fine Sands and Prestine Waters,</string>
                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="13"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
-                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="eAq-0U-7fu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="HrD-gb-XBS"/>
                     <constraint firstItem="eAq-0U-7fu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Non-0s-Ucq"/>
@@ -50,7 +50,7 @@ Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist 
                     <constraint firstItem="toN-I8-BVM" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="uwT-1B-sb1"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="_detailsTextView" destination="toN-I8-BVM" id="MMT-F7-KTs"/>
                 <outlet property="_headerLabel" destination="eAq-0U-7fu" id="AKR-nZ-SFl"/>

@@ -27,7 +27,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="9EM-sJ-3XR" secondAttribute="trailing" constant="20" id="apC-EB-557"/>
                         <constraint firstItem="9EM-sJ-3XR" firstAttribute="top" secondItem="xyH-Bg-9Pn" secondAttribute="top" constant="20" id="kzE-fv-27D"/>
@@ -36,7 +36,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="xyH-Bg-9Pn" secondAttribute="trailing" id="Hmd-OC-HRp"/>
                 <constraint firstItem="xyH-Bg-9Pn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ik3-80-25y"/>

@@ -33,7 +33,7 @@
                     <constraint firstItem="GCA-II-QQp" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="f6q-RS-FyM"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="_lblSection" destination="GCA-II-QQp" id="MTv-JX-qJH"/>
             </connections>

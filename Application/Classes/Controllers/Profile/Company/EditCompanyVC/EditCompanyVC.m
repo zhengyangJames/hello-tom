@@ -61,6 +61,7 @@
 
 - (IBAction)__actionOrgType:(id)sender {
     NSArray *array = @[@"Developer",@"Property Insurance",@"Marketing",@"Property For Sale",@"Business Services",@"Route Sale",@"Rummage Sale",@"The cosmetics industry"];
+    [self.view endEditing:NO];
     [CODropListView presentWithTitle:@"Org Type" data:array selectedIndex:_indexActtionOrgType didSelect:^(NSInteger index) {
         [_btnOrgType setTitle:array[index] forState:UIControlStateNormal];
         _indexActtionOrgType = index;

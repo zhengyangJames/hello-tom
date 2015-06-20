@@ -14,5 +14,6 @@
 @interface COPositive_NagitiveButton : UIButton
 
 @property (assign, nonatomic) BOOL nagitiveButton;
+@property (assign, nonatomic) BOOL questions;
 
 @end

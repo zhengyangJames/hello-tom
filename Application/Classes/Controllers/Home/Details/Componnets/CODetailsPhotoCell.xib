@@ -26,14 +26,14 @@
                             <constraint firstAttribute="height" constant="51" id="t0t-wI-pAb"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay" translatesAutoresizingMaskIntoConstraints="NO" id="SmK-Me-p6f">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="SmK-Me-p6f">
                         <rect key="frame" x="67" y="8" width="245" height="50"/>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="13"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
-                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="SmK-Me-p6f" firstAttribute="centerY" secondItem="O7n-SD-EoN" secondAttribute="centerY" constant="-0.5" id="8eq-A4-T1I"/>
                     <constraint firstAttribute="bottomMargin" secondItem="SmK-Me-p6f" secondAttribute="bottom" id="MTC-NA-Dk9"/>
@@ -43,7 +43,7 @@
                     <constraint firstItem="SmK-Me-p6f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="xqB-NH-U16"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="_detailsTextView" destination="SmK-Me-p6f" id="MQ7-TI-kVw"/>
                 <outlet property="_image" destination="O7n-SD-EoN" id="DJN-MJ-CJ7"/>

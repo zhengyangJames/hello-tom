@@ -41,15 +41,15 @@
 #pragma mark - Setup
 - (void)_setupUI {
     self.navigationItem.title = m_string(@"Contact");
+    
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Back") style:UIBarButtonItemStyleDone target:self action:@selector(__actionBack)];
     [self.navigationItem setLeftBarButtonItem:leftButton];
     
+    _tableView.separatorStyle = UITableViewScrollPositionNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.tableFooterView = [UIView new];
     
-    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HIEGHT_FOOTER)];
-    [footerView setBackgroundColor:KGRAY_COLOR];
-    _tableView.tableFooterView = footerView;
     [_tableView registerNib:[UINib nibWithNibName:[ContactTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[ContactTableViewCell identifier]];
 }
 
@@ -100,7 +100,7 @@
     [view addSubview:label];
     [label pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:16];
     [label pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinBottomEdge inset:0];
-    [view setBackgroundColor:KGRAY_COLOR];
+    [view setBackgroundColor:KLIGHT_GRAY_COLOR];
     return view;
 }
 

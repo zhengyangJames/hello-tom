@@ -56,7 +56,7 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"CoAssest");
+    self.navigationItem.title = m_string(@"CoAssests");
     [self _setupHeaderTableView];
     [self _setupFooterTableView];
     _tableView.delegate   = self;

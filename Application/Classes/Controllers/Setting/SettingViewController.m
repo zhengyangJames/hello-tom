@@ -76,9 +76,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
     }
     cell.accessoryType = UITableViewCellSeparatorStyleSingleLine;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = self.arrayData[indexPath.row];
     cell.textLabel.textColor = [UIColor blackColor];
-    cell.textLabel.font = [UIFont systemFontOfSize:16];
+    cell.textLabel.font = [UIFont fontWithName:@"Raleway-Regular" size:17];
     
     return cell;
 }

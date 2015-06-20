@@ -3,6 +3,19 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditAboutProfileVC">
             <connections>
@@ -25,12 +38,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="mZu-Dc-LJY"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Xm-1f-nuB" userLabel="First name Text Field">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Xm-1f-nuB" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="49" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="aWa-YA-fUc"/>
                                     </constraints>
@@ -43,12 +57,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="u0b-V4-3YC"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Country code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAz-Ok-Jyl" userLabel="First name Text Field">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Country code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAz-Ok-Jyl" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="132" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="sj4-57-YFF"/>
                                     </constraints>
@@ -61,12 +76,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="Cjg-gf-K3M"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Cellphone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgW-cg-UNM" userLabel="First name Text Field">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Cellphone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgW-cg-UNM" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="215" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="J3v-us-DOk"/>
                                     </constraints>
@@ -79,12 +95,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="6BE-nF-Pnj"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Address 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-Dg-2xW" userLabel="First name Text Field">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Address 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-Dg-2xW" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="299" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="Et8-sc-tib"/>
                                     </constraints>
@@ -97,12 +114,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="B2k-hT-wdf"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Address 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WH0-Hw-MbH" userLabel="First name Text Field">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Address 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WH0-Hw-MbH" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="384" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="LCU-jw-0Uf"/>
                                     </constraints>
@@ -115,12 +133,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="rst-dJ-2hd"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-tD-1zp" userLabel="First name Text Field">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-tD-1zp" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="468" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="gjt-V8-lY8"/>
                                     </constraints>
@@ -133,12 +152,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="hMe-dP-nfr"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Postal code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-g0-11E" userLabel="First name Text Field">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Postal code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-g0-11E" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="556" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="AKc-fJ-bEG"/>
                                     </constraints>
@@ -151,12 +171,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="fq6-mx-3re"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Region state" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTr-2e-GOj" userLabel="First name Text Field">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Region state" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTr-2e-GOj" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="640" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="mmB-uj-LDo"/>
                                     </constraints>
@@ -169,12 +190,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="7s3-Yj-WrD"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Country" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wly-oF-5Hj" userLabel="First name Text Field">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Country" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wly-oF-5Hj" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="724" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="0uP-Ub-rHB"/>
                                     </constraints>
@@ -183,7 +205,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="1Vl-x6-Drq" firstAttribute="trailing" secondItem="CNF-Dg-2xW" secondAttribute="trailing" constant="-70" id="1Vw-NI-qtF"/>
                                 <constraint firstItem="6k0-os-qTv" firstAttribute="top" secondItem="0bV-5P-FQ1" secondAttribute="top" constant="20" id="2FX-r0-qQn"/>
@@ -243,6 +265,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="0bV-5P-FQ1" secondAttribute="bottom" id="3QN-di-7wn"/>
                         <constraint firstItem="0bV-5P-FQ1" firstAttribute="top" secondItem="1My-n2-Eai" secondAttribute="top" id="4jR-3N-TTO"/>
@@ -252,7 +275,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="1My-n2-Eai" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6hb-B2-cnQ"/>
                 <constraint firstItem="1My-n2-Eai" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Qbf-Zz-aSS"/>

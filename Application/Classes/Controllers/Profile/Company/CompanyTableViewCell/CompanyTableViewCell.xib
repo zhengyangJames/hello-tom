@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DSB-Jd-Fym" firstAttribute="leading" secondItem="wSM-vO-8eL" secondAttribute="trailing" constant="5" id="DYQ-qH-igW"/>
                             <constraint firstAttribute="centerY" secondItem="wSM-vO-8eL" secondAttribute="centerY" constant="0.5" id="KWJ-fM-x7f"/>
@@ -72,12 +72,13 @@
                     <constraint firstAttribute="trailingMargin" secondItem="2JV-9W-VaN" secondAttribute="trailing" constant="-8" id="ykS-vd-kMs"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="image" destination="UQo-sP-8ii" id="xAH-2y-M0T"/>
                 <outlet property="lblDetail" destination="DSB-Jd-Fym" id="fZr-wj-2Iw"/>
                 <outlet property="lblname" destination="wSM-vO-8eL" id="nUh-xo-XSv"/>
             </connections>
-            <point key="canvasLocation" x="34" y="-70.5"/>
+            <point key="canvasLocation" x="66" y="-140.5"/>
         </tableViewCell>
     </objects>
     <resources>

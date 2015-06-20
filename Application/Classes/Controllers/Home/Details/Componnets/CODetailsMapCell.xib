@@ -25,7 +25,7 @@
                     <constraint firstItem="og0-V5-apw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="roy-hH-5A2"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="_mapView" destination="og0-V5-apw" id="kHw-lh-7rq"/>
             </connections>

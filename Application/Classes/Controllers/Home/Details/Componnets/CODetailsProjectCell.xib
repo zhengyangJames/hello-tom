@@ -295,11 +295,10 @@
                                 <rect key="frame" x="0.0" y="324" width="304" height="66"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-FD-VpP" customClass="COPositive_NagitiveButton">
-                                        <rect key="frame" x="44" y="9" width="105" height="37"/>
+                                        <rect key="frame" x="44" y="9" width="109.5" height="37"/>
                                         <color key="backgroundColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="GJG-H2-Z57"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="105" id="ITr-3d-4Kp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
                                         <state key="normal" title="I'm interested">
@@ -311,15 +310,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBG-AT-Jam" customClass="COPositive_NagitiveButton">
-                                        <rect key="frame" x="176" y="9" width="105" height="37"/>
-                                        <color key="backgroundColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="171.5" y="9" width="109.5" height="37"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
                                         <state key="normal" title="I've Questions">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="nagitiveButton" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="questions" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="__actionQuestions:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xid-qQ-EEN"/>
@@ -328,9 +327,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="nBG-AT-Jam" firstAttribute="leading" secondItem="ne3-FD-VpP" secondAttribute="trailing" constant="27" id="IJE-rX-aQz"/>
+                                    <constraint firstItem="nBG-AT-Jam" firstAttribute="leading" secondItem="ne3-FD-VpP" secondAttribute="trailing" constant="18" id="IJE-rX-aQz"/>
                                     <constraint firstItem="ne3-FD-VpP" firstAttribute="leading" secondItem="11Q-yG-sAf" secondAttribute="leading" constant="44" id="RBH-G0-pSv"/>
-                                    <constraint firstItem="ne3-FD-VpP" firstAttribute="top" secondItem="11Q-yG-sAf" secondAttribute="top" constant="9" id="bLl-fS-fvP"/>
                                     <constraint firstItem="nBG-AT-Jam" firstAttribute="height" secondItem="ne3-FD-VpP" secondAttribute="height" id="daj-WN-qmL"/>
                                     <constraint firstAttribute="bottom" secondItem="ne3-FD-VpP" secondAttribute="bottom" constant="20" id="eeW-Np-8AW"/>
                                     <constraint firstItem="nBG-AT-Jam" firstAttribute="width" secondItem="ne3-FD-VpP" secondAttribute="width" id="naI-9X-2Xc"/>
@@ -373,7 +371,7 @@
                     <constraint firstItem="aRh-D7-zFe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="f1Z-BK-urn"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="_backGroundView" destination="aRh-D7-zFe" id="uyT-UD-W2T"/>
                 <outlet property="_lblDeveloper" destination="4c2-qe-DU8" id="ZyH-DO-QW5"/>
@@ -383,7 +381,7 @@
                 <outlet property="_lblStatus" destination="LmA-RZ-bLZ" id="8gb-yR-GXE"/>
                 <outlet property="_lbltype" destination="xTq-Hg-GqB" id="j3P-Fo-jnx"/>
             </connections>
-            <point key="canvasLocation" x="340" y="247.5"/>
+            <point key="canvasLocation" x="196" y="248.5"/>
         </tableViewCell>
     </objects>
     <resources>

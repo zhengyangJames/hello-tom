@@ -22,16 +22,26 @@
 }
 
 - (void)layoutSubviews {
+    [super layoutSubviews];
     [self.layer setCornerRadius:CORNERRADIUS];
     if (self.nagitiveButton) {
         [self.layer setBorderWidth:BORDER];
         [self.layer setBorderColor:KBUTTON_COLOR.CGColor];
     }
-    [super layoutSubviews];
+    if (self.questions) {
+        [self.layer setBorderWidth:BORDER];
+        [self.layer setBorderColor:[UIColor whiteColor].CGColor];
+        [self setBackgroundColor:[UIColor clearColor]];
+    }
+    [self setNeedsDisplay];
 }
 
 - (void)setNagitiveButton:(BOOL)nagitiveButton {
     _nagitiveButton = nagitiveButton;
+}
+
+- (void)setQuestions:(BOOL)questions {
+    _questions = questions;
 }
 
 @end
