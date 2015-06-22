@@ -13,6 +13,7 @@
 #import "LoadFileManager.h"
 #import "CODropListVC.h"
 #import "DetailsViewController.h"
+#import "LoginViewController.h"
 
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -35,7 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
 }
@@ -98,7 +99,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DetailsViewController *vc = [[DetailsViewController alloc]init];
+    LoginViewController *vc = [[LoginViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

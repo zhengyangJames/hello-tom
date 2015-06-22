@@ -7,12 +7,10 @@
 //
 
 #import "LoginViewController.h"
-#import "HomeListViewController.h"
-#import "ProfileViewController.h"
-#import "SettingViewController.h"
 #import "RegisterViewController.h"
 #import "ForgotPasswordViewController.h"
 #import "COBorderTextField.h"
+#import "DetailsViewController.h"
 
 @interface LoginViewController ()
 {
@@ -31,48 +29,17 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
+    self.navigationController.navigationBar.hidden = YES;
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
 }
 
 #pragma mark - Private
 - (void)_login {
-    BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
-    NSArray *arrayNAV = @[[self _setupHomeListViewController],[self _setupProfileViewController],[self _setupSettingViewController]];
-    tabBar.viewControllers = arrayNAV;
-    [self.navigationController pushViewController:tabBar animated:YES];
-}
-
-//Setup Home
-- (BaseNavigationController*)_setupHomeListViewController {
-    HomeListViewController *homeVC = [[HomeListViewController alloc] init];
-    BaseNavigationController *homeNAV = [[BaseNavigationController alloc] initWithRootViewController:homeVC];
-    UITabBarItem *tabbarHome = [[UITabBarItem alloc]initWithTitle:m_string(@"Home")
-                                                            image:[UIImage imageNamed:@"ic_home"]
-                                                    selectedImage:[UIImage imageNamed:@"ic_home_heightlight"]];
-    homeNAV.tabBarItem = tabbarHome;
-    return homeNAV;
-}
-
-//Setup Profile
-- (BaseNavigationController*)_setupProfileViewController {
-    ProfileViewController *profileVC = [[ProfileViewController alloc] init];
-    BaseNavigationController *profileNAV = [[BaseNavigationController alloc] initWithRootViewController:profileVC];
-    UITabBarItem *tabbarProfile = [[UITabBarItem alloc]initWithTitle:m_string(@"Profile")
-                                                               image:[UIImage imageNamed:@"ic_contac_2"]
-                                                       selectedImage:[UIImage imageNamed:@"ic_contac_2_heightlight"]];
-    profileNAV.tabBarItem = tabbarProfile;
-    return profileNAV;
-}
-
-//Setup Setting
-- (BaseNavigationController*)_setupSettingViewController {
-    SettingViewController *settingVC = [[SettingViewController alloc] init];
-    BaseNavigationController *settingNAV = [[BaseNavigationController alloc] initWithRootViewController:settingVC];
-    UITabBarItem *tabbarSetting = [[UITabBarItem alloc]initWithTitle:m_string(@"Settings")
-                                                               image:[UIImage imageNamed:@"ic_setting_2_heighlight"]
-                                                       selectedImage:[UIImage imageNamed:@"ic_setting_2"]];
-    settingNAV.tabBarItem = tabbarSetting;
-    return settingNAV;
+    DetailsViewController *vc = [[DetailsViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray: self.navigationController.viewControllers];
+    [allViewControllers removeObjectIdenticalTo: self];
+    self.navigationController.viewControllers = allViewControllers;
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
