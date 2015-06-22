@@ -29,7 +29,7 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationController.navigationBar.hidden = YES;
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
 }
 
