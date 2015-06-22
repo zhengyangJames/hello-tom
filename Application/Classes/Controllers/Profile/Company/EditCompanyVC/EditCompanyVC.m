@@ -40,6 +40,7 @@
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
+
 #pragma mark - Set Get
 - (void)setOrgName:(NSString *)orgName {
     _orgName = orgName;
