@@ -8,6 +8,18 @@
 
 #import "BaseViewController.h"
 
+typedef NS_ENUM(NSInteger, COSettingsStype) {
+    COSettingsStypeContact,
+    COSettingsStypeNew,
+    COSettingsStypeCommentaries,
+    COSettingsStypeTermOfUse,
+    COSettingsStypeCodeOfConduct,
+    COSettingsStypePrivacy,
+    COSettingsStypeLogout
+};
+
 @interface SettingViewController : BaseViewController
+
+@property (nonatomic, readonly) COSettingsStype coSettingsStype;
 
 @end

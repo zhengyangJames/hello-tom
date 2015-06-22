@@ -9,6 +9,8 @@
 #import "UIHelper.h"
 #import "MBProgressHUD.h"
 
+#define IS_IOS8             ((NSInteger)[[[UIDevice currentDevice] systemVersion] floatValue]) == 8
+
 @implementation UIHelper
 
 + (void)showLoadingInView:(UIView*)view
@@ -60,6 +62,44 @@
         [actionSheet addButtonWithTitle:titleButton];
     }
     [actionSheet showInView:view];
+}
+
++ (UIImagePickerController *)showImagePickerAtController:(UIViewController *)controller withDelegate:(id)delegate andMode:(NSInteger)mode
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = delegate;
+    switch (mode) {
+        case 0:
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                picker.mediaTypes = @[(NSString *)kUTTypeImage];
+                if(IS_IOS8) {
+                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                        [controller presentViewController:picker animated:YES completion:nil];
+                    }];
+                } else {
+                    [controller presentViewController:picker animated:YES completion:nil];
+                }
+            }
+            break;
+        case 1:
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+                picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                picker.allowsEditing = YES;
+                if(IS_IOS8) {
+                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                        [controller presentViewController:picker animated:YES completion:nil];
+                    }];
+                } else {
+                    [controller presentViewController:picker animated:YES completion:nil];
+                }
+            }
+            break;
+            
+        default:
+            break;
+    }
+    return picker;
 }
 
 @end

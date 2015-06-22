@@ -42,9 +42,6 @@
 - (void)_setupUI {
     self.navigationItem.title = m_string(@"Contact");
     
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Back") style:UIBarButtonItemStyleDone target:self action:@selector(__actionBack)];
-    [self.navigationItem setLeftBarButtonItem:leftButton];
-    
     _tableView.separatorStyle = UITableViewScrollPositionNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -83,16 +80,8 @@
     return cellSize.height;
 }
 
-#pragma mark - TableView Delegate
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 3;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *view   = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
+- (UIView*)_setupviewForHeaderInSection:(NSInteger)section {
+    UIView *view   = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 40)];
     UILabel *label = [UILabel autoLayoutView];
     [label setFont:[UIFont fontWithName:@"Raleway-Medium" size:16]];
     [label setTextColor:KGREEN_COLOR];
@@ -102,6 +91,18 @@
     [label pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinBottomEdge inset:0];
     [view setBackgroundColor:KBACKGROUND_COLOR];
     return view;
+}
+
+#pragma mark - TableView Delegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [self _setupviewForHeaderInSection:section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

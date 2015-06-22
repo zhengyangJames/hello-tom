@@ -19,6 +19,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditAboutProfileVC">
             <connections>
+                <outlet property="addressNameTXT" destination="CNF-Dg-2xW" id="i2A-vp-q0R"/>
+                <outlet property="emailNameTXT" destination="2Xm-1f-nuB" id="hsD-Jk-uE4"/>
+                <outlet property="phoneNameTXT" destination="OgW-cg-UNM" id="Qbu-65-aI0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -48,7 +51,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="aWa-YA-fUc"/>
                                     </constraints>
-                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -86,7 +88,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="J3v-us-DOk"/>
                                     </constraints>
-                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -105,7 +106,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="Et8-sc-tib"/>
                                     </constraints>
-                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -283,7 +283,7 @@
                 <constraint firstAttribute="bottom" secondItem="1My-n2-Eai" secondAttribute="bottom" id="f4b-UL-0fr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="335" y="456"/>
+            <point key="canvasLocation" x="265" y="362"/>
         </view>
     </objects>
 </document>

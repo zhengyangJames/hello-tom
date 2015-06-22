@@ -9,7 +9,7 @@
 #import "CODummyDataManager.h"
 #import "ListHomeObject.h"
 #import "ContactObject.h"
-#import "ProfileObject.h"
+
 
 @implementation CODummyDataManager
 
@@ -152,7 +152,7 @@
     
     ListHomeObject *obj19 = [[ListHomeObject alloc]init];
     obj19.imageNameBig = @"20.jpg";
-    obj19.imageNameLogo = @"Earth_256.png";
+    obj19.imageNameLogo = @"ic_Earth.png";
     obj19.lableDetail = @"Invest in Canyon de Boracay Premier to own a piece";
     obj19.lableSate = @"Benin";
     [array addObject:obj19];
@@ -187,8 +187,7 @@
     return array;
 }
 
-- (NSArray*)arrayAboutProfileObj {
-    NSMutableArray *array = [[NSMutableArray alloc]init];
+- (ProfileObject*)AboutProfileObj {
     ProfileObject *obj = [[ProfileObject alloc]init];
     obj.salutation = @"Mr";
     obj.firstname = @"Daniel";
@@ -198,9 +197,8 @@
     obj.address = @"1st street 2rd NewYork";
     obj.image = @"6.jpg";
     obj.orgname = @"Nikmesoft Ltd";
-    [array addObject:obj];
      
-    return array;
+    return obj;
 }
 
 

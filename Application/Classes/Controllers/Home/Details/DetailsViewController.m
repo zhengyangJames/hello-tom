@@ -9,13 +9,12 @@
 #import "DetailsViewController.h"
 #import "CODetailsDataSource.h"
 #import "CODetailsDelegate.h"
-#import "CoDetailsHeaderTableView.h"
 #import "COSlidingView.h"
 
 
 @interface DetailsViewController () 
 {
-    CoDetailsHeaderTableView *_tableheaderView;
+
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

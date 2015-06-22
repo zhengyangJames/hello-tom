@@ -49,7 +49,7 @@
 #pragma mark - Pravite
 - (void)_scrollAutomatic {
     if (self.arrayImage.count > 0) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(_tick) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.85f target:self selector:@selector(_tick) userInfo:nil repeats:YES];
     }
 }
 

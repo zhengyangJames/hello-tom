@@ -9,12 +9,19 @@
 #import "EditCompanyVC.h"
 #import "CODropListView.h"
 #import "CoDropListButtom.h"
+#import "ProfileObject.h"
+#import "CODummyDataManager.h"
 
-@interface EditCompanyVC ()
+@interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
     __weak IBOutlet CoDropListButtom *_btnOrgType;
+    __weak IBOutlet COBorderTextField *orgNameTextField;
+    __weak IBOutlet COBorderTextField *addressTextField;
+    __weak IBOutlet UIImageView *_imageCompany;
     NSInteger _indexActtionOrgType;
 }
+@property (strong, nonatomic) ProfileObject *profileObject;
+
 @end
 
 @implementation EditCompanyVC
@@ -22,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
+    self.orgName = self.orgName;
+    self.address = self.address;
+    self.imageName = self.imageName;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -30,32 +40,67 @@
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
+
+#pragma mark - Set Get
+- (void)setOrgName:(NSString *)orgName {
+    _orgName = orgName;
+    orgNameTextField.text = _orgName;
+}
+
+- (void)setAddress:(NSString *)address {
+    _address = address;
+    addressTextField.text = _address;
+}
+
+- (void)setImageName:(UIImage *)imageName {
+    _imageName = imageName;
+    _imageCompany.image = _imageName;
+}
+
+- (ProfileObject*)profileObject {
+    if (!_profileObject) {
+        _profileObject = [[CODummyDataManager shared] AboutProfileObj];
+    }
+    return _profileObject;
+}
+
 #pragma mark - Private
 
 - (void)_setupUI {
     
-    self.navigationItem.title = m_string(@"Investment Profile");
+    self.navigationItem.title = m_string(@"Basic Info");
+    [self _setupBarButtonCancel];
+    [self _setupBarButtonDone];
+}
+
+- (void)_setupBarButtonDone {
     UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone:)];
-    [btDone setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}forState:UIControlStateNormal];
-    
+    [btDone setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
+                          forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = btDone;
+}
+
+- (void)_setupBarButtonCancel {
     UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Cancel")
                                                                 style:UIBarButtonItemStyleDone
                                                                target:self
                                                                action:@selector(__actionDCancel:)];
-    [btCancel setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = btDone;
+    [btCancel setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
+                            forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = btCancel;
-    _indexActtionOrgType = 0;
 }
+
 
 
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
-    
+    if (self.actionDone) {
+        self.actionDone(orgNameTextField.text,addressTextField.text,_imageCompany.image);
+    }
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
@@ -68,6 +113,10 @@
     }];
 }
 
+- (IBAction)__actionPickImage:(id)sender {
+    [self _showActionSheet];
+}
+
 - (IBAction)__actionOrgType:(id)sender {
     NSArray *array = @[@"Developer",@"Property Insurance",@"Marketing",@"Property For Sale",@"Business Services",@"Route Sale",@"Rummage Sale",@"The cosmetics industry"];
     [self.view endEditing:NO];
@@ -75,6 +124,37 @@
         [_btnOrgType setTitle:array[index] forState:UIControlStateNormal];
         _indexActtionOrgType = index;
     }];
+}
+
+- (void)_showActionSheet {
+    UIActionSheet *act = [[UIActionSheet alloc]initWithTitle:nil
+                                                    delegate:self
+                                           cancelButtonTitle:m_string(@"CANCEL")
+                                      destructiveButtonTitle:nil
+                                           otherButtonTitles:m_string(@"Select Image My Photo"),
+                          m_string(@"Capture image from Camera"), nil];
+    [act showInView:self.view];
+}
+
+#pragma mark - Delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
+            break;
+        case 1:
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[@"UIImagePickerControllerOriginalImage"];
+    [_imageCompany setImage:image];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

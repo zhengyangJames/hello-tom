@@ -30,7 +30,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
             <connections>
+                <outlet property="_comfilmPasswordTextField" destination="wgq-5i-3jo" id="n3h-3w-Va7"/>
                 <outlet property="_emailTextField" destination="mac-eL-ijI" id="xMt-sY-0pf"/>
+                <outlet property="_passwordTextField" destination="KYv-jZ-u6d" id="T80-3P-9g6"/>
+                <outlet property="_usernameTextField" destination="DL9-jK-4kk" id="qGp-AF-9vo"/>
                 <outlet property="btnMobileNumber" destination="CGv-FJ-kgk" id="sst-LQ-ygI"/>
                 <outlet property="btnSalutation" destination="8Pg-Iy-oYb" id="Fya-rL-ysw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -489,7 +492,7 @@
                 <constraint firstAttribute="bottom" secondItem="nr1-DS-oAz" secondAttribute="bottom" id="euL-uH-HeC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="214" y="534"/>
+            <point key="canvasLocation" x="87" y="534"/>
         </view>
     </objects>
 </document>

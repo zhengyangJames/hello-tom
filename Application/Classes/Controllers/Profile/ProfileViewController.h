@@ -14,6 +14,21 @@ typedef NS_ENUM(NSInteger, TableViewCellStyle) {
     TableViewCellStylePasswork      //2
 };
 
+typedef NS_ENUM(NSInteger, COSegmentStyle) {
+    COSegmentStyleAbout,        //0
+    COSegmentStyleCompany,      //1
+    COSegmentStylePasswork      //2
+};
+
+typedef NS_ENUM(NSInteger, COAboutProfileStyle) {
+    COAboutProfileStyleSalutation,
+    COAboutProfileStyleFirstName,
+    COAboutProfileStyleLastNameSurname,
+    COAboutProfileStyleEmail,
+    COAboutProfileStylePhone,
+    COAboutProfileStyleAddress
+};
+
 @interface ProfileViewController : BaseViewController
 
 @end

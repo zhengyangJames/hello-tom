@@ -92,6 +92,7 @@
 
 - (CODetailsSectionCell*)_sectionCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
     CODetailsSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsSectionCell identifier] forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row == 5) {
         cell.titleSection = @"DECLARATION FORM";
     } else if (indexPath.row == 7) {
