@@ -87,7 +87,7 @@
     [UIHelper hideLoadingFromView:self.view];
     
     // report the error inside the webview
-    NSString* errorString = [NSString stringWithFormat:@"<html><center><font size=+5 color='red'>An error occurred:<br>%@</font></center></html>",
+    NSString* errorString = [NSString stringWithFormat:@"<html><center><font size=+3 color='red'>An error occurred:<br>%@</font></center></html>",
                              error.localizedDescription];
     [_webView loadHTMLString:errorString baseURL:nil];
 }

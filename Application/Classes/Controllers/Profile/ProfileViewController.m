@@ -11,7 +11,6 @@
 #import "TableBottomView.h"
 #import "AboutTableViewCell.h"
 #import "CompanyTableViewCell.h"
-#import "CompanyTableViewCell2.h"
 #import "PasswordTableViewCell.h"
 #import "EditAboutProfileVC.h"
 #import "EditCompanyVC.h"
@@ -19,25 +18,30 @@
 #import "ProfileObject.h"
 #import "CODummyDataManager.h"
 #import "ProfileObject.h"
+#import "NSString+Validation.h"
 
 #define DEFAULT_HEIGHT_CELL             44
-
 #define AUTO_HEIGHT_CELL_ABOUT          (self.view.bounds.size.height - (200+90))/6
-
 #define AUTO_HEIGHT_CELL_COMPANY        (self.view.bounds.size.height - (200+90+44))
 #define DEFAULT_HEIGHT_CELL_COMPANY     205
-
 #define AUTO_HEIGHT_CELL_PASSWORD       (self.view.bounds.size.height - (200+90))
 #define DEFAULT_HEIGHT_CELL_PASSWORD    231
 
-@interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate>
+#define UPDATE_ABOUT_PROFILE    @"Update profile"
+#define UPDATE_COMNPANY_PROFILE @"Update company profile"
+
+@interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate>
 {
     __weak  IBOutlet UITableView *_tableView;
+    UIImage *_imageCompany;
     TableHeaderView *_tableheaderView;
-    TableBottomView *_tablefooterView;
     NSInteger _indexSelectSeg;
+    NSString *_oldPassword;
+    NSString *_newPassword;
+    NSString *_comfilmPassword;
 }
 @property (strong, nonatomic) ProfileObject *profileObject;
+@property (strong, nonatomic) TableBottomView *tablefooterView;
 
 @end
 
@@ -52,6 +56,7 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    [_tableView reloadData];
 }
 
 #pragma mark - Setup
@@ -63,7 +68,6 @@
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:[AboutTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[AboutTableViewCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[CompanyTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[CompanyTableViewCell identifier]];
-    [_tableView registerNib:[UINib nibWithNibName:[CompanyTableViewCell2 identifier] bundle:nil] forCellReuseIdentifier:[CompanyTableViewCell2 identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[PasswordTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[PasswordTableViewCell identifier]];
 }
 
@@ -71,23 +75,9 @@
     _indexSelectSeg = index;
     [_tableView reloadData];
     switch (_indexSelectSeg) {
-        case 0:
-        {
-            ((TableBottomView *)_tableView.tableFooterView.subviews[0]).lblUpdateButton = m_string(@"Update profile");
-        }
-            break;
-        case 1:
-        {
-            ((TableBottomView *)_tableView.tableFooterView.subviews[0]).lblUpdateButton = m_string(@"Update company profile");
-        }
-            break;
-        case 2:
-        {
-            ((TableBottomView *)_tableView.tableFooterView.subviews[0]).lblUpdateButton = m_string(@"Update password");
-        }
-            break;
-        default:
-            break;
+        case COSegmentStyleAbout: self.tablefooterView.lblUpdateButton    = m_string(@"Update profile"); break;
+        case COSegmentStyleCompany: self.tablefooterView.lblUpdateButton  = m_string(@"Update company profile"); break;
+        case COSegmentStylePasswork: self.tablefooterView.lblUpdateButton = m_string(@"Update password"); break;
     }
 }
 
@@ -120,13 +110,55 @@
     _tableView.tableFooterView = footerView;
 }
 
+- (void)_setupEditAboutProfileVC {
+    EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
+    BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    vc.phoneName = self.profileObject.phone;
+    vc.addressName = self.profileObject.address;
+    vc.emailName = self.profileObject.email;
+    vc.actionDone = ^(NSString* emailName,NSString* phone,NSString* address) {
+        self.profileObject.phone = phone;
+        self.profileObject.address = address;
+        self.profileObject.email = emailName;
+    };
+    [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
+}
+
+- (void)_setupEditCompanyVC {
+    EditCompanyVC *vc = [[EditCompanyVC alloc]init];
+    BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    vc.orgName = self.profileObject.orgname;
+    vc.address = self.profileObject.address;
+    vc.imageName = _imageCompany?_imageCompany:[UIImage imageNamed:@"ic_placeholder"];
+    vc.actionDone = ^(NSString *orgName,NSString* address,UIImage *imageCompany){
+        self.profileObject.orgname = orgName;
+        self.profileObject.address = address;
+        _imageCompany = imageCompany;
+    };
+    [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
+}
+
+- (void)_setupShowAleartViewWithTitle:(NSString*)message {
+    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+                              message:m_string(message)
+                         cancelButton:m_string(@"OK")
+                             delegate:nil
+                                  tag:0
+                     arrayTitleButton:nil];
+}
+
+- (BOOL)_isValidationPassword {
+    if ([_comfilmPassword isEqualToString:_newPassword]) {
+        return YES;
+    }
+    return NO;
+}
 
 #pragma mark - Setter Getter
 
 - (ProfileObject*)profileObject {
     if (!_profileObject) {
-        NSArray *arr = [[CODummyDataManager shared] arrayAboutProfileObj];
-        return _profileObject = arr[0];
+        _profileObject = [[CODummyDataManager shared] AboutProfileObj];
     }
     return _profileObject;
 }
@@ -134,16 +166,16 @@
 
 #pragma mark - Action
 - (void)__actionButtonUpdate:(NSString*)string {
-    if ([string isEqualToString:@"Update profile"]) {
-        EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
-        BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
-        [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
-    } else if([string isEqualToString:@"Update company profile"]){
-        EditCompanyVC *vc = [[EditCompanyVC alloc]init];
-        BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
-        [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
+    if ([string isEqualToString:UPDATE_ABOUT_PROFILE]) {
+        [self _setupEditAboutProfileVC];
+    } else if([string isEqualToString:UPDATE_COMNPANY_PROFILE]){
+        [self _setupEditCompanyVC];
     } else {
-        [UIHelper showAleartViewWithTitle:m_string(@"CoAssests") message:m_string(@"Update Password Success") cancelButton:m_string(@"OK") delegate:nil tag:0 arrayTitleButton:nil];
+        if ([self _isValidationPassword]) {
+            [self _setupShowAleartViewWithTitle:@"Update Password Success"];
+        } else {
+            [self _setupShowAleartViewWithTitle:@"Password is ivalidation"];
+        }
     }
 }
 
@@ -194,19 +226,19 @@
 - (AboutTableViewCell*)_setupAboutCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AboutTableViewCell *aboutCell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell identifier]
                                                                     forIndexPath:indexPath];
-    if (indexPath.row == 0) {
+    if (indexPath.row == COAboutProfileStyleSalutation) {
         aboutCell.lblDetail.text = self.profileObject.salutation;
         aboutCell.lblname.text = m_string(@"Salutation");
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.row == COAboutProfileStyleFirstName) {
         aboutCell.lblDetail.text = self.profileObject.firstname;
         aboutCell.lblname.text = m_string(@"First Name");
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == COAboutProfileStyleLastNameSurname) {
         aboutCell.lblDetail.text = self.profileObject.lastnameurname;
-        aboutCell.lblname.text = m_string(@"Last Name/Surname");
-    } else if (indexPath.row == 3) {
+        aboutCell.lblname.text = m_string(@"Last Name");
+    } else if (indexPath.row == COAboutProfileStyleEmail) {
         aboutCell.lblDetail.text = self.profileObject.email;
         aboutCell.lblname.text = m_string(@"Email");
-    } else if (indexPath.row == 4) {
+    } else if (indexPath.row == COAboutProfileStylePhone) {
         aboutCell.lblDetail.text = self.profileObject.phone;
         aboutCell.lblname.text = m_string(@"Phone");
     } else {
@@ -222,13 +254,13 @@
                                                                         forIndexPath:indexPath];
     companyCell.lblDetail.text = self.profileObject.orgname;
     companyCell.lblname.text = m_string(@"Orgname");
-    companyCell.image.image = [UIImage imageNamed:self.profileObject.image];
+    companyCell.image.image = _imageCompany?_imageCompany:[UIImage imageNamed:@"ic_placeholder"];
     companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return companyCell;
 }
 
-- (CompanyTableViewCell2*)_setupCompanyCell2:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CompanyTableViewCell2 *companyCell = [tableView dequeueReusableCellWithIdentifier:[CompanyTableViewCell2 identifier]
+- (AboutTableViewCell*)_setupCompanyCell2:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    AboutTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell identifier]
                                                                         forIndexPath:indexPath];
     companyCell.lblDetail.text = self.profileObject.address;
     companyCell.lblname.text = m_string(@"Address");
@@ -238,9 +270,25 @@
 
 - (PasswordTableViewCell*)_setupPasswordCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PasswordTableViewCell *passwordCell = [tableView dequeueReusableCellWithIdentifier:[PasswordTableViewCell identifier]
-                                                                          forIndexPath:indexPath];
+                                                                        forIndexPath:indexPath];
     passwordCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    passwordCell.delegate = self;
     return passwordCell;
 }
+
+#pragma mark - Delegate 
+- (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell *)passwordTableViewCell oldPassowrd:(NSString *)oldPassowrd newPassowrd:(NSString *)newPassowrd comfilmPassowrd:(NSString *)comfilmPassowrd {
+    if (![passwordTableViewCell.oldPassowrdTXT.text isEmpty]) {
+        _oldPassword = oldPassowrd;
+    }
+    if (![passwordTableViewCell.newpassowrdTXT.text isEmpty]) {
+        _newPassword = newPassowrd;
+    }
+    if (![passwordTableViewCell.comfilmPassowrdTXT.text isEmpty]) {
+        _comfilmPassword = comfilmPassowrd;
+    }
+}
+
+
 
 @end

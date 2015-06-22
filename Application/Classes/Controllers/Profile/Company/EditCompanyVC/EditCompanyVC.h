@@ -7,7 +7,15 @@
 //
 
 #import "BaseViewController.h"
+#import "COBorderTextField.h"
+
+typedef void(^ActionDone)(NSString *orgName,NSString* address,UIImage *imageCompany);
 
 @interface EditCompanyVC : BaseViewController
+
+@property (strong, nonatomic) NSString *orgName;
+@property (strong, nonatomic) NSString *address;
+@property (strong, nonatomic) UIImage *imageName;
+@property (copy, nonatomic) ActionDone actionDone;
 
 @end

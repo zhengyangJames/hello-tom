@@ -21,9 +21,10 @@
 @interface SettingViewController () <UITableViewDelegate,UITableViewDataSource>
 {
     __weak IBOutlet UITableView *_tableView;
+    WebViewSetting *_webViewSetting;
 }
+
 @property (strong, nonatomic) NSArray *arrayData;
-@property (strong, nonatomic) WebViewSetting *webViewSetting;
 
 @end
 
@@ -38,11 +39,12 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    _webViewSetting = nil;
 }
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"Setting");
+    self.navigationItem.title = m_string(@"Settings");
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.tableFooterView = [UIView new];
@@ -57,13 +59,6 @@
     return _arrayData;
 }
 
-- (WebViewSetting*)webViewSetting {
-    if (!_webViewSetting) {
-      return _webViewSetting = [[WebViewSetting alloc]init];
-    }
-    return _webViewSetting;
-}
-
 #pragma mark - TableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -76,7 +71,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
     }
     cell.accessoryType = UITableViewCellSeparatorStyleSingleLine;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = self.arrayData[indexPath.row];
     cell.textLabel.textColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Raleway-Regular" size:17];
@@ -86,64 +80,40 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self __actionForCellWithIndex:indexPath.row];
-    self.webViewSetting = nil;
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Action
 
 - (void)__actionForCellWithIndex:(NSInteger)index {
     switch (index) {
-        case 0:
-        {
-            ContacViewController *vc = [[ContacViewController alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 1:
-        {
-            self.webViewSetting.webLink = LINK_NEW;
-            self.webViewSetting.titler = m_string(@"News");
-            [self.navigationController pushViewController:self.webViewSetting animated:YES];
-        }
-            break;
-        case 2:
-        {
-            self.webViewSetting.webLink = LINK_COMMENTARIES;
-            self.webViewSetting.titler = m_string(@"Commentaries");
-            [self.navigationController pushViewController:self.webViewSetting animated:YES];
-        }
-            break;
-        case 3:
-        {
-            self.webViewSetting.webLink = LINK_TERMS_OF_USE;
-            self.webViewSetting.titler = m_string(@"Terms of Use");
-            [self.navigationController pushViewController:self.webViewSetting animated:YES];
-        }
-            break;
-        case 4:
-        {
-            self.webViewSetting.webLink = LINK_CODE_OF_CONDUCT;
-            self.webViewSetting.titler = m_string(@"Code of Conduct");
-            [self.navigationController pushViewController:self.webViewSetting animated:YES];
-        }
-            break;
-        case 5:
-        {
-            self.webViewSetting.webLink = LINK_PRIVACY;
-            self.webViewSetting.titler = m_string(@"Privacy");
-            [self.navigationController pushViewController:self.webViewSetting animated:YES];
-        }
-            break;
-        case 6:
-        {
-            [kAppDelegate gotoHome];
-        }
-            break;
+        case COSettingsStypeContact: return [self _pushContacViewController];
             
-        default:
-            break;
+        case COSettingsStypeNew: return [self _pushWebViewSetting:LINK_NEW titler:@"News"];
+            
+        case COSettingsStypeCommentaries: return [self _pushWebViewSetting:LINK_COMMENTARIES titler:@"Commentaries"];
+            
+        case COSettingsStypeTermOfUse: return [self _pushWebViewSetting:LINK_TERMS_OF_USE titler:@"Terms of Use"];
+            
+        case COSettingsStypeCodeOfConduct: return [self _pushWebViewSetting:LINK_CODE_OF_CONDUCT titler:@"Code of Conduct"];
+
+        case COSettingsStypePrivacy: return [self _pushWebViewSetting:LINK_PRIVACY titler:@"Privacy"];
+
+        case COSettingsStypeLogout: return [kAppDelegate gotoHome];
     }
 }
 
+#pragma mark - Private
+- (void)_pushWebViewSetting:(NSString*)link titler:(NSString*)titler {
+    _webViewSetting = [[WebViewSetting alloc]init];
+    _webViewSetting.webLink = link;
+    _webViewSetting.titler = m_string(titler);
+    [self.navigationController pushViewController:_webViewSetting animated:YES];
+}
+
+- (void)_pushContacViewController {
+    ContacViewController *vc = [[ContacViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

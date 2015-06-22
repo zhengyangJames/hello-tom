@@ -19,6 +19,9 @@
     __weak IBOutlet CoDropListButtom *btnSalutation;
     __weak IBOutlet CoDropListButtom *btnMobileNumber;
     __weak IBOutlet COBorderTextField *_emailTextField;
+    __weak IBOutlet COBorderTextField *_usernameTextField;
+    __weak IBOutlet COBorderTextField *_passwordTextField;
+    __weak IBOutlet COBorderTextField *_comfilmPasswordTextField;
     NSInteger _indexActtionSalutation;
     NSInteger _indexActtionPhoneCode;
 }
@@ -38,6 +41,23 @@
     _indexActtionSalutation = 0;
 }
 
+#pragma mark - Private
+- (void)_setupShowAleartViewWithTitle:(NSString*)message {
+    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+                              message:m_string(message)
+                         cancelButton:m_string(@"OK")
+                             delegate:nil
+                                  tag:0
+                     arrayTitleButton:nil];
+}
+
+- (BOOL)_isValidtion {
+    if (![_emailTextField.text isValidEmail]||[_usernameTextField.text isEmpty]||[_passwordTextField.text isValidPassword]||[_comfilmPasswordTextField.text isValidPassword]) {
+        [self _setupShowAleartViewWithTitle:@"Profile is invalid"];
+        return NO;
+    }
+    return YES;
+}
 
 #pragma mark - Action
 - (IBAction)__actionCancel:(id)sender {
@@ -68,9 +88,7 @@
 }
 
 - (IBAction)__actionRegister:(id)sender {
-    NSString *string = _emailTextField.text;
-    if (![string isValidEmail]) {
-        [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Email invalid") cancelButton:m_string(@"OK") delegate:nil tag:0 arrayTitleButton:nil];
+    if (![self _isValidtion]) {
         return;
     }
     [self.navigationController popToRootViewControllerAnimated:YES];

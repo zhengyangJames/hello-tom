@@ -121,7 +121,7 @@
 - (HomeListViewCell*)_setupHomeListCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeListViewCell identifier]];
     
-    cell.object = self.arrayData[indexPath.row];
+    cell.object = self.arrayData[arc4random() % self.arrayData.count];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

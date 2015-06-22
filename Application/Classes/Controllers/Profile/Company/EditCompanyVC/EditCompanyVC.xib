@@ -20,6 +20,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditCompanyVC">
             <connections>
                 <outlet property="_btnOrgType" destination="029-Hg-mts" id="k1c-Rs-c5d"/>
+                <outlet property="_imageCompany" destination="7eQ-Sz-dnh" id="suI-ii-TRS"/>
+                <outlet property="addressTextField" destination="ZgE-kC-jx8" id="3hA-Ea-5nl"/>
+                <outlet property="orgNameTextField" destination="8g3-u0-Njx" id="HaR-9Z-axj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,7 +40,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lK7-US-ccv" userLabel="Top View">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7eQ-Sz-dnh">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="7eQ-Sz-dnh">
                                             <rect key="frame" x="30" y="10" width="260" height="165"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17a-uG-CJK">
@@ -45,6 +48,9 @@
                                             <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="__actionPickImage:" destination="-1" eventType="touchUpInside" id="3no-w7-cuP"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -77,7 +83,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="glN-LP-jwL"/>
                                             </constraints>
-                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="namePhonePad"/>
                                         </textField>
@@ -105,7 +110,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="83L-BR-1GK"/>
                                             </constraints>
-                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -124,7 +128,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="P2m-Dp-dFo"/>
                                             </constraints>
-                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -143,7 +146,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="jBa-Bd-SJR"/>
                                             </constraints>
-                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -162,7 +164,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="mef-jp-iXI"/>
                                             </constraints>
-                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -181,7 +182,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="wOP-8X-d5V"/>
                                             </constraints>
-                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -286,10 +286,10 @@
                 <constraint firstAttribute="trailing" secondItem="dYJ-vI-i4p" secondAttribute="trailing" id="ahZ-WA-4io"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="369" y="486"/>
+            <point key="canvasLocation" x="188" y="491"/>
         </view>
     </objects>
     <resources>
-        <image name="4.jpg" width="1920" height="1200"/>
+        <image name="ic_placeholder.png" width="600" height="400"/>
     </resources>
 </document>
