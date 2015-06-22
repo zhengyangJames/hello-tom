@@ -27,6 +27,10 @@
     [self _setupUI];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 #pragma mark - Setup
 - (void)_setupUI {
     self.navigationController.navigationBar.hidden = YES;
@@ -35,11 +39,9 @@
 
 #pragma mark - Private
 - (void)_login {
-    DetailsViewController *vc = [[DetailsViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-    NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray: self.navigationController.viewControllers];
-    [allViewControllers removeObjectIdenticalTo: self];
-    self.navigationController.viewControllers = allViewControllers;
+    if (self.actionLogin) {
+        self.actionLogin();
+    }
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {

@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="og0-V5-apw">
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og0-V5-apw">
                         <rect key="frame" x="8" y="8" width="304" height="198.5"/>
                     </mapView>
                 </subviews>
@@ -27,7 +27,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="_mapView" destination="og0-V5-apw" id="kHw-lh-7rq"/>
+                <outlet property="mapViewCell" destination="og0-V5-apw" id="MYL-li-wyE"/>
             </connections>
             <point key="canvasLocation" x="218" y="248.5"/>
         </tableViewCell>

@@ -18,6 +18,7 @@
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
+    NSInteger _indexSelectFilter;
 }
 @property (strong, nonatomic) NSArray *arrayData;
 
@@ -47,7 +48,7 @@
     [self _setupLeftBarButton];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
-    
+    _indexSelectFilter = 0;
     [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil]
      forCellReuseIdentifier:[HomeListViewCell identifier]];
 }
@@ -64,6 +65,12 @@
     [self.navigationItem setLeftBarButtonItem:leftButton];
 }
 
+#pragma mark - Private
+- (void)_setupPushDetailVC {
+    DetailsViewController *vc = [[DetailsViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - Setter Getter
 - (NSArray*)arrayData {
     if (!_arrayData) {
@@ -76,8 +83,8 @@
 #pragma mark - Action
 - (void)__actionFilter {
     NSArray *array = [LoadFileManager loadFilePlistWithName:@"FilterList"];
-    [CODropListVC presentWithTitle:m_string(@"Filter") data:array selectedIndex:0 parentVC:self didSelect:^(NSInteger index) {
-        
+    [CODropListVC presentWithTitle:m_string(@"Filter") data:array selectedIndex:_indexSelectFilter parentVC:self didSelect:^(NSInteger index) {
+        _indexSelectFilter = index;
     }];
 }
 
@@ -99,8 +106,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    LoginViewController *vc = [[LoginViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    if (![kUserDefaults boolForKey:@"DefaultLogin"]) {
+        [kUserDefaults setBool:YES forKey:@"DefaultLogin"];
+        [kUserDefaults synchronize];
+        LoginViewController *vcLogin = [[LoginViewController alloc]init];
+        __weak LoginViewController *weakLogin = vcLogin;
+        BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+        [self presentViewController:nav animated:YES completion:nil];
+        vcLogin.actionLogin = ^(){
+            [self.navigationController dismissViewControllerAnimated:weakLogin completion:^{
+                
+            }];
+        };
+    }
+    [self _setupPushDetailVC];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

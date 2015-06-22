@@ -28,7 +28,7 @@
     [super layoutSubviews];;
     _lblDetail.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
     _lblSate.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
-    [_viewImage.layer setCornerRadius:8];
+    [_viewImage.layer setCornerRadius:4];
     [self setNeedsDisplay];
 }
 

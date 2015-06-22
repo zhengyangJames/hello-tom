@@ -225,7 +225,7 @@
                 <constraint firstAttribute="bottom" secondItem="T7n-jw-l5P" secondAttribute="bottom" id="qo6-Gg-Fb6"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="117" y="7"/>
+            <point key="canvasLocation" x="98" y="-15"/>
         </view>
     </objects>
 </document>

@@ -43,6 +43,7 @@
 #pragma mark - Setup
 - (void)_setupUI {
     self.navigationItem.title = self.titler;
+    self.navigationController.navigationBar.hidden = NO;
     [self _setupWebView];
 }
 
@@ -51,13 +52,6 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     _webView.delegate = self;
     [_webView loadRequest:request];
-//    [_webView loadRequest:request progress:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
-//        DBG(@"%tu",bytesWritten);
-//    } success:^NSString *(NSHTTPURLResponse *response, NSString *HTML) {
-//        [_webView loadHTMLString:HTML baseURL:nil];
-//    } failure:^(NSError *error) {
-//        [_webView loadHTMLString:error.debugDescription baseURL:nil];
-//    }];
 }
 
 #pragma mark - Private
@@ -72,19 +66,16 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [UIHelper showLoadingInView:self.view];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [UIHelper hideLoadingFromView:self.view];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [UIHelper hideLoadingFromView:self.view];
     
     // report the error inside the webview
     NSString* errorString = [NSString stringWithFormat:@"<html><center><font size=+3 color='red'>An error occurred:<br>%@</font></center></html>",
