@@ -7,14 +7,15 @@
 //
 
 #import "TableHeaderView.h"
+#define IS_IOS8             ((NSInteger)[[[UIDevice currentDevice] systemVersion] floatValue]) == 8
 
-@interface TableHeaderView () 
+@interface TableHeaderView () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
-
+    
 }
-@property (weak, nonatomic) IBOutlet UIImageView *imageProfile;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UILabel *titleName;
+@property (strong, nonatomic) UIViewController *maskView;
 
 @end
 
@@ -44,6 +45,12 @@
 }
 
 #pragma mark - Set Get
+- (UIViewController*)maskView {
+    if (!_maskView) {
+       return _maskView = [[UIViewController alloc]init];
+    }
+    return _maskView;
+}
 
 #pragma mark - Action
 - (IBAction)__actionSwitchSegment:(id)sender {
@@ -54,7 +61,12 @@
     }
 }
 
-#pragma mark - Delegate
+- (IBAction)__actionImagePhotoPicker:(id)sender {
+    if (self.actionPickerImageProfile) {
+        self.actionPickerImageProfile();
+    }
+}
+
 
 
 @end

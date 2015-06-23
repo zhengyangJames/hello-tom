@@ -87,7 +87,9 @@
     WebViewSetting *vc = [[WebViewSetting alloc]init];
     vc.titler = m_string(@"Terms Of Use");
     vc.webLink = @"http://coassets.com/terms-of-use/";
-    [self.navigationController presentViewController:vc animated:YES completion:nil];
+    vc.isPresion = YES;
+    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (IBAction)__actionRegister:(id)sender {

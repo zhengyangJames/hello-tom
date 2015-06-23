@@ -42,5 +42,6 @@
 #define KADDRESS    @"address"
 #define KORGNAME    @"orgname"
 #define KIMAGE      @"image"
+#define KDEFAULT_LOGIN      @"DefaultLogin"
 
 #endif

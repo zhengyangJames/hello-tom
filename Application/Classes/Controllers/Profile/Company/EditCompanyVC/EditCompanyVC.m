@@ -127,23 +127,24 @@
 }
 
 - (void)_showActionSheet {
-    UIActionSheet *act = [[UIActionSheet alloc]initWithTitle:nil
-                                                    delegate:self
-                                           cancelButtonTitle:m_string(@"CANCEL")
-                                      destructiveButtonTitle:nil
-                                           otherButtonTitles:m_string(@"Select Image My Photo"),
-                          m_string(@"Capture image from Camera"), nil];
-    [act showInView:self.view];
+    [UIHelper showActionsheetWithTitle:nil
+                     cancelButtonTitle:m_string(@"Cancel")
+                destructiveButtonTitle:nil
+                     otherButtonsTitle:@[m_string(@"Take a photo"),m_string(@"Choose existing")]
+                              delegate:self
+                                   tag:0
+                            showInView:self.view];
 }
+
 
 #pragma mark - Delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
             break;
         case 1:
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
             break;
         default:
             break;
@@ -152,7 +153,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = info[@"UIImagePickerControllerOriginalImage"];
+    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
     [_imageCompany setImage:image];
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

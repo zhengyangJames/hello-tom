@@ -25,16 +25,13 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    CLLocationCoordinate2D centerCoord = {GEORGIA_TECH_LATITUDE,GEORGIA_TECH_LONGITUDE};
-    [self.mapViewCell setCenterCoordinate:centerCoord zoomLevel:ZOOM_LEVEL animated:YES];
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(33.777328,
-                                                                   -84.397348);
-    
-    MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc]init];
-    myAnnotation.coordinate = coordinate;
-    myAnnotation.title = @"Matthews Pizza";
-    myAnnotation.subtitle = @"Best Pizza in Town";
-    [self.mapViewCell  addAnnotation:myAnnotation];
+    CLLocationCoordinate2D coordinate = {GEORGIA_TECH_LATITUDE,GEORGIA_TECH_LONGITUDE};
+    [self.mapViewCell setCenterCoordinate:coordinate zoomLevel:ZOOM_LEVEL animated:YES];
+//    MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc]init];
+//    myAnnotation.coordinate = coordinate;
+//    myAnnotation.title = @"Matthews Pizza";
+//    myAnnotation.subtitle = @"Best Pizza in Town";
+//    [self.mapViewCell  addAnnotation:myAnnotation];
 }
 
 - (void)viewDidLoad {

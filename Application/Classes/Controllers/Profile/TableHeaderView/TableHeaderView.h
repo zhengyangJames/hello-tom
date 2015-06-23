@@ -9,9 +9,12 @@
 #import "BaseView.h"
 
 typedef void(^ActionSegment)(NSInteger indexSelectSegment);
+typedef void(^ActionPickerImageProfile)();
 
 @interface TableHeaderView : BaseView
 
 @property (copy, nonatomic) ActionSegment actionSegment;
+@property (copy, nonatomic) ActionPickerImageProfile actionPickerImageProfile;
+@property (strong, nonatomic) IBOutlet UIImageView *imageProfile;
 
 @end

@@ -42,6 +42,8 @@
     if (self.actionLogin) {
         self.actionLogin();
     }
+    [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
+    [kUserDefaults synchronize];
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
@@ -55,11 +57,11 @@
 
 - (BOOL)_isValidation {
     if ([_userName.text isEmpty] && ![_passWord.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"Username and Password is invalid"];
+        [self _setupShowAleartViewWithTitle:@"invalid password or username"];
         return NO;
     } else {
         if (![_passWord.text isValidPassword]|| [_userName.text isEmpty]) {
-            [self _setupShowAleartViewWithTitle:@"Username Or Password is invalid"];
+            [self _setupShowAleartViewWithTitle:@"invalid password or username"];
             return NO;
         }
     }

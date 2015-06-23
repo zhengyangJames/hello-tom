@@ -28,10 +28,20 @@
     [super layoutSubviews];;
     _lblDetail.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
     _lblSate.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
-    [_viewImage.layer setCornerRadius:4];
+//    [_viewImage.layer setCornerRadius:4];
+
     [self setNeedsDisplay];
 }
 
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    _viewImage.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    _viewImage.layer.masksToBounds = NO;
+//    [_viewImage.layer setCornerRadius:4];
+    _viewImage.layer.shadowOffset = CGSizeMake(0, 0);
+    _viewImage.layer.shadowRadius = 4;
+    _viewImage.layer.shadowOpacity = 0.6;
+}
 
 - (void)setObject:(ListHomeObject *)object {
     _object = object;
