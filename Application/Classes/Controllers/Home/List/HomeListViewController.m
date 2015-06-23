@@ -114,8 +114,6 @@
         vcLogin.actionLogin = ^(){
             [self.navigationController dismissViewControllerAnimated:weakLogin completion:^{
                 [self _setupPushDetailVC];
-                [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
-                [kUserDefaults synchronize];
             }];
         };
     }else {

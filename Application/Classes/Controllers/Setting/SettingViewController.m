@@ -154,8 +154,6 @@
 }
 
 - (void)_logginApllication {
-    [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
-    [kUserDefaults synchronize];
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
     __weak LoginViewController *weakLogin = vcLogin;
     BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];

@@ -42,6 +42,8 @@
     if (self.actionLogin) {
         self.actionLogin();
     }
+    [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
+    [kUserDefaults synchronize];
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
