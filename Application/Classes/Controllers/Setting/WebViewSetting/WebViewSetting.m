@@ -22,6 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
+    
+}
+
+- (void)_setupLeftNavigationButton {
+    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Back")
+                                                                                   style:UIBarButtonItemStyleDone
+                                                                                  target:self
+                                                                                  action:@selector(__actionDCancel:)];
+    [btBack setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
+                            forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = btBack;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -54,7 +65,15 @@
     [_webView loadRequest:request];
 }
 
-#pragma mark - Private
+- (void)setIsPresion:(BOOL)isPresion {
+    [self _setupLeftNavigationButton];
+}
+
+#pragma mark - Action
+
+- (void)__actionDCancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 #pragma mark Set Get

@@ -107,8 +107,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
-        [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
-        [kUserDefaults synchronize];
         LoginViewController *vcLogin = [[LoginViewController alloc]init];
         __weak LoginViewController *weakLogin = vcLogin;
         BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
@@ -116,6 +114,8 @@
         vcLogin.actionLogin = ^(){
             [self.navigationController dismissViewControllerAnimated:weakLogin completion:^{
                 [self _setupPushDetailVC];
+                [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
+                [kUserDefaults synchronize];
             }];
         };
     }else {

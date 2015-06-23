@@ -43,7 +43,7 @@
     [self setNeedsStatusBarAppearanceUpdate];
     _webViewSetting = nil;
     if ([kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
-        [self _replaceArraySetting];
+        [self _replaceArraySettingLogin];
     }
 }
 
@@ -53,7 +53,9 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.tableFooterView = [UIView new];
-
+    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        [self _replaceArraySettingLogOut];
+    }
 }
 
 #pragma mark - Setter Getter
@@ -89,7 +91,6 @@
     cell.textLabel.text = self.arraySetting[indexPath.row];
     cell.textLabel.textColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Raleway-Regular" size:17];
-    
     return cell;
 }
 
@@ -161,16 +162,27 @@
     [self presentViewController:nav animated:YES completion:nil];
     vcLogin.actionLogin = ^(){
         [self.navigationController dismissViewControllerAnimated:weakLogin completion:^{
-            [self _replaceArraySetting];
+            [self _replaceArraySettingLogin];
         }];
     };
 }
 
-- (void)_replaceArraySetting {
+- (void)_replaceArraySettingLogin {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
     for (int i = 0 ; i < arr.count ; i ++) {
         if ([arr[i] isEqualToString:@"Log In"]) {
             [arr replaceObjectAtIndex:i withObject:@"Log Out"];
+        }
+    }
+    self.arraySetting = arr;
+    [_tableView reloadData];
+}
+
+- (void)_replaceArraySettingLogOut {
+    NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
+    for (int i = 0 ; i < arr.count ; i ++) {
+        if ([arr[i] isEqualToString:@"Log Out"]) {
+            [arr replaceObjectAtIndex:i withObject:@"Log In"];
         }
     }
     self.arraySetting = arr;
