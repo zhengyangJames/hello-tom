@@ -12,10 +12,12 @@
 #import "COBorderTextField.h"
 #import "DetailsViewController.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UIAlertViewDelegate>
 {
     __weak IBOutlet COBorderTextField *_userName;
     __weak IBOutlet COBorderTextField *_passWord;
+    
+    __weak COBorderTextField *_currentField;
 }
 
 @end
@@ -50,11 +52,12 @@
     [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
-                             delegate:nil
+                             delegate:self
                                   tag:0
                      arrayTitleButton:nil];
 }
 
+/*
 - (BOOL)_isValidation {
     if ([_userName.text isEmpty] && ![_passWord.text isValidPassword]) {
         [self _setupShowAleartViewWithTitle:@"invalid password or username"];
@@ -65,6 +68,33 @@
             return NO;
         }
     }
+    return YES;
+}
+ */
+
+- (BOOL)_isValidation {
+    if ([_userName.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Username is empty"];
+        _currentField = _userName;
+         return NO;
+    } else if (![_passWord.text isValidPassword]) {
+        [self _setupShowAleartViewWithTitle:@"invalid password"];
+        _currentField = _passWord;
+         return NO;
+    }
+    
+    
+    /*
+    if ([_userName.text isEmpty] && ![_passWord.text isValidPassword]) {
+        [self _setupShowAleartViewWithTitle:@"invalid password or username"];
+        return NO;
+    } else {
+        if (![_passWord.text isValidPassword]|| [_userName.text isEmpty]) {
+            [self _setupShowAleartViewWithTitle:@"invalid password or username"];
+            return NO;
+        }
+    }
+     */
     return YES;
 }
 
@@ -94,5 +124,13 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        if (_currentField) {
+            [_currentField becomeFirstResponder];
+        }
+    }
+}
 
 @end
