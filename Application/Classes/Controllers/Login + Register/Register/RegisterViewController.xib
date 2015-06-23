@@ -139,7 +139,7 @@
                                             </constraints>
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwI-IW-TyI">
                                             <rect key="frame" x="20" y="285" width="210" height="21"/>
@@ -492,7 +492,7 @@
                 <constraint firstAttribute="bottom" secondItem="nr1-DS-oAz" secondAttribute="bottom" id="euL-uH-HeC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="87" y="534"/>
+            <point key="canvasLocation" x="-5" y="523"/>
         </view>
     </objects>
 </document>

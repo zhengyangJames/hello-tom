@@ -13,6 +13,7 @@
 #import "LoadFileManager.h"
 #import "COBorderTextField.h"
 #import "NSString+Validation.h"
+#import "WebViewSetting.h"
 
 @interface RegisterViewController ()
 {
@@ -83,8 +84,10 @@
 }
 
 - (IBAction)__actionOpenSafari:(id)sender {
-    NSURL *url = [NSURL URLWithString:@"http://coassets.com/terms-of-use/"];
-    [[UIApplication sharedApplication] openURL:url];
+    WebViewSetting *vc = [[WebViewSetting alloc]init];
+    vc.titler = m_string(@"Terms Of Use");
+    vc.webLink = @"http://coassets.com/terms-of-use/";
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)__actionRegister:(id)sender {

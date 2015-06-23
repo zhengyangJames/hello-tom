@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
+typedef void(^ActionLogin)();
+
 @interface LoginViewController : BaseViewController
+
+@property (copy, nonatomic) ActionLogin actionLogin;
 
 @end
