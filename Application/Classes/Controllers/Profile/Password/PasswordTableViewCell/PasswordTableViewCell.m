@@ -17,12 +17,18 @@
 
 @implementation PasswordTableViewCell
 
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//    if ([self.delegate respondsToSelector:@selector(passwordTableViewCellTextFieldAction:stringTextField:)]) {
-//        [self.delegate passwordTableViewCellTextFieldAction:self stringTextField:textField.text];
-//    }
-//    return YES;
-//}
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == self.oldPassowrdTXT && theTextField.returnKeyType == UIReturnKeyNext) {
+        [theTextField resignFirstResponder];
+        [self.newpassowrdTXT becomeFirstResponder];
+    } else if (theTextField == self.newpassowrdTXT && theTextField.returnKeyType == UIReturnKeyNext) {
+        [self.newpassowrdTXT resignFirstResponder];
+        [self.comfilmPassowrdTXT becomeFirstResponder];
+    } else {
+        [self.comfilmPassowrdTXT resignFirstResponder];
+    }
+    return YES;
+}
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
     if (![_oldPassowrdTXT.text isEmpty]&&![_newpassowrdTXT.text isEmpty]&&![_comfilmPassowrdTXT.text isEmpty]&&([_newpassowrdTXT.text isEqualToString:_comfilmPassowrdTXT.text])) {

@@ -412,14 +412,14 @@
                                                     <attributes>
                                                         <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment content="terms of use.">
                                                     <attributes>
                                                         <color key="NSColor" red="0.83137254901960789" green="0.10980392156862745" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                                         <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                         <integer key="NSUnderline" value="1"/>
                                                     </attributes>
                                                 </fragment>
@@ -492,7 +492,7 @@
                 <constraint firstAttribute="bottom" secondItem="nr1-DS-oAz" secondAttribute="bottom" id="euL-uH-HeC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-5" y="523"/>
+            <point key="canvasLocation" x="-112" y="527"/>
         </view>
     </objects>
 </document>

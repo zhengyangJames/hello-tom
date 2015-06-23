@@ -8,14 +8,13 @@
 
 #import "BaseViewController.h"
 
-typedef void(^ActionDoneAbout)(NSString* emailName,NSString* phone,NSString* address);
+typedef void(^ActionDoneAbout)(NSString* emailName,NSString* phone,NSInteger phoneCode,NSString* address);
 
 @interface EditAboutProfileVC : BaseViewController
 
-@property (strong, nonatomic) NSString *fristName;
-@property (strong, nonatomic) NSString *lastName;
 @property (strong, nonatomic) NSString *emailName;
 @property (strong, nonatomic) NSString *phoneName;
+@property (assign, nonatomic) NSInteger phoneCode;
 @property (strong, nonatomic) NSString *addressName;
 @property (copy, nonatomic) ActionDoneAbout actionDone;
 

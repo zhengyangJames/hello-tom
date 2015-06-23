@@ -30,9 +30,9 @@
     rang = [self rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]];
     if ( !rang.length )
         return NO;  // no letter
-    rang = [self rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]];
-    if ( !rang.length )
-        return NO;  // no number;
+//    rang = [self rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]];
+//    if ( !rang.length )
+//        return NO;  // no number;
 //    rang = [self rangeOfCharacterFromSet:upperCaseChars];
 //    if ( !rang.length )
 //        return NO;  // no uppercase letter;

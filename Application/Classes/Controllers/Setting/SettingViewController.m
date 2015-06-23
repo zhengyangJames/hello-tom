@@ -10,6 +10,7 @@
 #import "LoadFileManager.h"
 #import "ContacViewController.h"
 #import "WebViewSetting.h"
+#import "LoginViewController.h"
 
 #define LINK_NEW             @"https://www.coassets.com/news/"
 #define LINK_COMMENTARIES    @"https://www.coassets.com/blog/"
@@ -25,6 +26,7 @@
 }
 
 @property (strong, nonatomic) NSArray *arrayData;
+@property (strong, nonatomic) NSArray *arraySetting;
 
 @end
 
@@ -40,6 +42,9 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
     _webViewSetting = nil;
+    if ([kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        [self _replaceArraySetting];
+    }
 }
 
 #pragma mark - Setup
@@ -48,6 +53,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.tableFooterView = [UIView new];
+
 }
 
 #pragma mark - Setter Getter
@@ -59,10 +65,19 @@
     return _arrayData;
 }
 
+- (NSArray*)arraySetting {
+    if (!_arraySetting) {
+        _arraySetting = self.arrayData;
+        return _arraySetting;
+    }
+    return _arraySetting;
+}
+
+
 #pragma mark - TableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arrayData.count;
+    return self.arraySetting.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,7 +86,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
     }
     cell.accessoryType = UITableViewCellSeparatorStyleSingleLine;
-    cell.textLabel.text = self.arrayData[indexPath.row];
+    cell.textLabel.text = self.arraySetting[indexPath.row];
     cell.textLabel.textColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Raleway-Regular" size:17];
     
@@ -99,7 +114,7 @@
 
         case COSettingsStypePrivacy: return [self _pushWebViewSetting:LINK_PRIVACY titler:@"Privacy"];
 
-        case COSettingsStypeLogout: return [kAppDelegate gotoHome];
+        case COSettingsStypeLogout: return [self _setupLoginAndLogout];
     }
 }
 
@@ -114,6 +129,52 @@
 - (void)_pushContacViewController {
     ContacViewController *vc = [[ContacViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)_setupLoginAndLogout {
+    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        [self _logginApllication];
+    } else {
+        [self _logOutApllication];
+    }
+}
+
+- (void)_logOutApllication {
+    NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
+    for (int i = 0 ; i < arr.count ; i ++) {
+        if ([arr[i] isEqualToString:@"Log Out"]) {
+            [arr replaceObjectAtIndex:i withObject:@"Log In"];
+        }
+    }
+    self.arraySetting = arr;
+    [_tableView reloadData];
+    [kUserDefaults setBool:NO forKey:KDEFAULT_LOGIN];
+    [kUserDefaults synchronize];
+}
+
+- (void)_logginApllication {
+    [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
+    [kUserDefaults synchronize];
+    LoginViewController *vcLogin = [[LoginViewController alloc]init];
+    __weak LoginViewController *weakLogin = vcLogin;
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+    [self presentViewController:nav animated:YES completion:nil];
+    vcLogin.actionLogin = ^(){
+        [self.navigationController dismissViewControllerAnimated:weakLogin completion:^{
+            [self _replaceArraySetting];
+        }];
+    };
+}
+
+- (void)_replaceArraySetting {
+    NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
+    for (int i = 0 ; i < arr.count ; i ++) {
+        if ([arr[i] isEqualToString:@"Log In"]) {
+            [arr replaceObjectAtIndex:i withObject:@"Log Out"];
+        }
+    }
+    self.arraySetting = arr;
+    [_tableView reloadData];
 }
 
 @end

@@ -25,6 +25,15 @@
                                 <constraint firstAttribute="width" constant="110" id="ojS-wE-FRo"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8j-3t-8MG">
+                            <rect key="frame" x="105" y="10" width="110" height="110"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="__actionImagePhotoPicker:" destination="iN0-l3-epB" eventType="touchUpInside" id="P0y-7L-WT9"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retail Investor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbp-S1-Fuq">
                             <rect key="frame" x="96" y="127" width="128" height="21"/>
                             <constraints>
@@ -56,7 +65,11 @@
                         <constraint firstAttribute="trailing" secondItem="s9Z-Xv-jq1" secondAttribute="trailing" constant="25" id="8W4-gu-P8w"/>
                         <constraint firstAttribute="bottom" secondItem="s9Z-Xv-jq1" secondAttribute="bottom" constant="8" id="Dtu-6w-cF2"/>
                         <constraint firstItem="s9Z-Xv-jq1" firstAttribute="leading" secondItem="Lhv-if-T5F" secondAttribute="leading" constant="25" id="Okw-df-0nQ"/>
+                        <constraint firstItem="b8j-3t-8MG" firstAttribute="centerY" secondItem="h23-Qk-WmB" secondAttribute="centerY" id="P40-uO-C8j"/>
+                        <constraint firstItem="b8j-3t-8MG" firstAttribute="width" secondItem="h23-Qk-WmB" secondAttribute="width" id="RvF-OW-5kl"/>
                         <constraint firstAttribute="trailing" secondItem="nbp-S1-Fuq" secondAttribute="trailing" constant="96" id="d2E-fW-lrc"/>
+                        <constraint firstItem="b8j-3t-8MG" firstAttribute="height" secondItem="h23-Qk-WmB" secondAttribute="height" id="em6-an-v2e"/>
+                        <constraint firstItem="b8j-3t-8MG" firstAttribute="centerX" secondItem="h23-Qk-WmB" secondAttribute="centerX" id="fzo-x7-vQR"/>
                         <constraint firstAttribute="centerX" secondItem="h23-Qk-WmB" secondAttribute="centerX" id="k1c-1q-lVV"/>
                         <constraint firstItem="nbp-S1-Fuq" firstAttribute="leading" secondItem="Lhv-if-T5F" secondAttribute="leading" constant="96" id="o6Q-3Y-lYK"/>
                         <constraint firstItem="nbp-S1-Fuq" firstAttribute="top" secondItem="h23-Qk-WmB" secondAttribute="bottom" constant="7" id="tbu-Ki-N3w"/>
@@ -73,11 +86,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="imageProfile" destination="h23-Qk-WmB" id="L8e-AL-Zmz"/>
+                <outlet property="imageProfile" destination="h23-Qk-WmB" id="Xqb-Mr-dWI"/>
                 <outlet property="segmentControl" destination="s9Z-Xv-jq1" id="zSL-cM-Hhz"/>
                 <outlet property="titleName" destination="nbp-S1-Fuq" id="Z6R-9t-zdC"/>
             </connections>
-            <point key="canvasLocation" x="79" y="102"/>
+            <point key="canvasLocation" x="124" y="76"/>
         </view>
     </objects>
     <resources>

@@ -30,18 +30,24 @@
 #define UPDATE_ABOUT_PROFILE    @"Update profile"
 #define UPDATE_COMNPANY_PROFILE @"Update company profile"
 
-@interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate>
+typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell);
+
+@interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
-    __weak  IBOutlet UITableView *_tableView;
+    __weak IBOutlet UITableView *_tableView;
     UIImage *_imageCompany;
-    TableHeaderView *_tableheaderView;
-    NSInteger _indexSelectSeg;
     NSString *_oldPassword;
     NSString *_newPassword;
     NSString *_comfilmPassword;
+    NSInteger _indexSelectSeg;
+    NSInteger _indexActtionCountryCode;
 }
 @property (strong, nonatomic) ProfileObject *profileObject;
 @property (strong, nonatomic) TableBottomView *tablefooterView;
+@property (strong, nonatomic) TableHeaderView *tableheaderView;
+@property (weak, nonatomic) PasswordTableViewCell *passwordTableViewCell;
+@property (strong,nonatomic) NSArray *arrayCountryCode;
+@property (copy, nonatomic) ActionUpdateTextFieldPassword actionUpdateTextFieldPassword;
 
 @end
 
@@ -64,6 +70,7 @@
     self.navigationItem.title = m_string(@"CoAssests");
     [self _setupHeaderTableView];
     [self _setupFooterTableView];
+    _indexActtionCountryCode = 0;
     _tableView.delegate   = self;
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:[AboutTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[AboutTableViewCell identifier]];
@@ -90,6 +97,10 @@
         __typeof__(self) strongSelf = weakSelf;
         [strongSelf _setupCellStyle:indexSelectSegment];
     } ];
+    [_tableheaderView setActionPickerImageProfile:^(){
+        __typeof__(self) strongSelf = weakSelf;
+        [strongSelf _showActionSheet];
+    }];
     _tableheaderView.translatesAutoresizingMaskIntoConstraints = NO;
     [headerView addSubview:_tableheaderView];
     [_tableheaderView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
@@ -113,13 +124,15 @@
 - (void)_setupEditAboutProfileVC {
     EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    vc.phoneCode = _indexActtionCountryCode;
     vc.phoneName = self.profileObject.phone;
     vc.addressName = self.profileObject.address;
     vc.emailName = self.profileObject.email;
-    vc.actionDone = ^(NSString* emailName,NSString* phone,NSString* address) {
+    vc.actionDone = ^(NSString* emailName,NSString* phone,NSInteger phoneCode,NSString* address) {
         self.profileObject.phone = phone;
         self.profileObject.address = address;
         self.profileObject.email = emailName;
+        _indexActtionCountryCode = phoneCode;
     };
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
@@ -163,6 +176,12 @@
     return _profileObject;
 }
 
+- (NSArray*)arrayCountryCode {
+    if (!_arrayCountryCode) {
+        return _arrayCountryCode = [LoadFileManager loadFileJsonWithName:@"JsonPhoneCode"];
+    }
+    return _arrayCountryCode;
+}
 
 #pragma mark - Action
 - (void)__actionButtonUpdate:(NSString*)string {
@@ -172,6 +191,9 @@
         [self _setupEditCompanyVC];
     } else {
         if ([self _isValidationPassword]) {
+            _passwordTableViewCell.oldPassowrdTXT.text = nil;
+            _passwordTableViewCell.newpassowrdTXT.text = nil;
+            _passwordTableViewCell.comfilmPassowrdTXT.text = nil;
             [self _setupShowAleartViewWithTitle:@"Update Password Success"];
         } else {
             [self _setupShowAleartViewWithTitle:@"Password is ivalidation"];
@@ -179,6 +201,15 @@
     }
 }
 
+- (void)_showActionSheet {
+    [UIHelper showActionsheetWithTitle:nil
+                     cancelButtonTitle:m_string(@"Cancel")
+                destructiveButtonTitle:nil
+                     otherButtonsTitle:@[m_string(@"Take a photo"),m_string(@"Choose existing")]
+                              delegate:self
+                                   tag:0
+                            showInView:self.view];
+}
 
 #pragma mark - TableView Delegate
 
@@ -202,7 +233,10 @@
             return  [self _setupCompanyCell2:tableView cellForRowAtIndexPath:indexPath];
         }
     }else{
-        return [self _setupPasswordCell:tableView cellForRowAtIndexPath:indexPath];
+        if (!_passwordTableViewCell) {
+            _passwordTableViewCell = [self _setupPasswordCell:tableView cellForRowAtIndexPath:indexPath];
+        }
+        return _passwordTableViewCell;
     }
 }
 
@@ -240,7 +274,9 @@
         aboutCell.lblDetail.text = self.profileObject.email;
         aboutCell.lblname.text = m_string(@"Email");
     } else if (indexPath.row == COAboutProfileStylePhone) {
-        aboutCell.lblDetail.text = self.profileObject.phone;
+        NSString *phoneCode = [self.arrayCountryCode[_indexActtionCountryCode] objectForKey:@"code"];
+        NSString *string = [NSString stringWithFormat:@"%@ %@",phoneCode,self.profileObject.phone];
+        aboutCell.lblDetail.text = string;
         aboutCell.lblname.text = m_string(@"Phone");
     } else {
         aboutCell.lblDetail.text = self.profileObject.address;
@@ -270,11 +306,11 @@
 }
 
 - (PasswordTableViewCell*)_setupPasswordCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PasswordTableViewCell *passwordCell = [tableView dequeueReusableCellWithIdentifier:[PasswordTableViewCell identifier]
+    _passwordTableViewCell = [tableView dequeueReusableCellWithIdentifier:[PasswordTableViewCell identifier]
                                                                         forIndexPath:indexPath];
-    passwordCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    passwordCell.delegate = self;
-    return passwordCell;
+    _passwordTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    _passwordTableViewCell.delegate = self;
+    return _passwordTableViewCell;
 }
 
 #pragma mark - Delegate 
@@ -290,6 +326,25 @@
     }
 }
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0: 
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
+            break;
+        case 1:
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
+    [_tableheaderView.imageProfile setImage:image];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 @end

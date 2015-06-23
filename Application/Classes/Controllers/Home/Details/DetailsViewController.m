@@ -37,6 +37,9 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }
 }
 
 #pragma mark - Setup

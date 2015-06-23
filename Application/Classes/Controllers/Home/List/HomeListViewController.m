@@ -106,8 +106,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (![kUserDefaults boolForKey:@"DefaultLogin"]) {
-        [kUserDefaults setBool:YES forKey:@"DefaultLogin"];
+    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
         [kUserDefaults synchronize];
         LoginViewController *vcLogin = [[LoginViewController alloc]init];
         __weak LoginViewController *weakLogin = vcLogin;
@@ -115,21 +115,16 @@
         [self presentViewController:nav animated:YES completion:nil];
         vcLogin.actionLogin = ^(){
             [self.navigationController dismissViewControllerAnimated:weakLogin completion:^{
-                
+                [self _setupPushDetailVC];
             }];
         };
+    }else {
+        [self _setupPushDetailVC];
     }
-    [self _setupPushDetailVC];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 248;
-//    if(IS_IOS8_OR_ABOVE) {
-//        return UITableViewAutomaticDimension;
-//    } else {
-//        id cell = [self _setupHomeListCell:tableView cellForRowAtIndexPath:indexPath];
-//        height = [self _heightForTableView:tableView cell:cell atIndexPath:indexPath];
-//    }
     return height;
 }
 

@@ -14,4 +14,6 @@
 
 + (NSArray*)loadFilePlistWithName:(NSString*)fileName;
 
++ (void)writeFilePlistWithName:(NSArray*)array fileName:(NSString*)fileName;
+
 @end

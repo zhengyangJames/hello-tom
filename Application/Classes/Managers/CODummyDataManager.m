@@ -193,7 +193,7 @@
     obj.firstname = @"Daniel";
     obj.lastnameurname = @"NGUYEN";
     obj.email = @"email@example.com";
-    obj.phone = @"+6501010101";
+    obj.phone = @"010101011";
     obj.address = @"1st street 2rd NewYork";
     obj.image = @"6.jpg";
     obj.orgname = @"Nikmesoft Ltd";
