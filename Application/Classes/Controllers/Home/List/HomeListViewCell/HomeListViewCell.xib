@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -51,13 +52,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invest in Canyon de Boracay Premier to own a piece" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-1R-Afg">
-                                        <rect key="frame" x="60" y="5" width="236" height="38"/>
+                                        <rect key="frame" x="60" y="5" width="232" height="38"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afghanistan" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="rDF-YH-2XB">
-                                        <rect key="frame" x="60" y="43" width="236" height="18"/>
+                                        <rect key="frame" x="60" y="43" width="232" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="ecU-Tw-gwW"/>
                                         </constraints>
@@ -69,7 +70,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="rDF-YH-2XB" firstAttribute="leading" secondItem="eYX-1R-Afg" secondAttribute="leading" id="IIC-Eq-HRx"/>
-                                    <constraint firstAttribute="trailing" secondItem="eYX-1R-Afg" secondAttribute="trailing" id="LmP-KC-5le"/>
+                                    <constraint firstAttribute="trailing" secondItem="eYX-1R-Afg" secondAttribute="trailing" constant="4" id="LmP-KC-5le"/>
                                     <constraint firstItem="eYX-1R-Afg" firstAttribute="top" secondItem="DTf-jo-hPN" secondAttribute="top" constant="5" id="UDF-Y2-D3Q"/>
                                     <constraint firstItem="rDF-YH-2XB" firstAttribute="top" secondItem="eYX-1R-Afg" secondAttribute="bottom" id="edd-q2-otK"/>
                                     <constraint firstItem="K6M-I6-nv9" firstAttribute="leading" secondItem="DTf-jo-hPN" secondAttribute="leading" constant="4" id="epI-dC-qWj"/>
