@@ -19,4 +19,5 @@
 @property (strong, nonatomic) NSString *image;
 @property (strong, nonatomic) NSString *orgname;
 
+
 @end
