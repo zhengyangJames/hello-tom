@@ -155,7 +155,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
-                             delegate:nil
+                             delegate:self
                                   tag:0
                      arrayTitleButton:nil];
 }
@@ -202,13 +202,12 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 }
 
 - (void)_showActionSheet {
-    [UIHelper showActionsheetWithTitle:nil
-                     cancelButtonTitle:m_string(@"Cancel")
-                destructiveButtonTitle:nil
-                     otherButtonsTitle:@[m_string(@"Take a photo"),m_string(@"Choose existing")]
-                              delegate:self
-                                   tag:0
-                            showInView:self.view];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
+                                                            delegate:self
+                                                   cancelButtonTitle:m_string(@"Cancel")
+                                              destructiveButtonTitle:nil
+                                                   otherButtonTitles:m_string(@"Take a photo"),m_string(@"Choose existing"), nil];
+    [actionSheet showInView:self.view];
 }
 
 #pragma mark - TableView Delegate

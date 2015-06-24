@@ -118,7 +118,7 @@
 }
 
 - (IBAction)__actionOrgType:(id)sender {
-    NSArray *array = @[@"Developer",@"Property Insurance",@"Marketing",@"Property For Sale",@"Business Services",@"Route Sale",@"Rummage Sale",@"The cosmetics industry"];
+    NSArray *array = @[@"Developer",@"Agency",@"Reseller",@"Funds",@"Others ",@"Route Sale"];
     [self.view endEditing:NO];
     [CODropListView presentWithTitle:@"Org Type" data:array selectedIndex:_indexActtionOrgType didSelect:^(NSInteger index) {
         [_btnOrgType setTitle:array[index] forState:UIControlStateNormal];
@@ -127,13 +127,12 @@
 }
 
 - (void)_showActionSheet {
-    [UIHelper showActionsheetWithTitle:nil
-                     cancelButtonTitle:m_string(@"Cancel")
-                destructiveButtonTitle:nil
-                     otherButtonsTitle:@[m_string(@"Take a photo"),m_string(@"Choose existing")]
-                              delegate:self
-                                   tag:0
-                            showInView:self.view];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
+                                                            delegate:self
+                                                   cancelButtonTitle:m_string(@"Cancel")
+                                              destructiveButtonTitle:nil
+                                                   otherButtonTitles:m_string(@"Take a photo"),m_string(@"Choose existing"), nil];
+    [actionSheet showInView:self.view];
 }
 
 
