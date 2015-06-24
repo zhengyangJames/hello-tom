@@ -16,6 +16,9 @@
 {
     __weak IBOutlet COBorderTextField *_userName;
     __weak IBOutlet COBorderTextField *_passWord;
+    
+    
+    __weak COBorderTextField *_currentField;
 }
 
 @end
@@ -25,10 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    self.navigationController.navigationBar.hidden = YES;
 }
 
 #pragma mark - Setup
@@ -59,15 +58,18 @@
 - (BOOL)_isValidation {
     if ([_userName.text isEmpty]) {
         [self _setupShowAleartViewWithTitle:@"Username is required."];
-        [_userName becomeFirstResponder];
+        //[_userName becomeFirstResponder];
+        _currentField = _userName;
          return NO;
     }else if ([_passWord.text isEmpty]) {
         [self _setupShowAleartViewWithTitle:@"Password is required."];
-        [_passWord becomeFirstResponder];
+        //[_passWord becomeFirstResponder];
+        _currentField = _passWord;
         return NO;
     }else if (![_passWord.text isValidPassword]) {
         [self _setupShowAleartViewWithTitle:@"Invalid password."];
-        [_passWord becomeFirstResponder];
+        //[_passWord becomeFirstResponder];
+        _currentField = _passWord;
         return NO;
     }
     return YES;
@@ -97,6 +99,17 @@
 - (IBAction)__actionForgotPassword:(id)sender {
     ForgotPasswordViewController *vc = [[ForgotPasswordViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - UIAlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        if (_currentField) {
+            [_currentField becomeFirstResponder];
+        }
+        _currentField = nil;
+    }
 }
 
 @end
