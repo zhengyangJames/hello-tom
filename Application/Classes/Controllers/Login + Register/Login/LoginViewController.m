@@ -87,7 +87,6 @@
     [self _login];
 }
 
-
 - (IBAction)__actionRegister:(id)sender {
     RegisterViewController *vc = [[RegisterViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
