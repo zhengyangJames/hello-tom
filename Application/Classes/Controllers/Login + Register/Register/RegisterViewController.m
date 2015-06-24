@@ -15,14 +15,17 @@
 #import "NSString+Validation.h"
 #import "WebViewSetting.h"
 
-@interface RegisterViewController ()
+@interface RegisterViewController () <UIAlertViewDelegate>
 {
     __weak IBOutlet CoDropListButtom *btnSalutation;
     __weak IBOutlet CoDropListButtom *btnMobileNumber;
+    __weak IBOutlet COBorderTextField *_fristNameTextField;
+    __weak IBOutlet COBorderTextField *_lastNameTextField;
     __weak IBOutlet COBorderTextField *_emailTextField;
     __weak IBOutlet COBorderTextField *_usernameTextField;
     __weak IBOutlet COBorderTextField *_passwordTextField;
     __weak IBOutlet COBorderTextField *_comfilmPasswordTextField;
+    __weak COBorderTextField *_currentField;
     NSInteger _indexActtionSalutation;
     NSInteger _indexActtionPhoneCode;
 }
@@ -47,14 +50,47 @@
     [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
-                             delegate:nil
+                             delegate:self
                                   tag:0
                      arrayTitleButton:nil];
 }
 
 - (BOOL)_isValidtion {
-    if (![_emailTextField.text isValidEmail]||[_usernameTextField.text isEmpty]||[_passwordTextField.text isValidPassword]||[_comfilmPasswordTextField.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"Please fill in all of the required fields."];
+    if ([_fristNameTextField.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Frist Name is required."];
+        _currentField = _fristNameTextField;
+        return NO;
+    } else if ([_lastNameTextField.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Last Name is required."];
+        _currentField = _lastNameTextField;
+        return NO;
+    } else if ([_emailTextField.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Email  is required."];
+        _currentField = _emailTextField;
+        return NO;
+    } else if (![_emailTextField.text isValidEmail]) {
+        [self _setupShowAleartViewWithTitle:@"Email is invalid."];
+        _currentField = _emailTextField;
+        return NO;
+    } else if ([_usernameTextField.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"User Name is required."];
+        _currentField = _usernameTextField;
+        return NO;
+    } else if ([_passwordTextField.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Password is required."];
+        _currentField = _passwordTextField;
+        return NO;
+    } else if (![_passwordTextField.text isValidPassword]) {
+        [self _setupShowAleartViewWithTitle:@"Password is invalid."];
+        _currentField = _passwordTextField;
+        return NO;
+    } else if ([_comfilmPasswordTextField.text isEmpty] ) {
+        [self _setupShowAleartViewWithTitle:@"Password is required."];
+        _currentField = _comfilmPasswordTextField;
+        return NO;
+    } else if (![_comfilmPasswordTextField.text isValidPassword]) {
+        [self _setupShowAleartViewWithTitle:@"Password is invalid."];
+        _currentField = _comfilmPasswordTextField;
         return NO;
     }
     return YES;
@@ -93,13 +129,21 @@
 }
 
 - (IBAction)__actionRegister:(id)sender {
-    if (![self _isValidtion]) {
+    if ([self _isValidtion] == NO) {
         return;
     }
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-#pragma mark - TextField Delegate
+#pragma mark - UIAlertView delegate
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        if (_currentField) {
+            [_currentField becomeFirstResponder];
+        }
+        _currentField = nil;
+    }
+}
 
 @end

@@ -24,7 +24,7 @@
 #pragma mark - WSMAnager
 ///////////////////////////////////////////////////////////////////
 
-#define METHOD_POST                                 @"POST"
+#define METHOD_POST                                @"POST"
 #define METHOD_PUT                                 @"PUT"
 #define METHOD_GET                                 @"GET"
 

@@ -16,8 +16,6 @@
 {
     __weak IBOutlet COBorderTextField *_userName;
     __weak IBOutlet COBorderTextField *_passWord;
-    
-    
     __weak COBorderTextField *_currentField;
 }
 
@@ -59,17 +57,14 @@
 - (BOOL)_isValidation {
     if ([_userName.text isEmpty]) {
         [self _setupShowAleartViewWithTitle:@"Username is required."];
-        //[_userName becomeFirstResponder];
         _currentField = _userName;
          return NO;
     }else if ([_passWord.text isEmpty]) {
         [self _setupShowAleartViewWithTitle:@"Password is required."];
-        //[_passWord becomeFirstResponder];
         _currentField = _passWord;
         return NO;
     }else if (![_passWord.text isValidPassword]) {
         [self _setupShowAleartViewWithTitle:@"Invalid password."];
-        //[_passWord becomeFirstResponder];
         _currentField = _passWord;
         return NO;
     }

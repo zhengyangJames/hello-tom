@@ -24,7 +24,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [[UILabel appearanceWhenContainedIn:[UIAlertView class], nil] setTextColor:[UIColor redColor]];
     [self gotoHome];
     [self _setUp3rdSDKs];
     [self _setUpDatabase];

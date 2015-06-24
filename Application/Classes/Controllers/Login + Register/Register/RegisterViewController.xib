@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -32,6 +33,8 @@
             <connections>
                 <outlet property="_comfilmPasswordTextField" destination="wgq-5i-3jo" id="n3h-3w-Va7"/>
                 <outlet property="_emailTextField" destination="mac-eL-ijI" id="xMt-sY-0pf"/>
+                <outlet property="_fristNameTextField" destination="Wvr-VK-fe3" id="lMZ-9U-Jva"/>
+                <outlet property="_lastNameTextField" destination="XNC-kM-vZF" id="Gpz-N3-WLI"/>
                 <outlet property="_passwordTextField" destination="KYv-jZ-u6d" id="T80-3P-9g6"/>
                 <outlet property="_usernameTextField" destination="DL9-jK-4kk" id="qGp-AF-9vo"/>
                 <outlet property="btnMobileNumber" destination="CGv-FJ-kgk" id="sst-LQ-ygI"/>
@@ -402,7 +405,7 @@
                                                 <action selector="__actionCancel:" destination="-1" eventType="touchUpInside" id="TeJ-Mv-g8c"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-0R-DOZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-0R-DOZ">
                                             <rect key="frame" x="20" y="187" width="281" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="nBZ-Kj-tw8"/>

@@ -12,12 +12,13 @@
 #import "CoDropListButtom.h"
 #import "LoadFileManager.h"
 
-@interface EditAboutProfileVC ()
+@interface EditAboutProfileVC () <UIAlertViewDelegate>
 {
     __weak IBOutlet COBorderTextField *emailNameTXT;
     __weak IBOutlet COBorderTextField *phoneNameTXT;
     __weak IBOutlet COBorderTextField *addressNameTXT;
     __weak IBOutlet CoDropListButtom  *dropListCountryCode;
+    __weak COBorderTextField *_currentField;
     NSInteger _indexActtionCountryCode;
 }
 
@@ -103,14 +104,45 @@
     self.navigationItem.leftBarButtonItem = btCancel;
 }
 
+#pragma mark - Private
+- (void)_setupShowAleartViewWithTitle:(NSString*)message {
+    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+                              message:m_string(message)
+                         cancelButton:m_string(@"OK")
+                             delegate:self
+                                  tag:0
+                     arrayTitleButton:nil];
+}
 
-
+- (BOOL)_isValidation {
+    if ([emailNameTXT.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Email  is required."];
+        _currentField = emailNameTXT;
+        return NO;
+    } else if (![emailNameTXT.text isValidEmail]) {
+        [self _setupShowAleartViewWithTitle:@"Email is invalid."];
+        _currentField = emailNameTXT;
+        return NO;
+    } else if ([phoneNameTXT.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Phone is required."];
+        _currentField = phoneNameTXT;
+        return NO;
+    } else if ([addressNameTXT.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Address is required."];
+        _currentField = addressNameTXT;
+        return NO;
+    }
+    return YES;
+}
 
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
     if (self.actionDone) {
         self.actionDone(emailNameTXT.text,phoneNameTXT.text,_indexActtionCountryCode,addressNameTXT.text);
+    }
+    if (![self _isValidation]) {
+        return;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -126,6 +158,17 @@
         [dropListCountryCode setTitle:[self.arrayCountryCode[index] objectForKey:@"code"] forState:UIControlStateNormal];
         _indexActtionCountryCode = index;
     }];
+}
+
+#pragma mark - UIAlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        if (_currentField) {
+            [_currentField becomeFirstResponder];
+        }
+    }
+    _currentField = nil;
 }
 
 @end

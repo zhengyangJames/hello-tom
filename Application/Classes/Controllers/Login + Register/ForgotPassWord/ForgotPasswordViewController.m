@@ -7,10 +7,12 @@
 //
 
 #import "ForgotPasswordViewController.h"
+#import "COBorderTextField.h"
 
-@interface ForgotPasswordViewController ()
+@interface ForgotPasswordViewController () <UIAlertViewDelegate>
 {
-    __weak IBOutlet UITextField *emailTextField;
+    __weak IBOutlet COBorderTextField *emailTextField;
+    __weak COBorderTextField *_currentField;
 }
 
 
@@ -29,10 +31,24 @@
     [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
-                             delegate:nil
+                             delegate:self
                                   tag:0
                      arrayTitleButton:nil];
 }
+
+- (BOOL)_isValidation {
+    if ([emailTextField.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Email is required."];
+        _currentField = emailTextField;
+        return NO;
+    }else if (![emailTextField.text isValidEmail]) {
+        [self _setupShowAleartViewWithTitle:@"Email is invalid."];
+        _currentField = emailTextField;
+        return NO;
+    }
+    return YES;
+}
+
 
 #pragma mark - Action
 - (IBAction)__actionCancel:(id)sender {
@@ -40,12 +56,21 @@
 }
 
 - (IBAction)__actionReset:(id)sender {
-    if (![emailTextField.text isValidEmail]) {
-        [self _setupShowAleartViewWithTitle:@"Email is invalid"];
+    if (![self _isValidation]) {
         return;
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - UIAlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        if (_currentField) {
+            [_currentField becomeFirstResponder];
+        }
+    }
+    _currentField = nil;
+}
 
 @end
