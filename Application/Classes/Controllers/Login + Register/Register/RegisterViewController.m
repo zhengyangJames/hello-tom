@@ -57,16 +57,16 @@
 
 - (BOOL)_isValidtion {
     if ([_fristNameTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Frist Name is required."];
         _currentField = _fristNameTextField;
+        [self _setupShowAleartViewWithTitle:@"Frist Name is required."];
         return NO;
     } else if ([_lastNameTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Last Name is required."];
         _currentField = _lastNameTextField;
+        [self _setupShowAleartViewWithTitle:@"Last Name is required."];
         return NO;
     } else if ([_emailTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Email  is required."];
         _currentField = _emailTextField;
+        [self _setupShowAleartViewWithTitle:@"Email  is required."];
         return NO;
     } else if (![_emailTextField.text isValidEmail]) {
         [self _setupShowAleartViewWithTitle:@"Email is invalid."];
@@ -129,7 +129,7 @@
 }
 
 - (IBAction)__actionRegister:(id)sender {
-    if ([self _isValidtion] == NO) {
+    if (![self _isValidtion]) {
         return;
     }
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -138,12 +138,12 @@
 #pragma mark - UIAlertView delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        if (_currentField) {
-            [_currentField becomeFirstResponder];
-        }
-        _currentField = nil;
-    }
+//    if (buttonIndex == 0) {
+//        if (_currentField) {
+//            [_currentField becomeFirstResponder];
+//        }
+//        _currentField = nil;
+//    }
 }
 
 @end

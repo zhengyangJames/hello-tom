@@ -101,12 +101,12 @@
 #pragma mark - UIAlertView delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        if (_currentField) {
-            [_currentField becomeFirstResponder];
-        }
-        _currentField = nil;
-    }
+//    if (buttonIndex == 0) {
+//        if (_currentField) {
+//            [_currentField becomeFirstResponder];
+//        }
+//        _currentField = nil;
+//    }
 }
 
 @end

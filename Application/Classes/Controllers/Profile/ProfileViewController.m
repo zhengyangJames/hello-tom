@@ -194,9 +194,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
             _passwordTableViewCell.oldPassowrdTXT.text = nil;
             _passwordTableViewCell.newpassowrdTXT.text = nil;
             _passwordTableViewCell.comfilmPassowrdTXT.text = nil;
-            [self _setupShowAleartViewWithTitle:@"Update Password Success"];
+            [self _setupShowAleartViewWithTitle:@"Update Password Success."];
         } else {
-            [self _setupShowAleartViewWithTitle:@"Password is ivalidation"];
+            [self _setupShowAleartViewWithTitle:@"Password is invalid."];
         }
     }
 }
