@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EFEB4AF1B2724B2001195B7"
-               BuildableName = "CoAssest.app"
-               BlueprintName = "CoAssest"
-               ReferencedContainer = "container:CoAssest.xcodeproj">
+               BuildableName = "CoAssets.app"
+               BlueprintName = "CoAssets"
+               ReferencedContainer = "container:CoAssets.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EFEB4CB1B2724B2001195B7"
-               BuildableName = "CoAssestTests.xctest"
-               BlueprintName = "CoAssestTests"
-               ReferencedContainer = "container:CoAssest.xcodeproj">
+               BuildableName = "CoAssetsTests.xctest"
+               BlueprintName = "CoAssetsTests"
+               ReferencedContainer = "container:CoAssets.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EFEB4CB1B2724B2001195B7"
-               BuildableName = "CoAssestTests.xctest"
-               BlueprintName = "CoAssestTests"
-               ReferencedContainer = "container:CoAssest.xcodeproj">
+               BuildableName = "CoAssetsTests.xctest"
+               BlueprintName = "CoAssetsTests"
+               ReferencedContainer = "container:CoAssets.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EFEB4AF1B2724B2001195B7"
-            BuildableName = "CoAssest.app"
-            BlueprintName = "CoAssest"
-            ReferencedContainer = "container:CoAssest.xcodeproj">
+            BuildableName = "CoAssets.app"
+            BlueprintName = "CoAssets"
+            ReferencedContainer = "container:CoAssets.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EFEB4AF1B2724B2001195B7"
-            BuildableName = "CoAssest.app"
-            BlueprintName = "CoAssest"
-            ReferencedContainer = "container:CoAssest.xcodeproj">
+            BuildableName = "CoAssets.app"
+            BlueprintName = "CoAssets"
+            ReferencedContainer = "container:CoAssets.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EFEB4AF1B2724B2001195B7"
-            BuildableName = "CoAssest.app"
-            BlueprintName = "CoAssest"
-            ReferencedContainer = "container:CoAssest.xcodeproj">
+            BuildableName = "CoAssets.app"
+            BlueprintName = "CoAssets"
+            ReferencedContainer = "container:CoAssets.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

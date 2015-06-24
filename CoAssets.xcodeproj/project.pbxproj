@@ -42,7 +42,7 @@
 		0ECA88841B27DD5200B5656F /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA88821B27DD5200B5656F /* RegisterViewController.xib */; };
 		0ECA88891B27E09A00B5656F /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88871B27E09A00B5656F /* ForgotPasswordViewController.m */; };
 		0ECA888A1B27E09A00B5656F /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA88881B27E09A00B5656F /* ForgotPasswordViewController.xib */; };
-		0EFEB4D31B2724B2001195B7 /* CoAssestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB4D21B2724B2001195B7 /* CoAssestTests.m */; };
+		0EFEB4D31B2724B2001195B7 /* CoAssetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB4D21B2724B2001195B7 /* CoAssetsTests.m */; };
 		0EFEB5091B2729E0001195B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB4F91B2729E0001195B7 /* AppDelegate.m */; };
 		0EFEB50C1B2729E0001195B7 /* CoAssest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB4FF1B2729E0001195B7 /* CoAssest.xcdatamodeld */; };
 		0EFEB50D1B2729E0001195B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEB5031B2729E0001195B7 /* LaunchScreen.xib */; };
@@ -314,10 +314,10 @@
 		0ECA88861B27E09A00B5656F /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		0ECA88871B27E09A00B5656F /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		0ECA88881B27E09A00B5656F /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
-		0EFEB4B01B2724B2001195B7 /* CoAssest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoAssest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EFEB4CC1B2724B2001195B7 /* CoAssestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoAssestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EFEB4B01B2724B2001195B7 /* CoAssets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoAssets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EFEB4CC1B2724B2001195B7 /* CoAssetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoAssetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFEB4D11B2724B2001195B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EFEB4D21B2724B2001195B7 /* CoAssestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoAssestTests.m; sourceTree = "<group>"; };
+		0EFEB4D21B2724B2001195B7 /* CoAssetsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoAssetsTests.m; sourceTree = "<group>"; };
 		0EFEB4F81B2729E0001195B7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0EFEB4F91B2729E0001195B7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0EFEB5001B2729E0001195B7 /* CoAssest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoAssest.xcdatamodel; sourceTree = "<group>"; };
@@ -787,8 +787,8 @@
 		0EFEB4B11B2724B2001195B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0EFEB4B01B2724B2001195B7 /* CoAssest.app */,
-				0EFEB4CC1B2724B2001195B7 /* CoAssestTests.xctest */,
+				0EFEB4B01B2724B2001195B7 /* CoAssets.app */,
+				0EFEB4CC1B2724B2001195B7 /* CoAssetsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -796,7 +796,7 @@
 		0EFEB4CF1B2724B2001195B7 /* CoAssestTests */ = {
 			isa = PBXGroup;
 			children = (
-				0EFEB4D21B2724B2001195B7 /* CoAssestTests.m */,
+				0EFEB4D21B2724B2001195B7 /* CoAssetsTests.m */,
 				0EFEB4D01B2724B2001195B7 /* Supporting Files */,
 			);
 			path = CoAssestTests;
@@ -1492,9 +1492,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0EFEB4AF1B2724B2001195B7 /* CoAssest */ = {
+		0EFEB4AF1B2724B2001195B7 /* CoAssets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0EFEB4D61B2724B2001195B7 /* Build configuration list for PBXNativeTarget "CoAssest" */;
+			buildConfigurationList = 0EFEB4D61B2724B2001195B7 /* Build configuration list for PBXNativeTarget "CoAssets" */;
 			buildPhases = (
 				0EFEB4AC1B2724B2001195B7 /* Sources */,
 				0EFEB4AD1B2724B2001195B7 /* Frameworks */,
@@ -1505,14 +1505,14 @@
 			);
 			dependencies = (
 			);
-			name = CoAssest;
+			name = CoAssets;
 			productName = CoAssest;
-			productReference = 0EFEB4B01B2724B2001195B7 /* CoAssest.app */;
+			productReference = 0EFEB4B01B2724B2001195B7 /* CoAssets.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0EFEB4CB1B2724B2001195B7 /* CoAssestTests */ = {
+		0EFEB4CB1B2724B2001195B7 /* CoAssetsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0EFEB4D91B2724B2001195B7 /* Build configuration list for PBXNativeTarget "CoAssestTests" */;
+			buildConfigurationList = 0EFEB4D91B2724B2001195B7 /* Build configuration list for PBXNativeTarget "CoAssetsTests" */;
 			buildPhases = (
 				0EFEB4C81B2724B2001195B7 /* Sources */,
 				0EFEB4C91B2724B2001195B7 /* Frameworks */,
@@ -1523,9 +1523,9 @@
 			dependencies = (
 				0EFEB4CE1B2724B2001195B7 /* PBXTargetDependency */,
 			);
-			name = CoAssestTests;
+			name = CoAssetsTests;
 			productName = CoAssestTests;
-			productReference = 0EFEB4CC1B2724B2001195B7 /* CoAssestTests.xctest */;
+			productReference = 0EFEB4CC1B2724B2001195B7 /* CoAssetsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1546,7 +1546,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0EFEB4AB1B2724B2001195B7 /* Build configuration list for PBXProject "CoAssest" */;
+			buildConfigurationList = 0EFEB4AB1B2724B2001195B7 /* Build configuration list for PBXProject "CoAssets" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1559,8 +1559,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0EFEB4AF1B2724B2001195B7 /* CoAssest */,
-				0EFEB4CB1B2724B2001195B7 /* CoAssestTests */,
+				0EFEB4AF1B2724B2001195B7 /* CoAssets */,
+				0EFEB4CB1B2724B2001195B7 /* CoAssetsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1835,7 +1835,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EFEB4D31B2724B2001195B7 /* CoAssestTests.m in Sources */,
+				0EFEB4D31B2724B2001195B7 /* CoAssetsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1844,7 +1844,7 @@
 /* Begin PBXTargetDependency section */
 		0EFEB4CE1B2724B2001195B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0EFEB4AF1B2724B2001195B7 /* CoAssest */;
+			target = 0EFEB4AF1B2724B2001195B7 /* CoAssets */;
 			targetProxy = 0EFEB4CD1B2724B2001195B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1963,7 +1963,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CoAssets;
 				PROVISIONING_PROFILE = "b1ccd363-ae9a-49cb-b785-613eb2693c88";
 			};
 			name = Debug;
@@ -1984,7 +1984,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CoAssets;
 				PROVISIONING_PROFILE = "b1ccd363-ae9a-49cb-b785-613eb2693c88";
 			};
 			name = Release;
@@ -2003,9 +2003,9 @@
 				);
 				INFOPLIST_FILE = CoAssestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CoAssetsTests;
 				PROVISIONING_PROFILE = "b1ccd363-ae9a-49cb-b785-613eb2693c88";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoAssest.app/CoAssest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoAssets.app/CoAssets";
 			};
 			name = Debug;
 		};
@@ -2019,16 +2019,16 @@
 				);
 				INFOPLIST_FILE = CoAssestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CoAssetsTests;
 				PROVISIONING_PROFILE = "b1ccd363-ae9a-49cb-b785-613eb2693c88";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoAssest.app/CoAssest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoAssets.app/CoAssets";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0EFEB4AB1B2724B2001195B7 /* Build configuration list for PBXProject "CoAssest" */ = {
+		0EFEB4AB1B2724B2001195B7 /* Build configuration list for PBXProject "CoAssets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EFEB4D41B2724B2001195B7 /* Debug */,
@@ -2037,7 +2037,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0EFEB4D61B2724B2001195B7 /* Build configuration list for PBXNativeTarget "CoAssest" */ = {
+		0EFEB4D61B2724B2001195B7 /* Build configuration list for PBXNativeTarget "CoAssets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EFEB4D71B2724B2001195B7 /* Debug */,
@@ -2046,7 +2046,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0EFEB4D91B2724B2001195B7 /* Build configuration list for PBXNativeTarget "CoAssestTests" */ = {
+		0EFEB4D91B2724B2001195B7 /* Build configuration list for PBXNativeTarget "CoAssetsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EFEB4DA1B2724B2001195B7 /* Debug */,
