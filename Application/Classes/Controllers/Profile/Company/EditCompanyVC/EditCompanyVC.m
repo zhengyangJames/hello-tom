@@ -150,6 +150,7 @@
     }
 }
 
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[@"UIImagePickerControllerEditedImage"];
