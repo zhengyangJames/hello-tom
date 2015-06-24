@@ -16,8 +16,6 @@
 {
     __weak IBOutlet COBorderTextField *_userName;
     __weak IBOutlet COBorderTextField *_passWord;
-    
-    __weak COBorderTextField *_currentField;
 }
 
 @end
@@ -57,44 +55,21 @@
                      arrayTitleButton:nil];
 }
 
-/*
-- (BOOL)_isValidation {
-    if ([_userName.text isEmpty] && ![_passWord.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"invalid password or username"];
-        return NO;
-    } else {
-        if (![_passWord.text isValidPassword]|| [_userName.text isEmpty]) {
-            [self _setupShowAleartViewWithTitle:@"invalid password or username"];
-            return NO;
-        }
-    }
-    return YES;
-}
- */
 
 - (BOOL)_isValidation {
-    if ([_userName.text isEmpty]||[_passWord.text isEmpty]||([_userName.text isEmpty]&&[_passWord.text isEmpty])) {
-        [self _setupShowAleartViewWithTitle:@"This field is required."];
-        _currentField = _userName;
+    if ([_userName.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Username is required."];
+        [_userName becomeFirstResponder];
          return NO;
-    } else if (![_passWord.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"Invalid password."];
-        _currentField = _passWord;
-         return NO;
-    }
-    
-    
-    /*
-    if ([_userName.text isEmpty] && ![_passWord.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"invalid password or username"];
+    }else if ([_passWord.text isEmpty]) {
+        [self _setupShowAleartViewWithTitle:@"Password is required."];
+        [_passWord becomeFirstResponder];
         return NO;
-    } else {
-        if (![_passWord.text isValidPassword]|| [_userName.text isEmpty]) {
-            [self _setupShowAleartViewWithTitle:@"invalid password or username"];
-            return NO;
-        }
+    }else if (![_passWord.text isValidPassword]) {
+        [self _setupShowAleartViewWithTitle:@"Invalid password."];
+        [_passWord becomeFirstResponder];
+        return NO;
     }
-     */
     return YES;
 }
 
@@ -122,15 +97,6 @@
 - (IBAction)__actionForgotPassword:(id)sender {
     ForgotPasswordViewController *vc = [[ForgotPasswordViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
-}
-#pragma mark - Delegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        if (_currentField) {
-            [_currentField becomeFirstResponder];
-        }
-    }
 }
 
 @end
