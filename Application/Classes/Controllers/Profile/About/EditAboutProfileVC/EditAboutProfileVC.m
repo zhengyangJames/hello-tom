@@ -110,7 +110,6 @@
 
 - (void)__actionDone:(id)sender {
     if (self.actionDone) {
-        
         self.actionDone(emailNameTXT.text,phoneNameTXT.text,_indexActtionCountryCode,addressNameTXT.text);
     }
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -54,7 +54,7 @@
 
 - (BOOL)_isValidtion {
     if (![_emailTextField.text isValidEmail]||[_usernameTextField.text isEmpty]||[_passwordTextField.text isValidPassword]||[_comfilmPasswordTextField.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"Profile is invalid"];
+        [self _setupShowAleartViewWithTitle:@"Please fill in all of the required fields."];
         return NO;
     }
     return YES;
@@ -66,7 +66,7 @@
 }
 
 - (IBAction)__actionMR:(id)sender {
-    NSArray *arr = @[@"Mr",@"Ms"];
+    NSArray *arr = @[@"Mr",@"Ms",@"Mdm",@"Dr"];
     [self.view endEditing:YES];
     [CODropListView presentWithTitle:@"Salutation" data:arr selectedIndex:_indexActtionSalutation didSelect:^(NSInteger index) {
         [btnSalutation setTitle:arr[index] forState:UIControlStateNormal];

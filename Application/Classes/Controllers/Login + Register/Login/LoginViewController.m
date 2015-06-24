@@ -73,12 +73,12 @@
  */
 
 - (BOOL)_isValidation {
-    if ([_userName.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Username is empty"];
+    if ([_userName.text isEmpty]||[_passWord.text isEmpty]||([_userName.text isEmpty]&&[_passWord.text isEmpty])) {
+        [self _setupShowAleartViewWithTitle:@"This field is required."];
         _currentField = _userName;
          return NO;
     } else if (![_passWord.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"invalid password"];
+        [self _setupShowAleartViewWithTitle:@"Invalid password."];
         _currentField = _passWord;
          return NO;
     }
