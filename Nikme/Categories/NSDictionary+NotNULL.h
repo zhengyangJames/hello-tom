@@ -13,4 +13,5 @@
 - (id)valueForKeyNotNull:(NSString *)key;
 - (id)objectForKeyNotNull:(NSString *)key;
 
+
 @end
