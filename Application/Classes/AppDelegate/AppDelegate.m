@@ -26,9 +26,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [[UILabel appearanceWhenContainedIn:[UIAlertView class], nil] setTextColor:[UIColor redColor]];
     [self gotoHome];
-    
-    [self.window makeKeyAndVisible];
     [self _setUp3rdSDKs];
+    [self _setUpDatabase];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -47,6 +47,11 @@
 
 - (void)_setUp3rdSDKs {
     [Fabric with:@[CrashlyticsKit]];
+}
+
+- (void)_setUpDatabase {
+    [NSPersistentStoreCoordinator MR_setDefaultStoreCoordinator:self.persistentStoreCoordinator];
+    [NSManagedObjectContext MR_initializeDefaultContextWithCoordinator:self.persistentStoreCoordinator];
 }
 
 - (void)gotoHome {
@@ -89,6 +94,40 @@
                                                        selectedImage:[UIImage imageNamed:@"ic_setting_2"]];
     settingNAV.tabBarItem = tabbarSetting;
     return settingNAV;
+}
+
+#pragma mark - CoreData Stack
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+- (NSManagedObjectModel *)managedObjectModel {
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:COREDATA_STORE_NAME withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
+    }
+    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption:@YES,
+                              NSInferMappingModelAutomaticallyOption:@YES,
+                              NSSQLitePragmasOption: @{@"journal_mode": @"WAL"}
+                              };
+    
+    // Create the coordinator and store
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    NSURL *storeURL = [[kFileManager publicDirectory] URLByAppendingPathComponent:
+                       [NSString stringWithFormat:@"%@.sqlite",COREDATA_STORE_NAME]];
+    NSError *error = nil;
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+        abort();
+    }
+    
+    return _persistentStoreCoordinator;
 }
 
 @end

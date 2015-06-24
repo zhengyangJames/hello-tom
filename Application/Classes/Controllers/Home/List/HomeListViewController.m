@@ -14,6 +14,7 @@
 #import "CODropListVC.h"
 #import "DetailsViewController.h"
 #import "LoginViewController.h"
+#import "WSManager+Home.h"
 
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -33,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
+    [self _callAPIGetAllOffers];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -87,6 +89,15 @@
         _indexSelectFilter = index;
     }];
 }
+
+#pragma mark - CalAPI
+- (void)_callAPIGetAllOffers {
+    [UIHelper showLoadingInView:self.view];
+    [[WSManager shared] getListOffersWithHandler:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+}
+
 
 #pragma mark - TableView Delegate
 

@@ -12,11 +12,36 @@
 #import "BaseNavigationController.h"
 #import "BaseTabBarController.h"
 #import "NSString+Validation.h"
+#import "CoreData+MagicalRecord.h"
+
 ///////////////////////////////////////////////////////////////////
 #pragma mark - AppDefine
 ///////////////////////////////////////////////////////////////////
 
 #define kAppDelegate                                (AppDelegate*)[UIApplication sharedApplication].delegate
+
+///////////////////////////////////////////////////////////////////
+#pragma mark - WSMAnager
+///////////////////////////////////////////////////////////////////
+
+#define METHOD_POST                                 @"POST"
+#define METHOD_PUT                                 @"PUT"
+#define METHOD_GET                                 @"GET"
+
+#define WS_TIME_OUT                                 120
+
+#define WS_ERROR_DOMAIN                             @"COASSETS_ERROR_DOMAIN"
+#define WS_ENDPOINT                                 @"https://www.coassets.com/api"
+
+
+#define COREDATA_STORE_NAME                         @"CoAssest"
+///////////////////////////////////////////////////////////////////
+#pragma mark - WSMAnager - METHOD SERVICES
+///////////////////////////////////////////////////////////////////
+
+#define WS_METHOD_GET_LIST_OFFERS                  [WS_ENDPOINT stringByAppendingString:@"/offers"]
+
+
 
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
