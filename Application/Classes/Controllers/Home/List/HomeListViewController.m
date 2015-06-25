@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    [self _callAPIGetAllOffers];
+    //[self _callAPIGetAllOffers];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
