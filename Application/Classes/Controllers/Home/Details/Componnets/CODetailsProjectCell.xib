@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -30,14 +31,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="408" id="KGk-i7-Jjw" customClass="CODetailsProjectCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRh-D7-zFe" userLabel="BackGround View">
-                        <rect key="frame" x="8" y="8" width="304" height="390"/>
+                        <rect key="frame" x="8" y="8" width="304" height="438.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VtL-rx-chJ" userLabel="Project Type View">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="54.5"/>
@@ -54,7 +55,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="6ew-v7-dog"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="15"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -63,7 +64,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="TRA-7n-xot"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -73,6 +74,7 @@
                                     <constraint firstItem="xTq-Hg-GqB" firstAttribute="leading" secondItem="Nka-K5-h2g" secondAttribute="leading" id="1su-VE-m6m"/>
                                     <constraint firstItem="VMk-P4-sCE" firstAttribute="leading" secondItem="VtL-rx-chJ" secondAttribute="leading" constant="8" id="5um-r9-fxY"/>
                                     <constraint firstAttribute="trailing" secondItem="Nka-K5-h2g" secondAttribute="trailing" constant="8" id="93d-N6-ydV"/>
+                                    <constraint firstAttribute="height" constant="54.5" id="HpS-5E-9nc"/>
                                     <constraint firstItem="VMk-P4-sCE" firstAttribute="top" secondItem="VtL-rx-chJ" secondAttribute="top" constant="8" id="JlH-tF-Kn0"/>
                                     <constraint firstItem="xTq-Hg-GqB" firstAttribute="trailing" secondItem="Nka-K5-h2g" secondAttribute="trailing" id="Tky-Rd-pQm"/>
                                     <constraint firstAttribute="bottom" secondItem="xTq-Hg-GqB" secondAttribute="bottom" constant="8.5" id="b6t-r7-gEK"/>
@@ -96,7 +98,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="fbw-Hv-EdG"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="15"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -105,7 +107,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="zvv-Tn-dKc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -117,6 +119,7 @@
                                     <constraint firstItem="DWJ-Up-4h3" firstAttribute="top" secondItem="ggU-MQ-JAT" secondAttribute="top" constant="8" id="VAY-JT-UqU"/>
                                     <constraint firstItem="RBc-fE-Iv4" firstAttribute="top" secondItem="ggU-MQ-JAT" secondAttribute="top" constant="8" id="aPE-4o-cDm"/>
                                     <constraint firstAttribute="bottom" secondItem="l5L-xH-J99" secondAttribute="bottom" constant="8.5" id="gSD-4K-Ml9"/>
+                                    <constraint firstAttribute="height" constant="54.5" id="mbF-gW-m5A"/>
                                     <constraint firstItem="l5L-xH-J99" firstAttribute="leading" secondItem="RBc-fE-Iv4" secondAttribute="leading" id="nYl-UC-sfc"/>
                                     <constraint firstItem="DWJ-Up-4h3" firstAttribute="leading" secondItem="ggU-MQ-JAT" secondAttribute="leading" constant="8" id="npj-d8-Sr9"/>
                                     <constraint firstItem="l5L-xH-J99" firstAttribute="trailing" secondItem="RBc-fE-Iv4" secondAttribute="trailing" id="nwN-1z-m7R"/>
@@ -138,7 +141,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="oqS-Pw-BQj"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="15"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -147,7 +150,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="zJi-fZ-gga"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -163,6 +166,7 @@
                                     <constraint firstItem="ZPI-5g-XEX" firstAttribute="top" secondItem="kVj-qZ-0p9" secondAttribute="top" constant="8" id="grl-dU-o4y"/>
                                     <constraint firstItem="350-Pj-Jrz" firstAttribute="leading" secondItem="ZPI-5g-XEX" secondAttribute="trailing" constant="10" id="rPL-xS-P5N"/>
                                     <constraint firstItem="350-Pj-Jrz" firstAttribute="top" secondItem="kVj-qZ-0p9" secondAttribute="top" constant="8" id="vcX-rQ-Qye"/>
+                                    <constraint firstAttribute="height" constant="54.5" id="wga-rg-YTQ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL0-F6-ZA2" userLabel="Project status View">
@@ -180,7 +184,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="yEx-P6-6zJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="15"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -189,7 +193,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="lfz-py-9ER"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -198,6 +202,7 @@
                                 <constraints>
                                     <constraint firstItem="7zf-g6-iFk" firstAttribute="leading" secondItem="cL0-F6-ZA2" secondAttribute="leading" constant="8" id="1e2-6I-LA2"/>
                                     <constraint firstItem="LmA-RZ-bLZ" firstAttribute="leading" secondItem="2x3-au-aot" secondAttribute="leading" id="3fa-jC-ECf"/>
+                                    <constraint firstAttribute="height" constant="54.5" id="DIe-51-lRz"/>
                                     <constraint firstAttribute="trailing" secondItem="2x3-au-aot" secondAttribute="trailing" constant="8" id="HNb-rA-Gvv"/>
                                     <constraint firstItem="7zf-g6-iFk" firstAttribute="top" secondItem="cL0-F6-ZA2" secondAttribute="top" constant="8" id="RSr-hU-s8H"/>
                                     <constraint firstItem="LmA-RZ-bLZ" firstAttribute="top" secondItem="2x3-au-aot" secondAttribute="bottom" constant="2" id="Sfr-V0-rP7"/>
@@ -222,7 +227,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="kO2-hq-1wJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="15"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -231,7 +236,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="FLh-Pa-iFb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -240,6 +245,7 @@
                                 <constraints>
                                     <constraint firstItem="UDF-XT-nR7" firstAttribute="top" secondItem="BZG-IP-S2m" secondAttribute="bottom" constant="2" id="Hrs-Eq-YJh"/>
                                     <constraint firstItem="UDF-XT-nR7" firstAttribute="trailing" secondItem="BZG-IP-S2m" secondAttribute="trailing" id="Ihd-DY-CSv"/>
+                                    <constraint firstAttribute="height" constant="54.5" id="LBY-Ur-NI9"/>
                                     <constraint firstItem="BZG-IP-S2m" firstAttribute="top" secondItem="v40-Aq-6Qd" secondAttribute="top" constant="8" id="ULa-1X-tqP"/>
                                     <constraint firstItem="Uh4-2l-8l5" firstAttribute="leading" secondItem="v40-Aq-6Qd" secondAttribute="leading" constant="8" id="Uza-9K-rqO"/>
                                     <constraint firstAttribute="bottom" secondItem="UDF-XT-nR7" secondAttribute="bottom" constant="8.5" id="XCd-Vg-PEN"/>
@@ -264,7 +270,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="Hch-e7-BMo"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="15"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -273,7 +279,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="aR7-AK-NAR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -284,6 +290,7 @@
                                     <constraint firstItem="eCt-bo-hoy" firstAttribute="top" secondItem="ZoD-pZ-44u" secondAttribute="top" constant="8" id="AVO-mC-UVP"/>
                                     <constraint firstItem="eCt-bo-hoy" firstAttribute="leading" secondItem="Njp-bo-Xdd" secondAttribute="trailing" constant="10" id="F0q-8M-3Vy"/>
                                     <constraint firstItem="Njp-bo-Xdd" firstAttribute="top" secondItem="ZoD-pZ-44u" secondAttribute="top" constant="8" id="LI9-sd-8xE"/>
+                                    <constraint firstAttribute="height" constant="54.5" id="N4w-mz-wIv"/>
                                     <constraint firstAttribute="trailing" secondItem="eCt-bo-hoy" secondAttribute="trailing" constant="8" id="NkL-ct-5xW"/>
                                     <constraint firstItem="eLx-LR-Tmd" firstAttribute="top" secondItem="eCt-bo-hoy" secondAttribute="bottom" constant="2" id="X1x-jO-D76"/>
                                     <constraint firstItem="eCt-bo-hoy" firstAttribute="trailing" secondItem="eLx-LR-Tmd" secondAttribute="trailing" id="bYV-ME-XF7"/>
@@ -292,15 +299,15 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11Q-yG-sAf" userLabel="Button View">
-                                <rect key="frame" x="0.0" y="324" width="304" height="66"/>
+                                <rect key="frame" x="0.0" y="324" width="304" height="114.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-FD-VpP" customClass="COPositive_NagitiveButton">
-                                        <rect key="frame" x="44" y="9" width="109.5" height="37"/>
+                                        <rect key="frame" x="44" y="10" width="216" height="37"/>
                                         <color key="backgroundColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="GJG-H2-Z57"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                                         <state key="normal" title="I'm interested">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -310,9 +317,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBG-AT-Jam" customClass="COPositive_NagitiveButton">
-                                        <rect key="frame" x="171.5" y="9" width="109.5" height="37"/>
+                                        <rect key="frame" x="44" y="60" width="216" height="37"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                                         <state key="normal" title="I've Questions">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -327,13 +334,13 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="nBG-AT-Jam" firstAttribute="leading" secondItem="ne3-FD-VpP" secondAttribute="trailing" constant="18" id="IJE-rX-aQz"/>
+                                    <constraint firstItem="nBG-AT-Jam" firstAttribute="leading" secondItem="ne3-FD-VpP" secondAttribute="leading" id="0E9-H5-Iir"/>
+                                    <constraint firstAttribute="trailing" secondItem="ne3-FD-VpP" secondAttribute="trailing" constant="44" id="KKl-Lf-xXZ"/>
                                     <constraint firstItem="ne3-FD-VpP" firstAttribute="leading" secondItem="11Q-yG-sAf" secondAttribute="leading" constant="44" id="RBH-G0-pSv"/>
+                                    <constraint firstItem="ne3-FD-VpP" firstAttribute="top" secondItem="11Q-yG-sAf" secondAttribute="top" constant="10" id="YrZ-7S-D0j"/>
                                     <constraint firstItem="nBG-AT-Jam" firstAttribute="height" secondItem="ne3-FD-VpP" secondAttribute="height" id="daj-WN-qmL"/>
-                                    <constraint firstAttribute="bottom" secondItem="ne3-FD-VpP" secondAttribute="bottom" constant="20" id="eeW-Np-8AW"/>
                                     <constraint firstItem="nBG-AT-Jam" firstAttribute="width" secondItem="ne3-FD-VpP" secondAttribute="width" id="naI-9X-2Xc"/>
-                                    <constraint firstAttribute="trailing" secondItem="nBG-AT-Jam" secondAttribute="trailing" constant="23" id="os0-zN-29E"/>
-                                    <constraint firstItem="nBG-AT-Jam" firstAttribute="centerY" secondItem="ne3-FD-VpP" secondAttribute="centerY" id="rgs-Kg-ve9"/>
+                                    <constraint firstItem="nBG-AT-Jam" firstAttribute="top" secondItem="ne3-FD-VpP" secondAttribute="bottom" constant="13" id="zEs-dU-sMu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -365,10 +372,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aRh-D7-zFe" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="633-Xu-nG5"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="aRh-D7-zFe" secondAttribute="bottom" constant="-1.5" id="YEZ-kb-cL5"/>
+                    <constraint firstItem="aRh-D7-zFe" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Zz3-AK-lzl"/>
                     <constraint firstItem="aRh-D7-zFe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="bbH-Ja-YSX"/>
                     <constraint firstItem="aRh-D7-zFe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="f1Z-BK-urn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="aRh-D7-zFe" secondAttribute="bottom" id="iwU-17-oZZ"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -381,7 +388,7 @@
                 <outlet property="_lblStatus" destination="LmA-RZ-bLZ" id="8gb-yR-GXE"/>
                 <outlet property="_lbltype" destination="xTq-Hg-GqB" id="j3P-Fo-jnx"/>
             </connections>
-            <point key="canvasLocation" x="196" y="248.5"/>
+            <point key="canvasLocation" x="350" y="207.5"/>
         </tableViewCell>
     </objects>
     <resources>

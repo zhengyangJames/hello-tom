@@ -57,7 +57,7 @@
             height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
         }
     } else if(indexPath.row == 1) {
-        return 408;
+        return 455;
     } else if (indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 16 ){
         if (IS_IOS8_OR_ABOVE) {
             return  UITableViewAutomaticDimension;
@@ -80,7 +80,7 @@
     if (indexPath.row == 0) {
         return 67;
     } else if(indexPath.row == 1) {
-        return 408;
+        return 455;
     } else if (indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 16 ){
         return 84;
     } else if (indexPath.row == 5 || indexPath.row == 7 || indexPath.row == 10) {
