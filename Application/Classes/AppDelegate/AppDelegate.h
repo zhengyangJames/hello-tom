@@ -16,9 +16,6 @@
 
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
-@property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
-@property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
 @property (strong, nonatomic) BaseTabBarController *baseTabBarController;
 
 

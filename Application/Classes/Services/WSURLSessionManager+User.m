@@ -11,6 +11,12 @@
 @implementation WSURLSessionManager (User)
 
 - (void)wsLoginWithUser:(NSDictionary*)param handler:(WSURLSessionHandler)handler {
+    NSString *postString = [self paramsToString:param];
+    NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:WS_METHOD_POST_LOGIN"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    [request setHTTPBody:body];
     NSString *url = [NSString stringWithFormat:WS_METHOD_POST_LOGIN,CLIENT_ID,CLIENT_SECRECT,param[kUSER],param[kPASSWORD]];
     
     [self sendURL:url params:nil body:nil method:METHOD_POST handler:^(id responseObject, NSURLResponse *response, NSError *error) {
@@ -29,7 +35,7 @@
 - (void)wsRegisterWithInfo:(NSDictionary *)param handler:(WSURLSessionHandler)handler {
     NSString *postString = [self paramsToString:param];
     NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.coassets.com/api/profile/register/"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:WS_METHOD_POST_REFISTER]];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
     [request setHTTPBody:body];

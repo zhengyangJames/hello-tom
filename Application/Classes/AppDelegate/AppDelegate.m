@@ -15,7 +15,9 @@
 #import "SettingViewController.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
+@property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
+@property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
 @end
 
 @implementation AppDelegate

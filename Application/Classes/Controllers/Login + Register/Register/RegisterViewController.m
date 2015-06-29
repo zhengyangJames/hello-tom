@@ -15,7 +15,7 @@
 #import "NSString+Validation.h"
 #import "WebViewSetting.h"
 #import "WSURLSessionManager+User.h"
-#import "DetailsViewController.h"
+#import "HomeListViewController.h"
 
 @interface RegisterViewController () <UIAlertViewDelegate,COCheckBoxButtonDelegate>
 {
@@ -121,8 +121,14 @@
 - (void)_pushViewController {
     [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
     [kUserDefaults synchronize];
-    DetailsViewController *vc = [[DetailsViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:NO completion:^{
+        NSArray *array = [[kAppDelegate baseTabBarController] viewControllers];
+        for (UIViewController *vc in array) {
+            if ([vc isKindOfClass:[HomeListViewController class]]) {
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }
+    }];
 }
 
 #pragma mark - Set Get

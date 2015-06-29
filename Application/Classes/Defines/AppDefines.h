@@ -50,7 +50,7 @@
 
 #define WS_METHOD_POST_LOGIN                       [WS_ENDPOINT stringByAppendingString:@"/client_id=%@&client_secret=%@&grant_type=password&username=%@&password=%@"]
 
-#define WS_METHOD_POST_REFISTER                    [WS_ENDPOINT stringByAppendingString:@"/profile/register"]
+#define WS_METHOD_POST_REFISTER                    [WS_ENDPOINT stringByAppendingString:@"/profile/register/"]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////
