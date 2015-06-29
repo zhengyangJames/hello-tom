@@ -12,7 +12,7 @@
 
 @interface CODetailsDataSource ()
 
-@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectCellDelegate> controller;
+@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate> controller;
 
 @end
 
@@ -26,7 +26,7 @@
         [tableView registerNib:[UINib nibWithNibName:[CODetailsPhotoCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsPhotoCell identifier]];
         [tableView registerNib:[UINib nibWithNibName:[CODetailsMapCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsMapCell identifier]];
         [tableView registerNib:[UINib nibWithNibName:[CODetailsAccessoryCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsAccessoryCell identifier]];
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectTBVCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectTBVCell identifier]];
         [tableView registerNib:[UINib nibWithNibName:[CODetailsTextCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsTextCell identifier]];
         [tableView registerNib:[UINib nibWithNibName:[CODetailsSectionCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsSectionCell identifier]];
     }
@@ -56,8 +56,8 @@
     return cell;
 }
 
-- (CODetailsProjectCell*)_projectCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
-    CODetailsProjectCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectCell identifier] forIndexPath:indexPath];
+- (CODetailsProjectTBVCell*)_projectCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
+    CODetailsProjectTBVCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectTBVCell identifier] forIndexPath:indexPath];
     
     return cell;
 }

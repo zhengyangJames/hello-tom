@@ -8,12 +8,17 @@
 
 #import "ContactTableViewCell.h"
 
+
 @interface ContactTableViewCell ()
 {
-    __weak IBOutlet UILabel *lblCoAssets;
-    __weak IBOutlet UILabel *lblReg;
-    __weak IBOutlet UILabel *lblAdress;
-    __weak IBOutlet UILabel *lblTell;
+    __weak IBOutlet UILabel *_lblCoAssets;
+    __weak IBOutlet UILabel *_lblReg;
+    __weak IBOutlet UILabel *_lblAdress;
+    __weak IBOutlet UILabel *_lblAdress2;
+    __weak IBOutlet UILabel *_lblTell;
+    __weak IBOutlet UILabel *_lblPostCode;
+    __weak IBOutlet UILabel *_lblCountry;
+    __weak IBOutlet UILabel *_lblCity;
 }
 @end
 
@@ -21,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Initialize Request
 
 }
 
@@ -32,24 +38,32 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];;
-    lblTell.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
-    lblAdress.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
 }
 
-- (void)setContactObj:(ContactObject *)contactObj {
+- (void)setContactObj:(COListContactObject *)contactObj {
     _contactObj = contactObj;
-    lblCoAssets.text = _contactObj.lblCoAssets;
-    lblReg.text = _contactObj.lblReg;
-    lblAdress.text = _contactObj.lblAdress;
-    if ([_contactObj.lblTell isEqual:nil]) {
-        [lblTell setNeedsUpdateConstraints];
-        [lblTell setNeedsDisplay];
-    }else {
-        lblTell.text = _contactObj.lblTell;
+    if ([_contactObj.name isEmpty]||[_contactObj.regNo isEmpty]||[_contactObj.address_1 isEmpty]||[_contactObj.address_2 isEmpty]||[_contactObj.phone isEmpty]||[_contactObj.postCode isEmpty]||[_contactObj.country isEmpty]||[_contactObj.city isEmpty] ) {
+        [_lblTell setNeedsUpdateConstraints];
+        [_lblReg setNeedsUpdateConstraints];
+        [_lblAdress setNeedsUpdateConstraints];
+        [_lblAdress2 setNeedsUpdateConstraints];
+        [_lblPostCode setNeedsUpdateConstraints];
+        [_lblCountry setNeedsUpdateConstraints];
+        [_lblCity setNeedsUpdateConstraints];
+        [_lblTell setNeedsUpdateConstraints];
     }
+    _lblCoAssets.text = _contactObj.name;
+    _lblReg.text = _contactObj.regNo;
+    _lblAdress.text = _contactObj.address_1;
+    _lblAdress2.text = _contactObj.address_2;
+    _lblTell.text = _contactObj.phone;
+    _lblPostCode.text = _contactObj.postCode;
+    _lblCountry.text = _contactObj.country;
+    _lblCity.text = _contactObj.city;
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
+
 
 
 @end

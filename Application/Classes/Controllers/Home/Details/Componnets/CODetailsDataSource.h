@@ -10,18 +10,17 @@
 #import "CODetailsAccessoryCell.h"
 #import "CODetailsMapCell.h"
 #import "CODetailsPhotoCell.h"
-#import "CODetailsProjectCell.h"
+#import "CODetailsProjectTBVCell.h"
 #import "CODetailsTextCell.h"
 #import "CODetailsSectionCell.h"
 
-@protocol CODetailsAccessoryCellDelegate;
 @protocol CODetailsProjectCellDelegate;
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
 @property (strong, nonatomic) NSDictionary *object;
 
-- (instancetype)initWithController:(id<CODetailsProjectCellDelegate,CODetailsAccessoryCellDelegate>)controller tableView:(UITableView*)tableView ;
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate>)controller tableView:(UITableView*)tableView ;
 
 - (CODetailsTextCell*)textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
 - (CODetailsPhotoCell*)photoCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;

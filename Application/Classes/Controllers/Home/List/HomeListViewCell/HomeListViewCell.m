@@ -7,6 +7,11 @@
 //
 
 #import "HomeListViewCell.h"
+#import "UIImageView+AFNetworking.h"
+#import "AFNetworking.h"
+#import "UIImage+Scaling.h"
+#import "UIImageView+Networking.h"
+#import "UIImage+animatedGIF.h"
 
 @implementation HomeListViewCell
 {
@@ -15,6 +20,7 @@
     __weak IBOutlet UILabel *_lblDetail;
     __weak IBOutlet UILabel *_lblSate;
     __weak IBOutlet UIView *_viewImage;
+    __weak IBOutlet UIImageView *_viewImageLoading;
 }
 
 
@@ -24,34 +30,52 @@
     self.contentView.frame = self.bounds;
 }
 
+- (void)viewDidLoad {
+    
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];;
     _lblDetail.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
     _lblSate.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
-//    [_viewImage.layer setCornerRadius:4];
-
     [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    _viewImage.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    _viewImage.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     _viewImage.layer.masksToBounds = NO;
-//    [_viewImage.layer setCornerRadius:4];
     _viewImage.layer.shadowOffset = CGSizeMake(0, 0);
     _viewImage.layer.shadowRadius = 4;
     _viewImage.layer.shadowOpacity = 0.6;
 }
 
-- (void)setObject:(ListHomeObject *)object {
+#pragma mark - Private
+- (UIImage*)_loadGifImageLoading {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Preloader_8" withExtension:@"gif"];
+    UIImage *imageGif = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
+    return imageGif;
+}
+
+#pragma mark - Set Get
+
+- (void)setObject:(COLIstOffersObject *)object {
     _object = object;
-    [_imageBig setImage:[UIImage imageNamed:_object.imageNameBig]];
-    [_imageLogo setImage:[UIImage imageNamed:_object.imageNameLogo]];
-    [_lblDetail setText:_object.lableDetail];
-    [_lblSate setText:_object.lableSate];
+    NSURL *url = [NSURL URLWithString:_object.offerPhoto];
+    [_imageBig setImageURL:url withCompletionBlock:^(BOOL succes, UIImage *image, NSError *error) {
+        if (succes) {
+            _imageBig.image = [UIImage resizeImage:image newSize:CGSizeMake(_viewImage.frame.size.width, _viewImage.frame.size.height)];
+//            _imageBig.image = image;
+        } else {
+            [_imageBig setImage:[UIImage imageNamed:@"ic_placeholder"]];
+        }
+    } placeHolder:[UIImage imageNamed:@"ic_placeholder"]];
+    [_imageLogo setImage:[[UIImage imageNamed:@"ic_Earth"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [_imageLogo setTintColor:[UIColor grayColor]];
+    [_lblDetail setText:_object.offerTitle];
+    [_lblSate setText:_object.offerCountry];
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
-
 
 @end

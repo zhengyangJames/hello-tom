@@ -9,12 +9,20 @@
 #import "HomeListViewController.h"
 #import "HomeListViewCell.h"
 #import "CODummyDataManager.h"
-#import "ListHomeObject.h"
 #import "LoadFileManager.h"
 #import "CODropListVC.h"
 #import "DetailsViewController.h"
 #import "LoginViewController.h"
-#import "WSManager+Home.h"
+#import "NSArray+Sort.h"
+#import "COLIstOffersObject.h"
+#import "MBProgressHUD.h"
+#import "WSURLSessionManager.h"
+#import "WSURLSessionManager+ListContact.h"
+#import "WSURLSessionManager+ListHome.h"
+
+#define kFILTER_CO  @"/CO"
+#define kFILTER_PS  @"/PS"
+#define kFILTER_BP  @"/BP"
 
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -22,6 +30,8 @@
     NSInteger _indexSelectFilter;
 }
 @property (strong, nonatomic) NSArray *arrayData;
+@property (strong, nonatomic) NSArray *arrayListFilter;
+@property (strong, nonatomic) NSArray *arraySort;
 
 @end
 
@@ -34,7 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    //[self _callAPIGetAllOffers];
+    [self _callAPIGetAllOffers];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -60,8 +70,7 @@
                                                                   style:UIBarButtonItemStyleDone
                                                                  target:self
                                                                  action:@selector(__actionFilter)];
-    [leftButton setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular"
-                                                                             size:17]}
+    [leftButton setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
                               forState:UIControlStateNormal];
     
     [self.navigationItem setLeftBarButtonItem:leftButton];
@@ -76,38 +85,97 @@
 #pragma mark - Setter Getter
 - (NSArray*)arrayData {
     if (!_arrayData) {
-        _arrayData = [[CODummyDataManager shared] arrayListHomeObj];
-        return _arrayData;
+       return _arrayData = [[NSArray alloc] init];
     }
     return _arrayData;
 }
 
+- (NSArray*)arrayListFilter {
+    if (!_arrayListFilter) {
+        return _arrayListFilter = [LoadFileManager loadFilePlistWithName:@"FilterList"];
+    }
+    return _arrayListFilter;
+}
+
+- (NSArray*)arraySort {
+    if (!_arraySort) {
+        return _arraySort = [[NSArray alloc] init];
+    }
+    return _arraySort;
+}
+
 #pragma mark - Action
 - (void)__actionFilter {
-    NSArray *array = [LoadFileManager loadFilePlistWithName:@"FilterList"];
-    [CODropListVC presentWithTitle:m_string(@"Filter") data:array selectedIndex:_indexSelectFilter parentVC:self didSelect:^(NSInteger index) {
+    [CODropListVC presentWithTitle:m_string(@"Filter")
+                              data:self.arrayListFilter
+                     selectedIndex:_indexSelectFilter
+                          parentVC:self
+                         didSelect:^(NSInteger index) {
         _indexSelectFilter = index;
+//        NSArray *arraySort = self.arrayData;
+//        NSString *key = self.arrayListFilter[_indexSelectFilter];
+//        if (![key isEqualToString:@"All"]) {
+//            NSPredicate *pre = [NSPredicate predicateWithFormat:@"offerType CONTAINS[cd] %@",key];
+//            self.arraySort = [arraySort filteredArrayUsingPredicate:pre];
+//        }else {
+//            self.arraySort = self.arrayData;
+//        }
+        self.arrayData = nil;
+         if (_indexSelectFilter == 1) {
+             [self _callWSGetListOfferFilter:kFILTER_BP];
+         } else if (_indexSelectFilter == 2) {
+             [self _callWSGetListOfferFilter:kFILTER_CO];
+         } else if (_indexSelectFilter == 3) {
+             [self _callWSGetListOfferFilter:kFILTER_PS];
+         } else {
+             [self _callAPIGetAllOffers];
+         }
+        [_tableView reloadData];
     }];
 }
 
 #pragma mark - CalAPI
 - (void)_callAPIGetAllOffers {
     [UIHelper showLoadingInView:self.view];
-    [[WSManager shared] getListOffersWithHandler:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+    [[WSURLSessionManager shared]wsGetListOfferWithHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
+            self.arrayData = (NSArray*)responseObject;
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [_tableView beginUpdates];
+                for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
+                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                }
+                [_tableView endUpdates];
+            }];
+        } else {
+            [UIHelper hideLoadingFromView:self.view];
+            [UIHelper showError:error];
+        }
         [UIHelper hideLoadingFromView:self.view];
     }];
 }
 
-
-#pragma mark - TableView Delegate
-
-- (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
-    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return cellSize.height;
+- (void)_callWSGetListOfferFilter:(NSString*)typeFilter {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsGetListOffersFilter:typeFilter handle:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
+            self.arrayData = (NSArray*)responseObject;
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [_tableView beginUpdates];
+                for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
+                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                }
+                [_tableView endUpdates];
+            }];
+        } else {
+            [UIHelper hideLoadingFromView:self.view];
+            [UIHelper showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
 }
 
+#pragma mark - TableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayData.count;
 }
@@ -133,19 +201,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = 248;
-    return height;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
     return 248;
 }
 
 - (HomeListViewCell*)_setupHomeListCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeListViewCell identifier]];
     
-    cell.object = self.arrayData[arc4random() % self.arrayData.count];
+    cell.object = self.arrayData[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

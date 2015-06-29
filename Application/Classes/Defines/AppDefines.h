@@ -24,8 +24,9 @@
 #pragma mark - WSMAnager
 ///////////////////////////////////////////////////////////////////
 
+
 #define METHOD_POST                                @"POST"
-#define METHOD_PUT                                 @"PUT"
+#define METHOD_PUT                                 @"PUT" 
 #define METHOD_GET                                 @"GET"
 
 #define WS_TIME_OUT                                 120
@@ -33,16 +34,23 @@
 #define WS_ERROR_DOMAIN                             @"COASSETS_ERROR_DOMAIN"
 #define WS_ENDPOINT                                 @"https://www.coassets.com/api"
 
+#define WS_ACCESS_TOKEN                             @"dda346478c319db6faa474aace302858fe247e5c"
 
 #define COREDATA_STORE_NAME                         @"CoAssest"
+
+#define CLIENT_ID       @"4c6a28b0137ff54909b3"
+#define CLIENT_SECRECT  @"e88e20a9f9d642ed1e7e04ab0b72798b41455377"
+#define kUSER @"user"
+#define kPASSWORD @"password"
 ///////////////////////////////////////////////////////////////////
 #pragma mark - WSMAnager - METHOD SERVICES
 ///////////////////////////////////////////////////////////////////
 
 #define WS_METHOD_GET_LIST_OFFERS                  [WS_ENDPOINT stringByAppendingString:@"/offers"]
 
+#define WS_METHOD_GET_LIST_CONTACT                 [WS_ENDPOINT stringByAppendingString:@"/company_info"]
 
-
+#define WS_METHOD_POST_LOGIN                       [WS_ENDPOINT stringByAppendingString:@"/client_id=%@&client_secret=%@&grant_type=password&username=%@&password=%@"]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////

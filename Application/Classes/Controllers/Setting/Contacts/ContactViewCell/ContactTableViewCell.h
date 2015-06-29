@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTableViewCell.h"
-#import "ContactObject.h"
+#import "COListContactObject.h"
 
 @interface ContactTableViewCell : BaseTableViewCell
 
-@property (strong, nonatomic) ContactObject *contactObj;
+@property (strong, nonatomic) COListContactObject *contactObj;
 
 @end

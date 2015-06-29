@@ -9,6 +9,8 @@
 #import "ContacViewController.h"
 #import "CODummyDataManager.h"
 #import "ContactTableViewCell.h"
+#import "WSURLSessionManager+ListContact.h"
+#import "WSURLSessionManager.h"
 
 #define TitleSection0  @"SINGAPORE OFFICE"
 #define TitleSection1  @"MALAYSIA OFFICE"
@@ -29,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _wsGetListContact];
     [self _setupUI];
 }
 
@@ -58,7 +61,7 @@
 #pragma mark - Setter Getter
 - (NSArray*)arrayData {
     if (!_arrayData) {
-        _arrayData = [[CODummyDataManager shared] arrayContactObj];
+        _arrayData = [[NSArray alloc]init];
         return _arrayData;
     }
     return _arrayData;
@@ -89,15 +92,33 @@
     [view addSubview:label];
     [label pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:16];
     [label pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinBottomEdge inset:0];
-    [view setBackgroundColor:KBACKGROUND_COLOR];
+    [view setBackgroundColor:KGRAY_COLOR];
     return view;
+}
+
+#pragma mark - Call WService
+
+- (void)_wsGetListContact {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsGetListContactWithHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
+            self.arrayData = (NSArray*)responseObject;
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [_tableView reloadData];
+            }];
+        } else {
+            [UIHelper hideLoadingFromView:self.view];
+            [UIHelper showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
 }
 
 #pragma mark - TableView Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return self.arrayData.count;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -116,39 +137,45 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return [self _setupContactCell:tableView indexPath:0];
+        return [self _setupContactCell:tableView indexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     } else if (indexPath.section == 1) {
-        return [self _setupContactCell:tableView indexPath:1];
+        return [self _setupContactCell:tableView indexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     } else {
-        return [self _setupContactCell:tableView indexPath:2];
+        return [self _setupContactCell:tableView indexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     CGFloat height = 0;
     if(IS_IOS8_OR_ABOVE) {
         return UITableViewAutomaticDimension;
     } else {
-        id cell = [self _setupContactCell:tableView indexPath:0];
+        id cell = [self _setupContactCell:tableView indexPath:indexPath];
         CGFloat height = [self _heightForTableView:tableView cell:cell atIndexPath:indexPath];
         return height;
     }
     return height;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    return UITableViewAutomaticDimension;
+    return 185;
 }
 
-- (ContactTableViewCell*)_setupContactCell:(UITableView*)tableView indexPath:(NSInteger)indexPath {
+- (ContactTableViewCell*)_setupContactCell:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
     ContactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ContactTableViewCell identifier]];
-    cell.contactObj = self.arrayData[indexPath];
+    if (indexPath.section == 0) {
+        cell.contactObj = self.arrayData[0];
+    } else if (indexPath.section == 1) {
+        cell.contactObj = self.arrayData[1];
+    } else {
+        cell.contactObj = self.arrayData[2];
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

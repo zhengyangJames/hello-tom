@@ -73,7 +73,7 @@
 - (void)_setSliderHeaderView {
     COSlidingView *viewSliding = [[COSlidingView alloc] initWithNibName:[COSlidingView identifier]];
     viewSliding.translatesAutoresizingMaskIntoConstraints = NO;
-    viewSliding.arrayImage = @[@"19.jpg",@"9.jpg",@"17.jpg",@"17.jpg",@"1.jpg",@"15.jpg",@"6.jpg",@"8.jpg",@"11.jpg",@"13.jpg"];
+    viewSliding.arrayImage = @[@"19.jpg",@"18.jpg",@"20.jpg",@"17.jpg",@"15.jpg"];
     [_headerSliderView addSubview:viewSliding];
     [viewSliding pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];

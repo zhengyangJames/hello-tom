@@ -12,6 +12,7 @@
 #import "WebViewSetting.h"
 #import "LoginViewController.h"
 
+
 #define LINK_NEW             @"https://www.coassets.com/news/"
 #define LINK_COMMENTARIES    @"https://www.coassets.com/blog/"
 #define LINK_TERMS_OF_USE    @"https://www.coassets.com/terms-of-use/"

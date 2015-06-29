@@ -8,10 +8,10 @@
 
 #import "BaseViewController.h"
 #import "CODetailsAccessoryCell.h"
-#import "CODetailsProjectCell.h"
+#import "CODetailsProjectTBVCell.h"
 #import "CODetailsDelegate.h"
 
-@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsProjectCellDelegate,CODetailsController>
+@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsController>
 
 @end
 

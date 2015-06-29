@@ -30,6 +30,8 @@
 #define UPDATE_ABOUT_PROFILE    @"Update profile"
 #define UPDATE_COMNPANY_PROFILE @"Update company profile"
 
+#define WeakSelf_Block  __weak __typeof__(self) weakSelf
+
 typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell);
 
 @interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -94,11 +96,11 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 200)];
     _tableheaderView   = [[TableHeaderView alloc] initWithNibName:[TableHeaderView identifier]];
     [_tableheaderView setActionSegment:^(NSInteger indexSelectSegment){
-        __typeof__(self) strongSelf = weakSelf;
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf _setupCellStyle:indexSelectSegment];
     } ];
     [_tableheaderView setActionPickerImageProfile:^(){
-        __typeof__(self) strongSelf = weakSelf;
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf _showActionSheet];
     }];
     _tableheaderView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -112,7 +114,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 90)];
     _tablefooterView   = [[TableBottomView alloc] initWithNibName:[TableBottomView identifier]];
     [_tablefooterView setActionButtonUpdate:^(NSString *string){
-        __typeof__(self) strongSelf = weakSelf;
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf __actionButtonUpdate:string];
     }];
     _tablefooterView.translatesAutoresizingMaskIntoConstraints = NO;

@@ -64,6 +64,27 @@
     [actionSheet showInView:view];
 }
 
++ (void)showError:(NSError *)error {
+    if(!error) return;
+    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        NSString *message = nil;
+        if([error.userInfo objectForKey:@"message"])
+        {
+            message = [error.userInfo objectForKey:@"message"];
+        } else {
+            message = error.localizedDescription;
+        }
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:m_string(@"COASSETS")
+                                                            message:message
+                                                           delegate:nil
+                                                  cancelButtonTitle:m_string(@"BUTTON_OK")
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        alertView = nil;
+    }];
+}
+
 + (UIImagePickerController *)showImagePickerAtController:(UIViewController *)controller withDelegate:(id)delegate andMode:(NSInteger)mode
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];

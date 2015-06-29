@@ -12,8 +12,6 @@
 @interface CODummyDataManager : NSObject
 
 + (instancetype)shared;
-- (NSArray*)arrayListHomeObj;
-- (NSArray*)arrayContactObj;
 - (ProfileObject*)AboutProfileObj;
 
 @end

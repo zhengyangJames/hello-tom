@@ -14,8 +14,6 @@ typedef void (^WSManagerHandler)(AFHTTPRequestOperation *operation, id responseO
 
 @interface WSManager : NSObject
 
-@property (nonatomic, strong) NSManagedObjectContext *friendContext;
-
 + (WSManager *)shared;
 
 - (NSString*)paramsToString:(NSDictionary*)params;

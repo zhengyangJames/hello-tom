@@ -11,6 +11,7 @@
 #import "ForgotPasswordViewController.h"
 #import "COBorderTextField.h"
 #import "DetailsViewController.h"
+#import "WSURLSessionManager+User.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 {
@@ -37,6 +38,8 @@
 
 #pragma mark - Private
 - (void)_login {
+    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:_userName.text,kUSER,_passWord.text,kPASSWORD, nil];
+    [self _callAPILogin:param];
     if (self.actionLogin) {
         self.actionLogin();
     }
@@ -75,8 +78,11 @@
 
 
 #pragma mark - CallAPI
-- (void)_callAPILogin {
-    
+- (void)_callAPILogin:(NSDictionary*)param {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsLoginWithUser:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        DBG(@"%@",responseObject);
+    }];
 }
 
 #pragma mark - Action
