@@ -151,6 +151,8 @@
     self.arraySetting = arr;
     [_tableView reloadData];
     [kUserDefaults setBool:NO forKey:KDEFAULT_LOGIN];
+    [kUserDefaults removeObjectForKey:kACCESS_TOKEN];
+    [kUserDefaults removeObjectForKey:kTOKEN_TYPE];
     [kUserDefaults synchronize];
 }
 
@@ -159,7 +161,7 @@
     __weak LoginViewController *weakLogin = vcLogin;
     BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
     [[kAppDelegate baseTabBarController] presentViewController:base
-                                                     animated:YES completion:nil];
+                                                      animated:YES completion:nil];
     vcLogin.actionLogin = ^(){
         [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
             [self _replaceArraySettingLogin];

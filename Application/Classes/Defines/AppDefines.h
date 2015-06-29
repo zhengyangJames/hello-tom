@@ -38,8 +38,9 @@
 
 #define COREDATA_STORE_NAME                         @"CoAssest"
 
-#define CLIENT_ID       @"4c6a28b0137ff54909b3"
-#define CLIENT_SECRECT  @"e88e20a9f9d642ed1e7e04ab0b72798b41455377"
+#define CLIENT_ID      @"4c6a28b0137ff54909b3"
+#define CLIENT_SECRECT @"e88e20a9f9d642ed1e7e04ab0b72798b41455377"
+#define GRANT_TYPE     @"password"
 ///////////////////////////////////////////////////////////////////
 #pragma mark - WSMAnager - METHOD SERVICES
 ///////////////////////////////////////////////////////////////////
@@ -48,9 +49,15 @@
 
 #define WS_METHOD_GET_LIST_CONTACT                 [WS_ENDPOINT stringByAppendingString:@"/company_info"]
 
-#define WS_METHOD_POST_LOGIN                       [WS_ENDPOINT stringByAppendingString:@"/client_id=%@&client_secret=%@&grant_type=password&username=%@&password=%@"]
+#define WS_METHOD_POST_LOGIN                       @"https://www.coassets.com/oauth2/access_token/"
 
 #define WS_METHOD_POST_REFISTER                    [WS_ENDPOINT stringByAppendingString:@"/profile/register/"]
+
+#define WS_METHOD_GET_LIST_PROFIEL                 [WS_ENDPOINT stringByAppendingString:@"/profile/"]
+
+#define WS_METHOD_POST_PORGOT_PASSWORD             [WS_ENDPOINT stringByAppendingString:@"/forget-password/"]
+
+#define WS_METHOD_POST_CHANGE_PASSWORD             [WS_ENDPOINT stringByAppendingString:@"/change-password/"]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////
@@ -67,18 +74,23 @@
 ///////////////////////////////////////////////////////////////////
 #pragma mark - STRING
 ///////////////////////////////////////////////////////////////////
-#define kUSER @"username"
-#define kPASSWORD @"password"
-#define KSALUTATION @"salutation"
-#define KFRIST_NAME @"first_name"
-#define KLAST_NAME  @"last_name"
-#define KEMAIL      @"email"
-#define KPHONE      @"phone"
-#define KADDRESS    @"address"
-#define KORGNAME    @"orgname"
-#define KIMAGE      @"image"
-#define kNUM_COUNTRY @"country_prefix"
+#define kACCESS_TOKEN   @"access_token"
+#define kTOKEN_TYPE     @"token_type"
+#define kCLIENT_ID      @"client_id"
+#define kCLIENT_SECRECT @"client_secret"
+#define kGRANT_TYPE     @"grant_type"
+#define kUSER           @"username"
+#define kPASSWORD       @"password"
+#define KSALUTATION     @"salutation"
+#define KFRIST_NAME     @"first_name"
+#define KLAST_NAME      @"last_name"
+#define KEMAIL          @"email"
+#define KPHONE          @"phone"
+#define KADDRESS        @"address"
+#define KORGNAME        @"orgname"
+#define KIMAGE          @"image"
+#define kNUM_COUNTRY    @"country_prefix"
 #define kNUM_CELL_PHONE @"cellphone"
-#define KDEFAULT_LOGIN      @"DefaultLogin"
+#define KDEFAULT_LOGIN  @"DefaultLogin"
 
 #endif

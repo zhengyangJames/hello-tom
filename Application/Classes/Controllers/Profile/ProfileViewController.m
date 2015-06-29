@@ -10,15 +10,18 @@
 #import "TableHeaderView.h"
 #import "TableBottomView.h"
 #import "AboutTableViewCell.h"
-#import "CompanyTableViewCell.h"
 #import "PasswordTableViewCell.h"
 #import "EditAboutProfileVC.h"
 #import "EditCompanyVC.h"
 #import "LoadFileManager.h"
-#import "ProfileObject.h"
+#import "COListProfileObject.h"
 #import "CODummyDataManager.h"
-#import "ProfileObject.h"
+#import "COListProfileObject.h"
 #import "NSString+Validation.h"
+#import "WSURLSessionManager+Profile.h"
+#import "LoginViewController.h"
+#import "WSURLSessionManager+User.h"
+#import "NSString+MD5.h"
 
 #define DEFAULT_HEIGHT_CELL             44
 #define AUTO_HEIGHT_CELL_ABOUT          (self.view.bounds.size.height - (200+90))/6
@@ -44,7 +47,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSInteger _indexSelectSeg;
     NSInteger _indexActtionCountryCode;
 }
-@property (strong, nonatomic) ProfileObject *profileObject;
+@property (strong, nonatomic) COListProfileObject *profileObject;
 @property (strong, nonatomic) TableBottomView *tablefooterView;
 @property (strong, nonatomic) TableHeaderView *tableheaderView;
 @property (weak, nonatomic) PasswordTableViewCell *passwordTableViewCell;
@@ -64,6 +67,13 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        [self _setUpLogginVC];
+    } else {
+        if (!self.profileObject) {
+            [self _callWSGetListProfile];
+        }
+    }
     [_tableView reloadData];
 }
 
@@ -76,7 +86,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     _tableView.delegate   = self;
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:[AboutTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[AboutTableViewCell identifier]];
-    [_tableView registerNib:[UINib nibWithNibName:[CompanyTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[CompanyTableViewCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[PasswordTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[PasswordTableViewCell identifier]];
 }
 
@@ -90,7 +99,54 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     }
 }
 
+#pragma mark - Web Service
+- (void)_callWSGetListProfile {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
+    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsGetProfileWithUserToken:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            DBG(@"%@",responseObject);
+            self.profileObject = (COListProfileObject*)responseObject;
+            [_tableView reloadData];
+        }else {
+            [UIHelper showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+}
+
+- (void)_callWSChangePassword:(NSDictionary*)param {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
+    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsChangePassword:dic body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
+            DBG(@"%@",responseObject);
+            [self _setupShowAleartViewWithTitle:@"Password changed successfully"];
+        } else {
+            [self _setupShowAleartViewWithTitle:@"Password not changed"];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+}
+
 #pragma mark - Private 
+- (void)_setUpLogginVC {
+    LoginViewController *vcLogin = [[LoginViewController alloc]init];
+    __weak LoginViewController *weakLogin = vcLogin;
+    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+    [[kAppDelegate baseTabBarController] presentViewController:base
+                                                      animated:YES completion:nil];
+    vcLogin.actionLogin = ^(){
+        [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
+            
+        }];
+    };
+}
+
 - (void)_setupHeaderTableView {
     __weak __typeof__(self) weakSelf = self;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 200)];
@@ -127,28 +183,14 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     vc.phoneCode = _indexActtionCountryCode;
-    vc.phoneName = self.profileObject.phone;
-    vc.addressName = self.profileObject.address;
+    vc.phoneName = self.profileObject.cell_phone;
+    vc.addressName = self.profileObject.address_1;
     vc.emailName = self.profileObject.email;
     vc.actionDone = ^(NSString* emailName,NSString* phone,NSInteger phoneCode,NSString* address) {
-        self.profileObject.phone = phone;
-        self.profileObject.address = address;
+        self.profileObject.cell_phone = phone;
+        self.profileObject.address_1 = address;
         self.profileObject.email = emailName;
         _indexActtionCountryCode = phoneCode;
-    };
-    [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
-}
-
-- (void)_setupEditCompanyVC {
-    EditCompanyVC *vc = [[EditCompanyVC alloc]init];
-    BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
-    vc.orgName = self.profileObject.orgname;
-    vc.address = self.profileObject.address;
-    vc.imageName = _imageCompany?_imageCompany:[UIImage imageNamed:@"ic_placeholder"];
-    vc.actionDone = ^(NSString *orgName,NSString* address,UIImage *imageCompany){
-        self.profileObject.orgname = orgName;
-        self.profileObject.address = address;
-        _imageCompany = imageCompany;
     };
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
@@ -171,13 +213,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 #pragma mark - Setter Getter
 
-- (ProfileObject*)profileObject {
-    if (!_profileObject) {
-        _profileObject = [[CODummyDataManager shared] AboutProfileObj];
-    }
-    return _profileObject;
-}
-
 - (NSArray*)arrayCountryCode {
     if (!_arrayCountryCode) {
         return _arrayCountryCode = [LoadFileManager loadFileJsonWithName:@"JsonPhoneCode"];
@@ -189,14 +224,13 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 - (void)__actionButtonUpdate:(NSString*)string {
     if ([string isEqualToString:UPDATE_ABOUT_PROFILE]) {
         [self _setupEditAboutProfileVC];
-    } else if([string isEqualToString:UPDATE_COMNPANY_PROFILE]){
-        [self _setupEditCompanyVC];
     } else {
         if ([self _isValidationPassword]) {
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[_passwordTableViewCell.newpassowrdTXT.text md5],@"new_password", nil];
+            [self _callWSChangePassword:dic];
             _passwordTableViewCell.oldPassowrdTXT.text = nil;
             _passwordTableViewCell.newpassowrdTXT.text = nil;
             _passwordTableViewCell.comfilmPassowrdTXT.text = nil;
-            [self _setupShowAleartViewWithTitle:@"Update Password Success."];
         } else {
             [self _setupShowAleartViewWithTitle:@"Password is invalid."];
         }
@@ -217,9 +251,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
         return 6;
-    } else if(TableViewCellStyleCompany == _indexSelectSeg) {
-        return 2;
-    }else{
+    } else {
         return 1;
     }
 }
@@ -227,13 +259,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
         return [self _setupAboutCell:tableView cellForRowAtIndexPath:indexPath];
-    } else if(TableViewCellStyleCompany == _indexSelectSeg) {
-        if (indexPath.row == 0) {
-            return  [self _setupCompanyCell:tableView cellForRowAtIndexPath:indexPath];
-        }else {
-            return  [self _setupCompanyCell2:tableView cellForRowAtIndexPath:indexPath];
-        }
-    }else{
+    } else {
         if (!_passwordTableViewCell) {
             _passwordTableViewCell = [self _setupPasswordCell:tableView cellForRowAtIndexPath:indexPath];
         }
@@ -244,13 +270,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
         return AUTO_HEIGHT_CELL_ABOUT < DEFAULT_HEIGHT_CELL ? DEFAULT_HEIGHT_CELL : AUTO_HEIGHT_CELL_ABOUT;
-    } else if(TableViewCellStyleCompany == _indexSelectSeg) {
-        if (indexPath.row == 0) {
-            return AUTO_HEIGHT_CELL_COMPANY > DEFAULT_HEIGHT_CELL_COMPANY ? AUTO_HEIGHT_CELL_COMPANY : DEFAULT_HEIGHT_CELL_COMPANY;
-        }else {
-            return DEFAULT_HEIGHT_CELL ;
-        }
-    }else{
+    } else {
         return AUTO_HEIGHT_CELL_PASSWORD < DEFAULT_HEIGHT_CELL_PASSWORD ? DEFAULT_HEIGHT_CELL_PASSWORD : AUTO_HEIGHT_CELL_PASSWORD;
     }
 }
@@ -263,47 +283,28 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     AboutTableViewCell *aboutCell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell identifier]
                                                                     forIndexPath:indexPath];
     if (indexPath.row == COAboutProfileStyleSalutation) {
-        aboutCell.lblDetail.text = self.profileObject.salutation;
+        aboutCell.lblDetail.text = @""; //self.profileObject.salutation;
         aboutCell.lblname.text = m_string(@"Salutation");
     } else if (indexPath.row == COAboutProfileStyleFirstName) {
-        aboutCell.lblDetail.text = self.profileObject.firstname;
+        aboutCell.lblDetail.text = self.profileObject.first_name;
         aboutCell.lblname.text = m_string(@"First Name");
     } else if (indexPath.row == COAboutProfileStyleLastNameSurname) {
-        aboutCell.lblDetail.text = self.profileObject.lastnameurname;
+        aboutCell.lblDetail.text = self.profileObject.last_name;
         aboutCell.lblname.text = m_string(@"Last Name");
     } else if (indexPath.row == COAboutProfileStyleEmail) {
         aboutCell.lblDetail.text = self.profileObject.email;
         aboutCell.lblname.text = m_string(@"Email");
     } else if (indexPath.row == COAboutProfileStylePhone) {
         NSString *phoneCode = [self.arrayCountryCode[_indexActtionCountryCode] objectForKey:@"code"];
-        NSString *string = [NSString stringWithFormat:@"%@ %@",phoneCode,self.profileObject.phone];
+        NSString *string = [NSString stringWithFormat:@"%@ %@",phoneCode,self.profileObject.cell_phone];
         aboutCell.lblDetail.text = string;
         aboutCell.lblname.text = m_string(@"Phone");
     } else {
-        aboutCell.lblDetail.text = self.profileObject.address;
+        aboutCell.lblDetail.text = self.profileObject.address_1;
         aboutCell.lblname.text = m_string(@"Address");
     }
     aboutCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return aboutCell;
-}
-
-- (CompanyTableViewCell*)_setupCompanyCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CompanyTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:[CompanyTableViewCell identifier]
-                                                                        forIndexPath:indexPath];
-    companyCell.lblDetail.text = self.profileObject.orgname;
-    companyCell.lblname.text = m_string(@"Orgname");
-    companyCell.image.image = _imageCompany?_imageCompany:[UIImage imageNamed:@"ic_placeholder"];
-    companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return companyCell;
-}
-
-- (AboutTableViewCell*)_setupCompanyCell2:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    AboutTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell identifier]
-                                                                        forIndexPath:indexPath];
-    companyCell.lblDetail.text = self.profileObject.address;
-    companyCell.lblname.text = m_string(@"Address");
-    companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return companyCell;
 }
 
 - (PasswordTableViewCell*)_setupPasswordCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -346,6 +347,5 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [_tableheaderView.imageProfile setImage:image];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end

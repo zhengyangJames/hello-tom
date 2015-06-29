@@ -9,7 +9,7 @@
 #import "EditCompanyVC.h"
 #import "CODropListView.h"
 #import "CoDropListButtom.h"
-#import "ProfileObject.h"
+#import "COListProfileObject.h"
 #import "CODummyDataManager.h"
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -20,7 +20,7 @@
     __weak IBOutlet UIImageView *_imageCompany;
     NSInteger _indexActtionOrgType;
 }
-@property (strong, nonatomic) ProfileObject *profileObject;
+@property (strong, nonatomic) COListProfileObject *profileObject;
 
 @end
 
@@ -57,9 +57,9 @@
     _imageCompany.image = _imageName;
 }
 
-- (ProfileObject*)profileObject {
+- (COListProfileObject*)profileObject {
     if (!_profileObject) {
-        _profileObject = [[CODummyDataManager shared] AboutProfileObj];
+        _profileObject = [[COListProfileObject alloc] init];
     }
     return _profileObject;
 }

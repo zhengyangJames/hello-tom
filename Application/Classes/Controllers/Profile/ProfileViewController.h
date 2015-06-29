@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSInteger, TableViewCellStyle) {
     TableViewCellStyleAbout,        //0
-    TableViewCellStyleCompany,      //1
+//    TableViewCellStyleCompany,      //1
     TableViewCellStylePasswork      //2
 };
 

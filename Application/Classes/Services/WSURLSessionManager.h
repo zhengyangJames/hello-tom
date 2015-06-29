@@ -17,4 +17,7 @@ typedef void (^WSURLSessionHandler)(id responseObject, NSURLResponse *response, 
          method:(NSString*)method handler:(WSURLSessionHandler)handler;
 - (void)sendRequest:(NSMutableURLRequest*)request handler:(WSURLSessionHandler)handler;
 - (NSString*)paramsToString:(NSDictionary*)params;
+- (NSMutableURLRequest*)createAuthRequest:(NSString*)url
+                                      body:(NSData*)bodyData
+                                httpMethod:(NSString*)method;
 @end

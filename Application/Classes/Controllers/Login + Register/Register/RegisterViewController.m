@@ -16,6 +16,7 @@
 #import "WebViewSetting.h"
 #import "WSURLSessionManager+User.h"
 #import "HomeListViewController.h"
+#import "NSString+MD5.h"
 
 @interface RegisterViewController () <UIAlertViewDelegate,COCheckBoxButtonDelegate>
 {
@@ -109,7 +110,7 @@
 - (NSDictionary*)_getUserInfo {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     dic[kUSER] = _usernameTextField.text;
-    dic[kPASSWORD] = _passwordTextField.text;
+    dic[kPASSWORD] = [_passwordTextField.text md5];
     dic[KFRIST_NAME] = _fristNameTextField.text;
     dic[KLAST_NAME] = _lastNameTextField.text;
     dic[KEMAIL] = _emailTextField.text;
@@ -131,6 +132,16 @@
     }];
 }
 
+- (NSMutableDictionary*)_creatUserInfo {
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    param[kCLIENT_ID] = CLIENT_ID;
+    param[kCLIENT_SECRECT] = CLIENT_SECRECT;
+    param[kGRANT_TYPE] = GRANT_TYPE;
+    param[kUSER] = _usernameTextField.text;
+    param[kPASSWORD] = [_passwordTextField.text md5];
+    return param;
+}
+
 #pragma mark - Set Get
 - (NSArray*)arrayListPhoneCode {
     if (!_arrayListPhoneCode) {
@@ -146,7 +157,9 @@
     [[WSURLSessionManager shared] wsRegisterWithInfo:[self _getUserInfo] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if([[responseObject valueForKey:@"success"] isEqualToString:@"user created"]) {
+                [self _callAPILogin:[self _creatUserInfo]];
                 [self _pushViewController];
+                DBG( @"%@",responseObject);
             }else {
                 [self _setupShowAleartViewWithTitle:@"Username Already Exist"];
             }
@@ -157,6 +170,20 @@
     }];
 }
 
+- (void)_callAPILogin:(NSDictionary*)param {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsLoginWithUser:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            DBG(@"%@",responseObject);
+            [kUserDefaults setValue:[responseObject valueForKey:kACCESS_TOKEN] forKey:kACCESS_TOKEN];
+            [kUserDefaults setValue:[responseObject valueForKey:kTOKEN_TYPE] forKey:kTOKEN_TYPE];
+            [kUserDefaults synchronize];
+        } else {
+            [UIHelper showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+}
 
 #pragma mark - Action
 - (IBAction)__actionCancel:(id)sender {
