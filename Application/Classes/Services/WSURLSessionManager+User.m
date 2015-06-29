@@ -26,4 +26,24 @@
     }];
 }
 
+- (void)wsRegisterWithInfo:(NSDictionary *)param handler:(WSURLSessionHandler)handler {
+    NSString *postString = [self paramsToString:param];
+    NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.coassets.com/api/profile/register/"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    [request setHTTPBody:body];
+    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            if (handler) {
+                handler(responseObject,response,nil);
+            }
+        } else {
+            if (handler) {
+                handler(nil,response,error);
+            }
+        }
+    }];
+}
+
 @end

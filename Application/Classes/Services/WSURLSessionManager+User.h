@@ -11,5 +11,6 @@
 @interface WSURLSessionManager (User)
 
 - (void)wsLoginWithUser:(NSDictionary*)param handler:(WSURLSessionHandler)handler;
+- (void)wsRegisterWithInfo:(NSDictionary*)param handler:(WSURLSessionHandler)handler;
 
 @end

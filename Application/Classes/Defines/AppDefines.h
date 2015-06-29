@@ -40,8 +40,6 @@
 
 #define CLIENT_ID       @"4c6a28b0137ff54909b3"
 #define CLIENT_SECRECT  @"e88e20a9f9d642ed1e7e04ab0b72798b41455377"
-#define kUSER @"user"
-#define kPASSWORD @"password"
 ///////////////////////////////////////////////////////////////////
 #pragma mark - WSMAnager - METHOD SERVICES
 ///////////////////////////////////////////////////////////////////
@@ -51,6 +49,8 @@
 #define WS_METHOD_GET_LIST_CONTACT                 [WS_ENDPOINT stringByAppendingString:@"/company_info"]
 
 #define WS_METHOD_POST_LOGIN                       [WS_ENDPOINT stringByAppendingString:@"/client_id=%@&client_secret=%@&grant_type=password&username=%@&password=%@"]
+
+#define WS_METHOD_POST_REFISTER                    [WS_ENDPOINT stringByAppendingString:@"/profile/register"]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////
@@ -67,14 +67,18 @@
 ///////////////////////////////////////////////////////////////////
 #pragma mark - STRING
 ///////////////////////////////////////////////////////////////////
+#define kUSER @"username"
+#define kPASSWORD @"password"
 #define KSALUTATION @"salutation"
-#define KFRIST_NAME @"firstname"
-#define KLAST_NAME  @"lastnameurname"
+#define KFRIST_NAME @"first_name"
+#define KLAST_NAME  @"last_name"
 #define KEMAIL      @"email"
 #define KPHONE      @"phone"
 #define KADDRESS    @"address"
 #define KORGNAME    @"orgname"
 #define KIMAGE      @"image"
+#define kNUM_COUNTRY @"country_prefix"
+#define kNUM_CELL_PHONE @"cellphone"
 #define KDEFAULT_LOGIN      @"DefaultLogin"
 
 #endif

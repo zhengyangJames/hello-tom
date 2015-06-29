@@ -48,7 +48,7 @@
     if(!params) return s;
     NSString *prefix = @"";
     for (NSString *key in [params allKeys]) {
-        s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[params objectForKey:key]];
+        s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[[params objectForKey:key] urlEncode]];
         prefix = @"&";
     }
     return s;
