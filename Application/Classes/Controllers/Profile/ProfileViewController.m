@@ -99,13 +99,17 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     }
 }
 
-#pragma mark - Web Service
-- (void)_callWSGetListProfile {
+- (NSMutableDictionary*)_setupAccessToken {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
     dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    return dic;
+}
+
+#pragma mark - Web Service
+- (void)_callWSGetListProfile {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsGetProfileWithUserToken:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsGetProfileWithUserToken:[self _setupAccessToken] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             DBG(@"%@",responseObject);
             self.profileObject = (COListProfileObject*)responseObject;
@@ -118,11 +122,8 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 }
 
 - (void)_callWSChangePassword:(NSDictionary*)param {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
-    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsChangePassword:dic body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsChangePassword:[self _setupAccessToken] body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
             DBG(@"%@",responseObject);
             [self _setupShowAleartViewWithTitle:@"Password changed successfully"];
@@ -182,11 +183,13 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 - (void)_setupEditAboutProfileVC {
     EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
-    vc.phoneCode = _indexActtionCountryCode;
+    vc.phoneCode = [self.profileObject.country_prefix integerValue];
     vc.phoneName = self.profileObject.cell_phone;
     vc.addressName = self.profileObject.address_1;
     vc.emailName = self.profileObject.email;
     vc.actionDone = ^(NSString* emailName,NSString* phone,NSInteger phoneCode,NSString* address) {
+        NSString *country_prefix = [self.arrayCountryCode[phoneCode] objectForKey:@"code"];
+        self.profileObject.country_prefix = country_prefix;
         self.profileObject.cell_phone = phone;
         self.profileObject.address_1 = address;
         self.profileObject.email = emailName;

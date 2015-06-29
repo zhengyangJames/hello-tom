@@ -92,5 +92,7 @@
 #define kNUM_COUNTRY    @"country_prefix"
 #define kNUM_CELL_PHONE @"cellphone"
 #define KDEFAULT_LOGIN  @"DefaultLogin"
-
+#define KCITY    @"city"
+#define KSATE    @"region_state"
+#define KCOUNTRY @"country"
 #endif

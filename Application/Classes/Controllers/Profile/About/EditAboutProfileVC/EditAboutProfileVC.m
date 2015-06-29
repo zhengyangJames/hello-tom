@@ -11,6 +11,7 @@
 #import "COBorderTextField.h"
 #import "CoDropListButtom.h"
 #import "LoadFileManager.h"
+#import "WSURLSessionManager+Profile.h"
 
 @interface EditAboutProfileVC () <UIAlertViewDelegate>
 {
@@ -135,6 +136,42 @@
     return YES;
 }
 
+- (NSMutableDictionary*)_setupAccessToken {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
+    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    return dic;
+}
+
+- (NSMutableDictionary*)_setupBodyData {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kUSER] = [kUserDefaults valueForKey:kACCESS_TOKEN];
+    dic[KFRIST_NAME] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    dic[KLAST_NAME] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    dic[KEMAIL] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    dic[kNUM_CELL_PHONE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    dic[kNUM_COUNTRY] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    dic[KADDRESS] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    dic[KCITY] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    dic[KCOUNTRY] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    dic[KSATE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    return dic;
+}
+
+#pragma mark - Web Service
+- (void)_callWSUpdateProfile {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _setupAccessToken] body:nil handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            DBG(@"%@",responseObject);
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else {
+            [UIHelper showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+}
+
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
@@ -143,8 +180,9 @@
     }
     if (![self _isValidation]) {
         return;
+    } else {
+        [self _callWSUpdateProfile];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)__actionDCancel:(id)sender {
