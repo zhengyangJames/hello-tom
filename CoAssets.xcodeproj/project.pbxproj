@@ -1381,14 +1381,14 @@
 			children = (
 				7F325E881B40E50800116445 /* WSManager.h */,
 				7F325E891B40E50800116445 /* WSManager.m */,
+				7F325E901B40E50800116445 /* WSURLSessionManager.h */,
+				7F325E911B40E50800116445 /* WSURLSessionManager.m */,
 				7F325E8A1B40E50800116445 /* WSURLSessionManager+ListContact.h */,
 				7F325E8B1B40E50800116445 /* WSURLSessionManager+ListContact.m */,
 				7F325E8C1B40E50800116445 /* WSURLSessionManager+ListHome.h */,
 				7F325E8D1B40E50800116445 /* WSURLSessionManager+ListHome.m */,
 				7F325E8E1B40E50800116445 /* WSURLSessionManager+User.h */,
 				7F325E8F1B40E50800116445 /* WSURLSessionManager+User.m */,
-				7F325E901B40E50800116445 /* WSURLSessionManager.h */,
-				7F325E911B40E50800116445 /* WSURLSessionManager.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
