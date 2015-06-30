@@ -43,7 +43,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSString *_newPassword;
     NSString *_comfilmPassword;
     NSInteger _indexSelectSeg;
-    NSInteger _indexActtionCountryCode;
+    NSDictionary *objToken;
 }
 @property (strong, nonatomic) COListProfileObject           *profileObject;
 @property (strong, nonatomic) TableBottomView               *tablefooterView;
@@ -57,9 +57,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
-    [self _checkInLogin];
     [super viewDidLoad];
     [self _setupUI];
+    [self _checkInLogin];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -75,7 +75,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     self.navigationItem.title = m_string(@"CoAssests");
     [self _setupHeaderTableView];
     [self _setupFooterTableView];
-    _indexActtionCountryCode = 0;
     _tableView.delegate   = self;
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:[AboutTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[AboutTableViewCell identifier]];
@@ -95,6 +94,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSMutableDictionary *dic = [NSMutableDictionary new];
     dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
     dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    objToken = [dic copy];
     return dic;
 }
 
@@ -113,18 +113,19 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:[self _setupAccessToken] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            DBG(@"%@",responseObject);
             self.profileObject = nil;
             self.profileObject = (COListProfileObject*)responseObject;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView reloadData];
-            }];
+            DBG(@"token--UpdateProfile %@",[self _setupAccessToken]);
+            DBG(@"username----%@",[(COListProfileObject*)responseObject valueForKey:@"username"]);
+            DBG(@"email----%@",[(COListProfileObject*)responseObject valueForKey:@"email"]);
+            [_tableView reloadData];
         }else {
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
 }
+
 
 - (void)_callWSChangePassword:(NSDictionary*)param {
     [UIHelper showLoadingInView:self.view];

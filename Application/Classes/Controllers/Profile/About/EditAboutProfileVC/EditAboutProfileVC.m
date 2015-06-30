@@ -175,8 +175,8 @@
     dic[KCITY] = self.profileObject.city;
     [self.profileObject setValue:regionStateTXT.text forKey:@"country"];
     dic[KCOUNTRY] = self.profileObject.country;
-    [self.profileObject setValue:regionStateTXT.text forKey:@"sate"];
-    dic[KSATE] = self.profileObject.sate ;
+    [self.profileObject setValue:regionStateTXT.text forKey:@"region_state"];
+    dic[KSATE] = self.profileObject.region_state ;
     return dic;
 }
 

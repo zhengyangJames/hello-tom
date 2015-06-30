@@ -20,7 +20,6 @@
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *region_state;
 @property (strong, nonatomic) NSString *country;
-@property (strong, nonatomic) NSString *sate;
 
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *account_type;
