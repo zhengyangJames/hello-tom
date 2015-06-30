@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -26,10 +26,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditAboutProfileVC">
             <connections>
+                <outlet property="address2TXT" destination="WH0-Hw-MbH" id="NFq-dB-GZw"/>
                 <outlet property="addressNameTXT" destination="CNF-Dg-2xW" id="i2A-vp-q0R"/>
                 <outlet property="dropListCountryCode" destination="FjP-D5-1xD" id="vWo-kK-YIa"/>
                 <outlet property="emailNameTXT" destination="2Xm-1f-nuB" id="hsD-Jk-uE4"/>
                 <outlet property="phoneNameTXT" destination="OgW-cg-UNM" id="jb2-Wh-r4O"/>
+                <outlet property="regionStateTXT" destination="RTr-2e-GOj" id="HOT-zl-Ge6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

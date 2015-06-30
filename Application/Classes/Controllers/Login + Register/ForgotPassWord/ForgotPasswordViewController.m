@@ -8,6 +8,7 @@
 
 #import "ForgotPasswordViewController.h"
 #import "COBorderTextField.h"
+#import "WSURLSessionManager+User.h"
 
 @interface ForgotPasswordViewController () <UIAlertViewDelegate>
 {
@@ -58,8 +59,23 @@
 - (IBAction)__actionReset:(id)sender {
     if (![self _isValidation]) {
         return;
+    } else {
+        [self _callWSProgotPassoword];
     }
-    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - Web Service
+- (void)_callWSProgotPassoword {
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:emailTextField.text,@"email", nil];
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsForgotPassword:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [UIHelper showAleartViewWithTitle:nil message:m_string(@"Your email is invalid.") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
 }
 
 #pragma mark - UIAlertView delegate

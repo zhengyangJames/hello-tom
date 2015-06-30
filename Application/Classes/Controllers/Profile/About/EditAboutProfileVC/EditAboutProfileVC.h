@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "COListProfileObject.h"
 
 typedef void(^ActionDoneAbout)(NSString* emailName,NSString* phone,NSInteger phoneCode,NSString* address);
 
@@ -16,6 +17,7 @@ typedef void(^ActionDoneAbout)(NSString* emailName,NSString* phone,NSInteger pho
 @property (strong, nonatomic) NSString *phoneName;
 @property (assign, nonatomic) NSInteger phoneCode;
 @property (strong, nonatomic) NSString *addressName;
+@property (strong, nonatomic) COListProfileObject *profileObject;
 @property (copy, nonatomic) ActionDoneAbout actionDone;
 
 @end

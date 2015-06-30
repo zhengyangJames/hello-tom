@@ -21,21 +21,21 @@
     return instance;
 }
 
-
-
-- (ProfileObject*)AboutProfileObj {
-    ProfileObject *obj = [[ProfileObject alloc]init];
-    obj.salutation = @"Mr";
-    obj.firstname = @"Daniel";
-    obj.lastnameurname = @"NGUYEN";
-    obj.email = @"email@example.com";
-    obj.phone = @"010101011";
-    obj.address = @"1st street 2rd NewYork";
-    obj.image = @"6.jpg";
-    obj.orgname = @"Nikmesoft Ltd";
-     
-    return obj;
-}
+//
+//
+//- (ProfileObject*)AboutProfileObj {
+//    ProfileObject *obj = [[ProfileObject alloc]init];
+//    obj.salutation = @"Mr";
+//    obj.firstname = @"Daniel";
+//    obj.lastnameurname = @"NGUYEN";
+//    obj.email = @"email@example.com";
+//    obj.phone = @"010101011";
+//    obj.address = @"1st street 2rd NewYork";
+//    obj.image = @"6.jpg";
+//    obj.orgname = @"Nikmesoft Ltd";
+//     
+//    return obj;
+//}
 
 
 @end

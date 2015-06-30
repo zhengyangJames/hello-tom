@@ -15,7 +15,9 @@
 #import "SettingViewController.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
+@property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
+@property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
 @end
 
 @implementation AppDelegate
@@ -24,7 +26,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self gotoHome];
+    self.window.rootViewController = self.baseTabBarController;
     [self _setUp3rdSDKs];
     [self _setUpDatabase];
     [self.window makeKeyAndVisible];
@@ -53,46 +55,58 @@
     [NSManagedObjectContext MR_initializeDefaultContextWithCoordinator:self.persistentStoreCoordinator];
 }
 
-- (void)gotoHome {
-    BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
-    NSArray *arrayNAV = @[[self _setupHomeListViewController],[self _setupProfileViewController],[self _setupSettingViewController]];
-    tabBar.viewControllers = arrayNAV;
-    self.window.rootViewController = tabBar;
+- (BaseTabBarController*)baseTabBarController {
+    if (!_baseTabBarController) {
+        BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
+        NSArray *arrayNAV = @[self.baseHomeNAV,self.baseProfileNAV,self.baseSettingNAV];
+        tabBar.viewControllers = arrayNAV;
+        _baseTabBarController = tabBar;
+    }
+    return _baseTabBarController;
 }
 
 #pragma mark - Private
 
 //Setup Home
-- (BaseNavigationController*)_setupHomeListViewController {
-    HomeListViewController *homeVC = [[HomeListViewController alloc] init];
-    BaseNavigationController *homeNAV = [[BaseNavigationController alloc] initWithRootViewController:homeVC];
-    UITabBarItem *tabbarHome = [[UITabBarItem alloc]initWithTitle:m_string(@"Home")
-                                                            image:[UIImage imageNamed:@"ic_home"]
-                                                    selectedImage:[UIImage imageNamed:@"ic_home_heightlight"]];
-    homeNAV.tabBarItem = tabbarHome;
-    return homeNAV;
+- (BaseNavigationController*)baseHomeNAV {
+    if (!_baseHomeNAV) {
+        HomeListViewController *homeVC = [[HomeListViewController alloc] init];
+        BaseNavigationController *homeNAV = [[BaseNavigationController alloc] initWithRootViewController:homeVC];
+        UITabBarItem *tabbarHome = [[UITabBarItem alloc]initWithTitle:m_string(@"Home")
+                                                                image:[UIImage imageNamed:@"ic_home"]
+                                                        selectedImage:[UIImage imageNamed:@"ic_home_heightlight"]];
+        homeNAV.tabBarItem = tabbarHome;
+        _baseHomeNAV = homeNAV;
+    }
+    return _baseHomeNAV;
 }
 
 //Setup Profile
-- (BaseNavigationController*)_setupProfileViewController {
-    ProfileViewController *profileVC = [[ProfileViewController alloc] init];
-    BaseNavigationController *profileNAV = [[BaseNavigationController alloc] initWithRootViewController:profileVC];
-    UITabBarItem *tabbarProfile = [[UITabBarItem alloc]initWithTitle:m_string(@"Profile")
-                                                               image:[UIImage imageNamed:@"ic_contac_2"]
-                                                       selectedImage:[UIImage imageNamed:@"ic_contac_2_heightlight"]];
-    profileNAV.tabBarItem = tabbarProfile;
-    return profileNAV;
+- (BaseNavigationController*)baseProfileNAV {
+    if (!_baseProfileNAV) {
+        ProfileViewController *profileVC = [[ProfileViewController alloc] init];
+        BaseNavigationController *profileNAV = [[BaseNavigationController alloc] initWithRootViewController:profileVC];
+        UITabBarItem *tabbarProfile = [[UITabBarItem alloc]initWithTitle:m_string(@"Profile")
+                                                                   image:[UIImage imageNamed:@"ic_contac_2"]
+                                                           selectedImage:[UIImage imageNamed:@"ic_contac_2_heightlight"]];
+        profileNAV.tabBarItem = tabbarProfile;
+        _baseProfileNAV = profileNAV;
+    }
+    return _baseProfileNAV;
 }
 
 //Setup Setting
-- (BaseNavigationController*)_setupSettingViewController {
-    SettingViewController *settingVC = [[SettingViewController alloc] init];
-    BaseNavigationController *settingNAV = [[BaseNavigationController alloc] initWithRootViewController:settingVC];
-    UITabBarItem *tabbarSetting = [[UITabBarItem alloc]initWithTitle:m_string(@"Settings")
-                                                               image:[UIImage imageNamed:@"ic_setting_2_heighlight"]
-                                                       selectedImage:[UIImage imageNamed:@"ic_setting_2"]];
-    settingNAV.tabBarItem = tabbarSetting;
-    return settingNAV;
+- (BaseNavigationController*)baseSettingNAV {
+    if (!_baseSettingNAV) {
+        SettingViewController *settingVC = [[SettingViewController alloc] init];
+        BaseNavigationController *settingNAV = [[BaseNavigationController alloc] initWithRootViewController:settingVC];
+        UITabBarItem *tabbarSetting = [[UITabBarItem alloc]initWithTitle:m_string(@"Settings")
+                                                                   image:[UIImage imageNamed:@"ic_setting_2_heighlight"]
+                                                           selectedImage:[UIImage imageNamed:@"ic_setting_2"]];
+        settingNAV.tabBarItem = tabbarSetting;
+        _baseSettingNAV = settingNAV;
+    }
+    return _baseSettingNAV;
 }
 
 #pragma mark - CoreData Stack

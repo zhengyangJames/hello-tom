@@ -12,6 +12,7 @@
 #import "COBorderTextField.h"
 #import "DetailsViewController.h"
 #import "WSURLSessionManager+User.h"
+#import "NSString+MD5.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 {
@@ -38,13 +39,19 @@
 
 #pragma mark - Private
 - (void)_login {
-    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:_userName.text,kUSER,_passWord.text,kPASSWORD, nil];
-    [self _callAPILogin:param];
-    if (self.actionLogin) {
-        self.actionLogin();
-    }
+    [self _callAPILogin:[self _creatUserInfo]];
     [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
     [kUserDefaults synchronize];
+}
+
+- (NSMutableDictionary*)_creatUserInfo {
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    param[kCLIENT_ID] = CLIENT_ID;
+    param[kCLIENT_SECRECT] = CLIENT_SECRECT;
+    param[kGRANT_TYPE] = GRANT_TYPE;
+    param[kUSER] = _userName.text;
+    param[kPASSWORD] = [_passWord.text md5];
+    return param;
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
@@ -81,7 +88,18 @@
 - (void)_callAPILogin:(NSDictionary*)param {
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsLoginWithUser:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        DBG(@"%@",responseObject);
+        if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
+            DBG(@"%@",responseObject);
+            [kUserDefaults setValue:[responseObject valueForKey:kACCESS_TOKEN] forKey:kACCESS_TOKEN];
+            [kUserDefaults setValue:[responseObject valueForKey:kTOKEN_TYPE] forKey:kTOKEN_TYPE];
+            [kUserDefaults synchronize];
+            if (self.actionLogin) {
+                self.actionLogin();
+            }
+        } else {
+            [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
+        }
+        [UIHelper hideLoadingFromView:self.view];
     }];
 }
 
@@ -89,8 +107,9 @@
 - (IBAction)__actionLogin:(id)sender {
     if (![self _isValidation]) {
         return;
+    } else {
+        [self _login];
     }
-    [self _login];
 }
 
 - (IBAction)__actionRegister:(id)sender {
@@ -106,12 +125,7 @@
 #pragma mark - UIAlertView delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    if (buttonIndex == 0) {
-//        if (_currentField) {
-//            [_currentField becomeFirstResponder];
-//        }
-//        _currentField = nil;
-//    }
+
 }
 
 @end

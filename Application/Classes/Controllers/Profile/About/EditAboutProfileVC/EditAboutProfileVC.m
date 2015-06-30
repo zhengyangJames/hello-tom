@@ -11,12 +11,16 @@
 #import "COBorderTextField.h"
 #import "CoDropListButtom.h"
 #import "LoadFileManager.h"
+#import "WSURLSessionManager+Profile.h"
+
 
 @interface EditAboutProfileVC () <UIAlertViewDelegate>
 {
     __weak IBOutlet COBorderTextField *emailNameTXT;
     __weak IBOutlet COBorderTextField *phoneNameTXT;
     __weak IBOutlet COBorderTextField *addressNameTXT;
+    __weak IBOutlet COBorderTextField *regionStateTXT;
+    __weak IBOutlet COBorderTextField *address2TXT;
     __weak IBOutlet CoDropListButtom  *dropListCountryCode;
     __weak COBorderTextField *_currentField;
     NSInteger _indexActtionCountryCode;
@@ -71,6 +75,10 @@
         return _arrayCountryCode = [LoadFileManager loadFileJsonWithName:@"JsonPhoneCode"];
     }
     return _arrayCountryCode;
+}
+
+- (void)setProfileObject:(COListProfileObject *)profileObject {
+    _profileObject = profileObject;
 }
 
 #pragma mark - Private 
@@ -135,6 +143,49 @@
     return YES;
 }
 
+- (NSMutableDictionary*)_setupAccessToken {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
+    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    return dic;
+}
+
+- (NSMutableDictionary*)_setupBodyData {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kUSER] = self.profileObject.username;
+    dic[KFRIST_NAME] = self.profileObject.first_name;
+    dic[KLAST_NAME] = self.profileObject.last_name;
+    dic[KEMAIL] = self.profileObject.email;
+    dic[kNUM_CELL_PHONE] = self.profileObject.cell_phone;
+    dic[kNUM_COUNTRY] = self.profileObject.country_prefix;
+    dic[KADDRESS] = self.profileObject.address_1;
+    [self.profileObject setValue:address2TXT.text forKey:@"address_2"];
+    dic[KADDRESS2] = self.profileObject.address_2;
+    [self.profileObject setValue:regionStateTXT.text forKey:@"city"];
+    dic[KCITY] = self.profileObject.city;
+    [self.profileObject setValue:regionStateTXT.text forKey:@"country"];
+    dic[KCOUNTRY] = self.profileObject.country;
+    [self.profileObject setValue:regionStateTXT.text forKey:@"sate"];
+    dic[KSATE] = self.profileObject.sate ;
+    return dic;
+}
+
+#pragma mark - Web Service
+- (void)_callWSUpdateProfile {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _setupAccessToken]
+                                                          body:[self _setupBodyData]
+                                                       handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            DBG(@"%@",responseObject);
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else {
+            [UIHelper showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+}
+
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
@@ -143,8 +194,9 @@
     }
     if (![self _isValidation]) {
         return;
+    } else {
+        [self _callWSUpdateProfile];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)__actionDCancel:(id)sender {

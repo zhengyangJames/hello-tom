@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ProfileObject.h"
+
 
 @interface CODummyDataManager : NSObject
 
 + (instancetype)shared;
-- (ProfileObject*)AboutProfileObj;
+
 
 @end

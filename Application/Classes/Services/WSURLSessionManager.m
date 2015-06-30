@@ -48,7 +48,7 @@
     if(!params) return s;
     NSString *prefix = @"";
     for (NSString *key in [params allKeys]) {
-        s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[params objectForKey:key]];
+        s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[[params objectForKey:key] urlEncode]];
         prefix = @"&";
     }
     return s;
@@ -89,7 +89,7 @@
     return request;
 }
 
-- (NSMutableURLRequest*)_createAuthRequest:(NSString*)url
+- (NSMutableURLRequest*)createAuthRequest:(NSString*)url
                                       body:(NSData*)bodyData
                                 httpMethod:(NSString*)method {
     
@@ -114,7 +114,7 @@
         handler:(WSURLSessionHandler)handler {
     
     NSString *finalURL = [self buildURL:url byParams:params];
-    NSMutableURLRequest *request = [self _createAuthRequest:finalURL body:body httpMethod:method];
+    NSMutableURLRequest *request = [self createAuthRequest:finalURL body:body httpMethod:method];
     [self sendRequest:request handler:handler];
     
 }

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseNavigationController.h"
+#import "BaseTabBarController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -14,8 +16,7 @@
 
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-- (void)gotoHome;
+@property (strong, nonatomic) BaseTabBarController *baseTabBarController;
 
 
 @end
