@@ -131,6 +131,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     }];
 }
 
+
 #pragma mark - Private 
 - (void)_setUpLogginVC {
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
