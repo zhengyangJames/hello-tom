@@ -28,7 +28,7 @@
 #define AUTO_HEIGHT_CELL_COMPANY        (self.view.bounds.size.height - (200+90+44))
 #define DEFAULT_HEIGHT_CELL_COMPANY     205
 #define AUTO_HEIGHT_CELL_PASSWORD       (self.view.bounds.size.height - (200+90))
-#define DEFAULT_HEIGHT_CELL_PASSWORD    231
+#define DEFAULT_HEIGHT_CELL_PASSWORD    171
 
 #define UPDATE_ABOUT_PROFILE    @"Update profile"
 #define UPDATE_COMNPANY_PROFILE @"Update company profile"
@@ -45,12 +45,12 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSInteger _indexSelectSeg;
     NSInteger _indexActtionCountryCode;
 }
-@property (strong, nonatomic) COListProfileObject *profileObject;
-@property (strong, nonatomic) TableBottomView *tablefooterView;
-@property (strong, nonatomic) TableHeaderView *tableheaderView;
-@property (weak, nonatomic) PasswordTableViewCell *passwordTableViewCell;
-@property (strong,nonatomic) NSArray *arrayCountryCode;
-@property (copy, nonatomic) ActionUpdateTextFieldPassword actionUpdateTextFieldPassword;
+@property (strong, nonatomic) COListProfileObject           *profileObject;
+@property (strong, nonatomic) TableBottomView               *tablefooterView;
+@property (strong, nonatomic) TableHeaderView               *tableheaderView;
+@property (weak, nonatomic  ) PasswordTableViewCell         *passwordTableViewCell;
+@property (strong,nonatomic ) NSArray                       *arrayCountryCode;
+@property (copy, nonatomic  ) ActionUpdateTextFieldPassword actionUpdateTextFieldPassword;
 
 @end
 
@@ -92,7 +92,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [_tableView reloadData];
     switch (_indexSelectSeg) {
         case COSegmentStyleAbout: self.tablefooterView.lblUpdateButton    = m_string(@"Update profile"); break;
-        case COSegmentStyleCompany: self.tablefooterView.lblUpdateButton  = m_string(@"Update company profile"); break;
         case COSegmentStylePasswork: self.tablefooterView.lblUpdateButton = m_string(@"Update password"); break;
     }
 }
@@ -154,10 +153,10 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf _setupCellStyle:indexSelectSegment];
     } ];
-    [_tableheaderView setActionPickerImageProfile:^(){
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
-        [strongSelf _showActionSheet];
-    }];
+//    [_tableheaderView setActionPickerImageProfile:^(){
+//        __strong __typeof(weakSelf)strongSelf = weakSelf;
+//        [strongSelf _showActionSheet];
+//    }];
     _tableheaderView.translatesAutoresizingMaskIntoConstraints = NO;
     [headerView addSubview:_tableheaderView];
     [_tableheaderView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
@@ -276,7 +275,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     if (TableViewCellStyleAbout == _indexSelectSeg) {
         return AUTO_HEIGHT_CELL_ABOUT < DEFAULT_HEIGHT_CELL ? DEFAULT_HEIGHT_CELL : AUTO_HEIGHT_CELL_ABOUT;
     } else {
-        return AUTO_HEIGHT_CELL_PASSWORD < DEFAULT_HEIGHT_CELL_PASSWORD ? DEFAULT_HEIGHT_CELL_PASSWORD : AUTO_HEIGHT_CELL_PASSWORD;
+        return DEFAULT_HEIGHT_CELL_PASSWORD;
     }
 }
 

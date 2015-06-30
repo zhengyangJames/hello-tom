@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, TableViewCellStyle) {
 
 typedef NS_ENUM(NSInteger, COSegmentStyle) {
     COSegmentStyleAbout,        //0
-    COSegmentStyleCompany,      //1
+//    COSegmentStyleCompany,      //1
     COSegmentStylePasswork      //2
 };
 

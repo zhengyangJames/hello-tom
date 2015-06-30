@@ -158,7 +158,6 @@
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if([[responseObject valueForKey:@"success"] isEqualToString:@"user created"]) {
                 [self _callAPILogin:[self _creatUserInfo]];
-                [self _pushViewController];
                 DBG( @"%@",responseObject);
             }else {
                 [self _setupShowAleartViewWithTitle:@"Username Already Exist"];
@@ -178,6 +177,7 @@
             [kUserDefaults setValue:[responseObject valueForKey:kACCESS_TOKEN] forKey:kACCESS_TOKEN];
             [kUserDefaults setValue:[responseObject valueForKey:kTOKEN_TYPE] forKey:kTOKEN_TYPE];
             [kUserDefaults synchronize];
+            [self _pushViewController];
         } else {
             [UIHelper showError:error];
         }
@@ -226,14 +226,6 @@
 
 #pragma mark - UIAlertView delegate
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-//        if (_currentField) {
-//            [_currentField becomeFirstResponder];
-//        }
-//        _currentField = nil;
-    }
-}
 
 - (void)checkBoxButton:(COCheckBoxButton *)checkBox didChangeCheckingStatus:(BOOL)isChecking {
     _isCheckBox = isChecking;
