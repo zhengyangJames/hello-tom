@@ -278,6 +278,7 @@
 		7F3260771B40E50800116445 /* SettingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F781B40E50800116445 /* SettingPlist.plist */; };
 		7FF529F51B413C380072F6F4 /* WSURLSessionManager+Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F41B413C380072F6F4 /* WSURLSessionManager+Profile.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
+		7FF6C3B41B423E85003591B6 /* TableBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6C3B31B423E85003591B6 /* TableBottomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -708,6 +709,7 @@
 		7FF529F41B413C380072F6F4 /* WSURLSessionManager+Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Profile.m"; sourceTree = "<group>"; };
 		7FF529F61B413E4A0072F6F4 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		7FF6C3B31B423E85003591B6 /* TableBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableBottomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1147,6 +1149,7 @@
 			children = (
 				7F325E2F1B40E50800116445 /* TableBottomView.h */,
 				7F325E301B40E50800116445 /* TableBottomView.m */,
+				7FF6C3B31B423E85003591B6 /* TableBottomView.xib */,
 			);
 			path = TableBottomView;
 			sourceTree = "<group>";
@@ -1964,6 +1967,7 @@
 				7F3260221B40E50800116445 /* Raleway-ExtraBoldItalic.ttf in Resources */,
 				7F3260271B40E50800116445 /* Raleway-LightItalic.ttf in Resources */,
 				7F325FA51B40E50800116445 /* RegisterViewController.xib in Resources */,
+				7FF6C3B41B423E85003591B6 /* TableBottomView.xib in Resources */,
 				7F3260321B40E50800116445 /* Ic_back@3x.png in Resources */,
 				7F325F911B40E50800116445 /* CODetailsProjectTBVCell.xib in Resources */,
 				7F32600F1B40E50800116445 /* Icon-iOS7@2x.png in Resources */,
@@ -2275,11 +2279,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "f2092e40-5e53-4078-be20-65a749bb49ec";
+				PROVISIONING_PROFILE = "b1ccd363-ae9a-49cb-b785-613eb2693c88";
 			};
 			name = Debug;
 		};
@@ -2296,11 +2300,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "f2092e40-5e53-4078-be20-65a749bb49ec";
+				PROVISIONING_PROFILE = "b1ccd363-ae9a-49cb-b785-613eb2693c88";
 			};
 			name = Release;
 		};

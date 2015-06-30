@@ -57,6 +57,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
+    [self _checkInLogin];
     [super viewDidLoad];
     [self _setupUI];
 }
@@ -65,13 +66,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
-        [self _setUpLogginVC];
-    } else {
-        if (!self.profileObject) {
-            [self _callWSGetListProfile];
-        }
-    }
+    [self _checkInLogin];
     [_tableView reloadData];
 }
 
@@ -103,14 +98,27 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     return dic;
 }
 
+- (void)_checkInLogin {
+    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        [self _setUpLogginVC];
+    } else {
+        if (!self.profileObject) {
+            [self _callWSGetListProfile];
+        }
+    }
+}
+
 #pragma mark - Web Service
 - (void)_callWSGetListProfile {
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:[self _setupAccessToken] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             DBG(@"%@",responseObject);
+            self.profileObject = nil;
             self.profileObject = (COListProfileObject*)responseObject;
-            [_tableView reloadData];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [_tableView reloadData];
+            }];
         }else {
             [UIHelper showError:error];
         }
@@ -134,14 +142,21 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 #pragma mark - Private 
 - (void)_setUpLogginVC {
+
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
     __weak LoginViewController *weakLogin = vcLogin;
+    CATransition* transition = [CATransition animation];
+    transition.duration = 1.5;
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromBottom;
     BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+    [base.view.layer addAnimation:transition forKey:kCATransition];
+    [[kAppDelegate baseTabBarController].view.layer addAnimation:transition forKey:kCATransition];
     [[kAppDelegate baseTabBarController] presentViewController:base
-                                                      animated:YES completion:nil];
+                                                      animated:NO completion:nil];
     vcLogin.actionLogin = ^(){
         [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-            
+            [self _callWSGetListProfile];
         }];
     };
 }
@@ -169,7 +184,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 90)];
     _tablefooterView   = [[TableBottomView alloc] initWithNibName:[TableBottomView identifier]];
     [_tablefooterView setActionButtonUpdate:^(NSString *string){
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf __actionButtonUpdate:string];
     }];
     _tablefooterView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -182,22 +197,30 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
     __weak __typeof__(EditAboutProfileVC) *weakSelf = vc;
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
-    vc.phoneCode = [self.profileObject.country_prefix integerValue];
+    vc.phoneCode = self.profileObject.country_prefix;
     vc.phoneName = self.profileObject.cell_phone;
     vc.addressName = self.profileObject.address_1;
     vc.emailName = self.profileObject.email;
-    vc.actionDone = ^(NSString* emailName,NSString* phone,NSInteger phoneCode,NSString* address) {
-        NSString *country_prefix = [self.arrayCountryCode[phoneCode] objectForKey:@"code"];
-        self.profileObject.country_prefix = country_prefix;
+    vc.actionDone = ^(NSString* emailName,NSString* phone,NSString *phoneCode,NSString* address) {
+        self.profileObject.country_prefix = [self _getPhoneCode:phoneCode];
         self.profileObject.cell_phone = phone;
         self.profileObject.address_1 = address;
         self.profileObject.email = emailName;
-        _indexActtionCountryCode = phoneCode;
         
         __strong __typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.profileObject = self.profileObject;
     };
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
+}
+
+- (NSString*)_getPhoneCode:(NSString*)phoneCode {
+    NSString *str = @"";
+    for (int i = 0 ; i < self.arrayCountryCode.count; i++) {
+        if ([phoneCode isEqualToString:[self.arrayCountryCode[i] objectForKey:@"code"]]) {
+            str = [self.arrayCountryCode[i] objectForKey:@"code"];
+        }
+    }
+    return str;
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
@@ -300,7 +323,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         aboutCell.lblDetail.text = self.profileObject.email;
         aboutCell.lblname.text = m_string(@"Email");
     } else if (indexPath.row == COAboutProfileStylePhone) {
-        NSString *phoneCode = [self.arrayCountryCode[_indexActtionCountryCode] objectForKey:@"code"];
+        NSString *phoneCode = self.profileObject.country_prefix;
         NSString *string = [NSString stringWithFormat:@"%@ %@",phoneCode,self.profileObject.cell_phone];
         aboutCell.lblDetail.text = string;
         aboutCell.lblname.text = m_string(@"Phone");
