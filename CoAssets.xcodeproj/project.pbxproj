@@ -276,8 +276,8 @@
 		7F3260751B40E50800116445 /* AboutProfile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F761B40E50800116445 /* AboutProfile.plist */; };
 		7F3260761B40E50800116445 /* FilterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F771B40E50800116445 /* FilterList.plist */; };
 		7F3260771B40E50800116445 /* SettingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F781B40E50800116445 /* SettingPlist.plist */; };
-		7FF529F51B413C380072F6F4 /* WSURLSessionManager+Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F41B413C380072F6F4 /* WSURLSessionManager+Profile.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
+		7FF6C3B21B423B5C003591B6 /* WSURLSessionManager+Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF6C3B11B423B5C003591B6 /* WSURLSessionManager+Profile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -704,10 +704,10 @@
 		7F325F761B40E50800116445 /* AboutProfile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AboutProfile.plist; sourceTree = "<group>"; };
 		7F325F771B40E50800116445 /* FilterList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterList.plist; sourceTree = "<group>"; };
 		7F325F781B40E50800116445 /* SettingPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingPlist.plist; sourceTree = "<group>"; };
-		7FF529F31B413C380072F6F4 /* WSURLSessionManager+Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Profile.h"; sourceTree = "<group>"; };
-		7FF529F41B413C380072F6F4 /* WSURLSessionManager+Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Profile.m"; sourceTree = "<group>"; };
 		7FF529F61B413E4A0072F6F4 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		7FF6C3B01B423B5C003591B6 /* WSURLSessionManager+Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Profile.h"; sourceTree = "<group>"; };
+		7FF6C3B11B423B5C003591B6 /* WSURLSessionManager+Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Profile.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1371,6 +1371,8 @@
 		7F325E871B40E50800116445 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7FF6C3B01B423B5C003591B6 /* WSURLSessionManager+Profile.h */,
+				7FF6C3B11B423B5C003591B6 /* WSURLSessionManager+Profile.m */,
 				7F325E881B40E50800116445 /* WSManager.h */,
 				7F325E891B40E50800116445 /* WSManager.m */,
 				7F325E901B40E50800116445 /* WSURLSessionManager.h */,
@@ -2081,6 +2083,7 @@
 				7F325FC01B40E50800116445 /* COCheckBoxButton.m in Sources */,
 				7F325FFA1B40E50800116445 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7F325FF31B40E50800116445 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				7FF6C3B21B423B5C003591B6 /* WSURLSessionManager+Profile.m in Sources */,
 				7F325FD51B40E50800116445 /* COLIstOffersObject.m in Sources */,
 				7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */,
 				7F3260001B40E50800116445 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
@@ -2093,7 +2096,6 @@
 				7F325F951B40E50800116445 /* CODetailsSectionCell.m in Sources */,
 				7F3260021B40E50800116445 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				7F325F811B40E50800116445 /* NSString+Validation.m in Sources */,
-				7FF529F51B413C380072F6F4 /* WSURLSessionManager+Profile.m in Sources */,
 				7F3260141B40E50800116445 /* MBProgressHUD.m in Sources */,
 				7F3260151B40E50800116445 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				7F325FCA1B40E50800116445 /* COSlidingCell.m in Sources */,
