@@ -33,8 +33,6 @@
 #define UPDATE_ABOUT_PROFILE    @"Update profile"
 #define UPDATE_COMNPANY_PROFILE @"Update company profile"
 
-#define WeakSelf_Block  __weak __typeof__(self) weakSelf
-
 typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell);
 
 @interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -182,6 +180,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (void)_setupEditAboutProfileVC {
     EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
+    __weak __typeof__(EditAboutProfileVC) *weakSelf = vc;
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     vc.phoneCode = [self.profileObject.country_prefix integerValue];
     vc.phoneName = self.profileObject.cell_phone;
@@ -194,6 +193,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         self.profileObject.address_1 = address;
         self.profileObject.email = emailName;
         _indexActtionCountryCode = phoneCode;
+        
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        strongSelf.profileObject = self.profileObject;
     };
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }

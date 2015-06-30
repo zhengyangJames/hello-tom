@@ -35,7 +35,7 @@
     NSString *value = [NSString stringWithFormat:@"%@ %@",[paramToken  valueForKey:kTOKEN_TYPE],[paramToken valueForKey:kACCESS_TOKEN]];
     NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_GET_LIST_PROFIEL
                                                       body:paramBody
-                                                httpMethod:METHOD_GET];
+                                                httpMethod:METHOD_PUT];
     [request setValue:value forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
