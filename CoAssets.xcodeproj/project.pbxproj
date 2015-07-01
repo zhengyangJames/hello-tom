@@ -177,7 +177,6 @@
 		7F3260161B40E50800116445 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325F0B1B40E50800116445 /* TPKeyboardAvoidingScrollView.m */; };
 		7F3260171B40E50800116445 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325F0D1B40E50800116445 /* TPKeyboardAvoidingTableView.m */; };
 		7F3260181B40E50800116445 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325F0F1B40E50800116445 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
-		7F3260191B40E50800116445 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F111B40E50800116445 /* LaunchScreen.xib */; };
 		7F32601A1B40E50800116445 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F141B40E50800116445 /* Info.plist */; };
 		7F32601B1B40E50800116445 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325F151B40E50800116445 /* main.m */; };
 		7F32601C1B40E50800116445 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F171B40E50800116445 /* Contents.json */; };
@@ -272,8 +271,10 @@
 		7F3260751B40E50800116445 /* AboutProfile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F761B40E50800116445 /* AboutProfile.plist */; };
 		7F3260761B40E50800116445 /* FilterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F771B40E50800116445 /* FilterList.plist */; };
 		7F3260771B40E50800116445 /* SettingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F781B40E50800116445 /* SettingPlist.plist */; };
+		7F85290C1B437B0D00CFAEB5 /* CODetailsOffersObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F85290B1B437B0D00CFAEB5 /* CODetailsOffersObject.m */; };
+		7F85290F1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
-		7FF6C3B21B423B5C003591B6 /* WSURLSessionManager+Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF6C3B11B423B5C003591B6 /* WSURLSessionManager+Profile.m */; };
+		7FF6C3B41B423E85003591B6 /* TableBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6C3B31B423E85003591B6 /* TableBottomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -692,10 +693,13 @@
 		7F325F761B40E50800116445 /* AboutProfile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AboutProfile.plist; sourceTree = "<group>"; };
 		7F325F771B40E50800116445 /* FilterList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterList.plist; sourceTree = "<group>"; };
 		7F325F781B40E50800116445 /* SettingPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingPlist.plist; sourceTree = "<group>"; };
+		7F85290A1B437B0D00CFAEB5 /* CODetailsOffersObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsOffersObject.h; sourceTree = "<group>"; };
+		7F85290B1B437B0D00CFAEB5 /* CODetailsOffersObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsOffersObject.m; sourceTree = "<group>"; };
+		7F85290D1B438F5400CFAEB5 /* WSURLSessionManager+Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Profile.h"; sourceTree = "<group>"; };
+		7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Profile.m"; sourceTree = "<group>"; };
 		7FF529F61B413E4A0072F6F4 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
-		7FF6C3B01B423B5C003591B6 /* WSURLSessionManager+Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Profile.h"; sourceTree = "<group>"; };
-		7FF6C3B11B423B5C003591B6 /* WSURLSessionManager+Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Profile.m"; sourceTree = "<group>"; };
+		7FF6C3B31B423E85003591B6 /* TableBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableBottomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1354,8 +1358,8 @@
 		7F325E871B40E50800116445 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7FF6C3B01B423B5C003591B6 /* WSURLSessionManager+Profile.h */,
-				7FF6C3B11B423B5C003591B6 /* WSURLSessionManager+Profile.m */,
+				7F85290D1B438F5400CFAEB5 /* WSURLSessionManager+Profile.h */,
+				7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */,
 				7F325E881B40E50800116445 /* WSManager.h */,
 				7F325E891B40E50800116445 /* WSManager.m */,
 				7F325E901B40E50800116445 /* WSURLSessionManager.h */,
@@ -1902,7 +1906,6 @@
 				7F3260361B40E50800116445 /* ic_calendar@3x.png in Resources */,
 				7F325FA11B40E50800116445 /* ForgotPasswordViewController.xib in Resources */,
 				7F325FB81B40E50800116445 /* ContactTableViewCell.xib in Resources */,
-				7F3260191B40E50800116445 /* LaunchScreen.xib in Resources */,
 				7F3260651B40E50800116445 /* 20.jpg in Resources */,
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
 				7F32603B1B40E50800116445 /* ic_contac_2@3x.png in Resources */,
@@ -2064,10 +2067,10 @@
 				7F32601B1B40E50800116445 /* main.m in Sources */,
 				7F325FE31B40E50800116445 /* AFSecurityPolicy.m in Sources */,
 				7F325F821B40E50800116445 /* UIImage+animatedGIF.m in Sources */,
+				7F85290F1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m in Sources */,
 				7F325FC01B40E50800116445 /* COCheckBoxButton.m in Sources */,
 				7F325FFA1B40E50800116445 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7F325FF31B40E50800116445 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
-				7FF6C3B21B423B5C003591B6 /* WSURLSessionManager+Profile.m in Sources */,
 				7F325FD51B40E50800116445 /* COLIstOffersObject.m in Sources */,
 				7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */,
 				7F3260001B40E50800116445 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
