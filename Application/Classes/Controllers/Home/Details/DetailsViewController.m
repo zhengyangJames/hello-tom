@@ -76,7 +76,6 @@
     viewSliding.arrayImage = @[@"19.jpg",@"18.jpg",@"20.jpg",@"17.jpg",@"15.jpg"];
     [_headerSliderView addSubview:viewSliding];
     [viewSliding pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
-    [self setEdgesForExtendedLayout:UIRectEdgeNone];
 }
 
 @end

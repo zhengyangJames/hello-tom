@@ -12,4 +12,6 @@
 
 - (void)wsGetListOffersFilter:(NSString*)offerType handle:(WSURLSessionHandler)handler;
 - (void)wsGetListOfferWithHandler:(WSURLSessionHandler)handler;
+- (void)wsGetDetailsWithOffersID:(NSString*)offerID handler:(WSURLSessionHandler)handler;
+
 @end

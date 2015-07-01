@@ -137,7 +137,7 @@ const char *keyForCompletionBlock = "completionBlockID";
 }
 
 - (void)setImageURL:(NSURL *)imageURL {
-    [self setImageURL:imageURL withCompletionBlock:nil placeHolder:nil];
+    [self setImageURL:imageURL withCompletionBlock:nil];
 }
 
 - (NSURL *)imageURL
@@ -145,11 +145,10 @@ const char *keyForCompletionBlock = "completionBlockID";
     return [NSURL URLWithString:self.URLId];
 }
 
-- (void)setImageURL:(NSURL *)imageURL withCompletionBlock:(DownloadCompletionBlock)block placeHolder:(UIImage *)placeHolder {
+- (void)setImageURL:(NSURL *)imageURL withCompletionBlock:(DownloadCompletionBlock)block {
     self.URLId = [imageURL absoluteString];
     UIImage *img = [[UIImageView defaultCache] objectForKey:imageURL];
     if (!img) {
-        self.image = placeHolder;
         ImageDownloader *dowloader = [[ImageDownloader alloc] init];
         [dowloader startDownloadForURL:imageURL  cache:[UIImageView defaultCache] session:[UIImageView defaultSession] completionBlock:^(BOOL succes, UIImage *image, NSURL *imgURL, NSError *error) {
             
@@ -167,7 +166,6 @@ const char *keyForCompletionBlock = "completionBlockID";
                 }
                 else
                 {
-                    self.image = placeHolder;
                     if (block)
                     {
                         block(NO, nil, error);

@@ -7,7 +7,7 @@
 //
 
 #import "CODummyDataManager.h"
-#import "ContactObject.h"
+
 
 
 @implementation CODummyDataManager
@@ -21,8 +21,7 @@
     return instance;
 }
 
-//
-//
+
 //- (ProfileObject*)AboutProfileObj {
 //    ProfileObject *obj = [[ProfileObject alloc]init];
 //    obj.salutation = @"Mr";
