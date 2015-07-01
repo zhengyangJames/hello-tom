@@ -112,11 +112,7 @@
 		7F325FD11B40E50800116445 /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E741B40E50800116445 /* UIHelper.m */; };
 		7F325FD21B40E50800116445 /* CODummyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E771B40E50800116445 /* CODummyDataManager.m */; };
 		7F325FD31B40E50800116445 /* COListContactObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E7A1B40E50800116445 /* COListContactObject.m */; };
-		7F325FD41B40E50800116445 /* COListDetailOffersObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E7C1B40E50800116445 /* COListDetailOffersObject.m */; };
 		7F325FD51B40E50800116445 /* COLIstOffersObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E7E1B40E50800116445 /* COLIstOffersObject.m */; };
-		7F325FD61B40E50800116445 /* ContactObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E801B40E50800116445 /* ContactObject.m */; };
-		7F325FD71B40E50800116445 /* DetailsFeedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E821B40E50800116445 /* DetailsFeedObject.m */; };
-		7F325FD81B40E50800116445 /* DetailsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E841B40E50800116445 /* DetailsObject.m */; };
 		7F325FD91B40E50800116445 /* COListProfileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E861B40E50800116445 /* COListProfileObject.m */; };
 		7F325FDA1B40E50800116445 /* WSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E891B40E50800116445 /* WSManager.m */; };
 		7F325FDB1B40E50800116445 /* WSURLSessionManager+ListContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E8B1B40E50800116445 /* WSURLSessionManager+ListContact.m */; };
@@ -473,16 +469,8 @@
 		7F325E771B40E50800116445 /* CODummyDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODummyDataManager.m; sourceTree = "<group>"; };
 		7F325E791B40E50800116445 /* COListContactObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COListContactObject.h; sourceTree = "<group>"; };
 		7F325E7A1B40E50800116445 /* COListContactObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COListContactObject.m; sourceTree = "<group>"; };
-		7F325E7B1B40E50800116445 /* COListDetailOffersObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COListDetailOffersObject.h; sourceTree = "<group>"; };
-		7F325E7C1B40E50800116445 /* COListDetailOffersObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COListDetailOffersObject.m; sourceTree = "<group>"; };
 		7F325E7D1B40E50800116445 /* COLIstOffersObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLIstOffersObject.h; sourceTree = "<group>"; };
 		7F325E7E1B40E50800116445 /* COLIstOffersObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLIstOffersObject.m; sourceTree = "<group>"; };
-		7F325E7F1B40E50800116445 /* ContactObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactObject.h; sourceTree = "<group>"; };
-		7F325E801B40E50800116445 /* ContactObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactObject.m; sourceTree = "<group>"; };
-		7F325E811B40E50800116445 /* DetailsFeedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsFeedObject.h; sourceTree = "<group>"; };
-		7F325E821B40E50800116445 /* DetailsFeedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsFeedObject.m; sourceTree = "<group>"; };
-		7F325E831B40E50800116445 /* DetailsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsObject.h; sourceTree = "<group>"; };
-		7F325E841B40E50800116445 /* DetailsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsObject.m; sourceTree = "<group>"; };
 		7F325E851B40E50800116445 /* COListProfileObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COListProfileObject.h; sourceTree = "<group>"; };
 		7F325E861B40E50800116445 /* COListProfileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COListProfileObject.m; sourceTree = "<group>"; };
 		7F325E881B40E50800116445 /* WSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSManager.h; sourceTree = "<group>"; };
@@ -1147,6 +1135,7 @@
 			children = (
 				7F325E2F1B40E50800116445 /* TableBottomView.h */,
 				7F325E301B40E50800116445 /* TableBottomView.m */,
+				7FF6C3B31B423E85003591B6 /* TableBottomView.xib */,
 			);
 			path = TableBottomView;
 			sourceTree = "<group>";
@@ -1352,18 +1341,12 @@
 			children = (
 				7F325E791B40E50800116445 /* COListContactObject.h */,
 				7F325E7A1B40E50800116445 /* COListContactObject.m */,
-				7F325E7B1B40E50800116445 /* COListDetailOffersObject.h */,
-				7F325E7C1B40E50800116445 /* COListDetailOffersObject.m */,
 				7F325E7D1B40E50800116445 /* COLIstOffersObject.h */,
 				7F325E7E1B40E50800116445 /* COLIstOffersObject.m */,
+				7F85290A1B437B0D00CFAEB5 /* CODetailsOffersObject.h */,
+				7F85290B1B437B0D00CFAEB5 /* CODetailsOffersObject.m */,
 				7F325E851B40E50800116445 /* COListProfileObject.h */,
 				7F325E861B40E50800116445 /* COListProfileObject.m */,
-				7F325E7F1B40E50800116445 /* ContactObject.h */,
-				7F325E801B40E50800116445 /* ContactObject.m */,
-				7F325E811B40E50800116445 /* DetailsFeedObject.h */,
-				7F325E821B40E50800116445 /* DetailsFeedObject.m */,
-				7F325E831B40E50800116445 /* DetailsObject.h */,
-				7F325E841B40E50800116445 /* DetailsObject.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -1964,6 +1947,7 @@
 				7F3260221B40E50800116445 /* Raleway-ExtraBoldItalic.ttf in Resources */,
 				7F3260271B40E50800116445 /* Raleway-LightItalic.ttf in Resources */,
 				7F325FA51B40E50800116445 /* RegisterViewController.xib in Resources */,
+				7FF6C3B41B423E85003591B6 /* TableBottomView.xib in Resources */,
 				7F3260321B40E50800116445 /* Ic_back@3x.png in Resources */,
 				7F325F911B40E50800116445 /* CODetailsProjectTBVCell.xib in Resources */,
 				7F32600F1B40E50800116445 /* Icon-iOS7@2x.png in Resources */,
@@ -2023,7 +2007,6 @@
 				0ECA88491B27CA7100B5656F /* NMDeviceHelper.m in Sources */,
 				0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */,
 				7F325FB71B40E50800116445 /* ContactTableViewCell.m in Sources */,
-				7F325FD71B40E50800116445 /* DetailsFeedObject.m in Sources */,
 				7F325FB41B40E50800116445 /* TableBottomView.m in Sources */,
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
 				7F325FF91B40E50800116445 /* NSManagedObject+MagicalAggregation.m in Sources */,
@@ -2068,6 +2051,7 @@
 				7F325F851B40E50800116445 /* CODetailsAccessoryCell.m in Sources */,
 				7F3260091B40E50800116445 /* MagicalRecord+Options.m in Sources */,
 				7F3260081B40E50800116445 /* MagicalRecord+iCloud.m in Sources */,
+				7F85290C1B437B0D00CFAEB5 /* CODetailsOffersObject.m in Sources */,
 				7F3260041B40E50800116445 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				7F325FE51B40E50800116445 /* AFURLRequestSerialization.m in Sources */,
@@ -2110,7 +2094,6 @@
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
 				7F325FDF1B40E50800116445 /* AFHTTPRequestOperation.m in Sources */,
-				7F325FD81B40E50800116445 /* DetailsObject.m in Sources */,
 				0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */,
 				7F325F991B40E50800116445 /* DetailsViewController.m in Sources */,
 				7F325FFD1B40E50800116445 /* NSManagedObject+MagicalRequests.m in Sources */,
@@ -2123,7 +2106,6 @@
 				7F325FE61B40E50800116445 /* AFURLResponseSerialization.m in Sources */,
 				0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */,
 				7F325F901B40E50800116445 /* CODetailsProjectTBVCell.m in Sources */,
-				7F325FD61B40E50800116445 /* ContactObject.m in Sources */,
 				7F3260181B40E50800116445 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				7F3260011B40E50800116445 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				7F325FB21B40E50800116445 /* ProfileViewController.m in Sources */,
@@ -2139,7 +2121,6 @@
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,
 				7F3260061B40E50800116445 /* MagicalRecord+Actions.m in Sources */,
-				7F325FD41B40E50800116445 /* COListDetailOffersObject.m in Sources */,
 				7F325FEC1B40E50800116445 /* UIImageView+AFNetworking.m in Sources */,
 				7F325F7F1B40E50800116445 /* BaseViewController.m in Sources */,
 				7F325FF61B40E50800116445 /* NSObject+MagicalDataImport.m in Sources */,
@@ -2275,11 +2256,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "f2092e40-5e53-4078-be20-65a749bb49ec";
+				PROVISIONING_PROFILE = "b1ccd363-ae9a-49cb-b785-613eb2693c88";
 			};
 			name = Debug;
 		};
@@ -2296,11 +2277,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "f2092e40-5e53-4078-be20-65a749bb49ec";
+				PROVISIONING_PROFILE = "b1ccd363-ae9a-49cb-b785-613eb2693c88";
 			};
 			name = Release;
 		};

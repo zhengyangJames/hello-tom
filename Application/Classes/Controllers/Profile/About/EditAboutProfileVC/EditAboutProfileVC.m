@@ -64,9 +64,9 @@
     emailNameTXT.text = _emailName;
 }
 
-- (void)setPhoneCode:(NSInteger)phoneCode {
+- (void)setPhoneCode:(NSString*)phoneCode {
     _phoneCode = phoneCode;
-    NSString *phone = [self.arrayCountryCode[_phoneCode] objectForKey:@"code"];
+    NSString *phone = [self _getPhoneCode:phoneCode];
     [dropListCountryCode setTitle:phone forState:UIControlStateNormal];
 }
 
@@ -110,6 +110,16 @@
     [btCancel setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
                             forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = btCancel;
+}
+
+- (NSString*)_getPhoneCode:(NSString*)phoneCode {
+    NSString *str = @"";
+    for (int i = 0 ; i < self.arrayCountryCode.count; i++) {
+        if ([phoneCode isEqualToString:[self.arrayCountryCode[i] objectForKey:@"code"]]) {
+            str = [self.arrayCountryCode[i] objectForKey:@"code"];
+        }
+    }
+    return str;
 }
 
 #pragma mark - Private
@@ -165,8 +175,8 @@
     dic[KCITY] = self.profileObject.city;
     [self.profileObject setValue:regionStateTXT.text forKey:@"country"];
     dic[KCOUNTRY] = self.profileObject.country;
-    [self.profileObject setValue:regionStateTXT.text forKey:@"sate"];
-    dic[KSATE] = self.profileObject.sate ;
+    [self.profileObject setValue:regionStateTXT.text forKey:@"region_state"];
+    dic[KSATE] = self.profileObject.region_state ;
     return dic;
 }
 
@@ -190,7 +200,7 @@
 
 - (void)__actionDone:(id)sender {
     if (self.actionDone) {
-        self.actionDone(emailNameTXT.text,phoneNameTXT.text,_indexActtionCountryCode,addressNameTXT.text);
+        self.actionDone(emailNameTXT.text,phoneNameTXT.text,dropListCountryCode.titleLabel.text,addressNameTXT.text);
     }
     if (![self _isValidation]) {
         return;

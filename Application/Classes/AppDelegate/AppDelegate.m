@@ -59,7 +59,7 @@
     if (!_baseTabBarController) {
         BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
         NSArray *arrayNAV = @[self.baseHomeNAV,self.baseProfileNAV,self.baseSettingNAV];
-        tabBar.viewControllers = arrayNAV;
+        [tabBar setViewControllers:arrayNAV animated:YES];
         _baseTabBarController = tabBar;
     }
     return _baseTabBarController;

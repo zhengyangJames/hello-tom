@@ -9,13 +9,13 @@
 #import "BaseViewController.h"
 #import "COListProfileObject.h"
 
-typedef void(^ActionDoneAbout)(NSString* emailName,NSString* phone,NSInteger phoneCode,NSString* address);
+typedef void(^ActionDoneAbout)(NSString* emailName,NSString* phone,NSString *phoneCode,NSString* address);
 
 @interface EditAboutProfileVC : BaseViewController
 
 @property (strong, nonatomic) NSString *emailName;
 @property (strong, nonatomic) NSString *phoneName;
-@property (assign, nonatomic) NSInteger phoneCode;
+@property (assign, nonatomic) NSString *phoneCode;
 @property (strong, nonatomic) NSString *addressName;
 @property (strong, nonatomic) COListProfileObject *profileObject;
 @property (copy, nonatomic) ActionDoneAbout actionDone;

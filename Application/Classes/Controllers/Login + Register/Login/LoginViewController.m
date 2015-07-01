@@ -93,6 +93,10 @@
             [kUserDefaults setValue:[responseObject valueForKey:kACCESS_TOKEN] forKey:kACCESS_TOKEN];
             [kUserDefaults setValue:[responseObject valueForKey:kTOKEN_TYPE] forKey:kTOKEN_TYPE];
             [kUserDefaults synchronize];
+            NSMutableDictionary *dic = [NSMutableDictionary new];
+            dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
+            dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+            DBG(@"token-login---%@",dic);
             if (self.actionLogin) {
                 self.actionLogin();
             }

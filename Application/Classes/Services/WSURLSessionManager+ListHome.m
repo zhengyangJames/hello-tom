@@ -8,6 +8,7 @@
 
 #import "WSURLSessionManager+ListHome.h"
 #import "COLIstOffersObject.h"
+#import "CODetailsOffersObject.h"
 
 @implementation WSURLSessionManager (ListHome)
 
@@ -51,5 +52,27 @@
         }
     }];
 }
+
+- (void)wsGetDetailsWithOffersID:(NSString *)offerID handler:(WSURLSessionHandler)handler {
+    NSString *url = [WS_METHOD_GET_LIST_OFFERS stringByAppendingString:offerID];
+    [self sendURL:url params:nil body:nil method:METHOD_GET handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
+            NSArray *arrayData = (NSArray*)responseObject;
+            NSMutableArray *array = [[NSMutableArray alloc]init];
+            for (NSDictionary *obj in arrayData) {
+                COLIstOffersObject *objList = [[COLIstOffersObject alloc]initWithDictionary:obj];
+                [array addObject:objList];
+            }
+            if (handler) {
+                handler(array, response, nil);
+            }
+        } else {
+            if (handler) {
+                handler(response,nil,error);
+            }
+        }
+    }];
+}
+
 
 @end

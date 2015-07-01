@@ -31,7 +31,7 @@
 }
 
 - (void)viewDidLoad {
-    
+    _imageBig.image = [UIImage imageNamed:@"ic_placeholder"];
 }
 
 - (void)layoutSubviews {
@@ -64,12 +64,12 @@
     NSURL *url = [NSURL URLWithString:_object.offerPhoto];
     [_imageBig setImageURL:url withCompletionBlock:^(BOOL succes, UIImage *image, NSError *error) {
         if (succes) {
-            _imageBig.image = [UIImage resizeImage:image newSize:CGSizeMake(_viewImage.frame.size.width, _viewImage.frame.size.height)];
-//            _imageBig.image = image;
+//            _imageBig.image = [UIImage resizeImage:image newSize:CGSizeMake(_viewImage.frame.size.width, _viewImage.frame.size.height)];
+            _imageBig.image = image;
         } else {
             [_imageBig setImage:[UIImage imageNamed:@"ic_placeholder"]];
         }
-    } placeHolder:[UIImage imageNamed:@"ic_placeholder"]];
+    }];
     [_imageLogo setImage:[[UIImage imageNamed:@"ic_Earth"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [_imageLogo setTintColor:[UIColor grayColor]];
     [_lblDetail setText:_object.offerTitle];

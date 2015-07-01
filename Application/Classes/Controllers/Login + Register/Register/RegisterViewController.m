@@ -170,7 +170,6 @@
 }
 
 - (void)_callAPILogin:(NSDictionary*)param {
-    [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsLoginWithUser:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             DBG(@"%@",responseObject);
@@ -181,7 +180,6 @@
         } else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
     }];
 }
 

@@ -17,6 +17,6 @@ typedef void (^DownloadCompletionBlock) (BOOL succes, UIImage *image, NSError *e
 @property (nonatomic) NSURL *imageURL;
 @property (nonatomic) NSString *URLId;
 
-- (void)setImageURL:(NSURL *)imageURL withCompletionBlock:(DownloadCompletionBlock)block placeHolder:(UIImage*)placeHolder;
+- (void)setImageURL:(NSURL *)imageURL withCompletionBlock:(DownloadCompletionBlock)block ;
 
 @end

@@ -10,6 +10,15 @@
 
 @implementation COListProfileObject
 
++ (instancetype)shared {
+    static COListProfileObject *instance = nil;
+    static dispatch_once_t oneToken;
+    dispatch_once(&oneToken,^{
+        instance = [[self alloc]init];
+    });
+    return instance;
+}
+
 - (instancetype)initWithDictionary:(NSDictionary*)dic {
     self = [super init];
     if (self) {
@@ -27,6 +36,7 @@
     }
     return self;
 }
+
 
 
 @end
