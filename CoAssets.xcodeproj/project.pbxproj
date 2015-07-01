@@ -1358,8 +1358,6 @@
 		7F325E871B40E50800116445 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7F85290D1B438F5400CFAEB5 /* WSURLSessionManager+Profile.h */,
-				7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */,
 				7F325E881B40E50800116445 /* WSManager.h */,
 				7F325E891B40E50800116445 /* WSManager.m */,
 				7F325E901B40E50800116445 /* WSURLSessionManager.h */,
@@ -1370,6 +1368,8 @@
 				7F325E8D1B40E50800116445 /* WSURLSessionManager+ListHome.m */,
 				7F325E8E1B40E50800116445 /* WSURLSessionManager+User.h */,
 				7F325E8F1B40E50800116445 /* WSURLSessionManager+User.m */,
+				7F85290D1B438F5400CFAEB5 /* WSURLSessionManager+Profile.h */,
+				7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
