@@ -24,7 +24,7 @@
 //    NSCharacterSet *upperCaseChars = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLKMNOPQRSTUVWXYZ"];
     NSCharacterSet *lowerCaseChars = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyz"];
     
-    if ( [self length]<6 || [self length]>20 )
+    if ( [self length]<1 || [self length]>50 )
         return NO;  // too long or too short
     NSRange rang;
     rang = [self rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]];

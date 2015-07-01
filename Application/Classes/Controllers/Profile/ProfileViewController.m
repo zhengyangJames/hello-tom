@@ -21,7 +21,7 @@
 #import "WSURLSessionManager+Profile.h"
 #import "LoginViewController.h"
 #import "WSURLSessionManager+User.h"
-#import "NSString+MD5.h"
+#import "NSUserDefaultHelper.h"
 
 #define DEFAULT_HEIGHT_CELL             44
 #define AUTO_HEIGHT_CELL_ABOUT          (self.view.bounds.size.height - (200+90))/6
@@ -43,7 +43,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSString *_newPassword;
     NSString *_comfilmPassword;
     NSInteger _indexSelectSeg;
-    NSDictionary *objToken;
+    NSDictionary *oldTokenObj;
 }
 @property (strong, nonatomic) COListProfileObject           *profileObject;
 @property (strong, nonatomic) TableBottomView               *tablefooterView;
@@ -60,6 +60,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [super viewDidLoad];
     [self _setupUI];
     [self _checkInLogin];
+    [kNotificationCenter addObserver:self selector:@selector(__actionUpdateProfile) name:kUPDATE_PROFILE object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -94,7 +95,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSMutableDictionary *dic = [NSMutableDictionary new];
     dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
     dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
-    objToken = [dic copy];
     return dic;
 }
 
@@ -115,10 +115,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         if (!error && responseObject) {
             self.profileObject = nil;
             self.profileObject = (COListProfileObject*)responseObject;
-            DBG(@"token--UpdateProfile %@",[self _setupAccessToken]);
-            DBG(@"username----%@",[(COListProfileObject*)responseObject valueForKey:@"username"]);
-            DBG(@"email----%@",[(COListProfileObject*)responseObject valueForKey:@"email"]);
-            [_tableView reloadData];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [_tableView reloadData];
+            }];
         }else {
             [UIHelper showError:error];
         }
@@ -143,7 +142,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 #pragma mark - Private 
 - (void)_setUpLogginVC {
-
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
     __weak LoginViewController *weakLogin = vcLogin;
     CATransition* transition = [CATransition animation];
@@ -155,9 +153,11 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [[kAppDelegate baseTabBarController].view.layer addAnimation:transition forKey:kCATransition];
     [[kAppDelegate baseTabBarController] presentViewController:base
                                                       animated:NO completion:nil];
-    vcLogin.actionLogin = ^(){
+    vcLogin.actionLogin = ^(id profileObj){
         [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-            [self _callWSGetListProfile];
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [_tableView reloadData];
+            }];
         }];
     };
 }
@@ -249,13 +249,28 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     return _arrayCountryCode;
 }
 
+- (COListProfileObject*)profileObject {
+    if (!_profileObject) {
+        _profileObject = [self _unzipDataProfile];
+        [UIHelper hideLoadingFromView:self.view];
+        return _profileObject;
+    }
+    return _profileObject;
+}
+
+- (COListProfileObject*)_unzipDataProfile {
+    [UIHelper showLoadingInView:self.view];
+    return [NSUserDefaultHelper loadUserDefaultWithProfileObjectAndKey:kPROFILE_OBJECT];
+}
+
+
 #pragma mark - Action
 - (void)__actionButtonUpdate:(NSString*)string {
     if ([string isEqualToString:UPDATE_ABOUT_PROFILE]) {
         [self _setupEditAboutProfileVC];
     } else {
         if ([self _isValidationPassword]) {
-            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[_passwordTableViewCell.newpassowrdTXT.text md5],@"new_password", nil];
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:_passwordTableViewCell.newpassowrdTXT.text,@"new_password", nil];
             [self _callWSChangePassword:dic];
             _passwordTableViewCell.oldPassowrdTXT.text = nil;
             _passwordTableViewCell.newpassowrdTXT.text = nil;
@@ -273,6 +288,11 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
                                               destructiveButtonTitle:nil
                                                    otherButtonTitles:m_string(@"Take a photo"),m_string(@"Choose existing"), nil];
     [actionSheet showInView:self.view];
+}
+
+- (void)__actionUpdateProfile {
+    self.profileObject = nil;
+    [self profileObject];
 }
 
 #pragma mark - TableView Delegate

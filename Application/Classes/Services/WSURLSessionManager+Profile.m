@@ -13,6 +13,7 @@
 
 - (void)wsGetProfileWithUserToken:(NSDictionary*)paramToken handler:(WSURLSessionHandler)handler {
     NSString *value = [NSString stringWithFormat:@"%@ %@",[paramToken  valueForKey:kTOKEN_TYPE],[paramToken valueForKey:kACCESS_TOKEN]];
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_GET_LIST_PROFIEL body:nil httpMethod:METHOD_GET];
     [request setValue:value forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {

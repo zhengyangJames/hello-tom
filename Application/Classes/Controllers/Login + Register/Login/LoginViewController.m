@@ -13,6 +13,9 @@
 #import "DetailsViewController.h"
 #import "WSURLSessionManager+User.h"
 #import "NSString+MD5.h"
+#import "WSURLSessionManager+Profile.h"
+#import "COListProfileObject.h"
+#import "NSUserDefaultHelper.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 {
@@ -20,7 +23,7 @@
     __weak IBOutlet COBorderTextField *_passWord;
     __weak COBorderTextField *_currentField;
 }
-
+@property (strong, nonatomic) COListProfileObject *profileObject;
 
 @end
 
@@ -50,7 +53,7 @@
     param[kCLIENT_SECRECT] = CLIENT_SECRECT;
     param[kGRANT_TYPE] = GRANT_TYPE;
     param[kUSER] = _userName.text;
-    param[kPASSWORD] = [_passWord.text md5];
+    param[kPASSWORD] = _passWord.text;
     return param;
 }
 
@@ -81,6 +84,7 @@
     return YES;
 }
 
+
 #pragma mark - Setter, Getter
 
 
@@ -89,22 +93,38 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsLoginWithUser:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
-            DBG(@"%@",responseObject);
             [kUserDefaults setValue:[responseObject valueForKey:kACCESS_TOKEN] forKey:kACCESS_TOKEN];
             [kUserDefaults setValue:[responseObject valueForKey:kTOKEN_TYPE] forKey:kTOKEN_TYPE];
             [kUserDefaults synchronize];
-            NSMutableDictionary *dic = [NSMutableDictionary new];
-            dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
-            dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
-            DBG(@"token-login---%@",dic);
-            if (self.actionLogin) {
-                self.actionLogin();
-            }
+            [self _callWSGetListProfile];
         } else {
             [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
+}
+
+- (void)_callWSGetListProfile {
+    [UIHelper showLoadingInView:self.view];
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
+    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    [[WSURLSessionManager shared] wsGetProfileWithUserToken:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            [self _zipDataProfile:responseObject];
+            if (self.actionLogin) {
+                [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
+                self.actionLogin(responseObject);
+            }
+        }else {
+            [UIHelper showError:error];
+        }
+    }];
+}
+
+- (void)_zipDataProfile:(COListProfileObject*)object {
+    [UIHelper showLoadingInView:self.view];
+    [NSUserDefaultHelper saveUserDefaultWithProfileObject:object key:kPROFILE_OBJECT];
 }
 
 #pragma mark - Action

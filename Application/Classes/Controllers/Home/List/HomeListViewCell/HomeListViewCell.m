@@ -31,7 +31,7 @@
 }
 
 - (void)viewDidLoad {
-    _imageBig.image = [UIImage imageNamed:@"ic_placeholder"];
+    [_imageBig setImage:[UIImage imageNamed:@"ic_placeholder"]];
 }
 
 - (void)layoutSubviews {

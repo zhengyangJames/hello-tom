@@ -153,6 +153,7 @@
     [kUserDefaults setBool:NO forKey:KDEFAULT_LOGIN];
     [kUserDefaults removeObjectForKey:kACCESS_TOKEN];
     [kUserDefaults removeObjectForKey:kTOKEN_TYPE];
+    [kUserDefaults removeObjectForKey:kPROFILE_OBJECT];
     [kUserDefaults synchronize];
 }
 
@@ -162,8 +163,9 @@
     BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
     [[kAppDelegate baseTabBarController] presentViewController:base
                                                       animated:YES completion:nil];
-    vcLogin.actionLogin = ^(){
+    vcLogin.actionLogin = ^(id profileObj){
         [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
+            [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
             [self _replaceArraySettingLogin];
         }];
     };

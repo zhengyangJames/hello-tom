@@ -110,7 +110,7 @@
 - (NSDictionary*)_getUserInfo {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     dic[kUSER] = _usernameTextField.text;
-    dic[kPASSWORD] = [_passwordTextField.text md5];
+    dic[kPASSWORD] = _passwordTextField.text;
     dic[KFRIST_NAME] = _fristNameTextField.text;
     dic[KLAST_NAME] = _lastNameTextField.text;
     dic[KEMAIL] = _emailTextField.text;
@@ -138,7 +138,7 @@
     param[kCLIENT_SECRECT] = CLIENT_SECRECT;
     param[kGRANT_TYPE] = GRANT_TYPE;
     param[kUSER] = _usernameTextField.text;
-    param[kPASSWORD] = [_passwordTextField.text md5];
+    param[kPASSWORD] = _passwordTextField.text;
     return param;
 }
 

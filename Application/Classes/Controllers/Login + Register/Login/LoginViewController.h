@@ -8,10 +8,12 @@
 
 #import "BaseViewController.h"
 
-typedef void(^ActionLogin)();
+typedef void(^ActionLogin)(id profileObj);
 
 @interface LoginViewController : BaseViewController
 
 @property (copy, nonatomic) ActionLogin actionLogin;
+
+@property (assign, nonatomic) BOOL checkProfileUpdate;
 
 @end
