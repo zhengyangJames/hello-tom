@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -133,7 +134,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="LCU-jw-0Uf"/>
                                     </constraints>
-                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -152,7 +152,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="gjt-V8-lY8"/>
                                     </constraints>
-                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -171,7 +170,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="AKc-fJ-bEG"/>
                                     </constraints>
-                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -190,7 +188,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="mmB-uj-LDo"/>
                                     </constraints>
-                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -209,7 +206,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="0uP-Ub-rHB"/>
                                     </constraints>
-                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
