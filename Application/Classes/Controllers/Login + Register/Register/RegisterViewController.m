@@ -152,21 +152,16 @@
             [UIHelper showError:error];
         }
     }];
-    [UIHelper hideLoadingFromView:self.view];
+    [UIHelper showLoadingInView:self.view];
 }
 
 - (void)_callWSLogin {
-    [UIHelper showLoadingInView:self.view];
     [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
-//            if (self.actionRegister) {
-//                self.actionRegister();
-//            }
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:self completion:nil];
         } else {
             [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
         }
-
     }];
 }
 

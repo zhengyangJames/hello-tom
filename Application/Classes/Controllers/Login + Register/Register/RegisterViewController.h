@@ -8,10 +8,7 @@
 
 #import "BaseViewController.h"
 
-typedef void(^ActionRegister)();
-
 @interface RegisterViewController : BaseViewController
 
-@property (copy, nonatomic) ActionRegister actionRegister;
 
 @end

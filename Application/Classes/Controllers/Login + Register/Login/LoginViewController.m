@@ -106,9 +106,6 @@
 
 - (IBAction)__actionRegister:(id)sender {
     RegisterViewController *vc = [[RegisterViewController alloc] init];
-    [vc setActionRegister:^(){
-        [self.navigationController dismissViewControllerAnimated:NO completion:nil];
-    }];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
