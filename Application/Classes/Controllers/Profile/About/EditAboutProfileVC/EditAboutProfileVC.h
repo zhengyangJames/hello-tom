@@ -22,6 +22,7 @@ typedef void(^ActionDoneAbout)(NSString* emailName,NSString* phone,NSString *pho
 @property (strong, nonatomic) NSString *country;
 @property (strong, nonatomic) NSString *state;
 @property (strong, nonatomic) COListProfileObject *profileObject;
+@property (strong, nonatomic) NSDictionary *dicProfile;
 @property (copy, nonatomic) ActionDoneAbout actionDone;
 
 @end
