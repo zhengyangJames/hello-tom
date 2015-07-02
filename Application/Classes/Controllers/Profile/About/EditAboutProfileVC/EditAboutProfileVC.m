@@ -21,6 +21,8 @@
     __weak IBOutlet COBorderTextField *addressNameTXT;
     __weak IBOutlet COBorderTextField *regionStateTXT;
     __weak IBOutlet COBorderTextField *address2TXT;
+    __weak IBOutlet COBorderTextField *cityTXT;
+    __weak IBOutlet COBorderTextField *countryTXT;
     __weak IBOutlet CoDropListButtom  *dropListCountryCode;
     __weak COBorderTextField *_currentField;
     NSInteger _indexActtionCountryCode;
@@ -39,6 +41,10 @@
     self.emailName = self.emailName;
     self.phoneCode = self.phoneCode;
     self.phoneName = self.phoneName;
+    self.addressName2 = self.addressName2;
+    self.country = self.country;
+    self.city = self.city;
+    self.state = self.state;
     _indexActtionCountryCode = 0;
 }
 
@@ -53,6 +59,10 @@
     _addressName = addressName;
     addressNameTXT.text = _addressName;
 }
+- (void)setAddressName2:(NSString *)addressName2 {
+    _addressName2 = addressName2;
+    address2TXT.text = _addressName2;
+}
 
 - (void)setPhoneName:(NSString *)phoneName {
     _phoneName = phoneName;
@@ -62,6 +72,21 @@
 - (void)setEmailName:(NSString *)emailName {
     _emailName = emailName;
     emailNameTXT.text = _emailName;
+}
+
+- (void)setCity:(NSString *)city {
+    _city = city;
+    cityTXT.text = _city;
+}
+
+- (void)setState:(NSString *)state {
+    _state = state;
+    regionStateTXT.text = _state;
+}
+
+- (void)setCountry:(NSString *)country {
+    _country = country;
+    countryTXT.text = _country;
 }
 
 - (void)setPhoneCode:(NSString*)phoneCode {
@@ -76,6 +101,7 @@
     }
     return _arrayCountryCode;
 }
+
 
 - (void)setProfileObject:(COListProfileObject *)profileObject {
     _profileObject = profileObject;
@@ -180,6 +206,25 @@
     return dic;
 }
 
+//- (void)_zipDataProfile {
+//    NSMutableDictionary *dicPro = [NSMutableDictionary new];
+//    dicPro[kNUM_CELL_PHONE] = self.profileObject.cell_phone;
+//    dicPro[kNUM_COUNTRY] = self.profileObject.country_prefix;
+//    dicPro[KADDRESS] = self.profileObject.address_1;
+//    dicPro[KADDRESS2] = self.profileObject.address_2;
+//    dicPro[KSATE] = self.profileObject.region_state ;
+//    dicPro[KCITY] = self.profileObject.city;
+//    dicPro[KCOUNTRY] = self.profileObject.country;
+//    NSMutableDictionary *dic = [NSMutableDictionary new];
+//    dic[@"profile"] = dicPro;
+//    dic[kUSER] = self.profileObject.username;
+//    dic[KFRIST_NAME] = self.profileObject.first_name;
+//    dic[KLAST_NAME] = self.profileObject.last_name;
+//    dic[KEMAIL] = self.profileObject.email;
+//    [kUserDefaults setObject:dic forKey:kEDIT_PROFILE];
+//    [kUserDefaults synchronize];
+//}
+
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
     [UIHelper showLoadingInView:self.view];
@@ -200,7 +245,7 @@
 
 - (void)__actionDone:(id)sender {
     if (self.actionDone) {
-        self.actionDone(emailNameTXT.text,phoneNameTXT.text,dropListCountryCode.titleLabel.text,addressNameTXT.text);
+        self.actionDone(emailNameTXT.text,phoneNameTXT.text,dropListCountryCode.titleLabel.text,addressNameTXT.text,address2TXT.text,cityTXT.text,countryTXT.text,regionStateTXT.text);
     }
     if (![self _isValidation]) {
         return;

@@ -27,6 +27,7 @@
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
+    UIBarButtonItem *_leftButton;
     NSInteger _indexSelectFilter;
 }
 @property (strong, nonatomic) NSArray *arrayData;
@@ -66,14 +67,14 @@
 }
 
 - (void)_setupLeftBarButton {
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Filter")
+    _leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Filter")
                                                                   style:UIBarButtonItemStyleDone
                                                                  target:self
                                                                  action:@selector(__actionFilter)];
-    [leftButton setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
+    [_leftButton setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
                               forState:UIControlStateNormal];
     
-    [self.navigationItem setLeftBarButtonItem:leftButton];
+    [self.navigationItem setLeftBarButtonItem:_leftButton];
 }
 
 #pragma mark - Private
@@ -136,6 +137,7 @@
 
 #pragma mark - CalAPI
 - (void)_callAPIGetAllOffers {
+    _leftButton.enabled = NO;
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared]wsGetListOfferWithHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
@@ -148,14 +150,15 @@
                 [_tableView endUpdates];
             }];
         } else {
-            [UIHelper hideLoadingFromView:self.view];
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
+        _leftButton.enabled = YES;
     }];
 }
 
 - (void)_callWSGetListOfferFilter:(NSString*)typeFilter {
+    _leftButton.enabled = NO;
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetListOffersFilter:typeFilter handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
@@ -168,10 +171,10 @@
                 [_tableView endUpdates];
             }];
         } else {
-            [UIHelper hideLoadingFromView:self.view];
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
+        _leftButton.enabled = YES;
     }];
 }
 

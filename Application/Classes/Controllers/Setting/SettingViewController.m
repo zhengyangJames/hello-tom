@@ -150,7 +150,7 @@
     }
     self.arraySetting = arr;
     [_tableView reloadData];
-    [kUserDefaults setBool:NO forKey:KDEFAULT_LOGIN];
+    [kUserDefaults removeObjectForKey:KDEFAULT_LOGIN];
     [kUserDefaults removeObjectForKey:kACCESS_TOKEN];
     [kUserDefaults removeObjectForKey:kTOKEN_TYPE];
     [kUserDefaults removeObjectForKey:kPROFILE_OBJECT];

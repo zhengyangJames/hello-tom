@@ -25,8 +25,6 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
                                  session:(NSURLSession *)session
                          completionBlock:(CompletionBlock)completionBlock;
 
-- (void)cancel;
-
 @end
 
 
@@ -37,8 +35,7 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
                                  session:(NSURLSession *)session
                          completionBlock:(CompletionBlock)completionBlock
 {
-    if (URL)
-    {
+    if (URL) {
         self.URL = URL;
         self.cache = cache;
         self.connectionSession = session;
@@ -50,31 +47,23 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 
 
 
-- (void)cacheImage:(UIImage *)image
-{
-    if (image && self.URL)
-    {
+- (void)cacheImage:(UIImage *)image {
+    if (image && self.URL) {
         [self.cache setObject:image forKey:self.URL];
     }
 }
 
-- (void)start
-{
+- (void)start {
     NSURLSessionDownloadTask *downloadImage = [self.connectionSession downloadTaskWithRequest:[NSURLRequest requestWithURL:self.URL]
                                                                             completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        if (!error)
-        {
+        if (!error) {
             UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
             [self cacheImage:image];
-            if (self.downloadedBlock)
-            {
+            if (self.downloadedBlock) {
                 self.downloadedBlock(YES, image, response.URL, nil);
             }
-        }
-        else
-        {
-            if (self.downloadedBlock)
-            {
+        } else {
+            if (self.downloadedBlock) {
                 self.downloadedBlock(NO, nil, response.URL, error);
             }
         }
@@ -83,10 +72,6 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
     [downloadImage resume];
 }
 
-- (void)cancel
-{
-    // TODO:
-}
 @end
 
 
@@ -98,18 +83,15 @@ const char *keyForCompletionBlock = "completionBlockID";
 
 @dynamic URLId;
 
-- (NSString *)URLId
-{
+- (NSString *)URLId {
     return objc_getAssociatedObject(self, keyForURLID);
 }
 
-- (void)setURLId:(NSString *)urlId
-{
+- (void)setURLId:(NSString *)urlId {
     objc_setAssociatedObject(self, keyForURLID, urlId, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-+ (NSCache *)defaultCache
-{
++ (NSCache *)defaultCache {
     static NSCache *sharedCache = nil;
     
     static dispatch_once_t onceToken;
@@ -124,8 +106,7 @@ const char *keyForCompletionBlock = "completionBlockID";
     return sharedCache;
 }
 
-+ (NSURLSession *)defaultSession
-{
++ (NSURLSession *)defaultSession {
     static NSURLSession *sharedSession = nil;
     
     static dispatch_once_t onceToken;
@@ -140,8 +121,7 @@ const char *keyForCompletionBlock = "completionBlockID";
     [self setImageURL:imageURL withCompletionBlock:nil];
 }
 
-- (NSURL *)imageURL
-{
+- (NSURL *)imageURL {
     return [NSURL URLWithString:self.URLId];
 }
 
@@ -152,26 +132,21 @@ const char *keyForCompletionBlock = "completionBlockID";
         ImageDownloader *dowloader = [[ImageDownloader alloc] init];
         [dowloader startDownloadForURL:imageURL  cache:[UIImageView defaultCache] session:[UIImageView defaultSession] completionBlock:^(BOOL succes, UIImage *image, NSURL *imgURL, NSError *error) {
             
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (succes)
-                {
-                    if ([[imgURL absoluteString] isEqualToString:self.URLId])
-                    {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                if (succes) {
+                    if ([[imgURL absoluteString] isEqualToString:self.URLId]) {
                         self.image = image;
-                        if (block)
-                        {
+                        if (block) {
                             block(YES, image, nil);
                         }
                     }
-                }
-                else
-                {
-                    if (block)
-                    {
+                } else {
+                    if (block) {
                         block(NO, nil, error);
                     }
                 }
-            });
+            }];
+            
         }];
     }
     else {

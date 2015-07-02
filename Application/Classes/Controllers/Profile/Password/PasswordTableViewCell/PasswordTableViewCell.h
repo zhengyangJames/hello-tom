@@ -6,13 +6,12 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
 @protocol PasswordTableViewCellDelegate;
 
-@interface PasswordTableViewCell : UITableViewCell
+@interface PasswordTableViewCell : BaseTableViewCell
 
-@property (weak, nonatomic) IBOutlet UITextField *oldPassowrdTXT;
 @property (weak, nonatomic) IBOutlet UITextField *newpassowrdTXT;
 @property (weak, nonatomic) IBOutlet UITextField *comfilmPassowrdTXT;
 
@@ -23,6 +22,6 @@
 @protocol PasswordTableViewCellDelegate <NSObject>
 
 @optional
-- (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell*)passwordTableViewCell oldPassowrd:(NSString*)oldPassowrd newPassowrd:(NSString*)newPassowrd comfilmPassowrd:(NSString*)comfilmPassowrd;
+- (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell*)passwordTableViewCell newPassowrd:(NSString*)newPassowrd comfilmPassowrd:(NSString*)comfilmPassowrd;
 
 @end

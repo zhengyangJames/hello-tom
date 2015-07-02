@@ -286,10 +286,11 @@
 		7F85292B1B43935B00CFAEB5 /* Philippines.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291B1B43935B00CFAEB5 /* Philippines.png */; };
 		7F85292C1B43935B00CFAEB5 /* Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291C1B43935B00CFAEB5 /* Singapore.png */; };
 		7F85292D1B43935B00CFAEB5 /* Thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291D1B43935B00CFAEB5 /* Thailand.png */; };
-		7F85292E1B43935B00CFAEB5 /* United Kingdoms.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291E1B43935B00CFAEB5 /* United Kingdoms.png */; };
 		7F85292F1B43935B00CFAEB5 /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291F1B43935B00CFAEB5 /* United States.png */; };
 		7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529201B43935B00CFAEB5 /* Vietnam.png */; };
 		7F9FED791B43CE22006FF0EB /* NSUserDefaultHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FED781B43CE22006FF0EB /* NSUserDefaultHelper.m */; };
+		7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
+		7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6D5121B4526240098EC8D /* COLoginManager.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
 		7FF6C3B41B423E85003591B6 /* TableBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6C3B31B423E85003591B6 /* TableBottomView.xib */; };
 /* End PBXBuildFile section */
@@ -727,11 +728,13 @@
 		7F85291B1B43935B00CFAEB5 /* Philippines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Philippines.png; sourceTree = "<group>"; };
 		7F85291C1B43935B00CFAEB5 /* Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Singapore.png; sourceTree = "<group>"; };
 		7F85291D1B43935B00CFAEB5 /* Thailand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thailand.png; sourceTree = "<group>"; };
-		7F85291E1B43935B00CFAEB5 /* United Kingdoms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United Kingdoms.png"; sourceTree = "<group>"; };
 		7F85291F1B43935B00CFAEB5 /* United States.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United States.png"; sourceTree = "<group>"; };
 		7F8529201B43935B00CFAEB5 /* Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vietnam.png; sourceTree = "<group>"; };
 		7F9FED771B43CE22006FF0EB /* NSUserDefaultHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultHelper.h; sourceTree = "<group>"; };
 		7F9FED781B43CE22006FF0EB /* NSUserDefaultHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultHelper.m; sourceTree = "<group>"; };
+		7FC6D50F1B44D4090098EC8D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United Kingdom.png"; sourceTree = "<group>"; };
+		7FC6D5111B4526240098EC8D /* COLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLoginManager.h; sourceTree = "<group>"; };
+		7FC6D5121B4526240098EC8D /* COLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLoginManager.m; sourceTree = "<group>"; };
 		7FF529F61B413E4A0072F6F4 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		7FF6C3B31B423E85003591B6 /* TableBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableBottomView.xib; sourceTree = "<group>"; };
@@ -1373,6 +1376,8 @@
 			children = (
 				7F325E761B40E50800116445 /* CODummyDataManager.h */,
 				7F325E771B40E50800116445 /* CODummyDataManager.m */,
+				7FC6D5111B4526240098EC8D /* COLoginManager.h */,
+				7FC6D5121B4526240098EC8D /* COLoginManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1789,6 +1794,7 @@
 		7F8529101B43935B00CFAEB5 /* countries */ = {
 			isa = PBXGroup;
 			children = (
+				7FC6D50F1B44D4090098EC8D /* United Kingdom.png */,
 				7F8529111B43935B00CFAEB5 /* Australia.png */,
 				7F8529121B43935B00CFAEB5 /* Brazil.png */,
 				7F8529131B43935B00CFAEB5 /* Canada.png */,
@@ -1802,7 +1808,6 @@
 				7F85291B1B43935B00CFAEB5 /* Philippines.png */,
 				7F85291C1B43935B00CFAEB5 /* Singapore.png */,
 				7F85291D1B43935B00CFAEB5 /* Thailand.png */,
-				7F85291E1B43935B00CFAEB5 /* United Kingdoms.png */,
 				7F85291F1B43935B00CFAEB5 /* United States.png */,
 				7F8529201B43935B00CFAEB5 /* Vietnam.png */,
 			);
@@ -1949,6 +1954,7 @@
 				7F3260591B40E50800116445 /* ic_setting_2@3x.png in Resources */,
 				7F85292C1B43935B00CFAEB5 /* Singapore.png in Resources */,
 				7F3260711B40E50800116445 /* ic_placeholder.png in Resources */,
+				7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */,
 				7F3260471B40E50800116445 /* ic_info@2x.png in Resources */,
 				7F32601A1B40E50800116445 /* Info.plist in Resources */,
 				7F32603A1B40E50800116445 /* ic_contac_2@2x.png in Resources */,
@@ -2005,7 +2011,6 @@
 				7F3260241B40E50800116445 /* Raleway-ExtraLightItalic.ttf in Resources */,
 				7F325F9E1B40E50800116445 /* HomeListViewController.xib in Resources */,
 				7F8529281B43935B00CFAEB5 /* Japan.png in Resources */,
-				7F85292E1B43935B00CFAEB5 /* United Kingdoms.png in Resources */,
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
 				7F3260761B40E50800116445 /* FilterList.plist in Resources */,
 				7F3260611B40E50800116445 /* 15.jpg in Resources */,
@@ -2083,6 +2088,7 @@
 				7F325F9D1B40E50800116445 /* HomeListViewController.m in Sources */,
 				7F325FDC1B40E50800116445 /* WSURLSessionManager+ListHome.m in Sources */,
 				7F325F7A1B40E50800116445 /* BaseCollectionViewCell.m in Sources */,
+				7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */,
 				7F325F8A1B40E50800116445 /* CODetailsMapCell.m in Sources */,
 				0ECA88491B27CA7100B5656F /* NMDeviceHelper.m in Sources */,
 				0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */,

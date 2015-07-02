@@ -16,12 +16,12 @@
 #import "WSURLSessionManager+Profile.h"
 #import "COListProfileObject.h"
 #import "NSUserDefaultHelper.h"
+#import "COLoginManager.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 {
     __weak IBOutlet COBorderTextField *_userName;
     __weak IBOutlet COBorderTextField *_passWord;
-    __weak COBorderTextField *_currentField;
 }
 @property (strong, nonatomic) COListProfileObject *profileObject;
 
@@ -42,9 +42,7 @@
 
 #pragma mark - Private
 - (void)_login {
-    [self _callAPILogin:[self _creatUserInfo]];
-    [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
-    [kUserDefaults synchronize];
+    [self _callWSLogin];
 }
 
 - (NSMutableDictionary*)_creatUserInfo {
@@ -70,15 +68,9 @@
 - (BOOL)_isValidation {
     if ([_userName.text isEmpty]) {
         [self _setupShowAleartViewWithTitle:@"Username is required."];
-        _currentField = _userName;
          return NO;
     }else if ([_passWord.text isEmpty]) {
         [self _setupShowAleartViewWithTitle:@"Password is required."];
-        _currentField = _passWord;
-        return NO;
-    }else if (![_passWord.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"Invalid password."];
-        _currentField = _passWord;
         return NO;
     }
     return YES;
@@ -89,42 +81,18 @@
 
 
 #pragma mark - CallAPI
-- (void)_callAPILogin:(NSDictionary*)param {
+- (void)_callWSLogin {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsLoginWithUser:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
-            [kUserDefaults setValue:[responseObject valueForKey:kACCESS_TOKEN] forKey:kACCESS_TOKEN];
-            [kUserDefaults setValue:[responseObject valueForKey:kTOKEN_TYPE] forKey:kTOKEN_TYPE];
-            [kUserDefaults synchronize];
-            [self _callWSGetListProfile];
+    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
+        if (object && sucess) {
+            if (self.actionLogin) {
+                self.actionLogin((COListProfileObject*)object);
+            }
         } else {
             [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
-}
-
-- (void)_callWSGetListProfile {
-    [UIHelper showLoadingInView:self.view];
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
-    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
-    [[WSURLSessionManager shared] wsGetProfileWithUserToken:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && responseObject) {
-            [self _zipDataProfile:responseObject];
-            if (self.actionLogin) {
-                [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
-                self.actionLogin(responseObject);
-            }
-        }else {
-            [UIHelper showError:error];
-        }
-    }];
-}
-
-- (void)_zipDataProfile:(COListProfileObject*)object {
-    [UIHelper showLoadingInView:self.view];
-    [NSUserDefaultHelper saveUserDefaultWithProfileObject:object key:kPROFILE_OBJECT];
 }
 
 #pragma mark - Action
@@ -138,6 +106,9 @@
 
 - (IBAction)__actionRegister:(id)sender {
     RegisterViewController *vc = [[RegisterViewController alloc] init];
+    [vc setActionRegister:^(){
+        [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+    }];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

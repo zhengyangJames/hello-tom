@@ -13,14 +13,24 @@
 - (instancetype)initWithDictionary:(NSDictionary*)dic {
     self = [super init];
     if (self) {
-        self.imageBig = [dic objectForKeyNotNull:@"add_1"];
-//        self.imageSmall = [dic objectForKeyNotNull:@"add_2"];
-//        self.detailsShort = [dic objectForKeyNotNull:@"name"];
-//        self.phone = [dic objectForKeyNotNull:@"phone_no"];
-//        self.country = [dic objectForKeyNotNull:@"country"];
-//        self.regNo = [dic objectForKeyNotNull:@"reg_no"];
-//        self.postCode = [dic objectForKeyNotNull:@"postal_code"];
-//        self.city = [dic objectForKeyNotNull:@"city"];
+        self.imageBig = [dic objectForKeyNotNull:@"photo"];
+//        self.offersDetails = [dic objectForKeyNotNull:@"offer_title"];//
+        self.detailsShort = [dic objectForKeyNotNull:@"short_description"];
+        self.projectDetails = [dic objectForKeyNotNull:@"description"];
+//        self.documentDetails = [dic objectForKeyNotNull:@"document"];//
+//        self.declarationform = [dic objectForKeyNotNull:@"declarationform"];//
+//        self.otherDocument = [dic objectForKeyNotNull:@"other_document"];//
+        NSDictionary *project = [dic objectForKeyNotNull:@"project"];
+        self.companyRegistration = [project objectForKeyNotNull:@"country"];
+        self.address = [project objectForKeyNotNull:@"address_1"];
+        self.address2 = [project objectForKeyNotNull:@"address_2"];
+        //project
+        self.projectDeveloper = [project objectForKeyNotNull:@"developer"];
+        self.projectInterested = [dic objectForKeyNotNull:@"interested"];
+        self.projectInvestertment = [dic objectForKeyNotNull:@"min_investment"];
+        self.projectSite = [dic objectForKeyNotNull:@"site"];
+        self.projectStatus = [dic objectForKeyNotNull:@"status"];
+//        self.projectType = [project objectForKeyNotNull:@"Residential"];
     }
     return self;
 }

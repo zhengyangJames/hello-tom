@@ -70,8 +70,8 @@
             [_imageBig setImage:[UIImage imageNamed:@"ic_placeholder"]];
         }
     }];
-    [_imageLogo setImage:[[UIImage imageNamed:@"ic_Earth"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [_imageLogo setTintColor:[UIColor grayColor]];
+    NSString *strImage = [_object.offerCountry isEqualToString:@"Cambodia"] ? @"Globe" : _object.offerCountry;
+    [_imageLogo setImage:[UIImage imageNamed:strImage]];
     [_lblDetail setText:_object.offerTitle];
     [_lblSate setText:_object.offerCountry];
     [self setNeedsUpdateConstraints];

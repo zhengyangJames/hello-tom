@@ -16,7 +16,7 @@
 #import "WebViewSetting.h"
 #import "WSURLSessionManager+User.h"
 #import "HomeListViewController.h"
-#import "NSString+MD5.h"
+#import "COLoginManager.h"
 
 @interface RegisterViewController () <UIAlertViewDelegate,COCheckBoxButtonDelegate>
 {
@@ -119,19 +119,6 @@
     return dic;
 }
 
-- (void)_pushViewController {
-    [kUserDefaults setBool:YES forKey:KDEFAULT_LOGIN];
-    [kUserDefaults synchronize];
-    [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:NO completion:^{
-        NSArray *array = [[kAppDelegate baseTabBarController] viewControllers];
-        for (UIViewController *vc in array) {
-            if ([vc isKindOfClass:[HomeListViewController class]]) {
-                [self.navigationController pushViewController:vc animated:YES];
-            }
-        }
-    }];
-}
-
 - (NSMutableDictionary*)_creatUserInfo {
     NSMutableDictionary *param = [NSMutableDictionary new];
     param[kCLIENT_ID] = CLIENT_ID;
@@ -150,36 +137,36 @@
     return _arrayListPhoneCode;
 }
 
-
 #pragma mark - Web Service
 - (void)_callWSRegister {
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsRegisterWithInfo:[self _getUserInfo] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if([[responseObject valueForKey:@"success"] isEqualToString:@"user created"]) {
-                [self _callAPILogin:[self _creatUserInfo]];
-                DBG( @"%@",responseObject);
+                DBG( @"%@ /n %@",responseObject,[responseObject valueForKey:@"success"]);
+                [self _callWSLogin];
             }else {
                 [self _setupShowAleartViewWithTitle:@"Username Already Exist"];
             }
         } else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
     }];
+    [UIHelper hideLoadingFromView:self.view];
 }
 
-- (void)_callAPILogin:(NSDictionary*)param {
-    [[WSURLSessionManager shared] wsLoginWithUser:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            DBG(@"%@",responseObject);
-            [kUserDefaults setValue:[responseObject valueForKey:kACCESS_TOKEN] forKey:kACCESS_TOKEN];
-            [kUserDefaults setValue:[responseObject valueForKey:kTOKEN_TYPE] forKey:kTOKEN_TYPE];
-            [kUserDefaults synchronize];
-            [self _pushViewController];
+- (void)_callWSLogin {
+    [UIHelper showLoadingInView:self.view];
+    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
+        if (object && sucess) {
+//            if (self.actionRegister) {
+//                self.actionRegister();
+//            }
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:self completion:nil];
         } else {
-            [UIHelper showError:error];
+            [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
         }
+
     }];
 }
 

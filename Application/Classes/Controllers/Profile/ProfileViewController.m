@@ -35,7 +35,7 @@
 
 typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell);
 
-@interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
+@interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UIAlertViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     UIImage *_imageCompany;
@@ -58,17 +58,16 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self _setupUI];
-    [self _checkInLogin];
     [kNotificationCenter addObserver:self selector:@selector(__actionUpdateProfile) name:kUPDATE_PROFILE object:nil];
+    [self _setupUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
-    [self _checkInLogin];
     [_tableView reloadData];
+    [self _checkInLogin];
 }
 
 #pragma mark - Setup
@@ -135,12 +134,15 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         } else {
             [self _setupShowAleartViewWithTitle:@"Password not changed"];
         }
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.view endEditing:YES];
+        }];
         [UIHelper hideLoadingFromView:self.view];
     }];
 }
 
 
-#pragma mark - Private 
+#pragma mark - Private
 - (void)_setUpLogginVC {
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
     __weak LoginViewController *weakLogin = vcLogin;
@@ -202,12 +204,19 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     vc.phoneName = self.profileObject.cell_phone;
     vc.addressName = self.profileObject.address_1;
     vc.emailName = self.profileObject.email;
-    vc.actionDone = ^(NSString* emailName,NSString* phone,NSString *phoneCode,NSString* address) {
+    vc.city = self.profileObject.city;
+    vc.country = self.profileObject.country;
+    vc.addressName2 = self.profileObject.address_2;
+    vc.state = self.profileObject.region_state;
+    vc.actionDone = ^(NSString* emailName,NSString* phone,NSString *phoneCode,NSString* address,NSString* addressName2,NSString* city,NSString* country,NSString* state) {
         self.profileObject.country_prefix = [self _getPhoneCode:phoneCode];
         self.profileObject.cell_phone = phone;
         self.profileObject.address_1 = address;
         self.profileObject.email = emailName;
-        
+        self.profileObject.city = city;
+        self.profileObject.country = country;
+        self.profileObject.address_2 = addressName2;
+        self.profileObject.region_state = state;
         __strong __typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.profileObject = self.profileObject;
     };
@@ -225,12 +234,14 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
-                              message:m_string(message)
-                         cancelButton:m_string(@"OK")
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+                                  message:m_string(message)
+                             cancelButton:m_string(@"OK")
+                                 delegate:self
+                                      tag:0
+                         arrayTitleButton:nil];
+    }];
 }
 
 - (BOOL)_isValidationPassword {
@@ -251,16 +262,14 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (COListProfileObject*)profileObject {
     if (!_profileObject) {
-        _profileObject = [self _unzipDataProfile];
-        [UIHelper hideLoadingFromView:self.view];
-        return _profileObject;
+        return _profileObject = [self _unzipDataProfile];
     }
     return _profileObject;
 }
 
 - (COListProfileObject*)_unzipDataProfile {
-    [UIHelper showLoadingInView:self.view];
-    return [NSUserDefaultHelper loadUserDefaultWithProfileObjectAndKey:kPROFILE_OBJECT];
+    COListProfileObject *obj = [[COListProfileObject alloc]initWithDictionary:[kUserDefaults objectForKey:kPROFILE_OBJECT]];
+    return obj;
 }
 
 
@@ -269,15 +278,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     if ([string isEqualToString:UPDATE_ABOUT_PROFILE]) {
         [self _setupEditAboutProfileVC];
     } else {
-        if ([self _isValidationPassword]) {
-            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:_passwordTableViewCell.newpassowrdTXT.text,@"new_password", nil];
-            [self _callWSChangePassword:dic];
-            _passwordTableViewCell.oldPassowrdTXT.text = nil;
-            _passwordTableViewCell.newpassowrdTXT.text = nil;
-            _passwordTableViewCell.comfilmPassowrdTXT.text = nil;
-        } else {
-            [self _setupShowAleartViewWithTitle:@"Password is invalid."];
-        }
+        [kNotificationCenter postNotificationName:@"check_password" object:nil];
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:_passwordTableViewCell.newpassowrdTXT.text,@"new_password", nil];
+        [self _callWSChangePassword:dic];
     }
 }
 
@@ -366,9 +369,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 #pragma mark - Delegate 
 - (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell *)passwordTableViewCell oldPassowrd:(NSString *)oldPassowrd newPassowrd:(NSString *)newPassowrd comfilmPassowrd:(NSString *)comfilmPassowrd {
-    if (![passwordTableViewCell.oldPassowrdTXT.text isEmpty]) {
-        _oldPassword = oldPassowrd;
-    }
     if (![passwordTableViewCell.newpassowrdTXT.text isEmpty]) {
         _newPassword = newPassowrd;
     }
@@ -388,6 +388,11 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         default:
             break;
     }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    _passwordTableViewCell.newpassowrdTXT.text = @"";
+    _passwordTableViewCell.comfilmPassowrdTXT.text = @"";
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
