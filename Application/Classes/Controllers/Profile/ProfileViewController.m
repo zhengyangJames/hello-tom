@@ -35,6 +35,7 @@
 
 typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell);
 
+
 @interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UIAlertViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
