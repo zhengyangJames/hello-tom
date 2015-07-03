@@ -75,7 +75,7 @@
 }
 
 #pragma mark - Private
-- (void)_pushDetailVcWithID:(NSString*)offerID {
+- (void)_pushDetailVcWithID {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -208,12 +208,13 @@
                 
             }
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-                [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+               // [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+                [self _pushDetailVcWithID];
             }];
         };
     }else {
-        DBG(@"%@",[self.arrayData[indexPath.row] valueForKey:@"offerCountry"]);
-        [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+        [self _pushDetailVcWithID];
+        //[self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
     }
 }
 
