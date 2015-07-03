@@ -38,7 +38,6 @@
             if (actionLoginManager) {
                 actionLoginManager(nil,NO);
             }
-            [UIHelper showError:error];
         }
     }];
 }
@@ -58,7 +57,6 @@
             if (actionLoginManager) {
                 actionLoginManager(nil,NO);
             }
-            [UIHelper showError:error];
         }
     }];
 }
