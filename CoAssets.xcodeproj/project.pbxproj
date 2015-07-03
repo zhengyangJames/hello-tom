@@ -289,6 +289,9 @@
 		7F85292F1B43935B00CFAEB5 /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291F1B43935B00CFAEB5 /* United States.png */; };
 		7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529201B43935B00CFAEB5 /* Vietnam.png */; };
 		7F9FED791B43CE22006FF0EB /* NSUserDefaultHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FED781B43CE22006FF0EB /* NSUserDefaultHelper.m */; };
+		7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */; };
+		7FAB4E501B468BCA0012E6D0 /* AboutTableViewCell_Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */; };
+		7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */; };
 		7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
 		7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6D5121B4526240098EC8D /* COLoginManager.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
@@ -732,6 +735,10 @@
 		7F8529201B43935B00CFAEB5 /* Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vietnam.png; sourceTree = "<group>"; };
 		7F9FED771B43CE22006FF0EB /* NSUserDefaultHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultHelper.h; sourceTree = "<group>"; };
 		7F9FED781B43CE22006FF0EB /* NSUserDefaultHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultHelper.m; sourceTree = "<group>"; };
+		7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait_ph.jpg; sourceTree = "<group>"; };
+		7FAB4E4D1B468BCA0012E6D0 /* AboutTableViewCell_Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell_Address.h; sourceTree = "<group>"; };
+		7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell_Address.m; sourceTree = "<group>"; };
+		7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell_Address.xib; sourceTree = "<group>"; };
 		7FC6D50F1B44D4090098EC8D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United Kingdom.png"; sourceTree = "<group>"; };
 		7FC6D5111B4526240098EC8D /* COLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLoginManager.h; sourceTree = "<group>"; };
 		7FC6D5121B4526240098EC8D /* COLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLoginManager.m; sourceTree = "<group>"; };
@@ -1111,6 +1118,9 @@
 				7F325E121B40E50800116445 /* AboutTableViewCell.h */,
 				7F325E131B40E50800116445 /* AboutTableViewCell.m */,
 				7F325E141B40E50800116445 /* AboutTableViewCell.xib */,
+				7FAB4E4D1B468BCA0012E6D0 /* AboutTableViewCell_Address.h */,
+				7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */,
+				7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */,
 			);
 			path = AboutTableViewCell;
 			sourceTree = "<group>";
@@ -1742,6 +1752,7 @@
 		7F325F5E1B40E50800116445 /* Images Other */ = {
 			isa = PBXGroup;
 			children = (
+				7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */,
 				7F8529101B43935B00CFAEB5 /* countries */,
 				7F325F5F1B40E50800116445 /* 15.jpg */,
 				7F325F601B40E50800116445 /* 17.jpg */,
@@ -1935,6 +1946,7 @@
 				7F325FAB1B40E50800116445 /* CompanyTableViewCell.xib in Resources */,
 				7F32603D1B40E50800116445 /* ic_contac_2_heightlight@3x.png in Resources */,
 				7F8529271B43935B00CFAEB5 /* Indonesia.png in Resources */,
+				7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */,
 				7F3260511B40E50800116445 /* ic_peopel@3x.png in Resources */,
 				7F32603E1B40E50800116445 /* ic_droplist.png in Resources */,
 				7F3260691B40E50800116445 /* Preloader_2.gif in Resources */,
@@ -1982,6 +1994,7 @@
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
 				7F32603B1B40E50800116445 /* ic_contac_2@3x.png in Resources */,
 				7F325F9C1B40E50800116445 /* HomeListViewCell.xib in Resources */,
+				7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */,
 				7F3260561B40E50800116445 /* ic_setting@2x.png in Resources */,
 				7F85292A1B43935B00CFAEB5 /* New Zealand.png in Resources */,
 				7F3260661B40E50800116445 /* Earth_256.png in Resources */,
@@ -2174,6 +2187,7 @@
 				7F325F831B40E50800116445 /* UIImage+Scaling.m in Sources */,
 				7F325F841B40E50800116445 /* UIImageView+Networking.m in Sources */,
 				7F3260161B40E50800116445 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				7FAB4E501B468BCA0012E6D0 /* AboutTableViewCell_Address.m in Sources */,
 				7F325FF81B40E50800116445 /* NSString+MagicalDataImport.m in Sources */,
 				7F325FAC1B40E50800116445 /* EditCompanyVC.m in Sources */,
 				7F325FDB1B40E50800116445 /* WSURLSessionManager+ListContact.m in Sources */,

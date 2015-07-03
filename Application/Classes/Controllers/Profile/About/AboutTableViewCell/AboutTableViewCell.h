@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface AboutTableViewCell : UITableViewCell
+@interface AboutTableViewCell : BaseTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *lblname;
 @property (weak, nonatomic) IBOutlet UILabel *lblDetail;

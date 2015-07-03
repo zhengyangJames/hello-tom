@@ -17,6 +17,15 @@
 
 @implementation AboutTableViewCell
 
+- (void)viewDidLoad {
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+}
 
+- (void)setBounds:(CGRect)bounds
+{
+    [super setBounds:bounds];
+    self.contentView.frame = self.bounds;
+}
 
 @end

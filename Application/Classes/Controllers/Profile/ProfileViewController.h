@@ -21,7 +21,6 @@ typedef NS_ENUM(NSInteger, COSegmentStyle) {
 };
 
 typedef NS_ENUM(NSInteger, COAboutProfileStyle) {
-    COAboutProfileStyleSalutation,
     COAboutProfileStyleFirstName,
     COAboutProfileStyleLastNameSurname,
     COAboutProfileStyleEmail,

@@ -20,7 +20,7 @@
 #define LINK_PRIVACY         @"https://www.coassets.com/privacy/"
 
 
-@interface SettingViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface SettingViewController () <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     WebViewSetting *_webViewSetting;
@@ -137,7 +137,7 @@
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self _logginApllication];
     } else {
-        [self _logOutApllication];
+        [UIHelper showAleartViewWithTitle:nil message:m_string(@"Are you sure you want to logout?") cancelButton:m_string(@"Cancel") delegate:self tag:0 arrayTitleButton:@[@"OK"]];
     }
 }
 
@@ -194,5 +194,12 @@
     self.arraySetting = arr;
     [_tableView reloadData];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self _logOutApllication];
+    }
+}
+
 
 @end

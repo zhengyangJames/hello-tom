@@ -44,15 +44,6 @@
     [self setNeedsDisplay];
 }
 
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-//    _viewImage.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-//    _viewImage.layer.masksToBounds = NO;
-//    _viewImage.layer.shadowOffset = CGSizeMake(0, 0);
-//    _viewImage.layer.shadowRadius = 4;
-//    _viewImage.layer.shadowOpacity = 0.6;
-}
-
 #pragma mark - Private
 - (UIImage*)_loadGifImageLoading {
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"Preloader_8" withExtension:@"gif"];

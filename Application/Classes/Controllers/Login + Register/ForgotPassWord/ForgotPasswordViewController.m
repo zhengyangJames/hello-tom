@@ -10,10 +10,11 @@
 #import "COBorderTextField.h"
 #import "WSURLSessionManager+User.h"
 
+#define MESSEAGE_RESET_PASSWORD @"Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly"
+
 @interface ForgotPasswordViewController () <UIAlertViewDelegate>
 {
     __weak IBOutlet COBorderTextField *emailTextField;
-    __weak COBorderTextField *_currentField;
 }
 
 
@@ -24,27 +25,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [emailTextField becomeFirstResponder];
 }
 
 #pragma mark - Private
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
+- (void)_setupShowAleartViewWithTitle:(NSString*)message tag:(NSInteger)tag {
     [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
                              delegate:self
-                                  tag:0
+                                  tag:tag
                      arrayTitleButton:nil];
 }
 
 - (BOOL)_isValidation {
     if ([emailTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Email is required."];
-        _currentField = emailTextField;
+        [self _setupShowAleartViewWithTitle:@"Email is required." tag:0];
         return NO;
     }else if (![emailTextField.text isValidEmail]) {
-        [self _setupShowAleartViewWithTitle:@"Email is invalid."];
-        _currentField = emailTextField;
+        [self _setupShowAleartViewWithTitle:@"Email is invalid." tag:0];
         return NO;
     }
     return YES;
@@ -60,6 +63,7 @@
     if (![self _isValidation]) {
         return;
     } else {
+        [emailTextField resignFirstResponder];
         [self _callWSProgotPassoword];
     }
 }
@@ -70,9 +74,9 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsForgotPassword:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            [self.navigationController popViewControllerAnimated:YES];
+            [self _setupShowAleartViewWithTitle:m_string(MESSEAGE_RESET_PASSWORD) tag:10];
         } else {
-            [UIHelper showAleartViewWithTitle:nil message:m_string(@"Your email is invalid.") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
+            [self _setupShowAleartViewWithTitle:m_string(@"Your email is invalid.") tag:20];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
@@ -81,12 +85,10 @@
 #pragma mark - UIAlertView delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        if (_currentField) {
-            [_currentField becomeFirstResponder];
-        }
+    if (alertView.tag == 10) {
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    _currentField = nil;
+    [emailTextField becomeFirstResponder];
 }
 
 @end

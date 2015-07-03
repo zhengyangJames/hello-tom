@@ -88,20 +88,13 @@
         [self _setupShowAleartViewWithTitle:@"Password is required."];
         _currentField = _passwordTextField;
         return NO;
-    } else if (![_passwordTextField.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"Password is invalid."];
-        _currentField = _passwordTextField;
-        return NO;
     } else if ([_comfilmPasswordTextField.text isEmpty] ) {
         [self _setupShowAleartViewWithTitle:@"Password is required."];
         _currentField = _comfilmPasswordTextField;
         return NO;
-    } else if (![_comfilmPasswordTextField.text isValidPassword]) {
-        [self _setupShowAleartViewWithTitle:@"Password is invalid."];
+    } else if (![_comfilmPasswordTextField.text isEqualToString:_passwordTextField.text]) {
+        [self _setupShowAleartViewWithTitle:@"Confirm password does not match"];
         _currentField = _comfilmPasswordTextField;
-        return NO;
-    } else if (!_isCheckBox) {
-        [self _setupShowAleartViewWithTitle:@"Please is Check Box"];
         return NO;
     }
     return YES;
@@ -206,6 +199,10 @@
 
 #pragma mark - UIAlertView delegate
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [_currentField becomeFirstResponder];
+    _currentField = nil;
+}
 
 - (void)checkBoxButton:(COCheckBoxButton *)checkBox didChangeCheckingStatus:(BOOL)isChecking {
     _isCheckBox = isChecking;

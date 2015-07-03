@@ -22,15 +22,18 @@
 #import "LoginViewController.h"
 #import "WSURLSessionManager+User.h"
 #import "NSUserDefaultHelper.h"
+#import "AboutTableViewCell_Address.h"
 
 #define DEFAULT_HEIGHT_CELL             44
-#define AUTO_HEIGHT_CELL_ABOUT          (self.view.bounds.size.height - (200+90))/6
+#define AUTO_HEIGHT_CELL_ABOUT          (self.view.bounds.size.height - (200+90))/4
 #define AUTO_HEIGHT_CELL_COMPANY        (self.view.bounds.size.height - (200+90+44))
 #define DEFAULT_HEIGHT_CELL_COMPANY     205
 #define AUTO_HEIGHT_CELL_PASSWORD       (self.view.bounds.size.height - (200+90))
 #define DEFAULT_HEIGHT_CELL_PASSWORD    171
 #define HIEGHT_HEADERVIEW               200
 #define HIEGHT_BOTTOMVIEW               90
+
+#define IS_IOS8_OR_ABOVE    [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
 
 #define UPDATE_ABOUT_PROFILE    @"Update profile"
 #define UPDATE_COMNPANY_PROFILE @"Update company profile"
@@ -82,6 +85,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:[AboutTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[AboutTableViewCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[PasswordTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[PasswordTableViewCell identifier]];
+    [_tableView registerNib:[UINib nibWithNibName:[AboutTableViewCell_Address identifier] bundle:nil] forCellReuseIdentifier:[AboutTableViewCell_Address identifier]];
 }
 
 - (void)_setupCellStyle:(NSInteger)index {
@@ -315,7 +319,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
-        return 6;
+        return 5;
     } else {
         return 1;
     }
@@ -323,7 +327,11 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
-        return [self _setupAboutCell:tableView cellForRowAtIndexPath:indexPath];
+        if (indexPath.row == 4) {
+           return [self _setupAboutCell_Address:tableView cellForRowAtIndexPath:indexPath];
+        } else {
+           return [self _setupAboutCell:tableView cellForRowAtIndexPath:indexPath];
+        }
     } else {
         if (!_passwordTableViewCell) {
             _passwordTableViewCell = [self _setupPasswordCell:tableView cellForRowAtIndexPath:indexPath];
@@ -333,13 +341,41 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height;
     if (TableViewCellStyleAbout == _indexSelectSeg) {
-        return AUTO_HEIGHT_CELL_ABOUT < DEFAULT_HEIGHT_CELL ? DEFAULT_HEIGHT_CELL : AUTO_HEIGHT_CELL_ABOUT;
+        if (indexPath.row == 4) {
+            if(IS_IOS8_OR_ABOVE) {
+               return height = UITableViewAutomaticDimension;
+            } else {
+                id cell = [self _setupAboutCell_Address:tableView cellForRowAtIndexPath:indexPath];
+                return height = [self _heightForTableView:tableView cell:cell atIndexPath:indexPath];
+            }
+        } else {
+            return 40 ;
+        }
     } else {
         return DEFAULT_HEIGHT_CELL_PASSWORD;
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath*)indexPath {
+    if (TableViewCellStyleAbout == _indexSelectSeg) {
+        if (indexPath.row == 4) {
+            return 44;
+        } else {
+            return 40 ;
+        }
+    } else {
+        return DEFAULT_HEIGHT_CELL_PASSWORD;
+    }
+}
+
+- (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return cellSize.height;
+}
 /*
  Setup Cell Style
  */
@@ -347,10 +383,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 - (AboutTableViewCell*)_setupAboutCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AboutTableViewCell *aboutCell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell identifier]
                                                                     forIndexPath:indexPath];
-    if (indexPath.row == COAboutProfileStyleSalutation) {
-        aboutCell.lblDetail.text = @""; //self.profileObject.salutation;
-        aboutCell.lblname.text = m_string(@"Salutation");
-    } else if (indexPath.row == COAboutProfileStyleFirstName) {
+    if (indexPath.row == COAboutProfileStyleFirstName) {
         aboutCell.lblDetail.text = self.profileObject.first_name;
         aboutCell.lblname.text = m_string(@"First Name");
     } else if (indexPath.row == COAboutProfileStyleLastNameSurname) {
@@ -359,17 +392,26 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     } else if (indexPath.row == COAboutProfileStyleEmail) {
         aboutCell.lblDetail.text = self.profileObject.email;
         aboutCell.lblname.text = m_string(@"Email");
-    } else if (indexPath.row == COAboutProfileStylePhone) {
+    } else {
         NSString *phoneCode = self.profileObject.country_prefix;
         NSString *string = [NSString stringWithFormat:@"%@ %@",phoneCode,self.profileObject.cell_phone];
         aboutCell.lblDetail.text = string;
         aboutCell.lblname.text = m_string(@"Phone");
-    } else {
-        aboutCell.lblDetail.text = self.profileObject.address_1;
-        aboutCell.lblname.text = m_string(@"Address");
     }
     aboutCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return aboutCell;
+}
+
+- (AboutTableViewCell_Address*)_setupAboutCell_Address:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    AboutTableViewCell_Address *cell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell_Address identifier] forIndexPath:indexPath];
+    NSString *address1 = self.profileObject.address_1;
+    NSString *address2 = self.profileObject.address_2;
+    NSString *postCode = self.profileObject.region_state;
+    NSString *city = self.profileObject.city;
+    NSString *country = self.profileObject.country;
+    NSString *all = [NSString stringWithFormat:@"%@ \n%@ \n%@ \n%@ \n%@",address1,address2,postCode,city,country];
+    cell.string = all;
+    return cell;
 }
 
 - (PasswordTableViewCell*)_setupPasswordCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
