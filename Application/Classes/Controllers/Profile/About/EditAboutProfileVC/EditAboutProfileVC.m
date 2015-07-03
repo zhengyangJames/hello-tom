@@ -179,17 +179,15 @@
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _getAccessToken]
-                                                          body:[self _getBodyData]
-                                                       handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _getAccessToken] body:[self _getBodyData] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             DBG(@"%@",responseObject);
             [self dismissViewControllerAnimated:YES completion:nil];
         }else {
             [UIHelper showError:error];
         }
+        [UIHelper hideLoadingFromView:self.view];
     }];
-    [UIHelper hideLoadingFromView:self.view];
 }
 
 #pragma mark - Action
