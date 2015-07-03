@@ -37,14 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    self.addressName = self.addressName;
-    self.emailName = self.emailName;
-    self.phoneCode = self.phoneCode;
-    self.phoneName = self.phoneName;
-    self.addressName2 = self.addressName2;
-    self.country = self.country;
-    self.city = self.city;
-    self.state = self.state;
+    self.dicProfile = self.dicProfile;
     _indexActtionCountryCode = 0;
 }
 
@@ -55,43 +48,17 @@
 }
 
 #pragma mark - Set Get
-- (void)setAddressName:(NSString *)addressName {
-    _addressName = addressName;
-    addressNameTXT.text = _addressName;
-}
-- (void)setAddressName2:(NSString *)addressName2 {
-    _addressName2 = addressName2;
-    address2TXT.text = _addressName2;
-}
 
-- (void)setPhoneName:(NSString *)phoneName {
-    _phoneName = phoneName;
-    phoneNameTXT.text = _phoneName;
-}
-
-- (void)setEmailName:(NSString *)emailName {
-    _emailName = emailName;
-    emailNameTXT.text = _emailName;
-}
-
-- (void)setCity:(NSString *)city {
-    _city = city;
-    cityTXT.text = _city;
-}
-
-- (void)setState:(NSString *)state {
-    _state = state;
-    regionStateTXT.text = _state;
-}
-
-- (void)setCountry:(NSString *)country {
-    _country = country;
-    countryTXT.text = _country;
-}
-
-- (void)setPhoneCode:(NSString*)phoneCode {
-    _phoneCode = phoneCode;
-    NSString *phone = [self _getPhoneCode:phoneCode];
+- (void)setDicProfile:(NSDictionary *)dicProfile {
+    _dicProfile = dicProfile;
+    addressNameTXT.text = [_dicProfile valueForKey:KADDRESS];
+    countryTXT.text = [_dicProfile valueForKey:KCOUNTRY];
+    address2TXT.text = [_dicProfile valueForKey:KADDRESS2];
+    phoneNameTXT.text = [_dicProfile valueForKey:kNUM_CELL_PHONE];
+    emailNameTXT.text = [_dicProfile valueForKey:KEMAIL];
+    cityTXT.text = [_dicProfile valueForKey:KCITY];
+    regionStateTXT.text = [_dicProfile valueForKey:KSATE];
+    NSString *phone = [self _getPhoneCode:[_dicProfile valueForKey:kNUM_COUNTRY]];
     [dropListCountryCode setTitle:phone forState:UIControlStateNormal];
 }
 
@@ -102,9 +69,59 @@
     return _arrayCountryCode;
 }
 
-
 - (void)setProfileObject:(COListProfileObject *)profileObject {
     _profileObject = profileObject;
+}
+
+- (NSMutableDictionary*)_getAccessToken {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
+    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    return dic;
+}
+
+- (NSMutableDictionary*)_getBodyData {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kUSER] = self.profileObject.username ;
+    dic[KFRIST_NAME] = self.profileObject.first_name ;
+    dic[KLAST_NAME] = self.profileObject.last_name ;
+    dic[KEMAIL] = self.profileObject.email ;
+    dic[kNUM_CELL_PHONE] = self.profileObject.cell_phone ;
+    dic[kNUM_COUNTRY] = self.profileObject.country_prefix ;
+    dic[KADDRESS] = self.profileObject.address_1 ;
+    [self.profileObject setValue:address2TXT.text forKey:KADDRESS2];
+    dic[KADDRESS2] = self.profileObject.address_2;
+    [self.profileObject setValue:regionStateTXT.text forKey:KCITY];
+    dic[KCITY] = self.profileObject.city;
+    [self.profileObject setValue:countryTXT.text forKey:KCOUNTRY];
+    dic[KCOUNTRY] = self.profileObject.country;
+    [self.profileObject setValue:regionStateTXT.text forKey:KSATE];
+    dic[KSATE] = self.profileObject.region_state ;
+    return dic;
+}
+
+- (NSDictionary*)_getProfileObject {
+    NSString *phone = [self _getPhoneCode:[_dicProfile valueForKey:kNUM_COUNTRY]];
+    NSMutableDictionary *obj = [[NSMutableDictionary alloc]init];
+    [obj setValue:phone forKey:kNUM_COUNTRY];
+    [obj setValue:phoneNameTXT.text forKey:kNUM_CELL_PHONE];
+    [obj setValue:addressNameTXT.text  forKey:KADDRESS];
+    [obj setValue:emailNameTXT.text forKey:KEMAIL];
+    [obj setValue:cityTXT.text forKey:KCITY];
+    [obj setValue:countryTXT.text forKey:KCOUNTRY];
+    [obj setValue:address2TXT.text forKey:KADDRESS2];
+    [obj setValue:regionStateTXT.text forKey:KSATE];
+    return obj;
+}
+
+- (NSString*)_getPhoneCode:(NSString*)phoneCode {
+    NSString *str = @"";
+    for (int i = 0 ; i < self.arrayCountryCode.count; i++) {
+        if ([phoneCode isEqualToString:[self.arrayCountryCode[i] objectForKey:@"code"]]) {
+            str = [self.arrayCountryCode[i] objectForKey:@"code"];
+        }
+    }
+    return str;
 }
 
 #pragma mark - Private 
@@ -138,80 +155,32 @@
     self.navigationItem.leftBarButtonItem = btCancel;
 }
 
-- (NSString*)_getPhoneCode:(NSString*)phoneCode {
-    NSString *str = @"";
-    for (int i = 0 ; i < self.arrayCountryCode.count; i++) {
-        if ([phoneCode isEqualToString:[self.arrayCountryCode[i] objectForKey:@"code"]]) {
-            str = [self.arrayCountryCode[i] objectForKey:@"code"];
-        }
-    }
-    return str;
-}
-
-#pragma mark - Private
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
-                              message:m_string(message)
-                         cancelButton:m_string(@"OK")
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
-}
-
 - (BOOL)_isValidation {
     if ([emailNameTXT.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Email  is required."];
+        [self _actionShowAleartViewWithTitle:@"Email  is required."];
         _currentField = emailNameTXT;
         return NO;
     } else if (![emailNameTXT.text isValidEmail]) {
-        [self _setupShowAleartViewWithTitle:@"Email is invalid."];
+        [self _actionShowAleartViewWithTitle:@"Email is invalid."];
         _currentField = emailNameTXT;
         return NO;
     } else if ([phoneNameTXT.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Phone is required."];
+        [self _actionShowAleartViewWithTitle:@"Phone is required."];
         _currentField = phoneNameTXT;
         return NO;
     } else if ([addressNameTXT.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Address is required."];
+        [self _actionShowAleartViewWithTitle:@"Address is required."];
         _currentField = addressNameTXT;
         return NO;
     }
     return YES;
 }
 
-- (NSMutableDictionary*)_setupAccessToken {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
-    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
-    return dic;
-}
-
-- (NSMutableDictionary*)_setupBodyData {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kUSER] = self.profileObject.username;
-    dic[KFRIST_NAME] = self.profileObject.first_name;
-    dic[KLAST_NAME] = self.profileObject.last_name;
-    dic[KEMAIL] = self.profileObject.email;
-    dic[kNUM_CELL_PHONE] = self.profileObject.cell_phone;
-    dic[kNUM_COUNTRY] = self.profileObject.country_prefix;
-    dic[KADDRESS] = self.profileObject.address_1;
-    [self.profileObject setValue:address2TXT.text forKey:@"address_2"];
-    dic[KADDRESS2] = self.profileObject.address_2;
-    [self.profileObject setValue:regionStateTXT.text forKey:@"city"];
-    dic[KCITY] = self.profileObject.city;
-    [self.profileObject setValue:regionStateTXT.text forKey:@"country"];
-    dic[KCOUNTRY] = self.profileObject.country;
-    [self.profileObject setValue:regionStateTXT.text forKey:@"region_state"];
-    dic[KSATE] = self.profileObject.region_state ;
-    return dic;
-}
-
-
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _setupAccessToken]
-                                                          body:[self _setupBodyData]
+    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _getAccessToken]
+                                                          body:[self _getBodyData]
                                                        handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             DBG(@"%@",responseObject);
@@ -219,15 +188,15 @@
         }else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
     }];
+    [UIHelper hideLoadingFromView:self.view];
 }
 
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
     if (self.actionDone) {
-        self.actionDone(emailNameTXT.text,phoneNameTXT.text,dropListCountryCode.titleLabel.text,addressNameTXT.text,address2TXT.text,cityTXT.text,countryTXT.text,regionStateTXT.text);
+        self.actionDone([self _getProfileObject]);
     }
     if (![self _isValidation]) {
         return;
@@ -247,6 +216,15 @@
         [dropListCountryCode setTitle:[self.arrayCountryCode[index] objectForKey:@"code"] forState:UIControlStateNormal];
         _indexActtionCountryCode = index;
     }];
+}
+
+- (void)_actionShowAleartViewWithTitle:(NSString*)message {
+    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+                              message:m_string(message)
+                         cancelButton:m_string(@"OK")
+                             delegate:self
+                                  tag:0
+                     arrayTitleButton:nil];
 }
 
 #pragma mark - UIAlertView delegate
