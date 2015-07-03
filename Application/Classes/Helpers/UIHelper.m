@@ -75,10 +75,10 @@
         } else {
             message = error.localizedDescription;
         }
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:m_string(@"COASSETS")
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:m_string(@"CoAssets")
                                                             message:message
                                                            delegate:nil
-                                                  cancelButtonTitle:m_string(@"BUTTON_OK")
+                                                  cancelButtonTitle:m_string(@"OK")
                                                   otherButtonTitles:nil];
         [alertView show];
         alertView = nil;

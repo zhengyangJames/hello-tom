@@ -43,6 +43,8 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
     _webViewSetting = nil;
+    [kUserDefaults setObject:@"2" forKey:KEY_TABBARSELECT];
+    [kUserDefaults synchronize];
     if ([kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self _replaceArraySettingLogin];
     }

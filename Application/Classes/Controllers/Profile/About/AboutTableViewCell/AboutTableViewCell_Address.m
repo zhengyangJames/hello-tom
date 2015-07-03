@@ -18,7 +18,7 @@
 @implementation AboutTableViewCell_Address
 
 - (void)viewDidLoad {
-    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setBounds:(CGRect)bounds

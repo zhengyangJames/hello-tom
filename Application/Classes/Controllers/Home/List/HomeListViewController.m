@@ -35,10 +35,6 @@
 
 @implementation HomeListViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
@@ -50,6 +46,9 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    
+    [kUserDefaults setObject:@"0" forKey:KEY_TABBARSELECT];
+    [kUserDefaults synchronize];
 }
 
 #pragma mark - Setup
