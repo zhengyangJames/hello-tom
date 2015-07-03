@@ -31,9 +31,9 @@
 - (void)setString:(NSString *)string {
     _string = string;
     address.text = _string;
-//    [address setNeedsUpdateConstraints];
-//    [self setNeedsUpdateConstraints];
-//    [self updateConstraintsIfNeeded];
+    [address setNeedsUpdateConstraints];
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
 }
 
 @end
