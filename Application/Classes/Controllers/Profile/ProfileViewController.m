@@ -29,11 +29,14 @@
 #define DEFAULT_HEIGHT_CELL_COMPANY     205
 #define AUTO_HEIGHT_CELL_PASSWORD       (self.view.bounds.size.height - (200+90))
 #define DEFAULT_HEIGHT_CELL_PASSWORD    171
+#define HIEGHT_HEADERVIEW               200
+#define HIEGHT_BOTTOMVIEW               90
 
 #define UPDATE_ABOUT_PROFILE    @"Update profile"
 #define UPDATE_COMNPANY_PROFILE @"Update company profile"
 
 typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell);
+
 
 @interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UIAlertViewDelegate>
 {
@@ -49,7 +52,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 @property (strong, nonatomic) TableBottomView               *tablefooterView;
 @property (strong, nonatomic) TableHeaderView               *tableheaderView;
 @property (weak, nonatomic  ) PasswordTableViewCell         *passwordTableViewCell;
-@property (strong,nonatomic ) NSArray                       *arrayCountryCode;
+@property (strong, nonatomic) NSArray                       *arrayCountryCode;
 @property (copy, nonatomic  ) ActionUpdateTextFieldPassword actionUpdateTextFieldPassword;
 
 @end
@@ -90,13 +93,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     }
 }
 
-- (NSMutableDictionary*)_setupAccessToken {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
-    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
-    return dic;
-}
-
 - (void)_checkInLogin {
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self _setUpLogginVC];
@@ -120,8 +116,8 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         }else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
     }];
+    [UIHelper hideLoadingFromView:self.view];
 }
 
 
@@ -137,8 +133,8 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.view endEditing:YES];
         }];
-        [UIHelper hideLoadingFromView:self.view];
     }];
+    [UIHelper hideLoadingFromView:self.view];
 }
 
 
@@ -168,7 +164,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (void)_setupHeaderTableView {
     __weak __typeof__(self) weakSelf = self;
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 200)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HIEGHT_HEADERVIEW)];
     _tableheaderView   = [[TableHeaderView alloc] initWithNibName:[TableHeaderView identifier]];
     [_tableheaderView setActionSegment:^(NSInteger indexSelectSegment){
         __strong __typeof(weakSelf)strongSelf = weakSelf;
@@ -186,7 +182,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (void)_setupFooterTableView {
     __weak __typeof__(self) weakSelf = self;
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 90)];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HIEGHT_BOTTOMVIEW)];
     _tablefooterView   = [[TableBottomView alloc] initWithNibName:[TableBottomView identifier]];
     [_tablefooterView setActionButtonUpdate:^(NSString *string){
         __strong __typeof(weakSelf) strongSelf = weakSelf;
@@ -202,37 +198,13 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
     __weak __typeof__(EditAboutProfileVC) *weakSelf = vc;
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
-    vc.phoneCode = self.profileObject.country_prefix;
-    vc.phoneName = self.profileObject.cell_phone;
-    vc.addressName = self.profileObject.address_1;
-    vc.emailName = self.profileObject.email;
-    vc.city = self.profileObject.city;
-    vc.country = self.profileObject.country;
-    vc.addressName2 = self.profileObject.address_2;
-    vc.state = self.profileObject.region_state;
-    vc.actionDone = ^(NSString* emailName,NSString* phone,NSString *phoneCode,NSString* address,NSString* addressName2,NSString* city,NSString* country,NSString* state) {
-        self.profileObject.country_prefix = [self _getPhoneCode:phoneCode];
-        self.profileObject.cell_phone = phone;
-        self.profileObject.address_1 = address;
-        self.profileObject.email = emailName;
-        self.profileObject.city = city;
-        self.profileObject.country = country;
-        self.profileObject.address_2 = addressName2;
-        self.profileObject.region_state = state;
+    vc.dicProfile = [self _getProfileObject];
+    vc.actionDone = ^(NSDictionary* profile) {
+        [self _updateProfile:profile];
         __strong __typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.profileObject = self.profileObject;
     };
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
-}
-
-- (NSString*)_getPhoneCode:(NSString*)phoneCode {
-    NSString *str = @"";
-    for (int i = 0 ; i < self.arrayCountryCode.count; i++) {
-        if ([phoneCode isEqualToString:[self.arrayCountryCode[i] objectForKey:@"code"]]) {
-            str = [self.arrayCountryCode[i] objectForKey:@"code"];
-        }
-    }
-    return str;
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
@@ -255,6 +227,47 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 #pragma mark - Setter Getter
 
+- (NSMutableDictionary*)_setupAccessToken {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
+    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
+    return dic;
+}
+
+- (NSDictionary*)_getProfileObject {
+    NSMutableDictionary *obj = [[NSMutableDictionary alloc]init];
+    [obj setValue:self.profileObject.country_prefix forKey:kNUM_COUNTRY];
+    [obj setValue:self.profileObject.cell_phone forKey:kNUM_CELL_PHONE];
+    [obj setValue:self.profileObject.address_1 forKey:KADDRESS];
+    [obj setValue:self.profileObject.email forKey:KEMAIL];
+    [obj setValue:self.profileObject.city forKey:KCITY];
+    [obj setValue:self.profileObject.country forKey:KCOUNTRY];
+    [obj setValue:self.profileObject.address_2 forKey:KADDRESS2];
+    [obj setValue:self.profileObject.region_state forKey:KSATE];
+    return obj;
+}
+
+- (void)_updateProfile:(NSDictionary*)profile {
+    self.profileObject.country_prefix = [self _getPhoneCode:[profile valueForKey:kNUM_COUNTRY]];
+    self.profileObject.cell_phone = [profile valueForKey:kNUM_CELL_PHONE];
+    self.profileObject.address_1 = [profile valueForKey:KADDRESS];
+    self.profileObject.email = [profile valueForKey:KEMAIL];
+    self.profileObject.city = [profile valueForKey:KCITY];
+    self.profileObject.country = [profile valueForKey:KCOUNTRY];
+    self.profileObject.address_2 = [profile valueForKey:KADDRESS2];
+    self.profileObject.region_state = [profile valueForKey:KSATE];
+}
+
+- (NSString*)_getPhoneCode:(NSString*)phoneCode {
+    NSString *str = @"";
+    for (int i = 0 ; i < self.arrayCountryCode.count; i++) {
+        if ([phoneCode isEqualToString:[self.arrayCountryCode[i] objectForKey:@"code"]]) {
+            str = [self.arrayCountryCode[i] objectForKey:@"code"];
+        }
+    }
+    return str;
+}
+
 - (NSArray*)arrayCountryCode {
     if (!_arrayCountryCode) {
         return _arrayCountryCode = [LoadFileManager loadFileJsonWithName:@"JsonPhoneCode"];
@@ -264,16 +277,10 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (COListProfileObject*)profileObject {
     if (!_profileObject) {
-        return _profileObject = [self _unzipDataProfile];
+        return _profileObject = [[COListProfileObject alloc]initWithDictionary:[kUserDefaults objectForKey:kPROFILE_OBJECT]];
     }
     return _profileObject;
 }
-
-- (COListProfileObject*)_unzipDataProfile {
-    COListProfileObject *obj = [[COListProfileObject alloc]initWithDictionary:[kUserDefaults objectForKey:kPROFILE_OBJECT]];
-    return obj;
-}
-
 
 #pragma mark - Action
 - (void)__actionButtonUpdate:(NSString*)string {
@@ -286,19 +293,23 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     }
 }
 
-- (void)_showActionSheet {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
-                                                            delegate:self
-                                                   cancelButtonTitle:m_string(@"Cancel")
-                                              destructiveButtonTitle:nil
-                                                   otherButtonTitles:m_string(@"Take a photo"),m_string(@"Choose existing"), nil];
-    [actionSheet showInView:self.view];
-}
-
 - (void)__actionUpdateProfile {
     self.profileObject = nil;
     [self profileObject];
 }
+
+/*
+ Setup action show picker ImageView Delegate
+ */
+
+//- (void)_showActionSheet {
+//    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
+//                                                            delegate:self
+//                                                   cancelButtonTitle:m_string(@"Cancel")
+//                                              destructiveButtonTitle:nil
+//                                                   otherButtonTitles:m_string(@"Take a photo"),m_string(@"Choose existing"), nil];
+//    [actionSheet showInView:self.view];
+//}
 
 #pragma mark - TableView Delegate
 
@@ -369,7 +380,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     return _passwordTableViewCell;
 }
 
-#pragma mark - Delegate 
+#pragma mark - Other Delegate 
 - (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell *)passwordTableViewCell oldPassowrd:(NSString *)oldPassowrd newPassowrd:(NSString *)newPassowrd comfilmPassowrd:(NSString *)comfilmPassowrd {
     if (![passwordTableViewCell.newpassowrdTXT.text isEmpty]) {
         _newPassword = newPassowrd;
@@ -379,29 +390,33 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     }
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 0: 
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
-            break;
-        case 1:
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
-            break;
-        default:
-            break;
-    }
-}
-
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     _passwordTableViewCell.newpassowrdTXT.text = @"";
     _passwordTableViewCell.comfilmPassowrdTXT.text = @"";
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
-    [_tableheaderView.imageProfile setImage:image];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+/*
+ show picker ImageView Delegate
+ */
+
+//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    switch (buttonIndex) {
+//        case 0:
+//            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
+//            break;
+//        case 1:
+//            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
+//            break;
+//        default:
+//            break;
+//    }
+//}
+
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+//{
+//    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
+//    [_tableheaderView.imageProfile setImage:image];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
 
 @end

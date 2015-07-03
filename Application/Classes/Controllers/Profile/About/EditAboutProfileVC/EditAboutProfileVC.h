@@ -9,18 +9,10 @@
 #import "BaseViewController.h"
 #import "COListProfileObject.h"
 
-typedef void(^ActionDoneAbout)(NSString* emailName,NSString* phone,NSString *phoneCode,NSString* address,NSString* addressName2,NSString* city,NSString* country,NSString* state);
+typedef void(^ActionDoneAbout)(NSDictionary* profile);
 
 @interface EditAboutProfileVC : BaseViewController
 
-@property (strong, nonatomic) NSString *emailName;
-@property (strong, nonatomic) NSString *phoneName;
-@property (assign, nonatomic) NSString *phoneCode;
-@property (strong, nonatomic) NSString *addressName;
-@property (strong, nonatomic) NSString *addressName2;
-@property (strong, nonatomic) NSString *city;
-@property (strong, nonatomic) NSString *country;
-@property (strong, nonatomic) NSString *state;
 @property (strong, nonatomic) COListProfileObject *profileObject;
 @property (strong, nonatomic) NSDictionary *dicProfile;
 @property (copy, nonatomic) ActionDoneAbout actionDone;
