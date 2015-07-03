@@ -126,12 +126,12 @@ const char *keyForCompletionBlock = "completionBlockID";
 }
 
 - (void)setImageURL:(NSURL *)imageURL withCompletionBlock:(DownloadCompletionBlock)block {
+//    DBG(@"------%@----",[imageURL absoluteString]);
     self.URLId = [imageURL absoluteString];
     UIImage *img = [[UIImageView defaultCache] objectForKey:imageURL];
     if (!img) {
         ImageDownloader *dowloader = [[ImageDownloader alloc] init];
         [dowloader startDownloadForURL:imageURL  cache:[UIImageView defaultCache] session:[UIImageView defaultSession] completionBlock:^(BOOL succes, UIImage *image, NSURL *imgURL, NSError *error) {
-            
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 if (succes) {
                     if ([[imgURL absoluteString] isEqualToString:self.URLId]) {

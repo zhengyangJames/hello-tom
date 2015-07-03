@@ -86,7 +86,7 @@
     [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
             if (self.actionLogin) {
-                self.actionLogin((COListProfileObject*)object);
+                self.actionLogin((COListProfileObject*)object,YES);
             }
         } else {
             [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
@@ -112,6 +112,15 @@
 - (IBAction)__actionForgotPassword:(id)sender {
     ForgotPasswordViewController *vc = [[ForgotPasswordViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)__actionCancel:(id)sender {
+    if (self.actionLogin) {
+        self.actionLogin(sender,NO);
+    }
+    [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 #pragma mark - UIAlertView delegate

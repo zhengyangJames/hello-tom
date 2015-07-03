@@ -8,16 +8,13 @@
 
 #import "HomeListViewController.h"
 #import "HomeListViewCell.h"
-#import "CODummyDataManager.h"
 #import "LoadFileManager.h"
 #import "CODropListVC.h"
 #import "DetailsViewController.h"
 #import "LoginViewController.h"
-#import "NSArray+Sort.h"
 #import "COLIstOffersObject.h"
 #import "MBProgressHUD.h"
 #import "WSURLSessionManager.h"
-#import "WSURLSessionManager+ListContact.h"
 #import "WSURLSessionManager+ListHome.h"
 
 #define kFILTER_CO  @"/CO"
@@ -78,7 +75,7 @@
 }
 
 #pragma mark - Private
-- (void)_setupPushDetailVC {
+- (void)_pushDetailVcWithID:(NSString*)offerID {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -178,6 +175,18 @@
     }];
 }
 
+- (void)_callWSGetDetailsWithID:(NSString*)offerID {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            DBG(@"%@",responseObject);
+        } else {
+            [UIHelper showError:error];
+        }
+    }];
+    [UIHelper hideLoadingFromView:self.view];
+}
+
 #pragma mark - TableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayData.count;
@@ -188,20 +197,23 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         LoginViewController *vcLogin = [[LoginViewController alloc]init];
         __weak LoginViewController *weakLogin = vcLogin;
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
-        [[kAppDelegate baseTabBarController] presentViewController:base
-                           animated:YES completion:nil];
-        vcLogin.actionLogin = ^(id profileObj){
+        [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
+        vcLogin.actionLogin = ^(id profileObj,BOOL CancelOrLogin){
+            if (CancelOrLogin) {
+                
+            }
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-                [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
-                [self _setupPushDetailVC];
+                [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
             }];
         };
     }else {
-        [self _setupPushDetailVC];
+        DBG(@"%@",[self.arrayData[indexPath.row] valueForKey:@"offerCountry"]);
+        [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
     }
 }
 
@@ -213,7 +225,7 @@
     HomeListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeListViewCell identifier]];
     
     cell.object = self.arrayData[indexPath.row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     return cell;
 }
 

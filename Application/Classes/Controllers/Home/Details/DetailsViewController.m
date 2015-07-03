@@ -10,7 +10,7 @@
 #import "CODetailsDataSource.h"
 #import "CODetailsDelegate.h"
 #import "COSlidingView.h"
-
+#import "WSURLSessionManager+ListHome.h"
 
 @interface DetailsViewController () 
 {
@@ -48,15 +48,21 @@
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     [self _setupHeaderView];
     [self _setSliderHeaderView];
-    self.detailsDataSource = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
+    self.detailsDataSource    = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
+    self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
+    self.tableView.delegate   = self.detailsDelegate;
     
-    self.detailsDelegate = [[CODetailsDelegate alloc]initWithController:self];
-    self.tableView.delegate = self.detailsDelegate;
-    
-    [self.tableView reloadData];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self.tableView reloadData];
+    }];
 }
 
+
+#pragma Web Service 
+- (void)_callWSgetDetails {
+
+}
 
 #pragma mark - Action 
 - (IBAction)__actionBack:(id)sender {

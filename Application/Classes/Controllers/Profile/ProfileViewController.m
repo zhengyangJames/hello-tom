@@ -148,19 +148,21 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     __weak LoginViewController *weakLogin = vcLogin;
     CATransition* transition = [CATransition animation];
     transition.duration = 1.5;
-    transition.type = kCATransitionMoveIn;
-    transition.subtype = kCATransitionFromBottom;
+    transition.type = kCATransactionAnimationDuration;
     BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
-    [base.view.layer addAnimation:transition forKey:kCATransition];
     [[kAppDelegate baseTabBarController].view.layer addAnimation:transition forKey:kCATransition];
     [[kAppDelegate baseTabBarController] presentViewController:base
-                                                      animated:NO completion:nil];
-    vcLogin.actionLogin = ^(id profileObj){
-        [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
+                                                      animated:YES completion:nil];
+    vcLogin.actionLogin = ^(id profileObj,BOOL CancelOrLogin){
+        if (CancelOrLogin) {
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView reloadData];
+                    [_tableView reloadData];
+                }];
             }];
-        }];
+        }else {
+            [[kAppDelegate baseTabBarController] setSelectedIndex:2];
+        }
     };
 }
 

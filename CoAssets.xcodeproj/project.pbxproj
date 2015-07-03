@@ -982,10 +982,6 @@
 				7F325DD71B40E50800116445 /* CODetailsAccessoryCell.h */,
 				7F325DD81B40E50800116445 /* CODetailsAccessoryCell.m */,
 				7F325DD91B40E50800116445 /* CODetailsAccessoryCell.xib */,
-				7F325DDA1B40E50800116445 /* CODetailsDataSource.h */,
-				7F325DDB1B40E50800116445 /* CODetailsDataSource.m */,
-				7F325DDC1B40E50800116445 /* CODetailsDelegate.h */,
-				7F325DDD1B40E50800116445 /* CODetailsDelegate.m */,
 				7F325DDE1B40E50800116445 /* CoDetailsHeaderTableView.xib */,
 				7F325DDF1B40E50800116445 /* CODetailsMapCell.h */,
 				7F325DE01B40E50800116445 /* CODetailsMapCell.m */,
@@ -1000,6 +996,10 @@
 				7F325DF31B40E50800116445 /* CODetailsTextCell.h */,
 				7F325DF41B40E50800116445 /* CODetailsTextCell.m */,
 				7F325DF51B40E50800116445 /* CODetailsTextCell.xib */,
+				7F325DDA1B40E50800116445 /* CODetailsDataSource.h */,
+				7F325DDB1B40E50800116445 /* CODetailsDataSource.m */,
+				7F325DDC1B40E50800116445 /* CODetailsDelegate.h */,
+				7F325DDD1B40E50800116445 /* CODetailsDelegate.m */,
 			);
 			path = Componnets;
 			sourceTree = "<group>";

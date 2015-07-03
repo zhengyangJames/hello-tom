@@ -54,17 +54,13 @@
 }
 
 - (void)wsGetDetailsWithOffersID:(NSString *)offerID handler:(WSURLSessionHandler)handler {
-    NSString *url = [WS_METHOD_GET_LIST_OFFERS stringByAppendingString:offerID];
+    NSString *urlOffer = WS_METHOD_GET_LIST_OFFERS;
+    NSString *url = [urlOffer stringByAppendingString:offerID];
     [self sendURL:url params:nil body:nil method:METHOD_GET handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
-            NSArray *arrayData = (NSArray*)responseObject;
-            NSMutableArray *array = [[NSMutableArray alloc]init];
-            for (NSDictionary *obj in arrayData) {
-                COLIstOffersObject *objList = [[COLIstOffersObject alloc]initWithDictionary:obj];
-                [array addObject:objList];
-            }
+        if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            CODetailsOffersObject *objList = [[CODetailsOffersObject alloc]initWithDictionary:responseObject];
             if (handler) {
-                handler(array, response, nil);
+                handler(objList, response, nil);
             }
         } else {
             if (handler) {

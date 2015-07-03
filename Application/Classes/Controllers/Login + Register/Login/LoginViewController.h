@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-typedef void(^ActionLogin)(id profileObj);
+typedef void(^ActionLogin)(id profileObj,BOOL CancelOrLogin); // 0 Cancel , 1 Login
 
 @interface LoginViewController : BaseViewController
 

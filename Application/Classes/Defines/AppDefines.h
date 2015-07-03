@@ -45,7 +45,7 @@
 #pragma mark - WSMAnager - METHOD SERVICES
 ///////////////////////////////////////////////////////////////////
 
-#define WS_METHOD_GET_LIST_OFFERS                  [WS_ENDPOINT stringByAppendingString:@"/offers"]
+#define WS_METHOD_GET_LIST_OFFERS                  [WS_ENDPOINT stringByAppendingString:@"/offers/"]
 
 #define WS_METHOD_GET_LIST_CONTACT                 [WS_ENDPOINT stringByAppendingString:@"/company_info"]
 

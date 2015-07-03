@@ -20,7 +20,7 @@
     __weak IBOutlet UILabel *_lblDetail;
     __weak IBOutlet UILabel *_lblSate;
     __weak IBOutlet UIView *_viewImage;
-    __weak IBOutlet UIImageView *_viewImageLoading;
+    __weak IBOutlet UIView *_viewImageLogo;
 }
 
 
@@ -38,16 +38,19 @@
     [super layoutSubviews];;
     _lblDetail.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
     _lblSate.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
+    [_viewImageLogo.layer setCornerRadius:_viewImageLogo.bounds.size.width/2];
+    [_viewImageLogo.layer setBorderWidth:0.8];
+    [_viewImageLogo.layer setBorderColor:[UIColor grayColor].CGColor];
     [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    _viewImage.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-    _viewImage.layer.masksToBounds = NO;
-    _viewImage.layer.shadowOffset = CGSizeMake(0, 0);
-    _viewImage.layer.shadowRadius = 4;
-    _viewImage.layer.shadowOpacity = 0.6;
+//    _viewImage.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+//    _viewImage.layer.masksToBounds = NO;
+//    _viewImage.layer.shadowOffset = CGSizeMake(0, 0);
+//    _viewImage.layer.shadowRadius = 4;
+//    _viewImage.layer.shadowOpacity = 0.6;
 }
 
 #pragma mark - Private
@@ -62,14 +65,8 @@
 - (void)setObject:(COLIstOffersObject *)object {
     _object = object;
     NSURL *url = [NSURL URLWithString:_object.offerPhoto];
-    [_imageBig setImageURL:url withCompletionBlock:^(BOOL succes, UIImage *image, NSError *error) {
-        if (succes) {
-//            _imageBig.image = [UIImage resizeImage:image newSize:CGSizeMake(_viewImage.frame.size.width, _viewImage.frame.size.height)];
-            _imageBig.image = image;
-        } else {
-            [_imageBig setImage:[UIImage imageNamed:@"ic_placeholder"]];
-        }
-    }];
+    [_imageBig setImage:[UIImage imageNamed:@"ic_placeholder"]];
+    [_imageBig setImageURL:url];
     NSString *strImage = [_object.offerCountry isEqualToString:@"Cambodia"] ? @"Globe" : _object.offerCountry;
     [_imageLogo setImage:[UIImage imageNamed:strImage]];
     [_lblDetail setText:_object.offerTitle];

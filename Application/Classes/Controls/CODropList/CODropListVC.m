@@ -30,7 +30,7 @@
     [self.view addSubview:tableView];
     [tableView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
     self.tableView = tableView;
-    
+
     UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
                                                                   style:UIBarButtonItemStyleDone
                                                                  target:self
@@ -91,7 +91,7 @@
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
+    [cell.textLabel setFont:[UIFont systemFontOfSize:16]];
     
     return cell;
 }

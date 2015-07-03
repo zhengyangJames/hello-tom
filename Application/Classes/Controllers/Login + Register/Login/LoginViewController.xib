@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -47,13 +48,29 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSA-bp-mdd">
+                                            <rect key="frame" x="240" y="22" width="60" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="1Pe-AN-jRd"/>
+                                                <constraint firstAttribute="width" constant="60" id="tKm-BP-nm7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="__actionCancel:" destination="-1" eventType="touchUpInside" id="3iU-6D-ohH"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="xSA-bp-mdd" secondAttribute="trailing" constant="20" id="3tr-kQ-6yV"/>
                                         <constraint firstAttribute="trailing" secondItem="789-VG-TZg" secondAttribute="trailing" constant="80" id="NIZ-3t-IQz"/>
                                         <constraint firstItem="789-VG-TZg" firstAttribute="top" secondItem="tGu-Gw-UBe" secondAttribute="top" constant="65" id="R4K-p7-FbL"/>
                                         <constraint firstItem="789-VG-TZg" firstAttribute="leading" secondItem="tGu-Gw-UBe" secondAttribute="leading" constant="20" id="aIF-Tu-IIP"/>
                                         <constraint firstAttribute="bottom" secondItem="789-VG-TZg" secondAttribute="bottom" constant="5" id="nJW-sQ-CXc"/>
+                                        <constraint firstItem="xSA-bp-mdd" firstAttribute="top" secondItem="tGu-Gw-UBe" secondAttribute="top" constant="22" id="xTh-5V-kZu"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="color">
