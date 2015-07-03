@@ -71,6 +71,7 @@
 
 #define KLIGHT_GRAY_COLOR                 [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0]
 #define KBACKGROUND_COLOR                 [UIColor colorWithRed:249/255.0f green:249/255.0f blue:249/255.0f alpha:1.0]
+
 ///////////////////////////////////////////////////////////////////
 #pragma mark - STRING
 ///////////////////////////////////////////////////////////////////
@@ -99,4 +100,11 @@
 #define KCITY    @"city"
 #define KSATE    @"region_state"
 #define KCOUNTRY @"country"
+
+////////////////////////////////////////////////////////////////
+#pragma mark - KEY
+////////////////////////////////////////////////////////////////
+
+#define KEY_TABBARSELECT                  @"KEY_TABBARSELECT"
+
 #endif

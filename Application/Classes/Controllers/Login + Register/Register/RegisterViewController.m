@@ -140,12 +140,13 @@
                 [self _callWSLogin];
             }else {
                 [self _setupShowAleartViewWithTitle:@"Username Already Exist"];
+                [UIHelper hideLoadingFromView:self.view];
             }
         } else {
             [UIHelper showError:error];
+            [UIHelper hideLoadingFromView:self.view];
         }
     }];
-    [UIHelper showLoadingInView:self.view];
 }
 
 - (void)_callWSLogin {
@@ -155,6 +156,7 @@
         } else {
             [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
         }
+        [UIHelper hideLoadingFromView:self.view];
     }];
 }
 
