@@ -137,8 +137,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.view endEditing:YES];
         }];
+        [UIHelper hideLoadingFromView:self.view];
     }];
-    [UIHelper hideLoadingFromView:self.view];
+    
 }
 
 
@@ -371,9 +372,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 }
 
 - (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
+    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
-    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return cellSize.height;
 }
 /*
@@ -411,12 +412,13 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSString *country = self.profileObject.country;
     NSString *all = [NSString stringWithFormat:@"%@ \n%@ \n%@ \n%@ \n%@",address1,address2,postCode,city,country];
     cell.string = all;
+    [cell layoutIfNeeded];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (PasswordTableViewCell*)_setupPasswordCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    _passwordTableViewCell = [tableView dequeueReusableCellWithIdentifier:[PasswordTableViewCell identifier]
-                                                                        forIndexPath:indexPath];
+    _passwordTableViewCell = [tableView dequeueReusableCellWithIdentifier:[PasswordTableViewCell identifier] forIndexPath:indexPath];
     _passwordTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
     _passwordTableViewCell.delegate = self;
     return _passwordTableViewCell;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -14,47 +14,44 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="209" id="KGk-i7-Jjw" customClass="AboutTableViewCell_Address">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="KGk-i7-Jjw" customClass="AboutTableViewCell_Address">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="75" translatesAutoresizingMaskIntoConstraints="NO" id="wfN-nd-StI">
-                        <rect key="frame" x="8" y="11" width="75" height="21"/>
+                        <rect key="frame" x="8" y="8" width="75" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="0LC-uX-muv"/>
-                            <constraint firstAttribute="width" constant="75" id="eOm-pQ-wZa"/>
+                            <constraint firstAttribute="height" constant="21" id="Vus-6T-IYK"/>
+                            <constraint firstAttribute="width" constant="75" id="W7a-vJ-lrh"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="vaw-Pm-moN">
-                        <rect key="frame" x="91" y="8" width="221" height="192.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="221" id="0vV-qF-jkI"/>
-                        </constraints>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="221" translatesAutoresizingMaskIntoConstraints="NO" id="hn9-6b-Pdl">
+                        <rect key="frame" x="91" y="8" width="221" height="27"/>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="wfN-nd-StI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Czw-LZ-Y3Q"/>
-                    <constraint firstItem="vaw-Pm-moN" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="S1x-jj-IKp"/>
-                    <constraint firstItem="vaw-Pm-moN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="TMS-oo-t9Z"/>
-                    <constraint firstItem="vaw-Pm-moN" firstAttribute="leading" secondItem="wfN-nd-StI" secondAttribute="trailing" constant="8" id="V3I-Gc-whk"/>
-                    <constraint firstItem="wfN-nd-StI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="bQH-gf-q4K"/>
-                    <constraint firstItem="vaw-Pm-moN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="pUO-CJ-E52"/>
+                    <constraint firstItem="hn9-6b-Pdl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="3YG-LZ-Ol7"/>
+                    <constraint firstItem="wfN-nd-StI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="7da-Ye-TfX"/>
+                    <constraint firstItem="wfN-nd-StI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="aUL-17-l1D"/>
+                    <constraint firstItem="hn9-6b-Pdl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="aaY-SF-Cev"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="hn9-6b-Pdl" secondAttribute="bottom" id="kpo-Ok-PKG"/>
+                    <constraint firstItem="hn9-6b-Pdl" firstAttribute="leading" secondItem="wfN-nd-StI" secondAttribute="trailing" constant="8" id="n1f-dS-TgT"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="address" destination="vaw-Pm-moN" id="0VZ-i1-B7M"/>
+                <outlet property="address" destination="hn9-6b-Pdl" id="3DV-9w-ykj"/>
             </connections>
-            <point key="canvasLocation" x="168" y="153.5"/>
+            <point key="canvasLocation" x="18" y="316"/>
         </tableViewCell>
     </objects>
 </document>

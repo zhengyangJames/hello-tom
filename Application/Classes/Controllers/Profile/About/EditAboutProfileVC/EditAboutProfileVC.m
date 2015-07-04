@@ -165,8 +165,10 @@
         _currentField = emailNameTXT;
         return NO;
     } else if ([phoneNameTXT.text isEmpty]) {
-        [self _actionShowAleartViewWithTitle:@"Phone is required."];
+        [_currentField resignFirstResponder];
+        _currentField = nil;
         _currentField = phoneNameTXT;
+        [self _actionShowAleartViewWithTitle:@"Phone is required."];
         return NO;
     } else if ([addressNameTXT.text isEmpty]) {
         [self _actionShowAleartViewWithTitle:@"Address is required."];
@@ -228,12 +230,8 @@
 #pragma mark - UIAlertView delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        if (_currentField) {
-            [_currentField becomeFirstResponder];
-        }
-    }
-    _currentField = nil;
+    [_currentField becomeFirstResponder];
+   _currentField = nil;
 }
 
 @end

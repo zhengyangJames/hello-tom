@@ -33,7 +33,7 @@
                 <constraint firstItem="SoM-d1-Ede" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jn2-qN-7Nf"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="247" y="280"/>
+            <point key="canvasLocation" x="139" y="262"/>
         </view>
     </objects>
 </document>

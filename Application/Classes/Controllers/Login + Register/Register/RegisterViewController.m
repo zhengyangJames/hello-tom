@@ -139,7 +139,7 @@
                 DBG( @"%@ /n %@",responseObject,[responseObject valueForKey:@"success"]);
                 [self _callWSLogin];
             }else {
-                [self _setupShowAleartViewWithTitle:@"Username Already Exist"];
+                [self _setupShowAleartViewWithTitle:@"Username Already Exists"];
                 [UIHelper hideLoadingFromView:self.view];
             }
         } else {

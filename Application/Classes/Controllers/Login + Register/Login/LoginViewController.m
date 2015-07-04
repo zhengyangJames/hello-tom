@@ -89,7 +89,7 @@
                 self.actionLogin((COListProfileObject*)object,YES);
             }
         } else {
-            [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
+            [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

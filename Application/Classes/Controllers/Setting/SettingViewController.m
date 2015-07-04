@@ -139,7 +139,7 @@
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self _logginApllication];
     } else {
-        [UIHelper showAleartViewWithTitle:nil message:m_string(@"Are you sure you want to logout?") cancelButton:m_string(@"Cancel") delegate:self tag:0 arrayTitleButton:@[@"OK"]];
+        [UIHelper showAleartViewWithTitle:m_string(@"CoAassets") message:m_string(@"Are you sure you want to logout?") cancelButton:m_string(@"Cancel") delegate:self tag:0 arrayTitleButton:@[@"OK"]];
     }
 }
 
