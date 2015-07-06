@@ -236,7 +236,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSString *city = self.profileObject.city;
     NSString *country = self.profileObject.country;
     NSMutableString *stringFormat = [NSMutableString new];
-    if (address1) {
+    if (![address1 isEmpty]) {
         [stringFormat appendString:address1];
     }
     if (![address2 isEmpty]){
@@ -429,9 +429,35 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (AboutTableViewCell_Address*)_setupAboutCell_Address:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AboutTableViewCell_Address *cell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell_Address identifier] forIndexPath:indexPath];
-    cell.string = [self _getFormatStringAddress];
+    NSString *str = [self _getStringFromObject:self.profileObject];
+    cell.string = str;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+- (NSString *)_getStringFromObject:(COListProfileObject *)object {
+    NSString *link = @"";
+    NSString *address1 = self.profileObject.address_1;
+    if (![address1 isEmpty]) {
+        link = [link stringByAppendingString:address1];
+    }
+    NSString *address2 = self.profileObject.address_2;
+    if (![address2 isEmpty]) {
+        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:address2];
+    }
+    NSString *postCode = self.profileObject.region_state;
+    if (![postCode isEmpty]) {
+        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:postCode];
+    }
+    NSString *city = self.profileObject.city;
+    if (![city isEmpty]) {
+        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:city];
+    }
+    NSString *country = self.profileObject.country;
+    if (![country isEmpty]) {
+        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
+    }
+    return link;
 }
 
 - (PasswordTableViewCell*)_setupPasswordCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
