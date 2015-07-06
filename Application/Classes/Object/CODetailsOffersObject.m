@@ -14,7 +14,9 @@
     self = [super init];
     if (self) {
 //        self.offersDetails = [dic objectForKeyNotNull:@"offer_title"];//
+        self.offerID = [dic objectForKeyNotNull:@"id"];
         self.detailsShort = [dic objectForKeyNotNull:@"short_description"];
+        self.amount = [dic objectForKeyNotNull:@"min_investment"];
 //        self.projectDetails = [dic objectForKeyNotNull:@"description"];
 //        self.documentDetails = [dic objectForKeyNotNull:@"document"];//
 //        self.declarationform = [dic objectForKeyNotNull:@"declarationform"];//

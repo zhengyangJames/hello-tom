@@ -7,27 +7,32 @@
 //
 
 #import "CODetailsProjectBottomTVCell.h"
+#import "WSURLSessionManager+ListHome.h"
 
 @implementation CODetailsProjectBottomTVCell
 
-- (void)viewDidLoad {
-    
-}
-
-
 #pragma mark - Action
 
-- (IBAction)__actionInterested:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(detailsProfileAction:didSelectAction:)]) {
-        [self.delegate detailsProfileAction:sender didSelectAction:CODetailsProjectActionInterested];
-    }
 
+
+- (IBAction)__actionInterested:(id)sender {
+    [UIHelper showLoadingInView:self.superview];
+    NSString *idoffer = [self.object valueForKey:@"id"];
+    NSString *amount = [[self.object valueForKey:@"amount"] stringValue];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:amount,@"amount", nil];
+    [[WSURLSessionManager shared] wsPostSubscribeWithOffersID:idoffer amount:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        DBG(@"%@",responseObject);
+        [UIHelper hideLoadingFromView:self.superview];
+    }];
 }
 
 - (IBAction)__actionQuestions:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(detailsProfileAction:didSelectAction:)]) {
-        [self.delegate detailsProfileAction:sender didSelectAction:CODetailsProjectActionQuestions];
-    }
+    [UIHelper showLoadingInView:self.superview];
+    NSString *idoffer = [self.object valueForKey:@"id"];
+    [[WSURLSessionManager shared] wsPostQuestionWithOffersID:idoffer handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        DBG(@"--%@--",responseObject);
+        [UIHelper hideLoadingFromView:self.superview];
+    }];
 }
 
 @end

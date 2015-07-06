@@ -284,11 +284,11 @@
 		7F85292D1B43935B00CFAEB5 /* Thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291D1B43935B00CFAEB5 /* Thailand.png */; };
 		7F85292F1B43935B00CFAEB5 /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291F1B43935B00CFAEB5 /* United States.png */; };
 		7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529201B43935B00CFAEB5 /* Vietnam.png */; };
+		7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */; };
 		7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */; };
 		7FAB4E501B468BCA0012E6D0 /* AboutTableViewCell_Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */; };
 		7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */; };
 		7FAC2CF51B48E2560038B409 /* LoginHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC2CF41B48E2560038B409 /* LoginHelpers.m */; };
-		7FAC2CF81B491C3E0038B409 /* TNNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC2CF71B491C3E0038B409 /* TNNetWorking.m */; };
 		7FBDAA9B1B4A15BA007F7C6B /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */; };
 		7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
 		7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6D5121B4526240098EC8D /* COLoginManager.m */; };
@@ -725,14 +725,14 @@
 		7F85291D1B43935B00CFAEB5 /* Thailand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thailand.png; sourceTree = "<group>"; };
 		7F85291F1B43935B00CFAEB5 /* United States.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United States.png"; sourceTree = "<group>"; };
 		7F8529201B43935B00CFAEB5 /* Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vietnam.png; sourceTree = "<group>"; };
+		7F8EE69C1B4A6ACF00F92852 /* NSString_stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_stripHtml.h; sourceTree = "<group>"; };
+		7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_stripHtml.m; sourceTree = "<group>"; };
 		7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait_ph.jpg; sourceTree = "<group>"; };
 		7FAB4E4D1B468BCA0012E6D0 /* AboutTableViewCell_Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell_Address.h; sourceTree = "<group>"; };
 		7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell_Address.m; sourceTree = "<group>"; };
 		7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell_Address.xib; sourceTree = "<group>"; };
 		7FAC2CF31B48E2560038B409 /* LoginHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHelpers.h; sourceTree = "<group>"; };
 		7FAC2CF41B48E2560038B409 /* LoginHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelpers.m; sourceTree = "<group>"; };
-		7FAC2CF61B491C3E0038B409 /* TNNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNetWorking.h; sourceTree = "<group>"; };
-		7FAC2CF71B491C3E0038B409 /* TNNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNetWorking.m; sourceTree = "<group>"; };
 		7FBDAA991B4A15BA007F7C6B /* UIImageView+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
 		7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
 		7FC6D50F1B44D4090098EC8D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United Kingdom.png"; sourceTree = "<group>"; };
@@ -931,6 +931,8 @@
 		7F325DC81B40E50800116445 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7F8EE69C1B4A6ACF00F92852 /* NSString_stripHtml.h */,
+				7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */,
 				7FBDAA991B4A15BA007F7C6B /* UIImageView+Networking.h */,
 				7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */,
 				7F325DC91B40E50800116445 /* NSArray+Sort.h */,
@@ -1404,8 +1406,6 @@
 		7F325E871B40E50800116445 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7FAC2CF61B491C3E0038B409 /* TNNetWorking.h */,
-				7FAC2CF71B491C3E0038B409 /* TNNetWorking.m */,
 				7F325E901B40E50800116445 /* WSURLSessionManager.h */,
 				7F325E911B40E50800116445 /* WSURLSessionManager.m */,
 				7F325E8A1B40E50800116445 /* WSURLSessionManager+ListContact.h */,
@@ -2110,6 +2110,7 @@
 				7F32600A1B40E50800116445 /* MagicalRecord+Setup.m in Sources */,
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
 				7F325F971B40E50800116445 /* CODetailsTextCell.m in Sources */,
+				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,
 				7F325FA41B40E50800116445 /* RegisterViewController.m in Sources */,
 				7F325F7B1B40E50800116445 /* BaseNavigationController.m in Sources */,
 				7F325F921B40E50800116445 /* CODetailsProjectTypeCell.m in Sources */,
@@ -2148,7 +2149,6 @@
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				7F325FE51B40E50800116445 /* AFURLRequestSerialization.m in Sources */,
 				7F325FC91B40E50800116445 /* COPositive&NagitiveButton.m in Sources */,
-				7FAC2CF81B491C3E0038B409 /* TNNetWorking.m in Sources */,
 				7F325FD21B40E50800116445 /* CODummyDataManager.m in Sources */,
 				7F325FFF1B40E50800116445 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				7F325FCF1B40E50800116445 /* LoadFileManager.m in Sources */,

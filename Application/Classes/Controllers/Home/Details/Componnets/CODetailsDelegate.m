@@ -57,16 +57,14 @@
             height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
         }
     } else if(indexPath.row == 1) {
-        return 455;
-    } else if (indexPath.row == 2){
+        return 220;
+    } else {
         if (IS_IOS8_OR_ABOVE) {
             return  UITableViewAutomaticDimension;
         } else {
             id cell = [dataSource textCellForTableView:tableView indexPath:indexPath];
             height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
         }
-    } else {
-        return 215;
     }
     return height;
 }
@@ -76,11 +74,9 @@
     if (indexPath.row == 0) {
         return 67;
     } else if(indexPath.row == 1) {
-        return 455;
-    } else if (indexPath.row == 2){
-        return 84;
+        return 220;
     } else {
-        return 215;
+        return 84;
     }
 }
 

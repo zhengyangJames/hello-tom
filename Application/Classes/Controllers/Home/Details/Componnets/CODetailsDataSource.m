@@ -24,7 +24,7 @@
     if (self) {
         self.controller = controller;
         [tableView registerNib:[UINib nibWithNibName:[CODetailsPhotoCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsPhotoCell identifier]];
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsMapCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsMapCell identifier]];
+//        [tableView registerNib:[UINib nibWithNibName:[CODetailsMapCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsMapCell identifier]];
 //        [tableView registerNib:[UINib nibWithNibName:[CODetailsAccessoryCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsAccessoryCell identifier]];
         [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectTBVCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectTBVCell identifier]];
         [tableView registerNib:[UINib nibWithNibName:[CODetailsTextCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsTextCell identifier]];
@@ -80,11 +80,11 @@
 //    return cell;
 //}
 
-- (CODetailsMapCell*)_mapCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
-    CODetailsMapCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsMapCell identifier] forIndexPath:indexPath];
-    
-    return cell;
-}
+//- (CODetailsMapCell*)_mapCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
+//    CODetailsMapCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsMapCell identifier] forIndexPath:indexPath];
+//    
+//    return cell;
+//}
 
 //- (CODetailsSectionCell*)_sectionCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
 //    CODetailsSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsSectionCell identifier] forIndexPath:indexPath];
@@ -112,7 +112,7 @@
 }
 
 - (NSInteger)_detailsNumberOfRowInSection:(NSInteger)section {
-    return 4;
+    return 3;
 }
 
 - (UITableViewCell*)_tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -120,10 +120,8 @@
         return [self photoCellForTableView:tableView indexPath:indexPath];
     } else if(indexPath.row == 1) {
         return [self _projectCellForTableView:tableView indexPath:indexPath];
-    } else if (indexPath.row == 2) {
-        return [self textCellForTableView:tableView indexPath:indexPath];
     } else {
-        return [self _mapCellForTableView:tableView indexPath:indexPath];
+        return [self textCellForTableView:tableView indexPath:indexPath];
     }
     return  nil;
 }

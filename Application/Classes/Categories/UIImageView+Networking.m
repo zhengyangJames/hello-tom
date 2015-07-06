@@ -7,7 +7,6 @@
 //
 
 #import "UIImageView+Networking.h"
-#import "TNNetWorking.h"
 
 //CompletionBlock ImageDownloader which get actual Image on succes and error on failure in completionBlock
 typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSError *error);

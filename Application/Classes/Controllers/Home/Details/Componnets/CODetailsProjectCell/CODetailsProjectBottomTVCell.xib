@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
@@ -11,61 +12,57 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CODetailsProjectBottomTVCell"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9i-i8-F8E" userLabel="Button View">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU9-ZL-aYu" customClass="COPositive_NagitiveButton">
-                            <rect key="frame" x="65" y="9" width="190" height="39"/>
-                            <color key="backgroundColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="39" id="Fty-cS-7Dm"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
-                            <state key="normal" title="I'm interested">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szA-tN-LfO" customClass="COPositive_NagitiveButton">
-                            <rect key="frame" x="65" y="63" width="190" height="39"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
-                            <state key="normal" title="I've Questions">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="questions" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="FU9-ZL-aYu" firstAttribute="leading" secondItem="v9i-i8-F8E" secondAttribute="leading" constant="65" id="2Bz-Za-QcZ"/>
-                        <constraint firstItem="szA-tN-LfO" firstAttribute="leading" secondItem="FU9-ZL-aYu" secondAttribute="leading" id="EVc-ig-DlD"/>
-                        <constraint firstAttribute="trailing" secondItem="FU9-ZL-aYu" secondAttribute="trailing" constant="65" id="WOD-2y-vdy"/>
-                        <constraint firstItem="szA-tN-LfO" firstAttribute="width" secondItem="FU9-ZL-aYu" secondAttribute="width" id="Zb9-tK-gF8"/>
-                        <constraint firstItem="szA-tN-LfO" firstAttribute="height" secondItem="FU9-ZL-aYu" secondAttribute="height" id="dZE-1u-kWM"/>
-                        <constraint firstItem="FU9-ZL-aYu" firstAttribute="top" secondItem="v9i-i8-F8E" secondAttribute="top" constant="9" id="hFR-5d-IO8"/>
-                        <constraint firstItem="szA-tN-LfO" firstAttribute="top" secondItem="FU9-ZL-aYu" secondAttribute="bottom" constant="15" id="tmL-j0-6T7"/>
-                    </constraints>
-                </view>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="v9i-i8-F8E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="B7v-lL-G6a"/>
-                <constraint firstAttribute="bottom" secondItem="v9i-i8-F8E" secondAttribute="bottom" id="HaF-2y-zfI"/>
-                <constraint firstAttribute="trailing" secondItem="v9i-i8-F8E" secondAttribute="trailing" id="WQJ-PT-d4q"/>
-                <constraint firstItem="v9i-i8-F8E" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ePy-av-GW8"/>
-            </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="172" y="261"/>
-        </view>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="CGP-sd-fjX" customClass="CODetailsProjectBottomTVCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CGP-sd-fjX" id="gGp-lE-HWD">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU9-ZL-aYu" customClass="COPositive_NagitiveButton">
+                        <rect key="frame" x="65" y="12" width="190" height="39"/>
+                        <color key="backgroundColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="39" id="SHQ-Gn-CaA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                        <state key="normal" title="I'm interested">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="__actionInterested:" destination="CGP-sd-fjX" eventType="touchUpInside" id="AhP-IJ-Y5N"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szA-tN-LfO" customClass="COPositive_NagitiveButton">
+                        <rect key="frame" x="65" y="61" width="190" height="39"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                        <state key="normal" title="I've Questions">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="questions" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="__actionQuestions:" destination="CGP-sd-fjX" eventType="touchUpInside" id="FTr-32-LxO"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="szA-tN-LfO" firstAttribute="top" secondItem="FU9-ZL-aYu" secondAttribute="bottom" constant="10" id="06w-ga-4rD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="FU9-ZL-aYu" secondAttribute="trailing" constant="57" id="Ejr-66-49J"/>
+                    <constraint firstItem="szA-tN-LfO" firstAttribute="height" secondItem="FU9-ZL-aYu" secondAttribute="height" id="Ltx-8s-DlM"/>
+                    <constraint firstItem="FU9-ZL-aYu" firstAttribute="top" secondItem="gGp-lE-HWD" secondAttribute="topMargin" constant="4" id="XvG-OA-vTN"/>
+                    <constraint firstItem="FU9-ZL-aYu" firstAttribute="leading" secondItem="gGp-lE-HWD" secondAttribute="leadingMargin" constant="57" id="apL-TI-1mz"/>
+                    <constraint firstItem="szA-tN-LfO" firstAttribute="width" secondItem="FU9-ZL-aYu" secondAttribute="width" id="dWR-0a-toQ"/>
+                    <constraint firstItem="szA-tN-LfO" firstAttribute="centerX" secondItem="FU9-ZL-aYu" secondAttribute="centerX" id="yGf-Jz-VHT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+            <point key="canvasLocation" x="42" y="308.5"/>
+        </tableViewCell>
     </objects>
 </document>

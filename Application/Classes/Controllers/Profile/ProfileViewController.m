@@ -228,6 +228,31 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     return NO;
 }
 
+- (NSString*)_getFormatStringAddress{
+    NSString *address1 = self.profileObject.address_1;
+    NSString *address2 = self.profileObject.address_2;
+    NSString *postCode = self.profileObject.region_state;
+    NSString *city = self.profileObject.city;
+    NSString *country = self.profileObject.country;
+    NSMutableString *stringFormat = [NSMutableString new];
+    if (address1) {
+        [stringFormat appendString:address1];
+    }
+    if (![address2 isEmpty]){
+        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",address2]];
+    }
+    if (![postCode isEmpty]){
+        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",postCode]];
+    }
+    if (![city isEmpty]){
+        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",city]];
+    }
+    if (![country isEmpty]) {
+        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",country]];
+    }
+    return stringFormat;
+}
+
 #pragma mark - Setter Getter
 
 - (NSMutableDictionary*)_setupAccessToken {
@@ -403,13 +428,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (AboutTableViewCell_Address*)_setupAboutCell_Address:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AboutTableViewCell_Address *cell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell_Address identifier] forIndexPath:indexPath];
-    NSString *address1 = self.profileObject.address_1;
-    NSString *address2 = self.profileObject.address_2;
-    NSString *postCode = self.profileObject.region_state;
-    NSString *city = self.profileObject.city;
-    NSString *country = self.profileObject.country;
-    NSString *all = [NSString stringWithFormat:@"%@ \n%@ \n%@ \n%@ \n%@",address1,address2,postCode,city,country];
-    cell.string = all;
+    cell.string = [self _getFormatStringAddress];
     [cell layoutIfNeeded];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

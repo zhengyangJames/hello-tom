@@ -5,7 +5,7 @@
 //  Created by TUONG DANG on 6/26/15.
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
-#import "BaseView.h"
+#import "BaseTableViewCell.h"
 
 typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
     CODetailsProjectActionInterested,
@@ -14,9 +14,11 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 
 @protocol CODetailsProjectBottomTVCellDelegate;
 
-@interface CODetailsProjectBottomTVCell : BaseView
+@interface CODetailsProjectBottomTVCell : BaseTableViewCell
 
 @property (weak, nonatomic) id<CODetailsProjectBottomTVCellDelegate> delegate;
+@property (strong, nonatomic) NSDictionary *object;
+
 
 @end
 
