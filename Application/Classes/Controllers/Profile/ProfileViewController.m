@@ -161,6 +161,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
             }];
         }else {
             [[kAppDelegate baseTabBarController] setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         }
     };
 }

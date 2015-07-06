@@ -204,12 +204,13 @@
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
         [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
         vcLogin.actionLogin = ^(BOOL CancelOrLogin){
-            if (CancelOrLogin) {
-                
+            if (!CancelOrLogin) {
+                [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
+                    [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+                }];
             }
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-                [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
-            }];
         };
     }else {
         [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
