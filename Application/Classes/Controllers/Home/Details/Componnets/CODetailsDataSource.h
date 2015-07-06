@@ -13,12 +13,13 @@
 #import "CODetailsProjectTBVCell.h"
 #import "CODetailsTextCell.h"
 #import "CODetailsSectionCell.h"
+#import "CODetailsOffersObject.h"
 
 @protocol CODetailsProjectCellDelegate;
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
-@property (strong, nonatomic) NSDictionary *object;
+@property (strong, nonatomic) CODetailsOffersObject *object;
 
 - (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate>)controller tableView:(UITableView*)tableView ;
 

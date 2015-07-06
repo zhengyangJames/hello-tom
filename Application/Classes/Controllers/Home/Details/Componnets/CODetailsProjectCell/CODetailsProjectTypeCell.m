@@ -10,9 +10,7 @@
 
 @interface CODetailsProjectTypeCell ()
 {
-    __weak IBOutlet UILabel *_lblType;
-    __weak IBOutlet UILabel *_lblDetails;
-    __weak IBOutlet UIImageView *_imageLogo;
+
 }
 
 @end

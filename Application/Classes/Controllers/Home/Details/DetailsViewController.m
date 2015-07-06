@@ -11,6 +11,7 @@
 #import "CODetailsDelegate.h"
 #import "COSlidingView.h"
 #import "WSURLSessionManager+ListHome.h"
+#import "UIImageView+Networking.h"
 
 @interface DetailsViewController () 
 {
@@ -47,22 +48,24 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     [self _setupHeaderView];
-    [self _setSliderHeaderView];
     self.detailsDataSource    = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.detailsDataSource.object = self.objectDetails;
         [self.tableView reloadData];
     }];
 }
 
+#pragma mark Set Get 
+- (void)setObjectDetails:(CODetailsOffersObject *)objectDetails {
+    _objectDetails = objectDetails;
+}
 
 #pragma Web Service 
-- (void)_callWSgetDetails {
 
-}
 
 #pragma mark - Action 
 - (IBAction)__actionBack:(id)sender {
@@ -73,15 +76,16 @@
 - (void)_setupHeaderView {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 200)];
     [headerView setBackgroundColor:[UIColor clearColor]];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, headerView.frame.size.width, headerView.frame.size.height)];
+    imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    NSURL *url = [NSURL URLWithString:[self.objectDetails valueForKey:@"imageBig"]];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
+    [imageView setImage:[UIImage imageNamed:@"ic_placeholder"]];
+    [imageView setImageURL:url];
+    [headerView addSubview:imageView];
+    [imageView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
     self.tableView.tableHeaderView = headerView;
-}
-
-- (void)_setSliderHeaderView {
-    COSlidingView *viewSliding = [[COSlidingView alloc] initWithNibName:[COSlidingView identifier]];
-    viewSliding.translatesAutoresizingMaskIntoConstraints = NO;
-    viewSliding.arrayImage = @[@"19.jpg",@"18.jpg",@"20.jpg",@"17.jpg",@"15.jpg"];
-    [_headerSliderView addSubview:viewSliding];
-    [viewSliding pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
 }
 
 @end

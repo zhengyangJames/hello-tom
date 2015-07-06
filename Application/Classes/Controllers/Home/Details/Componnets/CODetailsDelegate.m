@@ -58,19 +58,15 @@
         }
     } else if(indexPath.row == 1) {
         return 455;
-    } else if (indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 16 ){
+    } else if (indexPath.row == 2){
         if (IS_IOS8_OR_ABOVE) {
             return  UITableViewAutomaticDimension;
         } else {
             id cell = [dataSource textCellForTableView:tableView indexPath:indexPath];
             height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
         }
-    } else if (indexPath.row == 5 || indexPath.row == 7 || indexPath.row == 10) {
-        return 44;
-    } else if (indexPath.row == 17) {
-        return 215;
     } else {
-        return 44;
+        return 215;
     }
     return height;
 }
@@ -81,14 +77,10 @@
         return 67;
     } else if(indexPath.row == 1) {
         return 455;
-    } else if (indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 16 ){
+    } else if (indexPath.row == 2){
         return 84;
-    } else if (indexPath.row == 5 || indexPath.row == 7 || indexPath.row == 10) {
-        return 44;
-    } else if (indexPath.row == 17) {
-        return 215;
     } else {
-        return 44;
+        return 215;
     }
 }
 

@@ -10,8 +10,11 @@
 #import "CODetailsAccessoryCell.h"
 #import "CODetailsProjectTBVCell.h"
 #import "CODetailsDelegate.h"
+#import "CODetailsOffersObject.h"
 
 @interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsController>
+
+@property (strong, nonatomic) CODetailsOffersObject *objectDetails;
 
 @end
 

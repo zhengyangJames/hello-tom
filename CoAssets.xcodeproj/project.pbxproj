@@ -39,7 +39,6 @@
 		7F325F861B40E50800116445 /* CODetailsAccessoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DD91B40E50800116445 /* CODetailsAccessoryCell.xib */; };
 		7F325F871B40E50800116445 /* CODetailsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DDB1B40E50800116445 /* CODetailsDataSource.m */; };
 		7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DDD1B40E50800116445 /* CODetailsDelegate.m */; };
-		7F325F891B40E50800116445 /* CoDetailsHeaderTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DDE1B40E50800116445 /* CoDetailsHeaderTableView.xib */; };
 		7F325F8A1B40E50800116445 /* CODetailsMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DE01B40E50800116445 /* CODetailsMapCell.m */; };
 		7F325F8B1B40E50800116445 /* CODetailsMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DE11B40E50800116445 /* CODetailsMapCell.xib */; };
 		7F325F8C1B40E50800116445 /* CODetailsPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DE31B40E50800116445 /* CODetailsPhotoCell.m */; };
@@ -50,7 +49,6 @@
 		7F325F911B40E50800116445 /* CODetailsProjectTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DEB1B40E50800116445 /* CODetailsProjectTBVCell.xib */; };
 		7F325F921B40E50800116445 /* CODetailsProjectTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */; };
 		7F325F931B40E50800116445 /* CODetailsProjectTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */; };
-		7F325F941B40E50800116445 /* CODetailsProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DEF1B40E50800116445 /* CODetailsProjectCell.xib */; };
 		7F325F951B40E50800116445 /* CODetailsSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DF11B40E50800116445 /* CODetailsSectionCell.m */; };
 		7F325F961B40E50800116445 /* CODetailsSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DF21B40E50800116445 /* CODetailsSectionCell.xib */; };
 		7F325F971B40E50800116445 /* CODetailsTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DF41B40E50800116445 /* CODetailsTextCell.m */; };
@@ -375,7 +373,6 @@
 		7F325DDB1B40E50800116445 /* CODetailsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsDataSource.m; sourceTree = "<group>"; };
 		7F325DDC1B40E50800116445 /* CODetailsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsDelegate.h; sourceTree = "<group>"; };
 		7F325DDD1B40E50800116445 /* CODetailsDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsDelegate.m; sourceTree = "<group>"; };
-		7F325DDE1B40E50800116445 /* CoDetailsHeaderTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoDetailsHeaderTableView.xib; sourceTree = "<group>"; };
 		7F325DDF1B40E50800116445 /* CODetailsMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsMapCell.h; sourceTree = "<group>"; };
 		7F325DE01B40E50800116445 /* CODetailsMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsMapCell.m; sourceTree = "<group>"; };
 		7F325DE11B40E50800116445 /* CODetailsMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsMapCell.xib; sourceTree = "<group>"; };
@@ -391,7 +388,6 @@
 		7F325DEC1B40E50800116445 /* CODetailsProjectTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectTypeCell.h; sourceTree = "<group>"; };
 		7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectTypeCell.m; sourceTree = "<group>"; };
 		7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectTypeCell.xib; sourceTree = "<group>"; };
-		7F325DEF1B40E50800116445 /* CODetailsProjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectCell.xib; sourceTree = "<group>"; };
 		7F325DF01B40E50800116445 /* CODetailsSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsSectionCell.h; sourceTree = "<group>"; };
 		7F325DF11B40E50800116445 /* CODetailsSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsSectionCell.m; sourceTree = "<group>"; };
 		7F325DF21B40E50800116445 /* CODetailsSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsSectionCell.xib; sourceTree = "<group>"; };
@@ -989,14 +985,12 @@
 				7F325DD71B40E50800116445 /* CODetailsAccessoryCell.h */,
 				7F325DD81B40E50800116445 /* CODetailsAccessoryCell.m */,
 				7F325DD91B40E50800116445 /* CODetailsAccessoryCell.xib */,
-				7F325DDE1B40E50800116445 /* CoDetailsHeaderTableView.xib */,
 				7F325DDF1B40E50800116445 /* CODetailsMapCell.h */,
 				7F325DE01B40E50800116445 /* CODetailsMapCell.m */,
 				7F325DE11B40E50800116445 /* CODetailsMapCell.xib */,
 				7F325DE21B40E50800116445 /* CODetailsPhotoCell.h */,
 				7F325DE31B40E50800116445 /* CODetailsPhotoCell.m */,
 				7F325DE41B40E50800116445 /* CODetailsPhotoCell.xib */,
-				7F325DEF1B40E50800116445 /* CODetailsProjectCell.xib */,
 				7F325DF01B40E50800116445 /* CODetailsSectionCell.h */,
 				7F325DF11B40E50800116445 /* CODetailsSectionCell.m */,
 				7F325DF21B40E50800116445 /* CODetailsSectionCell.xib */,
@@ -1014,15 +1008,15 @@
 		7F325DE51B40E50800116445 /* CODetailsProjectCell */ = {
 			isa = PBXGroup;
 			children = (
+				7F325DEC1B40E50800116445 /* CODetailsProjectTypeCell.h */,
+				7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */,
+				7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */,
 				7F325DE61B40E50800116445 /* CODetailsProjectBottomTVCell.h */,
 				7F325DE71B40E50800116445 /* CODetailsProjectBottomTVCell.m */,
 				7F325DE81B40E50800116445 /* CODetailsProjectBottomTVCell.xib */,
 				7F325DE91B40E50800116445 /* CODetailsProjectTBVCell.h */,
 				7F325DEA1B40E50800116445 /* CODetailsProjectTBVCell.m */,
 				7F325DEB1B40E50800116445 /* CODetailsProjectTBVCell.xib */,
-				7F325DEC1B40E50800116445 /* CODetailsProjectTypeCell.h */,
-				7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */,
-				7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */,
 			);
 			path = CODetailsProjectCell;
 			sourceTree = "<group>";
@@ -1924,7 +1918,6 @@
 				7F325FA31B40E50800116445 /* LoginViewController.xib in Resources */,
 				7F3260571B40E50800116445 /* ic_setting@3x.png in Resources */,
 				7F32604B1B40E50800116445 /* ic_line_char@2x.png in Resources */,
-				7F325F941B40E50800116445 /* CODetailsProjectCell.xib in Resources */,
 				7F32604C1B40E50800116445 /* ic_line_char@3x.png in Resources */,
 				7F3260311B40E50800116445 /* Ic_back@2x.png in Resources */,
 				7F325FAD1B40E50800116445 /* EditCompanyVC.xib in Resources */,
@@ -2027,7 +2020,6 @@
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
 				7F3260761B40E50800116445 /* FilterList.plist in Resources */,
 				7F3260611B40E50800116445 /* 15.jpg in Resources */,
-				7F325F891B40E50800116445 /* CoDetailsHeaderTableView.xib in Resources */,
 				7F32603C1B40E50800116445 /* ic_contac_2_heightlight@2x.png in Resources */,
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,

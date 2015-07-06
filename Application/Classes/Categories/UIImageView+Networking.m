@@ -31,7 +31,7 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 
 
 @implementation ImageDownloader
-static  NSInteger i = 0;
+//static  NSInteger i = 0;
 
 
 - (ImageDownloader *)startDownloadForURL:(NSURL *)URL
@@ -58,7 +58,7 @@ static  NSInteger i = 0;
 }
 
 - (void)start {
-    DBG(@"---download---%tu",i++);
+//    DBG(@"---download---%tu",i++);
     NSURLSessionDownloadTask *downloadImage = [self.connectionSession downloadTaskWithRequest:[NSURLRequest requestWithURL:self.URL]
                                                                             completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         if (!error) {

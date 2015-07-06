@@ -74,8 +74,9 @@
 }
 
 #pragma mark - Private
-- (void)_pushDetailVcWithID {
+- (void)_pushDetailVcWithID:(CODetailsOffersObject*)obj {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
+    vc.objectDetails = obj;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -178,12 +179,12 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            DBG(@"%@",responseObject);
+            [self _pushDetailVcWithID:responseObject];
         } else {
             [UIHelper showError:error];
         }
+        [UIHelper hideLoadingFromView:self.view];
     }];
-    [UIHelper hideLoadingFromView:self.view];
 }
 
 #pragma mark - TableView Delegate
@@ -207,13 +208,11 @@
                 
             }
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-               // [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
-                [self _pushDetailVcWithID];
+                [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
             }];
         };
     }else {
-        [self _pushDetailVcWithID];
-        //[self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+        [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "CODetailsPhotoCell.h"
+#import "UIImageView+Networking.h"
 
 #define kCORNER_RADIUS_IMAGE 6
 
@@ -42,7 +43,9 @@
 - (void)setObject:(NSDictionary *)object {
     _object = object;
     _detailsTextView.text = [object valueForKeyNotNull:@"details"];
-    [_image setImage:[UIImage imageNamed:[object valueForKeyNotNull:@"images"]]];
+    NSURL *url = [NSURL URLWithString:[object valueForKeyNotNull:@"images"]];
+    [_image setImage:[UIImage imageNamed:@"ic_placeholder"]];
+    [_image setImageURL:url];
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
