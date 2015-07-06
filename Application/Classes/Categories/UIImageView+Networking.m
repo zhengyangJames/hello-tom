@@ -7,6 +7,7 @@
 //
 
 #import "UIImageView+Networking.h"
+#import "TNNetWorking.h"
 
 //CompletionBlock ImageDownloader which get actual Image on succes and error on failure in completionBlock
 typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSError *error);
@@ -15,6 +16,7 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 //performs the download task on the given session and call the respective completionBlock
 
 @interface ImageDownloader : NSObject
+@property(nonatomic, strong) NSOperationQueue *netOperationQueue;
 @property (nonatomic, strong) NSURLSession *connectionSession;
 @property (nonatomic, strong) NSURL *URL;
 @property (nonatomic, strong) NSCache *cache;
@@ -29,6 +31,8 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 
 
 @implementation ImageDownloader
+static  NSInteger i = 0;
+
 
 - (ImageDownloader *)startDownloadForURL:(NSURL *)URL
                                    cache:(NSCache *)cache
@@ -54,6 +58,7 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 }
 
 - (void)start {
+    DBG(@"---download---%tu",i++);
     NSURLSessionDownloadTask *downloadImage = [self.connectionSession downloadTaskWithRequest:[NSURLRequest requestWithURL:self.URL]
                                                                             completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         if (!error) {
@@ -75,7 +80,6 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 @end
 
 
-
 @implementation UIImageView (Networking)
 
 const char *keyForURLID = "imageURLID";
@@ -93,11 +97,9 @@ const char *keyForCompletionBlock = "completionBlockID";
 
 + (NSCache *)defaultCache {
     static NSCache *sharedCache = nil;
-    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedCache = [[NSCache alloc] init];
-        
         [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidReceiveMemoryWarningNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(__unused NSNotification *note) {
             [sharedCache removeAllObjects];
         }];
@@ -108,10 +110,8 @@ const char *keyForCompletionBlock = "completionBlockID";
 
 + (NSURLSession *)defaultSession {
     static NSURLSession *sharedSession = nil;
-    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
         sharedSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     });
     return sharedSession;
@@ -126,7 +126,6 @@ const char *keyForCompletionBlock = "completionBlockID";
 }
 
 - (void)setImageURL:(NSURL *)imageURL withCompletionBlock:(DownloadCompletionBlock)block {
-//    DBG(@"------%@----",[imageURL absoluteString]);
     self.URLId = [imageURL absoluteString];
     UIImage *img = [[UIImageView defaultCache] objectForKey:imageURL];
     if (!img) {
@@ -146,12 +145,16 @@ const char *keyForCompletionBlock = "completionBlockID";
                     }
                 }
             }];
-            
         }];
+        
     }
     else {
         self.image = img;
     }
+}
+
+- (void)cancelDownload {
+
 }
 
 @end

@@ -51,12 +51,13 @@
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
                              delegate:self
                                   tag:0
                      arrayTitleButton:nil];
+    [self endEditing:YES];
 }
 
 @end

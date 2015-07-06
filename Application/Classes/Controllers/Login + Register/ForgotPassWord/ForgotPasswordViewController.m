@@ -34,7 +34,7 @@
 
 #pragma mark - Private
 - (void)_setupShowAleartViewWithTitle:(NSString*)message tag:(NSInteger)tag {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
                              delegate:self

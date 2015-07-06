@@ -14,7 +14,7 @@
 #import "HomeListViewController.h"
 #import "SettingViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
 @property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
 @property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
@@ -27,6 +27,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = self.baseTabBarController;
+    self.baseTabBarController.delegate = self;
     [self _setUp3rdSDKs];
     [self _setUpDatabase];
     [self.window makeKeyAndVisible];
@@ -141,6 +142,12 @@
     }
     
     return _persistentStoreCoordinator;
+}
+
+#pragma mark - Tabbar Delegate 
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    return NO;
 }
 
 

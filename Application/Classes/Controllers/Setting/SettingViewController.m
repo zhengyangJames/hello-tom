@@ -165,7 +165,7 @@
     BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
     [[kAppDelegate baseTabBarController] presentViewController:base
                                                       animated:YES completion:nil];
-    vcLogin.actionLogin = ^(id profileObj,BOOL CancelOrLogin){
+    vcLogin.actionLogin = ^(BOOL CancelOrLogin){
         if (CancelOrLogin) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
                 [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];

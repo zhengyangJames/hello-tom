@@ -53,7 +53,7 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"CoAssests");
+    self.navigationItem.title = m_string(@"CoAssets");
     [self _setupLeftBarButton];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
@@ -202,7 +202,7 @@
         __weak LoginViewController *weakLogin = vcLogin;
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
         [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
-        vcLogin.actionLogin = ^(id profileObj,BOOL CancelOrLogin){
+        vcLogin.actionLogin = ^(BOOL CancelOrLogin){
             if (CancelOrLogin) {
                 
             }

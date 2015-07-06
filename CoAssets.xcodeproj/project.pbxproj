@@ -35,7 +35,6 @@
 		7F325F811B40E50800116445 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DCC1B40E50800116445 /* NSString+Validation.m */; };
 		7F325F821B40E50800116445 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DCE1B40E50800116445 /* UIImage+animatedGIF.m */; };
 		7F325F831B40E50800116445 /* UIImage+Scaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DD01B40E50800116445 /* UIImage+Scaling.m */; };
-		7F325F841B40E50800116445 /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DD21B40E50800116445 /* UIImageView+Networking.m */; };
 		7F325F851B40E50800116445 /* CODetailsAccessoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DD81B40E50800116445 /* CODetailsAccessoryCell.m */; };
 		7F325F861B40E50800116445 /* CODetailsAccessoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DD91B40E50800116445 /* CODetailsAccessoryCell.xib */; };
 		7F325F871B40E50800116445 /* CODetailsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DDB1B40E50800116445 /* CODetailsDataSource.m */; };
@@ -114,7 +113,6 @@
 		7F325FD31B40E50800116445 /* COListContactObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E7A1B40E50800116445 /* COListContactObject.m */; };
 		7F325FD51B40E50800116445 /* COLIstOffersObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E7E1B40E50800116445 /* COLIstOffersObject.m */; };
 		7F325FD91B40E50800116445 /* COListProfileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E861B40E50800116445 /* COListProfileObject.m */; };
-		7F325FDA1B40E50800116445 /* WSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E891B40E50800116445 /* WSManager.m */; };
 		7F325FDB1B40E50800116445 /* WSURLSessionManager+ListContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E8B1B40E50800116445 /* WSURLSessionManager+ListContact.m */; };
 		7F325FDC1B40E50800116445 /* WSURLSessionManager+ListHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E8D1B40E50800116445 /* WSURLSessionManager+ListHome.m */; };
 		7F325FDD1B40E50800116445 /* WSURLSessionManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E8F1B40E50800116445 /* WSURLSessionManager+User.m */; };
@@ -288,10 +286,12 @@
 		7F85292D1B43935B00CFAEB5 /* Thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291D1B43935B00CFAEB5 /* Thailand.png */; };
 		7F85292F1B43935B00CFAEB5 /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291F1B43935B00CFAEB5 /* United States.png */; };
 		7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529201B43935B00CFAEB5 /* Vietnam.png */; };
-		7F9FED791B43CE22006FF0EB /* NSUserDefaultHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FED781B43CE22006FF0EB /* NSUserDefaultHelper.m */; };
 		7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */; };
 		7FAB4E501B468BCA0012E6D0 /* AboutTableViewCell_Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */; };
 		7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */; };
+		7FAC2CF51B48E2560038B409 /* LoginHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC2CF41B48E2560038B409 /* LoginHelpers.m */; };
+		7FAC2CF81B491C3E0038B409 /* TNNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC2CF71B491C3E0038B409 /* TNNetWorking.m */; };
+		7FBDAA9B1B4A15BA007F7C6B /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */; };
 		7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
 		7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6D5121B4526240098EC8D /* COLoginManager.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
@@ -368,8 +368,6 @@
 		7F325DCE1B40E50800116445 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		7F325DCF1B40E50800116445 /* UIImage+Scaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scaling.h"; sourceTree = "<group>"; };
 		7F325DD01B40E50800116445 /* UIImage+Scaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scaling.m"; sourceTree = "<group>"; };
-		7F325DD11B40E50800116445 /* UIImageView+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
-		7F325DD21B40E50800116445 /* UIImageView+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
 		7F325DD71B40E50800116445 /* CODetailsAccessoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsAccessoryCell.h; sourceTree = "<group>"; };
 		7F325DD81B40E50800116445 /* CODetailsAccessoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsAccessoryCell.m; sourceTree = "<group>"; };
 		7F325DD91B40E50800116445 /* CODetailsAccessoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsAccessoryCell.xib; sourceTree = "<group>"; };
@@ -495,8 +493,6 @@
 		7F325E7E1B40E50800116445 /* COLIstOffersObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLIstOffersObject.m; sourceTree = "<group>"; };
 		7F325E851B40E50800116445 /* COListProfileObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COListProfileObject.h; sourceTree = "<group>"; };
 		7F325E861B40E50800116445 /* COListProfileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COListProfileObject.m; sourceTree = "<group>"; };
-		7F325E881B40E50800116445 /* WSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSManager.h; sourceTree = "<group>"; };
-		7F325E891B40E50800116445 /* WSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSManager.m; sourceTree = "<group>"; };
 		7F325E8A1B40E50800116445 /* WSURLSessionManager+ListContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+ListContact.h"; sourceTree = "<group>"; };
 		7F325E8B1B40E50800116445 /* WSURLSessionManager+ListContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+ListContact.m"; sourceTree = "<group>"; };
 		7F325E8C1B40E50800116445 /* WSURLSessionManager+ListHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+ListHome.h"; sourceTree = "<group>"; };
@@ -733,12 +729,16 @@
 		7F85291D1B43935B00CFAEB5 /* Thailand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thailand.png; sourceTree = "<group>"; };
 		7F85291F1B43935B00CFAEB5 /* United States.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United States.png"; sourceTree = "<group>"; };
 		7F8529201B43935B00CFAEB5 /* Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vietnam.png; sourceTree = "<group>"; };
-		7F9FED771B43CE22006FF0EB /* NSUserDefaultHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultHelper.h; sourceTree = "<group>"; };
-		7F9FED781B43CE22006FF0EB /* NSUserDefaultHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultHelper.m; sourceTree = "<group>"; };
 		7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait_ph.jpg; sourceTree = "<group>"; };
 		7FAB4E4D1B468BCA0012E6D0 /* AboutTableViewCell_Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell_Address.h; sourceTree = "<group>"; };
 		7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell_Address.m; sourceTree = "<group>"; };
 		7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell_Address.xib; sourceTree = "<group>"; };
+		7FAC2CF31B48E2560038B409 /* LoginHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHelpers.h; sourceTree = "<group>"; };
+		7FAC2CF41B48E2560038B409 /* LoginHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelpers.m; sourceTree = "<group>"; };
+		7FAC2CF61B491C3E0038B409 /* TNNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNetWorking.h; sourceTree = "<group>"; };
+		7FAC2CF71B491C3E0038B409 /* TNNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNetWorking.m; sourceTree = "<group>"; };
+		7FBDAA991B4A15BA007F7C6B /* UIImageView+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
+		7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
 		7FC6D50F1B44D4090098EC8D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United Kingdom.png"; sourceTree = "<group>"; };
 		7FC6D5111B4526240098EC8D /* COLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLoginManager.h; sourceTree = "<group>"; };
 		7FC6D5121B4526240098EC8D /* COLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLoginManager.m; sourceTree = "<group>"; };
@@ -935,6 +935,8 @@
 		7F325DC81B40E50800116445 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7FBDAA991B4A15BA007F7C6B /* UIImageView+Networking.h */,
+				7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */,
 				7F325DC91B40E50800116445 /* NSArray+Sort.h */,
 				7F325DCA1B40E50800116445 /* NSArray+Sort.m */,
 				7F325DCB1B40E50800116445 /* NSString+Validation.h */,
@@ -943,8 +945,6 @@
 				7F325DCE1B40E50800116445 /* UIImage+animatedGIF.m */,
 				7F325DCF1B40E50800116445 /* UIImage+Scaling.h */,
 				7F325DD01B40E50800116445 /* UIImage+Scaling.m */,
-				7F325DD11B40E50800116445 /* UIImageView+Networking.h */,
-				7F325DD21B40E50800116445 /* UIImageView+Networking.m */,
 				7FF529F61B413E4A0072F6F4 /* NSString+MD5.h */,
 				7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */,
 			);
@@ -1375,8 +1375,8 @@
 				7F325E721B40E50800116445 /* MKMapView+ZoomLevel.m */,
 				7F325E731B40E50800116445 /* UIHelper.h */,
 				7F325E741B40E50800116445 /* UIHelper.m */,
-				7F9FED771B43CE22006FF0EB /* NSUserDefaultHelper.h */,
-				7F9FED781B43CE22006FF0EB /* NSUserDefaultHelper.m */,
+				7FAC2CF31B48E2560038B409 /* LoginHelpers.h */,
+				7FAC2CF41B48E2560038B409 /* LoginHelpers.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1410,8 +1410,8 @@
 		7F325E871B40E50800116445 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7F325E881B40E50800116445 /* WSManager.h */,
-				7F325E891B40E50800116445 /* WSManager.m */,
+				7FAC2CF61B491C3E0038B409 /* TNNetWorking.h */,
+				7FAC2CF71B491C3E0038B409 /* TNNetWorking.m */,
 				7F325E901B40E50800116445 /* WSURLSessionManager.h */,
 				7F325E911B40E50800116445 /* WSURLSessionManager.m */,
 				7F325E8A1B40E50800116445 /* WSURLSessionManager+ListContact.h */,
@@ -2110,6 +2110,7 @@
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
 				7F325FF91B40E50800116445 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7F325FB01B40E50800116445 /* PasswordTableViewCell.m in Sources */,
+				7FAC2CF51B48E2560038B409 /* LoginHelpers.m in Sources */,
 				7F325FD01B40E50800116445 /* MKMapView+ZoomLevel.m in Sources */,
 				7F325FFC1B40E50800116445 /* NSManagedObject+MagicalRecord.m in Sources */,
 				0ECA88411B27CA7100B5656F /* NMView.m in Sources */,
@@ -2127,7 +2128,6 @@
 				7F325FE91B40E50800116445 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				7F325FDD1B40E50800116445 /* WSURLSessionManager+User.m in Sources */,
 				7F325FBD1B40E50800116445 /* WebViewSetting.m in Sources */,
-				7F9FED791B43CE22006FF0EB /* NSUserDefaultHelper.m in Sources */,
 				0ECA88451B27CA7100B5656F /* NSString+Helpers.m in Sources */,
 				7F325F7E1B40E50800116445 /* BaseView.m in Sources */,
 				7F325FF41B40E50800116445 /* NSEntityDescription+MagicalDataImport.m in Sources */,
@@ -2156,10 +2156,10 @@
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				7F325FE51B40E50800116445 /* AFURLRequestSerialization.m in Sources */,
 				7F325FC91B40E50800116445 /* COPositive&NagitiveButton.m in Sources */,
+				7FAC2CF81B491C3E0038B409 /* TNNetWorking.m in Sources */,
 				7F325FD21B40E50800116445 /* CODummyDataManager.m in Sources */,
 				7F325FFF1B40E50800116445 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				7F325FCF1B40E50800116445 /* LoadFileManager.m in Sources */,
-				7F325FDA1B40E50800116445 /* WSManager.m in Sources */,
 				7F325FEE1B40E50800116445 /* UIRefreshControl+AFNetworking.m in Sources */,
 				7F32601B1B40E50800116445 /* main.m in Sources */,
 				7F325FE31B40E50800116445 /* AFSecurityPolicy.m in Sources */,
@@ -2185,7 +2185,6 @@
 				7F325FCA1B40E50800116445 /* COSlidingCell.m in Sources */,
 				7F3260051B40E50800116445 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				7F325F831B40E50800116445 /* UIImage+Scaling.m in Sources */,
-				7F325F841B40E50800116445 /* UIImageView+Networking.m in Sources */,
 				7F3260161B40E50800116445 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				7FAB4E501B468BCA0012E6D0 /* AboutTableViewCell_Address.m in Sources */,
 				7F325FF81B40E50800116445 /* NSString+MagicalDataImport.m in Sources */,
@@ -2216,6 +2215,7 @@
 				7F325F791B40E50800116445 /* AppDelegate.m in Sources */,
 				0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */,
 				7F325FAA1B40E50800116445 /* CompanyTableViewCell.m in Sources */,
+				7FBDAA9B1B4A15BA007F7C6B /* UIImageView+Networking.m in Sources */,
 				7F325F9B1B40E50800116445 /* HomeListViewCell.m in Sources */,
 				7F325FFB1B40E50800116445 /* NSManagedObject+MagicalFinders.m in Sources */,
 				7F325FC61B40E50800116445 /* DropListObject.m in Sources */,

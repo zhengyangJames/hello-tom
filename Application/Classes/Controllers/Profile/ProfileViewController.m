@@ -21,7 +21,6 @@
 #import "WSURLSessionManager+Profile.h"
 #import "LoginViewController.h"
 #import "WSURLSessionManager+User.h"
-#import "NSUserDefaultHelper.h"
 #import "AboutTableViewCell_Address.h"
 
 #define DEFAULT_HEIGHT_CELL             44
@@ -78,7 +77,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"CoAssests");
+    self.navigationItem.title = m_string(@"CoAssets");
     [self _setupHeaderTableView];
     [self _setupFooterTableView];
     _tableView.delegate   = self;
@@ -129,7 +128,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsChangePassword:[self _setupAccessToken] body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            DBG(@"%@",responseObject);
             [self _setupShowAleartViewWithTitle:@"Password changed successfully"];
         } else {
             [self _setupShowAleartViewWithTitle:@"Password not changed"];
@@ -154,7 +152,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [[kAppDelegate baseTabBarController].view.layer addAnimation:transition forKey:kCATransition];
     [[kAppDelegate baseTabBarController] presentViewController:base
                                                       animated:YES completion:nil];
-    vcLogin.actionLogin = ^(id profileObj,BOOL CancelOrLogin){
+    vcLogin.actionLogin = ^(BOOL CancelOrLogin){
         if (CancelOrLogin) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -214,7 +212,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+        [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
                                   message:m_string(message)
                              cancelButton:m_string(@"OK")
                                  delegate:self

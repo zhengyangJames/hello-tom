@@ -157,22 +157,21 @@
 
 - (BOOL)_isValidation {
     if ([emailNameTXT.text isEmpty]) {
-        [self _actionShowAleartViewWithTitle:@"Email  is required."];
         _currentField = emailNameTXT;
+        [self _actionShowAleartViewWithTitle:@"Email  is required."];
         return NO;
     } else if (![emailNameTXT.text isValidEmail]) {
-        [self _actionShowAleartViewWithTitle:@"Email is invalid."];
         _currentField = emailNameTXT;
+        [self _actionShowAleartViewWithTitle:@"Email is invalid."];
         return NO;
     } else if ([phoneNameTXT.text isEmpty]) {
-        [_currentField resignFirstResponder];
-        _currentField = nil;
         _currentField = phoneNameTXT;
         [self _actionShowAleartViewWithTitle:@"Phone is required."];
         return NO;
     } else if ([addressNameTXT.text isEmpty]) {
-        [self _actionShowAleartViewWithTitle:@"Address is required."];
         _currentField = addressNameTXT;
+        [self _actionShowAleartViewWithTitle:@"Address is required."];
+        
         return NO;
     }
     return YES;
@@ -219,7 +218,8 @@
 }
 
 - (void)_actionShowAleartViewWithTitle:(NSString*)message {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+    [self.view endEditing:YES];
+    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
                              delegate:self

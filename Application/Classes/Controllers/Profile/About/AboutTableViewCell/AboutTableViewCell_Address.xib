@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="75" translatesAutoresizingMaskIntoConstraints="NO" id="wfN-nd-StI">
-                        <rect key="frame" x="8" y="8" width="75" height="21"/>
+                        <rect key="frame" x="16" y="8" width="75" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Vus-6T-IYK"/>
                             <constraint firstAttribute="width" constant="75" id="W7a-vJ-lrh"/>
@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="221" translatesAutoresizingMaskIntoConstraints="NO" id="hn9-6b-Pdl">
-                        <rect key="frame" x="91" y="8" width="221" height="27"/>
+                        <rect key="frame" x="99" y="8" width="205" height="27"/>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -40,10 +40,10 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hn9-6b-Pdl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="3YG-LZ-Ol7"/>
-                    <constraint firstItem="wfN-nd-StI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="7da-Ye-TfX"/>
-                    <constraint firstItem="wfN-nd-StI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="aUL-17-l1D"/>
-                    <constraint firstItem="hn9-6b-Pdl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="aaY-SF-Cev"/>
+                    <constraint firstItem="hn9-6b-Pdl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3YG-LZ-Ol7"/>
+                    <constraint firstItem="wfN-nd-StI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="7da-Ye-TfX"/>
+                    <constraint firstItem="wfN-nd-StI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="aUL-17-l1D"/>
+                    <constraint firstItem="hn9-6b-Pdl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-16" id="aaY-SF-Cev"/>
                     <constraint firstAttribute="bottomMargin" secondItem="hn9-6b-Pdl" secondAttribute="bottom" id="kpo-Ok-PKG"/>
                     <constraint firstItem="hn9-6b-Pdl" firstAttribute="leading" secondItem="wfN-nd-StI" secondAttribute="trailing" constant="8" id="n1f-dS-TgT"/>
                 </constraints>
@@ -51,7 +51,7 @@
             <connections>
                 <outlet property="address" destination="hn9-6b-Pdl" id="3DV-9w-ykj"/>
             </connections>
-            <point key="canvasLocation" x="18" y="316"/>
+            <point key="canvasLocation" x="-130" y="272"/>
         </tableViewCell>
     </objects>
 </document>

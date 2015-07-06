@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    address.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setBounds:(CGRect)bounds

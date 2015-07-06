@@ -55,7 +55,8 @@
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+    [self.view endEditing:YES];
+    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
                              delegate:self
@@ -154,7 +155,7 @@
         if (object && sucess) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:self completion:nil];
         } else {
-            [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
+            [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
