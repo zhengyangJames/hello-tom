@@ -1206,10 +1206,10 @@
 			isa = PBXGroup;
 			children = (
 				7F325E361B40E50800116445 /* Contacts */,
+				7F325E411B40E50800116445 /* WebViewSetting */,
 				7F325E3E1B40E50800116445 /* SettingViewController.h */,
 				7F325E3F1B40E50800116445 /* SettingViewController.m */,
 				7F325E401B40E50800116445 /* SettingViewController.xib */,
-				7F325E411B40E50800116445 /* WebViewSetting */,
 			);
 			path = Setting;
 			sourceTree = "<group>";

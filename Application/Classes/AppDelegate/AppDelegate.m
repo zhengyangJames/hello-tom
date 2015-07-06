@@ -147,7 +147,7 @@
 #pragma mark - Tabbar Delegate 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     
-    return NO;
+    return YES;
 }
 
 
