@@ -7,10 +7,17 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "CODetailsOffersObject.h"
+
+typedef NS_ENUM(NSInteger, DetailsProjectStyle) {
+    DetailsProjectType,
+    DetailsProjectSite
+};
+
 
 @interface CODetailsProjectTBVCell : BaseTableViewCell
 
-@property (strong, nonatomic) NSDictionary *object;
+@property (strong, nonatomic) CODetailsOffersObject *object;
 
 
 @end

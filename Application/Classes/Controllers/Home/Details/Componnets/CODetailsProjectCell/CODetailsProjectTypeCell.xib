@@ -70,9 +70,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="_imageLogo" destination="VRL-AH-rWr" id="oVT-9x-7te"/>
-                <outlet property="_lblDetails" destination="EIr-lo-gg4" id="aUz-fL-gME"/>
-                <outlet property="_lblType" destination="ho1-Jh-Cxf" id="gfX-PQ-5YE"/>
+                <outlet property="imageLogo" destination="VRL-AH-rWr" id="y66-fJ-ZeF"/>
+                <outlet property="lblDetails" destination="EIr-lo-gg4" id="q91-SW-ydH"/>
+                <outlet property="lblType" destination="ho1-Jh-Cxf" id="aAb-ev-OS1"/>
             </connections>
             <point key="canvasLocation" x="200" y="132"/>
         </tableViewCell>

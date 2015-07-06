@@ -171,6 +171,9 @@
                 [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
                 [self _replaceArraySettingLogin];
             }];
+        } else {
+            [[kAppDelegate baseTabBarController] setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         }
     };
 }

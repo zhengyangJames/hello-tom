@@ -10,6 +10,8 @@
 
 @interface CODetailsOffersObject : NSObject
 
+@property (strong, nonatomic) NSString *offerID;
+@property (strong, nonatomic) NSString *amount;
 @property (strong, nonatomic) NSString *imageSmall;
 @property (strong, nonatomic) NSString *imageBig;
 @property (strong, nonatomic) NSString *detailsShort;

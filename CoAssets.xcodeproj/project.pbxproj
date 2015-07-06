@@ -39,7 +39,6 @@
 		7F325F861B40E50800116445 /* CODetailsAccessoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DD91B40E50800116445 /* CODetailsAccessoryCell.xib */; };
 		7F325F871B40E50800116445 /* CODetailsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DDB1B40E50800116445 /* CODetailsDataSource.m */; };
 		7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DDD1B40E50800116445 /* CODetailsDelegate.m */; };
-		7F325F891B40E50800116445 /* CoDetailsHeaderTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DDE1B40E50800116445 /* CoDetailsHeaderTableView.xib */; };
 		7F325F8A1B40E50800116445 /* CODetailsMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DE01B40E50800116445 /* CODetailsMapCell.m */; };
 		7F325F8B1B40E50800116445 /* CODetailsMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DE11B40E50800116445 /* CODetailsMapCell.xib */; };
 		7F325F8C1B40E50800116445 /* CODetailsPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DE31B40E50800116445 /* CODetailsPhotoCell.m */; };
@@ -50,7 +49,6 @@
 		7F325F911B40E50800116445 /* CODetailsProjectTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DEB1B40E50800116445 /* CODetailsProjectTBVCell.xib */; };
 		7F325F921B40E50800116445 /* CODetailsProjectTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */; };
 		7F325F931B40E50800116445 /* CODetailsProjectTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */; };
-		7F325F941B40E50800116445 /* CODetailsProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DEF1B40E50800116445 /* CODetailsProjectCell.xib */; };
 		7F325F951B40E50800116445 /* CODetailsSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DF11B40E50800116445 /* CODetailsSectionCell.m */; };
 		7F325F961B40E50800116445 /* CODetailsSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DF21B40E50800116445 /* CODetailsSectionCell.xib */; };
 		7F325F971B40E50800116445 /* CODetailsTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DF41B40E50800116445 /* CODetailsTextCell.m */; };
@@ -286,11 +284,11 @@
 		7F85292D1B43935B00CFAEB5 /* Thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291D1B43935B00CFAEB5 /* Thailand.png */; };
 		7F85292F1B43935B00CFAEB5 /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291F1B43935B00CFAEB5 /* United States.png */; };
 		7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529201B43935B00CFAEB5 /* Vietnam.png */; };
+		7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */; };
 		7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */; };
 		7FAB4E501B468BCA0012E6D0 /* AboutTableViewCell_Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */; };
 		7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */; };
 		7FAC2CF51B48E2560038B409 /* LoginHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC2CF41B48E2560038B409 /* LoginHelpers.m */; };
-		7FAC2CF81B491C3E0038B409 /* TNNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC2CF71B491C3E0038B409 /* TNNetWorking.m */; };
 		7FBDAA9B1B4A15BA007F7C6B /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */; };
 		7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
 		7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6D5121B4526240098EC8D /* COLoginManager.m */; };
@@ -375,7 +373,6 @@
 		7F325DDB1B40E50800116445 /* CODetailsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsDataSource.m; sourceTree = "<group>"; };
 		7F325DDC1B40E50800116445 /* CODetailsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsDelegate.h; sourceTree = "<group>"; };
 		7F325DDD1B40E50800116445 /* CODetailsDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsDelegate.m; sourceTree = "<group>"; };
-		7F325DDE1B40E50800116445 /* CoDetailsHeaderTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoDetailsHeaderTableView.xib; sourceTree = "<group>"; };
 		7F325DDF1B40E50800116445 /* CODetailsMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsMapCell.h; sourceTree = "<group>"; };
 		7F325DE01B40E50800116445 /* CODetailsMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsMapCell.m; sourceTree = "<group>"; };
 		7F325DE11B40E50800116445 /* CODetailsMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsMapCell.xib; sourceTree = "<group>"; };
@@ -391,7 +388,6 @@
 		7F325DEC1B40E50800116445 /* CODetailsProjectTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectTypeCell.h; sourceTree = "<group>"; };
 		7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectTypeCell.m; sourceTree = "<group>"; };
 		7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectTypeCell.xib; sourceTree = "<group>"; };
-		7F325DEF1B40E50800116445 /* CODetailsProjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectCell.xib; sourceTree = "<group>"; };
 		7F325DF01B40E50800116445 /* CODetailsSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsSectionCell.h; sourceTree = "<group>"; };
 		7F325DF11B40E50800116445 /* CODetailsSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsSectionCell.m; sourceTree = "<group>"; };
 		7F325DF21B40E50800116445 /* CODetailsSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsSectionCell.xib; sourceTree = "<group>"; };
@@ -729,14 +725,14 @@
 		7F85291D1B43935B00CFAEB5 /* Thailand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thailand.png; sourceTree = "<group>"; };
 		7F85291F1B43935B00CFAEB5 /* United States.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United States.png"; sourceTree = "<group>"; };
 		7F8529201B43935B00CFAEB5 /* Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vietnam.png; sourceTree = "<group>"; };
+		7F8EE69C1B4A6ACF00F92852 /* NSString_stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_stripHtml.h; sourceTree = "<group>"; };
+		7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_stripHtml.m; sourceTree = "<group>"; };
 		7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait_ph.jpg; sourceTree = "<group>"; };
 		7FAB4E4D1B468BCA0012E6D0 /* AboutTableViewCell_Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell_Address.h; sourceTree = "<group>"; };
 		7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell_Address.m; sourceTree = "<group>"; };
 		7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell_Address.xib; sourceTree = "<group>"; };
 		7FAC2CF31B48E2560038B409 /* LoginHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHelpers.h; sourceTree = "<group>"; };
 		7FAC2CF41B48E2560038B409 /* LoginHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelpers.m; sourceTree = "<group>"; };
-		7FAC2CF61B491C3E0038B409 /* TNNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNetWorking.h; sourceTree = "<group>"; };
-		7FAC2CF71B491C3E0038B409 /* TNNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNetWorking.m; sourceTree = "<group>"; };
 		7FBDAA991B4A15BA007F7C6B /* UIImageView+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
 		7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
 		7FC6D50F1B44D4090098EC8D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United Kingdom.png"; sourceTree = "<group>"; };
@@ -935,6 +931,8 @@
 		7F325DC81B40E50800116445 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7F8EE69C1B4A6ACF00F92852 /* NSString_stripHtml.h */,
+				7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */,
 				7FBDAA991B4A15BA007F7C6B /* UIImageView+Networking.h */,
 				7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */,
 				7F325DC91B40E50800116445 /* NSArray+Sort.h */,
@@ -989,14 +987,12 @@
 				7F325DD71B40E50800116445 /* CODetailsAccessoryCell.h */,
 				7F325DD81B40E50800116445 /* CODetailsAccessoryCell.m */,
 				7F325DD91B40E50800116445 /* CODetailsAccessoryCell.xib */,
-				7F325DDE1B40E50800116445 /* CoDetailsHeaderTableView.xib */,
 				7F325DDF1B40E50800116445 /* CODetailsMapCell.h */,
 				7F325DE01B40E50800116445 /* CODetailsMapCell.m */,
 				7F325DE11B40E50800116445 /* CODetailsMapCell.xib */,
 				7F325DE21B40E50800116445 /* CODetailsPhotoCell.h */,
 				7F325DE31B40E50800116445 /* CODetailsPhotoCell.m */,
 				7F325DE41B40E50800116445 /* CODetailsPhotoCell.xib */,
-				7F325DEF1B40E50800116445 /* CODetailsProjectCell.xib */,
 				7F325DF01B40E50800116445 /* CODetailsSectionCell.h */,
 				7F325DF11B40E50800116445 /* CODetailsSectionCell.m */,
 				7F325DF21B40E50800116445 /* CODetailsSectionCell.xib */,
@@ -1014,15 +1010,15 @@
 		7F325DE51B40E50800116445 /* CODetailsProjectCell */ = {
 			isa = PBXGroup;
 			children = (
+				7F325DEC1B40E50800116445 /* CODetailsProjectTypeCell.h */,
+				7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */,
+				7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */,
 				7F325DE61B40E50800116445 /* CODetailsProjectBottomTVCell.h */,
 				7F325DE71B40E50800116445 /* CODetailsProjectBottomTVCell.m */,
 				7F325DE81B40E50800116445 /* CODetailsProjectBottomTVCell.xib */,
 				7F325DE91B40E50800116445 /* CODetailsProjectTBVCell.h */,
 				7F325DEA1B40E50800116445 /* CODetailsProjectTBVCell.m */,
 				7F325DEB1B40E50800116445 /* CODetailsProjectTBVCell.xib */,
-				7F325DEC1B40E50800116445 /* CODetailsProjectTypeCell.h */,
-				7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */,
-				7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */,
 			);
 			path = CODetailsProjectCell;
 			sourceTree = "<group>";
@@ -1410,8 +1406,6 @@
 		7F325E871B40E50800116445 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7FAC2CF61B491C3E0038B409 /* TNNetWorking.h */,
-				7FAC2CF71B491C3E0038B409 /* TNNetWorking.m */,
 				7F325E901B40E50800116445 /* WSURLSessionManager.h */,
 				7F325E911B40E50800116445 /* WSURLSessionManager.m */,
 				7F325E8A1B40E50800116445 /* WSURLSessionManager+ListContact.h */,
@@ -1924,7 +1918,6 @@
 				7F325FA31B40E50800116445 /* LoginViewController.xib in Resources */,
 				7F3260571B40E50800116445 /* ic_setting@3x.png in Resources */,
 				7F32604B1B40E50800116445 /* ic_line_char@2x.png in Resources */,
-				7F325F941B40E50800116445 /* CODetailsProjectCell.xib in Resources */,
 				7F32604C1B40E50800116445 /* ic_line_char@3x.png in Resources */,
 				7F3260311B40E50800116445 /* Ic_back@2x.png in Resources */,
 				7F325FAD1B40E50800116445 /* EditCompanyVC.xib in Resources */,
@@ -2027,7 +2020,6 @@
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
 				7F3260761B40E50800116445 /* FilterList.plist in Resources */,
 				7F3260611B40E50800116445 /* 15.jpg in Resources */,
-				7F325F891B40E50800116445 /* CoDetailsHeaderTableView.xib in Resources */,
 				7F32603C1B40E50800116445 /* ic_contac_2_heightlight@2x.png in Resources */,
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
@@ -2118,6 +2110,7 @@
 				7F32600A1B40E50800116445 /* MagicalRecord+Setup.m in Sources */,
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
 				7F325F971B40E50800116445 /* CODetailsTextCell.m in Sources */,
+				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,
 				7F325FA41B40E50800116445 /* RegisterViewController.m in Sources */,
 				7F325F7B1B40E50800116445 /* BaseNavigationController.m in Sources */,
 				7F325F921B40E50800116445 /* CODetailsProjectTypeCell.m in Sources */,
@@ -2156,7 +2149,6 @@
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				7F325FE51B40E50800116445 /* AFURLRequestSerialization.m in Sources */,
 				7F325FC91B40E50800116445 /* COPositive&NagitiveButton.m in Sources */,
-				7FAC2CF81B491C3E0038B409 /* TNNetWorking.m in Sources */,
 				7F325FD21B40E50800116445 /* CODummyDataManager.m in Sources */,
 				7F325FFF1B40E50800116445 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				7F325FCF1B40E50800116445 /* LoadFileManager.m in Sources */,

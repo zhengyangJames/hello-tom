@@ -114,7 +114,6 @@
     if (self.actionLogin) {
         self.actionLogin(NO);
     }
-    [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UIAlertView delegate

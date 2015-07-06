@@ -9,16 +9,19 @@
 #import "CODetailsProjectTBVCell.h"
 #import "CODetailsProjectBottomTVCell.h"
 #import "CODetailsProjectTypeCell.h"
+#import "NSString_stripHtml.h"
 
 #define kCORNER_RADIUS_IMAGE 6
 
 @interface CODetailsProjectTBVCell () <UITableViewDataSource,UITableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
+    
 }
 
 @property (strong, nonatomic) NSArray *arrayData;
-
+@property (strong, nonatomic) NSArray *arrayImage;
+@property (strong, nonatomic) CODetailsProjectBottomTVCell *bottomTableView;
 @end
 
 @implementation CODetailsProjectTBVCell
@@ -34,35 +37,77 @@
     [self setNeedsDisplay];
 }
 
-- (void)setBounds:(CGRect)bounds
-{
-    [super setBounds:bounds];
-    self.contentView.frame = self.bounds;
-}
-
 - (void)viewDidLoad {
-    
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView registerNib:[UINib nibWithNibName:[CODetailsProjectTypeCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectTypeCell identifier]];
+    [_tableView registerNib:[UINib nibWithNibName:[CODetailsProjectBottomTVCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectBottomTVCell identifier]];
 }
 
 #pragma mark - Set Get
-- (void)setObject:(NSDictionary *)object {
+- (void)setObject:(CODetailsOffersObject *)object {
     _object = object;
+    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+        [_tableView reloadData];
+    }];
 
 }
 
+- (NSArray*)arrayImage {
+    if (!_arrayImage) {
+        return  _arrayImage = @[@"ic_info",@"ic_peropel"];
+    }
+    return  _arrayImage;
+}
+
 #pragma mark - Private
+
 
 #pragma mark - Action
 
 #pragma mark - Delegate - Tableview
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arrayData.count;
+    return 3;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsProjectTypeCell *cell;
+    if (indexPath.row == 0 || indexPath.row == 1) {
+        return [self _setupCellProjectType:tableView indexPath:indexPath];
+    } else {
+        return [self _setupButtonCell:tableView indexPath:indexPath];
+    }
+}
+
+- (CODetailsProjectTypeCell*)_setupCellProjectType:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
+    CODetailsProjectTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectTypeCell identifier] forIndexPath:indexPath];
+    if (DetailsProjectType == indexPath.row) {
+        cell.imageLogo.image = [UIImage imageNamed:self.arrayImage[indexPath.row]];
+        cell.lblType.text = @"Project Type:";
+        cell.lblDetails.text = self.object.projectType ;
+    } else if (DetailsProjectSite == indexPath .row) {
+        cell.imageLogo.image = [UIImage imageNamed:self.arrayImage[indexPath.row]];
+        cell.lblType.text = @"Project Site:";
+        cell.lblDetails.text = [NSString stringWithFormat:@"%@, %@",self.object.city,self.object.country];
+    }
     return cell;
+}
+
+- (CODetailsProjectBottomTVCell*)_setupButtonCell:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
+    CODetailsProjectBottomTVCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectBottomTVCell identifier] forIndexPath:indexPath];
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setValue:self.object.offerID forKey:@"id"];
+    [dic setValue:self.object.amount forKey:@"amount"];
+    cell.object = dic;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0 || indexPath.row == 1) {
+        return 44;
+    } else {
+        return 116;
+    }
 }
 
 #pragma mark - Delegate - Bottom Tableview

@@ -30,7 +30,7 @@
             <connections>
                 <outlet property="mapViewCell" destination="og0-V5-apw" id="MYL-li-wyE"/>
             </connections>
-            <point key="canvasLocation" x="218" y="248.5"/>
+            <point key="canvasLocation" x="277" y="237.5"/>
         </tableViewCell>
     </objects>
 </document>

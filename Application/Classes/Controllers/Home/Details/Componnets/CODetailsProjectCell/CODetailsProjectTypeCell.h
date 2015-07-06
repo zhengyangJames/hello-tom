@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CODetailsProjectTypeCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *lblType;
+@property (weak, nonatomic) IBOutlet UILabel *lblDetails;
+@property (weak, nonatomic) IBOutlet UIImageView *imageLogo;
 @end

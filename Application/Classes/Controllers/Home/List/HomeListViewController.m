@@ -180,12 +180,12 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            DBG(@"%@",responseObject);
+            [self _pushDetailVcWithID:responseObject];
         } else {
             [UIHelper showError:error];
         }
+        [UIHelper hideLoadingFromView:self.view];
     }];
-    [UIHelper hideLoadingFromView:self.view];
 }
 
 #pragma mark - TableView Delegate
@@ -215,8 +215,7 @@
             }
         };
     }else {
-        [self _pushDetailVcWithID];
-        //[self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+        [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
     }
 }
 
