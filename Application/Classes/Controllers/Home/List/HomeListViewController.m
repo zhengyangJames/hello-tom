@@ -74,11 +74,10 @@
 }
 
 #pragma mark - Private
-- (void)_pushDetailVcWithID {
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        DetailsViewController *vc = [[DetailsViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }];
+- (void)_pushDetailVcWithID:(CODetailsOffersObject*)obj {
+    DetailsViewController *vc = [[DetailsViewController alloc]init];
+    vc.objectDetails = obj;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Setter Getter
@@ -205,13 +204,12 @@
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
         [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
         vcLogin.actionLogin = ^(BOOL CancelOrLogin){
-            if (CancelOrLogin) {
-                [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-                    // [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
-                    [self _pushDetailVcWithID];
-                }];
+            if (!CancelOrLogin) {
+                [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
             } else {
-                [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:nil];
+                [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
+                    [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+                }];
             }
         };
     }else {
