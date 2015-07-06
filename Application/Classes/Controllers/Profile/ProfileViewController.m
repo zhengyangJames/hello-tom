@@ -396,9 +396,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 }
 
 - (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
-    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
+    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return cellSize.height;
 }
 /*
@@ -430,7 +430,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 - (AboutTableViewCell_Address*)_setupAboutCell_Address:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AboutTableViewCell_Address *cell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell_Address identifier] forIndexPath:indexPath];
     cell.string = [self _getFormatStringAddress];
-    [cell layoutIfNeeded];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
