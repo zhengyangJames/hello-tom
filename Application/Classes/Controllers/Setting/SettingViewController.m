@@ -139,7 +139,7 @@
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self _logginApllication];
     } else {
-        [UIHelper showAleartViewWithTitle:nil message:m_string(@"Are you sure you want to logout?") cancelButton:m_string(@"Cancel") delegate:self tag:0 arrayTitleButton:@[@"OK"]];
+        [UIHelper showAleartViewWithTitle:m_string(@"CoAassets") message:m_string(@"Are you sure you want to logout?") cancelButton:m_string(@"Cancel") delegate:self tag:0 arrayTitleButton:@[@"OK"]];
     }
 }
 
@@ -165,7 +165,7 @@
     BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
     [[kAppDelegate baseTabBarController] presentViewController:base
                                                       animated:YES completion:nil];
-    vcLogin.actionLogin = ^(id profileObj,BOOL CancelOrLogin){
+    vcLogin.actionLogin = ^(BOOL CancelOrLogin){
         if (CancelOrLogin) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
                 [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];

@@ -15,7 +15,6 @@
 #import "NSString+MD5.h"
 #import "WSURLSessionManager+Profile.h"
 #import "COListProfileObject.h"
-#import "NSUserDefaultHelper.h"
 #import "COLoginManager.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
@@ -56,7 +55,7 @@
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
                               message:m_string(message)
                          cancelButton:m_string(@"OK")
                              delegate:self
@@ -65,7 +64,7 @@
 }
 
 
-- (BOOL)_isValidation {
+- (BOOL)_isValid {
     if ([_userName.text isEmpty]) {
         [self _setupShowAleartViewWithTitle:@"Username is required."];
          return NO;
@@ -76,7 +75,6 @@
     return YES;
 }
 
-
 #pragma mark - Setter, Getter
 
 
@@ -86,10 +84,10 @@
     [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
             if (self.actionLogin) {
-                self.actionLogin((COListProfileObject*)object,YES);
+                self.actionLogin(YES);
             }
         } else {
-            [UIHelper showAleartViewWithTitle:nil message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
+            [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
@@ -97,9 +95,7 @@
 
 #pragma mark - Action
 - (IBAction)__actionLogin:(id)sender {
-    if (![self _isValidation]) {
-        return;
-    } else {
+    if ([self _isValid]) {
         [self _login];
     }
 }
@@ -116,7 +112,7 @@
 
 - (IBAction)__actionCancel:(id)sender {
     if (self.actionLogin) {
-        self.actionLogin(sender,NO);
+        self.actionLogin(NO);
     }
     [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
 }

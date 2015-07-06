@@ -21,7 +21,6 @@
 #import "WSURLSessionManager+Profile.h"
 #import "LoginViewController.h"
 #import "WSURLSessionManager+User.h"
-#import "NSUserDefaultHelper.h"
 #import "AboutTableViewCell_Address.h"
 
 #define DEFAULT_HEIGHT_CELL             44
@@ -78,7 +77,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"CoAssests");
+    self.navigationItem.title = m_string(@"CoAssets");
     [self _setupHeaderTableView];
     [self _setupFooterTableView];
     _tableView.delegate   = self;
@@ -129,7 +128,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsChangePassword:[self _setupAccessToken] body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            DBG(@"%@",responseObject);
             [self _setupShowAleartViewWithTitle:@"Password changed successfully"];
         } else {
             [self _setupShowAleartViewWithTitle:@"Password not changed"];
@@ -137,8 +135,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.view endEditing:YES];
         }];
+        [UIHelper hideLoadingFromView:self.view];
     }];
-    [UIHelper hideLoadingFromView:self.view];
+    
 }
 
 
@@ -153,7 +152,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [[kAppDelegate baseTabBarController].view.layer addAnimation:transition forKey:kCATransition];
     [[kAppDelegate baseTabBarController] presentViewController:base
                                                       animated:YES completion:nil];
-    vcLogin.actionLogin = ^(id profileObj,BOOL CancelOrLogin){
+    vcLogin.actionLogin = ^(BOOL CancelOrLogin){
         if (CancelOrLogin) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -213,7 +212,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [UIHelper showAleartViewWithTitle:m_string(@"CoAssests")
+        [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
                                   message:m_string(message)
                              cancelButton:m_string(@"OK")
                                  delegate:self
@@ -371,9 +370,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 }
 
 - (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
+    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
-    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return cellSize.height;
 }
 /*
@@ -411,12 +410,13 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSString *country = self.profileObject.country;
     NSString *all = [NSString stringWithFormat:@"%@ \n%@ \n%@ \n%@ \n%@",address1,address2,postCode,city,country];
     cell.string = all;
+    [cell layoutIfNeeded];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (PasswordTableViewCell*)_setupPasswordCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    _passwordTableViewCell = [tableView dequeueReusableCellWithIdentifier:[PasswordTableViewCell identifier]
-                                                                        forIndexPath:indexPath];
+    _passwordTableViewCell = [tableView dequeueReusableCellWithIdentifier:[PasswordTableViewCell identifier] forIndexPath:indexPath];
     _passwordTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
     _passwordTableViewCell.delegate = self;
     return _passwordTableViewCell;

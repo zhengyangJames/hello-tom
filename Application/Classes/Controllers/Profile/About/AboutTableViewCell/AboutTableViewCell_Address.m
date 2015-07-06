@@ -10,7 +10,7 @@
 
 @interface AboutTableViewCell_Address ()
 {
-    __weak IBOutlet UITextView *address;
+    __weak IBOutlet UILabel *address;
 }
 
 @end
@@ -25,13 +25,15 @@
 {
     [super setBounds:bounds];
     self.contentView.frame = self.bounds;
-    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
+}
+
+- (void)updateConstraints {
+    [super updateConstraints];
 }
 
 - (void)setString:(NSString *)string {
     _string = string;
     address.text = _string;
-    [address setNeedsUpdateConstraints];
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
