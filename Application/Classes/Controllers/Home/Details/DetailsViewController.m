@@ -12,8 +12,9 @@
 #import "COSlidingView.h"
 #import "WSURLSessionManager+ListHome.h"
 #import "UIImageView+Networking.h"
+#import "COInterestedViewController.h"
 
-@interface DetailsViewController () 
+@interface DetailsViewController ()<CODetailsProjectTBVCellDelegate>
 {
 
 }
@@ -35,6 +36,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
@@ -45,14 +47,12 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     [self _setupHeaderView];
     self.detailsDataSource    = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
-    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.detailsDataSource.object = self.objectDetails;
         [self.tableView reloadData];
@@ -86,6 +86,13 @@
     [headerView addSubview:imageView];
     [imageView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
     self.tableView.tableHeaderView = headerView;
+}
+
+#pragma mark - Delegate
+- (void)actionButtonDetailsProject {
+    COInterestedViewController *vc = [[COInterestedViewController alloc]init];
+    vc.object = @{@"offerID":self.objectDetails.offerID,@"offerTitle":self.objectDetails.offersDetails};
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

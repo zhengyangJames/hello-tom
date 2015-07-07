@@ -13,7 +13,7 @@
 - (instancetype)initWithDictionary:(NSDictionary*)dic {
     self = [super init];
     if (self) {
-//        self.offersDetails = [dic objectForKeyNotNull:@"offer_title"];//
+        self.offersDetails = [dic objectForKeyNotNull:@"offer_title"];//
         self.offerID = [dic objectForKeyNotNull:@"id"];
         self.detailsShort = [dic objectForKeyNotNull:@"short_description"];
         self.amount = [dic objectForKeyNotNull:@"min_investment"];

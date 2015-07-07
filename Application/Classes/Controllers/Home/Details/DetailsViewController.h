@@ -12,7 +12,7 @@
 #import "CODetailsDelegate.h"
 #import "CODetailsOffersObject.h"
 
-@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsController>
+@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsController,CODetailsProjectTBVCellDelegate>
 
 @property (strong, nonatomic) CODetailsOffersObject *objectDetails;
 

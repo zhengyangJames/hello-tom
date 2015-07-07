@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface CODetailsProjectTypeCell : UITableViewCell
+@interface CODetailsProjectTypeCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblType;
 @property (weak, nonatomic) IBOutlet UILabel *lblDetails;
 @property (weak, nonatomic) IBOutlet UIImageView *imageLogo;
