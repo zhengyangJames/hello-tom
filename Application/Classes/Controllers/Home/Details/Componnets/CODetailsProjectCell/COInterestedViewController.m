@@ -64,14 +64,16 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:amount,@"amount",email,@"email", nil];
     [[WSURLSessionManager shared] wsPostSubscribeWithOffersID:idoffer amount:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         DBG(@"%@",responseObject);
-        if (responseObject) {
-            [UIHelper hideLoadingFromView:self.view];
+        if (responseObject && !error) {
             _amountTextField.text = nil;
             _emailTextField.text = nil;
             _checkBoxButton.isCheck = NO;
             [kNotificationCenter postNotificationName:@"change_titler_button" object:nil];
             [self _creatPopupView];
+        } else {
+            [UIHelper showError:error];
         }
+        [UIHelper hideLoadingFromView:self.view];
     }];
 }
 
