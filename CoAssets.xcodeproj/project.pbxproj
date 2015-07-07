@@ -2396,7 +2396,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "f2092e40-5e53-4078-be20-65a749bb49ec";
+				PROVISIONING_PROFILE = "fbdc6e00-7c9c-4e59-b312-55eda13626b3";
 			};
 			name = Debug;
 		};
@@ -2417,7 +2417,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "f2092e40-5e53-4078-be20-65a749bb49ec";
+				PROVISIONING_PROFILE = "fbdc6e00-7c9c-4e59-b312-55eda13626b3";
 			};
 			name = Release;
 		};
