@@ -44,9 +44,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 {
     __weak IBOutlet UITableView *_tableView;
     UIImage *_imageCompany;
-    NSString *_oldPassword;
-    NSString *_newPassword;
-    NSString *_comfilmPassword;
     NSInteger _indexSelectSeg;
     NSDictionary *oldTokenObj;
 }
@@ -222,13 +219,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     }];
 }
 
-- (BOOL)_isValidationPassword {
-    if ([_comfilmPassword isEqualToString:_newPassword]) {
-        return YES;
-    }
-    return NO;
-}
-
 - (NSString*)_getFormatStringAddress{
     NSString *address1 = self.profileObject.address_1;
     NSString *address2 = self.profileObject.address_2;
@@ -317,8 +307,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         [self _setupEditAboutProfileVC];
     } else {
         [kNotificationCenter postNotificationName:@"check_password" object:nil];
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:_passwordTableViewCell.newpassowrdTXT.text,@"new_password", nil];
-        [self _callWSChangePassword:dic];
     }
 }
 
@@ -331,15 +319,17 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
  Setup action show picker ImageView Delegate
  */
 
-//- (void)_showActionSheet {
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
-//                                                            delegate:self
-//                                                   cancelButtonTitle:m_string(@"Cancel")
-//                                              destructiveButtonTitle:nil
-//                                                   otherButtonTitles:m_string(@"Take a photo"),m_string(@"Choose existing"), nil];
-//    [actionSheet showInView:self.view];
-//}
-
+/*
+- (void)_showActionSheet {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
+                                                            delegate:self
+                                                   cancelButtonTitle:m_string(@"Cancel")
+                                              destructiveButtonTitle:nil
+                                                   otherButtonTitles:m_string(@"Take a photo"),m_string(@"Choose existing"), nil];
+    [actionSheet showInView:self.view];
+}
+*/
+ 
 #pragma mark - TableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -467,43 +457,41 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     return _passwordTableViewCell;
 }
 
-#pragma mark - Other Delegate 
-- (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell *)passwordTableViewCell oldPassowrd:(NSString *)oldPassowrd newPassowrd:(NSString *)newPassowrd comfilmPassowrd:(NSString *)comfilmPassowrd {
-    if (![passwordTableViewCell.newpassowrdTXT.text isEmpty]) {
-        _newPassword = newPassowrd;
-    }
-    if (![passwordTableViewCell.comfilmPassowrdTXT.text isEmpty]) {
-        _comfilmPassword = comfilmPassowrd;
-    }
+#pragma mark - Other Delegate
+- (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell *)passwordTableViewCell newPassowrd:(NSString *)newPassowrd {
+    [self _callWSChangePassword:@{@"new_password":newPassowrd}];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     _passwordTableViewCell.newpassowrdTXT.text = @"";
     _passwordTableViewCell.comfilmPassowrdTXT.text = @"";
+    [self.view endEditing:YES];
 }
 
 /*
  show picker ImageView Delegate
  */
 
-//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    switch (buttonIndex) {
-//        case 0:
-//            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
-//            break;
-//        case 1:
-//            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
-//            break;
-//        default:
-//            break;
-//    }
-//}
+/*
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
+            break;
+        case 1:
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
+            break;
+        default:
+            break;
+    }
+}
 
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-//{
-//    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
-//    [_tableheaderView.imageProfile setImage:image];
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
+    [_tableheaderView.imageProfile setImage:image];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+*/
 
 @end

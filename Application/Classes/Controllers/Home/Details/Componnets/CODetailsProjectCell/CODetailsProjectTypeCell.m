@@ -17,6 +17,9 @@
 
 @implementation CODetailsProjectTypeCell
 
+- (void)viewDidLoad {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+}
 
 
 @end

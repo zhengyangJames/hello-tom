@@ -22,6 +22,6 @@
 @protocol PasswordTableViewCellDelegate <NSObject>
 
 @optional
-- (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell*)passwordTableViewCell newPassowrd:(NSString*)newPassowrd comfilmPassowrd:(NSString*)comfilmPassowrd;
+- (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell*)passwordTableViewCell newPassowrd:(NSString*)newPassowrd;
 
 @end

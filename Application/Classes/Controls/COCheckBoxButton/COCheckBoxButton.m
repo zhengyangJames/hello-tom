@@ -40,8 +40,8 @@
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    self.isCheck = !self.isCheck;
     if ([self.delegate respondsToSelector:@selector(checkBoxButton:didChangeCheckingStatus:)]) {
-        self.isCheck = !self.isCheck;
         [self.delegate checkBoxButton:self didChangeCheckingStatus:self.isCheck];
     }
 }

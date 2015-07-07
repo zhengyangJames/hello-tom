@@ -70,13 +70,15 @@
     }];
 }
 
-- (void)wsPostQuestionWithOffersID:(NSString *)OffersID handler:(WSURLSessionHandler)handler {
+- (void)wsPostQuestionWithOffersID:(NSString *)OffersID body:(NSDictionary *)body handler:(WSURLSessionHandler)handler {
     NSString *urlQuestion = WS_METHOD_POST_QUESTION;
     NSString *offerID = [NSString stringWithFormat:@"%@/",OffersID];
     NSString *url = [urlQuestion stringByAppendingString:offerID];
     NSString *valueToken = [NSString stringWithFormat:@"%@ %@",[kUserDefaults valueForKey:kTOKEN_TYPE],[kUserDefaults valueForKey:kACCESS_TOKEN]];
+    NSString *postString = [self paramsToString:body];
+    NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [self createAuthRequest:url
-                                                      body:nil
+                                                      body:parambody
                                                 httpMethod:METHOD_POST];
     [request setValue:valueToken forHTTPHeaderField:@"Authorization"];
     

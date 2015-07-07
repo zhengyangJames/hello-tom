@@ -23,13 +23,6 @@
     __weak IBOutlet UIView *_viewImageLogo;
 }
 
-
-- (void)setBounds:(CGRect)bounds
-{
-    [super setBounds:bounds];
-    self.contentView.frame = self.bounds;
-}
-
 - (void)viewDidLoad {
     [_imageBig setImage:[UIImage imageNamed:@"ic_placeholder"]];
 }

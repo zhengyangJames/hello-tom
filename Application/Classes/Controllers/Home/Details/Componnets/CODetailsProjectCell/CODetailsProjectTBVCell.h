@@ -14,11 +14,18 @@ typedef NS_ENUM(NSInteger, DetailsProjectStyle) {
     DetailsProjectSite
 };
 
+@protocol CODetailsProjectTBVCellDelegate;
 
 @interface CODetailsProjectTBVCell : BaseTableViewCell
 
 @property (strong, nonatomic) CODetailsOffersObject *object;
-
+@property (weak, nonatomic) id<CODetailsProjectTBVCellDelegate> delegate;
 
 @end
 
+@protocol  CODetailsProjectTBVCellDelegate<NSObject>
+
+@optional
+- (void)actionButtonDetailsProject;
+
+@end

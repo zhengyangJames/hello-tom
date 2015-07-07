@@ -8,18 +8,17 @@
 
 #import "CODetailsDataSource.h"
 
-#define K_String_Project @"CANYON DE BORACAY PREMIERE is a 264 room mixed use condotel that brings the convenience and luxury of the urban lifestyle to Boracay - what is called the Best Island in the World in recent years. Equipped with a full range of amenities to provide world class accommodations. From the tranquil sea breeze to the commercial retail complex, Canyon de Boracay Premiere has everything you need, including the best beaches and the modern necessities of life.Building featuresRooftop amenitiesVertical gardenSwimming pool and spaSupermarket commercial retail Amenities Health and fitness center Supermarket and commercial retail stores (1st indoor mall on the island!) Restaurants and pubs Water sports and activities White sand beaches Benefits & Advantages of being a condotel owner Return on Investment (ROI) There will be recurring revenue from hotel operations during the 15 year lease agreement with G2 hotel management. 40% of room net revenue given to unit owners and hotel expenses no longer a risk for unit owners. 14 complimentary room-night stay annually Free Condominium Dues Free Insurance Free Real Property Taxes Lifetime Ownership covered by a CCT Title (Condominium Certificate Title) Prestige Ownership of a property in a Prime Tourist Destination The condotel is selling at Php 40K to 145K/sqm. The expected turn over date is Dec 2019."
 
-@interface CODetailsDataSource ()
+@interface CODetailsDataSource () <CODetailsProjectTBVCellDelegate,CODetailsProjectTBVCellDelegate>
 
-@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate> controller;
+@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectTBVCellDelegate> controller;
 
 @end
 
 @implementation CODetailsDataSource
 
 
-- (instancetype)initWithController:(id<CODetailsProjectCellDelegate,CODetailsAccessoryCellDelegate>)controller tableView:(UITableView *)tableView {
+- (instancetype)initWithController:(id<CODetailsProjectTBVCellDelegate,CODetailsAccessoryCellDelegate>)controller tableView:(UITableView *)tableView {
     self = [super init];
     if (self) {
         self.controller = controller;
@@ -52,6 +51,7 @@
 
 - (CODetailsProjectTBVCell*)_projectCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
     CODetailsProjectTBVCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectTBVCell identifier] forIndexPath:indexPath];
+    cell.delegate = self.controller;
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         cell.object = self.object;
     }];
@@ -139,5 +139,6 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self _tableView:tableView cellForRowAtIndexPath:indexPath];
 }
+
 
 @end

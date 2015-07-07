@@ -292,6 +292,11 @@
 		7FBDAA9B1B4A15BA007F7C6B /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */; };
 		7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
 		7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6D5121B4526240098EC8D /* COLoginManager.m */; };
+		7FCD18A61B4B79B9000B81A2 /* COInterestedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18A41B4B79B9000B81A2 /* COInterestedViewController.m */; };
+		7FCD18A71B4B79B9000B81A2 /* COInterestedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCD18A51B4B79B9000B81A2 /* COInterestedViewController.xib */; };
+		7FCD18AC1B4BB060000B81A2 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18AB1B4BB060000B81A2 /* KLCPopup.m */; };
+		7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18B31B4BBBD0000B81A2 /* COPopupInteredtedView.m */; };
+		7FCD18B61B4BBBF4000B81A2 /* COPopupInteredtedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCD18B51B4BBBF4000B81A2 /* COPopupInteredtedView.xib */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
 		7FF6C3B41B423E85003591B6 /* TableBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6C3B31B423E85003591B6 /* TableBottomView.xib */; };
 /* End PBXBuildFile section */
@@ -738,6 +743,14 @@
 		7FC6D50F1B44D4090098EC8D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United Kingdom.png"; sourceTree = "<group>"; };
 		7FC6D5111B4526240098EC8D /* COLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLoginManager.h; sourceTree = "<group>"; };
 		7FC6D5121B4526240098EC8D /* COLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLoginManager.m; sourceTree = "<group>"; };
+		7FCD18A31B4B79B9000B81A2 /* COInterestedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COInterestedViewController.h; sourceTree = "<group>"; };
+		7FCD18A41B4B79B9000B81A2 /* COInterestedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COInterestedViewController.m; sourceTree = "<group>"; };
+		7FCD18A51B4B79B9000B81A2 /* COInterestedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COInterestedViewController.xib; sourceTree = "<group>"; };
+		7FCD18AA1B4BB060000B81A2 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
+		7FCD18AB1B4BB060000B81A2 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
+		7FCD18B21B4BBBD0000B81A2 /* COPopupInteredtedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COPopupInteredtedView.h; sourceTree = "<group>"; };
+		7FCD18B31B4BBBD0000B81A2 /* COPopupInteredtedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COPopupInteredtedView.m; sourceTree = "<group>"; };
+		7FCD18B51B4BBBF4000B81A2 /* COPopupInteredtedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COPopupInteredtedView.xib; sourceTree = "<group>"; };
 		7FF529F61B413E4A0072F6F4 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		7FF6C3B31B423E85003591B6 /* TableBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableBottomView.xib; sourceTree = "<group>"; };
@@ -1019,6 +1032,7 @@
 				7F325DE91B40E50800116445 /* CODetailsProjectTBVCell.h */,
 				7F325DEA1B40E50800116445 /* CODetailsProjectTBVCell.m */,
 				7F325DEB1B40E50800116445 /* CODetailsProjectTBVCell.xib */,
+				7FCD18A81B4B79C9000B81A2 /* COInterestedViewController */,
 			);
 			path = CODetailsProjectCell;
 			sourceTree = "<group>";
@@ -1244,10 +1258,11 @@
 		7F325E451B40E50800116445 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				7FCD18A91B4BAC00000B81A2 /* COPopUpView */,
 				7F325E461B40E50800116445 /* COBorderTextField */,
 				7F325E491B40E50800116445 /* COCheckBoxButton */,
 				7F325E4C1B40E50800116445 /* CODropList */,
-				7F325E591B40E50800116445 /* CoDropListButton */,
+				7F325E591B40E50800116445 /* CODropListButton */,
 				7F325E5C1B40E50800116445 /* COLineBottomView */,
 				7F325E5F1B40E50800116445 /* COPositive&NegativeButton */,
 				7F325E621B40E50800116445 /* COSliderView */,
@@ -1306,12 +1321,13 @@
 			path = DropListObject;
 			sourceTree = "<group>";
 		};
-		7F325E591B40E50800116445 /* CoDropListButton */ = {
+		7F325E591B40E50800116445 /* CODropListButton */ = {
 			isa = PBXGroup;
 			children = (
 				7F325E5A1B40E50800116445 /* CoDropListButtom.h */,
 				7F325E5B1B40E50800116445 /* CoDropListButtom.m */,
 			);
+			name = CODropListButton;
 			path = CoDropListButton;
 			sourceTree = "<group>";
 		};
@@ -1819,6 +1835,28 @@
 			path = countries;
 			sourceTree = "<group>";
 		};
+		7FCD18A81B4B79C9000B81A2 /* COInterestedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7FCD18A31B4B79B9000B81A2 /* COInterestedViewController.h */,
+				7FCD18A41B4B79B9000B81A2 /* COInterestedViewController.m */,
+				7FCD18A51B4B79B9000B81A2 /* COInterestedViewController.xib */,
+			);
+			name = COInterestedViewController;
+			sourceTree = "<group>";
+		};
+		7FCD18A91B4BAC00000B81A2 /* COPopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				7FCD18AA1B4BB060000B81A2 /* KLCPopup.h */,
+				7FCD18AB1B4BB060000B81A2 /* KLCPopup.m */,
+				7FCD18B21B4BBBD0000B81A2 /* COPopupInteredtedView.h */,
+				7FCD18B31B4BBBD0000B81A2 /* COPopupInteredtedView.m */,
+				7FCD18B51B4BBBF4000B81A2 /* COPopupInteredtedView.xib */,
+			);
+			path = COPopUpView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1941,6 +1979,7 @@
 				7F8529271B43935B00CFAEB5 /* Indonesia.png in Resources */,
 				7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */,
 				7F3260511B40E50800116445 /* ic_peopel@3x.png in Resources */,
+				7FCD18A71B4B79B9000B81A2 /* COInterestedViewController.xib in Resources */,
 				7F32603E1B40E50800116445 /* ic_droplist.png in Resources */,
 				7F3260691B40E50800116445 /* Preloader_2.gif in Resources */,
 				7F3260411B40E50800116445 /* ic_Earth@2x.png in Resources */,
@@ -1980,6 +2019,7 @@
 				7F325FCD1B40E50800116445 /* COSlidingView.xib in Resources */,
 				7F32602F1B40E50800116445 /* Close_Circle_Line@2x.png in Resources */,
 				7F325F931B40E50800116445 /* CODetailsProjectTypeCell.xib in Resources */,
+				7FCD18B61B4BBBF4000B81A2 /* COPopupInteredtedView.xib in Resources */,
 				7F3260361B40E50800116445 /* ic_calendar@3x.png in Resources */,
 				7F325FA11B40E50800116445 /* ForgotPasswordViewController.xib in Resources */,
 				7F325FB81B40E50800116445 /* ContactTableViewCell.xib in Resources */,
@@ -2089,6 +2129,7 @@
 				7F325FE81B40E50800116445 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				7F325FEA1B40E50800116445 /* UIAlertView+AFNetworking.m in Sources */,
 				7F325F7C1B40E50800116445 /* BaseTabBarController.m in Sources */,
+				7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */,
 				0ECA884A1B27CA7100B5656F /* NMImageHelper.m in Sources */,
 				7F325F9D1B40E50800116445 /* HomeListViewController.m in Sources */,
 				7F325FDC1B40E50800116445 /* WSURLSessionManager+ListHome.m in Sources */,
@@ -2110,6 +2151,7 @@
 				7F32600A1B40E50800116445 /* MagicalRecord+Setup.m in Sources */,
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
 				7F325F971B40E50800116445 /* CODetailsTextCell.m in Sources */,
+				7FCD18A61B4B79B9000B81A2 /* COInterestedViewController.m in Sources */,
 				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,
 				7F325FA41B40E50800116445 /* RegisterViewController.m in Sources */,
 				7F325F7B1B40E50800116445 /* BaseNavigationController.m in Sources */,
@@ -2185,6 +2227,7 @@
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
+				7FCD18AC1B4BB060000B81A2 /* KLCPopup.m in Sources */,
 				7F325FDF1B40E50800116445 /* AFHTTPRequestOperation.m in Sources */,
 				0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */,
 				7F325F991B40E50800116445 /* DetailsViewController.m in Sources */,
