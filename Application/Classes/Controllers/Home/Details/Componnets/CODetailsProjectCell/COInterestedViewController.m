@@ -55,10 +55,6 @@
     }
 }
 
-- (void)__actionCheckBox {
-    
-}
-
 #pragma mark - Web Service
 - (void)_callWSInteredted {
     [UIHelper showLoadingInView:self.view];
