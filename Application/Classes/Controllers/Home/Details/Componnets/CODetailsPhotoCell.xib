@@ -23,7 +23,7 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay" translatesAutoresizingMaskIntoConstraints="NO" id="SmK-Me-p6f">
                         <rect key="frame" x="63" y="8" width="249" height="50"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-SD-EoN">
