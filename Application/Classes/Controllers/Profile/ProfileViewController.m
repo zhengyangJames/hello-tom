@@ -428,7 +428,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 - (NSString *)_getStringFromObject:(COListProfileObject *)object {
     NSString *link = @"";
     NSString *address1 = self.profileObject.address_1;
-    if (address1 &&![address1 isEmpty]) {
+    if (address1 && ![address1 isEmpty]) {
         link = [link stringByAppendingString:address1];
     }
     NSString *address2 = self.profileObject.address_2;
@@ -436,15 +436,15 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:address2];
     }
     NSString *postCode = self.profileObject.region_state;
-    if (postCode &&![postCode isEmpty]) {
+    if (postCode && ![postCode isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:postCode];
     }
     NSString *city = self.profileObject.city;
-    if (city &&![city isEmpty]) {
+    if (city && ![city isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:city];
     }
     NSString *country = self.profileObject.country;
-    if (country &&![country isEmpty]) {
+    if (country && ![country isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }
     return link;

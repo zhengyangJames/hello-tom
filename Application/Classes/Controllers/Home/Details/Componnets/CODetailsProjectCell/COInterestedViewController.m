@@ -56,6 +56,7 @@
 
 #pragma mark Action
 - (void)__actionDone {
+    [self.view endEditing:YES];
     if ([self _checkEmailAmount]) {
         [self _callWSInteredted];
     }
@@ -76,7 +77,7 @@
             _checkBoxButton.isCheck = NO;
             [kNotificationCenter postNotificationName:kNOTIFICATION_INTERESTED object:nil];
             [self _creatPopupView];
-        } else {
+        }else {
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
