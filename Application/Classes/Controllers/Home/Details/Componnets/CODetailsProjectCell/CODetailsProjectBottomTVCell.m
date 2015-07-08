@@ -25,8 +25,8 @@
 
 - (void)viewDidLoad {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButton) name:@"change_titler_button" object:nil];
-    [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButtonQuestion) name:@"change_titler_button_question" object:nil];
+    [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButton) name:kNOTIFICATION_INTERESTED object:nil];
+    [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButtonQuestion) name:kNOTIFICATION_QUESTION object:nil];
 }
 
 

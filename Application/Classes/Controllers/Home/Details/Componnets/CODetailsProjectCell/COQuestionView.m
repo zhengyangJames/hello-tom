@@ -30,7 +30,7 @@
 
 #pragma mark SetUp UI
 - (void)_setupUI {
-    self.navigationController.title = m_string(@"Questions");
+    self.title = m_string(@"Questions");
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
 }
@@ -68,7 +68,7 @@
     [[WSURLSessionManager shared] wsPostQuestionWithOffersID:idoffer body:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             DBG(@"--%@--",responseObject);
-            [kNotificationCenter postNotificationName:@"change_titler_button_question" object:nil];
+            [kNotificationCenter postNotificationName:kNOTIFICATION_QUESTION object:nil];
             [self _setupShowAleartViewWithTitle:m_string(@"Request sent")];
         } else {
             [UIHelper showError:error];

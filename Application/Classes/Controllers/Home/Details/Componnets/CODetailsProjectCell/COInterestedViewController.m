@@ -38,7 +38,7 @@
 
 #pragma mark SetUp UI 
 - (void)_setupUI {
-    self.navigationController.title = m_string(@"Interested");
+    self.title = m_string(@"Interested");
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
     _checkBoxButton.delegate = self;
@@ -74,7 +74,7 @@
             _amountTextField.text = nil;
             _emailTextField.text = nil;
             _checkBoxButton.isCheck = NO;
-            [kNotificationCenter postNotificationName:@"change_titler_button" object:nil];
+            [kNotificationCenter postNotificationName:kNOTIFICATION_INTERESTED object:nil];
             [self _creatPopupView];
         }else {
             [UIHelper showError:error];
