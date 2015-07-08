@@ -110,4 +110,11 @@
 
 #define KEY_TABBARSELECT                  @"KEY_TABBARSELECT"
 
+////////////////////////////////////////////////////////////////
+#pragma mark - Notification
+////////////////////////////////////////////////////////////////
+
+#define kNOTIFICATION_INTERESTED           @"kNNOTIFICATION_INTERESTED"
+#define kNOTIFICATION_QUESTION             @"kNNOTIFICATION_QUESTION"
+
 #endif

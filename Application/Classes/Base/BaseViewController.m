@@ -21,4 +21,9 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
+- (void)dealloc {
+    [kNotificationCenter removeObserver:self name:kNOTIFICATION_QUESTION object:nil];
+    [kNotificationCenter removeObserver:self name:kNOTIFICATION_INTERESTED object:nil];
+}
+
 @end

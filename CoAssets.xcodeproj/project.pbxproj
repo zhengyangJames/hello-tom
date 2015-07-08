@@ -285,6 +285,10 @@
 		7F85292F1B43935B00CFAEB5 /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291F1B43935B00CFAEB5 /* United States.png */; };
 		7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529201B43935B00CFAEB5 /* Vietnam.png */; };
 		7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */; };
+		7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA59D921B4CB5C700AF8E41 /* COPopupQuestionView.m */; };
+		7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */; };
+		7FA59D9B1B4CBC1C00AF8E41 /* COQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA59D991B4CBC1C00AF8E41 /* COQuestionView.m */; };
+		7FA59D9C1B4CBC1C00AF8E41 /* COQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA59D9A1B4CBC1C00AF8E41 /* COQuestionView.xib */; };
 		7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */; };
 		7FAB4E501B468BCA0012E6D0 /* AboutTableViewCell_Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */; };
 		7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */; };
@@ -732,6 +736,12 @@
 		7F8529201B43935B00CFAEB5 /* Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vietnam.png; sourceTree = "<group>"; };
 		7F8EE69C1B4A6ACF00F92852 /* NSString_stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_stripHtml.h; sourceTree = "<group>"; };
 		7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_stripHtml.m; sourceTree = "<group>"; };
+		7FA59D911B4CB5C700AF8E41 /* COPopupQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COPopupQuestionView.h; sourceTree = "<group>"; };
+		7FA59D921B4CB5C700AF8E41 /* COPopupQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COPopupQuestionView.m; sourceTree = "<group>"; };
+		7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COPopupQuestionView.xib; sourceTree = "<group>"; };
+		7FA59D981B4CBC1C00AF8E41 /* COQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COQuestionView.h; sourceTree = "<group>"; };
+		7FA59D991B4CBC1C00AF8E41 /* COQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COQuestionView.m; sourceTree = "<group>"; };
+		7FA59D9A1B4CBC1C00AF8E41 /* COQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COQuestionView.xib; sourceTree = "<group>"; };
 		7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait_ph.jpg; sourceTree = "<group>"; };
 		7FAB4E4D1B468BCA0012E6D0 /* AboutTableViewCell_Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell_Address.h; sourceTree = "<group>"; };
 		7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell_Address.m; sourceTree = "<group>"; };
@@ -1033,6 +1043,7 @@
 				7F325DEA1B40E50800116445 /* CODetailsProjectTBVCell.m */,
 				7F325DEB1B40E50800116445 /* CODetailsProjectTBVCell.xib */,
 				7FCD18A81B4B79C9000B81A2 /* COInterestedViewController */,
+				7FA59D9D1B4CBC2100AF8E41 /* COQuestionView */,
 			);
 			path = CODetailsProjectCell;
 			sourceTree = "<group>";
@@ -1835,6 +1846,16 @@
 			path = countries;
 			sourceTree = "<group>";
 		};
+		7FA59D9D1B4CBC2100AF8E41 /* COQuestionView */ = {
+			isa = PBXGroup;
+			children = (
+				7FA59D981B4CBC1C00AF8E41 /* COQuestionView.h */,
+				7FA59D991B4CBC1C00AF8E41 /* COQuestionView.m */,
+				7FA59D9A1B4CBC1C00AF8E41 /* COQuestionView.xib */,
+			);
+			name = COQuestionView;
+			sourceTree = "<group>";
+		};
 		7FCD18A81B4B79C9000B81A2 /* COInterestedViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1853,6 +1874,9 @@
 				7FCD18B21B4BBBD0000B81A2 /* COPopupInteredtedView.h */,
 				7FCD18B31B4BBBD0000B81A2 /* COPopupInteredtedView.m */,
 				7FCD18B51B4BBBF4000B81A2 /* COPopupInteredtedView.xib */,
+				7FA59D911B4CB5C700AF8E41 /* COPopupQuestionView.h */,
+				7FA59D921B4CB5C700AF8E41 /* COPopupQuestionView.m */,
+				7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */,
 			);
 			path = COPopUpView;
 			sourceTree = "<group>";
@@ -2026,6 +2050,7 @@
 				7F3260651B40E50800116445 /* 20.jpg in Resources */,
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
 				7F32603B1B40E50800116445 /* ic_contac_2@3x.png in Resources */,
+				7FA59D9C1B4CBC1C00AF8E41 /* COQuestionView.xib in Resources */,
 				7F325F9C1B40E50800116445 /* HomeListViewCell.xib in Resources */,
 				7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */,
 				7F3260561B40E50800116445 /* ic_setting@2x.png in Resources */,
@@ -2046,6 +2071,7 @@
 				7F3260641B40E50800116445 /* 19.jpg in Resources */,
 				7F32604D1B40E50800116445 /* ic_loadding.gif in Resources */,
 				7F32605A1B40E50800116445 /* ic_setting_2_heighlight@2x.png in Resources */,
+				7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */,
 				7F3260551B40E50800116445 /* ic_peropel@3x.png in Resources */,
 				7F3260771B40E50800116445 /* SettingPlist.plist in Resources */,
 				7F32605C1B40E50800116445 /* ic_setting_heightline@2x.png in Resources */,
@@ -2226,6 +2252,7 @@
 				7F325FDB1B40E50800116445 /* WSURLSessionManager+ListContact.m in Sources */,
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
+				7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
 				7FCD18AC1B4BB060000B81A2 /* KLCPopup.m in Sources */,
 				7F325FDF1B40E50800116445 /* AFHTTPRequestOperation.m in Sources */,
@@ -2240,6 +2267,7 @@
 				7F325FE11B40E50800116445 /* AFHTTPSessionManager.m in Sources */,
 				7F325FE61B40E50800116445 /* AFURLResponseSerialization.m in Sources */,
 				0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */,
+				7FA59D9B1B4CBC1C00AF8E41 /* COQuestionView.m in Sources */,
 				7F325F901B40E50800116445 /* CODetailsProjectTBVCell.m in Sources */,
 				7F3260181B40E50800116445 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				7F3260011B40E50800116445 /* NSManagedObjectContext+MagicalSaves.m in Sources */,

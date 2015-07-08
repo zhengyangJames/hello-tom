@@ -30,8 +30,15 @@
     [self _setupUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
 #pragma mark SetUp UI 
 - (void)_setupUI {
+    self.title = m_string(@"Interested");
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
     _checkBoxButton.delegate = self;
@@ -51,7 +58,6 @@
 - (void)__actionDone {
     if ([self _checkEmailAmount]) {
         [self _callWSInteredted];
-//        [self _creatPopupView];
     }
 }
 
@@ -68,7 +74,7 @@
             _amountTextField.text = nil;
             _emailTextField.text = nil;
             _checkBoxButton.isCheck = NO;
-            [kNotificationCenter postNotificationName:@"change_titler_button" object:nil];
+            [kNotificationCenter postNotificationName:kNOTIFICATION_INTERESTED object:nil];
             [self _creatPopupView];
         } else {
             [UIHelper showError:error];

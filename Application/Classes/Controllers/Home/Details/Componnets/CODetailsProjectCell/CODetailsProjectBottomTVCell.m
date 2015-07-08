@@ -10,9 +10,11 @@
 #import "COPositive&NagitiveButton.h"
 #import "WSURLSessionManager+ListHome.h"
 
+
 @interface CODetailsProjectBottomTVCell ()<UIAlertViewDelegate>
 {
     __weak IBOutlet COPositive_NagitiveButton *_interedtedBTN;
+    __weak IBOutlet COPositive_NagitiveButton *_questionBTN;
 }
 
 @end
@@ -23,7 +25,8 @@
 
 - (void)viewDidLoad {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButton) name:@"change_titler_button" object:nil];
+    [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButton) name:kNOTIFICATION_INTERESTED object:nil];
+    [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButtonQuestion) name:kNOTIFICATION_QUESTION object:nil];
 }
 
 
@@ -35,31 +38,18 @@
 }
 
 - (IBAction)__actionQuestions:(id)sender {
-    [UIHelper showLoadingInView:self.superview];
-    NSString *idoffer = [self.object valueForKey:@"id"];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil];
-    [[WSURLSessionManager shared] wsPostQuestionWithOffersID:idoffer body:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        DBG(@"--%@--",responseObject);
-        [UIHelper hideLoadingFromView:self.superview];
-    }];
-    
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:m_string(@"CoAssets")
-                                                       message:m_string(@"Please type your question below. Email will be sent to coassets admin.")
-                                                      delegate:self
-                                             cancelButtonTitle:m_string(@"OK")
-                                             otherButtonTitles: nil];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alertView show];
+    if ([self.delegate respondsToSelector:@selector(detailsProfileAction:didSelectAction:)]) {
+        [self.delegate detailsProfileAction:self didSelectAction:CODetailsProjectActionQuestions];
+    }
 }
 
 - (void)__actionUpdateButton {
     [_interedtedBTN setTitle:@"I want to invest again!" forState:UIControlStateNormal];
 }
 
-#pragma mark - AlertView
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSString *str = alertView.textInputContextIdentifier;
-    DBG(@"%@",str);
+- (void)__actionUpdateButtonQuestion {
+    [_questionBTN setTitle:@"Request sent." forState:UIControlStateNormal];
 }
+
 
 @end

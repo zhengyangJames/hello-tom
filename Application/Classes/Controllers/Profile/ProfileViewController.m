@@ -226,19 +226,19 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     NSString *city = self.profileObject.city;
     NSString *country = self.profileObject.country;
     NSMutableString *stringFormat = [NSMutableString new];
-    if (![address1 isEmpty]) {
+    if (address1 && ![address1 isEmpty]) {
         [stringFormat appendString:address1];
     }
-    if (![address2 isEmpty]){
+    if (address2 && ![address2 isEmpty]){
         [stringFormat appendString:[NSString stringWithFormat:@"\n%@",address2]];
     }
-    if (![postCode isEmpty]){
+    if (postCode && ![postCode isEmpty]){
         [stringFormat appendString:[NSString stringWithFormat:@"\n%@",postCode]];
     }
-    if (![city isEmpty]){
+    if (city && ![city isEmpty]){
         [stringFormat appendString:[NSString stringWithFormat:@"\n%@",city]];
     }
-    if (![country isEmpty]) {
+    if (country && ![country isEmpty]) {
         [stringFormat appendString:[NSString stringWithFormat:@"\n%@",country]];
     }
     return stringFormat;

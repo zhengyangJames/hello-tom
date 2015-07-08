@@ -96,10 +96,6 @@
 - (CODetailsProjectBottomTVCell*)_setupButtonCell:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
     CODetailsProjectBottomTVCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectBottomTVCell identifier] forIndexPath:indexPath];
     cell.delegate = self;
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    [dic setValue:self.object.offerID forKey:@"id"];
-    [dic setValue:self.object.amount forKey:@"amount"];
-    cell.object = dic;
     return cell;
 }
 
@@ -119,11 +115,15 @@
 - (void)detailsProfileAction:(CODetailsProjectBottomTVCell *)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction {
     switch (detailsProjectAction) {
         case CODetailsProjectActionInterested:
-            if ([self.delegate respondsToSelector:@selector(actionButtonDetailsProject)]) {
-                [self.delegate actionButtonDetailsProject];
+            if ([self.delegate respondsToSelector:@selector(actionButtonDetailsProject:)]) {
+                [self.delegate actionButtonDetailsProject:CODetailsProjectActionButtonInterested];
             }
             break;
-        case CODetailsProjectActionQuestions: break;
+        case CODetailsProjectActionQuestions:
+            if ([self.delegate respondsToSelector:@selector(actionButtonDetailsProject:)]) {
+                [self.delegate actionButtonDetailsProject:CODetailsProjectActionButtonQuestions];
+            }
+            break;
         default: break;
     }
 }

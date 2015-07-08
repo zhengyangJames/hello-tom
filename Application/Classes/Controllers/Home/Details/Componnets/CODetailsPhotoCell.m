@@ -43,7 +43,12 @@
 #pragma mark - Set Get
 - (void)setObject:(NSDictionary *)object {
     _object = object;
-    _detailsTextView.text = [[object valueForKeyNotNull:@"details"] stringByStrippingHTML];
+//    UIFont *systemFont = [UIFont systemFontOfSize:18.0f];
+//    NSDictionary * fontAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:systemFont, NSFontAttributeName, nil];
+    NSString *htmlString = [object valueForKey:@"details"];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+//    [attributedString addAttributes:fontAttributes range:NSMakeRange(0, htmlString.length)];
+    _detailsTextView.attributedText = attributedString;
     NSURL *url = [NSURL URLWithString:[object valueForKeyNotNull:@"images"]];
     [_image setImage:[UIImage imageNamed:@"ic_placeholder"]];
     [_image setImageURL:url];

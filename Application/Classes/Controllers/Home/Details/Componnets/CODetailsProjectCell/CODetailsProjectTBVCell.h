@@ -14,6 +14,11 @@ typedef NS_ENUM(NSInteger, DetailsProjectStyle) {
     DetailsProjectSite
 };
 
+typedef NS_ENUM(NSInteger, CODetailsProjectActionButton) {
+    CODetailsProjectActionButtonInterested,
+    CODetailsProjectActionButtonQuestions
+};
+
 @protocol CODetailsProjectTBVCellDelegate;
 
 @interface CODetailsProjectTBVCell : BaseTableViewCell
@@ -26,6 +31,6 @@ typedef NS_ENUM(NSInteger, DetailsProjectStyle) {
 @protocol  CODetailsProjectTBVCellDelegate<NSObject>
 
 @optional
-- (void)actionButtonDetailsProject;
+- (void)actionButtonDetailsProject:(CODetailsProjectActionButton)detailsProjectStyle;
 
 @end

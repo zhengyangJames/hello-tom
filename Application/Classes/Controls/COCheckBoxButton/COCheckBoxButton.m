@@ -21,7 +21,7 @@
     [super awakeFromNib];
     [self initilizeButton];
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.titleLabel.numberOfLines = 2;
+    self.titleLabel.numberOfLines = 0;
 }
 
 - (void)drawRect:(CGRect)rect
@@ -50,6 +50,7 @@
 {
     CGRect frame = [super imageRectForContentRect:contentRect];
     frame.origin.x = 0;
+    frame.origin.y = (CGRectGetHeight(contentRect) - 22)/2;
     frame.size.height = 22;
     frame.size.width = 22;
     return frame;
