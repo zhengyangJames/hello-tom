@@ -19,8 +19,6 @@
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
-@property (strong, nonatomic) CODetailsOffersObject *object;
-
 @property (strong, nonatomic) NSArray *arrObject;
 
 - (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectTBVCellDelegate,CODetailsTableViewDelegate>)controller tableView:(UITableView*)tableView ;
