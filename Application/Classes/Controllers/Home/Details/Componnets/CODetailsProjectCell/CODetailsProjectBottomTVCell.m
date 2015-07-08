@@ -48,7 +48,7 @@
 }
 
 - (void)__actionUpdateButtonQuestion {
-    [_interedtedBTN setTitle:@"Request sent." forState:UIControlStateNormal];
+    [_questionBTN setTitle:@"Request sent." forState:UIControlStateNormal];
 }
 
 

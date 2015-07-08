@@ -30,6 +30,7 @@
 
 #pragma mark SetUp UI
 - (void)_setupUI {
+    self.navigationController.title = m_string(@"Questions");
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
 }

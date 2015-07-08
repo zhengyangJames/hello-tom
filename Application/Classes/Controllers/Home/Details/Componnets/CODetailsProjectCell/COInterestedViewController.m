@@ -38,6 +38,7 @@
 
 #pragma mark SetUp UI 
 - (void)_setupUI {
+    self.navigationController.title = m_string(@"Interested");
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
     _checkBoxButton.delegate = self;
