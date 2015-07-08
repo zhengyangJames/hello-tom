@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class COOfferItemObj;
 
 @interface CODetailsPhotoCell : UITableViewCell
 
-@property (strong, nonatomic) NSDictionary *object;
+@property (strong, nonatomic) COOfferItemObj *coOfferObj;
 
 @end

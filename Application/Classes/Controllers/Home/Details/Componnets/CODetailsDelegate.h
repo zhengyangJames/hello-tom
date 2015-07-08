@@ -7,22 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+@class CODetailsDelegate;
 
 #define IS_IOS8_OR_ABOVE    [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
 
-@protocol CODetailsController;
+@protocol CODetailsTableViewDelegate;
 
 
 @interface CODetailsDelegate : NSObject <UITableViewDelegate>
 
-- (instancetype)initWithController:(id<CODetailsController>)controller;
+- (instancetype)initWithController:(id<CODetailsTableViewDelegate>)controller;
 
 @end
 
-@protocol CODetailsController <NSObject>
+@protocol CODetailsTableViewDelegate <NSObject>
 
 @optional
-- (instancetype)detailsController:(CODetailsDelegate*)feedController
-       didSelectObject:(id)feedObj atIndexPath:(NSIndexPath*)indexPath;
+- (void)detailsViewController:(CODetailsDelegate *)detailViewController didSelectedAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,28 +22,43 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay" translatesAutoresizingMaskIntoConstraints="NO" id="SmK-Me-p6f">
-                        <rect key="frame" x="63" y="8" width="249" height="50"/>
+                        <rect key="frame" x="62" y="8" width="249.5" height="50"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-SD-EoN">
-                        <rect key="frame" x="8" y="12" width="51" height="51"/>
+                        <rect key="frame" x="8" y="8" width="50.5" height="50.5"/>
                         <constraints>
+                            <constraint firstAttribute="width" secondItem="O7n-SD-EoN" secondAttribute="height" multiplier="1:1" id="Qi1-X1-1R0"/>
                             <constraint firstAttribute="width" constant="51" id="oYi-DS-JEq"/>
                             <constraint firstAttribute="height" constant="51" id="t0t-wI-pAb"/>
+                            <constraint firstAttribute="height" constant="50.5" id="wvs-T6-2Cq"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oYi-DS-JEq"/>
+                                <exclude reference="t0t-wI-pAb"/>
+                            </mask>
+                        </variation>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstItem="O7n-SD-EoN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7e7-xH-fWe"/>
                     <constraint firstItem="SmK-Me-p6f" firstAttribute="top" secondItem="O7n-SD-EoN" secondAttribute="top" constant="-4" id="7l6-sN-rGp"/>
                     <constraint firstAttribute="bottomMargin" secondItem="SmK-Me-p6f" secondAttribute="bottom" id="MTC-NA-Dk9"/>
                     <constraint firstItem="SmK-Me-p6f" firstAttribute="leading" secondItem="O7n-SD-EoN" secondAttribute="trailing" constant="4" id="Oex-II-VSj"/>
+                    <constraint firstAttribute="bottom" secondItem="O7n-SD-EoN" secondAttribute="bottom" constant="8" id="ei0-xK-dxp"/>
                     <constraint firstItem="O7n-SD-EoN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hYx-1u-Nt5"/>
                     <constraint firstItem="SmK-Me-p6f" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-8" id="uvn-ER-xkB"/>
                     <constraint firstItem="SmK-Me-p6f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xqB-NH-U16"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="7l6-sN-rGp"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>

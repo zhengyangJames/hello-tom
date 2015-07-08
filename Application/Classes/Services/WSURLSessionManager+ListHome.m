@@ -58,9 +58,10 @@
     NSString *url = [urlOffer stringByAppendingString:offerID];
     [self sendURL:url params:nil body:nil method:METHOD_GET handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-            CODetailsOffersObject *objList = [[CODetailsOffersObject alloc]initWithDictionary:responseObject];
+            NSArray *listOffer = [UIHelper getListOfferDetailWihtDict:responseObject];
+            //CODetailsOffersObject *objList = [[CODetailsOffersObject alloc]initWithDictionary:responseObject];
             if (handler) {
-                handler(objList, response, nil);
+                handler(listOffer, response, nil);
             }
         } else {
             if (handler) {

@@ -12,9 +12,11 @@
 #import "CODetailsDelegate.h"
 #import "CODetailsOffersObject.h"
 
-@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsController,CODetailsProjectTBVCellDelegate>
+@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsProjectTBVCellDelegate>
 
 @property (strong, nonatomic) CODetailsOffersObject *objectDetails;
+
+@property (nonatomic, strong) NSArray *arrayObj;
 
 @end
 

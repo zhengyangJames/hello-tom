@@ -15,7 +15,10 @@
 #import "COInterestedViewController.h"
 #import "COQuestionView.h"
 
-@interface DetailsViewController ()<CODetailsProjectTBVCellDelegate>
+#import "COOfferItemObj.h"
+#import "COOferObj.h"
+
+@interface DetailsViewController ()<CODetailsProjectTBVCellDelegate, CODetailsTableViewDelegate,CODetailsTableViewDelegate>
 {
 
 }
@@ -54,8 +57,12 @@
     self.tableView.dataSource = self.detailsDataSource;
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
+    [self _reloadData];
+}
+
+- (void)_reloadData {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        self.detailsDataSource.object = self.objectDetails;
+        self.detailsDataSource.arrObject = self.arrayObj;
         [self.tableView reloadData];
     }];
 }
@@ -63,6 +70,11 @@
 #pragma mark Set Get 
 - (void)setObjectDetails:(CODetailsOffersObject *)objectDetails {
     _objectDetails = objectDetails;
+}
+
+- (void)setArrayObj:(NSArray *)arrayObj {
+    _arrayObj = arrayObj;
+    [self _reloadData];
 }
 
 #pragma Web Service 
@@ -79,7 +91,12 @@
     [headerView setBackgroundColor:[UIColor clearColor]];
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, headerView.frame.size.width, headerView.frame.size.height)];
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
-    NSURL *url = [NSURL URLWithString:[self.objectDetails valueForKey:@"imageBig"]];
+    
+    COOferObj *offerObj = [self.arrayObj firstObject];
+    COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+    
+    
+    NSURL *url = [NSURL URLWithString:offerItemObj.linkOrDetail];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
     [imageView setImage:[UIImage imageNamed:@"ic_placeholder"]];
@@ -109,6 +126,21 @@
         default:
             break;
     }
+}
+
+- (void)detailsViewController:(CODetailsDelegate *)detailViewController didSelectedAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section > 4 && indexPath.section < 11 && indexPath.row != 0) {
+        COOferObj *obj = [self _getItemAtindexPath:indexPath];
+        COOfferItemObj *coOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row - 1];
+        if (coOOfferItemObj.linkOrDetail && ![coOOfferItemObj.linkOrDetail isEmpty]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:coOOfferItemObj.linkOrDetail]];
+        }
+    }
+}
+
+- (COOferObj *)_getItemAtindexPath:(NSIndexPath *)indexpath {
+    COOferObj *obj = [self.arrayObj objectAtIndex:indexpath.section];
+    return obj;
 }
 
 @end

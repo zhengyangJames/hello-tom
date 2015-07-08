@@ -9,6 +9,7 @@
 #import "CODetailsPhotoCell.h"
 #import "UIImageView+Networking.h"
 #import "NSString_stripHtml.h"
+#import "COOfferItemObj.h"
 
 #define kCORNER_RADIUS_IMAGE 6
 
@@ -41,19 +42,12 @@
 }
 
 #pragma mark - Set Get
-- (void)setObject:(NSDictionary *)object {
-    _object = object;
-    _detailsTextView.text = [object valueForKey:@"details"];
-//    NSString *htmlString = [object valueForKey:@"details"];
-//    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//        NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-//        _detailsTextView.attributedText = attributedString;
-//    }];
-    NSURL *url = [NSURL URLWithString:[object valueForKeyNotNull:@"images"]];
-    [_image setImage:[UIImage imageNamed:@"ic_placeholder"]];
+
+- (void)setCoOfferObj:(COOfferItemObj *)coOfferObj {
+    _coOfferObj = coOfferObj;
+    _detailsTextView.text = coOfferObj.title;
+    NSURL *url = [NSURL URLWithString:coOfferObj.linkOrDetail];
     [_image setImageURL:url];
-    [self setNeedsUpdateConstraints];
-    [self updateConstraintsIfNeeded];
 }
 
 

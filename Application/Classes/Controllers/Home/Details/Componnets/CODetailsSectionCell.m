@@ -19,6 +19,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setBounds:(CGRect)bounds
@@ -30,7 +31,25 @@
 #pragma mark - Set Get
 - (void)setTitleSection:(NSString *)titleSection {
     _titleSection = titleSection;
-    _lblSection.text = _titleSection;
+    _lblSection.text = [self _getTitleWithString:titleSection];
+}
+
+- (NSString *)_getTitleWithString:(NSString *)string {
+    NSString *title = @"";
+    if ([string isEqualToString:@"declaration_form_list"]) {
+        title = @"DECLARATION FORM";
+    } else if ([string isEqualToString:@"legal_appointment"]) {
+        title = @"LEGAL APPOINTMENT";
+    } if ([string isEqualToString:@"licenses"]) {
+        title = @"PROOF OF LICENSES";
+    } else if ([string isEqualToString:@"others"]) {
+        title = @"OTHER DOCUMENTS";
+    }if ([string isEqualToString:@"ownership"]) {
+        title = @"PROOF OF OWNERSHIP";
+    } else if ([string isEqualToString:@"registration_form_list"]) {
+        title = @"COMPANY REGISTRATION";
+    }
+    return title;
 }
 
 

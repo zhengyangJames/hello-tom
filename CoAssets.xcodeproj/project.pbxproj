@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EA971BE1B4D1766000B6500 /* COOfferItemObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA971BD1B4D1766000B6500 /* COOfferItemObj.m */; };
+		0EA971C11B4D17E3000B6500 /* COOferObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA971C01B4D17E3000B6500 /* COOferObj.m */; };
 		0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881A1B27CA7100B5656F /* NMCollectionView.m */; };
 		0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881C1B27CA7100B5656F /* NMCollectionViewCell.m */; };
 		0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881E1B27CA7100B5656F /* NMTableView.m */; };
@@ -317,6 +319,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EA971BC1B4D1766000B6500 /* COOfferItemObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOfferItemObj.h; sourceTree = "<group>"; };
+		0EA971BD1B4D1766000B6500 /* COOfferItemObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOfferItemObj.m; sourceTree = "<group>"; };
+		0EA971BF1B4D17E3000B6500 /* COOferObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOferObj.h; sourceTree = "<group>"; };
+		0EA971C01B4D17E3000B6500 /* COOferObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOferObj.m; sourceTree = "<group>"; };
 		0ECA88191B27CA7100B5656F /* NMCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCollectionView.h; sourceTree = "<group>"; };
 		0ECA881A1B27CA7100B5656F /* NMCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMCollectionView.m; sourceTree = "<group>"; };
 		0ECA881B1B27CA7100B5656F /* NMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1431,6 +1437,10 @@
 				7F85290B1B437B0D00CFAEB5 /* CODetailsOffersObject.m */,
 				7F325E851B40E50800116445 /* COListProfileObject.h */,
 				7F325E861B40E50800116445 /* COListProfileObject.m */,
+				0EA971BC1B4D1766000B6500 /* COOfferItemObj.h */,
+				0EA971BD1B4D1766000B6500 /* COOfferItemObj.m */,
+				0EA971BF1B4D17E3000B6500 /* COOferObj.h */,
+				0EA971C01B4D17E3000B6500 /* COOferObj.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -2200,6 +2210,7 @@
 				7F325FF41B40E50800116445 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				7F325FA61B40E50800116445 /* AboutTableViewCell.m in Sources */,
 				7F325F801B40E50800116445 /* NSArray+Sort.m in Sources */,
+				0EA971BE1B4D1766000B6500 /* COOfferItemObj.m in Sources */,
 				7F325FDE1B40E50800116445 /* WSURLSessionManager.m in Sources */,
 				7F3260071B40E50800116445 /* MagicalRecord+ErrorHandling.m in Sources */,
 				7F325FCE1B40E50800116445 /* CoAssest.xcdatamodeld in Sources */,
@@ -2214,6 +2225,7 @@
 				7F325FEB1B40E50800116445 /* UIButton+AFNetworking.m in Sources */,
 				7F32600B1B40E50800116445 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				7F325FF51B40E50800116445 /* NSNumber+MagicalDataImport.m in Sources */,
+				0EA971C11B4D17E3000B6500 /* COOferObj.m in Sources */,
 				7F325FA21B40E50800116445 /* LoginViewController.m in Sources */,
 				7F325F851B40E50800116445 /* CODetailsAccessoryCell.m in Sources */,
 				7F3260091B40E50800116445 /* MagicalRecord+Options.m in Sources */,

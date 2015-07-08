@@ -7,6 +7,7 @@
 //
 
 #import "CODetailsAccessoryCell.h"
+#import "COOfferItemObj.h"
 
 @implementation CODetailsAccessoryCell
 
@@ -17,9 +18,10 @@
 
 
 #pragma mark - Set Get
-- (void)setObject:(NSString *)object {
-    _object = object;
-    self.detailsLabel.text = _object;
+
+- (void)setCoOOfferItemObj:(COOfferItemObj *)coOOfferItemObj {
+    _coOOfferItemObj = coOOfferItemObj;
+    self.detailsLabel.text = coOOfferItemObj.title;
 }
 
 #pragma mark - Action

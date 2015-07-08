@@ -7,11 +7,13 @@
 //
 
 #import "CODetailsTextCell.h"
+#import "COOfferItemObj.h"
 
 @interface CODetailsTextCell ()
 {
     __weak IBOutlet UITextView  *_detailsTextView;
     __weak IBOutlet UILabel     *_headerLabel;
+    __weak NSAttributedString *_attributedString;
 }
 
 @end
@@ -30,12 +32,10 @@
 }
 
 #pragma mark - Set Get
-- (void)setObject:(NSDictionary *)object {
-    _object = object;
-    _detailsTextView.text = [object valueForKeyNotNull:@"details"];
-    _headerLabel.text = [object valueForKeyNotNull:@"status"];
-    [self setNeedsUpdateConstraints];
-    [self updateConstraintsIfNeeded];
+- (void)setCoOfferItem:(COOfferItemObj *)coOfferItem {
+    _coOfferItem = coOfferItem;
+    _headerLabel.text = coOfferItem.title;
+    _detailsTextView.text = coOfferItem.linkOrDetail;
 }
 
 @end

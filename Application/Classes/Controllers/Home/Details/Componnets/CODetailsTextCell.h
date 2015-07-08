@@ -6,10 +6,9 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@class COOfferItemObj;
 
 @interface CODetailsTextCell : UITableViewCell
-
-@property (strong, nonatomic) NSDictionary *object;
+@property (strong, nonatomic) COOfferItemObj *coOfferItem;
 
 @end

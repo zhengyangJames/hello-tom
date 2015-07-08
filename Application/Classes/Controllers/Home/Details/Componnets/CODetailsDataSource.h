@@ -15,13 +15,17 @@
 #import "CODetailsSectionCell.h"
 #import "CODetailsOffersObject.h"
 
+@protocol CODetailsTableViewDelegate;
+
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
 @property (strong, nonatomic) CODetailsOffersObject *object;
 
-- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectTBVCellDelegate>)controller tableView:(UITableView*)tableView ;
+@property (strong, nonatomic) NSArray *arrObject;
 
-- (CODetailsTextCell*)textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
-- (CODetailsPhotoCell*)photoCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectTBVCellDelegate,CODetailsTableViewDelegate>)controller tableView:(UITableView*)tableView ;
+
+//- (CODetailsTextCell*)textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
+//- (CODetailsPhotoCell*)photoCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
 
 @end

@@ -74,9 +74,15 @@
 }
 
 #pragma mark - Private
-- (void)_pushDetailVcWithID:(CODetailsOffersObject*)obj {
+//- (void)_pushDetailVcWithID:(CODetailsOffersObject*)obj {
+//    DetailsViewController *vc = [[DetailsViewController alloc]init];
+//    vc.objectDetails = obj;
+//    [self.navigationController pushViewController:vc animated:YES];
+//}
+
+- (void)_pushDetailVcWithID:(NSArray *)arr {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
-    vc.objectDetails = obj;
+    vc.arrayObj = arr;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

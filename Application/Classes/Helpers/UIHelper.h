@@ -25,5 +25,6 @@
 
 + (UIImagePickerController *)showImagePickerAtController:(UIViewController *)controller withDelegate:(id)delegate andMode:(NSInteger)mode;
 
++ (NSArray *)getListOfferDetailWihtDict:(NSDictionary *)dict;
 
 @end

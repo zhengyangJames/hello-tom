@@ -14,14 +14,14 @@
 {
     
 }
-@property (nonatomic, weak) id<CODetailsController> controller;
+@property (nonatomic, weak) id<CODetailsTableViewDelegate> controller;
 
 
 @end
 
 @implementation CODetailsDelegate
 
-- (instancetype)initWithController:(id<CODetailsController>)controller {
+- (instancetype)initWithController:(id<CODetailsTableViewDelegate>)controller {
     self = [super init];
     if(self) {
         self.controller = controller;
@@ -47,41 +47,20 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = 0;
-    CODetailsDataSource *dataSource = tableView.dataSource;
-    if (indexPath.row == 0) {
-        if (IS_IOS8_OR_ABOVE) {
-            return UITableViewAutomaticDimension;
-        } else {
-            id cell = [dataSource photoCellForTableView:tableView indexPath:indexPath];
-            height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
-        }
-    } else if(indexPath.row == 1) {
-        return 220;
-    } else {
-        if (IS_IOS8_OR_ABOVE) {
-            return  UITableViewAutomaticDimension;
-        } else {
-            id cell = [dataSource textCellForTableView:tableView indexPath:indexPath];
-            height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
-        }
+    if (indexPath.section == 1) {
+        return 250;
     }
-    return height;
+    return  UITableViewAutomaticDimension;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0) {
-        return 67;
-    } else if(indexPath.row == 1) {
-        return 220;
-    } else {
-        return 84;
-    }
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    if ([self.controller respondsToSelector:@selector(detailsViewController:didSelectedAtIndexPath:)]) {
+        [self.controller detailsViewController:self didSelectedAtIndexPath:indexPath];
+    }
 }
 
 @end
