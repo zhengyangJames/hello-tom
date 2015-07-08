@@ -9,7 +9,7 @@
 #import "COQuestionView.h"
 #import "WSURLSessionManager+ListHome.h"
 
-@interface COQuestionView ()
+@interface COQuestionView ()<UIAlertViewDelegate>
 {
     __weak IBOutlet UITextView *textView;
 }
@@ -75,6 +75,14 @@
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == alertView.cancelButtonIndex) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 

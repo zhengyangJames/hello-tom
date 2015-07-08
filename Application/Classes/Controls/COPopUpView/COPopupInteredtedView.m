@@ -59,6 +59,9 @@
 }
 
 - (IBAction)_actionCancel:(id)sender {
+    if (self.actionClosePopup) {
+        self.actionClosePopup();
+    }
     [UIView animateWithDuration:0.15
                           delay:0
                         options:kAnimationOptionCurveIOS7
@@ -70,12 +73,13 @@
                      }];
 }
 
-+ (void)showPopup:(NSString*)offerTitler{
++ (instancetype)showPopup:(NSString*)offerTitler{
     COPopupInteredtedView *popup = [COPopupInteredtedView autoLayoutView];
     popup.translatesAutoresizingMaskIntoConstraints = NO;
     popup.offerTitle = offerTitler;
     [[kAppDelegate window] addSubview:popup];
     [popup pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
+    return popup;
 }
 
 @end

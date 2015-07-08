@@ -18,6 +18,7 @@
     __weak IBOutlet COBorderTextField *_emailTextField;
     __weak IBOutlet COBorderTextField *_amountTextField;
     __weak IBOutlet COCheckBoxButton *_checkBoxButton;
+    __weak COPopupInteredtedView *_popup;
     UITextField *_textField;
     BOOL _isCheck;
 }
@@ -86,7 +87,12 @@
 
 #pragma mark Private
 - (void)_creatPopupView {
-    [COPopupInteredtedView showPopup:[self _setupTitlePopup]];
+    _popup = [COPopupInteredtedView showPopup:[self _setupTitlePopup]];
+    [_popup setActionClosePopup:^{
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+    }];
 }
 
 - (NSString*)_setupTitlePopup {

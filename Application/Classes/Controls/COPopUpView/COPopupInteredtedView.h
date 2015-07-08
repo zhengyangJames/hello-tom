@@ -14,7 +14,9 @@ typedef void(^ActionOk)();
 
 @interface COPopupInteredtedView : BaseView
 
+@property (nonatomic, strong) void (^actionClosePopup)();
+
 @property (strong, nonatomic) NSString *offerTitle;
-+ (void)showPopup:(NSString*)offerTitler;
++ (instancetype)showPopup:(NSString*)offerTitler;
 
 @end
