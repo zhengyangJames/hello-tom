@@ -1,34 +1,31 @@
 //
-//  COPopupInteredtedView.m
+//  COPopupQuestionView.m
 //  CoAssets
 //
-//  Created by TUONG DANG on 7/7/15.
+//  Created by TUONG DANG on 7/8/15.
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "COPopupInteredtedView.h"
+#import "COPopupQuestionView.h"
 
-@interface COPopupInteredtedView()
+@interface COPopupQuestionView ()
 {
-    __weak IBOutlet UILabel *_lblOfferTitle;
+    __weak IBOutlet UITextView *_questionTextView;
     
 }
 @property (nonatomic, weak) IBOutlet UIView *contentView;
 
 @end
 
-@implementation COPopupInteredtedView
+@implementation COPopupQuestionView
 
 - (instancetype)init {
-    if (self = [super init]) {
-        NSArray *subviewArray = [[NSBundle mainBundle] loadNibNamed:@"COPopupInteredtedView" owner:self options:nil];
-        self = [subviewArray objectAtIndex:0];
+    self = [super init];
+    if (self) {
+        NSArray *v = [[NSBundle mainBundle] loadNibNamed:[COPopupQuestionView identifier] owner:self options:nil];
+        self = [v objectAtIndex:0];
     }
     return self;
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
 }
 
 - (void)layoutSubviews {
@@ -39,7 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.offerTitle = self.offerTitle;
     self.contentView.alpha = 0.0;
     [self.contentView setTransform:CGAffineTransformMakeScale(1.3,1.3)];
     [UIView animateWithDuration:0.15
@@ -49,13 +45,8 @@
                          self.contentView.alpha = 1.0;
                          [self.contentView setTransform:CGAffineTransformMakeScale(1.0,1.0)];
                      } completion:^(BOOL finished) {
-
+                         
                      }];
-}
-
-- (void)setOfferTitle:(NSString *)offerTitle {
-    _offerTitle = offerTitle;
-    _lblOfferTitle.text = offerTitle;
 }
 
 - (IBAction)_actionCancel:(id)sender {
@@ -66,14 +57,13 @@
                          self.alpha = 0.0;
                          self.transform = CGAffineTransformMakeScale(1.1, 1.1);
                      } completion:^(BOOL finished) {
-                        [self removeFromSuperview];
+                         [self removeFromSuperview];
                      }];
 }
 
-+ (void)showPopup:(NSString*)offerTitler{
-    COPopupInteredtedView *popup = [COPopupInteredtedView autoLayoutView];
++ (void)showPopup{
+    COPopupQuestionView *popup = [COPopupQuestionView autoLayoutView];
     popup.translatesAutoresizingMaskIntoConstraints = NO;
-    popup.offerTitle = offerTitler;
     [[kAppDelegate window] addSubview:popup];
     [popup pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
 }

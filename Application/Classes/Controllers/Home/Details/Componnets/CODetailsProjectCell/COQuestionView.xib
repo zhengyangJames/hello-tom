@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="COQuestionView">
+            <connections>
+                <outlet property="textView" destination="lFr-Ik-FlV" id="bXS-rV-k4T"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwN-k5-aBe" customClass="TPKeyboardAvoidingScrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2h-Hb-rzO">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="572"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFr-Ik-FlV">
+                                    <rect key="frame" x="8" y="113" width="304" height="404"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="404" id="bnV-ng-UbK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please type your question below. Email will be sent to coassets admin." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="blC-Sn-Aar">
+                                    <rect key="frame" x="8" y="25" width="304" height="85"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="85" id="nhn-zR-eRa"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="blC-Sn-Aar" secondAttribute="trailing" constant="8" id="0gb-Zf-7zs"/>
+                                <constraint firstItem="blC-Sn-Aar" firstAttribute="top" secondItem="H2h-Hb-rzO" secondAttribute="top" constant="25" id="338-Wr-GtW"/>
+                                <constraint firstItem="lFr-Ik-FlV" firstAttribute="top" secondItem="blC-Sn-Aar" secondAttribute="bottom" constant="3" id="9Dh-8B-Ya3"/>
+                                <constraint firstItem="blC-Sn-Aar" firstAttribute="leading" secondItem="H2h-Hb-rzO" secondAttribute="leading" constant="8" id="ME2-Hc-x2v"/>
+                                <constraint firstAttribute="bottom" secondItem="lFr-Ik-FlV" secondAttribute="bottom" constant="55" id="NbO-Zc-w0A"/>
+                                <constraint firstAttribute="trailing" secondItem="lFr-Ik-FlV" secondAttribute="trailing" constant="8" id="Zdq-3W-XlV"/>
+                                <constraint firstItem="lFr-Ik-FlV" firstAttribute="leading" secondItem="H2h-Hb-rzO" secondAttribute="leading" constant="8" id="mdi-VR-CH6"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="H2h-Hb-rzO" firstAttribute="leading" secondItem="QwN-k5-aBe" secondAttribute="leading" id="0jK-je-wjb"/>
+                        <constraint firstItem="H2h-Hb-rzO" firstAttribute="width" secondItem="QwN-k5-aBe" secondAttribute="width" id="3e0-uX-267"/>
+                        <constraint firstItem="H2h-Hb-rzO" firstAttribute="top" secondItem="QwN-k5-aBe" secondAttribute="top" id="Rh0-qb-Stl"/>
+                        <constraint firstAttribute="trailing" secondItem="H2h-Hb-rzO" secondAttribute="trailing" id="ebx-fR-nCc"/>
+                        <constraint firstAttribute="bottom" secondItem="H2h-Hb-rzO" secondAttribute="bottom" id="pBK-6I-FYz"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="QwN-k5-aBe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6a4-ih-dZ2"/>
+                <constraint firstItem="QwN-k5-aBe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UKE-r5-fNc"/>
+                <constraint firstAttribute="trailing" secondItem="QwN-k5-aBe" secondAttribute="trailing" id="W9M-k5-1vB"/>
+                <constraint firstAttribute="bottom" secondItem="QwN-k5-aBe" secondAttribute="bottom" id="aAj-ke-Lrp"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="53" y="203"/>
+        </view>
+    </objects>
+</document>

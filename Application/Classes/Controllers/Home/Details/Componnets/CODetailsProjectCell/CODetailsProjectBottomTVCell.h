@@ -17,7 +17,6 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 @interface CODetailsProjectBottomTVCell : BaseTableViewCell
 
 @property (weak, nonatomic) id<CODetailsProjectBottomTVCellDelegate> delegate;
-@property (strong, nonatomic) NSDictionary *object;
 
 
 @end

@@ -64,6 +64,7 @@
             <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="_interedtedBTN" destination="FU9-ZL-aYu" id="ev5-MQ-BVB"/>
+                <outlet property="_questionBTN" destination="szA-tN-LfO" id="XVI-eV-TXd"/>
             </connections>
             <point key="canvasLocation" x="42" y="308.5"/>
         </tableViewCell>

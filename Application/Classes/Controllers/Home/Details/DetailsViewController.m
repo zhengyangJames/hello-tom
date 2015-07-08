@@ -13,6 +13,7 @@
 #import "WSURLSessionManager+ListHome.h"
 #import "UIImageView+Networking.h"
 #import "COInterestedViewController.h"
+#import "COQuestionView.h"
 
 @interface DetailsViewController ()<CODetailsProjectTBVCellDelegate>
 {
@@ -89,10 +90,25 @@
 }
 
 #pragma mark - Delegate
-- (void)actionButtonDetailsProject {
-    COInterestedViewController *vc = [[COInterestedViewController alloc]init];
-    vc.object = @{@"offerID":self.objectDetails.offerID,@"offerTitle":self.objectDetails.offersDetails};
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)actionButtonDetailsProject:(CODetailsProjectActionButton)detailsProjectStyle {
+    switch (detailsProjectStyle) {
+        case CODetailsProjectActionButtonInterested:
+        {
+            COInterestedViewController *vc = [[COInterestedViewController alloc]init];
+            vc.object = @{@"offerID":self.objectDetails.offerID,@"offerTitle":self.objectDetails.offersDetails};
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case CODetailsProjectActionButtonQuestions:
+        {
+            COQuestionView *vc = [[COQuestionView alloc]init];
+            vc.object = @{@"offerID":self.objectDetails.offerID};
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 @end

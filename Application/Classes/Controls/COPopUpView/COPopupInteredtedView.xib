@@ -21,11 +21,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-JX-zn4">
-                    <rect key="frame" x="15" y="45" width="290" height="478"/>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-JX-zn4">
+                    <rect key="frame" x="16" y="75" width="288" height="418"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iV-ca-RfI">
-                            <rect key="frame" x="8" y="8" width="274" height="395"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="274" translatesAutoresizingMaskIntoConstraints="NO" id="2iV-ca-RfI">
+                            <rect key="frame" x="10" y="8" width="268" height="340"/>
                             <string key="text">Thank you for crowdfunding The very FIRST Singapore Real Estate Crowdfunding Property: Mountbatten Lights Cluster Bungalow .
 
 Please e-sign the contract sent to your email &amp; proceed to make fund transfer within 5 working days.
@@ -38,7 +38,7 @@ Thank you &amp; happy crowdfunding.</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdC-NC-NED" customClass="COPositive_NagitiveButton">
-                            <rect key="frame" x="40" y="418" width="210" height="40"/>
+                            <rect key="frame" x="40" y="358" width="208" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="c7q-6V-SKk"/>
                             </constraints>
@@ -57,34 +57,34 @@ Thank you &amp; happy crowdfunding.</string>
                     </subviews>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="2iV-ca-RfI" firstAttribute="leading" secondItem="dMN-JX-zn4" secondAttribute="leading" constant="8" id="A6R-Fj-2vk"/>
+                        <constraint firstItem="2iV-ca-RfI" firstAttribute="leading" secondItem="dMN-JX-zn4" secondAttribute="leading" constant="10" id="A6R-Fj-2vk"/>
                         <constraint firstAttribute="trailing" secondItem="bdC-NC-NED" secondAttribute="trailing" constant="40" id="Ulw-f1-4Zd"/>
                         <constraint firstAttribute="bottom" secondItem="bdC-NC-NED" secondAttribute="bottom" constant="20" id="Uyg-YK-Rf7"/>
                         <constraint firstItem="2iV-ca-RfI" firstAttribute="top" secondItem="dMN-JX-zn4" secondAttribute="top" constant="8" id="We4-fs-Ogd"/>
                         <constraint firstItem="bdC-NC-NED" firstAttribute="leading" secondItem="dMN-JX-zn4" secondAttribute="leading" constant="40" id="a9c-ab-ud6"/>
-                        <constraint firstItem="bdC-NC-NED" firstAttribute="top" secondItem="2iV-ca-RfI" secondAttribute="bottom" constant="15" id="m4M-FJ-08K"/>
+                        <constraint firstItem="bdC-NC-NED" firstAttribute="top" secondItem="2iV-ca-RfI" secondAttribute="bottom" constant="10" id="m4M-FJ-08K"/>
                         <constraint firstAttribute="centerX" secondItem="bdC-NC-NED" secondAttribute="centerX" id="ma9-gd-2e2"/>
-                        <constraint firstAttribute="trailing" secondItem="2iV-ca-RfI" secondAttribute="trailing" constant="8" id="u5r-7r-axR"/>
+                        <constraint firstAttribute="trailing" secondItem="2iV-ca-RfI" secondAttribute="trailing" constant="10" id="u5r-7r-axR"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Eog-Vb-yaP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5tN-oG-7EO"/>
-                <constraint firstAttribute="trailing" secondItem="dMN-JX-zn4" secondAttribute="trailing" constant="15" id="8gK-CV-OYj"/>
+                <constraint firstAttribute="trailing" secondItem="dMN-JX-zn4" secondAttribute="trailing" constant="16" id="8gK-CV-OYj"/>
                 <constraint firstAttribute="trailing" secondItem="Eog-Vb-yaP" secondAttribute="trailing" id="QWS-Dh-Lym"/>
                 <constraint firstItem="Eog-Vb-yaP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="T8H-4g-GHp"/>
-                <constraint firstItem="dMN-JX-zn4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Wgs-Su-SAy"/>
+                <constraint firstItem="dMN-JX-zn4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Wgs-Su-SAy"/>
                 <constraint firstAttribute="bottom" secondItem="Eog-Vb-yaP" secondAttribute="bottom" id="bml-Zb-24m"/>
-                <constraint firstAttribute="bottom" secondItem="dMN-JX-zn4" secondAttribute="bottom" constant="45" id="tKd-wH-rok"/>
-                <constraint firstItem="dMN-JX-zn4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="45" id="uop-yL-a8R"/>
+                <constraint firstAttribute="bottom" secondItem="dMN-JX-zn4" secondAttribute="bottom" constant="75" id="tKd-wH-rok"/>
+                <constraint firstItem="dMN-JX-zn4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="75" id="uop-yL-a8R"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="_lblOfferTitle" destination="2iV-ca-RfI" id="gAk-nI-6De"/>
                 <outlet property="contentView" destination="dMN-JX-zn4" id="HN8-dr-dnq"/>
             </connections>
-            <point key="canvasLocation" x="89" y="307"/>
+            <point key="canvasLocation" x="-92" y="172"/>
         </view>
     </objects>
 </document>
