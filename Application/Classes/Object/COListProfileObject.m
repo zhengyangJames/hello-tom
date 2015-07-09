@@ -29,5 +29,34 @@
     return self;
 }
 
+- (NSDictionary*)getProfileObject {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kUSER] = self.username ;
+    dic[KFRIST_NAME] = self.first_name ;
+    dic[KLAST_NAME] = self.last_name ;
+    dic[KEMAIL] = self.email ;
+    dic[kNUM_CELL_PHONE] = self.cell_phone ;
+    dic[kNUM_COUNTRY] = self.country_prefix ;
+    dic[KADDRESS] = self.address_1 ;
+    dic[KADDRESS2] = self.address_2;
+    dic[KCITY] = self.city;
+    dic[KCOUNTRY] = self.country;
+    dic[KSATE] = self.region_state ;
+    return dic;
+}
+
+- (void)setProfileObject:(NSDictionary*)dicObject {
+    self.username = [dicObject objectForKeyNotNull:kUSER];
+    self.first_name = [dicObject objectForKeyNotNull:KFRIST_NAME];
+    self.last_name = [dicObject objectForKeyNotNull:KLAST_NAME];
+    self.email = [dicObject objectForKeyNotNull:KEMAIL];
+    self.cell_phone = [dicObject objectForKeyNotNull:kNUM_CELL_PHONE];
+    self.country_prefix = [dicObject objectForKeyNotNull:kNUM_COUNTRY];
+    self.address_1 = [dicObject objectForKeyNotNull:KADDRESS];
+    self.address_2 = [dicObject objectForKeyNotNull:KADDRESS2];
+    self.region_state = [dicObject objectForKeyNotNull:KSATE];
+    self.city = [dicObject objectForKeyNotNull:KCITY];
+    self.country = [dicObject objectForKeyNotNull:KCOUNTRY];
+}
 
 @end

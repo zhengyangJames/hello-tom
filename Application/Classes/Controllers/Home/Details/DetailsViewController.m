@@ -18,7 +18,7 @@
 #import "COOfferItemObj.h"
 #import "COOferObj.h"
 
-@interface DetailsViewController ()<CODetailsTableViewDelegate,CODetailsTableViewDelegate,CODetailsProjectCellDelegate>
+@interface DetailsViewController ()<CODetailsTableViewDelegate>
 {
 
 }
@@ -92,11 +92,11 @@
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, headerView.frame.size.width, headerView.frame.size.height)];
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    COOferObj *offerObj = [self.arrayObj firstObject];
+    COOferObj *offerObj = [self.arrayObj lastObject];
     COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
     
     
-    NSURL *url = [NSURL URLWithString:offerItemObj.linkOrDetail];
+    NSURL *url = [NSURL URLWithString:offerItemObj.photo];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
     [imageView setImage:[UIImage imageNamed:@"ic_placeholder"]];
@@ -107,19 +107,23 @@
 }
 
 #pragma mark - Delegate
-- (void)actionButtonDetailsProject:(CODetailsProjectActionButton)detailsProjectStyle {
-    switch (detailsProjectStyle) {
-        case CODetailsProjectActionButtonInterested:
+- (void)detailsProfileAction:(CODetailsProjectCell *)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction {
+    switch (detailsProjectAction) {
+        case CODetailsProjectActionInterested:
         {
             COInterestedViewController *vc = [[COInterestedViewController alloc]init];
-            vc.object = @{@"offerID":self.objectDetails.offerID,@"offerTitle":self.objectDetails.offersDetails};
+            COOferObj *offerObj = [self.arrayObj firstObject];
+            COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+            vc.object = @{@"offerID":offerItemObj.offerID,@"offerTitle":offerItemObj.title};
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
-        case CODetailsProjectActionButtonQuestions:
+        case CODetailsProjectActionQuestions:
         {
             COQuestionView *vc = [[COQuestionView alloc]init];
-            vc.object = @{@"offerID":self.objectDetails.offerID};
+            COOferObj *offerObj = [self.arrayObj firstObject];
+            COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+            vc.object = @{@"offerID":offerItemObj.offerID};
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

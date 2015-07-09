@@ -15,5 +15,5 @@
 - (void)wsGetDetailsWithOffersID:(NSString*)offerID handler:(WSURLSessionHandler)handler;
 - (void)wsPostSubscribeWithOffersID:(NSString*)OffersID amount:(NSDictionary*)amount handler:(WSURLSessionHandler)handler;
 - (void)wsPostQuestionWithOffersID:(NSString*)OffersID body:(NSDictionary*)body handler:(WSURLSessionHandler)handler;
-
+- (void)wsGetProgressBarWithOfferID:(NSDictionary*)bodyOfferID handler:(WSURLSessionHandler)handler;
 @end

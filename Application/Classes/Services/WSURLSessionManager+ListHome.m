@@ -59,7 +59,6 @@
     [self sendURL:url params:nil body:nil method:METHOD_GET handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSArray *listOffer = [UIHelper getListOfferDetailWihtDict:responseObject];
-            //CODetailsOffersObject *objList = [[CODetailsOffersObject alloc]initWithDictionary:responseObject];
             if (handler) {
                 handler(listOffer, response, nil);
             }
@@ -111,6 +110,29 @@
     
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            if (handler) {
+                handler(responseObject, response, nil);
+            }
+        } else {
+            if (handler) {
+                handler(nil,response,error);
+            }
+        }
+    }];
+}
+
+- (void)wsGetProgressBarWithOfferID:(NSDictionary*)bodyOfferID handler:(WSURLSessionHandler)handler {
+    NSString *valueToken = [NSString stringWithFormat:@"%@ %@",[kUserDefaults valueForKey:kTOKEN_TYPE],[kUserDefaults valueForKey:kACCESS_TOKEN]];
+    NSString *URL = WS_METHOD_POST_PROGRESSBAR;
+    NSString *postString = [self paramsToString:bodyOfferID];
+    NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest *request = [self createAuthRequest:URL
+                                                      body:parambody
+                                                httpMethod:METHOD_POST];
+    [request setValue:valueToken forHTTPHeaderField:@"Authorization"];
+    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            DBG(@"%@",responseObject);
             if (handler) {
                 handler(responseObject, response, nil);
             }

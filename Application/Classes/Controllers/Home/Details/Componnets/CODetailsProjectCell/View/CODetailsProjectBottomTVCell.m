@@ -15,6 +15,7 @@
 {
     __weak IBOutlet COPositive_NagitiveButton *_interedtedBTN;
     __weak IBOutlet COPositive_NagitiveButton *_questionBTN;
+    __weak IBOutlet UIView *_contentView;
 }
 
 @end
@@ -29,6 +30,10 @@
     [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButtonQuestion) name:kNOTIFICATION_QUESTION object:nil];
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [_contentView.layer setCornerRadius:8];
+}
 
 - (IBAction)__actionInterested:(id)sender {
 

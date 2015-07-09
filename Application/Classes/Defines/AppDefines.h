@@ -44,6 +44,8 @@
 ///////////////////////////////////////////////////////////////////
 #pragma mark - WSMAnager - METHOD SERVICES
 ///////////////////////////////////////////////////////////////////
+#define WS_METHOD_POST_PROGRESSBAR                  [WS_ENDPOINT stringByAppendingString:@"/project_fund_info/"]
+
 #define WS_METHOD_POST_SUBSCRIBE                    [WS_ENDPOINT stringByAppendingString:@"/offers/subscribe/"]
 
 #define WS_METHOD_POST_QUESTION                     [WS_ENDPOINT stringByAppendingString:@"/offers/tellmemore/"]

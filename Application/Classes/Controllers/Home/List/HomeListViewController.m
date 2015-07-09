@@ -74,11 +74,6 @@
 }
 
 #pragma mark - Private
-//- (void)_pushDetailVcWithID:(CODetailsOffersObject*)obj {
-//    DetailsViewController *vc = [[DetailsViewController alloc]init];
-//    vc.objectDetails = obj;
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
 
 - (void)_pushDetailVcWithID:(NSArray *)arr {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
@@ -183,6 +178,7 @@
 
 - (void)_callWSGetDetailsWithID:(NSString*)offerID {
     [UIHelper showLoadingInView:self.view];
+    [self _callWSGetProgressbar:offerID];
     [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [self _pushDetailVcWithID:responseObject];
@@ -190,6 +186,17 @@
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
+    }];
+}
+
+- (void)_callWSGetProgressbar:(NSString*)offerID {
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:offerID,@"offer_id", nil];
+    [[WSURLSessionManager shared] wsGetProgressBarWithOfferID:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+
+        } else {
+            [UIHelper showError:error];
+        }
     }];
 }
 

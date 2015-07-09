@@ -219,31 +219,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     }];
 }
 
-- (NSString*)_getFormatStringAddress{
-    NSString *address1 = self.profileObject.address_1;
-    NSString *address2 = self.profileObject.address_2;
-    NSString *postCode = self.profileObject.region_state;
-    NSString *city = self.profileObject.city;
-    NSString *country = self.profileObject.country;
-    NSMutableString *stringFormat = [NSMutableString new];
-    if (address1 && ![address1 isEmpty]) {
-        [stringFormat appendString:address1];
-    }
-    if (address2 && ![address2 isEmpty]){
-        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",address2]];
-    }
-    if (postCode && ![postCode isEmpty]){
-        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",postCode]];
-    }
-    if (city && ![city isEmpty]){
-        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",city]];
-    }
-    if (country && ![country isEmpty]) {
-        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",country]];
-    }
-    return stringFormat;
-}
-
 #pragma mark - Setter Getter
 
 - (NSMutableDictionary*)_setupAccessToken {

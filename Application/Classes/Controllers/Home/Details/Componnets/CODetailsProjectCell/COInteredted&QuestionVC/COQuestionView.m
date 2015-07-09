@@ -47,6 +47,7 @@
 
 #pragma mark - Action
 - (void)__actionDone {
+    [self.view endEditing:YES];
     [self wsCallQuestion];
 }
 
@@ -79,7 +80,7 @@
 
 #pragma mark - UIAlertViewDelegate
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == alertView.cancelButtonIndex) {
         [self.navigationController popViewControllerAnimated:YES];
     }

@@ -11,6 +11,8 @@
 @interface COOfferItemObj : NSObject
 
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *offerID;
+@property (nonatomic, strong) NSString *photo;
 @property (nonatomic, strong) NSString *linkOrDetail;
 
 @end

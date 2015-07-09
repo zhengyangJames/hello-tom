@@ -18,11 +18,6 @@
     __weak IBOutlet UILabel *_projectHorizonLable;
     __weak IBOutlet UILabel *_dayAgoLable;
     __weak IBOutlet UILabel *_minYieldLable;
-    __weak IBOutlet UILabel *_titleProgressbarLable;
-    __weak IBOutlet UILabel *_progressBarBottomLable;
-    __weak IBOutlet UIProgressView *_progressBar;
-    __weak IBOutlet COPositive_NagitiveButton *_interedtedButton;
-    __weak IBOutlet COPositive_NagitiveButton *_questionButton;
 }
 
 @end
@@ -31,7 +26,21 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [_contentView.layer setCornerRadius:8];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_contentView.bounds
+                                                   byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight)
+                                                         cornerRadii:CGSizeMake(8.0, 8.0)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.contentView.bounds;
+    maskLayer.path = maskPath.CGPath;
+    _contentView.layer.mask = maskLayer;
+    _contentView.layer.masksToBounds = YES;
+
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 #pragma mark - Set Get
@@ -39,44 +48,34 @@
     _detailsProfile = detailsProfile;
     _projectStatusLable.text = _detailsProfile.status;
     
-    NSString *investor = [NSString stringWithFormat:@"%@ INVESTORS",_detailsProfile.investor_count];
-    _projectInteredtedLable.text = investor;
+    if (detailsProfile.investor_count) {
+        NSString *investor = [NSString stringWithFormat:@"%@ INVESTORS",_detailsProfile.investor_count];
+        _projectInteredtedLable.text = investor;
+    }
     
-    NSString *investment = [NSString stringWithFormat:@"%@",_detailsProfile.min_investment];
-    _projectInvestmentLable.text = investment ;
+    if (detailsProfile.min_investment) {
+        NSString *investment = [NSString stringWithFormat:@"%@",_detailsProfile.min_investment];
+        _projectInvestmentLable.text = investment ;
+    }
     
-    NSString *time_horizon = [NSString stringWithFormat:@"%@ MONTHS",_detailsProfile.time_horizon];
-    _projectHorizonLable.text = time_horizon;
+    if (detailsProfile.time_horizon) {
+        NSString *time_horizon = [NSString stringWithFormat:@"%@ MONTHS",_detailsProfile.time_horizon];
+        _projectHorizonLable.text = time_horizon;
+    }
     
-    NSString *YIELD = [NSString stringWithFormat:@"%@ %% (%@%%)",_detailsProfile.time_horizon,_detailsProfile.time_horizon];
-    _minYieldLable.text = YIELD;
-     NSString *day_left = [NSString stringWithFormat:@"%@",_detailsProfile.day_left];
-    _dayAgoLable.text = day_left;
-   
-//    if (![detailsProfile.investor_count isEmpty]) {
-//        NSString *investor = [NSString stringWithFormat:@"%@ INVESTORS",_detailsProfile.investor_count];
-//        _projectInteredtedLable.text = investor;
-//    }
-//    
-//    if (![detailsProfile.min_investment isEmpty]) {
-//        NSString *investment = [NSString stringWithFormat:@"%@",_detailsProfile.min_investment];
-//        _projectInvestmentLable.text = investment ;
-//    }
-//    
-//    if (![detailsProfile.time_horizon isEmpty]) {
-//        NSString *time_horizon = [NSString stringWithFormat:@"%@ MONTHS",_detailsProfile.time_horizon];
-//        _projectHorizonLable.text = time_horizon;
-//    }
-//    
-//    if (![detailsProfile.time_horizon isEmpty]) {
-//        NSString *YIELD = [NSString stringWithFormat:@"%@ %% (%@%%)",_detailsProfile.time_horizon,_detailsProfile.time_horizon];
-//        _minYieldLable.text = YIELD;
-//    }
-//    
-//    if (![detailsProfile.day_left isEmpty]) {
-//        NSString *day_left = [NSString stringWithFormat:@"%@",_detailsProfile.day_left];
-//        _dayAgoLable.text = day_left;
-//    }
+    if (detailsProfile.time_horizon) {
+        NSString *YIELD = [NSString stringWithFormat:@"%@.0 %% (%@.0%%)",_detailsProfile.time_horizon,_detailsProfile.time_horizon];
+        _minYieldLable.text = YIELD;
+    }
+    
+    if (detailsProfile.day_left) {
+        NSString *day_left = [NSString stringWithFormat:@"%@",_detailsProfile.day_left];
+        _dayAgoLable.text = day_left;
+    }
 }
+
+#pragma mark - Action 
+
+
 
 @end

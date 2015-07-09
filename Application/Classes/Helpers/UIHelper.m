@@ -130,16 +130,15 @@
     NSMutableArray *arrObj = [[NSMutableArray alloc] init];
     if (dict) {
         if ([dict objectForKeyNotNull:@"offer_title"]) {
-             NSMutableDictionary *dictObject = [dict objectForKeyNotNull:@"project"];
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = [dict objectForKeyNotNull:@"offer_title"];
-            offItem.linkOrDetail = [dictObject objectForKeyNotNull:@"company_logo"];
+            offItem.offerID = [dict objectForKeyNotNull:@"id"];
+            offItem.linkOrDetail = [dict objectForKeyNotNull:@"company_logo"];
             off.type = @"title";
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];
         }
-        
         
         if ([dict objectForKeyNotNull:@"id"]) {
             COOferObj *off = [[COOferObj alloc] init];
@@ -154,8 +153,6 @@
             off.offerItemObjs = @[profileObj];
             [arrObj addObject:off];
         }
-        
-        
         
         if ([dict objectForKeyNotNull:@"short_description"]) {
             COOferObj *off = [[COOferObj alloc] init];
@@ -238,6 +235,7 @@
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = @"ADDRESS";
             offItem.linkOrDetail = address;
+            offItem.photo = [dictObject objectForKeyNotNull:@"photo"];
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];
         }

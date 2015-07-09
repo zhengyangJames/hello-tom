@@ -14,6 +14,8 @@
 #import "CODetailsTextCell.h"
 #import "CODetailsSectionCell.h"
 #import "CODetailsOffersObject.h"
+#import "CODetailsProgressViewCell.h"
+#import "CODetailsProjectBottomTVCell.h"
 
 @protocol CODetailsTableViewDelegate;
 
@@ -21,7 +23,7 @@
 
 @property (strong, nonatomic) NSArray *arrObject;
 
-- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectCellDelegate,CODetailsTableViewDelegate>)controller tableView:(UITableView*)tableView ;
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>)controller tableView:(UITableView*)tableView ;
 
 - (CODetailsPhotoCell*)tableView:(UITableView *)tableView cellDetailsPhotoForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath;

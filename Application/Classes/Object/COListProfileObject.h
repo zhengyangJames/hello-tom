@@ -27,5 +27,7 @@
 @property (strong, nonatomic) NSString *account_expiry;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dic;
+- (NSDictionary*)getProfileObject;
+- (void)setProfileObject:(NSDictionary*)dicObject;
 
 @end

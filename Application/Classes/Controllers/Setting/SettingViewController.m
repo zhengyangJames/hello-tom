@@ -168,7 +168,6 @@
     vcLogin.actionLogin = ^(BOOL CancelOrLogin){
         if (CancelOrLogin) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-                [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
                 [self _replaceArraySettingLogin];
             }];
         } else {
