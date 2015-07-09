@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *linkOrDetail;
+@property (nonatomic, strong) NSAttributedString *htmlDetail;
 
 @end

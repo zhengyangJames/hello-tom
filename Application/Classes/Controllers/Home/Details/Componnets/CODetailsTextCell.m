@@ -35,7 +35,11 @@
 - (void)setCoOfferItem:(COOfferItemObj *)coOfferItem {
     _coOfferItem = coOfferItem;
     _headerLabel.text = coOfferItem.title;
-    _detailsTextView.text = coOfferItem.linkOrDetail;
+    if (coOfferItem.htmlDetail) {
+        _detailsTextView.attributedText = coOfferItem.htmlDetail;
+    } else {
+        _detailsTextView.text = coOfferItem.linkOrDetail;
+    }
 }
 
 @end

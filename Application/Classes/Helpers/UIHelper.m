@@ -157,7 +157,7 @@
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = @"OFFER";
-            offItem.linkOrDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"short_description"] ];
+            offItem.htmlDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"short_description"] ];
             off.type = @"description";
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];
@@ -167,7 +167,7 @@
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = @"PROFECT";
-            offItem.linkOrDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"project_description"] ];
+            offItem.htmlDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"project_description"] ];
             off.type = @"description";
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];
@@ -241,10 +241,10 @@
     return arrObj;
 }
 
-+ (NSString *)_getStringFromHtml:(NSString *)stringHtml {
-    NSString *htmlString = stringHtml;
++ (NSAttributedString *)_getStringFromHtml:(NSString *)stringHtml {
+    NSString *htmlString = [DEFINE_HTML_FRAME stringByReplacingOccurrencesOfString:@"%@" withString:stringHtml];
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-    return [attributedString string];
+    return attributedString;
 }
 
 @end
