@@ -50,5 +50,4 @@
     [_image setImageURL:url];
 }
 
-
 @end
