@@ -10,7 +10,7 @@
 #import "CODetailsAccessoryCell.h"
 #import "CODetailsMapCell.h"
 #import "CODetailsPhotoCell.h"
-#import "CODetailsProjectTBVCell.h"
+#import "CODetailsProjectCell.h"
 #import "CODetailsTextCell.h"
 #import "CODetailsSectionCell.h"
 #import "CODetailsOffersObject.h"
@@ -21,9 +21,10 @@
 
 @property (strong, nonatomic) NSArray *arrObject;
 
-- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectTBVCellDelegate,CODetailsTableViewDelegate>)controller tableView:(UITableView*)tableView ;
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectCellDelegate,CODetailsTableViewDelegate>)controller tableView:(UITableView*)tableView ;
 
-//- (CODetailsTextCell*)textCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
-//- (CODetailsPhotoCell*)photoCellForTableView:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath;
+- (CODetailsPhotoCell*)tableView:(UITableView *)tableView cellDetailsPhotoForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (CODetailsAccessoryCell*)tableView:(UITableView *)tableView cellDetailsAccessoryForRowAtIndexPath:(NSIndexPath *)indexPath ;
 
 @end

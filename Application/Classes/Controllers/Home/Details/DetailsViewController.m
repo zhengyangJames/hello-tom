@@ -18,7 +18,7 @@
 #import "COOfferItemObj.h"
 #import "COOferObj.h"
 
-@interface DetailsViewController ()<CODetailsProjectTBVCellDelegate, CODetailsTableViewDelegate,CODetailsTableViewDelegate>
+@interface DetailsViewController ()<CODetailsTableViewDelegate,CODetailsTableViewDelegate,CODetailsProjectCellDelegate>
 {
 
 }

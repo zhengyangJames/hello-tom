@@ -11,16 +11,16 @@
 
 
 
-@interface CODetailsDataSource () <CODetailsProjectTBVCellDelegate,CODetailsProjectTBVCellDelegate>
+@interface CODetailsDataSource () <CODetailsProjectCellDelegate>
 
-@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectTBVCellDelegate,CODetailsTableViewDelegate> controller;
+@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectCellDelegate,CODetailsTableViewDelegate> controller;
 
 @end
 
 @implementation CODetailsDataSource
 
 
-- (instancetype)initWithController:(id<CODetailsProjectTBVCellDelegate,CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate>)controller tableView:(UITableView *)tableView {
+- (instancetype)initWithController:(id<CODetailsProjectCellDelegate,CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate>)controller tableView:(UITableView *)tableView {
     self = [super init];
     if (self) {
         self.controller = controller;
@@ -28,8 +28,7 @@
         [tableView registerNib:[UINib nibWithNibName:[CODetailsSectionCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsSectionCell identifier]];
         [tableView registerNib:[UINib nibWithNibName:[CODetailsPhotoCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsPhotoCell identifier]];
         [tableView registerNib:[UINib nibWithNibName:[CODetailsTextCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsTextCell identifier]];
-        
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectTBVCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectTBVCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectCell identifier]];
     }
     return self;
 }
@@ -101,8 +100,10 @@
     return cell;
 }
 
-- (CODetailsProjectTBVCell*)tableView:(UITableView *)tableView cellDetailsProjectTBVForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsProjectTBVCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectTBVCell identifier]];
+- (CODetailsProjectCell*)tableView:(UITableView *)tableView cellDetailsProjectTBVForRowAtIndexPath:(NSIndexPath *)indexPath {
+    COOferObj *obj = [self _getItemAtindexPath:indexPath];
+    CODetailsProjectCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectCell identifier]];
+    cell.detailsProfile = [obj.offerItemObjs objectAtIndex:indexPath.row];
     return cell;
 }
 

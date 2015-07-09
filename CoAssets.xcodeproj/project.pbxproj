@@ -26,6 +26,19 @@
 		0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883A1B27CA7100B5656F /* NMSecurityHelper.m */; };
 		0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883C1B27CA7100B5656F /* NMUIHelper.m */; };
 		0EFEB4D31B2724B2001195B7 /* CoAssetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB4D21B2724B2001195B7 /* CoAssetsTests.m */; };
+		7F2C77391B4E073200C69365 /* CODetailsProjectBottomTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C772A1B4E073200C69365 /* CODetailsProjectBottomTVCell.m */; };
+		7F2C773A1B4E073200C69365 /* CODetailsProjectBottomTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C772B1B4E073200C69365 /* CODetailsProjectBottomTVCell.xib */; };
+		7F2C773B1B4E073200C69365 /* CODetailsProjectTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C772D1B4E073200C69365 /* CODetailsProjectTBVCell.m */; };
+		7F2C773C1B4E073200C69365 /* CODetailsProjectTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C772E1B4E073200C69365 /* CODetailsProjectTBVCell.xib */; };
+		7F2C773D1B4E073200C69365 /* CODetailsProjectTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77301B4E073200C69365 /* CODetailsProjectTypeCell.m */; };
+		7F2C773E1B4E073200C69365 /* CODetailsProjectTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C77311B4E073200C69365 /* CODetailsProjectTypeCell.xib */; };
+		7F2C773F1B4E073200C69365 /* COInterestedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77331B4E073200C69365 /* COInterestedViewController.m */; };
+		7F2C77401B4E073200C69365 /* COInterestedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C77341B4E073200C69365 /* COInterestedViewController.xib */; };
+		7F2C77411B4E073200C69365 /* COQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77361B4E073200C69365 /* COQuestionView.m */; };
+		7F2C77421B4E073200C69365 /* COQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C77371B4E073200C69365 /* COQuestionView.xib */; };
+		7F2C77461B4E07BA00C69365 /* CODetailsProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77441B4E07BA00C69365 /* CODetailsProjectCell.m */; };
+		7F2C77471B4E07BA00C69365 /* CODetailsProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C77451B4E07BA00C69365 /* CODetailsProjectCell.xib */; };
+		7F2C774A1B4E2F0D00C69365 /* CODetailsProfileObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77491B4E2F0D00C69365 /* CODetailsProfileObj.m */; };
 		7F325F791B40E50800116445 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DBA1B40E50800116445 /* AppDelegate.m */; };
 		7F325F7A1B40E50800116445 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DBD1B40E50800116445 /* BaseCollectionViewCell.m */; };
 		7F325F7B1B40E50800116445 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DBF1B40E50800116445 /* BaseNavigationController.m */; };
@@ -45,12 +58,6 @@
 		7F325F8B1B40E50800116445 /* CODetailsMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DE11B40E50800116445 /* CODetailsMapCell.xib */; };
 		7F325F8C1B40E50800116445 /* CODetailsPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DE31B40E50800116445 /* CODetailsPhotoCell.m */; };
 		7F325F8D1B40E50800116445 /* CODetailsPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DE41B40E50800116445 /* CODetailsPhotoCell.xib */; };
-		7F325F8E1B40E50800116445 /* CODetailsProjectBottomTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DE71B40E50800116445 /* CODetailsProjectBottomTVCell.m */; };
-		7F325F8F1B40E50800116445 /* CODetailsProjectBottomTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DE81B40E50800116445 /* CODetailsProjectBottomTVCell.xib */; };
-		7F325F901B40E50800116445 /* CODetailsProjectTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DEA1B40E50800116445 /* CODetailsProjectTBVCell.m */; };
-		7F325F911B40E50800116445 /* CODetailsProjectTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DEB1B40E50800116445 /* CODetailsProjectTBVCell.xib */; };
-		7F325F921B40E50800116445 /* CODetailsProjectTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */; };
-		7F325F931B40E50800116445 /* CODetailsProjectTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */; };
 		7F325F951B40E50800116445 /* CODetailsSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DF11B40E50800116445 /* CODetailsSectionCell.m */; };
 		7F325F961B40E50800116445 /* CODetailsSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DF21B40E50800116445 /* CODetailsSectionCell.xib */; };
 		7F325F971B40E50800116445 /* CODetailsTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DF41B40E50800116445 /* CODetailsTextCell.m */; };
@@ -289,8 +296,6 @@
 		7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */; };
 		7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA59D921B4CB5C700AF8E41 /* COPopupQuestionView.m */; };
 		7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */; };
-		7FA59D9B1B4CBC1C00AF8E41 /* COQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA59D991B4CBC1C00AF8E41 /* COQuestionView.m */; };
-		7FA59D9C1B4CBC1C00AF8E41 /* COQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA59D9A1B4CBC1C00AF8E41 /* COQuestionView.xib */; };
 		7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */; };
 		7FAB4E501B468BCA0012E6D0 /* AboutTableViewCell_Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */; };
 		7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */; };
@@ -299,8 +304,6 @@
 		7FBDAA9B1B4A15BA007F7C6B /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */; };
 		7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
 		7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6D5121B4526240098EC8D /* COLoginManager.m */; };
-		7FCD18A61B4B79B9000B81A2 /* COInterestedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18A41B4B79B9000B81A2 /* COInterestedViewController.m */; };
-		7FCD18A71B4B79B9000B81A2 /* COInterestedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCD18A51B4B79B9000B81A2 /* COInterestedViewController.xib */; };
 		7FCD18AC1B4BB060000B81A2 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18AB1B4BB060000B81A2 /* KLCPopup.m */; };
 		7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18B31B4BBBD0000B81A2 /* COPopupInteredtedView.m */; };
 		7FCD18B61B4BBBF4000B81A2 /* COPopupInteredtedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCD18B51B4BBBF4000B81A2 /* COPopupInteredtedView.xib */; };
@@ -360,6 +363,26 @@
 		0EFEB4CC1B2724B2001195B7 /* CoAssetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoAssetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFEB4D11B2724B2001195B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EFEB4D21B2724B2001195B7 /* CoAssetsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoAssetsTests.m; sourceTree = "<group>"; };
+		7F2C77291B4E073200C69365 /* CODetailsProjectBottomTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectBottomTVCell.h; sourceTree = "<group>"; };
+		7F2C772A1B4E073200C69365 /* CODetailsProjectBottomTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectBottomTVCell.m; sourceTree = "<group>"; };
+		7F2C772B1B4E073200C69365 /* CODetailsProjectBottomTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectBottomTVCell.xib; sourceTree = "<group>"; };
+		7F2C772C1B4E073200C69365 /* CODetailsProjectTBVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectTBVCell.h; sourceTree = "<group>"; };
+		7F2C772D1B4E073200C69365 /* CODetailsProjectTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectTBVCell.m; sourceTree = "<group>"; };
+		7F2C772E1B4E073200C69365 /* CODetailsProjectTBVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectTBVCell.xib; sourceTree = "<group>"; };
+		7F2C772F1B4E073200C69365 /* CODetailsProjectTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectTypeCell.h; sourceTree = "<group>"; };
+		7F2C77301B4E073200C69365 /* CODetailsProjectTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectTypeCell.m; sourceTree = "<group>"; };
+		7F2C77311B4E073200C69365 /* CODetailsProjectTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectTypeCell.xib; sourceTree = "<group>"; };
+		7F2C77321B4E073200C69365 /* COInterestedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COInterestedViewController.h; sourceTree = "<group>"; };
+		7F2C77331B4E073200C69365 /* COInterestedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COInterestedViewController.m; sourceTree = "<group>"; };
+		7F2C77341B4E073200C69365 /* COInterestedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COInterestedViewController.xib; sourceTree = "<group>"; };
+		7F2C77351B4E073200C69365 /* COQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COQuestionView.h; sourceTree = "<group>"; };
+		7F2C77361B4E073200C69365 /* COQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COQuestionView.m; sourceTree = "<group>"; };
+		7F2C77371B4E073200C69365 /* COQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COQuestionView.xib; sourceTree = "<group>"; };
+		7F2C77431B4E07BA00C69365 /* CODetailsProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectCell.h; sourceTree = "<group>"; };
+		7F2C77441B4E07BA00C69365 /* CODetailsProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectCell.m; sourceTree = "<group>"; };
+		7F2C77451B4E07BA00C69365 /* CODetailsProjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectCell.xib; sourceTree = "<group>"; };
+		7F2C77481B4E2F0D00C69365 /* CODetailsProfileObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProfileObj.h; sourceTree = "<group>"; };
+		7F2C77491B4E2F0D00C69365 /* CODetailsProfileObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProfileObj.m; sourceTree = "<group>"; };
 		7F325DB91B40E50800116445 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7F325DBA1B40E50800116445 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7F325DBC1B40E50800116445 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
@@ -395,15 +418,6 @@
 		7F325DE21B40E50800116445 /* CODetailsPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsPhotoCell.h; sourceTree = "<group>"; };
 		7F325DE31B40E50800116445 /* CODetailsPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsPhotoCell.m; sourceTree = "<group>"; };
 		7F325DE41B40E50800116445 /* CODetailsPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsPhotoCell.xib; sourceTree = "<group>"; };
-		7F325DE61B40E50800116445 /* CODetailsProjectBottomTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectBottomTVCell.h; sourceTree = "<group>"; };
-		7F325DE71B40E50800116445 /* CODetailsProjectBottomTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectBottomTVCell.m; sourceTree = "<group>"; };
-		7F325DE81B40E50800116445 /* CODetailsProjectBottomTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectBottomTVCell.xib; sourceTree = "<group>"; };
-		7F325DE91B40E50800116445 /* CODetailsProjectTBVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectTBVCell.h; sourceTree = "<group>"; };
-		7F325DEA1B40E50800116445 /* CODetailsProjectTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectTBVCell.m; sourceTree = "<group>"; };
-		7F325DEB1B40E50800116445 /* CODetailsProjectTBVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectTBVCell.xib; sourceTree = "<group>"; };
-		7F325DEC1B40E50800116445 /* CODetailsProjectTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectTypeCell.h; sourceTree = "<group>"; };
-		7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectTypeCell.m; sourceTree = "<group>"; };
-		7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectTypeCell.xib; sourceTree = "<group>"; };
 		7F325DF01B40E50800116445 /* CODetailsSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsSectionCell.h; sourceTree = "<group>"; };
 		7F325DF11B40E50800116445 /* CODetailsSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsSectionCell.m; sourceTree = "<group>"; };
 		7F325DF21B40E50800116445 /* CODetailsSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsSectionCell.xib; sourceTree = "<group>"; };
@@ -746,9 +760,6 @@
 		7FA59D911B4CB5C700AF8E41 /* COPopupQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COPopupQuestionView.h; sourceTree = "<group>"; };
 		7FA59D921B4CB5C700AF8E41 /* COPopupQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COPopupQuestionView.m; sourceTree = "<group>"; };
 		7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COPopupQuestionView.xib; sourceTree = "<group>"; };
-		7FA59D981B4CBC1C00AF8E41 /* COQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COQuestionView.h; sourceTree = "<group>"; };
-		7FA59D991B4CBC1C00AF8E41 /* COQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COQuestionView.m; sourceTree = "<group>"; };
-		7FA59D9A1B4CBC1C00AF8E41 /* COQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COQuestionView.xib; sourceTree = "<group>"; };
 		7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait_ph.jpg; sourceTree = "<group>"; };
 		7FAB4E4D1B468BCA0012E6D0 /* AboutTableViewCell_Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell_Address.h; sourceTree = "<group>"; };
 		7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell_Address.m; sourceTree = "<group>"; };
@@ -762,9 +773,6 @@
 		7FC6D50F1B44D4090098EC8D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United Kingdom.png"; sourceTree = "<group>"; };
 		7FC6D5111B4526240098EC8D /* COLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLoginManager.h; sourceTree = "<group>"; };
 		7FC6D5121B4526240098EC8D /* COLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLoginManager.m; sourceTree = "<group>"; };
-		7FCD18A31B4B79B9000B81A2 /* COInterestedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COInterestedViewController.h; sourceTree = "<group>"; };
-		7FCD18A41B4B79B9000B81A2 /* COInterestedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COInterestedViewController.m; sourceTree = "<group>"; };
-		7FCD18A51B4B79B9000B81A2 /* COInterestedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COInterestedViewController.xib; sourceTree = "<group>"; };
 		7FCD18AA1B4BB060000B81A2 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
 		7FCD18AB1B4BB060000B81A2 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
 		7FCD18B21B4BBBD0000B81A2 /* COPopupInteredtedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COPopupInteredtedView.h; sourceTree = "<group>"; };
@@ -901,6 +909,38 @@
 				0ECA88341B27CA7100B5656F /* Helpers */,
 			);
 			path = Nikme;
+			sourceTree = "<group>";
+		};
+		7F2C77281B4E073200C69365 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7F2C77291B4E073200C69365 /* CODetailsProjectBottomTVCell.h */,
+				7F2C772A1B4E073200C69365 /* CODetailsProjectBottomTVCell.m */,
+				7F2C772B1B4E073200C69365 /* CODetailsProjectBottomTVCell.xib */,
+				7F2C772C1B4E073200C69365 /* CODetailsProjectTBVCell.h */,
+				7F2C772D1B4E073200C69365 /* CODetailsProjectTBVCell.m */,
+				7F2C772E1B4E073200C69365 /* CODetailsProjectTBVCell.xib */,
+				7F2C772F1B4E073200C69365 /* CODetailsProjectTypeCell.h */,
+				7F2C77301B4E073200C69365 /* CODetailsProjectTypeCell.m */,
+				7F2C77311B4E073200C69365 /* CODetailsProjectTypeCell.xib */,
+				7F2C77321B4E073200C69365 /* COInterestedViewController.h */,
+				7F2C77331B4E073200C69365 /* COInterestedViewController.m */,
+				7F2C77341B4E073200C69365 /* COInterestedViewController.xib */,
+				7F2C77351B4E073200C69365 /* COQuestionView.h */,
+				7F2C77361B4E073200C69365 /* COQuestionView.m */,
+				7F2C77371B4E073200C69365 /* COQuestionView.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7F2C77381B4E073200C69365 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F2C77431B4E07BA00C69365 /* CODetailsProjectCell.h */,
+				7F2C77441B4E07BA00C69365 /* CODetailsProjectCell.m */,
+				7F2C77451B4E07BA00C69365 /* CODetailsProjectCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		7F325DB61B40E50800116445 /* Application */ = {
@@ -1044,17 +1084,8 @@
 		7F325DE51B40E50800116445 /* CODetailsProjectCell */ = {
 			isa = PBXGroup;
 			children = (
-				7F325DEC1B40E50800116445 /* CODetailsProjectTypeCell.h */,
-				7F325DED1B40E50800116445 /* CODetailsProjectTypeCell.m */,
-				7F325DEE1B40E50800116445 /* CODetailsProjectTypeCell.xib */,
-				7F325DE61B40E50800116445 /* CODetailsProjectBottomTVCell.h */,
-				7F325DE71B40E50800116445 /* CODetailsProjectBottomTVCell.m */,
-				7F325DE81B40E50800116445 /* CODetailsProjectBottomTVCell.xib */,
-				7F325DE91B40E50800116445 /* CODetailsProjectTBVCell.h */,
-				7F325DEA1B40E50800116445 /* CODetailsProjectTBVCell.m */,
-				7F325DEB1B40E50800116445 /* CODetailsProjectTBVCell.xib */,
-				7FCD18A81B4B79C9000B81A2 /* COInterestedViewController */,
-				7FA59D9D1B4CBC2100AF8E41 /* COQuestionView */,
+				7F2C77281B4E073200C69365 /* Cell */,
+				7F2C77381B4E073200C69365 /* View */,
 			);
 			path = CODetailsProjectCell;
 			sourceTree = "<group>";
@@ -1441,6 +1472,8 @@
 				0EA971BD1B4D1766000B6500 /* COOfferItemObj.m */,
 				0EA971BF1B4D17E3000B6500 /* COOferObj.h */,
 				0EA971C01B4D17E3000B6500 /* COOferObj.m */,
+				7F2C77481B4E2F0D00C69365 /* CODetailsProfileObj.h */,
+				7F2C77491B4E2F0D00C69365 /* CODetailsProfileObj.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -1861,26 +1894,6 @@
 			path = countries;
 			sourceTree = "<group>";
 		};
-		7FA59D9D1B4CBC2100AF8E41 /* COQuestionView */ = {
-			isa = PBXGroup;
-			children = (
-				7FA59D981B4CBC1C00AF8E41 /* COQuestionView.h */,
-				7FA59D991B4CBC1C00AF8E41 /* COQuestionView.m */,
-				7FA59D9A1B4CBC1C00AF8E41 /* COQuestionView.xib */,
-			);
-			name = COQuestionView;
-			sourceTree = "<group>";
-		};
-		7FCD18A81B4B79C9000B81A2 /* COInterestedViewController */ = {
-			isa = PBXGroup;
-			children = (
-				7FCD18A31B4B79B9000B81A2 /* COInterestedViewController.h */,
-				7FCD18A41B4B79B9000B81A2 /* COInterestedViewController.m */,
-				7FCD18A51B4B79B9000B81A2 /* COInterestedViewController.xib */,
-			);
-			name = COInterestedViewController;
-			sourceTree = "<group>";
-		};
 		7FCD18A91B4BAC00000B81A2 /* COPopUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1996,6 +2009,7 @@
 				7F3260571B40E50800116445 /* ic_setting@3x.png in Resources */,
 				7F32604B1B40E50800116445 /* ic_line_char@2x.png in Resources */,
 				7F32604C1B40E50800116445 /* ic_line_char@3x.png in Resources */,
+				7F2C77471B4E07BA00C69365 /* CODetailsProjectCell.xib in Resources */,
 				7F3260311B40E50800116445 /* Ic_back@2x.png in Resources */,
 				7F325FAD1B40E50800116445 /* EditCompanyVC.xib in Resources */,
 				7F32601C1B40E50800116445 /* Contents.json in Resources */,
@@ -2011,6 +2025,7 @@
 				7F325FBC1B40E50800116445 /* SettingViewController.xib in Resources */,
 				7F325F8D1B40E50800116445 /* CODetailsPhotoCell.xib in Resources */,
 				7F325FBA1B40E50800116445 /* ContacViewController.xib in Resources */,
+				7F2C773E1B4E073200C69365 /* CODetailsProjectTypeCell.xib in Resources */,
 				7F3260421B40E50800116445 /* ic_Earth@3x.png in Resources */,
 				7F325F9A1B40E50800116445 /* DetailsViewController.xib in Resources */,
 				7F325FAB1B40E50800116445 /* CompanyTableViewCell.xib in Resources */,
@@ -2018,7 +2033,6 @@
 				7F8529271B43935B00CFAEB5 /* Indonesia.png in Resources */,
 				7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */,
 				7F3260511B40E50800116445 /* ic_peopel@3x.png in Resources */,
-				7FCD18A71B4B79B9000B81A2 /* COInterestedViewController.xib in Resources */,
 				7F32603E1B40E50800116445 /* ic_droplist.png in Resources */,
 				7F3260691B40E50800116445 /* Preloader_2.gif in Resources */,
 				7F3260411B40E50800116445 /* ic_Earth@2x.png in Resources */,
@@ -2027,7 +2041,6 @@
 				7F8529221B43935B00CFAEB5 /* Brazil.png in Resources */,
 				7F3260101B40E50800116445 /* Icon-Small.png in Resources */,
 				7F3260521B40E50800116445 /* ic_people_heightline@2x.png in Resources */,
-				7F325F8F1B40E50800116445 /* CODetailsProjectBottomTVCell.xib in Resources */,
 				7F3260491B40E50800116445 /* ic_Left@2x.png in Resources */,
 				7F325F861B40E50800116445 /* CODetailsAccessoryCell.xib in Resources */,
 				7F32606E1B40E50800116445 /* Preloader_7.gif in Resources */,
@@ -2057,7 +2070,6 @@
 				7F325FA71B40E50800116445 /* AboutTableViewCell.xib in Resources */,
 				7F325FCD1B40E50800116445 /* COSlidingView.xib in Resources */,
 				7F32602F1B40E50800116445 /* Close_Circle_Line@2x.png in Resources */,
-				7F325F931B40E50800116445 /* CODetailsProjectTypeCell.xib in Resources */,
 				7FCD18B61B4BBBF4000B81A2 /* COPopupInteredtedView.xib in Resources */,
 				7F3260361B40E50800116445 /* ic_calendar@3x.png in Resources */,
 				7F325FA11B40E50800116445 /* ForgotPasswordViewController.xib in Resources */,
@@ -2065,9 +2077,9 @@
 				7F3260651B40E50800116445 /* 20.jpg in Resources */,
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
 				7F32603B1B40E50800116445 /* ic_contac_2@3x.png in Resources */,
-				7FA59D9C1B4CBC1C00AF8E41 /* COQuestionView.xib in Resources */,
 				7F325F9C1B40E50800116445 /* HomeListViewCell.xib in Resources */,
 				7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */,
+				7F2C77421B4E073200C69365 /* COQuestionView.xib in Resources */,
 				7F3260561B40E50800116445 /* ic_setting@2x.png in Resources */,
 				7F85292A1B43935B00CFAEB5 /* New Zealand.png in Resources */,
 				7F3260661B40E50800116445 /* Earth_256.png in Resources */,
@@ -2075,6 +2087,7 @@
 				7F85292B1B43935B00CFAEB5 /* Philippines.png in Resources */,
 				7F32601D1B40E50800116445 /* Raleway-Black.ttf in Resources */,
 				7F8529251B43935B00CFAEB5 /* Germany.png in Resources */,
+				7F2C773A1B4E073200C69365 /* CODetailsProjectBottomTVCell.xib in Resources */,
 				7F3260481B40E50800116445 /* ic_info@3x.png in Resources */,
 				7F3260681B40E50800116445 /* Preloader_10.gif in Resources */,
 				7F3260631B40E50800116445 /* 18.jpg in Resources */,
@@ -2095,9 +2108,11 @@
 				7F3260301B40E50800116445 /* Close_Circle_Line@3x.png in Resources */,
 				7F3260531B40E50800116445 /* ic_people_heightline@3x.png in Resources */,
 				7F32602D1B40E50800116445 /* Raleway-Thin.ttf in Resources */,
+				7F2C77401B4E073200C69365 /* COInterestedViewController.xib in Resources */,
 				7F3260241B40E50800116445 /* Raleway-ExtraLightItalic.ttf in Resources */,
 				7F325F9E1B40E50800116445 /* HomeListViewController.xib in Resources */,
 				7F8529281B43935B00CFAEB5 /* Japan.png in Resources */,
+				7F2C773C1B4E073200C69365 /* CODetailsProjectTBVCell.xib in Resources */,
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
 				7F3260761B40E50800116445 /* FilterList.plist in Resources */,
 				7F3260611B40E50800116445 /* 15.jpg in Resources */,
@@ -2119,7 +2134,6 @@
 				7FF6C3B41B423E85003591B6 /* TableBottomView.xib in Resources */,
 				7F8529291B43935B00CFAEB5 /* Malaysia.png in Resources */,
 				7F3260321B40E50800116445 /* Ic_back@3x.png in Resources */,
-				7F325F911B40E50800116445 /* CODetailsProjectTBVCell.xib in Resources */,
 				7F32600F1B40E50800116445 /* Icon-iOS7@2x.png in Resources */,
 				7F32605B1B40E50800116445 /* ic_setting_2_heighlight@3x.png in Resources */,
 				7F325FCB1B40E50800116445 /* COSlidingCell.xib in Resources */,
@@ -2162,12 +2176,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F2C77411B4E073200C69365 /* COQuestionView.m in Sources */,
 				7F325FE41B40E50800116445 /* AFURLConnectionOperation.m in Sources */,
 				7F325FC41B40E50800116445 /* DropListCell.m in Sources */,
 				7F325FCC1B40E50800116445 /* COSlidingView.m in Sources */,
 				7F325F8C1B40E50800116445 /* CODetailsPhotoCell.m in Sources */,
 				7F325FED1B40E50800116445 /* UIProgressView+AFNetworking.m in Sources */,
 				7F325FE81B40E50800116445 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				7F2C773D1B4E073200C69365 /* CODetailsProjectTypeCell.m in Sources */,
 				7F325FEA1B40E50800116445 /* UIAlertView+AFNetworking.m in Sources */,
 				7F325F7C1B40E50800116445 /* BaseTabBarController.m in Sources */,
 				7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */,
@@ -2193,11 +2209,9 @@
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
 				7F325F971B40E50800116445 /* CODetailsTextCell.m in Sources */,
 				7FB802BB1B4CE25700173A58 /* NSMutableString+FontSize.m in Sources */,
-				7FCD18A61B4B79B9000B81A2 /* COInterestedViewController.m in Sources */,
 				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,
 				7F325FA41B40E50800116445 /* RegisterViewController.m in Sources */,
 				7F325F7B1B40E50800116445 /* BaseNavigationController.m in Sources */,
-				7F325F921B40E50800116445 /* CODetailsProjectTypeCell.m in Sources */,
 				0ECA88401B27CA7100B5656F /* NMTableViewCell.m in Sources */,
 				0ECA88481B27CA7100B5656F /* UIView+Identifier.m in Sources */,
 				7F32600C1B40E50800116445 /* MagicalRecord.m in Sources */,
@@ -2207,6 +2221,7 @@
 				7F325FBD1B40E50800116445 /* WebViewSetting.m in Sources */,
 				0ECA88451B27CA7100B5656F /* NSString+Helpers.m in Sources */,
 				7F325F7E1B40E50800116445 /* BaseView.m in Sources */,
+				7F2C773B1B4E073200C69365 /* CODetailsProjectTBVCell.m in Sources */,
 				7F325FF41B40E50800116445 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				7F325FA61B40E50800116445 /* AboutTableViewCell.m in Sources */,
 				7F325F801B40E50800116445 /* NSArray+Sort.m in Sources */,
@@ -2215,7 +2230,9 @@
 				7F3260071B40E50800116445 /* MagicalRecord+ErrorHandling.m in Sources */,
 				7F325FCE1B40E50800116445 /* CoAssest.xcdatamodeld in Sources */,
 				7F325FA01B40E50800116445 /* ForgotPasswordViewController.m in Sources */,
+				7F2C77391B4E073200C69365 /* CODetailsProjectBottomTVCell.m in Sources */,
 				7F3260031B40E50800116445 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				7F2C773F1B4E073200C69365 /* COInterestedViewController.m in Sources */,
 				7F325F871B40E50800116445 /* CODetailsDataSource.m in Sources */,
 				7F325FF21B40E50800116445 /* MagicalImportFunctions.m in Sources */,
 				7F325FE71B40E50800116445 /* AFURLSessionManager.m in Sources */,
@@ -2280,13 +2297,10 @@
 				7F325FB91B40E50800116445 /* ContacViewController.m in Sources */,
 				7F325FA81B40E50800116445 /* EditAboutProfileVC.m in Sources */,
 				7F3260171B40E50800116445 /* TPKeyboardAvoidingTableView.m in Sources */,
-				7F325F8E1B40E50800116445 /* CODetailsProjectBottomTVCell.m in Sources */,
 				7F325FBF1B40E50800116445 /* COBorderTextField.m in Sources */,
 				7F325FE11B40E50800116445 /* AFHTTPSessionManager.m in Sources */,
 				7F325FE61B40E50800116445 /* AFURLResponseSerialization.m in Sources */,
 				0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */,
-				7FA59D9B1B4CBC1C00AF8E41 /* COQuestionView.m in Sources */,
-				7F325F901B40E50800116445 /* CODetailsProjectTBVCell.m in Sources */,
 				7F3260181B40E50800116445 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				7F3260011B40E50800116445 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				7F325FB21B40E50800116445 /* ProfileViewController.m in Sources */,
@@ -2296,6 +2310,7 @@
 				7F325F791B40E50800116445 /* AppDelegate.m in Sources */,
 				0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */,
 				7F325FAA1B40E50800116445 /* CompanyTableViewCell.m in Sources */,
+				7F2C774A1B4E2F0D00C69365 /* CODetailsProfileObj.m in Sources */,
 				7FBDAA9B1B4A15BA007F7C6B /* UIImageView+Networking.m in Sources */,
 				7F325F9B1B40E50800116445 /* HomeListViewCell.m in Sources */,
 				7F325FFB1B40E50800116445 /* NSManagedObject+MagicalFinders.m in Sources */,
@@ -2303,6 +2318,7 @@
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,
 				7F3260061B40E50800116445 /* MagicalRecord+Actions.m in Sources */,
+				7F2C77461B4E07BA00C69365 /* CODetailsProjectCell.m in Sources */,
 				7F325FEC1B40E50800116445 /* UIImageView+AFNetworking.m in Sources */,
 				7F325F7F1B40E50800116445 /* BaseViewController.m in Sources */,
 				7F325FF61B40E50800116445 /* NSObject+MagicalDataImport.m in Sources */,

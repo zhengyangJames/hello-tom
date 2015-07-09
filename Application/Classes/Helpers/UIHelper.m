@@ -10,6 +10,7 @@
 #import "MBProgressHUD.h"
 #import "COOferObj.h"
 #import "COOfferItemObj.h"
+#import "CODetailsProfileObj.h"
 
 #define IS_IOS8             ((NSInteger)[[[UIDevice currentDevice] systemVersion] floatValue]) == 8
 
@@ -133,21 +134,24 @@
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = [dict objectForKeyNotNull:@"offer_title"];
-            offItem.linkOrDetail = [dictObject objectForKeyNotNull:@"photo"];
+            offItem.linkOrDetail = [dictObject objectForKeyNotNull:@"company_logo"];
             off.type = @"title";
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];
         }
         
         
-        if (YES) { // nui gian kho (Project)
-            NSMutableDictionary *dictObject = [dict objectForKeyNotNull:@"project"];
+        if ([dict objectForKeyNotNull:@"id"]) {
             COOferObj *off = [[COOferObj alloc] init];
-            COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-            offItem.title = [dict objectForKeyNotNull:@"offer_title"];
-            offItem.linkOrDetail = [dictObject objectForKeyNotNull:@"photo"];
-            off.type = @"title";
-            off.offerItemObjs = @[offItem];
+            CODetailsProfileObj *profileObj = [[CODetailsProfileObj alloc]init];
+            profileObj.investor_count = [dict objectForKeyNotNull:@"investor_count"];
+            profileObj.status = [dict objectForKeyNotNull:@"status"];
+            profileObj.min_annual_return = [dict valueForKeyNotNull:@"min_annual_return"];
+            profileObj.min_investment = [dict objectForKeyNotNull:@"min_investment"];
+            profileObj.day_left = [dict objectForKeyNotNull:@"day_left"];
+            profileObj.time_horizon = [dict objectForKeyNotNull:@"time_horizon"];
+            off.type = @"project";
+            off.offerItemObjs = @[profileObj];
             [arrObj addObject:off];
         }
         
