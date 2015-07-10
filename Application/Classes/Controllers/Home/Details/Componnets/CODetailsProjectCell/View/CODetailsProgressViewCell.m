@@ -7,6 +7,7 @@
 //
 
 #import "CODetailsProgressViewCell.h"
+#import "NMDeviceHelper.h"
 
 @interface CODetailsProgressViewCell ()
 {
@@ -23,11 +24,15 @@
     [super viewDidLoad];
 }
 
--(void) viewWillLayoutSubviews
-{
-    CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 10.0f);
-    _progressBar.transform = transform;
-    
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    if ([self isDeviceVersion:@"7.0"]) {
+        CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 10.5f);
+        _progressBar.transform = transform;
+    } else {
+        CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 1.5f);
+        _progressBar.transform = transform;
+    }
 }
 
 #pragma mark - Set Get
@@ -46,9 +51,10 @@
 
 
 #pragma mark - Private
-- (void)_setupProgressBar {
-    [_progressBar setProgress:0.98 animated:YES];
-}
 
+- (BOOL)isDeviceVersion:(NSString *)version
+{
+    return ([[[UIDevice currentDevice] systemVersion] compare:version  options:NSNumericSearch] == NSOrderedSame);
+}
 
 @end

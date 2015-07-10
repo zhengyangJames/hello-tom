@@ -39,4 +39,9 @@
     return majorVersion;
 }
 
++ (BOOL)isDeviceVersion:(NSString *)version
+{
+    return ([[[UIDevice currentDevice] systemVersion] compare:version  options:NSNumericSearch] == NSOrderedSame);
+}
+
 @end

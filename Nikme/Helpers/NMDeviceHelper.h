@@ -13,5 +13,5 @@
 + (NSString*)getAppVersion;
 + (NSString*)getShortVersionString;
 + (NSString*)getAppInformation;
-
++ (BOOL)isDeviceVersion:(NSString *)version;
 @end
