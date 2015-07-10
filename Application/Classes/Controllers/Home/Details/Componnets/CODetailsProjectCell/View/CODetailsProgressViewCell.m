@@ -53,7 +53,7 @@
         NSRange range = NSMakeRange(0, 4);
         NSString *sub = [stringValue substringWithRange:range];
         NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",sub];
-        _progressBarBottomLable.text = sub;
+        _progressBarBottomLable.text = progressBottomLbl;
     } else {
         NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",[[NSNumber numberWithDouble:value] stringValue]];
         _progressBarBottomLable.text = progressBottomLbl;
