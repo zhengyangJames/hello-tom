@@ -33,7 +33,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2w7-fg-DzT">
-                        <rect key="frame" x="8" y="8" width="304" height="370.5"/>
+                        <rect key="frame" x="8" y="8" width="304" height="372.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n06-FT-xdd" userLabel="Project Site View">
                                 <rect key="frame" x="0.0" y="62" width="304" height="54"/>
@@ -300,7 +300,7 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="2w7-fg-DzT" secondAttribute="bottom" id="5jp-bw-0aZ"/>
+                    <constraint firstAttribute="bottom" secondItem="2w7-fg-DzT" secondAttribute="bottom" constant="-2" id="5jp-bw-0aZ"/>
                     <constraint firstAttribute="trailing" secondItem="2w7-fg-DzT" secondAttribute="trailing" constant="8" id="Gfs-ri-edO"/>
                     <constraint firstItem="2w7-fg-DzT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="WWD-Qp-hFQ"/>
                     <constraint firstItem="2w7-fg-DzT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="dok-iz-oXv"/>
@@ -315,7 +315,7 @@
                 <outlet property="_projectInvestmentLable" destination="yCJ-k0-brf" id="IP6-Z8-NFg"/>
                 <outlet property="_projectStatusLable" destination="K1z-Vt-JJy" id="3kc-Xa-Wsj"/>
             </connections>
-            <point key="canvasLocation" x="-4" y="-159.5"/>
+            <point key="canvasLocation" x="-85" y="-260.5"/>
         </tableViewCell>
     </objects>
     <resources>

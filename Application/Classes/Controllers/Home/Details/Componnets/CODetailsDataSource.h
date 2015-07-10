@@ -16,14 +16,17 @@
 #import "CODetailsOffersObject.h"
 #import "CODetailsProgressViewCell.h"
 #import "CODetailsProjectBottomTVCell.h"
+#import "COProgressbarObj.h"
 
-@protocol CODetailsTableViewDelegate;
+@protocol CODetailsAccessoryCellDelegate;
+@protocol CODetailsProjectBottomTVCellDelegate;
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *arrObject;
+@property (strong, nonatomic) COProgressbarObj *progressBarObj;
 
-- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>)controller tableView:(UITableView*)tableView ;
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller tableView:(UITableView*)tableView ;
 
 - (CODetailsPhotoCell*)tableView:(UITableView *)tableView cellDetailsPhotoForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath;

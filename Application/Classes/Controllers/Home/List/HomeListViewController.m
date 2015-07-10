@@ -16,6 +16,7 @@
 #import "MBProgressHUD.h"
 #import "WSURLSessionManager.h"
 #import "WSURLSessionManager+ListHome.h"
+#import "COProgressbarObj.h"
 
 #define kFILTER_CO  @"/CO"
 #define kFILTER_PS  @"/PS"
@@ -30,6 +31,7 @@
 @property (strong, nonatomic) NSArray *arrayData;
 @property (strong, nonatomic) NSArray *arrayListFilter;
 @property (strong, nonatomic) NSArray *arraySort;
+@property (strong, nonatomic) COProgressbarObj *profressbarObj;
 
 @end
 
@@ -78,6 +80,7 @@
 - (void)_pushDetailVcWithID:(NSArray *)arr {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
     vc.arrayObj = arr;
+    vc.progressBarObj = self.profressbarObj;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -178,7 +181,6 @@
 
 - (void)_callWSGetDetailsWithID:(NSString*)offerID {
     [UIHelper showLoadingInView:self.view];
-    [self _callWSGetProgressbar:offerID];
     [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [self _pushDetailVcWithID:responseObject];
@@ -190,10 +192,12 @@
 }
 
 - (void)_callWSGetProgressbar:(NSString*)offerID {
+    [UIHelper showLoadingInView:self.view];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:offerID,@"offer_id", nil];
     [[WSURLSessionManager shared] wsGetProgressBarWithOfferID:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-
+            self.profressbarObj = (COProgressbarObj*)responseObject;
+            [self _callWSGetDetailsWithID:offerID];
         } else {
             [UIHelper showError:error];
         }
@@ -221,12 +225,12 @@
                 [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
             } else {
                 [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-                    [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+                    [self _callWSGetProgressbar:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
                 }];
             }
         };
     }else {
-        [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+        [self _callWSGetProgressbar:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
     }
 }
 

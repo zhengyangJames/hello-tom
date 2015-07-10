@@ -11,26 +11,39 @@
 
 
 
-@interface CODetailsDataSource ()<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>
+@interface CODetailsDataSource ()
 
-@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate> controller;
+@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate> controller;
 
 @end
 
 @implementation CODetailsDataSource
 
 
-- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>)controller tableView:(UITableView *)tableView {
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller tableView:(UITableView *)tableView {
     self = [super init];
     if (self) {
         self.controller = controller;
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsAccessoryCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsAccessoryCell identifier]];
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsSectionCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsSectionCell identifier]];
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsPhotoCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsPhotoCell identifier]];
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsTextCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsTextCell identifier]];
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectCell identifier]];
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsProgressViewCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProgressViewCell identifier]];
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectBottomTVCell identifier] bundle:nil] forCellReuseIdentifier:[CODetailsProjectBottomTVCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsAccessoryCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODetailsAccessoryCell identifier]];
+        
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsSectionCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODetailsSectionCell identifier]];
+        
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsPhotoCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODetailsPhotoCell identifier]];
+        
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsTextCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODetailsTextCell identifier]];
+        
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODetailsProjectCell identifier]];
+        
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsProgressViewCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODetailsProgressViewCell identifier]];
+        
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectBottomTVCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODetailsProjectBottomTVCell identifier]];
     }
     return self;
 }
@@ -52,7 +65,11 @@
     if (section == 0 ||section == 2 || section == 3 || section == 4 || section == self.arrObject.count - 1) {
         return [self _getNumofRowInSection:section];
     } else if ( section == 1) {
-        return [self _getNumofRowInSection:section] + 2;
+        if ([[self.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+            return [self _getNumofRowInSection:section] + 2;
+        } else {
+            return [self _getNumofRowInSection:section] + 1;
+        }
     } else {
         return [self _getNumofRowInSection:section] + 1;
     }
@@ -62,12 +79,20 @@
     if (indexPath.section == 0) {
         return [self tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
     } else if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
-            return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
-        } else if (indexPath.row == 1) {
-            return [self tableView:tableView detailsProgressViewRowAtIndexPath:indexPath];
+        if ([[self.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+            if (indexPath.row == 0) {
+                return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
+            } else if (indexPath.row == 1) {
+                return [self tableView:tableView detailsProgressViewRowAtIndexPath:indexPath];
+            } else {
+                return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
+            }
         } else {
-            return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
+            if (indexPath.row == 0) {
+                return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
+            } else {
+                return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
+            }
         }
     }else if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4 || indexPath.section == self.arrObject.count - 1) {
         return [self tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
@@ -114,17 +139,20 @@
     COOferObj *obj = [self _getItemAtindexPath:indexPath];
     CODetailsProjectCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectCell identifier]];
     cell.detailsProfile = [obj.offerItemObjs objectAtIndex:indexPath.row];
+    cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     return cell;
 }
 
 - (CODetailsProjectBottomTVCell*)tableView:(UITableView *)tableView detailsProjectBottomTVCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsProjectBottomTVCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectBottomTVCell identifier]];
-
+    cell.delegate = self.controller;
     return cell;
 }
 
 - (CODetailsProgressViewCell*)tableView:(UITableView *)tableView detailsProgressViewRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsProgressViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProgressViewCell identifier]];
+    cell.obj = self.progressBarObj;
+    cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     return cell;
 }
 

@@ -30,9 +30,17 @@
     [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButtonQuestion) name:kNOTIFICATION_QUESTION object:nil];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    [_contentView.layer setCornerRadius:8];
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_contentView.bounds
+                                                   byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerBottomRight)
+                                                         cornerRadii:CGSizeMake(8.0, 8.0)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.contentView.bounds;
+    maskLayer.path = maskPath.CGPath;
+    _contentView.layer.mask = maskLayer;
+    _contentView.layer.masksToBounds = YES;
 }
 
 - (IBAction)__actionInterested:(id)sender {

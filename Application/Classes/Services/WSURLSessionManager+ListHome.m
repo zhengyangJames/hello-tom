@@ -9,6 +9,7 @@
 #import "WSURLSessionManager+ListHome.h"
 #import "COLIstOffersObject.h"
 #import "CODetailsOffersObject.h"
+#import "COProgressbarObj.h"
 
 @implementation WSURLSessionManager (ListHome)
 
@@ -131,10 +132,11 @@
                                                 httpMethod:METHOD_POST];
     [request setValue:valueToken forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && responseObject) {
+        if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             DBG(@"%@",responseObject);
+            COProgressbarObj *obj = [[COProgressbarObj alloc]initWithDictionnary:responseObject];
             if (handler) {
-                handler(responseObject, response, nil);
+                handler(obj, response, nil);
             }
         } else {
             if (handler) {

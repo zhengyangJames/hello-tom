@@ -7,7 +7,10 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "COProgressbarObj.h"
 
 @interface CODetailsProgressViewCell : BaseTableViewCell
+
+@property (strong, nonatomic) COProgressbarObj *obj;
 
 @end

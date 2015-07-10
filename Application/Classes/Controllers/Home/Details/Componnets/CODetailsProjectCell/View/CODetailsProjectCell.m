@@ -24,8 +24,9 @@
 
 @implementation CODetailsProjectCell
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_contentView.bounds
                                                    byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight)
                                                          cornerRadii:CGSizeMake(8.0, 8.0)];
@@ -35,7 +36,6 @@
     maskLayer.path = maskPath.CGPath;
     _contentView.layer.mask = maskLayer;
     _contentView.layer.masksToBounds = YES;
-
 }
 
 - (void)viewDidLoad {

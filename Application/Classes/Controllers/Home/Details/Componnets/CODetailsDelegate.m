@@ -58,12 +58,20 @@
             return height;
         }
     } else if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
-            return height = 379;
-        } else if (indexPath.row == 1) {
-            return height = 64;
+        if ([[dataSource.progressBarObj valueForKey:@"goal"] isKindOfClass:[NSNumber class]]) {
+            if (indexPath.row == 0) {
+                return height = 379;
+            } else if (indexPath.row == 1) {
+                return height = 64;
+            } else {
+                return height = 115;
+            }
         } else {
-            return height = 115;
+            if (indexPath.row == 0) {
+                return height = 379;
+            } else {
+                return height = 115;
+            }
         }
     }else if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 11) {
         if(IS_IOS8_OR_ABOVE) {
@@ -88,15 +96,24 @@
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0;
+    CODetailsDataSource *dataSource = tableView.dataSource;
     if (indexPath.section == 0) {
         return height = 67;
     } else if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
-            return height = 379;
-        } else if (indexPath.row == 1) {
-            return height = 64;
+        if ([[dataSource.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+            if (indexPath.row == 0) {
+                return height = 379;
+            } else if (indexPath.row == 1) {
+                return height = 64;
+            } else {
+                return height = 115;
+            }
         } else {
-            return height = 115;
+            if (indexPath.row == 0) {
+                return height = 379;
+            } else {
+                return height = 115;
+            }
         }
     }else if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 5) {
         return height = 85;

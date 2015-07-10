@@ -301,6 +301,7 @@
 		7FAC2CF51B48E2560038B409 /* LoginHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC2CF41B48E2560038B409 /* LoginHelpers.m */; };
 		7FB802BB1B4CE25700173A58 /* NSMutableString+FontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB802BA1B4CE25700173A58 /* NSMutableString+FontSize.m */; };
 		7FBDAA9B1B4A15BA007F7C6B /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */; };
+		7FC40C961B4F67B400F2325F /* COProgressbarObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC40C951B4F67B400F2325F /* COProgressbarObj.m */; };
 		7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
 		7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6D5121B4526240098EC8D /* COLoginManager.m */; };
 		7FCD18AC1B4BB060000B81A2 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18AB1B4BB060000B81A2 /* KLCPopup.m */; };
@@ -767,6 +768,8 @@
 		7FB802BA1B4CE25700173A58 /* NSMutableString+FontSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+FontSize.m"; sourceTree = "<group>"; };
 		7FBDAA991B4A15BA007F7C6B /* UIImageView+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
 		7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
+		7FC40C941B4F67B400F2325F /* COProgressbarObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProgressbarObj.h; sourceTree = "<group>"; };
+		7FC40C951B4F67B400F2325F /* COProgressbarObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COProgressbarObj.m; sourceTree = "<group>"; };
 		7FC6D50F1B44D4090098EC8D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United Kingdom.png"; sourceTree = "<group>"; };
 		7FC6D5111B4526240098EC8D /* COLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLoginManager.h; sourceTree = "<group>"; };
 		7FC6D5121B4526240098EC8D /* COLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLoginManager.m; sourceTree = "<group>"; };
@@ -1456,6 +1459,8 @@
 				0EA971C01B4D17E3000B6500 /* COOferObj.m */,
 				7F2C77481B4E2F0D00C69365 /* CODetailsProfileObj.h */,
 				7F2C77491B4E2F0D00C69365 /* CODetailsProfileObj.m */,
+				7FC40C941B4F67B400F2325F /* COProgressbarObj.h */,
+				7FC40C951B4F67B400F2325F /* COProgressbarObj.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -2218,6 +2223,7 @@
 				0ECA88451B27CA7100B5656F /* NSString+Helpers.m in Sources */,
 				7F325F7E1B40E50800116445 /* BaseView.m in Sources */,
 				7F325FF41B40E50800116445 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				7FC40C961B4F67B400F2325F /* COProgressbarObj.m in Sources */,
 				7F325FA61B40E50800116445 /* AboutTableViewCell.m in Sources */,
 				7F325F801B40E50800116445 /* NSArray+Sort.m in Sources */,
 				0EA971BE1B4D1766000B6500 /* COOfferItemObj.m in Sources */,

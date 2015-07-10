@@ -18,7 +18,7 @@
 #import "COOfferItemObj.h"
 #import "COOferObj.h"
 
-@interface DetailsViewController ()<CODetailsTableViewDelegate>
+@interface DetailsViewController ()
 {
 
 }
@@ -55,6 +55,7 @@
     [self _setupHeaderView];
     self.detailsDataSource    = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
+    
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
     [self _reloadData];
@@ -62,23 +63,24 @@
 
 - (void)_reloadData {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.detailsDataSource.progressBarObj = self.progressBarObj;
         self.detailsDataSource.arrObject = self.arrayObj;
         [self.tableView reloadData];
     }];
 }
 
 #pragma mark Set Get 
-- (void)setObjectDetails:(CODetailsOffersObject *)objectDetails {
-    _objectDetails = objectDetails;
-}
+
 
 - (void)setArrayObj:(NSArray *)arrayObj {
     _arrayObj = arrayObj;
     [self _reloadData];
 }
 
-#pragma Web Service 
-
+- (void)setProgressBarObj:(COProgressbarObj *)progressBarObj {
+    _progressBarObj = progressBarObj;
+    [self _reloadData];
+}
 
 #pragma mark - Action 
 - (IBAction)__actionBack:(id)sender {
@@ -107,7 +109,7 @@
 }
 
 #pragma mark - Delegate
-- (void)detailsProfileAction:(CODetailsProjectCell *)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction {
+- (void)detailsProfileAction:(CODetailsProjectBottomTVCell *)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction {
     switch (detailsProjectAction) {
         case CODetailsProjectActionInterested:
         {
