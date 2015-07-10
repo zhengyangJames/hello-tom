@@ -65,7 +65,7 @@
     if (section == 0 ||section == 2 || section == 3 || section == 4 || section == self.arrObject.count - 1) {
         return [self _getNumofRowInSection:section];
     } else if ( section == 1) {
-        if ([[self.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+        if ([self.progressBarObj.current_funded_amount isKindOfClass:[NSNumber class]]) {
             return [self _getNumofRowInSection:section] + 2;
         } else {
             return [self _getNumofRowInSection:section] + 1;
@@ -79,7 +79,7 @@
     if (indexPath.section == 0) {
         return [self tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
     } else if (indexPath.section == 1) {
-        if ([[self.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+        if ([self.progressBarObj.current_funded_amount isKindOfClass:[NSNumber class]]) {
             if (indexPath.row == 0) {
                 return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
             } else if (indexPath.row == 1) {

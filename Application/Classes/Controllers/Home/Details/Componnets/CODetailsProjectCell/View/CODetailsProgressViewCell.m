@@ -42,11 +42,22 @@
         float value = ([obj.goal doubleValue]*10)/1000;
         [_progressBar setProgress:value animated:NO];
     }
+    
     double valueTitle = [obj.current_funded_amount doubleValue];
     NSString *progressLabel = [NSString stringWithFormat:@"$%@",[[NSNumber numberWithDouble:valueTitle] stringValue]];
     _titleProgressbarLable.text = progressLabel;
-    NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",[[NSNumber numberWithDouble:valueTitle] stringValue]];
-    _progressBarBottomLable.text = progressBottomLbl;
+    
+    double value = ([obj.goal doubleValue]);
+    NSString *stringValue = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:value] stringValue]];
+    if (stringValue.length > 4) {
+        NSRange range = NSMakeRange(0, 4);
+        NSString *sub = [stringValue substringWithRange:range];
+        NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",sub];
+        _progressBarBottomLable.text = sub;
+    } else {
+        NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",[[NSNumber numberWithDouble:value] stringValue]];
+        _progressBarBottomLable.text = progressBottomLbl;
+    }
 }
 
 

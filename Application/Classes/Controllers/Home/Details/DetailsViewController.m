@@ -20,7 +20,7 @@
 
 @interface DetailsViewController ()
 {
-
+    UIWebView   *_webView;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

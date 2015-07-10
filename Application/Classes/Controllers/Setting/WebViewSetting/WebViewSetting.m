@@ -22,17 +22,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    
+    [self _setupLeftNavigationButton];
 }
 
 - (void)_setupLeftNavigationButton {
-    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Back")
-                                                                                   style:UIBarButtonItemStyleDone
-                                                                                  target:self
-                                                                                  action:@selector(__actionDCancel:)];
-    [btBack setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
-                            forState:UIControlStateNormal];
-    self.navigationItem.leftBarButtonItem = btBack;
+    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 32, 32)];
+    UIImage *backImage = [UIImage imageNamed:@"ic_btn_left"] ;
+    [backButton setBackgroundImage:backImage  forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(__actionBack:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem = backButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,8 +70,8 @@
 
 #pragma mark - Action
 
-- (void)__actionDCancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void)__actionBack:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
