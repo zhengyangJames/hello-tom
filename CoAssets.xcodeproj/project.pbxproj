@@ -298,7 +298,6 @@
 		7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */; };
 		7FAB4E501B468BCA0012E6D0 /* AboutTableViewCell_Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */; };
 		7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */; };
-		7FAC2CF51B48E2560038B409 /* LoginHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC2CF41B48E2560038B409 /* LoginHelpers.m */; };
 		7FB802BB1B4CE25700173A58 /* NSMutableString+FontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB802BA1B4CE25700173A58 /* NSMutableString+FontSize.m */; };
 		7FB9C06F1B4FDA0700FC1B47 /* ic_btn_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB9C06E1B4FDA0700FC1B47 /* ic_btn_left.png */; };
 		7FBDAA9B1B4A15BA007F7C6B /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDAA9A1B4A15BA007F7C6B /* UIImageView+Networking.m */; };
@@ -763,8 +762,6 @@
 		7FAB4E4D1B468BCA0012E6D0 /* AboutTableViewCell_Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell_Address.h; sourceTree = "<group>"; };
 		7FAB4E4E1B468BCA0012E6D0 /* AboutTableViewCell_Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell_Address.m; sourceTree = "<group>"; };
 		7FAB4E4F1B468BCA0012E6D0 /* AboutTableViewCell_Address.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell_Address.xib; sourceTree = "<group>"; };
-		7FAC2CF31B48E2560038B409 /* LoginHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHelpers.h; sourceTree = "<group>"; };
-		7FAC2CF41B48E2560038B409 /* LoginHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelpers.m; sourceTree = "<group>"; };
 		7FB802B91B4CE25700173A58 /* NSMutableString+FontSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+FontSize.h"; sourceTree = "<group>"; };
 		7FB802BA1B4CE25700173A58 /* NSMutableString+FontSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+FontSize.m"; sourceTree = "<group>"; };
 		7FB9C06E1B4FDA0700FC1B47 /* ic_btn_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_btn_left.png; sourceTree = "<group>"; };
@@ -1427,8 +1424,6 @@
 				7F325E721B40E50800116445 /* MKMapView+ZoomLevel.m */,
 				7F325E731B40E50800116445 /* UIHelper.h */,
 				7F325E741B40E50800116445 /* UIHelper.m */,
-				7FAC2CF31B48E2560038B409 /* LoginHelpers.h */,
-				7FAC2CF41B48E2560038B409 /* LoginHelpers.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2205,7 +2200,6 @@
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
 				7F325FF91B40E50800116445 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7F325FB01B40E50800116445 /* PasswordTableViewCell.m in Sources */,
-				7FAC2CF51B48E2560038B409 /* LoginHelpers.m in Sources */,
 				7F325FD01B40E50800116445 /* MKMapView+ZoomLevel.m in Sources */,
 				7F325FFC1B40E50800116445 /* NSManagedObject+MagicalRecord.m in Sources */,
 				0ECA88411B27CA7100B5656F /* NMView.m in Sources */,
