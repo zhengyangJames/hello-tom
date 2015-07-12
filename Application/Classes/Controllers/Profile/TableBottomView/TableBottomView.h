@@ -9,11 +9,17 @@
 #import "BaseView.h"
 #define CORNERRADIUS 5.5
 
-typedef void(^ActionButtonUpdate)(NSString *string);
+@protocol TableBottomViewDelegate;
 
 @interface TableBottomView : BaseView
 
 @property (strong, nonatomic) NSString *lblUpdateButton;
-@property (copy, nonatomic) ActionButtonUpdate actionButtonUpdate;
+@property (weak, nonatomic) id<TableBottomViewDelegate> delegate;
+
+@end
+
+@protocol TableBottomViewDelegate <NSObject>
+
+- (void)tableBottomView:(TableBottomView*)tableBottomView titlerButton:(NSString*)titlerButton;
 
 @end

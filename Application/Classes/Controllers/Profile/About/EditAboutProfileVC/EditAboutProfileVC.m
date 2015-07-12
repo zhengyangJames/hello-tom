@@ -38,7 +38,6 @@
     [super viewDidLoad];
     [self _setupUI];
     self.dicProfile = self.dicProfile;
-    _indexActtionCountryCode = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,6 +58,7 @@
     cityTXT.text = [_dicProfile valueForKey:KCITY];
     regionStateTXT.text = [_dicProfile valueForKey:KSATE];
     NSString *phone = [self _getPhoneCode:[_dicProfile valueForKey:kNUM_COUNTRY]];
+    _indexActtionCountryCode = [self _getPhoneCodeForString:phone];
     [dropListCountryCode setTitle:phone forState:UIControlStateNormal];
 }
 
@@ -80,29 +80,13 @@
     return dic;
 }
 
-- (NSMutableDictionary*)_getBodyData {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kUSER] = self.profileObject.username ;
-    dic[KFRIST_NAME] = self.profileObject.first_name ;
-    dic[KLAST_NAME] = self.profileObject.last_name ;
-    dic[KEMAIL] = self.profileObject.email ;
-    dic[kNUM_CELL_PHONE] = self.profileObject.cell_phone ;
-    dic[kNUM_COUNTRY] = self.profileObject.country_prefix ;
-    dic[KADDRESS] = self.profileObject.address_1 ;
-    [self.profileObject setValue:address2TXT.text forKey:KADDRESS2];
-    dic[KADDRESS2] = self.profileObject.address_2;
-    [self.profileObject setValue:regionStateTXT.text forKey:KCITY];
-    dic[KCITY] = self.profileObject.city;
-    [self.profileObject setValue:countryTXT.text forKey:KCOUNTRY];
-    dic[KCOUNTRY] = self.profileObject.country;
-    [self.profileObject setValue:regionStateTXT.text forKey:KSATE];
-    dic[KSATE] = self.profileObject.region_state ;
-    return dic;
-}
 
 - (NSDictionary*)_getProfileObject {
-    NSString *phone = [self _getPhoneCode:[_dicProfile valueForKey:kNUM_COUNTRY]];
+    NSString *phone = [self.arrayCountryCode[_indexActtionCountryCode] valueForKey:@"code"];
     NSMutableDictionary *obj = [[NSMutableDictionary alloc]init];
+    [obj setValue:self.profileObject.username forKey:kUSER];
+    [obj setValue:self.profileObject.first_name forKey:KFRIST_NAME];
+    [obj setValue:self.profileObject.last_name forKey:KLAST_NAME];
     [obj setValue:phone forKey:kNUM_COUNTRY];
     [obj setValue:phoneNameTXT.text forKey:kNUM_CELL_PHONE];
     [obj setValue:addressNameTXT.text  forKey:KADDRESS];
@@ -124,6 +108,16 @@
     return str;
 }
 
+- (NSInteger)_getPhoneCodeForString:(NSString*)stringPhoneCode {
+    NSInteger num = 0;
+    for (int i = 0 ; i < self.arrayCountryCode.count; i++) {
+        if ([stringPhoneCode isEqualToString:[self.arrayCountryCode[i] objectForKey:@"code"]]) {
+            num = i ;
+        }
+    }
+    return num;
+}
+
 #pragma mark - Private 
 
 - (void)_setupUI {
@@ -131,8 +125,6 @@
     self.navigationItem.title = m_string(@"Basic Info");
     [self _setupBarButtonCancel];
     [self _setupBarButtonDone];
-    NSString *phoneCode = [self.arrayCountryCode[_indexActtionCountryCode] objectForKey:@"code"];
-    [dropListCountryCode setTitle:phoneCode forState:UIControlStateNormal];
 }
 
 - (void)_setupBarButtonDone {
@@ -180,7 +172,7 @@
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _getAccessToken] body:[self _getBodyData] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _getAccessToken] body:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             DBG(@"%@",responseObject);
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -194,12 +186,10 @@
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
-    if (self.actionDone) {
-        self.actionDone([self _getProfileObject]);
-    }
-    if (![self _isValidation]) {
-        return;
-    } else {
+    if ([self _isValidation]) {
+        if ([self.delegate respondsToSelector:@selector(editAboutProfile:profileUpdate:)]) {
+            [self.delegate editAboutProfile:self profileUpdate:[self _getProfileObject]];
+        }
         [self _callWSUpdateProfile];
     }
 }

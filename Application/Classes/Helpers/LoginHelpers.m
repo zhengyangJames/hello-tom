@@ -22,13 +22,7 @@
     [[kAppDelegate baseTabBarController] presentViewController:base
                                                       animated:YES
                                                     completion:nil];
-    vcLogin.actionLogin = ^(BOOL CancelOrLogin){
-        if (CancelOrLogin) {
-            
-        }else {
-            
-        }
-    };
+
 }
 
 @end

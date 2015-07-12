@@ -20,7 +20,7 @@
 #define LINK_PRIVACY         @"https://www.coassets.com/privacy/"
 
 
-@interface SettingViewController () <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
+@interface SettingViewController () <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,LoginViewControllerDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     WebViewSetting *_webViewSetting;
@@ -161,20 +161,10 @@
 
 - (void)_logginApllication {
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
-    __weak LoginViewController *weakLogin = vcLogin;
+    vcLogin.delegate = self;
     BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
     [[kAppDelegate baseTabBarController] presentViewController:base
                                                       animated:YES completion:nil];
-    vcLogin.actionLogin = ^(BOOL CancelOrLogin){
-        if (CancelOrLogin) {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-                [self _replaceArraySettingLogin];
-            }];
-        } else {
-            [[kAppDelegate baseTabBarController] setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
-        }
-    };
 }
 
 - (void)_replaceArraySettingLogin {
@@ -205,5 +195,24 @@
     }
 }
 
+#pragma mark - Delegate
+- (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
+    switch (loginWithStyle) {
+        case DismissLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:loginViewController completion:^{
+                [self _replaceArraySettingLogin];
+            }];
+        } break;
+            
+        case PushLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
+        } break;
+            
+        default: break;
+    }
+}
 
 @end

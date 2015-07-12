@@ -24,12 +24,16 @@
 #define kFILTER_PS  @"/PS"
 #define kFILTER_BP  @"/BP"
 
-@interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate>
+typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
+
+@interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate,LoginViewControllerDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     UIBarButtonItem *_leftButton;
     NSInteger _indexSelectFilter;
+    NSIndexPath *_indexPathForCell;
 }
+@property (copy, nonatomic) ActionGetIndexPath actionGetIndexPath;
 @property (strong, nonatomic) NSArray *arrayData;
 @property (strong, nonatomic) NSArray *arrayListFilter;
 @property (strong, nonatomic) NSArray *arraySort;
@@ -219,18 +223,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         LoginViewController *vcLogin = [[LoginViewController alloc]init];
-        __weak LoginViewController *weakLogin = vcLogin;
+        vcLogin.delegate = self;
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
         [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
-        vcLogin.actionLogin = ^(BOOL CancelOrLogin){
-            if (!CancelOrLogin) {
-                [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
-            } else {
-                [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-                    [self _callWSGetProgressbar:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
-                }];
-            }
-        };
+        _indexPathForCell = indexPath;
     }else {
         [self _callWSGetProgressbar:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
     }
@@ -248,4 +244,23 @@
     return cell;
 }
 
+#pragma mark - Other Delegate
+- (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
+    switch (loginWithStyle) {
+        case DismissLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
+        } break;
+            
+        case PushLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:self completion:^{
+                [self _callWSGetProgressbar:[[self.arrayData[_indexPathForCell.row] valueForKey:@"offerID"] stringValue]];
+            }];
+            _indexPathForCell = nil;
+        } break;
+            
+        default: break;
+    }
+}
 @end

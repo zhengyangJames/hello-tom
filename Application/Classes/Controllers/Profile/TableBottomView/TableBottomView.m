@@ -40,8 +40,8 @@
 #pragma mark - Action
 
 - (IBAction)__actionButtonUpdate:(id)sender {
-    if (self.actionButtonUpdate) {
-        self.actionButtonUpdate(_btnUpdate.titleLabel.text);
+    if ([self.delegate respondsToSelector:@selector(tableBottomView:titlerButton:)]) {
+        [self.delegate tableBottomView:self titlerButton:_btnUpdate.titleLabel.text];
     }
 }
 
