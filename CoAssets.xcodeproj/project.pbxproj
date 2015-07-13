@@ -244,12 +244,6 @@
 		7F32605E1B40E50800116445 /* ic_uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F5B1B40E50800116445 /* ic_uncheck.png */; };
 		7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F5C1B40E50800116445 /* ic_uncheck@2x.png */; };
 		7F3260601B40E50800116445 /* ic_uncheck@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F5D1B40E50800116445 /* ic_uncheck@3x.png */; };
-		7F3260611B40E50800116445 /* 15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F5F1B40E50800116445 /* 15.jpg */; };
-		7F3260621B40E50800116445 /* 17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F601B40E50800116445 /* 17.jpg */; };
-		7F3260631B40E50800116445 /* 18.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F611B40E50800116445 /* 18.jpg */; };
-		7F3260641B40E50800116445 /* 19.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F621B40E50800116445 /* 19.jpg */; };
-		7F3260651B40E50800116445 /* 20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F631B40E50800116445 /* 20.jpg */; };
-		7F3260661B40E50800116445 /* Earth_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F641B40E50800116445 /* Earth_256.png */; };
 		7F3260671B40E50800116445 /* Preloader_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F661B40E50800116445 /* Preloader_1.gif */; };
 		7F3260681B40E50800116445 /* Preloader_10.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F671B40E50800116445 /* Preloader_10.gif */; };
 		7F3260691B40E50800116445 /* Preloader_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F681B40E50800116445 /* Preloader_2.gif */; };
@@ -703,12 +697,6 @@
 		7F325F5B1B40E50800116445 /* ic_uncheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_uncheck.png; sourceTree = "<group>"; };
 		7F325F5C1B40E50800116445 /* ic_uncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_uncheck@2x.png"; sourceTree = "<group>"; };
 		7F325F5D1B40E50800116445 /* ic_uncheck@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_uncheck@3x.png"; sourceTree = "<group>"; };
-		7F325F5F1B40E50800116445 /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15.jpg; sourceTree = "<group>"; };
-		7F325F601B40E50800116445 /* 17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 17.jpg; sourceTree = "<group>"; };
-		7F325F611B40E50800116445 /* 18.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 18.jpg; sourceTree = "<group>"; };
-		7F325F621B40E50800116445 /* 19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 19.jpg; sourceTree = "<group>"; };
-		7F325F631B40E50800116445 /* 20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20.jpg; sourceTree = "<group>"; };
-		7F325F641B40E50800116445 /* Earth_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Earth_256.png; sourceTree = "<group>"; };
 		7F325F661B40E50800116445 /* Preloader_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Preloader_1.gif; sourceTree = "<group>"; };
 		7F325F671B40E50800116445 /* Preloader_10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Preloader_10.gif; sourceTree = "<group>"; };
 		7F325F681B40E50800116445 /* Preloader_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Preloader_2.gif; sourceTree = "<group>"; };
@@ -1822,12 +1810,6 @@
 				7FA7E6901B4E62EB00059B13 /* company_logo_degault.png */,
 				7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */,
 				7F8529101B43935B00CFAEB5 /* countries */,
-				7F325F5F1B40E50800116445 /* 15.jpg */,
-				7F325F601B40E50800116445 /* 17.jpg */,
-				7F325F611B40E50800116445 /* 18.jpg */,
-				7F325F621B40E50800116445 /* 19.jpg */,
-				7F325F631B40E50800116445 /* 20.jpg */,
-				7F325F641B40E50800116445 /* Earth_256.png */,
 				7F325F651B40E50800116445 /* ic_loading_128x128 */,
 				7F325F701B40E50800116445 /* ic_placeholder.png */,
 			);
@@ -2088,7 +2070,6 @@
 				7F3260361B40E50800116445 /* ic_calendar@3x.png in Resources */,
 				7F325FA11B40E50800116445 /* ForgotPasswordViewController.xib in Resources */,
 				7F325FB81B40E50800116445 /* ContactTableViewCell.xib in Resources */,
-				7F3260651B40E50800116445 /* 20.jpg in Resources */,
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
 				7FA7E6BC1B4E7C4D00059B13 /* COQuestionView.xib in Resources */,
 				7F32603B1B40E50800116445 /* ic_contac_2@3x.png in Resources */,
@@ -2096,7 +2077,6 @@
 				7FAB4E511B468BCA0012E6D0 /* AboutTableViewCell_Address.xib in Resources */,
 				7F3260561B40E50800116445 /* ic_setting@2x.png in Resources */,
 				7F85292A1B43935B00CFAEB5 /* New Zealand.png in Resources */,
-				7F3260661B40E50800116445 /* Earth_256.png in Resources */,
 				7F3260341B40E50800116445 /* ic_bank@3x.png in Resources */,
 				7F8E0BD91B5355A20045EFB0 /* CODetailsWebViewCell.xib in Resources */,
 				7F85292B1B43935B00CFAEB5 /* Philippines.png in Resources */,
@@ -2104,14 +2084,12 @@
 				7F8529251B43935B00CFAEB5 /* Germany.png in Resources */,
 				7F3260481B40E50800116445 /* ic_info@3x.png in Resources */,
 				7F3260681B40E50800116445 /* Preloader_10.gif in Resources */,
-				7F3260631B40E50800116445 /* 18.jpg in Resources */,
 				7F32606C1B40E50800116445 /* Preloader_5.gif in Resources */,
 				7FB9C06F1B4FDA0700FC1B47 /* ic_btn_left.png in Resources */,
 				7F3260401B40E50800116445 /* ic_droplist@3x.png in Resources */,
 				7F3260291B40E50800116445 /* Raleway-MediumItalic.ttf in Resources */,
 				7F325FB31B40E50800116445 /* ProfileViewController.xib in Resources */,
 				7F32602B1B40E50800116445 /* Raleway-SemiBold.ttf in Resources */,
-				7F3260641B40E50800116445 /* 19.jpg in Resources */,
 				7F32604D1B40E50800116445 /* ic_loadding.gif in Resources */,
 				7F32605A1B40E50800116445 /* ic_setting_2_heighlight@2x.png in Resources */,
 				7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */,
@@ -2128,7 +2106,6 @@
 				7F8529281B43935B00CFAEB5 /* Japan.png in Resources */,
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
 				7F3260761B40E50800116445 /* FilterList.plist in Resources */,
-				7F3260611B40E50800116445 /* 15.jpg in Resources */,
 				7F32603C1B40E50800116445 /* ic_contac_2_heightlight@2x.png in Resources */,
 				7FA7E6C11B4E7CD500059B13 /* CODetailsProgressViewCell.xib in Resources */,
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
@@ -2151,7 +2128,6 @@
 				7F32600F1B40E50800116445 /* Icon-iOS7@2x.png in Resources */,
 				7F32605B1B40E50800116445 /* ic_setting_2_heighlight@3x.png in Resources */,
 				7F325FCB1B40E50800116445 /* COSlidingCell.xib in Resources */,
-				7F3260621B40E50800116445 /* 17.jpg in Resources */,
 				7F3260281B40E50800116445 /* Raleway-Medium.ttf in Resources */,
 				7F3260201B40E50800116445 /* Raleway-BoldItalic.ttf in Resources */,
 				7F325FC51B40E50800116445 /* DropListCell.xib in Resources */,
@@ -2469,7 +2445,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
@@ -2490,7 +2466,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;

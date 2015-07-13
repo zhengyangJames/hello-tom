@@ -14,9 +14,11 @@
 #import "UIImageView+Networking.h"
 #import "COInterestedViewController.h"
 #import "COQuestionView.h"
-
+#import "CODetailsProfileObj.h"
 #import "COOfferItemObj.h"
 #import "COOferObj.h"
+#import "COListProfileObject.h"
+#import "WebViewSetting.h"
 
 @interface DetailsViewController ()
 {
@@ -116,7 +118,10 @@
             COInterestedViewController *vc = [[COInterestedViewController alloc]init];
             COOferObj *offerObj = [self.arrayObj firstObject];
             COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
-            vc.object = @{@"offerID":offerItemObj.offerID,@"offerTitle":offerItemObj.title};
+            COOferObj *offerObj2 = self.arrayObj[1];
+            CODetailsProfileObj *profileObj2 = [offerObj2.offerItemObjs lastObject];
+            COListProfileObject *listProfile = [[COListProfileObject alloc]initWithDictionary:[kUserDefaults objectForKey:kPROFILE_OBJECT]];
+            vc.object = @{@"offerID":offerItemObj.offerID,@"offerTitle":offerItemObj.title,@"amount":profileObj2.min_investment,@"email":listProfile.email};
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
@@ -139,7 +144,12 @@
         COOferObj *obj = [self _getItemAtindexPath:indexPath];
         COOfferItemObj *coOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row - 1];
         if (coOOfferItemObj.linkOrDetail && ![coOOfferItemObj.linkOrDetail isEmpty]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:coOOfferItemObj.linkOrDetail]];
+            WebViewSetting *vc = [[WebViewSetting alloc]init];
+            vc.titler = m_string(coOOfferItemObj.title);
+            vc.webLink = coOOfferItemObj.linkOrDetail;
+            vc.isPresion = YES;
+            BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];
+            [self.navigationController presentViewController:nav animated:YES completion:nil];
         }
     }
 }

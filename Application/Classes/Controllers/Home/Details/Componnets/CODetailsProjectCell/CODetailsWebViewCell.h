@@ -6,10 +6,21 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface CODetailsWebViewCell : UITableViewCell
+@protocol  CODetailsWebViewCellDelegate;
 
+@interface CODetailsWebViewCell : BaseTableViewCell
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UILabel *titler;
+@property (weak, nonatomic) id<CODetailsWebViewCellDelegate> delegate;
+
+@end
+
+@protocol  CODetailsWebViewCellDelegate <NSObject>
+
+@optional
+- (void)coDetailsWebViewCell:(CODetailsWebViewCell*)CODetailsWebViewCell webViewEndLoading:(BOOL)webViewEndLoading;
 
 @end

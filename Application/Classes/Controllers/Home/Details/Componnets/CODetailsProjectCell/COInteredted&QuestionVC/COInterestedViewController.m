@@ -29,12 +29,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
+    self.object = self.object;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }
 }
 
 #pragma mark SetUp UI 
@@ -53,6 +57,13 @@
     [btBack setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
                           forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = btBack;
+}
+
+#pragma mark - Set Get
+- (void)setObject:(NSDictionary *)object {
+    _object = object;
+    [_emailTextField setText:[_object valueForKey:@"email"]];
+    [_amountTextField setText:[[_object valueForKey:@"amount"] stringValue]];
 }
 
 #pragma mark Action

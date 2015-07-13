@@ -43,7 +43,11 @@
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="yAs-xw-NFN"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="197" y="129.5"/>
+            <connections>
+                <outlet property="titler" destination="J4Y-fc-BXA" id="zlH-Zh-Ws3"/>
+                <outlet property="webView" destination="0f5-0N-kZZ" id="xsE-9B-KP8"/>
+            </connections>
+            <point key="canvasLocation" x="68" y="243.5"/>
         </tableViewCell>
     </objects>
 </document>

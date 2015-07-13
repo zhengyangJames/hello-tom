@@ -99,7 +99,7 @@
                                         <constraint firstAttribute="height" constant="40" id="J3v-us-DOk"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Vl-x6-Drq">
                                     <rect key="frame" x="20" y="270" width="210" height="21"/>
@@ -297,7 +297,7 @@
                 <constraint firstAttribute="bottom" secondItem="1My-n2-Eai" secondAttribute="bottom" id="f4b-UL-0fr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="88" y="191"/>
+            <point key="canvasLocation" x="-34" y="153"/>
         </view>
     </objects>
 </document>

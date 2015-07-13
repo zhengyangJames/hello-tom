@@ -8,16 +8,21 @@
 
 #import "CODetailsWebViewCell.h"
 
+@interface CODetailsWebViewCell () <UIWebViewDelegate>
+{
+    
+}
+
+@end
+
 @implementation CODetailsWebViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+#pragma mark - WebView Delegate
 
-    // Configure the view for the selected state
-}
 
 @end
