@@ -47,17 +47,83 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1) {
-        return 250;
+    CGFloat height = 0;
+    CODetailsDataSource *dataSource = tableView.dataSource;
+    if (indexPath.section == 0) {
+        if(IS_IOS8_OR_ABOVE) {
+            return UITableViewAutomaticDimension;
+        } else {
+            id cell = [dataSource tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
+            height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
+            return height;
+        }
+    } else if (indexPath.section == 1) {
+        if ([[dataSource.progressBarObj valueForKey:@"goal"] isKindOfClass:[NSNumber class]]) {
+            if (indexPath.row == 0) {
+                return height = 379;
+            } else if (indexPath.row == 1) {
+                return height = 64;
+            } else {
+                return height = 115;
+            }
+        } else {
+            if (indexPath.row == 0) {
+                return height = 379;
+            } else {
+                return height = 115;
+            }
+        }
+    }else if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 11) {
+        if(IS_IOS8_OR_ABOVE) {
+            return UITableViewAutomaticDimension;
+        } else {
+            id Cell = [dataSource tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
+            return height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
+        }
+    }else {
+        if (indexPath.row == 0) {
+            return 44;
+        } else {
+            if(IS_IOS8_OR_ABOVE) {
+                return UITableViewAutomaticDimension;
+            } else {
+                id Cell = [dataSource tableView:tableView cellDetailsAccessoryForRowAtIndexPath:indexPath];
+                return height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
+            }
+        }
     }
-    return  UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
+    CGFloat height = 0;
+    CODetailsDataSource *dataSource = tableView.dataSource;
+    if (indexPath.section == 0) {
+        return height = 67;
+    } else if (indexPath.section == 1) {
+        if ([[dataSource.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+            if (indexPath.row == 0) {
+                return height = 379;
+            } else if (indexPath.row == 1) {
+                return height = 64;
+            } else {
+                return height = 115;
+            }
+        } else {
+            if (indexPath.row == 0) {
+                return height = 379;
+            } else {
+                return height = 115;
+            }
+        }
+    }else if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 5) {
+        return height = 85;
+    }else {
+        return height = 44;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if ([self.controller respondsToSelector:@selector(detailsViewController:didSelectedAtIndexPath:)]) {
         [self.controller detailsViewController:self didSelectedAtIndexPath:indexPath];
     }

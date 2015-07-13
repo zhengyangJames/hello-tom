@@ -61,22 +61,21 @@
     }];
 }
 
-- (void)_zipDataProfile:(COListProfileObject*)object {
+- (void)_zipDataProfile:(NSDictionary*)dic {
     NSMutableDictionary *dicPro = [NSMutableDictionary new];
-    dicPro[kNUM_CELL_PHONE] = object.cell_phone;
-    dicPro[kNUM_COUNTRY] = object.country_prefix;
-    dicPro[KADDRESS] = object.address_1;
-    dicPro[KADDRESS2] = object.address_2;
-    dicPro[KSATE] = object.region_state ;
-    dicPro[KCITY] = object.city;
-    dicPro[KCOUNTRY] = object.country;
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[@"profile"] = dicPro;
-    dic[kUSER] = object.username;
-    dic[KFRIST_NAME] = object.first_name;
-    dic[KLAST_NAME] = object.last_name;
-    dic[KEMAIL] = object.email;
-    [kUserDefaults setObject:dic forKey:kPROFILE_OBJECT];
+    dicPro[kUSER] = [dic objectForKeyNotNull:@"username"];
+    dicPro[KFRIST_NAME] = [dic objectForKeyNotNull:@"first_name"];
+    dicPro[KLAST_NAME] = [dic objectForKeyNotNull:@"last_name"];
+    dicPro[KEMAIL] = [dic objectForKeyNotNull:@"email"];
+    NSDictionary *dicProfile = [dic objectForKeyNotNull:@"profile"];
+    dicPro[kNUM_CELL_PHONE] = [dicProfile objectForKeyNotNull:@"cellphone"];
+    dicPro[kNUM_COUNTRY] = [dicProfile objectForKeyNotNull:@"country_prefix"];
+    dicPro[KADDRESS] = [dicProfile objectForKeyNotNull:@"address_1"];
+    dicPro[KADDRESS2] = [dicProfile objectForKeyNotNull:@"address_2"];
+    dicPro[KSATE] = [dicProfile objectForKeyNotNull:@"region_state"];
+    dicPro[KCITY] = [dicProfile objectForKeyNotNull:@"city"];
+    dicPro[KCOUNTRY] = [dicProfile objectForKeyNotNull:@"country"];
+    [kUserDefaults setObject:dicPro forKey:kPROFILE_OBJECT];
     [kUserDefaults synchronize];
 }
 

@@ -9,12 +9,19 @@
 #import "BaseViewController.h"
 #import "COListProfileObject.h"
 
-typedef void(^ActionDoneAbout)(NSDictionary* profile);
+@protocol EditAboutProfileVCDelegate;
 
 @interface EditAboutProfileVC : BaseViewController
 
 @property (strong, nonatomic) COListProfileObject *profileObject;
 @property (strong, nonatomic) NSDictionary *dicProfile;
-@property (copy, nonatomic) ActionDoneAbout actionDone;
+@property (weak, nonatomic) id<EditAboutProfileVCDelegate> delegate;
+
+@end
+
+@protocol EditAboutProfileVCDelegate <NSObject>
+
+@optional
+- (void)editAboutProfile:(EditAboutProfileVC*)editAboutProfileVC profileUpdate:(NSDictionary*)profileUpdate;
 
 @end

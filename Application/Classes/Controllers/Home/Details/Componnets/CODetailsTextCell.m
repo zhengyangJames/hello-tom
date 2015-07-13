@@ -9,7 +9,7 @@
 #import "CODetailsTextCell.h"
 #import "COOfferItemObj.h"
 
-@interface CODetailsTextCell ()
+@interface CODetailsTextCell () <UIWebViewDelegate>
 {
     __weak IBOutlet UITextView  *_detailsTextView;
     __weak IBOutlet UILabel     *_headerLabel;
@@ -40,6 +40,15 @@
     } else {
         _detailsTextView.text = coOfferItem.linkOrDetail;
     }
+}
+
+#pragma mark - WebView
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
 }
 
 @end

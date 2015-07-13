@@ -37,10 +37,18 @@
 #define UPDATE_ABOUT_PROFILE    @"Update profile"
 #define UPDATE_COMNPANY_PROFILE @"Update company profile"
 
-typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell);
 
-
-@interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate,PasswordTableViewCellDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UIAlertViewDelegate>
+@interface ProfileViewController ()
+<UITableViewDataSource,
+UITableViewDelegate,
+UIImagePickerControllerDelegate,
+UIActionSheetDelegate,
+UIAlertViewDelegate,
+PasswordTableViewCellDelegate,
+EditAboutProfileVCDelegate,
+TableHeaderViewDelegate,
+TableBottomViewDelegate,
+LoginViewControllerDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     UIImage *_imageCompany;
@@ -52,7 +60,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 @property (strong, nonatomic) TableHeaderView               *tableheaderView;
 @property (weak, nonatomic  ) PasswordTableViewCell         *passwordTableViewCell;
 @property (strong, nonatomic) NSArray                       *arrayCountryCode;
-@property (copy, nonatomic  ) ActionUpdateTextFieldPassword actionUpdateTextFieldPassword;
 
 @end
 
@@ -141,7 +148,7 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 #pragma mark - Private
 - (void)_setUpLogginVC {
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
-    __weak LoginViewController *weakLogin = vcLogin;
+    vcLogin.delegate = self;
     CATransition* transition = [CATransition animation];
     transition.duration = 1.5;
     transition.type = kCATransactionAnimationDuration;
@@ -149,28 +156,12 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     [[kAppDelegate baseTabBarController].view.layer addAnimation:transition forKey:kCATransition];
     [[kAppDelegate baseTabBarController] presentViewController:base
                                                       animated:YES completion:nil];
-    vcLogin.actionLogin = ^(BOOL CancelOrLogin){
-        if (CancelOrLogin) {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:weakLogin completion:^{
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    [_tableView reloadData];
-                }];
-            }];
-        }else {
-            [[kAppDelegate baseTabBarController] setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
-        }
-    };
 }
 
 - (void)_setupHeaderTableView {
-    __weak __typeof__(self) weakSelf = self;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HIEGHT_HEADERVIEW)];
     _tableheaderView   = [[TableHeaderView alloc] initWithNibName:[TableHeaderView identifier]];
-    [_tableheaderView setActionSegment:^(NSInteger indexSelectSegment){
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
-        [strongSelf _setupCellStyle:indexSelectSegment];
-    } ];
+    _tableheaderView.delegate = self;
 //    [_tableheaderView setActionPickerImageProfile:^(){
 //        __strong __typeof(weakSelf)strongSelf = weakSelf;
 //        [strongSelf _showActionSheet];
@@ -182,13 +173,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 }
 
 - (void)_setupFooterTableView {
-    __weak __typeof__(self) weakSelf = self;
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HIEGHT_BOTTOMVIEW)];
     _tablefooterView   = [[TableBottomView alloc] initWithNibName:[TableBottomView identifier]];
-    [_tablefooterView setActionButtonUpdate:^(NSString *string){
-        __strong __typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf __actionButtonUpdate:string];
-    }];
+    _tablefooterView.delegate = self;
     _tablefooterView.translatesAutoresizingMaskIntoConstraints = NO;
     [footerView addSubview:_tablefooterView];
     [_tablefooterView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
@@ -197,14 +184,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (void)_setupEditAboutProfileVC {
     EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
-    __weak __typeof__(EditAboutProfileVC) *weakSelf = vc;
+    vc.delegate = self;
+    vc.dicProfile = [self.profileObject getProfileObject];
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
-    vc.dicProfile = [self _getProfileObject];
-    vc.actionDone = ^(NSDictionary* profile) {
-        [self _updateProfile:profile];
-        __strong __typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.profileObject = self.profileObject;
-    };
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
 
@@ -219,31 +201,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     }];
 }
 
-- (NSString*)_getFormatStringAddress{
-    NSString *address1 = self.profileObject.address_1;
-    NSString *address2 = self.profileObject.address_2;
-    NSString *postCode = self.profileObject.region_state;
-    NSString *city = self.profileObject.city;
-    NSString *country = self.profileObject.country;
-    NSMutableString *stringFormat = [NSMutableString new];
-    if (address1 && ![address1 isEmpty]) {
-        [stringFormat appendString:address1];
-    }
-    if (address2 && ![address2 isEmpty]){
-        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",address2]];
-    }
-    if (postCode && ![postCode isEmpty]){
-        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",postCode]];
-    }
-    if (city && ![city isEmpty]){
-        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",city]];
-    }
-    if (country && ![country isEmpty]) {
-        [stringFormat appendString:[NSString stringWithFormat:@"\n%@",country]];
-    }
-    return stringFormat;
-}
-
 #pragma mark - Setter Getter
 
 - (NSMutableDictionary*)_setupAccessToken {
@@ -251,30 +208,6 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
     dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
     return dic;
-}
-
-- (NSDictionary*)_getProfileObject {
-    NSMutableDictionary *obj = [[NSMutableDictionary alloc]init];
-    [obj setValue:self.profileObject.country_prefix forKey:kNUM_COUNTRY];
-    [obj setValue:self.profileObject.cell_phone forKey:kNUM_CELL_PHONE];
-    [obj setValue:self.profileObject.address_1 forKey:KADDRESS];
-    [obj setValue:self.profileObject.email forKey:KEMAIL];
-    [obj setValue:self.profileObject.city forKey:KCITY];
-    [obj setValue:self.profileObject.country forKey:KCOUNTRY];
-    [obj setValue:self.profileObject.address_2 forKey:KADDRESS2];
-    [obj setValue:self.profileObject.region_state forKey:KSATE];
-    return obj;
-}
-
-- (void)_updateProfile:(NSDictionary*)profile {
-    self.profileObject.country_prefix = [self _getPhoneCode:[profile valueForKey:kNUM_COUNTRY]];
-    self.profileObject.cell_phone = [profile valueForKey:kNUM_CELL_PHONE];
-    self.profileObject.address_1 = [profile valueForKey:KADDRESS];
-    self.profileObject.email = [profile valueForKey:KEMAIL];
-    self.profileObject.city = [profile valueForKey:KCITY];
-    self.profileObject.country = [profile valueForKey:KCOUNTRY];
-    self.profileObject.address_2 = [profile valueForKey:KADDRESS2];
-    self.profileObject.region_state = [profile valueForKey:KSATE];
 }
 
 - (NSString*)_getPhoneCode:(NSString*)phoneCode {
@@ -419,35 +352,9 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
 
 - (AboutTableViewCell_Address*)_setupAboutCell_Address:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AboutTableViewCell_Address *cell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell_Address identifier] forIndexPath:indexPath];
-    NSString *str = [self _getStringFromObject:self.profileObject];
-    cell.string = str;
+    cell.profileObject = self.profileObject;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
-}
-
-- (NSString *)_getStringFromObject:(COListProfileObject *)object {
-    NSString *link = @"";
-    NSString *address1 = self.profileObject.address_1;
-    if (address1 && ![address1 isEmpty]) {
-        link = [link stringByAppendingString:address1];
-    }
-    NSString *address2 = self.profileObject.address_2;
-    if (address2 && ![address2 isEmpty]) {
-        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:address2];
-    }
-    NSString *postCode = self.profileObject.region_state;
-    if (postCode && ![postCode isEmpty]) {
-        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:postCode];
-    }
-    NSString *city = self.profileObject.city;
-    if (city && ![city isEmpty]) {
-        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:city];
-    }
-    NSString *country = self.profileObject.country;
-    if (country && ![country isEmpty]) {
-        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
-    }
-    return link;
 }
 
 - (PasswordTableViewCell*)_setupPasswordCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -466,6 +373,40 @@ typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell
     _passwordTableViewCell.newpassowrdTXT.text = @"";
     _passwordTableViewCell.comfilmPassowrdTXT.text = @"";
     [self.view endEditing:YES];
+}
+
+- (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC profileUpdate:(NSDictionary *)profileUpdate {
+    [self.profileObject setProfileObject:profileUpdate];
+    editAboutProfileVC.profileObject = self.profileObject;
+}
+
+- (void)tableHeaderView:(TableHeaderView *)tableHeaderView indexSelectSegment:(NSInteger)indexSelect {
+    [self _setupCellStyle:indexSelect];
+}
+
+- (void)tableBottomView:(TableBottomView *)tableBottomView titlerButton:(NSString *)titlerButton {
+    [self __actionButtonUpdate:titlerButton];
+}
+
+- (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
+    switch (loginWithStyle) {
+        case PushLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:loginViewController completion:^{
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [_tableView reloadData];
+                }];
+            }];
+        } break;
+            
+        case DismissLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
+        } break;
+            
+        default: break;
+    }
 }
 
 /*

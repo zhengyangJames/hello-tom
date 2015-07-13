@@ -59,9 +59,6 @@
 }
 
 - (IBAction)_actionCancel:(id)sender {
-    if (self.actionClosePopup) {
-        self.actionClosePopup();
-    }
     [UIView animateWithDuration:0.15
                           delay:0
                         options:kAnimationOptionCurveIOS7
@@ -70,6 +67,9 @@
                          self.transform = CGAffineTransformMakeScale(1.1, 1.1);
                      } completion:^(BOOL finished) {
                         [self removeFromSuperview];
+                         if (self.actionClosePopup) {
+                             self.actionClosePopup();
+                         }
                      }];
 }
 

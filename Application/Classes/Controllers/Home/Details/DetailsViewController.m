@@ -18,9 +18,9 @@
 #import "COOfferItemObj.h"
 #import "COOferObj.h"
 
-@interface DetailsViewController ()<CODetailsProjectTBVCellDelegate, CODetailsTableViewDelegate,CODetailsTableViewDelegate>
+@interface DetailsViewController ()
 {
-
+    UIWebView   *_webView;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -55,6 +55,7 @@
     [self _setupHeaderView];
     self.detailsDataSource    = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
+    
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
     [self _reloadData];
@@ -62,23 +63,24 @@
 
 - (void)_reloadData {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.detailsDataSource.progressBarObj = self.progressBarObj;
         self.detailsDataSource.arrObject = self.arrayObj;
         [self.tableView reloadData];
     }];
 }
 
 #pragma mark Set Get 
-- (void)setObjectDetails:(CODetailsOffersObject *)objectDetails {
-    _objectDetails = objectDetails;
-}
+
 
 - (void)setArrayObj:(NSArray *)arrayObj {
     _arrayObj = arrayObj;
     [self _reloadData];
 }
 
-#pragma Web Service 
-
+- (void)setProgressBarObj:(COProgressbarObj *)progressBarObj {
+    _progressBarObj = progressBarObj;
+    [self _reloadData];
+}
 
 #pragma mark - Action 
 - (IBAction)__actionBack:(id)sender {
@@ -92,11 +94,11 @@
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, headerView.frame.size.width, headerView.frame.size.height)];
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    COOferObj *offerObj = [self.arrayObj firstObject];
+    COOferObj *offerObj = [self.arrayObj lastObject];
     COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
     
     
-    NSURL *url = [NSURL URLWithString:offerItemObj.linkOrDetail];
+    NSURL *url = [NSURL URLWithString:offerItemObj.photo];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
     [imageView setImage:[UIImage imageNamed:@"ic_placeholder"]];
@@ -107,19 +109,23 @@
 }
 
 #pragma mark - Delegate
-- (void)actionButtonDetailsProject:(CODetailsProjectActionButton)detailsProjectStyle {
-    switch (detailsProjectStyle) {
-        case CODetailsProjectActionButtonInterested:
+- (void)detailsProfileAction:(CODetailsProjectBottomTVCell *)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction {
+    switch (detailsProjectAction) {
+        case CODetailsProjectActionInterested:
         {
             COInterestedViewController *vc = [[COInterestedViewController alloc]init];
-            vc.object = @{@"offerID":self.objectDetails.offerID,@"offerTitle":self.objectDetails.offersDetails};
+            COOferObj *offerObj = [self.arrayObj firstObject];
+            COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+            vc.object = @{@"offerID":offerItemObj.offerID,@"offerTitle":offerItemObj.title};
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
-        case CODetailsProjectActionButtonQuestions:
+        case CODetailsProjectActionQuestions:
         {
             COQuestionView *vc = [[COQuestionView alloc]init];
-            vc.object = @{@"offerID":self.objectDetails.offerID};
+            COOferObj *offerObj = [self.arrayObj firstObject];
+            COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+            vc.object = @{@"offerID":offerItemObj.offerID};
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

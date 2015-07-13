@@ -15,6 +15,7 @@
 @interface ForgotPasswordViewController () <UIAlertViewDelegate>
 {
     __weak IBOutlet COBorderTextField *emailTextField;
+
 }
 
 
@@ -31,6 +32,7 @@
     [super viewDidAppear:animated];
     [emailTextField becomeFirstResponder];
 }
+
 
 #pragma mark - Private
 - (void)_setupShowAleartViewWithTitle:(NSString*)message tag:(NSInteger)tag {

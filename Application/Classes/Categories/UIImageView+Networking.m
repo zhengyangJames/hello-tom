@@ -7,6 +7,7 @@
 //
 
 #import "UIImageView+Networking.h"
+#import "EGOCache.h"
 
 //CompletionBlock ImageDownloader which get actual Image on succes and error on failure in completionBlock
 typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSError *error);
@@ -19,6 +20,8 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 @property (nonatomic, strong) NSURLSession *connectionSession;
 @property (nonatomic, strong) NSURL *URL;
 @property (nonatomic, strong) NSCache *cache;
+@property (nonatomic, strong) EGOCache *egoCache;
+@property (nonatomic, strong) NSMutableDictionary *mutableSession;
 @property (nonatomic, copy) CompletionBlock downloadedBlock;
 
 - (ImageDownloader *)startDownloadForURL:(NSURL *)URL
@@ -30,7 +33,7 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 
 
 @implementation ImageDownloader
-//static  NSInteger i = 0;
+static  NSInteger i = 0;
 
 
 - (ImageDownloader *)startDownloadForURL:(NSURL *)URL
@@ -43,6 +46,7 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
         self.cache = cache;
         self.connectionSession = session;
         self.downloadedBlock = completionBlock;
+        self.egoCache = [EGOCache globalCache];
         [self start];
     }
     return self;
@@ -52,12 +56,13 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 
 - (void)cacheImage:(UIImage *)image {
     if (image && self.URL) {
-        [self.cache setObject:image forKey:self.URL];
+        [self.egoCache setImage:image forKey:[self.URL absoluteString]];
+//        [self.cache setObject:image forKey:self.URL];
     }
 }
 
 - (void)start {
-//    DBG(@"---download---%tu",i++);
+    DBG(@"---download---%tu",i++);
     NSURLSessionDownloadTask *downloadImage = [self.connectionSession downloadTaskWithRequest:[NSURLRequest requestWithURL:self.URL]
                                                                             completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         if (!error) {

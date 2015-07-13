@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-@class CODetailsDelegate;
 
 #define IS_IOS8_OR_ABOVE    [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
 

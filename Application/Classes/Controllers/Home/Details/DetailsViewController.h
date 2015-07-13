@@ -8,13 +8,13 @@
 
 #import "BaseViewController.h"
 #import "CODetailsAccessoryCell.h"
-#import "CODetailsProjectTBVCell.h"
 #import "CODetailsDelegate.h"
 #import "CODetailsOffersObject.h"
+#import "COProgressbarObj.h"
 
-@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsProjectTBVCellDelegate>
+@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate>
 
-@property (strong, nonatomic) CODetailsOffersObject *objectDetails;
+@property (strong, nonatomic) COProgressbarObj *progressBarObj;
 
 @property (nonatomic, strong) NSArray *arrayObj;
 

@@ -19,9 +19,8 @@
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             DBG(@"profile--------->----->%@",responseObject);
-            COListProfileObject *objContac = [[COListProfileObject alloc]initWithDictionary:responseObject];
             if (handler) {
-                handler(objContac,response,nil);
+                handler(responseObject,response,nil);
             }
         } else {
             if (handler) {

@@ -7,9 +7,10 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "COListProfileObject.h"
 
 @interface AboutTableViewCell_Address : BaseTableViewCell
 
-@property (strong, nonatomic) NSString *string;
+@property (strong, nonatomic) COListProfileObject *profileObject;
 
 @end

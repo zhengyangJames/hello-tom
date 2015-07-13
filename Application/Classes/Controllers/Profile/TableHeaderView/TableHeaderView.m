@@ -15,7 +15,6 @@
 }
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UILabel *titleName;
-@property (strong, nonatomic) UIViewController *maskView;
 
 @end
 
@@ -44,20 +43,12 @@
     [self setNeedsDisplay];
 }
 
-#pragma mark - Set Get
-- (UIViewController*)maskView {
-    if (!_maskView) {
-       return _maskView = [[UIViewController alloc]init];
-    }
-    return _maskView;
-}
-
 #pragma mark - Action
 - (IBAction)__actionSwitchSegment:(id)sender {
     _segmentControl = (UISegmentedControl*)sender;
     NSInteger indexSegmentSelect = _segmentControl.selectedSegmentIndex;
-    if (self.actionSegment) {
-        self.actionSegment(indexSegmentSelect);
+    if ([self.delegate respondsToSelector:@selector(tableHeaderView:indexSelectSegment:)]) {
+        [self.delegate tableHeaderView:self indexSelectSegment:indexSegmentSelect];
     }
 }
 

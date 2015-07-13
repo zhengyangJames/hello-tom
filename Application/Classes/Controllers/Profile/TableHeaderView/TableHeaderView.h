@@ -8,13 +8,21 @@
 
 #import "BaseView.h"
 
-typedef void(^ActionSegment)(NSInteger indexSelectSegment);
 typedef void(^ActionPickerImageProfile)();
+
+@protocol TableHeaderViewDelegate ;
 
 @interface TableHeaderView : BaseView
 
-@property (copy, nonatomic) ActionSegment actionSegment;
+@property (weak, nonatomic) id<TableHeaderViewDelegate> delegate;
 @property (copy, nonatomic) ActionPickerImageProfile actionPickerImageProfile;
 @property (strong, nonatomic) IBOutlet UIImageView *imageProfile;
+
+@end
+
+@protocol TableHeaderViewDelegate <NSObject>
+
+@optional
+- (void)tableHeaderView:(TableHeaderView*)tableHeaderView indexSelectSegment:(NSInteger)indexSelect;
 
 @end

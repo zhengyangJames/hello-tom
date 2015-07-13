@@ -10,6 +10,7 @@
 #import "MBProgressHUD.h"
 #import "COOferObj.h"
 #import "COOfferItemObj.h"
+#import "CODetailsProfileObj.h"
 
 #define IS_IOS8             ((NSInteger)[[[UIDevice currentDevice] systemVersion] floatValue]) == 8
 
@@ -129,29 +130,29 @@
     NSMutableArray *arrObj = [[NSMutableArray alloc] init];
     if (dict) {
         if ([dict objectForKeyNotNull:@"offer_title"]) {
-             NSMutableDictionary *dictObject = [dict objectForKeyNotNull:@"project"];
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = [dict objectForKeyNotNull:@"offer_title"];
-            offItem.linkOrDetail = [dictObject objectForKeyNotNull:@"photo"];
+            offItem.offerID = [dict objectForKeyNotNull:@"id"];
+            offItem.linkOrDetail = [dict objectForKeyNotNull:@"company_logo"];
             off.type = @"title";
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];
         }
         
-        
-        if (YES) { // nui gian kho (Project)
-            NSMutableDictionary *dictObject = [dict objectForKeyNotNull:@"project"];
+        if ([dict objectForKeyNotNull:@"id"]) {
             COOferObj *off = [[COOferObj alloc] init];
-            COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-            offItem.title = [dict objectForKeyNotNull:@"offer_title"];
-            offItem.linkOrDetail = [dictObject objectForKeyNotNull:@"photo"];
-            off.type = @"title";
-            off.offerItemObjs = @[offItem];
+            CODetailsProfileObj *profileObj = [[CODetailsProfileObj alloc]init];
+            profileObj.investor_count = [dict objectForKeyNotNull:@"investor_count"];
+            profileObj.status = [dict objectForKeyNotNull:@"status"];
+            profileObj.min_annual_return = [dict valueForKeyNotNull:@"min_annual_return"];
+            profileObj.min_investment = [dict objectForKeyNotNull:@"min_investment"];
+            profileObj.day_left = [dict objectForKeyNotNull:@"day_left"];
+            profileObj.time_horizon = [dict objectForKeyNotNull:@"time_horizon"];
+            off.type = @"project";
+            off.offerItemObjs = @[profileObj];
             [arrObj addObject:off];
         }
-        
-        
         
         if ([dict objectForKeyNotNull:@"short_description"]) {
             COOferObj *off = [[COOferObj alloc] init];
@@ -234,6 +235,7 @@
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = @"ADDRESS";
             offItem.linkOrDetail = address;
+            offItem.photo = [dictObject objectForKeyNotNull:@"photo"];
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];
         }

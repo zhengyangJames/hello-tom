@@ -8,10 +8,21 @@
 
 #import "BaseViewController.h"
 
-typedef void(^ActionLogin)(BOOL CancelOrLogin); // 0 Cancel , 1 Login
+typedef NS_ENUM(NSInteger, LoginWithStyle){
+    DismissLoginVC,
+    PushLoginVC
+};
+@protocol LoginViewControllerDelegate ;
 
 @interface LoginViewController : BaseViewController
 
-@property (copy, nonatomic) ActionLogin actionLogin;
+@property (weak, nonatomic) id<LoginViewControllerDelegate> delegate;
+
+@end
+
+@protocol LoginViewControllerDelegate <NSObject>
+
+@optional
+- (void)loginViewController:(LoginViewController*)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle;
 
 @end

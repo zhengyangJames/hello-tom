@@ -83,8 +83,8 @@
     [UIHelper showLoadingInView:self.view];
     [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
-            if (self.actionLogin) {
-                self.actionLogin(YES);
+            if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
+                [self.delegate loginViewController:self loginWithStyle:PushLoginVC];
             }
         } else {
             [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
@@ -111,8 +111,8 @@
 }
 
 - (IBAction)__actionCancel:(id)sender {
-    if (self.actionLogin) {
-        self.actionLogin(NO);
+    if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
+        [self.delegate loginViewController:self loginWithStyle:DismissLoginVC];
     }
 }
 
