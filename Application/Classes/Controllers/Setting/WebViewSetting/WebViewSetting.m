@@ -22,13 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    [self _setupLeftNavigationButton];
 }
 
 - (void)_setupLeftNavigationButton {
-    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 32, 32)];
-    UIImage *backImage = [UIImage imageNamed:@"ic_btn_left"] ;
-    [backButton setBackgroundImage:backImage  forState:UIControlStateNormal];
+    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 48, 32)];
+    [backButton setTitle:@"Back" forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(__actionBack:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = backButtonItem;
@@ -65,13 +63,18 @@
 }
 
 - (void)setIsPresion:(BOOL)isPresion {
+    _isPresion = isPresion;
     [self _setupLeftNavigationButton];
 }
 
 #pragma mark - Action
 
 - (void)__actionBack:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    if (_isPresion) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 

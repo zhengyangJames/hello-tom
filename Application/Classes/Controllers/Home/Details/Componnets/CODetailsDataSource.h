@@ -17,6 +17,7 @@
 #import "CODetailsProgressViewCell.h"
 #import "CODetailsProjectBottomTVCell.h"
 #import "COProgressbarObj.h"
+#import "CODetailsWebViewCell.h"
 
 @protocol CODetailsAccessoryCellDelegate;
 @protocol CODetailsProjectBottomTVCellDelegate;

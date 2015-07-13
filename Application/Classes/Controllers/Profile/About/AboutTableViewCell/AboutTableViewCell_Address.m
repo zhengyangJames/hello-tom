@@ -22,16 +22,6 @@
     self.profileObject = self.profileObject;
 }
 
-- (void)setBounds:(CGRect)bounds
-{
-    [super setBounds:bounds];
-    self.contentView.frame = self.bounds;
-}
-
-- (void)updateConstraints {
-    [super updateConstraints];
-}
-
 #pragma mark Set - Get
 - (void)setProfileObject:(COListProfileObject *)profileObject {
     _profileObject = profileObject;
@@ -57,8 +47,6 @@
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }
     address.text = link;
-    [self setNeedsUpdateConstraints];
-    [self updateConstraintsIfNeeded];
     
 }
 @end

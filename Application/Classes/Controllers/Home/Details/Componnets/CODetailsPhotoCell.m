@@ -46,7 +46,7 @@
 - (void)setCoOfferObj:(COOfferItemObj *)coOfferObj {
     _coOfferObj = coOfferObj;
     _detailsTextView.text = coOfferObj.title;
-    [_image setImage:[UIImage imageNamed:@"company_logo_degault"]];
+    [_image setImage:[UIImage imageNamed:@"company_logo_degault.png"]];
     if (![coOfferObj.linkOrDetail isEqualToString:@"public_media/company.png"]) {
         NSURL *url = [NSURL URLWithString:coOfferObj.linkOrDetail];
         [_image setImageURL:url];

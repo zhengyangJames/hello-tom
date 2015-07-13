@@ -18,8 +18,7 @@
 @implementation AboutTableViewCell
 
 - (void)viewDidLoad {
-    [self setNeedsUpdateConstraints];
-    [self updateConstraintsIfNeeded];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setBounds:(CGRect)bounds

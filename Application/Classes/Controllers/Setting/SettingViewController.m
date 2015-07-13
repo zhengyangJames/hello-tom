@@ -45,7 +45,9 @@
     _webViewSetting = nil;
     [kUserDefaults setObject:@"2" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
-    if ([kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        [self _replaceArraySettingLogOut];
+    } else {
         [self _replaceArraySettingLogin];
     }
 }
@@ -56,9 +58,6 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.tableFooterView = [UIView new];
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
-        [self _replaceArraySettingLogOut];
-    }
 }
 
 #pragma mark - Setter Getter
@@ -139,25 +138,10 @@
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self _logginApllication];
     } else {
-        [UIHelper showAleartViewWithTitle:m_string(@"CoAassets") message:m_string(@"Are you sure you want to logout?") cancelButton:m_string(@"Cancel") delegate:self tag:0 arrayTitleButton:@[@"OK"]];
+        [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Are you sure you want to logout?") cancelButton:m_string(@"Cancel") delegate:self tag:0 arrayTitleButton:@[@"OK"]];
     }
 }
 
-- (void)_logOutApllication {
-    NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
-    for (int i = 0 ; i < arr.count ; i ++) {
-        if ([arr[i] isEqualToString:@"Log Out"]) {
-            [arr replaceObjectAtIndex:i withObject:@"Log In"];
-        }
-    }
-    self.arraySetting = arr;
-    [_tableView reloadData];
-    [kUserDefaults removeObjectForKey:KDEFAULT_LOGIN];
-    [kUserDefaults removeObjectForKey:kACCESS_TOKEN];
-    [kUserDefaults removeObjectForKey:kTOKEN_TYPE];
-    [kUserDefaults removeObjectForKey:kPROFILE_OBJECT];
-    [kUserDefaults synchronize];
-}
 
 - (void)_logginApllication {
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
@@ -187,11 +171,16 @@
     }
     self.arraySetting = arr;
     [_tableView reloadData];
+    [kUserDefaults removeObjectForKey:KDEFAULT_LOGIN];
+    [kUserDefaults removeObjectForKey:kACCESS_TOKEN];
+    [kUserDefaults removeObjectForKey:kTOKEN_TYPE];
+    [kUserDefaults removeObjectForKey:kPROFILE_OBJECT];
+    [kUserDefaults synchronize];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-        [self _logOutApllication];
+        [self _replaceArraySettingLogOut];
     }
 }
 
@@ -201,7 +190,7 @@
         case DismissLoginVC:
         {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:loginViewController completion:^{
-                [self _replaceArraySettingLogin];
+                [self _replaceArraySettingLogOut];
             }];
         } break;
             

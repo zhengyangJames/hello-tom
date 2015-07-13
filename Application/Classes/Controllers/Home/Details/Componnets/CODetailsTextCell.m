@@ -13,7 +13,6 @@
 {
     __weak IBOutlet UITextView  *_detailsTextView;
     __weak IBOutlet UILabel     *_headerLabel;
-    __weak NSAttributedString *_attributedString;
 }
 
 @end

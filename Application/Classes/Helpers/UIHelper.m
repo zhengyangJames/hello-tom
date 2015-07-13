@@ -167,7 +167,7 @@
         if ([dict objectForKeyNotNull:@"project_description"]) {
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-            offItem.title = @"PROFECT";
+            offItem.title = @"PROJECT";
             offItem.linkOrDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"project_description"]];
             off.type = @"description";
             off.offerItemObjs = @[offItem];

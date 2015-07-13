@@ -15,6 +15,8 @@
             <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -103,7 +105,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="lZs-6R-Iur"/>
                                             </constraints>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xp-3H-HiC">
@@ -122,7 +124,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="wgP-hY-mAN"/>
                                             </constraints>
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" spellCheckingType="yes" secureTextEntry="YES"/>
                                         </textField>
                                     </subviews>
@@ -242,7 +244,7 @@
                 <constraint firstAttribute="bottom" secondItem="T7n-jw-l5P" secondAttribute="bottom" id="qo6-Gg-Fb6"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="65" y="-64"/>
+            <point key="canvasLocation" x="17" y="-69"/>
         </view>
     </objects>
 </document>

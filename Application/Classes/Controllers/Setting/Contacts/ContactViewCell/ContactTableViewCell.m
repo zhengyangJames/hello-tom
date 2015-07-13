@@ -59,8 +59,6 @@
     _lblTell.text = _contactObj.phone;
     _lblPostCode.text = _contactObj.postCode;
     _lblCountry.text = _contactObj.country;
-    _lblCity.text = _contactObj.city;
-    [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
 

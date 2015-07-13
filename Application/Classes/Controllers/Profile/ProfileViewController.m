@@ -319,9 +319,9 @@ LoginViewControllerDelegate>
 }
 
 - (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
+    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
-    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return cellSize.height;
 }
 /*
@@ -346,14 +346,12 @@ LoginViewControllerDelegate>
         aboutCell.lblDetail.text = string;
         aboutCell.lblname.text = m_string(@"Phone");
     }
-    aboutCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return aboutCell;
 }
 
 - (AboutTableViewCell_Address*)_setupAboutCell_Address:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AboutTableViewCell_Address *cell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell_Address identifier] forIndexPath:indexPath];
     cell.profileObject = self.profileObject;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
