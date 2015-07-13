@@ -20,8 +20,6 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 @property (nonatomic, strong) NSURLSession *connectionSession;
 @property (nonatomic, strong) NSURL *URL;
 @property (nonatomic, strong) NSCache *cache;
-@property (nonatomic, strong) EGOCache *egoCache;
-@property (nonatomic, strong) NSMutableDictionary *mutableSession;
 @property (nonatomic, copy) CompletionBlock downloadedBlock;
 
 - (ImageDownloader *)startDownloadForURL:(NSURL *)URL
@@ -46,7 +44,6 @@ static  NSInteger i = 0;
         self.cache = cache;
         self.connectionSession = session;
         self.downloadedBlock = completionBlock;
-        self.egoCache = [EGOCache globalCache];
         [self start];
     }
     return self;
@@ -56,8 +53,8 @@ static  NSInteger i = 0;
 
 - (void)cacheImage:(UIImage *)image {
     if (image && self.URL) {
-        [self.egoCache setImage:image forKey:[self.URL absoluteString]];
-//        [self.cache setObject:image forKey:self.URL];
+//        [self.egoCache setImage:image forKey:[self.URL absoluteString]];
+        [self.cache setObject:image forKey:self.URL];
     }
 }
 

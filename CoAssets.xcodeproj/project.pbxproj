@@ -284,6 +284,8 @@
 		7F85292D1B43935B00CFAEB5 /* Thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291D1B43935B00CFAEB5 /* Thailand.png */; };
 		7F85292F1B43935B00CFAEB5 /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291F1B43935B00CFAEB5 /* United States.png */; };
 		7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529201B43935B00CFAEB5 /* Vietnam.png */; };
+		7F8E0BD81B5355A20045EFB0 /* CODetailsWebViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E0BD61B5355A20045EFB0 /* CODetailsWebViewCell.m */; };
+		7F8E0BD91B5355A20045EFB0 /* CODetailsWebViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8E0BD71B5355A20045EFB0 /* CODetailsWebViewCell.xib */; };
 		7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */; };
 		7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA59D921B4CB5C700AF8E41 /* COPopupQuestionView.m */; };
 		7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */; };
@@ -743,6 +745,9 @@
 		7F85291D1B43935B00CFAEB5 /* Thailand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thailand.png; sourceTree = "<group>"; };
 		7F85291F1B43935B00CFAEB5 /* United States.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United States.png"; sourceTree = "<group>"; };
 		7F8529201B43935B00CFAEB5 /* Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vietnam.png; sourceTree = "<group>"; };
+		7F8E0BD51B5355A20045EFB0 /* CODetailsWebViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CODetailsWebViewCell.h; path = CODetailsProjectCell/CODetailsWebViewCell.h; sourceTree = "<group>"; };
+		7F8E0BD61B5355A20045EFB0 /* CODetailsWebViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CODetailsWebViewCell.m; path = CODetailsProjectCell/CODetailsWebViewCell.m; sourceTree = "<group>"; };
+		7F8E0BD71B5355A20045EFB0 /* CODetailsWebViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CODetailsWebViewCell.xib; path = CODetailsProjectCell/CODetailsWebViewCell.xib; sourceTree = "<group>"; };
 		7F8EE69C1B4A6ACF00F92852 /* NSString_stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_stripHtml.h; sourceTree = "<group>"; };
 		7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_stripHtml.m; sourceTree = "<group>"; };
 		7FA59D911B4CB5C700AF8E41 /* COPopupQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COPopupQuestionView.h; sourceTree = "<group>"; };
@@ -1045,6 +1050,9 @@
 			isa = PBXGroup;
 			children = (
 				7F325DE51B40E50800116445 /* CODetailsProjectCell */,
+				7F8E0BD51B5355A20045EFB0 /* CODetailsWebViewCell.h */,
+				7F8E0BD61B5355A20045EFB0 /* CODetailsWebViewCell.m */,
+				7F8E0BD71B5355A20045EFB0 /* CODetailsWebViewCell.xib */,
 				7F325DD71B40E50800116445 /* CODetailsAccessoryCell.h */,
 				7F325DD81B40E50800116445 /* CODetailsAccessoryCell.m */,
 				7F325DD91B40E50800116445 /* CODetailsAccessoryCell.xib */,
@@ -2090,6 +2098,7 @@
 				7F85292A1B43935B00CFAEB5 /* New Zealand.png in Resources */,
 				7F3260661B40E50800116445 /* Earth_256.png in Resources */,
 				7F3260341B40E50800116445 /* ic_bank@3x.png in Resources */,
+				7F8E0BD91B5355A20045EFB0 /* CODetailsWebViewCell.xib in Resources */,
 				7F85292B1B43935B00CFAEB5 /* Philippines.png in Resources */,
 				7F32601D1B40E50800116445 /* Raleway-Black.ttf in Resources */,
 				7F8529251B43935B00CFAEB5 /* Germany.png in Resources */,
@@ -2205,6 +2214,7 @@
 				7FA7E6BB1B4E7C4D00059B13 /* COQuestionView.m in Sources */,
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
 				7F325FF91B40E50800116445 /* NSManagedObject+MagicalAggregation.m in Sources */,
+				7F8E0BD81B5355A20045EFB0 /* CODetailsWebViewCell.m in Sources */,
 				7F325FB01B40E50800116445 /* PasswordTableViewCell.m in Sources */,
 				7F325FD01B40E50800116445 /* MKMapView+ZoomLevel.m in Sources */,
 				7F325FFC1B40E50800116445 /* NSManagedObject+MagicalRecord.m in Sources */,
@@ -2459,7 +2469,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
@@ -2480,7 +2490,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;

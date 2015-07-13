@@ -13,7 +13,6 @@
 {
     __weak IBOutlet UITextView  *_detailsTextView;
     __weak IBOutlet UILabel     *_headerLabel;
-    __weak NSAttributedString *_attributedString;
 }
 
 @end
@@ -36,15 +35,7 @@
     _coOfferItem = coOfferItem;
     _headerLabel.text = coOfferItem.title;
     _detailsTextView.text = coOfferItem.linkOrDetail;
-}
-
-#pragma mark - WebView
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    
+    [_detailsTextView updateConstraintsIfNeeded];
 }
 
 @end
