@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -39,15 +39,23 @@ Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist 
                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="15"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7DX-j4-Wbh">
+                        <rect key="frame" x="8" y="28" width="304" height="48.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </webView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstItem="toN-I8-BVM" firstAttribute="centerY" secondItem="7DX-j4-Wbh" secondAttribute="centerY" id="D1T-2j-Swj"/>
+                    <constraint firstItem="toN-I8-BVM" firstAttribute="height" secondItem="7DX-j4-Wbh" secondAttribute="height" id="Hdl-ZX-EtP"/>
                     <constraint firstItem="eAq-0U-7fu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="HrD-gb-XBS"/>
                     <constraint firstItem="eAq-0U-7fu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Non-0s-Ucq"/>
                     <constraint firstItem="eAq-0U-7fu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="RR8-rJ-eOL"/>
                     <constraint firstItem="toN-I8-BVM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="aZk-8l-XVm"/>
                     <constraint firstItem="toN-I8-BVM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="eES-CJ-YY6"/>
+                    <constraint firstItem="toN-I8-BVM" firstAttribute="width" secondItem="7DX-j4-Wbh" secondAttribute="width" id="fA8-XD-eMj"/>
                     <constraint firstItem="toN-I8-BVM" firstAttribute="top" secondItem="eAq-0U-7fu" secondAttribute="bottom" id="isU-Su-AW3"/>
+                    <constraint firstItem="toN-I8-BVM" firstAttribute="centerX" secondItem="7DX-j4-Wbh" secondAttribute="centerX" id="jOU-Up-kdf"/>
                     <constraint firstItem="toN-I8-BVM" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="uwT-1B-sb1"/>
                 </constraints>
             </tableViewCellContentView>
@@ -55,6 +63,7 @@ Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist 
             <connections>
                 <outlet property="_detailsTextView" destination="toN-I8-BVM" id="MMT-F7-KTs"/>
                 <outlet property="_headerLabel" destination="eAq-0U-7fu" id="AKR-nZ-SFl"/>
+                <outlet property="_webView" destination="7DX-j4-Wbh" id="K9a-Ul-E3i"/>
             </connections>
             <point key="canvasLocation" x="96" y="346.5"/>
         </tableViewCell>

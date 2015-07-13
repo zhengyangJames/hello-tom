@@ -158,7 +158,8 @@
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = @"OFFER";
-            offItem.htmlDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"short_description"] ];
+            offItem.htmlDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"short_description"]];
+            offItem.linkOrDetail = [dict objectForKeyNotNull:@"short_description"];
             off.type = @"description";
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];
@@ -168,7 +169,8 @@
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = @"PROJECT";
-            offItem.linkOrDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"project_description"]];
+            offItem.htmlDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"project_description"]];
+            offItem.linkOrDetail = [dict objectForKeyNotNull:@"project_description"];
             off.type = @"description";
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];
