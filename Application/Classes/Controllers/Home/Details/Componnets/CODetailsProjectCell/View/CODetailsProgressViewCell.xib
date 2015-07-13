@@ -82,6 +82,7 @@
                 <outlet property="_progressBar" destination="9GJ-MB-p2q" id="vgk-0K-Ik3"/>
                 <outlet property="_progressBarBottomLable" destination="eUi-wi-oVG" id="gBa-M6-9zr"/>
                 <outlet property="_titleProgressbarLable" destination="wQv-y8-0Ts" id="zNR-Q0-Wud"/>
+                <outlet property="_totalProgressbarLable" destination="HjK-7N-Mu7" id="aRU-NE-wIG"/>
             </connections>
             <point key="canvasLocation" x="-84" y="470"/>
         </tableViewCell>

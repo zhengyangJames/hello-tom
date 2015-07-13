@@ -37,8 +37,6 @@
 #define UPDATE_ABOUT_PROFILE    @"Update profile"
 #define UPDATE_COMNPANY_PROFILE @"Update company profile"
 
-typedef void(^ActionUpdateTextFieldPassword)(PasswordTableViewCell* passwordCell);
-
 
 @interface ProfileViewController ()
 <UITableViewDataSource,
@@ -62,7 +60,6 @@ LoginViewControllerDelegate>
 @property (strong, nonatomic) TableHeaderView               *tableheaderView;
 @property (weak, nonatomic  ) PasswordTableViewCell         *passwordTableViewCell;
 @property (strong, nonatomic) NSArray                       *arrayCountryCode;
-@property (copy, nonatomic  ) ActionUpdateTextFieldPassword actionUpdateTextFieldPassword;
 
 @end
 

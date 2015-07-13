@@ -26,6 +26,7 @@
 		0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883A1B27CA7100B5656F /* NMSecurityHelper.m */; };
 		0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883C1B27CA7100B5656F /* NMUIHelper.m */; };
 		0EFEB4D31B2724B2001195B7 /* CoAssetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEB4D21B2724B2001195B7 /* CoAssetsTests.m */; };
+		7F1783F91B52C25C009FA530 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1783F81B52C25C009FA530 /* EGOCache.m */; };
 		7F2C77461B4E07BA00C69365 /* CODetailsProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77441B4E07BA00C69365 /* CODetailsProjectCell.m */; };
 		7F2C77471B4E07BA00C69365 /* CODetailsProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C77451B4E07BA00C69365 /* CODetailsProjectCell.xib */; };
 		7F2C774A1B4E2F0D00C69365 /* CODetailsProfileObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77491B4E2F0D00C69365 /* CODetailsProfileObj.m */; };
@@ -363,6 +364,8 @@
 		0EFEB4CC1B2724B2001195B7 /* CoAssetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoAssetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFEB4D11B2724B2001195B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EFEB4D21B2724B2001195B7 /* CoAssetsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoAssetsTests.m; sourceTree = "<group>"; };
+		7F1783F71B52C25C009FA530 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		7F1783F81B52C25C009FA530 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
 		7F2C77431B4E07BA00C69365 /* CODetailsProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODetailsProjectCell.h; sourceTree = "<group>"; };
 		7F2C77441B4E07BA00C69365 /* CODetailsProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODetailsProjectCell.m; sourceTree = "<group>"; };
 		7F2C77451B4E07BA00C69365 /* CODetailsProjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CODetailsProjectCell.xib; sourceTree = "<group>"; };
@@ -1418,6 +1421,8 @@
 		7F325E6E1B40E50800116445 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7F1783F71B52C25C009FA530 /* EGOCache.h */,
+				7F1783F81B52C25C009FA530 /* EGOCache.m */,
 				7F325E6F1B40E50800116445 /* LoadFileManager.h */,
 				7F325E701B40E50800116445 /* LoadFileManager.m */,
 				7F325E711B40E50800116445 /* MKMapView+ZoomLevel.h */,
@@ -2192,6 +2197,7 @@
 				7FA7E6C01B4E7CD500059B13 /* CODetailsProgressViewCell.m in Sources */,
 				7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */,
 				7F325F8A1B40E50800116445 /* CODetailsMapCell.m in Sources */,
+				7F1783F91B52C25C009FA530 /* EGOCache.m in Sources */,
 				0ECA88491B27CA7100B5656F /* NMDeviceHelper.m in Sources */,
 				0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */,
 				7F325FB71B40E50800116445 /* ContactTableViewCell.m in Sources */,

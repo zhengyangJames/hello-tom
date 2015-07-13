@@ -11,6 +11,7 @@
 
 @interface CODetailsProgressViewCell ()
 {
+    __weak IBOutlet UILabel *_totalProgressbarLable;
     __weak IBOutlet UILabel *_titleProgressbarLable;
     __weak IBOutlet UILabel *_progressBarBottomLable;
     __weak IBOutlet UIProgressView *_progressBar;
@@ -58,6 +59,9 @@
         NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",[[NSNumber numberWithDouble:value] stringValue]];
         _progressBarBottomLable.text = progressBottomLbl;
     }
+    
+    NSInteger total = (valueTitle * 100)/value;
+    _totalProgressbarLable.text = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:total] stringValue]];
 }
 
 
