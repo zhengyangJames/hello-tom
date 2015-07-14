@@ -32,9 +32,11 @@
     _cOOfferItemObj = cOOfferItemObj;
     _titler.text = cOOfferItemObj.title;
     _textViewLoad.attributedText = cOOfferItemObj.htmlDetail;
-    if (!_isFinish) {
-        [_webView loadHTMLString:cOOfferItemObj.linkOrDetail baseURL:nil];
-    }
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        if (!_isFinish) {
+            [_webView loadHTMLString:cOOfferItemObj.linkOrDetail baseURL:nil];
+        }
+    }];
 }
 
 
@@ -44,11 +46,12 @@
 {
     _isFinish = YES;
     CGRect mWebViewFrame = _webView.frame;
-    mWebViewFrame.size.height = _webView.scrollView.contentSize.height;
+    mWebViewFrame.size.height = _webView.scrollView.contentSize.height + 140;
     _webView.frame = mWebViewFrame;
     _textViewLoad.frame = mWebViewFrame;
     self.contentView.bounds = _textViewLoad.bounds;
     [self setNeedsDisplay];
+    [self layoutIfNeeded];
     if ([self.delegate respondsToSelector:@selector(coDetailsWebViewCell:webViewEndLoading:)]) {
         [self.delegate coDetailsWebViewCell:self webViewEndLoading:YES];
     }

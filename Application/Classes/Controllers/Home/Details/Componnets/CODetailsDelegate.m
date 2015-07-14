@@ -49,7 +49,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0;
     CODetailsDataSource *dataSource = tableView.dataSource;
-    DBG(@"------------------->>>>>%f",dataSource.heightWebview);
     if (indexPath.section == 0) {
         if(IS_IOS8_OR_ABOVE) {
             return UITableViewAutomaticDimension;
@@ -83,11 +82,11 @@
         }
     }else if (indexPath.section == 3){
         if(IS_IOS8_OR_ABOVE) {
-            return dataSource.heightWebview?dataSource.heightWebview+120:UITableViewAutomaticDimension;
+            return dataSource.heightWebview?dataSource.heightWebview+140:UITableViewAutomaticDimension;
         } else {
             id Cell = [dataSource tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
             height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
-            return dataSource.heightWebview?dataSource.heightWebview+120:height;
+            return dataSource.heightWebview?dataSource.heightWebview+140:height;
         }
     } else {
         if (indexPath.row == 0) {

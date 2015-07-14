@@ -9,21 +9,109 @@
 #import "UIImageView+Networking.h"
 #import "EGOCache.h"
 
-//CompletionBlock ImageDownloader which get actual Image on succes and error on failure in completionBlock
-typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSError *error);
+#define TRVSKVOBlock(KEYPATH, BLOCK) \
+[self willChangeValueForKey:KEYPATH]; \
+BLOCK(); \
+[self didChangeValueForKey:KEYPATH];
+/*
+ Operation Download
+ */
+@interface TNURLSessionOperation : NSOperation
 
-//Class resposible for downloading actual image takes session and imageurl as arguments
-//performs the download task on the given session and call the respective completionBlock
+- (instancetype)initWithSession:(NSURLSession *)session URL:(NSURL *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
+- (instancetype)initWithSession:(NSURLSession *)session request:(NSURLRequest *)request completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
+
+@property (nonatomic, strong, readonly) NSURLSessionDataTask *task;
+
+@end
+
+@implementation TNURLSessionOperation {
+    BOOL _finished;
+    BOOL _executing;
+}
+
+- (instancetype)initWithSession:(NSURLSession *)session URL:(NSURL *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler {
+    if (self = [super init]) {
+        __weak typeof(self) weakSelf = self;
+        _task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            [weakSelf completeOperationWithBlock:completionHandler data:data response:response error:error];
+        }];
+    }
+    return self;
+}
+
+- (instancetype)initWithSession:(NSURLSession *)session request:(NSURLRequest *)request completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler {
+    if (self = [super init]) {
+        __weak typeof(self) weakSelf = self;
+        _task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            [weakSelf completeOperationWithBlock:completionHandler data:data response:response error:error];
+        }];
+    }
+    return self;
+}
+
+- (void)cancel {
+    [super cancel];
+    [self.task cancel];
+}
+
+- (void)start {
+    if (self.isCancelled) {
+        TRVSKVOBlock(@"isFinished", ^{ _finished = YES; });
+        return;
+    }
+    TRVSKVOBlock(@"isExecuting", ^{
+        [self.task resume];
+        _executing = YES;
+    });
+}
+
+- (BOOL)isExecuting {
+    return _executing;
+}
+
+- (BOOL)isFinished {
+    return _finished;
+}
+
+- (BOOL)isConcurrent {
+    return YES;
+}
+
+- (void)completeOperationWithBlock:(void (^)(NSData *, NSURLResponse *, NSError *))block data:(NSData *)data response:(NSURLResponse *)response error:(NSError *)error {
+    if (!self.isCancelled && block)
+        block(data, response, error);
+    [self completeOperation];
+}
+
+- (void)completeOperation {
+    [self willChangeValueForKey:@"isFinished"];
+    [self willChangeValueForKey:@"isExecuting"];
+    
+    _executing = NO;
+    _finished = YES;
+    
+    [self didChangeValueForKey:@"isExecuting"];
+    [self didChangeValueForKey:@"isFinished"];
+}
+
+@end
+
+/*
+ Image Download
+ */
+
+typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSError *error);
 
 @interface ImageDownloader : NSObject
 @property(nonatomic, strong) NSOperationQueue *netOperationQueue;
 @property (nonatomic, strong) NSURLSession *connectionSession;
 @property (nonatomic, strong) NSURL *URL;
-@property (nonatomic, strong) NSCache *cache;
+@property (nonatomic, strong) EGOCache *eogCache;
 @property (nonatomic, copy) CompletionBlock downloadedBlock;
 
 - (ImageDownloader *)startDownloadForURL:(NSURL *)URL
-                                   cache:(NSCache *)cache
+                                   cache:(EGOCache *)cache
                                  session:(NSURLSession *)session
                          completionBlock:(CompletionBlock)completionBlock;
 
@@ -31,35 +119,32 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 
 
 @implementation ImageDownloader
-static  NSInteger i = 0;
-
 
 - (ImageDownloader *)startDownloadForURL:(NSURL *)URL
-                                   cache:(NSCache *)cache
+                                   cache:(EGOCache *)cache
                                  session:(NSURLSession *)session
                          completionBlock:(CompletionBlock)completionBlock
 {
     if (URL) {
+        self.netOperationQueue = [[NSOperationQueue alloc]init];
+        self.netOperationQueue.maxConcurrentOperationCount = 1;
         self.URL = URL;
-        self.cache = cache;
+        self.eogCache = cache;
         self.connectionSession = session;
         self.downloadedBlock = completionBlock;
-        [self start];
+        [self loadImage];
+//        self.netOperationQueue.waitUntilAllOperationsAreFinished = NO;
     }
     return self;
 }
 
-
-
 - (void)cacheImage:(UIImage *)image {
     if (image && self.URL) {
-//        [self.egoCache setImage:image forKey:[self.URL absoluteString]];
-        [self.cache setObject:image forKey:self.URL];
+        [self.eogCache setImage:image forKey:[self.URL absoluteString]];
     }
 }
 
 - (void)start {
-    DBG(@"---download---%tu",i++);
     NSURLSessionDownloadTask *downloadImage = [self.connectionSession downloadTaskWithRequest:[NSURLRequest requestWithURL:self.URL]
                                                                             completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         if (!error) {
@@ -76,6 +161,22 @@ static  NSInteger i = 0;
     }];
     
     [downloadImage resume];
+}
+
+- (void)loadImage {
+    [self.netOperationQueue addOperation:[[TNURLSessionOperation alloc] initWithSession:self.connectionSession URL:self.URL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:[NSData dataWithData:data]];
+            [self cacheImage:image];
+            if (self.downloadedBlock) {
+                self.downloadedBlock(YES, image, response.URL, nil);
+            }
+        } else {
+            if (self.downloadedBlock) {
+                self.downloadedBlock(NO, nil, response.URL, error);
+            }
+        }
+    }]];
 }
 
 @end
@@ -96,16 +197,9 @@ const char *keyForCompletionBlock = "completionBlockID";
     objc_setAssociatedObject(self, keyForURLID, urlId, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-+ (NSCache *)defaultCache {
-    static NSCache *sharedCache = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedCache = [[NSCache alloc] init];
-        [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidReceiveMemoryWarningNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(__unused NSNotification *note) {
-            [sharedCache removeAllObjects];
-        }];
-    });
-    
++ (EGOCache *)defaultCache {
+    EGOCache *sharedCache = nil;
+    sharedCache = [EGOCache globalCache];
     return sharedCache;
 }
 
@@ -113,7 +207,11 @@ const char *keyForCompletionBlock = "completionBlockID";
     static NSURLSession *sharedSession = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+//        sessionConfig.HTTPMaximumConnectionsPerHost = 3;
+//        sessionConfig.timeoutIntervalForResource = 120;
+//        sessionConfig.timeoutIntervalForRequest = 120;
+        sharedSession = [NSURLSession sessionWithConfiguration:sessionConfig];
     });
     return sharedSession;
 }
@@ -128,7 +226,7 @@ const char *keyForCompletionBlock = "completionBlockID";
 
 - (void)setImageURL:(NSURL *)imageURL withCompletionBlock:(DownloadCompletionBlock)block {
     self.URLId = [imageURL absoluteString];
-    UIImage *img = [[UIImageView defaultCache] objectForKey:imageURL];
+    UIImage *img = [[UIImageView defaultCache] imageForKey:[imageURL absoluteString]];
     if (!img) {
         ImageDownloader *dowloader = [[ImageDownloader alloc] init];
         [dowloader startDownloadForURL:imageURL  cache:[UIImageView defaultCache] session:[UIImageView defaultSession] completionBlock:^(BOOL succes, UIImage *image, NSURL *imgURL, NSError *error) {
@@ -154,9 +252,5 @@ const char *keyForCompletionBlock = "completionBlockID";
     }
 }
 
-
-- (void)cancelDownload {
-
-}
 
 @end

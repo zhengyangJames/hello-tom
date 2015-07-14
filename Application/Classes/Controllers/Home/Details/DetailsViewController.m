@@ -169,7 +169,8 @@
 }
 
 - (void)coDetailsWebViewCell:(CODetailsWebViewCell *)CODetailsWebViewCell webViewEndLoading:(BOOL)webViewEndLoading {
-    [_tableView reloadData];
+    [_tableView beginUpdates];
+    [_tableView endUpdates];
 }
 
 
