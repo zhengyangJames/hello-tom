@@ -82,11 +82,11 @@
         }
     }else if (indexPath.section == 3){
         if(IS_IOS8_OR_ABOVE) {
-            return dataSource.heightWebview?dataSource.heightWebview+140:UITableViewAutomaticDimension;
+            return dataSource.heightWebview?dataSource.heightWebview+240:UITableViewAutomaticDimension;
         } else {
             id Cell = [dataSource tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
             height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
-            return dataSource.heightWebview?dataSource.heightWebview+140:height;
+            return dataSource.heightWebview?dataSource.heightWebview+240:height;
         }
     } else {
         if (indexPath.row == 0) {

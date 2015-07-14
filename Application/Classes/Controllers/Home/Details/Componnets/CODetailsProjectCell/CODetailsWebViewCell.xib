@@ -60,7 +60,7 @@
                 <outlet property="titler" destination="J4Y-fc-BXA" id="zlH-Zh-Ws3"/>
                 <outlet property="webView" destination="0f5-0N-kZZ" id="xsE-9B-KP8"/>
             </connections>
-            <point key="canvasLocation" x="-35" y="225.5"/>
+            <point key="canvasLocation" x="-129" y="222.5"/>
         </tableViewCell>
     </objects>
 </document>

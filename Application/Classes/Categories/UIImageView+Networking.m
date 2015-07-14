@@ -133,7 +133,6 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
         self.connectionSession = session;
         self.downloadedBlock = completionBlock;
         [self loadImage];
-//        self.netOperationQueue.waitUntilAllOperationsAreFinished = NO;
     }
     return self;
 }

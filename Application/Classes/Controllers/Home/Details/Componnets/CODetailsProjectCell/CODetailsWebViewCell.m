@@ -31,7 +31,7 @@
 - (void)setCOOfferItemObj:(COOfferItemObj *)cOOfferItemObj {
     _cOOfferItemObj = cOOfferItemObj;
     _titler.text = cOOfferItemObj.title;
-    _textViewLoad.attributedText = cOOfferItemObj.htmlDetail;
+//    _textViewLoad.attributedText = cOOfferItemObj.htmlDetail;
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         if (!_isFinish) {
             [_webView loadHTMLString:cOOfferItemObj.linkOrDetail baseURL:nil];
@@ -39,19 +39,17 @@
     }];
 }
 
-
 #pragma mark - WebView Delegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     _isFinish = YES;
     CGRect mWebViewFrame = _webView.frame;
-    mWebViewFrame.size.height = _webView.scrollView.contentSize.height + 140;
+    mWebViewFrame.size.height = _webView.scrollView.contentSize.height + 240;
     _webView.frame = mWebViewFrame;
-    _textViewLoad.frame = mWebViewFrame;
-    self.contentView.bounds = _textViewLoad.bounds;
+    self.contentView.bounds = _webView.bounds;
     [self setNeedsDisplay];
-    [self layoutIfNeeded];
+    [self layoutSubviews];
     if ([self.delegate respondsToSelector:@selector(coDetailsWebViewCell:webViewEndLoading:)]) {
         [self.delegate coDetailsWebViewCell:self webViewEndLoading:YES];
     }
