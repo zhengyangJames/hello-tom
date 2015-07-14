@@ -107,41 +107,6 @@ TableBottomViewCellDelegate>
     }
 }
 
-#pragma mark - Web Service
-- (void)_callWSGetListProfile {
-    [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsGetProfileWithUserToken:[self _setupAccessToken] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && responseObject) {
-            self.profileObject = nil;
-            self.profileObject = (COListProfileObject*)responseObject;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView reloadData];
-            }];
-        }else {
-            [UIHelper showError:error];
-        }
-    }];
-    [UIHelper hideLoadingFromView:self.view];
-}
-
-
-- (void)_callWSChangePassword:(NSDictionary*)param {
-    [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsChangePassword:[self _setupAccessToken] body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            [self _setupShowAleartViewWithTitle:@"Password changed successfully"];
-        } else {
-            [self _setupShowAleartViewWithTitle:@"Password not changed"];
-        }
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.view endEditing:YES];
-        }];
-        [UIHelper hideLoadingFromView:self.view];
-    }];
-    
-}
-
-
 #pragma mark - Private
 - (void)_setUpLogginVC {
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
@@ -254,79 +219,43 @@ TableBottomViewCellDelegate>
     [actionSheet showInView:self.view];
 }
 */
- 
-#pragma mark - TableView Delegate
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (TableViewCellStyleAbout == _indexSelectSeg) {
-        return 6;
-    } else {
-        return 2;
-    }
+#pragma mark - Web Service
+- (void)_callWSGetListProfile {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsGetProfileWithUserToken:[self _setupAccessToken] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            self.profileObject = nil;
+            self.profileObject = (COListProfileObject*)responseObject;
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [_tableView reloadData];
+            }];
+        }else {
+            [UIHelper showError:error];
+        }
+    }];
+    [UIHelper hideLoadingFromView:self.view];
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (TableViewCellStyleAbout == _indexSelectSeg) {
-        if (indexPath.row == 4) {
-           return [self _setupAboutCell_Address:tableView cellForRowAtIndexPath:indexPath];
-        } else if (indexPath.row == 5) {
-           return [self _setupTableBottomViewCell:tableView cellForRowAtIndexPath:indexPath];
+
+- (void)_callWSChangePassword:(NSDictionary*)param {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsChangePassword:[self _setupAccessToken] body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
+            [self _setupShowAleartViewWithTitle:@"Password changed successfully"];
         } else {
-           return [self _setupAboutCell:tableView cellForRowAtIndexPath:indexPath];
+            [self _setupShowAleartViewWithTitle:@"Password not changed"];
         }
-    } else {
-        if (indexPath.row == 1) {
-            return [self _setupTableBottomViewCell:tableView cellForRowAtIndexPath:indexPath];
-        } else {
-            if (!_passwordTableViewCell) {
-                _passwordTableViewCell = [self _setupPasswordCell:tableView cellForRowAtIndexPath:indexPath];
-            }
-            return _passwordTableViewCell;
-        }
-    }
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.view endEditing:YES];
+        }];
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+    
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height;
-    if (TableViewCellStyleAbout == _indexSelectSeg) {
-        if (indexPath.row == 4) {
-            if(IS_IOS8_OR_ABOVE) {
-                height = UITableViewAutomaticDimension;
-               return height;
-            } else {
-                id cell = [self _setupAboutCell_Address:tableView cellForRowAtIndexPath:indexPath];
-                height = [self _heightForTableView:tableView cell:cell atIndexPath:indexPath];
-                return height;
-            }
-        } else if (indexPath.row == 5) {
-            return height = 90;
-        } else {
-            return 40;
-        }
-    } else {
-        if (indexPath.row == 1) {
-            return 90;
-        } else {
-            return DEFAULT_HEIGHT_CELL_PASSWORD;
-        }
-    }
-}
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath*)indexPath {
-    if (TableViewCellStyleAbout == _indexSelectSeg) {
-        if (indexPath.row == 4) {
-            return 44;
-        } else {
-            return 40 ;
-        }
-    } else {
-        if (indexPath.row == 1) {
-            return 90;
-        } else {
-            return DEFAULT_HEIGHT_CELL_PASSWORD;
-        }
-    }
-}
+#pragma mark - TableView DataSource
 
 - (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
     [cell setNeedsUpdateConstraints];
@@ -384,6 +313,79 @@ TableBottomViewCellDelegate>
     _tableBottomViewCell.delegate = self;
     return _tableBottomViewCell;
 }
+
+#pragma mark - TableView Delegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (TableViewCellStyleAbout == _indexSelectSeg) {
+        return 6;
+    } else {
+        return 2;
+    }
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (TableViewCellStyleAbout == _indexSelectSeg) {
+        if (indexPath.row == 4) {
+            return [self _setupAboutCell_Address:tableView cellForRowAtIndexPath:indexPath];
+        } else if (indexPath.row == 5) {
+            return [self _setupTableBottomViewCell:tableView cellForRowAtIndexPath:indexPath];
+        } else {
+            return [self _setupAboutCell:tableView cellForRowAtIndexPath:indexPath];
+        }
+    } else {
+        if (indexPath.row == 1) {
+            return [self _setupTableBottomViewCell:tableView cellForRowAtIndexPath:indexPath];
+        } else {
+            if (!_passwordTableViewCell) {
+                _passwordTableViewCell = [self _setupPasswordCell:tableView cellForRowAtIndexPath:indexPath];
+            }
+            return _passwordTableViewCell;
+        }
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height;
+    if (TableViewCellStyleAbout == _indexSelectSeg) {
+        if (indexPath.row == 4) {
+            if(IS_IOS8_OR_ABOVE) {
+                height = UITableViewAutomaticDimension;
+                return height;
+            } else {
+                id cell = [self _setupAboutCell_Address:tableView cellForRowAtIndexPath:indexPath];
+                height = [self _heightForTableView:tableView cell:cell atIndexPath:indexPath];
+                return height;
+            }
+        } else if (indexPath.row == 5) {
+            return height = 90;
+        } else {
+            return 40;
+        }
+    } else {
+        if (indexPath.row == 1) {
+            return 90;
+        } else {
+            return DEFAULT_HEIGHT_CELL_PASSWORD;
+        }
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath*)indexPath {
+    if (TableViewCellStyleAbout == _indexSelectSeg) {
+        if (indexPath.row == 4) {
+            return 44;
+        } else {
+            return 40 ;
+        }
+    } else {
+        if (indexPath.row == 1) {
+            return 90;
+        } else {
+            return DEFAULT_HEIGHT_CELL_PASSWORD;
+        }
+    }
+}
+
 
 #pragma mark - Other Delegate
 - (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell *)passwordTableViewCell newPassowrd:(NSString *)newPassowrd {

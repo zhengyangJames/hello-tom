@@ -19,6 +19,7 @@
 #import "COOferObj.h"
 #import "COListProfileObject.h"
 #import "WebViewSetting.h"
+#import "WebViewManager.h"
 
 @interface DetailsViewController ()
 {
@@ -57,7 +58,7 @@
     [self _setupHeaderView];
     self.detailsDataSource = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
-    
+    [self _getHeightWebview];
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
     [self _reloadData];
@@ -67,6 +68,15 @@
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.detailsDataSource.progressBarObj = self.progressBarObj;
         self.detailsDataSource.arrObject = self.arrayObj;
+        [self.tableView reloadData];
+    }];
+}
+
+- (void)_getHeightWebview {
+    COOferObj *offerObj = self.arrayObj[3];
+    COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+    [[WebViewManager shared] getHeightWebViewWithStringHtml:offerItemObj.linkOrDetail heightForWebView:^(CGFloat height) {
+         self.detailsDataSource.heightWebview = height;
         [self.tableView reloadData];
     }];
 }

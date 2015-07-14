@@ -27,6 +27,7 @@
 
 @property (strong, nonatomic) NSArray *arrObject;
 @property (strong, nonatomic) COProgressbarObj *progressBarObj;
+@property (assign, nonatomic) CGFloat heightWebview;
 
 - (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate,CODetailsWebViewCellDelegate>)controller tableView:(UITableView*)tableView ;
 

@@ -95,13 +95,4 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    // report the error inside the webview
-    NSString* errorString = [NSString stringWithFormat:@"<html><center><font size=+3 color='red'>An error occurred:<br>%@</font></center></html>",
-                             error.localizedDescription];
-    [_webView loadHTMLString:errorString baseURL:nil];
-}
-
 @end

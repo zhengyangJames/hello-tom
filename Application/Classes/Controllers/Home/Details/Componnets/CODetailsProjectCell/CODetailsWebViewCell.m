@@ -21,6 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _webView.delegate = self;
+    [_webView.scrollView setScrollEnabled:NO];
+    [_webView.scrollView setShowsHorizontalScrollIndicator:NO];
+    [_webView.scrollView setShowsVerticalScrollIndicator:NO];
     _isFinish = NO;
 }
 
@@ -43,23 +46,12 @@
     CGRect mWebViewFrame = _webView.frame;
     mWebViewFrame.size.height = _webView.scrollView.contentSize.height;
     _webView.frame = mWebViewFrame;
-    self.heightForCell = mWebViewFrame.size.height;
     _textViewLoad.frame = mWebViewFrame;
     self.contentView.bounds = _textViewLoad.bounds;
     [self setNeedsDisplay];
     if ([self.delegate respondsToSelector:@selector(coDetailsWebViewCell:webViewEndLoading:)]) {
         [self.delegate coDetailsWebViewCell:self webViewEndLoading:YES];
     }
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
-    // report the error inside the webview
-    NSString* errorString = [NSString stringWithFormat:@"<html><center><font size=+3 color='black'>An error occurred:<br>%@</font></center></html>",
-                             error.localizedDescription];
-    [_webView loadHTMLString:errorString baseURL:nil];
 }
 
 @end

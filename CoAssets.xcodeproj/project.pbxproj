@@ -305,6 +305,7 @@
 		7FCD18AC1B4BB060000B81A2 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18AB1B4BB060000B81A2 /* KLCPopup.m */; };
 		7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18B31B4BBBD0000B81A2 /* COPopupInteredtedView.m */; };
 		7FCD18B61B4BBBF4000B81A2 /* COPopupInteredtedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCD18B51B4BBBF4000B81A2 /* COPopupInteredtedView.xib */; };
+		7FE6ED611B54EB1600FA481E /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6ED601B54EB1600FA481E /* WebViewManager.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
 /* End PBXBuildFile section */
 
@@ -774,6 +775,8 @@
 		7FCD18B21B4BBBD0000B81A2 /* COPopupInteredtedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COPopupInteredtedView.h; sourceTree = "<group>"; };
 		7FCD18B31B4BBBD0000B81A2 /* COPopupInteredtedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COPopupInteredtedView.m; sourceTree = "<group>"; };
 		7FCD18B51B4BBBF4000B81A2 /* COPopupInteredtedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COPopupInteredtedView.xib; sourceTree = "<group>"; };
+		7FE6ED5F1B54EB1600FA481E /* WebViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewManager.h; sourceTree = "<group>"; };
+		7FE6ED601B54EB1600FA481E /* WebViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewManager.m; sourceTree = "<group>"; };
 		7FF529F61B413E4A0072F6F4 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1432,6 +1435,8 @@
 		7F325E751B40E50800116445 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				7FE6ED5F1B54EB1600FA481E /* WebViewManager.h */,
+				7FE6ED601B54EB1600FA481E /* WebViewManager.m */,
 				7F325E761B40E50800116445 /* CODummyDataManager.h */,
 				7F325E771B40E50800116445 /* CODummyDataManager.m */,
 				7FC6D5111B4526240098EC8D /* COLoginManager.h */,
@@ -2277,6 +2282,7 @@
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
 				7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
+				7FE6ED611B54EB1600FA481E /* WebViewManager.m in Sources */,
 				7FCD18AC1B4BB060000B81A2 /* KLCPopup.m in Sources */,
 				7F325FDF1B40E50800116445 /* AFHTTPRequestOperation.m in Sources */,
 				0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */,

@@ -194,10 +194,12 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
+        _leftButton.enabled = YES;
     }];
 }
 
 - (void)_callWSGetProgressbar:(NSString*)offerID {
+    _leftButton.enabled = NO;
     [UIHelper showLoadingInView:self.view];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:offerID,@"offer_id", nil];
     [[WSURLSessionManager shared] wsGetProgressBarWithOfferID:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {

@@ -120,5 +120,5 @@
 #define kNOTIFICATION_QUESTION             @"kNNOTIFICATION_QUESTION"
 
 
-#define DEFINE_HTML_FRAME                  @"<font size=\"5\" face=\"Raleway-Light \" color=\"black\">%@</font>"
+#define DEFINE_HTML_FRAME                  @"<font size=\"3\" face=\"Raleway-Light \" color=\"black\">%@</font>"
 #endif

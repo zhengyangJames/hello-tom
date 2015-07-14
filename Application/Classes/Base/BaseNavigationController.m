@@ -18,9 +18,7 @@
     [super viewDidLoad];
     [self.navigationBar setTranslucent:NO];
     [self.navigationBar setTintColor:[UIColor whiteColor]];
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-10, -60)                                            forBarMetrics:UIBarMetricsDefault];
-    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor],
-                                                 NSFontAttributeName : [UIFont fontWithName:@"Raleway-Regular" size:22]}];
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0,-70)                                            forBarMetrics:UIBarMetricsDefault];
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor],
                                                  NSFontAttributeName : [UIFont fontWithName:@"Raleway-Regular" size:22]}];
     

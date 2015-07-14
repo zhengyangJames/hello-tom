@@ -182,7 +182,7 @@
                 COOferObj *off = [[COOferObj alloc] init];
                 COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
                 offItem.title = @"DOCUMENTS";
-                offItem.linkOrDetail = @"The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";
+                offItem.stringDetail = @"The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";
                 off.type = @"description";
                 off.offerItemObjs = @[offItem];
                 [arrObj addObject:off];
@@ -232,11 +232,10 @@
             if (country && ![country isEmpty]) {
                 address = [[address stringByAppendingString:@"\n"] stringByAppendingString:country];
             }
-            
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = @"ADDRESS";
-            offItem.linkOrDetail = address;
+            offItem.stringDetail = address;
             offItem.photo = [dictObject objectForKeyNotNull:@"photo"];
             off.offerItemObjs = @[offItem];
             [arrObj addObject:off];

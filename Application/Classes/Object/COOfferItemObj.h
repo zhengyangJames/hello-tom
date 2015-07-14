@@ -15,5 +15,5 @@
 @property (nonatomic, strong) NSString *photo;
 @property (nonatomic, strong) NSString *linkOrDetail;
 @property (nonatomic, strong) NSAttributedString *htmlDetail;
-
+@property (nonatomic, strong) NSString *stringDetail;
 @end
