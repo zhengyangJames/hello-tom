@@ -27,12 +27,6 @@
     
 }
 
-- (void)setBounds:(CGRect)bounds
-{
-    [super setBounds:bounds];
-    self.contentView.frame = self.bounds;
-}
-
 #pragma mark - Set Get
 - (void)setCoOfferItem:(COOfferItemObj *)coOfferItem {
     _coOfferItem = coOfferItem;

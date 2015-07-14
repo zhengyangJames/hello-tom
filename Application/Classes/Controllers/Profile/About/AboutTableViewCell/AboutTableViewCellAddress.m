@@ -1,21 +1,21 @@
 //
-//  AboutTableViewCell_Address.m
+//  AboutTableViewCellAddress.m
 //  CoAssets
 //
-//  Created by TUONG DANG on 7/3/15.
+//  Created by TUONG DANG on 7/14/15.
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "AboutTableViewCell_Address.h"
+#import "AboutTableViewCellAddress.h"
 
-@interface AboutTableViewCell_Address ()
+@interface AboutTableViewCellAddress ()
 {
-    __weak IBOutlet UILabel *address;
+    __weak IBOutlet UITextView *addressLbl;
 }
 
 @end
 
-@implementation AboutTableViewCell_Address
+@implementation AboutTableViewCellAddress
 
 - (void)viewDidLoad {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -46,7 +46,9 @@
     if (country && ![country isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }
-    address.text = link;
-    
+    addressLbl.text = link;
+    [addressLbl setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
 }
+
 @end

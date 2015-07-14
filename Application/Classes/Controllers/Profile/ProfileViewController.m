@@ -8,7 +8,6 @@
 
 #import "ProfileViewController.h"
 #import "TableHeaderView.h"
-#import "TableBottomView.h"
 #import "AboutTableViewCell.h"
 #import "PasswordTableViewCell.h"
 #import "EditAboutProfileVC.h"
@@ -21,7 +20,8 @@
 #import "WSURLSessionManager+Profile.h"
 #import "LoginViewController.h"
 #import "WSURLSessionManager+User.h"
-#import "AboutTableViewCell_Address.h"
+#import "AboutTableViewCellAddress.h"
+#import "TableBottomViewCell.h"
 
 #define DEFAULT_HEIGHT_CELL             44
 #define AUTO_HEIGHT_CELL_ABOUT          (self.view.bounds.size.height - (200+90))/4
@@ -47,19 +47,19 @@ UIAlertViewDelegate,
 PasswordTableViewCellDelegate,
 EditAboutProfileVCDelegate,
 TableHeaderViewDelegate,
-TableBottomViewDelegate,
-LoginViewControllerDelegate>
+LoginViewControllerDelegate,
+TableBottomViewCellDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     UIImage *_imageCompany;
     NSInteger _indexSelectSeg;
     NSDictionary *oldTokenObj;
 }
-@property (strong, nonatomic) COListProfileObject           *profileObject;
-@property (strong, nonatomic) TableBottomView               *tablefooterView;
-@property (strong, nonatomic) TableHeaderView               *tableheaderView;
-@property (weak, nonatomic  ) PasswordTableViewCell         *passwordTableViewCell;
-@property (strong, nonatomic) NSArray                       *arrayCountryCode;
+@property (strong, nonatomic) COListProfileObject   *profileObject;
+@property (weak, nonatomic  ) TableBottomViewCell   *tableBottomViewCell;
+@property (strong, nonatomic) TableHeaderView       *tableheaderView;
+@property (weak, nonatomic  ) PasswordTableViewCell *passwordTableViewCell;
+@property (strong, nonatomic) NSArray               *arrayCountryCode;
 
 @end
 
@@ -88,16 +88,13 @@ LoginViewControllerDelegate>
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:[AboutTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[AboutTableViewCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[PasswordTableViewCell identifier] bundle:nil] forCellReuseIdentifier:[PasswordTableViewCell identifier]];
-    [_tableView registerNib:[UINib nibWithNibName:[AboutTableViewCell_Address identifier] bundle:nil] forCellReuseIdentifier:[AboutTableViewCell_Address identifier]];
+    [_tableView registerNib:[UINib nibWithNibName:[AboutTableViewCellAddress identifier] bundle:nil] forCellReuseIdentifier:[AboutTableViewCellAddress identifier]];
+    [_tableView registerNib:[UINib nibWithNibName:[TableBottomViewCell identifier] bundle:nil] forCellReuseIdentifier:[TableBottomViewCell identifier]];
 }
 
 - (void)_setupCellStyle:(NSInteger)index {
     _indexSelectSeg = index;
     [_tableView reloadData];
-    switch (_indexSelectSeg) {
-        case COSegmentStyleAbout: self.tablefooterView.lblUpdateButton    = m_string(@"Update profile"); break;
-        case COSegmentStylePasswork: self.tablefooterView.lblUpdateButton = m_string(@"Update password"); break;
-    }
 }
 
 - (void)_checkInLogin {
@@ -173,12 +170,7 @@ LoginViewControllerDelegate>
 }
 
 - (void)_setupFooterTableView {
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HIEGHT_BOTTOMVIEW)];
-    _tablefooterView   = [[TableBottomView alloc] initWithNibName:[TableBottomView identifier]];
-    _tablefooterView.delegate = self;
-    _tablefooterView.translatesAutoresizingMaskIntoConstraints = NO;
-    [footerView addSubview:_tablefooterView];
-    [_tablefooterView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
+    UIView *footerView = [[UIView alloc] init];
     _tableView.tableFooterView = footerView;
 }
 
@@ -267,9 +259,9 @@ LoginViewControllerDelegate>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
-        return 5;
+        return 6;
     } else {
-        return 1;
+        return 2;
     }
 }
 
@@ -277,14 +269,20 @@ LoginViewControllerDelegate>
     if (TableViewCellStyleAbout == _indexSelectSeg) {
         if (indexPath.row == 4) {
            return [self _setupAboutCell_Address:tableView cellForRowAtIndexPath:indexPath];
+        } else if (indexPath.row == 5) {
+           return [self _setupTableBottomViewCell:tableView cellForRowAtIndexPath:indexPath];
         } else {
            return [self _setupAboutCell:tableView cellForRowAtIndexPath:indexPath];
         }
     } else {
-        if (!_passwordTableViewCell) {
-            _passwordTableViewCell = [self _setupPasswordCell:tableView cellForRowAtIndexPath:indexPath];
+        if (indexPath.row == 1) {
+            return [self _setupTableBottomViewCell:tableView cellForRowAtIndexPath:indexPath];
+        } else {
+            if (!_passwordTableViewCell) {
+                _passwordTableViewCell = [self _setupPasswordCell:tableView cellForRowAtIndexPath:indexPath];
+            }
+            return _passwordTableViewCell;
         }
-        return _passwordTableViewCell;
     }
 }
 
@@ -293,16 +291,24 @@ LoginViewControllerDelegate>
     if (TableViewCellStyleAbout == _indexSelectSeg) {
         if (indexPath.row == 4) {
             if(IS_IOS8_OR_ABOVE) {
-               return height = UITableViewAutomaticDimension;
+                height = UITableViewAutomaticDimension;
+               return height;
             } else {
                 id cell = [self _setupAboutCell_Address:tableView cellForRowAtIndexPath:indexPath];
-                return height = [self _heightForTableView:tableView cell:cell atIndexPath:indexPath];
+                height = [self _heightForTableView:tableView cell:cell atIndexPath:indexPath];
+                return height;
             }
+        } else if (indexPath.row == 5) {
+            return height = 90;
         } else {
-            return 40 ;
+            return 40;
         }
     } else {
-        return DEFAULT_HEIGHT_CELL_PASSWORD;
+        if (indexPath.row == 1) {
+            return 90;
+        } else {
+            return DEFAULT_HEIGHT_CELL_PASSWORD;
+        }
     }
 }
 
@@ -314,14 +320,18 @@ LoginViewControllerDelegate>
             return 40 ;
         }
     } else {
-        return DEFAULT_HEIGHT_CELL_PASSWORD;
+        if (indexPath.row == 1) {
+            return 90;
+        } else {
+            return DEFAULT_HEIGHT_CELL_PASSWORD;
+        }
     }
 }
 
 - (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
-    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
+    CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return cellSize.height;
 }
 /*
@@ -349,8 +359,8 @@ LoginViewControllerDelegate>
     return aboutCell;
 }
 
-- (AboutTableViewCell_Address*)_setupAboutCell_Address:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    AboutTableViewCell_Address *cell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell_Address identifier] forIndexPath:indexPath];
+- (AboutTableViewCellAddress*)_setupAboutCell_Address:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    AboutTableViewCellAddress *cell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCellAddress identifier]];
     cell.profileObject = self.profileObject;
     return cell;
 }
@@ -358,8 +368,21 @@ LoginViewControllerDelegate>
 - (PasswordTableViewCell*)_setupPasswordCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     _passwordTableViewCell = [tableView dequeueReusableCellWithIdentifier:[PasswordTableViewCell identifier] forIndexPath:indexPath];
     _passwordTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    _passwordTableViewCell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     _passwordTableViewCell.delegate = self;
     return _passwordTableViewCell;
+}
+
+- (TableBottomViewCell*)_setupTableBottomViewCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    _tableBottomViewCell = [tableView dequeueReusableCellWithIdentifier:[TableBottomViewCell identifier]];
+    _tableBottomViewCell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
+    if (_indexSelectSeg == TableViewCellStyleAbout) {
+        _tableBottomViewCell.lblUpdateButton = @"Update profile";
+    } else {
+        _tableBottomViewCell.lblUpdateButton = @"Update password";
+    }
+    _tableBottomViewCell.delegate = self;
+    return _tableBottomViewCell;
 }
 
 #pragma mark - Other Delegate
@@ -382,7 +405,7 @@ LoginViewControllerDelegate>
     [self _setupCellStyle:indexSelect];
 }
 
-- (void)tableBottomView:(TableBottomView *)tableBottomView titlerButton:(NSString *)titlerButton {
+- (void)tableBottomView:(TableBottomViewCell *)tableBottomView titlerButton:(NSString *)titlerButton {
     [self __actionButtonUpdate:titlerButton];
 }
 

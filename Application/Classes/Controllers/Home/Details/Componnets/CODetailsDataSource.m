@@ -13,14 +13,14 @@
 
 @interface CODetailsDataSource ()
 
-@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate> controller;
+@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate,CODetailsWebViewCellDelegate> controller;
 
 @end
 
 @implementation CODetailsDataSource
 
 
-- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller tableView:(UITableView *)tableView {
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate,CODetailsWebViewCellDelegate>)controller tableView:(UITableView *)tableView {
     self = [super init];
     if (self) {
         self.controller = controller;
@@ -44,6 +44,9 @@
         
         [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectBottomTVCell identifier] bundle:nil]
         forCellReuseIdentifier:[CODetailsProjectBottomTVCell identifier]];
+        
+        [tableView registerNib:[UINib nibWithNibName:[CODetailsWebViewCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODetailsWebViewCell identifier]];
     }
     return self;
 }
@@ -96,7 +99,7 @@
         }
     }else if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4 || indexPath.section == self.arrObject.count - 1) {
         return [self tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
-    }else {
+    } else {
         if (indexPath.row == 0) {
             return [self tableView:tableView cellDetailsSectionForRowAtIndexPath:indexPath];
         }
@@ -153,6 +156,14 @@
     CODetailsProgressViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProgressViewCell identifier]];
     cell.obj = self.progressBarObj;
     cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
+    return cell;
+}
+
+- (CODetailsWebViewCell*)tableView:(UITableView*)tableView cellDetailsWebViewRowWithIndexPath:(NSIndexPath*)indexPath {
+    CODetailsWebViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsWebViewCell identifier]];
+    cell.delegate = self.controller;
+    COOferObj *obj = [self _getItemAtindexPath:indexPath];
+    cell.cOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row];
     return cell;
 }
 

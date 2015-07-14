@@ -55,7 +55,7 @@
 - (void)_setupUI {
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     [self _setupHeaderView];
-    self.detailsDataSource    = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
+    self.detailsDataSource = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
     
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
@@ -147,9 +147,8 @@
             WebViewSetting *vc = [[WebViewSetting alloc]init];
             vc.titler = m_string(coOOfferItemObj.title);
             vc.webLink = coOOfferItemObj.linkOrDetail;
-            vc.isPresion = YES;
-            BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];
-            [self.navigationController presentViewController:nav animated:YES completion:nil];
+            vc.isPresion = NO;
+            [self.navigationController pushViewController:vc animated:YES];
         }
     }
 }
@@ -158,6 +157,12 @@
     COOferObj *obj = [self.arrayObj objectAtIndex:indexpath.section];
     return obj;
 }
+
+- (void)coDetailsWebViewCell:(CODetailsWebViewCell *)CODetailsWebViewCell webViewEndLoading:(BOOL)webViewEndLoading {
+    [_tableView reloadData];
+}
+
+
 
 @end
 

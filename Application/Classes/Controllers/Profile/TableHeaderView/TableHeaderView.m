@@ -31,6 +31,7 @@
 
 #pragma mark - SetUp UI
 - (void)_setupView {
+    [self.segmentControl setSelectedSegmentIndex:0];
     [self.segmentControl setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular"
                                                                                       size:16]}
                                        forState:UIControlStateNormal];

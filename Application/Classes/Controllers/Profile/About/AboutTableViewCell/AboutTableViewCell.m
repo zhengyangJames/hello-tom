@@ -21,11 +21,4 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-- (void)setBounds:(CGRect)bounds
-{
-    [super setBounds:bounds];
-    self.contentView.frame = self.bounds;
-}
-
-
 @end

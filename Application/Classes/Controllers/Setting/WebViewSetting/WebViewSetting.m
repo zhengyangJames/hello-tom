@@ -43,15 +43,14 @@
     if ( [_webView isLoading] ) {
         [_webView stopLoading];
     }
-     // disconnect the delegate as the webview is hidden
     _webView.delegate = nil;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 #pragma mark - Setup
 - (void)_setupUI {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.title = self.titler;
-    self.navigationController.navigationBar.hidden = NO;
     [self _setupWebView];
 }
 
@@ -64,7 +63,9 @@
 
 - (void)setIsPresion:(BOOL)isPresion {
     _isPresion = isPresion;
-    [self _setupLeftNavigationButton];
+    if (_isPresion) {
+        [self _setupLeftNavigationButton];
+    }
 }
 
 #pragma mark - Action
@@ -97,7 +98,6 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
     // report the error inside the webview
     NSString* errorString = [NSString stringWithFormat:@"<html><center><font size=+3 color='red'>An error occurred:<br>%@</font></center></html>",
                              error.localizedDescription];
