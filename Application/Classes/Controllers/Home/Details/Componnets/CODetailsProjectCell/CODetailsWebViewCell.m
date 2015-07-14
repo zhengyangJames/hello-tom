@@ -45,7 +45,7 @@
 {
     _isFinish = YES;
     CGRect mWebViewFrame = _webView.frame;
-    mWebViewFrame.size.height = _webView.scrollView.contentSize.height + 240;
+    mWebViewFrame.size.height = _webView.scrollView.contentSize.height + 200;
     _webView.frame = mWebViewFrame;
     self.contentView.bounds = _webView.bounds;
     [self setNeedsDisplay];
