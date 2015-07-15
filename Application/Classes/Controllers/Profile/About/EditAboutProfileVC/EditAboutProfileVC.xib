@@ -117,7 +117,7 @@
                                         <constraint firstAttribute="height" constant="40" id="Et8-sc-tib"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-gW-dSj">
                                     <rect key="frame" x="20" y="355" width="210" height="21"/>
@@ -135,7 +135,7 @@
                                         <constraint firstAttribute="height" constant="40" id="LCU-jw-0Uf"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCD-PI-aMD">
                                     <rect key="frame" x="20" y="439" width="210" height="21"/>
@@ -153,7 +153,7 @@
                                         <constraint firstAttribute="height" constant="40" id="gjt-V8-lY8"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Postal code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h5-nH-o4m">
                                     <rect key="frame" x="20" y="527" width="210" height="21"/>
@@ -189,7 +189,7 @@
                                         <constraint firstAttribute="height" constant="40" id="mmB-uj-LDo"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6S3-He-y8e">
                                     <rect key="frame" x="20" y="695" width="210" height="21"/>
@@ -207,7 +207,7 @@
                                         <constraint firstAttribute="height" constant="40" id="0uP-Ub-rHB"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhB-JR-40Y">
                                     <rect key="frame" x="20" y="186" width="210" height="21"/>
@@ -297,7 +297,7 @@
                 <constraint firstAttribute="bottom" secondItem="1My-n2-Eai" secondAttribute="bottom" id="f4b-UL-0fr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-34" y="153"/>
+            <point key="canvasLocation" x="-136" y="117"/>
         </view>
     </objects>
 </document>

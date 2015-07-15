@@ -38,7 +38,7 @@
                     </textView>
                     <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0f5-0N-kZZ">
                         <rect key="frame" x="8" y="28.5" width="304" height="48.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </webView>
                 </subviews>
                 <constraints>
@@ -55,6 +55,7 @@
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="yAs-xw-NFN"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="textViewLoad" destination="7ic-Gq-6fE" id="qqF-0d-YA0"/>
                 <outlet property="titler" destination="J4Y-fc-BXA" id="zlH-Zh-Ws3"/>

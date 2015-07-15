@@ -104,11 +104,11 @@ BLOCK(); \
 typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSError *error);
 
 @interface ImageDownloader : NSObject
-@property(nonatomic, strong) NSOperationQueue *netOperationQueue;
-@property (nonatomic, strong) NSURLSession *connectionSession;
-@property (nonatomic, strong) NSURL *URL;
-@property (nonatomic, strong) EGOCache *eogCache;
-@property (nonatomic, copy) CompletionBlock downloadedBlock;
+@property (nonatomic, strong) NSOperationQueue *netOperationQueue;
+@property (nonatomic, strong) NSURLSession     *connectionSession;
+@property (nonatomic, strong) NSURL            *URL;
+@property (nonatomic, strong) EGOCache         *eogCache;
+@property (nonatomic, copy  ) CompletionBlock  downloadedBlock;
 
 - (ImageDownloader *)startDownloadForURL:(NSURL *)URL
                                    cache:(EGOCache *)cache

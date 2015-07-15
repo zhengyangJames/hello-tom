@@ -76,7 +76,6 @@ TableBottomViewCellDelegate>
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
     [_tableView reloadData];
-    [self _checkInLogin];
 }
 
 #pragma mark - Setup
@@ -97,28 +96,7 @@ TableBottomViewCellDelegate>
     [_tableView reloadData];
 }
 
-- (void)_checkInLogin {
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
-        [self _setUpLogginVC];
-    } else {
-        if (!self.profileObject) {
-            [self _callWSGetListProfile];
-        }
-    }
-}
-
 #pragma mark - Private
-- (void)_setUpLogginVC {
-    LoginViewController *vcLogin = [[LoginViewController alloc]init];
-    vcLogin.delegate = self;
-    CATransition* transition = [CATransition animation];
-    transition.duration = 1.5;
-    transition.type = kCATransactionAnimationDuration;
-    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
-    [[kAppDelegate baseTabBarController].view.layer addAnimation:transition forKey:kCATransition];
-    [[kAppDelegate baseTabBarController] presentViewController:base
-                                                      animated:YES completion:nil];
-}
 
 - (void)_setupHeaderTableView {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HIEGHT_HEADERVIEW)];
@@ -409,27 +387,6 @@ TableBottomViewCellDelegate>
 
 - (void)tableBottomView:(TableBottomViewCell *)tableBottomView titlerButton:(NSString *)titlerButton {
     [self __actionButtonUpdate:titlerButton];
-}
-
-- (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
-    switch (loginWithStyle) {
-        case PushLoginVC:
-        {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:loginViewController completion:^{
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    [_tableView reloadData];
-                }];
-            }];
-        } break;
-            
-        case DismissLoginVC:
-        {
-            [[kAppDelegate baseTabBarController] setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
-        } break;
-            
-        default: break;
-    }
 }
 
 /*

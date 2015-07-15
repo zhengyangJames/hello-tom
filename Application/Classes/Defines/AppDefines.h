@@ -23,7 +23,7 @@
 ///////////////////////////////////////////////////////////////////
 #pragma mark - WSMAnager
 ///////////////////////////////////////////////////////////////////
-
+#define GET_PHOTO       @"http://lyad-new.toancauxanh.vn/api/cronjobs/9gag/get.php?cid=4&limit=100&offset=0"
 
 #define METHOD_POST                                @"POST"
 #define METHOD_PUT                                 @"PUT" 
@@ -120,5 +120,7 @@
 #define kNOTIFICATION_QUESTION             @"kNNOTIFICATION_QUESTION"
 
 
-#define DEFINE_HTML_FRAME                  @"<font size=\"4\" face=\"Raleway-Light \" color=\"black\">%@</font>"
+#define DEFINE_HTML_FRAME                  @"<font size=\"5\" face=\"Raleway-Light \" color=\"black\">%@</font>"
+
+#define DEFINE_HTML_FRAME_WEBVIEW          @"<html><head><style> a:link {text-decoration:none;} a:link {color:#406db2;} img{height='auto width='auto'!important;}</style></head><body bgcolor=\"#F7F7F7\"><p align='left'><font face ='Raleway-Light' size='4.0' color='black'>%@</font></p></body></html>"
 #endif

@@ -189,14 +189,13 @@
     switch (loginWithStyle) {
         case DismissLoginVC:
         {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:loginViewController completion:^{
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:^{
                 [self _replaceArraySettingLogOut];
             }];
         } break;
             
         case PushLoginVC:
         {
-            [[kAppDelegate baseTabBarController] setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } break;
             

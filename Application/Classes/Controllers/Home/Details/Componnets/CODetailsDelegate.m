@@ -58,7 +58,7 @@
             return height;
         }
     } else if (indexPath.section == 1) {
-        if ([[dataSource.progressBarObj valueForKey:@"goal"] isKindOfClass:[NSNumber class]]) {
+        if ([[dataSource.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
             if (indexPath.row == 0) {
                 return height = 379;
             } else if (indexPath.row == 1) {
@@ -82,11 +82,11 @@
         }
     }else if (indexPath.section == 3){
         if(IS_IOS8_OR_ABOVE) {
-            return dataSource.heightWebview?dataSource.heightWebview+200:UITableViewAutomaticDimension;
+            return dataSource.heightWebview?dataSource.heightWebview:UITableViewAutomaticDimension;
         } else {
             id Cell = [dataSource tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
             height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
-            return dataSource.heightWebview?dataSource.heightWebview+200:height;
+            return dataSource.heightWebview?dataSource.heightWebview:height;
         }
     } else {
         if (indexPath.row == 0) {

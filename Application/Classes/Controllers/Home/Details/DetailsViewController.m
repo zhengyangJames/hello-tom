@@ -21,7 +21,7 @@
 #import "WebViewSetting.h"
 #import "WebViewManager.h"
 
-@interface DetailsViewController ()
+@interface DetailsViewController ()<UIGestureRecognizerDelegate>
 {
     UIWebView   *_webView;
 }
@@ -40,10 +40,11 @@
     [super viewDidLoad];
     [self _setupUI];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    [self _addPanSwipeView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
@@ -53,6 +54,7 @@
 }
 
 #pragma mark - Setup
+
 - (void)_setupUI {
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     [self _setupHeaderView];
@@ -62,6 +64,18 @@
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
     [self _reloadData];
+}
+
+- (void)_addPanSwipeView {
+    UIPanGestureRecognizer *leftSwipeGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(_handleSwipeEdgeGesture:)];
+    [leftSwipeGesture setDelegate:self];
+    [self.view addGestureRecognizer:leftSwipeGesture];
+}
+
+- (void)_handleSwipeEdgeGesture:(UISwipeGestureRecognizer *)gesture {
+    if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
+        
+    }
 }
 
 - (void)_reloadData {
@@ -173,7 +187,19 @@
     [_tableView endUpdates];
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        [self.navigationController setNavigationBarHidden:YES];
+    }
+    return YES;
+}
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        [self.navigationController setNavigationBarHidden:YES];
+    }
+    return YES;
+}
 
 @end
 
