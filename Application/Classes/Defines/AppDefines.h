@@ -122,5 +122,5 @@
 
 #define DEFINE_HTML_FRAME                  @"<span style=\"font-family: 'Raleway-Light'; font-size: 15\">%@</span>"
 
-#define DEFINE_HTML_FRAME_WEBVIEW          @"<html><span style=\"font-family: 'Raleway-Light'; font-size: 15 align='left'\">%@</span></head><body bgcolor=\"#F7F7F7\"></body></html>"
+#define DEFINE_HTML_FRAME_WEBVIEW          @"<!DOCTYPE html><html><body bgcolor=\"#F7F7F7\"><span style=\"font-family: 'Raleway-Light'; font-size: 15\">%@</span></body></html>"
 #endif

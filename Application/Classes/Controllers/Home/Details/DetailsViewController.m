@@ -171,10 +171,8 @@
 }
 
 - (void)coDetailsWebViewCell:(CODetailsWebViewCell *)CODetailsWebViewCell heightWebview:(CGFloat)heightWebview {
-    [_tableView beginUpdates];
-//    self.detailsDataSource.heightWebview = heightWebview;
-//    [_tableView reloadData];
-    [_tableView endUpdates];
+    self.detailsDataSource.heightWebview = heightWebview;
+    [_tableView reloadData];
 }
 
 

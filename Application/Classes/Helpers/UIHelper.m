@@ -168,6 +168,7 @@
             COOferObj *off = [[COOferObj alloc] init];
             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
             offItem.title = @"PROJECT";
+            offItem.htmlDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"project_description"]];
             offItem.linkOrDetail = [dict objectForKeyNotNull:@"project_description"];
             off.type = @"description";
             off.offerItemObjs = @[offItem];
@@ -246,6 +247,7 @@
     NSString *htmlString = [DEFINE_HTML_FRAME stringByReplacingOccurrencesOfString:@"%@" withString:stringHtml];
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     return attributedString;
+    
 }
 
 @end
