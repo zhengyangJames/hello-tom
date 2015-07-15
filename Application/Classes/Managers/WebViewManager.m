@@ -47,7 +47,6 @@
     frame.size = fittingSize;
     webView.frame = frame;
     webViewHeight = fittingSize.height+ 230;
-    
 //    CGRect mWebViewFrame = webView.frame;
 //    mWebViewFrame.size.height = webView.scrollView.contentSize.height;
 //    webView.frame = mWebViewFrame;
