@@ -25,6 +25,6 @@
 @protocol  CODetailsWebViewCellDelegate <NSObject>
 
 @optional
-- (void)coDetailsWebViewCell:(CODetailsWebViewCell*)CODetailsWebViewCell webViewEndLoading:(BOOL)webViewEndLoading;
+- (void)coDetailsWebViewCell:(CODetailsWebViewCell*)CODetailsWebViewCell heightWebview:(CGFloat)heightWebview;
 
 @end

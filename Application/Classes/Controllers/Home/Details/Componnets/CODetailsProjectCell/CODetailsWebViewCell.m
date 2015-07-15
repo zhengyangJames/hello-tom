@@ -31,13 +31,20 @@
 - (void)setCOOfferItemObj:(COOfferItemObj *)cOOfferItemObj {
     _cOOfferItemObj = cOOfferItemObj;
     _titler.text = cOOfferItemObj.title;
-//    _textViewLoad.attributedText = cOOfferItemObj.htmlDetail;
-    NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME_WEBVIEW,cOOfferItemObj.linkOrDetail];
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        if (!_isFinish) {
-            [_webView loadHTMLString:formartHTML baseURL:nil];
-        }
-    }];
+    if (cOOfferItemObj.htmlDetail) {
+        [_webView setHidden:YES];
+        _textViewLoad.attributedText = cOOfferItemObj.htmlDetail;
+        [self setNeedsDisplay];
+        [self layoutSubviews];
+    } else {
+        [_webView setHidden:NO];
+        NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,cOOfferItemObj.linkOrDetail];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            if (!_isFinish) {
+                [_webView loadHTMLString:formartHTML baseURL:nil];
+            }
+        }];
+    }
 }
 
 #pragma mark - WebView Delegate
@@ -45,14 +52,16 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     _isFinish = YES;
+    CGFloat heightWebview = 0;
     CGRect mWebViewFrame = _webView.frame;
     mWebViewFrame.size.height = _webView.scrollView.contentSize.height;
     _webView.frame = mWebViewFrame;
+    heightWebview = mWebViewFrame.size.height;
     self.contentView.bounds = _webView.bounds;
     [self setNeedsDisplay];
     [self layoutSubviews];
-    if ([self.delegate respondsToSelector:@selector(coDetailsWebViewCell:webViewEndLoading:)]) {
-        [self.delegate coDetailsWebViewCell:self webViewEndLoading:YES];
+    if ([self.delegate respondsToSelector:@selector(coDetailsWebViewCell:heightWebview:)]) {
+        [self.delegate coDetailsWebViewCell:self heightWebview:heightWebview];
     }
 }
 

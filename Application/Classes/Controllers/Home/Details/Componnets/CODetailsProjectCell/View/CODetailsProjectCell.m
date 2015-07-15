@@ -51,26 +51,36 @@
     if (detailsProfile.investor_count) {
         NSString *investor = [NSString stringWithFormat:@"%@ INVESTORS",_detailsProfile.investor_count];
         _projectInteredtedLable.text = investor;
+    } else {
+        _projectInteredtedLable.text = @"N/A";
     }
     
     if (detailsProfile.min_investment) {
         NSString *investment = [NSString stringWithFormat:@"%@",_detailsProfile.min_investment];
         _projectInvestmentLable.text = investment ;
+    } else {
+        _projectInvestmentLable.text = @"N/A" ;
     }
     
     if (detailsProfile.time_horizon) {
         NSString *time_horizon = [NSString stringWithFormat:@"%@ MONTHS",_detailsProfile.time_horizon];
         _projectHorizonLable.text = time_horizon;
+    } else {
+        _projectHorizonLable.text = @"N/A";
     }
     
     if (detailsProfile.time_horizon) {
         NSString *YIELD = [NSString stringWithFormat:@"%@.0 %% (%@.0%%)",_detailsProfile.time_horizon,_detailsProfile.time_horizon];
         _minYieldLable.text = YIELD;
+    } else {
+        _minYieldLable.text = @"N/A";
     }
     
     if (detailsProfile.day_left) {
         NSString *day_left = [NSString stringWithFormat:@"%@",_detailsProfile.day_left];
         _dayAgoLable.text = day_left;
+    } else {
+        _dayAgoLable.text = @"N/A";
     }
 }
 

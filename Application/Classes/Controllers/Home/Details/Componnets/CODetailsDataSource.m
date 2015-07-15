@@ -99,7 +99,7 @@
         }
     }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == self.arrObject.count - 1) {
         return [self tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
-    } else if (indexPath.section == 3) {
+    } else if ( indexPath.section == 3) {
         return [self tableView:tableView cellDetailsWebViewRowWithIndexPath:indexPath];
     } else {
         if (indexPath.row == 0) {

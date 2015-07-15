@@ -36,7 +36,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <string key="text">Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay
 Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist destination, known for its Powder - Fine Sands and Prestine Waters,</string>
-                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>

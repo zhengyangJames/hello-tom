@@ -51,6 +51,8 @@
 - (void)_setupUI {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.title = self.titler;
+    [_webView.scrollView setScrollEnabled:YES];
+    [_webView.scrollView setUserInteractionEnabled:YES];
     [self _setupWebView];
 }
 

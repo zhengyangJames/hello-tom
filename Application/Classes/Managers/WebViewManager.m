@@ -34,7 +34,7 @@
     [[kAppDelegate window] addSubview:web];
     [web pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
     web.delegate = self;
-    NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME_WEBVIEW,stringHtml];
+    NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,stringHtml];
     [web loadHTMLString:formartHTML baseURL:nil];
 }
 

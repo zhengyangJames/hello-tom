@@ -28,7 +28,7 @@
                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="19"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-Gq-6fE">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-Gq-6fE">
                         <rect key="frame" x="8" y="28.5" width="304" height="48.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -43,8 +43,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="00U-yr-ILX"/>
-                    <constraint firstItem="7ic-Gq-6fE" firstAttribute="top" secondItem="J4Y-fc-BXA" secondAttribute="bottom" constant="0.5" id="JhB-dr-9GV"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="7ic-Gq-6fE" secondAttribute="bottom" constant="-0.5" id="NEe-Zy-Uog"/>
+                    <constraint firstItem="7ic-Gq-6fE" firstAttribute="top" secondItem="J4Y-fc-BXA" secondAttribute="bottom" id="JhB-dr-9GV"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7ic-Gq-6fE" secondAttribute="bottom" id="NEe-Zy-Uog"/>
                     <constraint firstItem="0f5-0N-kZZ" firstAttribute="top" secondItem="J4Y-fc-BXA" secondAttribute="bottom" id="QcP-4b-vR5"/>
                     <constraint firstItem="0f5-0N-kZZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Vb1-9W-01L"/>
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XoV-88-Xcl"/>
