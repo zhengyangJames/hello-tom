@@ -280,13 +280,13 @@
 		7F8E0BD81B5355A20045EFB0 /* CODetailsWebViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E0BD61B5355A20045EFB0 /* CODetailsWebViewCell.m */; };
 		7F8E0BD91B5355A20045EFB0 /* CODetailsWebViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8E0BD71B5355A20045EFB0 /* CODetailsWebViewCell.xib */; };
 		7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */; };
+		7F933D371B5790D600B7EB9C /* company_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F933D361B5790D600B7EB9C /* company_edit.jpg */; };
 		7F9A95AD1B54B4E6009EC20D /* AboutTableViewCellAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9A95AB1B54B4E6009EC20D /* AboutTableViewCellAddress.m */; };
 		7F9A95AE1B54B4E6009EC20D /* AboutTableViewCellAddress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9A95AC1B54B4E6009EC20D /* AboutTableViewCellAddress.xib */; };
 		7F9A95B21B54C098009EC20D /* TableBottomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9A95B01B54C098009EC20D /* TableBottomViewCell.m */; };
 		7F9A95B31B54C098009EC20D /* TableBottomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9A95B11B54C098009EC20D /* TableBottomViewCell.xib */; };
 		7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA59D921B4CB5C700AF8E41 /* COPopupQuestionView.m */; };
 		7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */; };
-		7FA7E6911B4E62EB00059B13 /* company_logo_degault.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7E6901B4E62EB00059B13 /* company_logo_degault.png */; };
 		7FA7E6B91B4E7C4D00059B13 /* COInterestedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7E6B41B4E7C4D00059B13 /* COInterestedViewController.m */; };
 		7FA7E6BA1B4E7C4D00059B13 /* COInterestedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7E6B51B4E7C4D00059B13 /* COInterestedViewController.xib */; };
 		7FA7E6BB1B4E7C4D00059B13 /* COQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7E6B71B4E7C4D00059B13 /* COQuestionView.m */; };
@@ -737,6 +737,7 @@
 		7F8E0BD71B5355A20045EFB0 /* CODetailsWebViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CODetailsWebViewCell.xib; path = CODetailsProjectCell/CODetailsWebViewCell.xib; sourceTree = "<group>"; };
 		7F8EE69C1B4A6ACF00F92852 /* NSString_stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_stripHtml.h; sourceTree = "<group>"; };
 		7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_stripHtml.m; sourceTree = "<group>"; };
+		7F933D361B5790D600B7EB9C /* company_edit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = company_edit.jpg; sourceTree = "<group>"; };
 		7F9A95AA1B54B4E6009EC20D /* AboutTableViewCellAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCellAddress.h; sourceTree = "<group>"; };
 		7F9A95AB1B54B4E6009EC20D /* AboutTableViewCellAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCellAddress.m; sourceTree = "<group>"; };
 		7F9A95AC1B54B4E6009EC20D /* AboutTableViewCellAddress.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCellAddress.xib; sourceTree = "<group>"; };
@@ -746,7 +747,6 @@
 		7FA59D911B4CB5C700AF8E41 /* COPopupQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COPopupQuestionView.h; sourceTree = "<group>"; };
 		7FA59D921B4CB5C700AF8E41 /* COPopupQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COPopupQuestionView.m; sourceTree = "<group>"; };
 		7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COPopupQuestionView.xib; sourceTree = "<group>"; };
-		7FA7E6901B4E62EB00059B13 /* company_logo_degault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_logo_degault.png; sourceTree = "<group>"; };
 		7FA7E6B31B4E7C4D00059B13 /* COInterestedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COInterestedViewController.h; sourceTree = "<group>"; };
 		7FA7E6B41B4E7C4D00059B13 /* COInterestedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COInterestedViewController.m; sourceTree = "<group>"; };
 		7FA7E6B51B4E7C4D00059B13 /* COInterestedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COInterestedViewController.xib; sourceTree = "<group>"; };
@@ -1811,8 +1811,8 @@
 		7F325F5E1B40E50800116445 /* Images Other */ = {
 			isa = PBXGroup;
 			children = (
+				7F933D361B5790D600B7EB9C /* company_edit.jpg */,
 				7FB9C06E1B4FDA0700FC1B47 /* ic_btn_left.png */,
-				7FA7E6901B4E62EB00059B13 /* company_logo_degault.png */,
 				7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */,
 				7F8529101B43935B00CFAEB5 /* countries */,
 				7F325F651B40E50800116445 /* ic_loading_128x128 */,
@@ -2026,7 +2026,6 @@
 				7F325FBC1B40E50800116445 /* SettingViewController.xib in Resources */,
 				7F325F8D1B40E50800116445 /* CODetailsPhotoCell.xib in Resources */,
 				7F325FBA1B40E50800116445 /* ContacViewController.xib in Resources */,
-				7FA7E6911B4E62EB00059B13 /* company_logo_degault.png in Resources */,
 				7F3260421B40E50800116445 /* ic_Earth@3x.png in Resources */,
 				7F325F9A1B40E50800116445 /* DetailsViewController.xib in Resources */,
 				7F325FAB1B40E50800116445 /* CompanyTableViewCell.xib in Resources */,
@@ -2092,6 +2091,7 @@
 				7FB9C06F1B4FDA0700FC1B47 /* ic_btn_left.png in Resources */,
 				7F3260401B40E50800116445 /* ic_droplist@3x.png in Resources */,
 				7F3260291B40E50800116445 /* Raleway-MediumItalic.ttf in Resources */,
+				7F933D371B5790D600B7EB9C /* company_edit.jpg in Resources */,
 				7F325FB31B40E50800116445 /* ProfileViewController.xib in Resources */,
 				7F32602B1B40E50800116445 /* Raleway-SemiBold.ttf in Resources */,
 				7F32604D1B40E50800116445 /* ic_loadding.gif in Resources */,

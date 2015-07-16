@@ -49,8 +49,9 @@
 - (void)setObject:(COLIstOffersObject *)object {
     _object = object;
     NSURL *url = [NSURL URLWithString:_object.offerPhoto];
-    [_imageBig setImage:[UIImage imageNamed:@"ic_placeholder"]];
-    [_imageBig setImageURL:url];
+//    [_imageBig setImageURL:url];
+    [_imageBig setImageWithURL:url];
+//    [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
     NSString *strImage = [_object.offerCountry isEqualToString:@"Cambodia"] ? @"Globe" : _object.offerCountry;
     [_imageLogo setImage:[UIImage imageNamed:strImage]];
     [_lblDetail setText:_object.offerTitle];

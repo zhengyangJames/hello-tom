@@ -172,5 +172,19 @@
     return obj;
 }
 
+
+- (void)coDetailsWebViewCell:(CODetailsWebViewCell *)CODetailsWebViewCell heightWebview:(CGFloat)heightWebview {
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [UIView animateWithDuration:1.5f
+                              delay:0.0f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             [_tableView reloadSections:[NSIndexSet indexSetWithIndex:1]
+                                       withRowAnimation:UITableViewRowAnimationNone];
+                         } completion:nil ];
+    }];
+}
+
+
 @end
 

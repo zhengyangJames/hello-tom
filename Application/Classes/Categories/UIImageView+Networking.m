@@ -127,7 +127,7 @@ typedef void (^CompletionBlock) (BOOL succes, UIImage *image, NSURL *url, NSErro
 {
     if (URL) {
         self.netOperationQueue = [[NSOperationQueue alloc]init];
-        self.netOperationQueue.maxConcurrentOperationCount = 1;
+        self.netOperationQueue.maxConcurrentOperationCount = 3;
         self.URL = URL;
         self.eogCache = cache;
         self.connectionSession = session;
@@ -199,6 +199,7 @@ const char *keyForCompletionBlock = "completionBlockID";
 + (EGOCache *)defaultCache {
     EGOCache *sharedCache = nil;
     sharedCache = [EGOCache globalCache];
+    [sharedCache setDefaultTimeoutInterval:60*60*24*1];
     return sharedCache;
 }
 
@@ -207,9 +208,6 @@ const char *keyForCompletionBlock = "completionBlockID";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-//        sessionConfig.HTTPMaximumConnectionsPerHost = 3;
-//        sessionConfig.timeoutIntervalForResource = 120;
-//        sessionConfig.timeoutIntervalForRequest = 120;
         sharedSession = [NSURLSession sessionWithConfiguration:sessionConfig];
     });
     return sharedSession;
@@ -233,6 +231,7 @@ const char *keyForCompletionBlock = "completionBlockID";
                 if (succes) {
                     if ([[imgURL absoluteString] isEqualToString:self.URLId]) {
                         self.image = image;
+                        [self setNeedsLayout];
                         if (block) {
                             block(YES, image, nil);
                         }
@@ -248,6 +247,7 @@ const char *keyForCompletionBlock = "completionBlockID";
     }
     else {
         self.image = img;
+        [self setNeedsLayout];
     }
 }
 

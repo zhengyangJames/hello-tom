@@ -11,7 +11,6 @@
 @interface CODetailsWebViewCell () <UIWebViewDelegate>
 {
     BOOL _isFinish;
-    
 }
 
 @end
@@ -25,6 +24,7 @@
     [_webView.scrollView setShowsHorizontalScrollIndicator:NO];
     [_webView.scrollView setShowsVerticalScrollIndicator:NO];
     _isFinish = NO;
+    
 }
 
 #pragma mark - Set Get
@@ -41,8 +41,9 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [self setNeedsDisplay];
-    [self layoutSubviews];
+    if ([self.delegate respondsToSelector:@selector(coDetailsWebViewCell:heightWebview:)]) {
+        [self.delegate coDetailsWebViewCell:self heightWebview:200];
+    }
 }
 
 @end
