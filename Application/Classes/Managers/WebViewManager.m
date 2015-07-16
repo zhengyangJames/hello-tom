@@ -34,6 +34,7 @@
         web.paginationBreakingMode = UIWebPaginationBreakingModePage;
         web.paginationMode = UIWebPaginationModeTopToBottom;
         web.contentMode = UIViewContentModeScaleAspectFill;
+        web.clipsToBounds = YES;
         web.hidden = YES;
         web.delegate = self;
         [[kAppDelegate window] addSubview:web];
@@ -52,7 +53,7 @@
         CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
         frame.size = fittingSize;
         webView.frame = frame;
-        webViewHeight = fittingSize.height + 36;
+        webViewHeight = fittingSize.height;
     
     DBG(@"--- %f",webViewHeight);
     if (self.heightForWebView) {
