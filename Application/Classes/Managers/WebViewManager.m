@@ -26,33 +26,38 @@
 }
 
 - (void)getHeightWebViewWithStringHtml:(NSString *)stringHtml
-                      heightForWebView:(void (^)(CGFloat height))heightForWebView {
+                      heightForWebView:(void (^)(CGFloat height, UIWebView * webView))heightForWebView {
     self.heightForWebView = [heightForWebView copy];
-    
-    UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 500)];
-    web.scrollView.scrollEnabled = NO;
-    web.hidden = YES;
-    [[kAppDelegate window] addSubview:web];
-    _webView = web;
-    web.delegate = self;
+    if (!_webView) {
+        UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 32, [UIScreen mainScreen].bounds.size.height)];
+        web.scrollView.scrollEnabled = NO;
+        web.paginationBreakingMode = UIWebPaginationBreakingModePage;
+        web.paginationMode = UIWebPaginationModeTopToBottom;
+        web.contentMode = UIViewContentModeScaleAspectFill;
+        web.hidden = YES;
+        web.delegate = self;
+        [[kAppDelegate window] addSubview:web];
+        _webView = web;
+    }
     NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,stringHtml];
-    [web loadHTMLString:formartHTML baseURL:nil];
+    [_webView loadHTMLString:formartHTML baseURL:nil];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
     CGFloat webViewHeight = 0;
-        CGRect frame = _webView.frame;
+        CGRect frame = webView.frame;
         frame.size.height = 1;
-        _webView.frame = frame;
-        CGSize fittingSize = [_webView sizeThatFits:CGSizeZero];
+        webView.frame = frame;
+        CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
         frame.size = fittingSize;
-        _webView.frame = frame;
-        webViewHeight = fittingSize.height;
+        webView.frame = frame;
+        webViewHeight = fittingSize.height + 36;
+    
+    DBG(@"--- %f",webViewHeight);
     if (self.heightForWebView) {
-        self.heightForWebView(webViewHeight);
+        self.heightForWebView(webViewHeight, webView);
     }
-    [webView removeFromSuperview];
 }
 
 @end

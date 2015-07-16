@@ -43,6 +43,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self _getHeightWebview];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -59,9 +60,9 @@
     [self _setupHeaderView];
     self.detailsDataSource = [[CODetailsDataSource alloc]initWithController:self tableView:self.tableView];
     self.tableView.dataSource = self.detailsDataSource;
-    [self _getHeightWebview];
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
+    self.detailsDataSource.heightWebview = 100;
     [self _reloadData];
 }
 
@@ -76,7 +77,7 @@
 - (void)_getHeightWebview {
     COOferObj *offerObj = self.arrayObj[3];
     COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
-    [[WebViewManager shared] getHeightWebViewWithStringHtml:offerItemObj.linkOrDetail heightForWebView:^(CGFloat height) {
+    [[WebViewManager shared] getHeightWebViewWithStringHtml:offerItemObj.linkOrDetail heightForWebView:^(CGFloat height, UIWebView *web) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.detailsDataSource.heightWebview = height;
             [self.tableView reloadData];

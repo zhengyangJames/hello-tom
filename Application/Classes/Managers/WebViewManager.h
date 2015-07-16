@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface WebViewManager : NSObject
-@property (nonatomic, copy) void (^heightForWebView)(CGFloat height);
+@property (nonatomic, copy) void (^heightForWebView)(CGFloat height, UIWebView *);
 
 
 + (id)shared;
 
 - (void)getHeightWebViewWithStringHtml:(NSString *)stringHtml
-                      heightForWebView:(void (^)(CGFloat height))heightForWebView;
+                      heightForWebView:(void (^)(CGFloat height, UIWebView *))heightForWebView;
 
 @end
