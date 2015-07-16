@@ -46,11 +46,22 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     _isFinish = YES;
+    
+//    CGFloat webViewHeight = 0;
+//    CGRect frame = webView.frame;
+//    frame.size.height = 1;
+//    webView.frame = frame;
+//    CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
+//    frame.size = fittingSize;
+//    webView.frame = frame;
+//    webViewHeight = fittingSize.height;
+    
     CGFloat heightWebview = 0;
     CGRect mWebViewFrame = webView.frame;
     mWebViewFrame.size.height = webView.scrollView.contentSize.height;
     webView.frame = mWebViewFrame;
     heightWebview = mWebViewFrame.size.height;
+    
     _textViewLoad.bounds = webView.bounds;
     self.contentView.bounds = webView.bounds;
     [self setNeedsDisplay];

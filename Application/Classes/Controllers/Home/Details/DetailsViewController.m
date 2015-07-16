@@ -172,6 +172,9 @@
 
 - (void)coDetailsWebViewCell:(CODetailsWebViewCell *)CODetailsWebViewCell heightWebview:(CGFloat)heightWebview {
     self.detailsDataSource.heightWebview = heightWebview;
+//    [_tableView beginUpdates];
+//    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    [_tableView endUpdates];
     [_tableView reloadData];
 }
 

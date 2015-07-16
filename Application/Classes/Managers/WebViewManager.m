@@ -27,7 +27,7 @@
                       heightForWebView:(void (^)(CGFloat height))heightForWebView {
     self.heightForWebView = [heightForWebView copy];
     
-    UIWebView *web = [[UIWebView alloc] init];
+    UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 500)];
     web.scrollView.scrollEnabled = NO;
     web.translatesAutoresizingMaskIntoConstraints = NO;
     web.hidden = YES;
@@ -40,17 +40,19 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     CGFloat webViewHeight = 0;
-    CGRect frame = webView.frame;
-    frame.size.height = 1;
-    webView.frame = frame;
-    CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
-    frame.size = fittingSize;
-    webView.frame = frame;
-    webViewHeight = fittingSize.height+ 230;
-//    CGRect mWebViewFrame = webView.frame;
-//    mWebViewFrame.size.height = webView.scrollView.contentSize.height;
-//    webView.frame = mWebViewFrame;
-//    webViewHeight = webView.frame.size.height + 230;
+//    CGRect frame = webView.frame;
+//    frame.size.height = 1;
+//    webView.frame = frame;
+//    CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
+//    frame.size = fittingSize;
+//    webView.frame = frame;
+//    webViewHeight = fittingSize.height+ 230;
+    CGRect mWebViewFrame = webView.frame;
+    mWebViewFrame.size.height = webView.scrollView.contentSize.height;
+    webView.frame = mWebViewFrame;
+    webViewHeight = webView.frame.size.height + 230;
+    
+
     if (self.heightForWebView) {
         self.heightForWebView(webViewHeight);
     }

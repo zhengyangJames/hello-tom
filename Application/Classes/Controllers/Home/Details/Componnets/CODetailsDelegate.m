@@ -9,6 +9,7 @@
 #import "CODetailsDelegate.h"
 #import "CODetailsSectionCell.h"
 #import "CODetailsDataSource.h"
+#import "CODetailsWebViewCell.h"
 
 @interface CODetailsDelegate ()
 {
@@ -84,7 +85,7 @@
         if(IS_IOS8_OR_ABOVE) {
             return dataSource.heightWebview?dataSource.heightWebview:UITableViewAutomaticDimension;
         } else {
-            id Cell = [dataSource tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
+            id Cell = [dataSource tableView:tableView cellDetailsWebViewRowWithIndexPath:indexPath];
             height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
             return dataSource.heightWebview?dataSource.heightWebview:height;
         }
