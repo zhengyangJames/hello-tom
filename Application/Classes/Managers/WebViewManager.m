@@ -9,7 +9,9 @@
 #import "WebViewManager.h"
 
 @interface WebViewManager () <UIWebViewDelegate>
-
+{
+    __weak UIWebView *_webView;
+}
 @end
 
 @implementation WebViewManager
@@ -29,30 +31,24 @@
     
     UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 500)];
     web.scrollView.scrollEnabled = NO;
-    web.translatesAutoresizingMaskIntoConstraints = NO;
     web.hidden = YES;
     [[kAppDelegate window] addSubview:web];
-    [web pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
+    _webView = web;
     web.delegate = self;
     NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,stringHtml];
     [web loadHTMLString:formartHTML baseURL:nil];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    CGFloat webViewHeight = 0;
-//    CGRect frame = webView.frame;
-//    frame.size.height = 1;
-//    webView.frame = frame;
-//    CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
-//    frame.size = fittingSize;
-//    webView.frame = frame;
-//    webViewHeight = fittingSize.height+ 230;
-    CGRect mWebViewFrame = webView.frame;
-    mWebViewFrame.size.height = webView.scrollView.contentSize.height;
-    webView.frame = mWebViewFrame;
-    webViewHeight = webView.frame.size.height + 230;
     
-
+    CGFloat webViewHeight = 0;
+        CGRect frame = _webView.frame;
+        frame.size.height = 1;
+        _webView.frame = frame;
+        CGSize fittingSize = [_webView sizeThatFits:CGSizeZero];
+        frame.size = fittingSize;
+        _webView.frame = frame;
+        webViewHeight = fittingSize.height;
     if (self.heightForWebView) {
         self.heightForWebView(webViewHeight);
     }

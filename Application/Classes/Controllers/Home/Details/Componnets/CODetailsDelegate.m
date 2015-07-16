@@ -82,13 +82,7 @@
             return height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
         }
     }else if (indexPath.section == 3){
-        if(IS_IOS8_OR_ABOVE) {
-            return dataSource.heightWebview?dataSource.heightWebview:UITableViewAutomaticDimension;
-        } else {
-            id Cell = [dataSource tableView:tableView cellDetailsWebViewRowWithIndexPath:indexPath];
-            height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
-            return dataSource.heightWebview?dataSource.heightWebview:height;
-        }
+        return dataSource.heightWebview;
     } else {
         if (indexPath.row == 0) {
             return 44;
@@ -124,9 +118,12 @@
                 return height = 115;
             }
         }
-    }else if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 5) {
+    }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 5) {
         return height = 85;
-    }else {
+    }else if (indexPath.section == 3) {
+        DBG(@"++++ %f",dataSource.heightWebview);
+        return dataSource.heightWebview;
+    } else {
         return height = 44;
     }
 }

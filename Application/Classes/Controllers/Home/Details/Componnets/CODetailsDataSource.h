@@ -21,7 +21,6 @@
 
 @protocol CODetailsAccessoryCellDelegate;
 @protocol CODetailsProjectBottomTVCellDelegate;
-@protocol CODetailsWebViewCellDelegate;
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
@@ -29,7 +28,7 @@
 @property (strong, nonatomic) COProgressbarObj *progressBarObj;
 @property (assign, nonatomic) CGFloat heightWebview;
 
-- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate,CODetailsWebViewCellDelegate>)controller tableView:(UITableView*)tableView ;
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller tableView:(UITableView*)tableView ;
 
 - (CODetailsPhotoCell*)tableView:(UITableView *)tableView cellDetailsPhotoForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath;

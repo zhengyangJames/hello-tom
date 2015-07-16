@@ -13,7 +13,7 @@
 #import "COProgressbarObj.h"
 #import "CODetailsWebViewCell.h"
 
-@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsWebViewCellDelegate>
+@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate>
 
 @property (strong, nonatomic) COProgressbarObj *progressBarObj;
 

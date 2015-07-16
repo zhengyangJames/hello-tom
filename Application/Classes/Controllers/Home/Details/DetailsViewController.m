@@ -40,7 +40,6 @@
     [super viewDidLoad];
     [self _setupUI];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
-//    [self _addPanSwipeView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -78,8 +77,10 @@
     COOferObj *offerObj = self.arrayObj[3];
     COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
     [[WebViewManager shared] getHeightWebViewWithStringHtml:offerItemObj.linkOrDetail heightForWebView:^(CGFloat height) {
-         self.detailsDataSource.heightWebview = height;
-        [self.tableView reloadData];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.detailsDataSource.heightWebview = height;
+            [self.tableView reloadData];
+        }];
     }];
 }
 
@@ -169,15 +170,6 @@
     COOferObj *obj = [self.arrayObj objectAtIndex:indexpath.section];
     return obj;
 }
-
-- (void)coDetailsWebViewCell:(CODetailsWebViewCell *)CODetailsWebViewCell heightWebview:(CGFloat)heightWebview {
-    self.detailsDataSource.heightWebview = heightWebview;
-//    [_tableView beginUpdates];
-//    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    [_tableView endUpdates];
-    [_tableView reloadData];
-}
-
 
 @end
 
