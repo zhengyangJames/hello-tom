@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.demoapps.coassets</string>
+	<string>com.coassets</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>62</string>
 	<key>CFBundleName</key>
@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>85</string>
+	<string>86</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

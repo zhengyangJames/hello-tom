@@ -172,7 +172,6 @@
 		7F3260161B40E50800116445 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325F0B1B40E50800116445 /* TPKeyboardAvoidingScrollView.m */; };
 		7F3260171B40E50800116445 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325F0D1B40E50800116445 /* TPKeyboardAvoidingTableView.m */; };
 		7F3260181B40E50800116445 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325F0F1B40E50800116445 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
-		7F32601A1B40E50800116445 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F141B40E50800116445 /* Info.plist */; };
 		7F32601B1B40E50800116445 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325F151B40E50800116445 /* main.m */; };
 		7F32601C1B40E50800116445 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F171B40E50800116445 /* Contents.json */; };
 		7F32601D1B40E50800116445 /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F191B40E50800116445 /* Raleway-Black.ttf */; };
@@ -1953,7 +1952,7 @@
 		0EFEB4A81B2724B2001195B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Sanyi;
 				TargetAttributes = {
 					0EFEB4AF1B2724B2001195B7 = {
@@ -2052,7 +2051,6 @@
 				7F3260711B40E50800116445 /* ic_placeholder.png in Resources */,
 				7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */,
 				7F3260471B40E50800116445 /* ic_info@2x.png in Resources */,
-				7F32601A1B40E50800116445 /* Info.plist in Resources */,
 				7F32603A1B40E50800116445 /* ic_contac_2@2x.png in Resources */,
 				7F32604A1B40E50800116445 /* ic_Left@3x.png in Resources */,
 				7F3260431B40E50800116445 /* ic_home@2x.png in Resources */,
@@ -2442,8 +2440,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Linh NGUYEN (FVYB42ZFR4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Linh NGUYEN (FVYB42ZFR4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Application/Libraries",
@@ -2455,7 +2453,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "fbdc6e00-7c9c-4e59-b312-55eda13626b3";
+				PROVISIONING_PROFILE = "25a6222c-a092-4dcc-9663-da0e4513d77e";
 			};
 			name = Debug;
 		};
@@ -2463,8 +2461,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Linh NGUYEN (FVYB42ZFR4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Linh NGUYEN (FVYB42ZFR4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Application/Libraries",
@@ -2476,7 +2474,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "fbdc6e00-7c9c-4e59-b312-55eda13626b3";
+				PROVISIONING_PROFILE = "25a6222c-a092-4dcc-9663-da0e4513d77e";
 			};
 			name = Release;
 		};
