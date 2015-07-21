@@ -28,6 +28,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class AFURLConnectionOperation;
 
 /**
@@ -42,7 +44,7 @@
 /**
  Binds the refreshing state to the state of the specified task.
  
- @param task The task. If `nil`, automatic updating from any previously specified operation will be diabled.
+ @param task The task. If `nil`, automatic updating from any previously specified operation will be disabled.
  */
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
 - (void)setRefreshingWithStateOfTask:(NSURLSessionTask *)task;
@@ -60,5 +62,7 @@
 - (void)setRefreshingWithStateOfOperation:(AFURLConnectionOperation *)operation;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #endif

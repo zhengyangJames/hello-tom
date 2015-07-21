@@ -1,6 +1,5 @@
 // UIImageView+AFNetworking.m
-//
-// Copyright (c) 2013-2014 AFNetworking (http://afnetworking.com)
+// Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -101,16 +100,6 @@
 #pragma clang diagnostic pop
 }
 
-- (void)clearImageCacheForURL:(NSURL *)url {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
-    
-    UIImage *cachedImage = [[[self class] sharedImageCache] cachedImageForRequest:request];
-    if (cachedImage) {
-        [[[self class] sharedImageCache] clearCachedRequest:request];
-    }
-}
-
 - (void)setImageResponseSerializer:(id <AFURLResponseSerialization>)serializer {
     objc_setAssociatedObject(self, @selector(imageResponseSerializer), serializer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -118,7 +107,7 @@
 #pragma mark -
 
 - (void)setImageWithURL:(NSURL *)url {
-    [self setImageWithURL:url placeholderImage:[UIImage imageWithContentsOfFile:[url path]]];
+    [self setImageWithURL:url placeholderImage:nil];
 }
 
 - (void)setImageWithURL:(NSURL *)url
@@ -150,14 +139,10 @@
         if (placeholderImage) {
             self.image = placeholderImage;
         }
-        
+
         __weak __typeof(self)weakSelf = self;
         self.af_imageRequestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         self.af_imageRequestOperation.responseSerializer = self.imageResponseSerializer;
-#warning Kent - acceptableContentTypes
-        NSMutableSet *acceptableContentTypes = [NSMutableSet setWithSet:self.af_imageRequestOperation.responseSerializer.acceptableContentTypes];
-        [acceptableContentTypes addObject:@"text/html"];
-        self.af_imageRequestOperation.responseSerializer.acceptableContentTypes = acceptableContentTypes;
         [self.af_imageRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             if ([[urlRequest URL] isEqual:[strongSelf.af_imageRequestOperation.request URL]]) {
@@ -204,12 +189,6 @@ static inline NSString * AFImageCacheKeyFromURLRequest(NSURLRequest *request) {
 }
 
 @implementation AFImageCache
-
-- (void)clearCachedRequest:(NSURLRequest *)request {
-    if (request) {
-        [self removeObjectForKey:AFImageCacheKeyFromURLRequest(request)];
-    }
-}
 
 - (UIImage *)cachedImageForRequest:(NSURLRequest *)request {
     switch ([request cachePolicy]) {

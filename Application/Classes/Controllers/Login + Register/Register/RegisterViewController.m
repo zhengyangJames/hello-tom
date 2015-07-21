@@ -153,7 +153,7 @@
 - (void)_callWSLogin {
     [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:self completion:nil];
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } else {
             [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
         }

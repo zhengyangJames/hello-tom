@@ -256,7 +256,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             
         case PushLoginVC:
         {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:self completion:^{
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
+                                                                    completion:^{
                 [self _callWSGetProgressbar:[[self.arrayData[_indexPathForCell.row] valueForKey:@"offerID"] stringValue]];
             }];
             _indexPathForCell = nil;
