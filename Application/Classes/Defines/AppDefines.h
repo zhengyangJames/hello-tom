@@ -81,7 +81,6 @@
 #pragma mark - STRING
 ///////////////////////////////////////////////////////////////////
 #define kPROFILE_OBJECT   @"PROFILE_OBJECT"
-#define kEDIT_PROFILE   @"EDIT_PROFILE"
 #define kUPDATE_PROFILE   @"UpdateProfile"
 #define kACCESS_TOKEN   @"access_token"
 #define kTOKEN_TYPE     @"token_type"

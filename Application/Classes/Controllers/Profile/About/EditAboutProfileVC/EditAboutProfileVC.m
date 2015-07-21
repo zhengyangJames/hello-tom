@@ -84,6 +84,7 @@
 - (NSDictionary*)_getProfileObject {
     NSString *phone = [self.arrayCountryCode[_indexActtionCountryCode] valueForKey:@"code"];
     NSMutableDictionary *obj = [[NSMutableDictionary alloc]init];
+    
     [obj setValue:self.profileObject.username forKey:kUSER];
     [obj setValue:self.profileObject.first_name forKey:KFRIST_NAME];
     [obj setValue:self.profileObject.last_name forKey:KLAST_NAME];
@@ -95,6 +96,7 @@
     [obj setValue:countryTXT.text forKey:KCOUNTRY];
     [obj setValue:address2TXT.text forKey:KADDRESS2];
     [obj setValue:regionStateTXT.text forKey:KSATE];
+    
     return obj;
 }
 
@@ -174,13 +176,62 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _getAccessToken] body:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            DBG(@"%@",responseObject);
             [self dismissViewControllerAnimated:YES completion:nil];
+            [self _zipDataProfile:responseObject];
         }else {
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
+}
+
+- (void)_zipDataProfile:(NSDictionary*)dic {
+    NSMutableDictionary *dicPro = [NSMutableDictionary new];
+    if ([dic objectForKeyNotNull:@"username"]) {
+        dicPro[kUSER] = [dic objectForKeyNotNull:@"username"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"first_name"]) {
+       dicPro[KFRIST_NAME] = [dic objectForKeyNotNull:@"first_name"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"last_name"]) {
+        dicPro[KLAST_NAME] = [dic objectForKeyNotNull:@"last_name"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"email"]) {
+        dicPro[KEMAIL] = [dic objectForKeyNotNull:@"email"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"cellphone"]) {
+        dicPro[kNUM_CELL_PHONE] = [dic objectForKeyNotNull:@"cellphone"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"country_prefix"]) {
+        dicPro[kNUM_COUNTRY] = [dic objectForKeyNotNull:@"country_prefix"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"address_1"]) {
+       dicPro[KADDRESS] = [dic objectForKeyNotNull:@"address_1"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"address_2"]) {
+        dicPro[KADDRESS2] = [dic objectForKeyNotNull:@"address_2"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"region_state"]) {
+        dicPro[KSATE] = [dic objectForKeyNotNull:@"region_state"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"city"]) {
+         dicPro[KCITY] = [dic objectForKeyNotNull:@"city"];
+    }
+    
+    if ([dic objectForKeyNotNull:@"country"]) {
+        dicPro[KCOUNTRY] = [dic objectForKeyNotNull:@"country"];
+    }
+    [kUserDefaults setObject:dicPro forKey:kPROFILE_OBJECT];
+    [kUserDefaults synchronize];
 }
 
 #pragma mark - Action
