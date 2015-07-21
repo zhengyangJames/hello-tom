@@ -42,6 +42,8 @@
 		0EED2E6D1B5E092E006730E2 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EED2E5A1B5E092E006730E2 /* UIProgressView+AFNetworking.m */; };
 		0EED2E6E1B5E092E006730E2 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EED2E5C1B5E092E006730E2 /* UIRefreshControl+AFNetworking.m */; };
 		0EED2E6F1B5E092E006730E2 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EED2E5E1B5E092E006730E2 /* UIWebView+AFNetworking.m */; };
+		0EED2E711B5E2B94006730E2 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
+		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
 		7F1783F91B52C25C009FA530 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1783F81B52C25C009FA530 /* EGOCache.m */; };
 		7F2C77461B4E07BA00C69365 /* CODetailsProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77441B4E07BA00C69365 /* CODetailsProjectCell.m */; };
 		7F2C77471B4E07BA00C69365 /* CODetailsProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C77451B4E07BA00C69365 /* CODetailsProjectCell.xib */; };
@@ -381,6 +383,8 @@
 		0EED2E5C1B5E092E006730E2 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		0EED2E5D1B5E092E006730E2 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		0EED2E5E1B5E092E006730E2 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		0EED2E701B5E2B94006730E2 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
+		0EED2E731B5E2E08006730E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0EFEB4B01B2724B2001195B7 /* CoAssets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoAssets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F1783F71B52C25C009FA530 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		7F1783F81B52C25C009FA530 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
@@ -608,7 +612,6 @@
 		7F325F0D1B40E50800116445 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		7F325F0E1B40E50800116445 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		7F325F0F1B40E50800116445 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
-		7F325F121B40E50800116445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7F325F131B40E50800116445 /* CoAssest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoAssest-Prefix.pch"; sourceTree = "<group>"; };
 		7F325F141B40E50800116445 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F325F151B40E50800116445 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1663,7 +1666,7 @@
 		7F325F101B40E50800116445 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				7F325F111B40E50800116445 /* LaunchScreen.xib */,
+				0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */,
 				7F325F131B40E50800116445 /* CoAssest-Prefix.pch */,
 				7F325F141B40E50800116445 /* Info.plist */,
 				7F325F151B40E50800116445 /* main.m */,
@@ -1713,6 +1716,7 @@
 		7F325F2B1B40E50800116445 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0EED2E701B5E2B94006730E2 /* appicon.png */,
 				7F325F2C1B40E50800116445 /* Close_Circle_Line@2x.png */,
 				7F325F2D1B40E50800116445 /* Close_Circle_Line@3x.png */,
 				7F325F2E1B40E50800116445 /* Ic_back@2x.png */,
@@ -1935,6 +1939,7 @@
 				7FA7E6BA1B4E7C4D00059B13 /* COInterestedViewController.xib in Resources */,
 				7F3260231B40E50800116445 /* Raleway-ExtraLight.ttf in Resources */,
 				7F32600D1B40E50800116445 /* 37x-Checkmark.png in Resources */,
+				0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */,
 				7F3260751B40E50800116445 /* AboutProfile.plist in Resources */,
 				7F3260731B40E50800116445 /* JsonCountry.json in Resources */,
 				7F32602A1B40E50800116445 /* Raleway-Regular.ttf in Resources */,
@@ -1999,6 +2004,7 @@
 				7F325FA91B40E50800116445 /* EditAboutProfileVC.xib in Resources */,
 				7F3260111B40E50800116445 /* Icon-Small@2x.png in Resources */,
 				7F3260671B40E50800116445 /* Preloader_1.gif in Resources */,
+				0EED2E711B5E2B94006730E2 /* appicon.png in Resources */,
 				7F3260581B40E50800116445 /* ic_setting_2@2x.png in Resources */,
 				7F3260371B40E50800116445 /* ic_Check.png in Resources */,
 				7F3260741B40E50800116445 /* JsonPhoneCode.json in Resources */,
@@ -2253,10 +2259,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7F325F111B40E50800116445 /* LaunchScreen.xib */ = {
+		0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7F325F121B40E50800116445 /* Base */,
+				0EED2E731B5E2E08006730E2 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -2354,6 +2360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2375,6 +2382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Linh NGUYEN (FVYB42ZFR4)";
 				FRAMEWORK_SEARCH_PATHS = (
