@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
+            <connections>
+                <outlet property="_cellPhoneTextField" destination="bbl-qg-Gvn" id="3qR-Ny-UPu"/>
+                <outlet property="_comfilmPasswordTextField" destination="wgq-5i-3jo" id="n3h-3w-Va7"/>
+                <outlet property="_emailTextField" destination="mac-eL-ijI" id="xMt-sY-0pf"/>
+                <outlet property="_fristNameTextField" destination="Wvr-VK-fe3" id="lMZ-9U-Jva"/>
+                <outlet property="_lastNameTextField" destination="XNC-kM-vZF" id="Gpz-N3-WLI"/>
+                <outlet property="_passwordTextField" destination="KYv-jZ-u6d" id="T80-3P-9g6"/>
+                <outlet property="_usernameTextField" destination="DL9-jK-4kk" id="qGp-AF-9vo"/>
+                <outlet property="btnMobileNumber" destination="CGv-FJ-kgk" id="sst-LQ-ygI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="1012"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nr1-DS-oAz" customClass="TPKeyboardAvoidingScrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1012"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKe-PH-tsY" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1012"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJl-7v-T39" userLabel="Top View" customClass="COLineBottomView">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-RR-pqw">
+                                            <rect key="frame" x="20" y="75" width="240" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="fZl-VR-2ep"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="25"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="UX8-RR-pqw" firstAttribute="leading" secondItem="JJl-7v-T39" secondAttribute="leading" constant="20" id="AaR-jt-D3f"/>
+                                        <constraint firstAttribute="bottom" secondItem="UX8-RR-pqw" secondAttribute="bottom" constant="8" id="e9Y-SP-XCx"/>
+                                        <constraint firstItem="UX8-RR-pqw" firstAttribute="top" secondItem="JJl-7v-T39" secondAttribute="top" constant="75" id="yma-YC-zCn"/>
+                                        <constraint firstAttribute="trailing" secondItem="UX8-RR-pqw" secondAttribute="trailing" constant="60" id="zjC-jD-6ox"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                            <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="edgeInsetLeft">
+                                            <integer key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="edgeInsetRight">
+                                            <integer key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25Y-s2-shC" userLabel="Center View">
+                                    <rect key="frame" x="0.0" y="110" width="320" height="691"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHk-IG-gNP">
+                                            <rect key="frame" x="20" y="18" width="210" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="y9O-vX-inI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last name/Surname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ip9-m8-PzA">
+                                            <rect key="frame" x="20" y="110" width="210" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="TzS-NV-GIg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Last name/Surname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XNC-kM-vZF" userLabel="Last name/SurnameText Field" customClass="COBorderTextField">
+                                            <rect key="frame" x="20" y="139" width="280" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="03j-Zx-h1G"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwI-IW-TyI">
+                                            <rect key="frame" x="20" y="198" width="210" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="J9h-05-JXp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mac-eL-ijI" userLabel="Email Text Field" customClass="COBorderTextField">
+                                            <rect key="frame" x="20" y="227" width="280" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Ke6-3m-YyE"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="FSJ-aQ-Mxa"/>
+                                            </connections>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKo-01-gzT">
+                                            <rect key="frame" x="20" y="300" width="210" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="DaC-Sj-6HF"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Mobile Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbl-qg-Gvn" userLabel="Email Text Field" customClass="COBorderTextField">
+                                            <rect key="frame" x="121" y="329" width="179" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="b0Y-YO-Zfc"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="phonePad" enablesReturnKeyAutomatically="YES"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJw-rq-dIL">
+                                            <rect key="frame" x="20" y="391" width="210" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="1aI-CX-V8I"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DL9-jK-4kk" userLabel="Username Text Field" customClass="COBorderTextField">
+                                            <rect key="frame" x="20" y="420" width="280" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="fSh-Ph-cQr"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(alphanumeric and @.+-_ only - no space)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-0T-0ck">
+                                            <rect key="frame" x="20" y="462" width="280" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="SUW-Fj-jBm"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgf-ya-dz5">
+                                            <rect key="frame" x="20" y="500" width="210" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="IYE-tH-InX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KYv-jZ-u6d" userLabel="Password Text Field" customClass="COBorderTextField">
+                                            <rect key="frame" x="20" y="529" width="280" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="uqR-Jr-7Hg"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" spellCheckingType="yes" secureTextEntry="YES"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(alphanumeric and @.+-_ only - no space)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMg-kv-BBO">
+                                            <rect key="frame" x="20" y="571" width="280" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="dXb-Zr-UF9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n71-t2-0gz">
+                                            <rect key="frame" x="20" y="607" width="210" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="PqC-Yh-8AI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgq-5i-3jo" userLabel="Email Text Field" customClass="COBorderTextField">
+                                            <rect key="frame" x="20" y="636" width="280" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="IaG-WW-KZy"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" spellCheckingType="yes" secureTextEntry="YES"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGv-FJ-kgk" customClass="CoDropListButtom">
+                                            <rect key="frame" x="20" y="329" width="90" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="ZFM-ZA-L3C"/>
+                                                <constraint firstAttribute="height" constant="40" id="cFW-UY-M2G"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="7840">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="imageName" value="ic_droplist.png"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="__actionPhoneCode:" destination="-1" eventType="touchUpInside" id="dDR-Sb-nST"/>
+                                            </connections>
+                                        </button>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wvr-VK-fe3" userLabel="First name Text Field" customClass="COBorderTextField">
+                                            <rect key="frame" x="20" y="47" width="280" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="qhd-7B-hrp"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="emailAddress"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="DL9-jK-4kk" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="0Ct-dJ-of4"/>
+                                        <constraint firstItem="lHk-IG-gNP" firstAttribute="top" secondItem="25Y-s2-shC" secondAttribute="top" constant="18" id="1To-wb-Cdi"/>
+                                        <constraint firstItem="n71-t2-0gz" firstAttribute="top" secondItem="CMg-kv-BBO" secondAttribute="bottom" constant="16" id="1ra-f4-43F"/>
+                                        <constraint firstItem="9gD-0T-0ck" firstAttribute="trailing" secondItem="DL9-jK-4kk" secondAttribute="trailing" id="4Bz-I0-bnK"/>
+                                        <constraint firstAttribute="trailing" secondItem="XNC-kM-vZF" secondAttribute="trailing" constant="20" id="6Lv-0F-6rI"/>
+                                        <constraint firstItem="CGv-FJ-kgk" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="8no-9B-fA1"/>
+                                        <constraint firstItem="DL9-jK-4kk" firstAttribute="top" secondItem="xJw-rq-dIL" secondAttribute="bottom" constant="8" id="CSL-nC-q82"/>
+                                        <constraint firstItem="bbl-qg-Gvn" firstAttribute="leading" secondItem="CGv-FJ-kgk" secondAttribute="trailing" constant="11" id="DHP-qQ-cB0"/>
+                                        <constraint firstAttribute="trailing" secondItem="xJw-rq-dIL" secondAttribute="trailing" constant="90" id="E1V-6F-1dN"/>
+                                        <constraint firstItem="Wvr-VK-fe3" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="E72-T9-Apc"/>
+                                        <constraint firstItem="Wvr-VK-fe3" firstAttribute="top" secondItem="lHk-IG-gNP" secondAttribute="bottom" constant="8" id="Fur-6B-pWr"/>
+                                        <constraint firstItem="ip9-m8-PzA" firstAttribute="top" secondItem="Wvr-VK-fe3" secondAttribute="bottom" constant="23" id="G08-0g-Amn"/>
+                                        <constraint firstItem="lHk-IG-gNP" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="Ipl-4e-gvC"/>
+                                        <constraint firstItem="CGv-FJ-kgk" firstAttribute="centerY" secondItem="bbl-qg-Gvn" secondAttribute="centerY" id="L00-MB-Fe3"/>
+                                        <constraint firstItem="wgq-5i-3jo" firstAttribute="top" secondItem="n71-t2-0gz" secondAttribute="bottom" constant="8" id="O8N-yc-zKX"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wgf-ya-dz5" secondAttribute="trailing" constant="90" id="OYf-Qc-Ay9"/>
+                                        <constraint firstAttribute="trailing" secondItem="KYv-jZ-u6d" secondAttribute="trailing" constant="20" id="QCJ-oM-PHX"/>
+                                        <constraint firstItem="ip9-m8-PzA" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="QCL-5C-Mqw"/>
+                                        <constraint firstItem="xJw-rq-dIL" firstAttribute="top" secondItem="CGv-FJ-kgk" secondAttribute="bottom" constant="22" id="QKa-jX-H7P"/>
+                                        <constraint firstAttribute="trailing" secondItem="lHk-IG-gNP" secondAttribute="trailing" constant="90" id="Qej-ek-jA0"/>
+                                        <constraint firstItem="mac-eL-ijI" firstAttribute="top" secondItem="hwI-IW-TyI" secondAttribute="bottom" constant="8" id="R0f-hK-aVr"/>
+                                        <constraint firstAttribute="trailing" secondItem="wgq-5i-3jo" secondAttribute="trailing" constant="20" id="S7d-IQ-ubA"/>
+                                        <constraint firstItem="CMg-kv-BBO" firstAttribute="trailing" secondItem="KYv-jZ-u6d" secondAttribute="trailing" id="SMB-DD-q7A"/>
+                                        <constraint firstAttribute="trailing" secondItem="hwI-IW-TyI" secondAttribute="trailing" constant="90" id="UcV-GQ-Ngf"/>
+                                        <constraint firstItem="9gD-0T-0ck" firstAttribute="top" secondItem="DL9-jK-4kk" secondAttribute="bottom" constant="2" id="Usf-hT-lzT"/>
+                                        <constraint firstAttribute="trailing" secondItem="n71-t2-0gz" secondAttribute="trailing" constant="90" id="VRl-WG-VEj"/>
+                                        <constraint firstAttribute="trailing" secondItem="CKo-01-gzT" secondAttribute="trailing" constant="90" id="WSX-xR-WGc"/>
+                                        <constraint firstItem="xJw-rq-dIL" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="WSx-BL-h9Y"/>
+                                        <constraint firstItem="n71-t2-0gz" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="WVE-EE-wC8"/>
+                                        <constraint firstItem="CMg-kv-BBO" firstAttribute="top" secondItem="KYv-jZ-u6d" secondAttribute="bottom" constant="2" id="WgG-Gt-QxB"/>
+                                        <constraint firstItem="hwI-IW-TyI" firstAttribute="top" secondItem="XNC-kM-vZF" secondAttribute="bottom" constant="19" id="XoF-qr-GOS"/>
+                                        <constraint firstItem="Wgf-ya-dz5" firstAttribute="top" secondItem="9gD-0T-0ck" secondAttribute="bottom" constant="18" id="Yw6-3F-hLs"/>
+                                        <constraint firstItem="XNC-kM-vZF" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="bnQ-ua-2Be"/>
+                                        <constraint firstItem="Wgf-ya-dz5" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="c9G-NV-D8J"/>
+                                        <constraint firstItem="CGv-FJ-kgk" firstAttribute="top" secondItem="CKo-01-gzT" secondAttribute="bottom" constant="8" id="cBe-Mg-zhS"/>
+                                        <constraint firstItem="KYv-jZ-u6d" firstAttribute="top" secondItem="Wgf-ya-dz5" secondAttribute="bottom" constant="8" id="e9x-aD-UYr"/>
+                                        <constraint firstAttribute="trailing" secondItem="mac-eL-ijI" secondAttribute="trailing" constant="20" id="f8H-yc-nV4"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wvr-VK-fe3" secondAttribute="trailing" constant="20" id="iBC-hL-5XV"/>
+                                        <constraint firstItem="KYv-jZ-u6d" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="ik9-XF-yT4"/>
+                                        <constraint firstItem="wgq-5i-3jo" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="j0W-OK-zMC"/>
+                                        <constraint firstItem="mac-eL-ijI" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="lAh-AV-SbT"/>
+                                        <constraint firstAttribute="trailing" secondItem="ip9-m8-PzA" secondAttribute="trailing" constant="90" id="mKB-wO-RR7"/>
+                                        <constraint firstItem="CKo-01-gzT" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="o0N-yi-d43"/>
+                                        <constraint firstItem="XNC-kM-vZF" firstAttribute="top" secondItem="ip9-m8-PzA" secondAttribute="bottom" constant="8" id="rUs-zQ-o1U"/>
+                                        <constraint firstAttribute="bottom" secondItem="wgq-5i-3jo" secondAttribute="bottom" constant="15" id="s3Y-VH-Tls"/>
+                                        <constraint firstItem="CKo-01-gzT" firstAttribute="top" secondItem="mac-eL-ijI" secondAttribute="bottom" constant="33" id="sdO-zc-KIA"/>
+                                        <constraint firstItem="9gD-0T-0ck" firstAttribute="leading" secondItem="DL9-jK-4kk" secondAttribute="leading" id="v1H-KS-Dgi"/>
+                                        <constraint firstAttribute="trailing" secondItem="DL9-jK-4kk" secondAttribute="trailing" constant="20" id="wMa-OJ-gsQ"/>
+                                        <constraint firstItem="CMg-kv-BBO" firstAttribute="leading" secondItem="KYv-jZ-u6d" secondAttribute="leading" id="wb9-gh-vzY"/>
+                                        <constraint firstAttribute="trailing" secondItem="bbl-qg-Gvn" secondAttribute="trailing" constant="20" id="zTY-Tu-5ph"/>
+                                        <constraint firstItem="hwI-IW-TyI" firstAttribute="leading" secondItem="25Y-s2-shC" secondAttribute="leading" constant="20" id="zjf-dM-Mbf"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivj-KM-cMm" userLabel="Bottom View">
+                                    <rect key="frame" x="0.0" y="801" width="320" height="211"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8X5-81-PDX" customClass="COPositive_NagitiveButton">
+                                            <rect key="frame" x="20" y="15" width="280" height="50"/>
+                                            <color key="backgroundColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="eqK-gA-sdR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <state key="normal" title="Register">
+                                                <color key="titleColor" red="0.97254901959999995" green="0.95686274510000002" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="__actionRegister:" destination="-1" eventType="touchUpInside" id="QTu-4l-Kvq"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3P-sf-6QP" customClass="COPositive_NagitiveButton">
+                                            <rect key="frame" x="20" y="78" width="280" height="50"/>
+                                            <color key="backgroundColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="pFZ-cu-fUS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" red="0.97254901959999995" green="0.95686274510000002" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="nagitiveButton" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="__actionCancel:" destination="-1" eventType="touchUpInside" id="TeJ-Mv-g8c"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-0R-DOZ">
+                                            <rect key="frame" x="20" y="144" width="281" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="46" id="nBZ-Kj-tw8"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="By clicking on register, you have read and agreed to our ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="terms of use.">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.83137254901960789" green="0.10980392156862745" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nG-9R-Dpu" userLabel="UnderLineButton">
+                                            <rect key="frame" x="19" y="144" width="281" height="46"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="__actionOpenSafari:" destination="-1" eventType="touchUpInside" id="rR5-JC-2E5"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="8X5-81-PDX" firstAttribute="top" secondItem="ivj-KM-cMm" secondAttribute="top" constant="15" id="6Ra-EU-Ip8"/>
+                                        <constraint firstItem="2nG-9R-Dpu" firstAttribute="centerY" secondItem="3xw-0R-DOZ" secondAttribute="centerY" id="C4W-SN-dRv"/>
+                                        <constraint firstItem="3xw-0R-DOZ" firstAttribute="leading" secondItem="ivj-KM-cMm" secondAttribute="leading" constant="20" id="FNj-SE-Sox"/>
+                                        <constraint firstAttribute="trailing" secondItem="8X5-81-PDX" secondAttribute="trailing" constant="20" id="H8m-OK-am1"/>
+                                        <constraint firstItem="m3P-sf-6QP" firstAttribute="leading" secondItem="ivj-KM-cMm" secondAttribute="leading" constant="20" id="Hgc-ot-BBh"/>
+                                        <constraint firstItem="2nG-9R-Dpu" firstAttribute="centerX" secondItem="3xw-0R-DOZ" secondAttribute="centerX" constant="-0.5" id="LYd-mu-YvQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="3xw-0R-DOZ" secondAttribute="trailing" constant="19" id="LuQ-j9-o0J"/>
+                                        <constraint firstItem="3xw-0R-DOZ" firstAttribute="top" secondItem="m3P-sf-6QP" secondAttribute="bottom" constant="16" id="UTl-X7-zdF"/>
+                                        <constraint firstItem="8X5-81-PDX" firstAttribute="leading" secondItem="ivj-KM-cMm" secondAttribute="leading" constant="20" id="VbZ-E1-H1H"/>
+                                        <constraint firstItem="2nG-9R-Dpu" firstAttribute="width" secondItem="3xw-0R-DOZ" secondAttribute="width" id="XBe-nI-97N"/>
+                                        <constraint firstAttribute="bottom" secondItem="3xw-0R-DOZ" secondAttribute="bottom" constant="21" id="b2U-lP-ew5"/>
+                                        <constraint firstItem="m3P-sf-6QP" firstAttribute="top" secondItem="8X5-81-PDX" secondAttribute="bottom" constant="13" id="fUC-WK-Epw"/>
+                                        <constraint firstAttribute="trailing" secondItem="m3P-sf-6QP" secondAttribute="trailing" constant="20" id="rJN-MD-pxa"/>
+                                        <constraint firstItem="2nG-9R-Dpu" firstAttribute="height" secondItem="3xw-0R-DOZ" secondAttribute="height" id="yjV-EV-x0I"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="25Y-s2-shC" secondAttribute="trailing" id="02D-c7-xxz"/>
+                                <constraint firstItem="25Y-s2-shC" firstAttribute="leading" secondItem="XKe-PH-tsY" secondAttribute="leading" id="02p-n1-2XB"/>
+                                <constraint firstAttribute="bottom" secondItem="ivj-KM-cMm" secondAttribute="bottom" id="G5h-EM-ARc"/>
+                                <constraint firstItem="JJl-7v-T39" firstAttribute="top" secondItem="XKe-PH-tsY" secondAttribute="top" id="KSY-qb-JXf"/>
+                                <constraint firstItem="ivj-KM-cMm" firstAttribute="top" secondItem="25Y-s2-shC" secondAttribute="bottom" id="Kso-R6-ySl"/>
+                                <constraint firstAttribute="trailing" secondItem="ivj-KM-cMm" secondAttribute="trailing" id="R0j-fq-Kub"/>
+                                <constraint firstItem="JJl-7v-T39" firstAttribute="leading" secondItem="XKe-PH-tsY" secondAttribute="leading" id="SmY-dI-UMo"/>
+                                <constraint firstAttribute="trailing" secondItem="JJl-7v-T39" secondAttribute="trailing" id="YYo-b4-HuI"/>
+                                <constraint firstItem="25Y-s2-shC" firstAttribute="top" secondItem="JJl-7v-T39" secondAttribute="bottom" id="dfW-Rh-Fmw"/>
+                                <constraint firstItem="ivj-KM-cMm" firstAttribute="leading" secondItem="XKe-PH-tsY" secondAttribute="leading" id="pC8-uN-hEB"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="XKe-PH-tsY" secondAttribute="width" id="AuG-sk-V7u"/>
+                        <constraint firstItem="XKe-PH-tsY" firstAttribute="leading" secondItem="nr1-DS-oAz" secondAttribute="leading" id="II8-bl-few"/>
+                        <constraint firstItem="XKe-PH-tsY" firstAttribute="top" secondItem="nr1-DS-oAz" secondAttribute="top" id="ihB-RH-Ohj"/>
+                        <constraint firstAttribute="trailing" secondItem="XKe-PH-tsY" secondAttribute="trailing" id="pme-ac-ohW"/>
+                        <constraint firstAttribute="bottom" secondItem="XKe-PH-tsY" secondAttribute="bottom" id="yJu-lJ-KSe"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nr1-DS-oAz" secondAttribute="trailing" id="AZS-9U-Ozf"/>
+                <constraint firstItem="nr1-DS-oAz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BCn-Jk-67H"/>
+                <constraint firstItem="nr1-DS-oAz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aGB-Th-1C9"/>
+                <constraint firstAttribute="bottom" secondItem="nr1-DS-oAz" secondAttribute="bottom" id="euL-uH-HeC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-363" y="431"/>
+        </view>
+    </objects>
+</document>

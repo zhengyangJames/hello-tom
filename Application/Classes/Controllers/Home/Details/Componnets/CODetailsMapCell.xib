@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="215" id="KGk-i7-Jjw" customClass="CODetailsMapCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og0-V5-apw">
+                        <rect key="frame" x="8" y="8" width="304" height="198.5"/>
+                    </mapView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="og0-V5-apw" secondAttribute="trailing" id="QaE-Va-K7H"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="og0-V5-apw" secondAttribute="bottom" id="Xg0-aB-fSr"/>
+                    <constraint firstItem="og0-V5-apw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="gwI-e8-1ya"/>
+                    <constraint firstItem="og0-V5-apw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="roy-hH-5A2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="mapViewCell" destination="og0-V5-apw" id="MYL-li-wyE"/>
+            </connections>
+            <point key="canvasLocation" x="277" y="237.5"/>
+        </tableViewCell>
+    </objects>
+</document>
