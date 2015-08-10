@@ -60,11 +60,22 @@
         _progressBarBottomLable.text = progressBottomLbl;
     }
     if([obj.goal doubleValue] != 0) {
-        NSRange range = NSMakeRange(0, 4);
+        NSRange range;
+        NSInteger total;
         NSString *stringValue = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:value] stringValue]];
-        NSString *sub = [stringValue substringWithRange:range];
-        NSInteger total = (valueTitle * 100)/[sub doubleValue];
-        _totalProgressbarLable.text = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:total] stringValue]];
+        if(stringValue.length  > 4) {
+            range = NSMakeRange(0, 4);
+            NSString *sub = [stringValue substringWithRange:range];
+            total = (valueTitle * 100)/[sub doubleValue];
+        } else if(stringValue.length == 3) {
+            range = NSMakeRange(0, 3);
+            NSString *sub = [stringValue substringWithRange:range];
+            total = (valueTitle * 100)/[sub doubleValue];
+        } else {
+            total = (valueTitle * 100)/[stringValue doubleValue];
+        }
+
+        _totalProgressbarLable.text = [NSString stringWithFormat:@"of $%@",[[NSNumber numberWithDouble:total] stringValue]];
     }
 }
 

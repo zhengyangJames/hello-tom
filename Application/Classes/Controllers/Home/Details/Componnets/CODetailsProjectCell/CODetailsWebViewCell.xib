@@ -28,18 +28,18 @@
                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="19"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <webView clipsSubviews="YES" contentMode="scaleAspectFill" misplaced="YES" paginationMode="topToBottom" translatesAutoresizingMaskIntoConstraints="NO" id="0f5-0N-kZZ">
-                        <rect key="frame" x="8" y="29" width="304" height="49"/>
+                    <webView clipsSubviews="YES" contentMode="scaleAspectFill" scalesPageToFit="YES" paginationMode="topToBottom" translatesAutoresizingMaskIntoConstraints="NO" id="0f5-0N-kZZ">
+                        <rect key="frame" x="8" y="28" width="304" height="52"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </webView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="00U-yr-ILX"/>
-                    <constraint firstItem="0f5-0N-kZZ" firstAttribute="top" secondItem="J4Y-fc-BXA" secondAttribute="bottom" id="QcP-4b-vR5"/>
-                    <constraint firstItem="0f5-0N-kZZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Vb1-9W-01L"/>
+                    <constraint firstItem="0f5-0N-kZZ" firstAttribute="top" secondItem="J4Y-fc-BXA" secondAttribute="bottom" id="0X5-Kq-jgf"/>
+                    <constraint firstItem="0f5-0N-kZZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="8kN-mc-K7x"/>
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XoV-88-Xcl"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="0f5-0N-kZZ" secondAttribute="bottom" id="cTY-RD-n6O"/>
-                    <constraint firstItem="0f5-0N-kZZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="qPf-sk-W3I"/>
+                    <constraint firstAttribute="bottom" secondItem="0f5-0N-kZZ" secondAttribute="bottom" constant="4" id="iwI-o8-Siu"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0f5-0N-kZZ" secondAttribute="trailing" id="rPz-po-How"/>
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="yAs-xw-NFN"/>
                 </constraints>
             </tableViewCellContentView>
