@@ -69,8 +69,8 @@
         _projectHorizonLable.text = @"N/A";
     }
     
-    if (detailsProfile.time_horizon) {
-        NSString *YIELD = [NSString stringWithFormat:@"%@.0 %% (%@.0%%)",_detailsProfile.time_horizon,_detailsProfile.time_horizon];
+    if (detailsProfile.min_annual_return) {
+        NSString *YIELD = [NSString stringWithFormat:@"%@ %% (%@%%)",_detailsProfile.min_annual_return,_detailsProfile.min_annual_return];
         _minYieldLable.text = YIELD;
     } else {
         _minYieldLable.text = @"N/A";

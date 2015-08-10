@@ -72,7 +72,7 @@
 "UPDATE_PROFILE"                        = "Update profile";
 "UPDATE_PASSWORD"                       = "Update password";
 "MESSAGE_LOGOUT"                        = "Are you sure you want to logout?";
-
+"INVAlID_USERNAME_OR_PASSWORD"          = "Invalid username or password.";
 "LOG_IN"                                = "Log In";
 "LOG_OUT"                               = "Log Out";
 

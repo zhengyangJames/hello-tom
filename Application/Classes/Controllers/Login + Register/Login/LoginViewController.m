@@ -87,7 +87,7 @@
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];
             }
         } else {
-            [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)message:NSLocalizedString(@"INVALID_GRANT", nil) cancelButton:NSLocalizedString(@"OK_TITLE", nil) delegate:nil tag:100 arrayTitleButton:nil];
+            [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)message:NSLocalizedString(@"INVAlID_USERNAME_OR_PASSWORD", nil) cancelButton:NSLocalizedString(@"OK_TITLE", nil) delegate:nil tag:100 arrayTitleButton:nil];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

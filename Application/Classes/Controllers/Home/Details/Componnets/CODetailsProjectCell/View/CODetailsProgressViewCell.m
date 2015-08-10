@@ -59,9 +59,13 @@
         NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",[[NSNumber numberWithDouble:value] stringValue]];
         _progressBarBottomLable.text = progressBottomLbl;
     }
-    
-    NSInteger total = (valueTitle * 100)/value;
-    _totalProgressbarLable.text = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:total] stringValue]];
+    if([obj.goal doubleValue] != 0) {
+        NSRange range = NSMakeRange(0, 4);
+        NSString *stringValue = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:value] stringValue]];
+        NSString *sub = [stringValue substringWithRange:range];
+        NSInteger total = (valueTitle * 100)/[sub doubleValue];
+        _totalProgressbarLable.text = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:total] stringValue]];
+    }
 }
 
 

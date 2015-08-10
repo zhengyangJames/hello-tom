@@ -6,7 +6,6 @@ pod "AFNetworking";
 pod "SDWebImage";
 pod "Crashlytics";
 pod "Fabric";
-pod "MagicalRecord";
 pod "MBProgressHUD";
 pod "TPKeyboardAvoiding";
 
