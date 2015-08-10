@@ -56,9 +56,9 @@
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
     [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
+    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
                               message:m_string(message)
-                         cancelButton:m_string(@"OK")
+                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
                              delegate:self
                                   tag:0
                      arrayTitleButton:nil];
@@ -67,34 +67,34 @@
 - (BOOL)_isValidtion {
     if ([_fristNameTextField.text isEmpty]) {
         _currentField = _fristNameTextField;
-        [self _setupShowAleartViewWithTitle:@"Frist Name is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"FIRSTNAME_REQUIRED", nil)];
         return NO;
     } else if ([_lastNameTextField.text isEmpty]) {
         _currentField = _lastNameTextField;
-        [self _setupShowAleartViewWithTitle:@"Last Name is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"LASTNAME_REQUIRED", nil)];
         return NO;
     } else if ([_emailTextField.text isEmpty]) {
         _currentField = _emailTextField;
-        [self _setupShowAleartViewWithTitle:@"Email  is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_REQUIRED", nil)];
         return NO;
     } else if (![_emailTextField.text isValidEmail]) {
-        [self _setupShowAleartViewWithTitle:@"Email is invalid."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_INVALID", nil)];
         _currentField = _emailTextField;
         return NO;
     } else if ([_usernameTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"User Name is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"USERNAME_REQUIRED", nil)];
         _currentField = _usernameTextField;
         return NO;
     } else if ([_passwordTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Password is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_REQUIRED", nil)];
         _currentField = _passwordTextField;
         return NO;
     } else if ([_comfilmPasswordTextField.text isEmpty] ) {
-        [self _setupShowAleartViewWithTitle:@"Password is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_REQUIRED", nil)];
         _currentField = _comfilmPasswordTextField;
         return NO;
     } else if (![_comfilmPasswordTextField.text isEqualToString:_passwordTextField.text]) {
-        [self _setupShowAleartViewWithTitle:@"Confirm password does not match"];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"CONFIRM_PASSWORD_MESSAGE", nil)];
         _currentField = _comfilmPasswordTextField;
         return NO;
     }
@@ -155,7 +155,7 @@
         if (object && sucess) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } else {
-            [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
+            [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil) message:NSLocalizedString(@"INVALID_GRANT", nil) cancelButton:NSLocalizedString(@"OK_TITLE", nil)  delegate:nil tag:100 arrayTitleButton:nil];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
@@ -169,7 +169,7 @@
 - (IBAction)__actionMR:(id)sender {
     NSArray *arr = @[@"Mr",@"Ms",@"Mdm",@"Dr"];
     [self.view endEditing:YES];
-    [CODropListView presentWithTitle:@"Salutation" data:arr selectedIndex:_indexActtionSalutation didSelect:^(NSInteger index) {
+    [CODropListView presentWithTitle:NSLocalizedString(@"SALUTATION_TITLE", nil) data:arr selectedIndex:_indexActtionSalutation didSelect:^(NSInteger index) {
         [btnSalutation setTitle:arr[index] forState:UIControlStateNormal];
         _indexActtionSalutation = index;
     }];
@@ -177,7 +177,7 @@
 
 - (IBAction)__actionPhoneCode:(id)sender {
     [self.view endEditing:YES];
-    [CODropListView presentWithTitle:@"Phone Codes" data:self.arrayListPhoneCode selectedIndex:_indexActtionPhoneCode didSelect:^(NSInteger index) {
+    [CODropListView presentWithTitle:NSLocalizedString(@"PHONE_CODE_TITLE", nil) data:self.arrayListPhoneCode selectedIndex:_indexActtionPhoneCode didSelect:^(NSInteger index) {
         [btnMobileNumber setTitle:[self.arrayListPhoneCode[index] objectForKey:@"code"] forState:UIControlStateNormal];
         _indexActtionPhoneCode = index;
     }];
@@ -185,8 +185,8 @@
 
 - (IBAction)__actionOpenSafari:(id)sender {
     WebViewSetting *vc = [[WebViewSetting alloc]init];
-    vc.titler = m_string(@"Terms Of Use");
-    vc.webLink = @"http://coassets.com/terms-of-use/";
+    vc.titler = NSLocalizedString(@"TERM_OF_USE", nil);
+    vc.webLink = WEB_SAFARI_LINK;
     vc.isPresion = YES;
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:nav animated:YES completion:nil];

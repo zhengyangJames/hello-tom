@@ -55,9 +55,9 @@
 }
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
+    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
                               message:m_string(message)
-                         cancelButton:m_string(@"OK")
+                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
                              delegate:self
                                   tag:0
                      arrayTitleButton:nil];
@@ -66,10 +66,10 @@
 
 - (BOOL)_isValid {
     if ([_userName.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Username is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"USERNAME_REQUIRED", nil)];
          return NO;
     }else if ([_passWord.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Password is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_REQUIRED", nil)];
         return NO;
     }
     return YES;
@@ -87,7 +87,7 @@
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];
             }
         } else {
-            [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
+            [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)message:NSLocalizedString(@"INVALID_GRANT", nil) cancelButton:NSLocalizedString(@"OK_TITLE", nil) delegate:nil tag:100 arrayTitleButton:nil];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

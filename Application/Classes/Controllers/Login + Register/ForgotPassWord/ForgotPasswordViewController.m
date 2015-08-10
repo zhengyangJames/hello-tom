@@ -36,9 +36,9 @@
 
 #pragma mark - Private
 - (void)_setupShowAleartViewWithTitle:(NSString*)message tag:(NSInteger)tag {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
+    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
                               message:m_string(message)
-                         cancelButton:m_string(@"OK")
+                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
                              delegate:self
                                   tag:tag
                      arrayTitleButton:nil];
@@ -46,10 +46,10 @@
 
 - (BOOL)_isValidation {
     if ([emailTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Email is required." tag:0];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_REQUIRED", nil) tag:0];
         return NO;
     }else if (![emailTextField.text isValidEmail]) {
-        [self _setupShowAleartViewWithTitle:@"Email is invalid." tag:0];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_INVALID", nil) tag:0];
         return NO;
     }
     return YES;
@@ -76,9 +76,9 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsForgotPassword:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            [self _setupShowAleartViewWithTitle:m_string(MESSEAGE_RESET_PASSWORD) tag:10];
+            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"MESSEAGE_RESET_PASSWORD", nil) tag:10];
         } else {
-            [self _setupShowAleartViewWithTitle:m_string(@"Your email is invalid.") tag:20];
+            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"YOUR_EMAIL_INVALID", nil) tag:20];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

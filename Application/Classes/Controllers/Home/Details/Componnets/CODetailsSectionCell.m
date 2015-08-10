@@ -37,17 +37,17 @@
 - (NSString *)_getTitleWithString:(NSString *)string {
     NSString *title = @"";
     if ([string isEqualToString:@"declaration_form_list"]) {
-        title = @"DECLARATION FORM";
+        title = NSLocalizedString(@"SECTION_DECLARATION_FORM", nil);
     } else if ([string isEqualToString:@"legal_appointment"]) {
-        title = @"LEGAL APPOINTMENT";
+        title = NSLocalizedString(@"SECTION_LEGAL_APPOINTMENT", nil);
     } if ([string isEqualToString:@"licenses"]) {
-        title = @"PROOF OF LICENSES";
+        title = NSLocalizedString(@"SECTION_PROOF_OF_LICENSES", nil);
     } else if ([string isEqualToString:@"others"]) {
-        title = @"OTHER DOCUMENTS";
+        title = NSLocalizedString(@"SECTION_OTHER_DOCUMENTS", nil);
     }if ([string isEqualToString:@"ownership"]) {
-        title = @"PROOF OF OWNERSHIP";
+        title = NSLocalizedString(@"SECTION_PROOF_OF_OWNERSHIP", nil);
     } else if ([string isEqualToString:@"registration_form_list"]) {
-        title = @"COMPANY REGISTRATION";
+        title = NSLocalizedString(@"SECTION_COMPANY_REGISTRATION", nil);
     }
     return title;
 }

@@ -30,16 +30,16 @@
         }
     } else if ([self.comfilmPassowrdTXT.text isEmpty]&&[self.newpassowrdTXT.text isEmpty]) {
         _boxTextField = self.newpassowrdTXT;
-        [self _setupShowAleartViewWithTitle:m_string(@"Passwords is required")];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_REQUIRED", nil)];
     } else if ([self.newpassowrdTXT.text isEmpty]) {
         _boxTextField = self.newpassowrdTXT;
-        [self _setupShowAleartViewWithTitle:m_string(@"New password is required")];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"NEW_PASSWORD_REQUIRED", nil)];
     } else if ([self.comfilmPassowrdTXT.text isEmpty]) {
         _boxTextField = self.comfilmPassowrdTXT;
-        [self _setupShowAleartViewWithTitle:m_string(@"Confirm password is required")];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"CONFIRM_PASSWORD_REQUIRED", nil)];
     } else if (![self.newpassowrdTXT.text isEqualToString: self.comfilmPassowrdTXT.text]) {
         _boxTextField = self.comfilmPassowrdTXT;
-        [self _setupShowAleartViewWithTitle:m_string(@"Confirm Passwords don't match")];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"CONFIRM_PASSWORD_MESSAGE", nil)];
     }
 }
 
@@ -62,9 +62,9 @@
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
     [self endEditing:YES];
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
+    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
                               message:m_string(message)
-                         cancelButton:m_string(@"OK")
+                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
                              delegate:self
                                   tag:0
                      arrayTitleButton:nil];

@@ -33,13 +33,13 @@
 
 #pragma mark SetUp UI
 - (void)_setupUI {
-    self.title = m_string(@"Questions");
+    self.title = NSLocalizedString(@"QUESTION_TITLE", nil);
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
 }
 
 - (void)_setupRightNavigationButton {
-    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
+    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone)];
@@ -56,9 +56,9 @@
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
     [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
+    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
                               message:m_string(message)
-                         cancelButton:m_string(@"OK")
+                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
                              delegate:self
                                   tag:0
                      arrayTitleButton:nil];
@@ -73,7 +73,7 @@
         if (!error && responseObject) {
             DBG(@"--%@--",responseObject);
             [kNotificationCenter postNotificationName:kNOTIFICATION_QUESTION object:nil];
-            [self _setupShowAleartViewWithTitle:m_string(@"Request sent")];
+            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"REQUEST_SEND", nil)];
         } else {
             [UIHelper showError:error];
         }

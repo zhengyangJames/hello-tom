@@ -43,14 +43,14 @@
 
 #pragma mark SetUp UI 
 - (void)_setupUI {
-    self.title = m_string(@"Interested");
+    self.title = NSLocalizedString(@"INTERESTED_TITLE", nil);
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
     _checkBoxButton.delegate = self;
 }
 
 - (void)_setupRightNavigationButton {
-    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
+    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone)];
@@ -114,18 +114,18 @@
 - (BOOL)_checkEmailAmount {
     if([_emailTextField.text isEmpty]) {
         _textField = _emailTextField;
-        [self _setupShowAleartViewWithTitle:@"Email is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_REQUIRED", nil)];
         return NO;
     } else if (![_emailTextField.text isValidEmail]) {
         _textField = _emailTextField;
-        [self _setupShowAleartViewWithTitle:@"Email is invalid."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_INVALID", nil)];
         return NO;
     } else if ([_amountTextField.text isEmpty]) {
         _textField = _amountTextField;
-        [self _setupShowAleartViewWithTitle:@"Amount is required."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"AMOUNT_REQUIRED", nil)];
         return NO;
     } else if (!_isCheck) {
-        [self _setupShowAleartViewWithTitle:@"Please agree to allow CoAssets to contact you in order to facilitate the crowdfunding process."];
+        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"MESSAGE_CHECK_EMAIL", nil)];
         return NO;
     }
     return YES;
@@ -133,9 +133,9 @@
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
     [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
+    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
                               message:m_string(message)
-                         cancelButton:m_string(@"OK")
+                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
                              delegate:self
                                   tag:0
                      arrayTitleButton:nil];

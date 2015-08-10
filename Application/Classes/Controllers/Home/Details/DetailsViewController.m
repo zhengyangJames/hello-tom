@@ -11,7 +11,7 @@
 #import "CODetailsDelegate.h"
 #import "COSlidingView.h"
 #import "WSURLSessionManager+ListHome.h"
-#import "UIImageView+Networking.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "COInterestedViewController.h"
 #import "COQuestionView.h"
 #import "CODetailsProfileObj.h"
@@ -117,8 +117,7 @@
     NSURL *url = [NSURL URLWithString:offerItemObj.photo];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
-    [imageView setImage:[UIImage imageNamed:@"ic_placeholder"]];
-    [imageView setImageURL:url];
+    [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
     [headerView addSubview:imageView];
     [imageView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
     self.tableView.tableHeaderView = headerView;

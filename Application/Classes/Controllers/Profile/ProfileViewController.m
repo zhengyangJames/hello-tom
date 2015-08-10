@@ -80,7 +80,7 @@ TableBottomViewCellDelegate>
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"CoAssets");
+    self.navigationItem.title = NSLocalizedString(@"COASSETS_TITLE", nil);
     [self _setupHeaderTableView];
     [self _setupFooterTableView];
     _tableView.delegate   = self;
@@ -127,9 +127,9 @@ TableBottomViewCellDelegate>
 
 - (void)_setupShowAleartViewWithTitle:(NSString*)message {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
+        [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
                                   message:m_string(message)
-                             cancelButton:m_string(@"OK")
+                             cancelButton:NSLocalizedString(@"OK_TITLE", nil)
                                  delegate:self
                                       tag:0
                          arrayTitleButton:nil];
@@ -220,9 +220,9 @@ TableBottomViewCellDelegate>
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsChangePassword:[self _setupAccessToken] body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            [self _setupShowAleartViewWithTitle:@"Password changed successfully"];
+            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_CHANGE_SUCCESSFULLY", nil)];
         } else {
-            [self _setupShowAleartViewWithTitle:@"Password not changed"];
+            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_NOT_CHANGED", nil)];
         }
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.view endEditing:YES];
@@ -250,18 +250,18 @@ TableBottomViewCellDelegate>
                                                                     forIndexPath:indexPath];
     if (indexPath.row == COAboutProfileStyleFirstName) {
         aboutCell.lblDetail.text = self.profileObject.first_name;
-        aboutCell.lblname.text = m_string(@"First Name");
+        aboutCell.lblname.text = NSLocalizedString(@"FIRST_NAME", nil);
     } else if (indexPath.row == COAboutProfileStyleLastNameSurname) {
         aboutCell.lblDetail.text = self.profileObject.last_name;
-        aboutCell.lblname.text = m_string(@"Last Name");
+        aboutCell.lblname.text = NSLocalizedString(@"LAST_NAME", nil);
     } else if (indexPath.row == COAboutProfileStyleEmail) {
         aboutCell.lblDetail.text = self.profileObject.email;
-        aboutCell.lblname.text = m_string(@"Email");
+        aboutCell.lblname.text = NSLocalizedString(@"EMAIl", nil);
     } else {
         NSString *phoneCode = self.profileObject.country_prefix;
         NSString *string = [NSString stringWithFormat:@"%@ %@",phoneCode,self.profileObject.cell_phone];
         aboutCell.lblDetail.text = string;
-        aboutCell.lblname.text = m_string(@"Phone");
+        aboutCell.lblname.text = NSLocalizedString(@"PHONE", nil);
     }
     return aboutCell;
 }
@@ -284,9 +284,9 @@ TableBottomViewCellDelegate>
     _tableBottomViewCell = [tableView dequeueReusableCellWithIdentifier:[TableBottomViewCell identifier]];
     _tableBottomViewCell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     if (_indexSelectSeg == TableViewCellStyleAbout) {
-        _tableBottomViewCell.lblUpdateButton = @"Update profile";
+        _tableBottomViewCell.lblUpdateButton = NSLocalizedString(@"UPDATE_PROFILE", nil);
     } else {
-        _tableBottomViewCell.lblUpdateButton = @"Update password";
+        _tableBottomViewCell.lblUpdateButton = NSLocalizedString(@"UPDATE_PASSWORD", nil);
     }
     _tableBottomViewCell.delegate = self;
     return _tableBottomViewCell;

@@ -61,7 +61,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"CoAssets");
+    self.navigationItem.title = NSLocalizedString(@"COASSETS_TITLE", nil);
     [self _setupLeftBarButton];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
@@ -71,7 +71,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 }
 
 - (void)_setupLeftBarButton {
-    _leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Filter")
+    _leftButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
                                                                   style:UIBarButtonItemStyleDone
                                                                  target:self
                                                                  action:@selector(__actionFilter)];
@@ -114,7 +114,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Action
 - (void)__actionFilter {
-    [CODropListVC presentWithTitle:m_string(@"Filter")
+    [CODropListVC presentWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
                               data:self.arrayListFilter
                      selectedIndex:_indexSelectFilter
                           parentVC:self

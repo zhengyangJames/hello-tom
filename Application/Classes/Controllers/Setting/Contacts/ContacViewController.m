@@ -43,7 +43,7 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"Contact");
+    self.navigationItem.title = NSLocalizedString(@"CONTACT", nil);
     
     _tableView.separatorStyle = UITableViewScrollPositionNone;
     _tableView.delegate = self;

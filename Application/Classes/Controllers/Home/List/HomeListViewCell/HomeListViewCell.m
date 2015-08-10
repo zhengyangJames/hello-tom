@@ -7,10 +7,8 @@
 //
 
 #import "HomeListViewCell.h"
-#import "UIImageView+AFNetworking.h"
-#import "AFNetworking.h"
-#import "UIImage+Scaling.h"
-#import "UIImageView+Networking.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 #import "UIImage+animatedGIF.h"
 
 @implementation HomeListViewCell
@@ -49,9 +47,7 @@
 - (void)setObject:(COLIstOffersObject *)object {
     _object = object;
     NSURL *url = [NSURL URLWithString:_object.offerPhoto];
-//    [_imageBig setImageURL:url];
-    [_imageBig setImageWithURL:url];
-//    [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
+    [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
     NSString *strImage = [_object.offerCountry isEqualToString:@"Cambodia"] ? @"Globe" : _object.offerCountry;
     [_imageLogo setImage:[UIImage imageNamed:strImage]];
     [_lblDetail setText:_object.offerTitle];

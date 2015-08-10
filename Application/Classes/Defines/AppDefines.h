@@ -12,7 +12,7 @@
 #import "BaseNavigationController.h"
 #import "BaseTabBarController.h"
 #import "NSString+Validation.h"
-#import "CoreData+MagicalRecord.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 ///////////////////////////////////////////////////////////////////
 #pragma mark - AppDefine
@@ -107,6 +107,10 @@
 
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY
+
+////////////////////////////////////////////////////////////////
+#pragma mark - WEB LINK
+#define WEB_SAFARI_LINK                 @"http://coassets.com/terms-of-use/"
 ////////////////////////////////////////////////////////////////
 
 #define KEY_TABBARSELECT                  @"KEY_TABBARSELECT"
