@@ -29,7 +29,6 @@
 }
 
 + (void)writeFilePlistWithName:(NSArray*)array fileName:(NSString*)fileName{
-//    NSString *path = [[self getDocsDirectory]stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", fileName]];
     NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
     [array writeToFile:path atomically:YES];
 }

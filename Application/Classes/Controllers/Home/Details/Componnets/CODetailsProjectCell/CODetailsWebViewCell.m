@@ -7,8 +7,9 @@
 //
 
 #import "CODetailsWebViewCell.h"
+#import "COOfferItemObj.h"
 
-@interface CODetailsWebViewCell () <UIWebViewDelegate>
+@interface CODetailsWebViewCell ()
 {
     BOOL _isFinish;
 }
@@ -19,10 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _webView.delegate = self;
     [_webView.scrollView setScrollEnabled:NO];
     [_webView.scrollView setShowsHorizontalScrollIndicator:NO];
     [_webView.scrollView setShowsVerticalScrollIndicator:NO];
+    
     _isFinish = NO;
     
 }
@@ -32,18 +33,10 @@
     _cOOfferItemObj = cOOfferItemObj;
     _titler.text = cOOfferItemObj.title;
     NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,cOOfferItemObj.linkOrDetail];
+    DBG(@"%@",formartHTML);
     if (!_isFinish) {
         [_webView loadHTMLString:formartHTML baseURL:nil];
         _isFinish = !_isFinish;
-    }
-}
-
-#pragma mark - WebView Delegate
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    if ([self.delegate respondsToSelector:@selector(coDetailsWebViewCell:heightWebview:)]) {
-        [self.delegate coDetailsWebViewCell:self heightWebview:200];
     }
 }
 

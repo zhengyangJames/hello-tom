@@ -29,12 +29,9 @@
                       heightForWebView:(void (^)(CGFloat height, UIWebView * webView))heightForWebView {
     self.heightForWebView = [heightForWebView copy];
     if (!_webView) {
-        UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 32, [UIScreen mainScreen].bounds.size.height)];
+        UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 16, [UIScreen mainScreen].bounds.size.height)];
         web.scrollView.scrollEnabled = NO;
-        web.paginationBreakingMode = UIWebPaginationBreakingModePage;
-        web.paginationMode = UIWebPaginationModeTopToBottom;
         web.contentMode = UIViewContentModeScaleAspectFill;
-        web.clipsToBounds = YES;
         web.hidden = YES;
         web.delegate = self;
         [[kAppDelegate window] addSubview:web];
@@ -45,17 +42,8 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    
-    CGFloat webViewHeight = 0;
-        CGRect frame = webView.frame;
-        frame.size.height = 1;
-        webView.frame = frame;
-        CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
-        frame.size = fittingSize;
-        webView.frame = frame;
-        webViewHeight = fittingSize.height + 30;
     if (self.heightForWebView) {
-        self.heightForWebView(webViewHeight, webView);
+        self.heightForWebView(webView.scrollView.contentSize.height + 20, webView);
     }
 }
 

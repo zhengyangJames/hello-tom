@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -36,10 +36,10 @@
                 <constraints>
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="00U-yr-ILX"/>
                     <constraint firstItem="0f5-0N-kZZ" firstAttribute="top" secondItem="J4Y-fc-BXA" secondAttribute="bottom" id="0X5-Kq-jgf"/>
-                    <constraint firstItem="0f5-0N-kZZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="8kN-mc-K7x"/>
+                    <constraint firstItem="0f5-0N-kZZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="8kN-mc-K7x"/>
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XoV-88-Xcl"/>
                     <constraint firstAttribute="bottom" secondItem="0f5-0N-kZZ" secondAttribute="bottom" id="iwI-o8-Siu"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="0f5-0N-kZZ" secondAttribute="trailing" id="rPz-po-How"/>
+                    <constraint firstAttribute="trailing" secondItem="0f5-0N-kZZ" secondAttribute="trailing" constant="8" id="rPz-po-How"/>
                     <constraint firstItem="J4Y-fc-BXA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="yAs-xw-NFN"/>
                 </constraints>
             </tableViewCellContentView>

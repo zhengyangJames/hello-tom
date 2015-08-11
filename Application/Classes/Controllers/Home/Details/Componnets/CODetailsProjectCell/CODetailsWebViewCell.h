@@ -7,20 +7,13 @@
 //
 
 #import "BaseTableViewCell.h"
-#import "COOfferItemObj.h"
 
-@protocol  CODetailsWebViewCellDelegate;
+@class COOfferItemObj;
+
 @interface CODetailsWebViewCell : BaseTableViewCell
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UILabel *titler;
 @property (nonatomic, strong) COOfferItemObj *cOOfferItemObj;
-@property (weak, nonatomic) id<CODetailsWebViewCellDelegate> delegate;
-@end
-
-@protocol  CODetailsWebViewCellDelegate <NSObject>
-
-@optional
-- (void)coDetailsWebViewCell:(CODetailsWebViewCell*)CODetailsWebViewCell heightWebview:(CGFloat)heightWebview;
 
 @end

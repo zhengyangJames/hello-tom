@@ -120,14 +120,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                           parentVC:self
                          didSelect:^(NSInteger index) {
         _indexSelectFilter = index;
-//        NSArray *arraySort = self.arrayData;
-//        NSString *key = self.arrayListFilter[_indexSelectFilter];
-//        if (![key isEqualToString:@"All"]) {
-//            NSPredicate *pre = [NSPredicate predicateWithFormat:@"offerType CONTAINS[cd] %@",key];
-//            self.arraySort = [arraySort filteredArrayUsingPredicate:pre];
-//        }else {
-//            self.arraySort = self.arrayData;
-//        }
         self.arrayData = nil;
          if (_indexSelectFilter == 1) {
              [self _callWSGetListOfferFilter:kFILTER_BP];
@@ -189,12 +181,18 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            [self _pushDetailVcWithID:responseObject];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+               [self _pushDetailVcWithID:responseObject];
+            }];
         } else {
             [UIHelper showError:error];
         }
+        
         [UIHelper hideLoadingFromView:self.view];
-        _leftButton.enabled = YES;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            _leftButton.enabled = YES;
+        }];
+        
     }];
 }
 
