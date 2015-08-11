@@ -67,7 +67,7 @@
 "BASIC_INFO"                            = "Basic Info";
 
 "PASSWORD_CHANGE_SUCCESSFULLY"          = "Password has been changed successfully";
-"PASSWORD_NOT_CHANGED"                  = "Password not changed";
+"PASSWORD_NOT_CHANGED"                  = "Password was not changed";
 
 "UPDATE_PROFILE"                        = "Update profile";
 "UPDATE_PASSWORD"                       = "Update password";

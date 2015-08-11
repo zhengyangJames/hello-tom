@@ -250,4 +250,12 @@
     
 }
 
++ (NSString *)formatFromNumber:(NSNumber*)number {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSString *cvString  = [formatter stringFromNumber:number];
+    NSString *returnString = [cvString substringToIndex:cvString.length - 3];
+    return returnString;
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "CODetailsProgressViewCell.h"
 #import "NMDeviceHelper.h"
+#import "UIHelper.h"
 
 @interface CODetailsProgressViewCell ()
 {
@@ -45,38 +46,23 @@
     }
     
     double valueTitle = [obj.current_funded_amount doubleValue];
-    NSString *progressLabel = [NSString stringWithFormat:@"$%@",[[NSNumber numberWithDouble:valueTitle] stringValue]];
-    _titleProgressbarLable.text = progressLabel;
+    NSNumber *numberProgress = [NSNumber numberWithDouble:(double)valueTitle];
+    NSString *progress = [UIHelper formatFromNumber:numberProgress];
+    _titleProgressbarLable.text = progress;
     
     double value = ([obj.goal doubleValue]);
-    NSString *stringValue = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:value] stringValue]];
-    if (stringValue.length > 4) {
-        NSRange range = NSMakeRange(0, 4);
-        NSString *sub = [stringValue substringWithRange:range];
-        NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",sub];
-        _progressBarBottomLable.text = progressBottomLbl;
+    int intConvert = (int)round(value);
+    NSString *progressBottomLbl = [NSString stringWithFormat:@"%tu%% of goal",intConvert];
+    _progressBarBottomLable.text = progressBottomLbl;
+    int total;
+    if(value != 0) {
+        total = (int)round((valueTitle * 100)/value);
     } else {
-        NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",[[NSNumber numberWithDouble:value] stringValue]];
-        _progressBarBottomLable.text = progressBottomLbl;
+        total = 0;
     }
-    if([obj.goal doubleValue] != 0) {
-        NSRange range;
-        NSInteger total;
-        NSString *stringValue = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:value] stringValue]];
-        if(stringValue.length  > 4) {
-            range = NSMakeRange(0, 4);
-            NSString *sub = [stringValue substringWithRange:range];
-            total = (valueTitle * 100)/[sub doubleValue];
-        } else if(stringValue.length == 3) {
-            range = NSMakeRange(0, 3);
-            NSString *sub = [stringValue substringWithRange:range];
-            total = (valueTitle * 100)/[sub doubleValue];
-        } else {
-            total = (valueTitle * 100)/[stringValue doubleValue];
-        }
-
-        _totalProgressbarLable.text = [NSString stringWithFormat:@"of $%@",[[NSNumber numberWithDouble:total] stringValue]];
-    }
+    NSNumber *numberTotal = [NSNumber numberWithInt:total];
+    NSString *totalString = [UIHelper formatFromNumber:numberTotal];
+    _totalProgressbarLable.text = [@"of $" stringByAppendingString:totalString];
 }
 
 
