@@ -13,7 +13,7 @@
 
 - (NSString *)stringOfInvestorCount {
     if (self.investor_count) {
-        NSString *investor = [NSString stringWithFormat:@"%@ INVESTORS",self.investor_count];
+        NSString *investor = [NSString stringWithFormat:NSLocalizedString(@"INVESTORS", nil),self.investor_count];
         return investor;
     } else {
         return NSLocalizedString(@"N/A", nil);
@@ -21,7 +21,7 @@
 }
 - (NSString *)stringOfStatus {
     if (self.status) {
-        NSString *status = [NSString stringWithFormat:@"%@",self.status];
+        NSString *status = [NSString stringWithFormat:NSLocalizedString(@"STATUS", nil),self.status];
         return status;
     } else {
         return NSLocalizedString(@"N/A", nil);
@@ -29,7 +29,7 @@
 }
 - (NSString *)stringOfMinAnnualReturn {
     if (self.min_annual_return) {
-        NSString *YIELD = [NSString stringWithFormat:@"%@ %% (%@%%)",self.min_annual_return,self.min_annual_return];
+        NSString *YIELD = [NSString stringWithFormat:NSLocalizedString(@"MIN_ANNUAL_RETURN", nil),self.min_annual_return,self.min_annual_return];
         return YIELD;
     } else {
         return NSLocalizedString(@"N/A", nil);
@@ -49,7 +49,7 @@
 
 - (NSString *)stringOfDayLeft {
     if (self.day_left) {
-        NSString *day_left = [NSString stringWithFormat:@"%@",self.day_left];
+        NSString *day_left = [NSString stringWithFormat:NSLocalizedString(@"DAY_LEFT", nil),self.day_left];
         return day_left;
     } else {
           return NSLocalizedString(@"N/A", nil);
@@ -57,8 +57,7 @@
 }
 - (NSString *)stringOfTimeHorizon {
     if (self.time_horizon) {
-        NSString *time_horizon = [NSString stringWithFormat:@"%@ MONTHS",self.time_horizon];
-        return time_horizon;
+        NSString *time_horizon = [NSString stringWithFormat:NSLocalizedString(@"MONTHS", nil),self.time_horizon];        return time_horizon;
     } else {
         return NSLocalizedString(@"N/A", nil);
     }

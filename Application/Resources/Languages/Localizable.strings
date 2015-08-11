@@ -77,3 +77,11 @@
 "LOG_OUT"                               = "Log Out";
 "USERNAME_ALREADY_EXISTS"               = "Username Already Exists";
 "N/A"                                   = "N/A";
+"INVESTORS"                             = "%@ INVESTORS";
+"MONTHS"                                = "%@ MONTHS";
+"STATUS"                                = "%@";
+"MIN_ANNUAL_RETURN"                     = "%@ %% (%@%%)";
+"DAY_LEFT"                              = "%@";
+"GOAL"                                  = "%tu%% of goal";
+
+

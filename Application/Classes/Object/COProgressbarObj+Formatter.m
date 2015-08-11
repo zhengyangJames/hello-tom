@@ -15,7 +15,7 @@
     if (self.goal) {
         double value = ([self.goal doubleValue]);
         int intConvert = (int)round(value);
-        NSString *returnString = [NSString stringWithFormat:@"%tu%% of goal",intConvert];
+        NSString *returnString = [NSString stringWithFormat:NSLocalizedString(@"GOAL", nil),intConvert];
         return returnString;
     } else {
         return NSLocalizedString(@"N/A", nil);

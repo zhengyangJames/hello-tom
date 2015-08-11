@@ -54,8 +54,6 @@
         frame.size = fittingSize;
         webView.frame = frame;
         webViewHeight = fittingSize.height + 30;
-    
-    DBG(@"--- %f",webViewHeight);
     if (self.heightForWebView) {
         self.heightForWebView(webViewHeight, webView);
     }
