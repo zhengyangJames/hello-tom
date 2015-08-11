@@ -102,7 +102,6 @@
 		7F325FCC1B40E50800116445 /* COSlidingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E671B40E50800116445 /* COSlidingView.m */; };
 		7F325FCD1B40E50800116445 /* COSlidingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E681B40E50800116445 /* COSlidingView.xib */; };
 		7F325FD11B40E50800116445 /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E741B40E50800116445 /* UIHelper.m */; };
-		7F325FD21B40E50800116445 /* CODummyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E771B40E50800116445 /* CODummyDataManager.m */; };
 		7F325FD31B40E50800116445 /* COListContactObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E7A1B40E50800116445 /* COListContactObject.m */; };
 		7F325FD51B40E50800116445 /* COLIstOffersObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E7E1B40E50800116445 /* COLIstOffersObject.m */; };
 		7F325FD91B40E50800116445 /* COListProfileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E861B40E50800116445 /* COListProfileObject.m */; };
@@ -417,8 +416,6 @@
 		7F325E6D1B40E50800116445 /* AppDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDefines.h; sourceTree = "<group>"; };
 		7F325E731B40E50800116445 /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
 		7F325E741B40E50800116445 /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
-		7F325E761B40E50800116445 /* CODummyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODummyDataManager.h; sourceTree = "<group>"; };
-		7F325E771B40E50800116445 /* CODummyDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODummyDataManager.m; sourceTree = "<group>"; };
 		7F325E791B40E50800116445 /* COListContactObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COListContactObject.h; sourceTree = "<group>"; };
 		7F325E7A1B40E50800116445 /* COListContactObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COListContactObject.m; sourceTree = "<group>"; };
 		7F325E7D1B40E50800116445 /* COLIstOffersObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLIstOffersObject.h; sourceTree = "<group>"; };
@@ -1231,8 +1228,6 @@
 				012FA93C1B7A13A600A80D3F /* LoadFileManager.m */,
 				7FE6ED5F1B54EB1600FA481E /* WebViewManager.h */,
 				7FE6ED601B54EB1600FA481E /* WebViewManager.m */,
-				7F325E761B40E50800116445 /* CODummyDataManager.h */,
-				7F325E771B40E50800116445 /* CODummyDataManager.m */,
 				7FC6D5111B4526240098EC8D /* COLoginManager.h */,
 				7FC6D5121B4526240098EC8D /* COLoginManager.m */,
 			);
@@ -1808,7 +1803,6 @@
 				7F85290C1B437B0D00CFAEB5 /* CODetailsOffersObject.m in Sources */,
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				7F325FC91B40E50800116445 /* COPositive&NagitiveButton.m in Sources */,
-				7F325FD21B40E50800116445 /* CODummyDataManager.m in Sources */,
 				7F32601B1B40E50800116445 /* main.m in Sources */,
 				7F325F821B40E50800116445 /* UIImage+animatedGIF.m in Sources */,
 				BB821DF51B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.m in Sources */,

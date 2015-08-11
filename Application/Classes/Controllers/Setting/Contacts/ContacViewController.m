@@ -7,7 +7,6 @@
 //
 
 #import "ContacViewController.h"
-#import "CODummyDataManager.h"
 #import "ContactTableViewCell.h"
 #import "WSURLSessionManager+ListContact.h"
 #import "WSURLSessionManager.h"

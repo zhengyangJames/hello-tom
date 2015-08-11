@@ -31,7 +31,7 @@
     if (!_webView) {
         UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 16, [UIScreen mainScreen].bounds.size.height)];
         web.scrollView.scrollEnabled = NO;
-        web.contentMode = UIViewContentModeScaleAspectFill;
+        //web.contentMode = UIViewContentModeScaleAspectFill;
         web.hidden = YES;
         web.delegate = self;
         [[kAppDelegate window] addSubview:web];
@@ -42,8 +42,11 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    CGRect frame = _webView.frame;
+    frame.size.height = 1;
+    _webView.frame = frame;
     if (self.heightForWebView) {
-        self.heightForWebView(webView.scrollView.contentSize.height + 20, webView);
+        self.heightForWebView(webView.scrollView.contentSize.height + 30, webView);
     }
 }
 

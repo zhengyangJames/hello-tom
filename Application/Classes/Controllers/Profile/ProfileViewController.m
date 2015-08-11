@@ -14,7 +14,6 @@
 #import "EditCompanyVC.h"
 #import "LoadFileManager.h"
 #import "COListProfileObject.h"
-#import "CODummyDataManager.h"
 #import "COListProfileObject.h"
 #import "NSString+Validation.h"
 #import "WSURLSessionManager+Profile.h"
@@ -102,10 +101,6 @@ TableBottomViewCellDelegate>
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HIEGHT_HEADERVIEW)];
     _tableheaderView   = [[TableHeaderView alloc] initWithNibName:[TableHeaderView identifier]];
     _tableheaderView.delegate = self;
-//    [_tableheaderView setActionPickerImageProfile:^(){
-//        __strong __typeof(weakSelf)strongSelf = weakSelf;
-//        [strongSelf _showActionSheet];
-//    }];
     _tableheaderView.translatesAutoresizingMaskIntoConstraints = NO;
     [headerView addSubview:_tableheaderView];
     [_tableheaderView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
@@ -171,21 +166,6 @@ TableBottomViewCellDelegate>
     self.profileObject = nil;
     [self profileObject];
 }
-
-/*
- Setup action show picker ImageView Delegate
- */
-
-/*
-- (void)_showActionSheet {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
-                                                            delegate:self
-                                                   cancelButtonTitle:m_string(@"Cancel")
-                                              destructiveButtonTitle:nil
-                                                   otherButtonTitles:m_string(@"Take a photo"),m_string(@"Choose existing"), nil];
-    [actionSheet showInView:self.view];
-}
-*/
 
 #pragma mark - Web Service
 - (void)_callWSGetListProfile {
@@ -377,31 +357,5 @@ TableBottomViewCellDelegate>
 - (void)tableBottomView:(TableBottomViewCell *)tableBottomView titlerButton:(NSString *)titlerButton {
     [self __actionButtonUpdate:titlerButton];
 }
-
-/*
- show picker ImageView Delegate
- */
-
-/*
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 0:
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
-            break;
-        case 1:
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
-            break;
-        default:
-            break;
-    }
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
-    [_tableheaderView.imageProfile setImage:image];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-*/
 
 @end

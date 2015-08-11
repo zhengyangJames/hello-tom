@@ -86,6 +86,8 @@
 
 #pragma mark - Action
 - (IBAction)__actionLogin:(id)sender {
+    [_userName resignFirstResponder];
+    [_passWord resignFirstResponder];
     if ([self _isValid]) {
         [self _login];
     }

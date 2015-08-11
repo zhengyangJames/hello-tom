@@ -23,7 +23,8 @@
     [_webView.scrollView setScrollEnabled:NO];
     [_webView.scrollView setShowsHorizontalScrollIndicator:NO];
     [_webView.scrollView setShowsVerticalScrollIndicator:NO];
-    
+    [_webView setOpaque:NO];
+    [_webView setBackgroundColor:[UIColor clearColor]];
     _isFinish = NO;
     
 }
@@ -33,7 +34,6 @@
     _cOOfferItemObj = cOOfferItemObj;
     _titler.text = cOOfferItemObj.title;
     NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,cOOfferItemObj.linkOrDetail];
-    DBG(@"%@",formartHTML);
     if (!_isFinish) {
         [_webView loadHTMLString:formartHTML baseURL:nil];
         _isFinish = !_isFinish;

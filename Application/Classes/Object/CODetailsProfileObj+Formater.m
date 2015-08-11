@@ -28,7 +28,7 @@
     }
 }
 - (NSString *)stringOfMinAnnualReturn {
-    if (self.min_annual_return) {
+    if (self.time_horizon && self.min_annual_return) {
         NSString *YIELD = [NSString stringWithFormat:NSLocalizedString(@"MIN_ANNUAL_RETURN", nil),self.min_annual_return,self.min_annual_return];
         return YIELD;
     } else {

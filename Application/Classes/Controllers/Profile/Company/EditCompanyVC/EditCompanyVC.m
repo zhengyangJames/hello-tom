@@ -10,7 +10,6 @@
 #import "CODropListView.h"
 #import "CoDropListButtom.h"
 #import "COListProfileObject.h"
-#import "CODummyDataManager.h"
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
