@@ -84,9 +84,11 @@
     [[WSURLSessionManager shared] wsPostSubscribeWithOffersID:idoffer amount:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         DBG(@"%@",responseObject);
         if (responseObject && !error) {
-            _amountTextField.text = nil;
-            _emailTextField.text = nil;
-            _checkBoxButton.isCheck = NO;
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                _amountTextField.text = nil;
+                _emailTextField.text = nil;
+                _checkBoxButton.isCheck = NO;
+            }];
             [kNotificationCenter postNotificationName:kNOTIFICATION_INTERESTED object:nil];
             [self _creatPopupView];
         }else {
@@ -114,33 +116,22 @@
 - (BOOL)_checkEmailAmount {
     if([_emailTextField.text isEmpty]) {
         _textField = _emailTextField;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
         return NO;
     } else if (![_emailTextField.text isValidEmail]) {
         _textField = _emailTextField;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_INVALID", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_INVALID", nil) delegate:self tag:0];
         return NO;
     } else if ([_amountTextField.text isEmpty]) {
         _textField = _amountTextField;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"AMOUNT_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"AMOUNT_REQUIRED", nil) delegate:self tag:0];
         return NO;
     } else if (!_isCheck) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"MESSAGE_CHECK_EMAIL", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"MESSAGE_CHECK_EMAIL", nil) delegate:self tag:0];
         return NO;
     }
     return YES;
 }
-
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
-                              message:m_string(message)
-                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
-}
-
 
 #pragma mark - Delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

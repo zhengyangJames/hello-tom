@@ -75,5 +75,5 @@
 "INVAlID_USERNAME_OR_PASSWORD"          = "Invalid username or password.";
 "LOG_IN"                                = "Log In";
 "LOG_OUT"                               = "Log Out";
-
-
+"USERNAME_ALREADY_EXISTS"               = "Username Already Exists";
+"N/A"                                   = "N/A";

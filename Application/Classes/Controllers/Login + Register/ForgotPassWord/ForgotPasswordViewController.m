@@ -35,21 +35,13 @@
 
 
 #pragma mark - Private
-- (void)_setupShowAleartViewWithTitle:(NSString*)message tag:(NSInteger)tag {
-    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
-                              message:m_string(message)
-                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
-                             delegate:self
-                                  tag:tag
-                     arrayTitleButton:nil];
-}
 
 - (BOOL)_isValidation {
     if ([emailTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_REQUIRED", nil) tag:0];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
         return NO;
     }else if (![emailTextField.text isValidEmail]) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_INVALID", nil) tag:0];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_INVALID", nil) delegate:self tag:0];
         return NO;
     }
     return YES;
@@ -75,10 +67,10 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:emailTextField.text,@"email", nil];
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsForgotPassword:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"MESSEAGE_RESET_PASSWORD", nil) tag:10];
+        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {;
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"MESSEAGE_RESET_PASSWORD", nil) delegate:self tag:10];
         } else {
-            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"YOUR_EMAIL_INVALID", nil) tag:20];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"YOUR_EMAIL_INVALID", nil) delegate:self tag:20];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

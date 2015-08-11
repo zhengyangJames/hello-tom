@@ -97,7 +97,6 @@
 }
 
 - (void)wsPostSubscribeWithOffersID:(NSString*)OffersID amount:(NSDictionary *)amount handler:(WSURLSessionHandler)handler {
-    DBG(@"offerID-->%@,---amount--->%@",OffersID,amount);
     NSString *urlQuestion = WS_METHOD_POST_SUBSCRIBE;
     NSString *offerID = [NSString stringWithFormat:@"%@/",OffersID];
     NSString *url = [urlQuestion stringByAppendingString:offerID];
@@ -133,7 +132,6 @@
     [request setValue:valueToken forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-            DBG(@"%@",responseObject);
             COProgressbarObj *obj = [[COProgressbarObj alloc]initWithDictionnary:responseObject];
             if (handler) {
                 handler(obj, response, nil);

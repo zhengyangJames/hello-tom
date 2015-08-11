@@ -54,16 +54,6 @@
     [self wsCallQuestion];
 }
 
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
-                              message:m_string(message)
-                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
-}
-
 #pragma mark - Web Service
 - (void)wsCallQuestion {
     [UIHelper showLoadingInView:self.view];
@@ -71,9 +61,8 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:textView.text,@"question", nil];
     [[WSURLSessionManager shared] wsPostQuestionWithOffersID:idoffer body:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            DBG(@"--%@--",responseObject);
             [kNotificationCenter postNotificationName:kNOTIFICATION_QUESTION object:nil];
-            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"REQUEST_SEND", nil)];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"REQUEST_SEND", nil) delegate:self tag:0];
         } else {
             [UIHelper showError:error];
         }

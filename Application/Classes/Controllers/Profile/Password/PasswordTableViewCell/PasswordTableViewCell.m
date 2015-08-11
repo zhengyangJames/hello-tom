@@ -30,16 +30,16 @@
         }
     } else if ([self.comfilmPassowrdTXT.text isEmpty]&&[self.newpassowrdTXT.text isEmpty]) {
         _boxTextField = self.newpassowrdTXT;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_REQUIRED", nil)];
+         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
     } else if ([self.newpassowrdTXT.text isEmpty]) {
         _boxTextField = self.newpassowrdTXT;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"NEW_PASSWORD_REQUIRED", nil)];
+         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"NEW_PASSWORD_REQUIRED", nil) delegate:self tag:0];
     } else if ([self.comfilmPassowrdTXT.text isEmpty]) {
         _boxTextField = self.comfilmPassowrdTXT;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"CONFIRM_PASSWORD_REQUIRED", nil)];
+         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"CONFIRM_PASSWORD_REQUIRED", nil) delegate:self tag:0];
     } else if (![self.newpassowrdTXT.text isEqualToString: self.comfilmPassowrdTXT.text]) {
         _boxTextField = self.comfilmPassowrdTXT;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"CONFIRM_PASSWORD_MESSAGE", nil)];
+         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"CONFIRM_PASSWORD_MESSAGE", nil) delegate:self tag:0];
     }
 }
 
@@ -58,16 +58,6 @@
         [self.comfilmPassowrdTXT resignFirstResponder];
     }
     return YES;
-}
-
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [self endEditing:YES];
-    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
-                              message:m_string(message)
-                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
 }
 
 #pragma mark Delegate

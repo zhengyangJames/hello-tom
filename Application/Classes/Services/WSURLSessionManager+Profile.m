@@ -18,7 +18,6 @@
     [request setValue:value forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-            DBG(@"profile--------->----->%@",responseObject);
             if (handler) {
                 handler(responseObject,response,nil);
             }

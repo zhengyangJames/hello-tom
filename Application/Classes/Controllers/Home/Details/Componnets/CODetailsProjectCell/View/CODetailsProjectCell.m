@@ -48,42 +48,17 @@
 #pragma mark - Set Get
 - (void)setDetailsProfile:(CODetailsProfileObj *)detailsProfile {
     _detailsProfile = detailsProfile;
-    _projectStatusLable.text = _detailsProfile.status;
+    _projectStatusLable.text = detailsProfile.stringOfStatus;
     
-    if (detailsProfile.investor_count) {
-        NSString *investor = [NSString stringWithFormat:@"%@ INVESTORS",_detailsProfile.investor_count];
-        _projectInteredtedLable.text = investor;
-    } else {
-        _projectInteredtedLable.text = @"N/A";
-    }
+    _projectInteredtedLable.text = detailsProfile.stringOfInvestorCount;
     
-    if (detailsProfile.min_investment) {
-        NSString *str = [CODetailsProfileObj currencyStringFormatFromValue:detailsProfile.min_investment];
-        _projectInvestmentLable.text = str ;
-    } else {
-        _projectInvestmentLable.text = @"N/A" ;
-    }
+    _projectInvestmentLable.text = detailsProfile.currencyStringFormatFromInvestment ;
     
-    if (detailsProfile.time_horizon) {
-        NSString *time_horizon = [NSString stringWithFormat:@"%@ MONTHS",_detailsProfile.time_horizon];
-        _projectHorizonLable.text = time_horizon;
-    } else {
-        _projectHorizonLable.text = @"N/A";
-    }
+    _projectHorizonLable.text = detailsProfile.stringOfTimeHorizon;
+
+    _minYieldLable.text = detailsProfile.stringOfMinAnnualReturn;
     
-    if (detailsProfile.min_annual_return) {
-        NSString *YIELD = [NSString stringWithFormat:@"%@ %% (%@%%)",_detailsProfile.min_annual_return,_detailsProfile.min_annual_return];
-        _minYieldLable.text = YIELD;
-    } else {
-        _minYieldLable.text = @"N/A";
-    }
-    
-    if (detailsProfile.day_left) {
-        NSString *day_left = [NSString stringWithFormat:@"%@",_detailsProfile.day_left];
-        _dayAgoLable.text = day_left;
-    } else {
-        _dayAgoLable.text = @"N/A";
-    }
+    _dayAgoLable.text = detailsProfile.stringOfDayLeft;
 }
 
 #pragma mark - Action 

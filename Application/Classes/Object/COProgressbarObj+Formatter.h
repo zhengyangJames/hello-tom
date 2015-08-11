@@ -10,6 +10,7 @@
 
 @interface COProgressbarObj (Formatter)
 
-+ (NSString *)currencyStringFormatFromValue:(NSString *)value;
-
+- (NSString *)stringOfGoal;
+- (NSString *)currencyStringFormatFromCurrentFundedAmount;
+- (NSString *)stringOfTotalCurrency;
 @end

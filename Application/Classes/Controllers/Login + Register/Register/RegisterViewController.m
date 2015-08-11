@@ -54,47 +54,37 @@
     btnCheckBox.delegate = self;
 }
 
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
-                              message:m_string(message)
-                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
-}
-
 - (BOOL)_isValidtion {
     if ([_fristNameTextField.text isEmpty]) {
         _currentField = _fristNameTextField;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"FIRSTNAME_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FIRSTNAME_REQUIRED", nil) delegate:self tag:0];
         return NO;
     } else if ([_lastNameTextField.text isEmpty]) {
         _currentField = _lastNameTextField;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"LASTNAME_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"LASTNAME_REQUIRED", nil) delegate:self tag:0];
         return NO;
     } else if ([_emailTextField.text isEmpty]) {
         _currentField = _emailTextField;
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
         return NO;
     } else if (![_emailTextField.text isValidEmail]) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_INVALID", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_INVALID", nil) delegate:self tag:0];
         _currentField = _emailTextField;
         return NO;
     } else if ([_usernameTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"USERNAME_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_REQUIRED", nil) delegate:self tag:0];
         _currentField = _usernameTextField;
         return NO;
     } else if ([_passwordTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
         _currentField = _passwordTextField;
         return NO;
     } else if ([_comfilmPasswordTextField.text isEmpty] ) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
         _currentField = _comfilmPasswordTextField;
         return NO;
     } else if (![_comfilmPasswordTextField.text isEqualToString:_passwordTextField.text]) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"CONFIRM_PASSWORD_MESSAGE", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"CONFIRM_PASSWORD_MESSAGE", nil) delegate:self tag:0];
         _currentField = _comfilmPasswordTextField;
         return NO;
     }
@@ -137,10 +127,9 @@
     [[WSURLSessionManager shared] wsRegisterWithInfo:[self _getUserInfo] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if([[responseObject valueForKey:@"success"] isEqualToString:@"user created"]) {
-                DBG( @"%@ /n %@",responseObject,[responseObject valueForKey:@"success"]);
                 [self _callWSLogin];
             }else {
-                [self _setupShowAleartViewWithTitle:@"Username Already Exists"];
+                [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];
                 [UIHelper hideLoadingFromView:self.view];
             }
         } else {
@@ -155,7 +144,7 @@
         if (object && sucess) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } else {
-            [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil) message:NSLocalizedString(@"INVALID_GRANT", nil) cancelButton:NSLocalizedString(@"OK_TITLE", nil)  delegate:nil tag:100 arrayTitleButton:nil];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"INVALID_GRANT", nil) delegate:self tag:100];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

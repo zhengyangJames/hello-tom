@@ -45,24 +45,9 @@
         float value = ([obj.goal doubleValue]*10)/1000;
         [_progressBar setProgress:value animated:NO];
     }
-    double valueTitle = [obj.current_funded_amount doubleValue];
-    NSString *currencyString = [COProgressbarObj currencyStringFormatFromValue:obj.current_funded_amount];
-    _titleProgressbarLable.text = currencyString;
-    
-    double value = ([obj.goal doubleValue]);
-    int intConvert = (int)round(value);
-    NSString *progressBottomLbl = [NSString stringWithFormat:@"%tu%% of goal",intConvert];
-    _progressBarBottomLable.text = progressBottomLbl;
-    int total;
-    if(value != 0) {
-        total = (int)round((valueTitle * 100)/value);
-    } else {
-        total = 0;
-    }
-    double totalDouble = (double)total;
-    NSNumber *numberTotal = [NSNumber numberWithDouble:totalDouble];
-    NSString *totalString = [UIHelper stringCurrencyFormatFromNumberDouble:numberTotal];
-    _totalProgressbarLable.text = [@"of " stringByAppendingString:totalString];
+    _titleProgressbarLable.text = obj.currencyStringFormatFromCurrentFundedAmount;
+    _progressBarBottomLable.text = obj.stringOfGoal;
+    _totalProgressbarLable.text = [@"of " stringByAppendingString:obj.stringOfTotalCurrency];
 }
 
 

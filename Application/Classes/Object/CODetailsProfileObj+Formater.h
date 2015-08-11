@@ -10,6 +10,11 @@
 
 @interface CODetailsProfileObj (Formater)
 
-+ (NSString *)currencyStringFormatFromValue:(NSString *)value;
+- (NSString *)stringOfInvestorCount;
+- (NSString *)stringOfStatus;
+- (NSString *)stringOfMinAnnualReturn;
+- (NSString *)currencyStringFormatFromInvestment;
+- (NSString *)stringOfDayLeft;
+- (NSString *)stringOfTimeHorizon;
 
 @end

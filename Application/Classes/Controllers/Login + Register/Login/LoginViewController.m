@@ -54,22 +54,13 @@
     return param;
 }
 
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
-                              message:m_string(message)
-                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
-}
-
-
 - (BOOL)_isValid {
     if ([_userName.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"USERNAME_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_REQUIRED", nil) delegate:self tag:0];
          return NO;
     }else if ([_passWord.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
+
         return NO;
     }
     return YES;
@@ -87,7 +78,7 @@
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];
             }
         } else {
-            [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)message:NSLocalizedString(@"INVAlID_USERNAME_OR_PASSWORD", nil) cancelButton:NSLocalizedString(@"OK_TITLE", nil) delegate:nil tag:100 arrayTitleButton:nil];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"INVAlID_USERNAME_OR_PASSWORD", nil) delegate:self tag:100];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

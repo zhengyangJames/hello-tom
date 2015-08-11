@@ -125,17 +125,6 @@ TableBottomViewCellDelegate>
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
 
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
-                                  message:m_string(message)
-                             cancelButton:NSLocalizedString(@"OK_TITLE", nil)
-                                 delegate:self
-                                      tag:0
-                         arrayTitleButton:nil];
-    }];
-}
-
 #pragma mark - Setter Getter
 
 - (NSMutableDictionary*)_setupAccessToken {
@@ -220,9 +209,9 @@ TableBottomViewCellDelegate>
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsChangePassword:[self _setupAccessToken] body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_CHANGE_SUCCESSFULLY", nil)];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_CHANGE_SUCCESSFULLY", nil) delegate:self tag:0];
         } else {
-            [self _setupShowAleartViewWithTitle:NSLocalizedString(@"PASSWORD_NOT_CHANGED", nil)];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_NOT_CHANGED", nil) delegate:self tag:0];
         }
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.view endEditing:YES];
