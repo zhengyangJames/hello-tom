@@ -34,6 +34,7 @@
     NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,cOOfferItemObj.linkOrDetail];
     if (!_isFinish) {
         [_webView loadHTMLString:formartHTML baseURL:nil];
+        _isFinish = !_isFinish;
     }
 }
 
