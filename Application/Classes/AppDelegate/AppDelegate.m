@@ -28,7 +28,6 @@
     self.window.rootViewController = self.baseTabBarController;
     self.baseTabBarController.delegate = self;
     [self _setUp3rdSDKs];
-    [self _setUpDatabase];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -50,10 +49,6 @@
     [Fabric with:@[CrashlyticsKit]];
 }
 
-- (void)_setUpDatabase {
-    [NSPersistentStoreCoordinator MR_setDefaultStoreCoordinator:self.persistentStoreCoordinator];
-    [NSManagedObjectContext MR_initializeDefaultContextWithCoordinator:self.persistentStoreCoordinator];
-}
 
 - (BaseTabBarController*)baseTabBarController {
     if (!_baseTabBarController) {
@@ -109,39 +104,6 @@
     return _baseSettingNAV;
 }
 
-#pragma mark - CoreData Stack
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
-- (NSManagedObjectModel *)managedObjectModel {
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:COREDATA_STORE_NAME withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
-    }
-    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption:@YES,
-                              NSInferMappingModelAutomaticallyOption:@YES,
-                              NSSQLitePragmasOption: @{@"journal_mode": @"WAL"}
-                              };
-    
-    // Create the coordinator and store
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[kFileManager publicDirectory] URLByAppendingPathComponent:
-                       [NSString stringWithFormat:@"%@.sqlite",COREDATA_STORE_NAME]];
-    NSError *error = nil;
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
-        abort();
-    }
-    
-    return _persistentStoreCoordinator;
-}
 
 #pragma mark - Tabbar Delegate
 

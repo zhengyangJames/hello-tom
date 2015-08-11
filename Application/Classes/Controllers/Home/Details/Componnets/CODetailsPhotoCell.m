@@ -7,9 +7,10 @@
 //
 
 #import "CODetailsPhotoCell.h"
-#import "UIImageView+Networking.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "NSString_stripHtml.h"
 #import "COOfferItemObj.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #define kCORNER_RADIUS_IMAGE 6
 
@@ -46,10 +47,11 @@
 - (void)setCoOfferObj:(COOfferItemObj *)coOfferObj {
     _coOfferObj = coOfferObj;
     _detailsTextView.text = coOfferObj.title;
-    [_image setImage:[UIImage imageNamed:@"company_logo_degault.png"]];
-    if (![coOfferObj.linkOrDetail isEqualToString:@"public_media/company.png"]) {
+    if (coOfferObj.linkOrDetail && ![coOfferObj.linkOrDetail rangeOfString:@"public_media/company.png"].length != 0) {
         NSURL *url = [NSURL URLWithString:coOfferObj.linkOrDetail];
-        [_image setImageURL:url];
+        [_image sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"company_edit.jpg"]];
+    } else {
+        _image.image = [UIImage imageNamed:@"company_edit.jpg"];
     }
 }
 

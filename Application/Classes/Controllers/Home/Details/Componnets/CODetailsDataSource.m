@@ -13,14 +13,14 @@
 
 @interface CODetailsDataSource ()
 
-@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate,CODetailsWebViewCellDelegate> controller;
+@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate> controller;
 
 @end
 
 @implementation CODetailsDataSource
 
 
-- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate,CODetailsWebViewCellDelegate>)controller tableView:(UITableView *)tableView {
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller tableView:(UITableView *)tableView {
     self = [super init];
     if (self) {
         self.controller = controller;
@@ -163,7 +163,6 @@
 
 - (CODetailsWebViewCell*)tableView:(UITableView*)tableView cellDetailsWebViewRowWithIndexPath:(NSIndexPath*)indexPath {
     CODetailsWebViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsWebViewCell identifier]];
-    cell.delegate = self.controller;
     COOferObj *obj = [self _getItemAtindexPath:indexPath];
     cell.cOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row];
     return cell;

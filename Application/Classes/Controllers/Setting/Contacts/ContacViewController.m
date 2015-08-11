@@ -7,7 +7,6 @@
 //
 
 #import "ContacViewController.h"
-#import "CODummyDataManager.h"
 #import "ContactTableViewCell.h"
 #import "WSURLSessionManager+ListContact.h"
 #import "WSURLSessionManager.h"
@@ -43,7 +42,7 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"Contact");
+    self.navigationItem.title = NSLocalizedString(@"CONTACT", nil);
     
     _tableView.separatorStyle = UITableViewScrollPositionNone;
     _tableView.delegate = self;

@@ -12,14 +12,6 @@
 #import "WebViewSetting.h"
 #import "LoginViewController.h"
 
-
-#define LINK_NEW             @"https://www.coassets.com/news/"
-#define LINK_COMMENTARIES    @"https://www.coassets.com/blog/"
-#define LINK_TERMS_OF_USE    @"https://www.coassets.com/terms-of-use/"
-#define LINK_CODE_OF_CONDUCT @"https://www.coassets.com/code-of-conduct/"
-#define LINK_PRIVACY         @"https://www.coassets.com/privacy/"
-
-
 @interface SettingViewController () <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,LoginViewControllerDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
@@ -54,7 +46,7 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"Settings");
+    self.navigationItem.title = NSLocalizedString(@"SETTINGS", nil);
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.tableFooterView = [UIView new];
@@ -107,15 +99,15 @@
     switch (index) {
         case COSettingsStypeContact: return [self _pushContacViewController];
             
-        case COSettingsStypeNew: return [self _pushWebViewSetting:LINK_NEW titler:@"News"];
+        case COSettingsStypeNew: return [self _pushWebViewSetting:LINK_NEW titler:NSLocalizedString(@"NEWS", nil)];
             
-        case COSettingsStypeCommentaries: return [self _pushWebViewSetting:LINK_COMMENTARIES titler:@"Commentaries"];
+        case COSettingsStypeCommentaries: return [self _pushWebViewSetting:LINK_COMMENTARIES titler:NSLocalizedString(@"COMMENTARIES", nil)];
             
-        case COSettingsStypeTermOfUse: return [self _pushWebViewSetting:LINK_TERMS_OF_USE titler:@"Terms of Use"];
+        case COSettingsStypeTermOfUse: return [self _pushWebViewSetting:LINK_TERMS_OF_USE titler:NSLocalizedString(@"TERM_OF_USE", nil)];
             
-        case COSettingsStypeCodeOfConduct: return [self _pushWebViewSetting:LINK_CODE_OF_CONDUCT titler:@"Code of Conduct"];
+        case COSettingsStypeCodeOfConduct: return [self _pushWebViewSetting:LINK_CODE_OF_CONDUCT titler:NSLocalizedString(@"CODE_OF_CONDUCT", nil)];
 
-        case COSettingsStypePrivacy: return [self _pushWebViewSetting:LINK_PRIVACY titler:@"Privacy"];
+        case COSettingsStypePrivacy: return [self _pushWebViewSetting:LINK_PRIVACY titler:NSLocalizedString(@"PRIVACY", nil)];
 
         case COSettingsStypeLogout: return [self _setupLoginAndLogout];
     }
@@ -138,7 +130,7 @@
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self _logginApllication];
     } else {
-        [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Are you sure you want to logout?") cancelButton:m_string(@"Cancel") delegate:self tag:0 arrayTitleButton:@[@"OK"]];
+        [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil) message:NSLocalizedString(@"MESSAGE_LOGOUT", nil) cancelButton:NSLocalizedString(@"CANCEL_TITLE", nil) delegate:self tag:0 arrayTitleButton:@[NSLocalizedString(@"OK_TITLE", nil)]];
     }
 }
 
@@ -154,8 +146,8 @@
 - (void)_replaceArraySettingLogin {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
     for (int i = 0 ; i < arr.count ; i ++) {
-        if ([arr[i] isEqualToString:@"Log In"]) {
-            [arr replaceObjectAtIndex:i withObject:@"Log Out"];
+        if ([arr[i] isEqualToString:NSLocalizedString(@"LOG_IN", nil)]) {
+            [arr replaceObjectAtIndex:i withObject:NSLocalizedString(@"LOG_OUT", nil)];
         }
     }
     self.arraySetting = arr;
@@ -165,8 +157,8 @@
 - (void)_replaceArraySettingLogOut {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
     for (int i = 0 ; i < arr.count ; i ++) {
-        if ([arr[i] isEqualToString:@"Log Out"]) {
-            [arr replaceObjectAtIndex:i withObject:@"Log In"];
+        if ([arr[i] isEqualToString:NSLocalizedString(@"LOG_OUT", nil)]) {
+            [arr replaceObjectAtIndex:i withObject:NSLocalizedString(@"LOG_IN", nil)];
         }
     }
     self.arraySetting = arr;

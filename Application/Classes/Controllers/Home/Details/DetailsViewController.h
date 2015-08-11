@@ -14,7 +14,7 @@
 #import "CODetailsWebViewCell.h"
 #import "CODetailsProjectBottomTVCell.h"
 
-@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate, CODetailsWebViewCellDelegate,CODetailsProjectBottomTVCellDelegate>
+@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 
 @property (strong, nonatomic) COProgressbarObj *progressBarObj;
 

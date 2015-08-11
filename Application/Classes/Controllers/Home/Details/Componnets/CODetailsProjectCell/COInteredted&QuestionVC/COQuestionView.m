@@ -33,13 +33,13 @@
 
 #pragma mark SetUp UI
 - (void)_setupUI {
-    self.title = m_string(@"Questions");
+    self.title = NSLocalizedString(@"QUESTION_TITLE", nil);
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
 }
 
 - (void)_setupRightNavigationButton {
-    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
+    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone)];
@@ -54,16 +54,6 @@
     [self wsCallQuestion];
 }
 
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
-                              message:m_string(message)
-                         cancelButton:m_string(@"OK")
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
-}
-
 #pragma mark - Web Service
 - (void)wsCallQuestion {
     [UIHelper showLoadingInView:self.view];
@@ -71,9 +61,8 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:textView.text,@"question", nil];
     [[WSURLSessionManager shared] wsPostQuestionWithOffersID:idoffer body:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            DBG(@"--%@--",responseObject);
             [kNotificationCenter postNotificationName:kNOTIFICATION_QUESTION object:nil];
-            [self _setupShowAleartViewWithTitle:m_string(@"Request sent")];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"REQUEST_SEND", nil) delegate:self tag:0];
         } else {
             [UIHelper showError:error];
         }

@@ -26,7 +26,7 @@
 
 - (void)_setupLeftNavigationButton {
     UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 48, 32)];
-    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+    [backButton setTitle:NSLocalizedString(@"BACK_TITLE", nil) forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(__actionBack:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = backButtonItem;

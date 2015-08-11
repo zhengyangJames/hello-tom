@@ -61,7 +61,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"CoAssets");
+    self.navigationItem.title = NSLocalizedString(@"COASSETS_TITLE", nil);
     [self _setupLeftBarButton];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
@@ -71,7 +71,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 }
 
 - (void)_setupLeftBarButton {
-    _leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Filter")
+    _leftButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
                                                                   style:UIBarButtonItemStyleDone
                                                                  target:self
                                                                  action:@selector(__actionFilter)];
@@ -114,20 +114,12 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Action
 - (void)__actionFilter {
-    [CODropListVC presentWithTitle:m_string(@"Filter")
+    [CODropListVC presentWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
                               data:self.arrayListFilter
                      selectedIndex:_indexSelectFilter
                           parentVC:self
                          didSelect:^(NSInteger index) {
         _indexSelectFilter = index;
-//        NSArray *arraySort = self.arrayData;
-//        NSString *key = self.arrayListFilter[_indexSelectFilter];
-//        if (![key isEqualToString:@"All"]) {
-//            NSPredicate *pre = [NSPredicate predicateWithFormat:@"offerType CONTAINS[cd] %@",key];
-//            self.arraySort = [arraySort filteredArrayUsingPredicate:pre];
-//        }else {
-//            self.arraySort = self.arrayData;
-//        }
         self.arrayData = nil;
          if (_indexSelectFilter == 1) {
              [self _callWSGetListOfferFilter:kFILTER_BP];
@@ -189,12 +181,18 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            [self _pushDetailVcWithID:responseObject];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+               [self _pushDetailVcWithID:responseObject];
+            }];
         } else {
             [UIHelper showError:error];
         }
+        
         [UIHelper hideLoadingFromView:self.view];
-        _leftButton.enabled = YES;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            _leftButton.enabled = YES;
+        }];
+        
     }];
 }
 

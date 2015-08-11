@@ -35,21 +35,13 @@
 
 
 #pragma mark - Private
-- (void)_setupShowAleartViewWithTitle:(NSString*)message tag:(NSInteger)tag {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
-                              message:m_string(message)
-                         cancelButton:m_string(@"OK")
-                             delegate:self
-                                  tag:tag
-                     arrayTitleButton:nil];
-}
 
 - (BOOL)_isValidation {
     if ([emailTextField.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Email is required." tag:0];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
         return NO;
     }else if (![emailTextField.text isValidEmail]) {
-        [self _setupShowAleartViewWithTitle:@"Email is invalid." tag:0];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_INVALID", nil) delegate:self tag:0];
         return NO;
     }
     return YES;
@@ -75,10 +67,10 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:emailTextField.text,@"email", nil];
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsForgotPassword:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            [self _setupShowAleartViewWithTitle:m_string(MESSEAGE_RESET_PASSWORD) tag:10];
+        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {;
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"MESSEAGE_RESET_PASSWORD", nil) delegate:self tag:10];
         } else {
-            [self _setupShowAleartViewWithTitle:m_string(@"Your email is invalid.") tag:20];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"YOUR_EMAIL_INVALID", nil) delegate:self tag:20];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

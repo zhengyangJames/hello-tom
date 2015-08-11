@@ -27,6 +27,5 @@
 #import <Foundation/Foundation.h>
 #import "NikmeDefine.h"
 #import "AppDefines.h"
-#import "MagicalRecord.h"
 #import "UIHelper.h"
 #endif

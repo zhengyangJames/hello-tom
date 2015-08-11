@@ -57,11 +57,11 @@
 }
 
 - (void)__actionUpdateButton {
-    [_interedtedBTN setTitle:@"I want to invest again!" forState:UIControlStateNormal];
+    [_interedtedBTN setTitle:NSLocalizedString(@"BUTTON_INTERESTED", nil) forState:UIControlStateNormal];
 }
 
 - (void)__actionUpdateButtonQuestion {
-    [_questionBTN setTitle:@"Request sent." forState:UIControlStateNormal];
+    [_questionBTN setTitle:NSLocalizedString(@"BUTTON_QUESTION", Nil) forState:UIControlStateNormal];
 }
 
 

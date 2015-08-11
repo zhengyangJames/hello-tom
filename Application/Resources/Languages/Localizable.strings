@@ -1,0 +1,87 @@
+/* 
+  Localizable.strings
+  CoAssets
+
+  Created by Nikmesoft_M008 on 8/10/15.
+  Copyright (c) 2015 Sanyi. All rights reserved.
+*/
+
+
+"APP_NAME"                              = "COASSETS";
+"COASSETS_TITLE"                        = "CoAssets";
+"FILTER_TITLE"                          = "Filter";
+"OK_TITLE"                              = "OK";
+"CANCEL_TITLE"                          = "Cancel";
+"BACK_TITLE"                            = "Back";
+"QUESTION_TITLE"                        = "Questions";
+"REQUEST_SEND_TITLE"                    = "Request sent";
+"INTERESTED_TITLE"                      = "Interested";
+"DONE_TITLE"                            = "Done";
+"SALUTATION_TITLE"                      = "Salutation";
+"PHONE_CODE_TITLE"                      = "Phone Codes";
+"TAKE_PHOTO_TITLE"                      = "Take a photo";
+"CHOOSE_EXISTING_TITLE"                 = "Choose existing";
+
+"FIRST_NAME"                            = "First Name";
+"LAST_NAME"                             = "Last Name";
+"EMAIL"                                 = "Email";
+"PHONE"                                 = "Phone";
+"CONTACT"                               = "Contact";
+"SETTINGS"                              = "Settings";
+
+"NEWS"                                  = "News";
+
+
+"BUTTON_INTERESTED"                     = "I want to invest again!";
+"BUTTON_QUESTION"                       = "Request sent.";
+
+"SECTION_DECLARATION_FORM"              = "DECLARATION FORM";
+"SECTION_LEGAL_APPOINTMENT"             = "LEGAL APPOINTMENT";
+"SECTION_PROOF_OF_LICENSES"             = "PROOF OF LICENSES";
+"SECTION_OTHER_DOCUMENTS"               = "OTHER DOCUMENTS";
+"SECTION_PROOF_OF_OWNERSHIP"            = "PROOF OF OWNERSHIP";
+"SECTION_COMPANY_REGISTRATION"          = "COMPANY REGISTRATION";
+
+"EMAIL_REQUIRED"                        = "Email is required.";
+"USERNAME_REQUIRED"                     = "Username is required.";
+"PASSWORD_REQUIRED"                     = "Password is required.";
+"NEW_PASSWORD_REQUIRED"                 = "New password is required.";
+"FIRSTNAME_REQUIRED"                    = "First Name is required.";
+"LASTNAME_REQUIRED"                     = "Last Name is required.";
+"PHONE_REQUIRED"                        = "Phone is required.";
+"ADDRESS_REQUIRED"                      = "Address is required.";
+"CONFIRM_PASSWORD_REQUIRED"             = "Confirm password is required.";
+"CONFIRM_PASSWORD_MESSAGE"              = "Confirm password does not match";
+
+"EMAIL_INVALID"                         = "Email is invalid.";
+"MESSEAGE_RESET_PASSWORD"               = "Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly";
+"YOUR_EMAIL_INVALID"                    = "Your email is invalid.";
+"INVALID_GRANT"                         = "Invalid Grant";
+"AMOUNT_REQUIRED"                       = "Amount is required.";
+"MESSAGE_CHECK_EMAIL"                   = "Please agree to allow CoAssets to contact you in order to facilitate the crowdfunding process.";
+"REQUEST_SEND"                          = "Request sent.";
+"TERM_OF_USE"                           = "Terms Of Use";
+"CODE_OF_CONDUCT"                       = "Code of Conduct";
+"COMMENTARIES"                          = "Commentaries";
+"PRIVACY"                               = "Privacy";
+"BASIC_INFO"                            = "Basic Info";
+
+"PASSWORD_CHANGE_SUCCESSFULLY"          = "Password has been changed successfully";
+"PASSWORD_NOT_CHANGED"                  = "Password was not changed";
+
+"UPDATE_PROFILE"                        = "Update profile";
+"UPDATE_PASSWORD"                       = "Update password";
+"MESSAGE_LOGOUT"                        = "Are you sure you want to logout?";
+"INVAlID_USERNAME_OR_PASSWORD"          = "Invalid username or password.";
+"LOG_IN"                                = "Log In";
+"LOG_OUT"                               = "Log Out";
+"USERNAME_ALREADY_EXISTS"               = "Username Already Exists";
+"N/A"                                   = "N/A";
+"INVESTORS"                             = "%@ INVESTORS";
+"MONTHS"                                = "%@ MONTHS";
+"STATUS"                                = "%@";
+"MIN_ANNUAL_RETURN"                     = "%@ %% (%@%%)";
+"DAY_LEFT"                              = "%@";
+"GOAL"                                  = "%tu%% of goal";
+
+

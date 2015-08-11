@@ -11,7 +11,7 @@
 #import "CODetailsDelegate.h"
 #import "COSlidingView.h"
 #import "WSURLSessionManager+ListHome.h"
-#import "UIImageView+Networking.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "COInterestedViewController.h"
 #import "COQuestionView.h"
 #import "CODetailsProfileObj.h"
@@ -43,8 +43,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self _getHeightWebview];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    // enable slide-back
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    }
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
@@ -62,8 +66,10 @@
     self.tableView.dataSource = self.detailsDataSource;
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
-    self.detailsDataSource.heightWebview = 100;
+    self.detailsDataSource.heightWebview = 0;
     [self _reloadData];
+    
+    [self _getHeightWebview];
 }
 
 - (void)_reloadData {
@@ -75,12 +81,15 @@
 }
 
 - (void)_getHeightWebview {
+    [UIHelper showLoadingInView:self.view];
     COOferObj *offerObj = self.arrayObj[3];
     COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+    
     [[WebViewManager shared] getHeightWebViewWithStringHtml:offerItemObj.linkOrDetail heightForWebView:^(CGFloat height, UIWebView *web) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.detailsDataSource.heightWebview = height;
             [self.tableView reloadData];
+            [UIHelper hideLoadingFromView:self.view];
         }];
     }];
 }
@@ -117,8 +126,7 @@
     NSURL *url = [NSURL URLWithString:offerItemObj.photo];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
-    [imageView setImage:[UIImage imageNamed:@"ic_placeholder"]];
-    [imageView setImageURL:url];
+    [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
     [headerView addSubview:imageView];
     [imageView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
     self.tableView.tableHeaderView = headerView;
@@ -185,6 +193,9 @@
     }];
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return YES;
+}
 
 @end
 
