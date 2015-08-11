@@ -9,6 +9,7 @@
 #import "CODetailsProjectCell.h"
 #import "COPositive&NagitiveButton.h"
 #import "UIHelper.h"
+#import "CODetailsProfileObj+Formater.h"
 
 @interface CODetailsProjectCell ()
 {
@@ -57,10 +58,8 @@
     }
     
     if (detailsProfile.min_investment) {
-       // NSString *investment = [NSString stringWithFormat:@"%@",_detailsProfile.min_investment];
-        NSNumber *numberInVest = [NSNumber numberWithLong:(long)detailsProfile.min_investment];
-        NSString *investment= [UIHelper formatFromNumber:numberInVest];
-        _projectInvestmentLable.text = investment ;
+        NSString *str = [CODetailsProfileObj currencyStringFormatFromValue:detailsProfile.min_investment];
+        _projectInvestmentLable.text = str ;
     } else {
         _projectInvestmentLable.text = @"N/A" ;
     }

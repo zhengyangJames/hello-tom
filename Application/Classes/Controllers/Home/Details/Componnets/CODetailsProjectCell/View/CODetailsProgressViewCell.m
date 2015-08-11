@@ -9,6 +9,7 @@
 #import "CODetailsProgressViewCell.h"
 #import "NMDeviceHelper.h"
 #import "UIHelper.h"
+#import "COProgressbarObj+Formatter.h"
 
 @interface CODetailsProgressViewCell ()
 {
@@ -44,11 +45,9 @@
         float value = ([obj.goal doubleValue]*10)/1000;
         [_progressBar setProgress:value animated:NO];
     }
-    
     double valueTitle = [obj.current_funded_amount doubleValue];
-    NSNumber *numberProgress = [NSNumber numberWithDouble:(double)valueTitle];
-    NSString *progress = [UIHelper formatFromNumber:numberProgress];
-    _titleProgressbarLable.text = progress;
+    NSString *currencyString = [COProgressbarObj currencyStringFormatFromValue:obj.current_funded_amount];
+    _titleProgressbarLable.text = currencyString;
     
     double value = ([obj.goal doubleValue]);
     int intConvert = (int)round(value);
@@ -60,9 +59,10 @@
     } else {
         total = 0;
     }
-    NSNumber *numberTotal = [NSNumber numberWithInt:total];
-    NSString *totalString = [UIHelper formatFromNumber:numberTotal];
-    _totalProgressbarLable.text = [@"of $" stringByAppendingString:totalString];
+    double totalDouble = (double)total;
+    NSNumber *numberTotal = [NSNumber numberWithDouble:totalDouble];
+    NSString *totalString = [UIHelper stringCurrencyFormatFromNumberDouble:numberTotal];
+    _totalProgressbarLable.text = [@"of " stringByAppendingString:totalString];
 }
 
 

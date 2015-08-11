@@ -250,7 +250,7 @@
     
 }
 
-+ (NSString *)formatFromNumber:(NSNumber*)number {
++ (NSString *)stringCurrencyFormatFromNumberDouble:(NSNumber*)number {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     NSString *cvString  = [formatter stringFromNumber:number];

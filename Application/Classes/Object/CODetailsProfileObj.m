@@ -9,7 +9,4 @@
 #import "CODetailsProfileObj.h"
 
 @implementation CODetailsProfileObj
-
-
-
 @end
