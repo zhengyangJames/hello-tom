@@ -7,7 +7,7 @@
 //
 
 #import "CODetailsPhotoCell.h"
-#import "UIImageView+Networking.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "NSString_stripHtml.h"
 #import "COOfferItemObj.h"
 
@@ -49,7 +49,7 @@
     [_image setImage:[UIImage imageNamed:@"company_logo_degault.png"]];
     if (![coOfferObj.linkOrDetail isEqualToString:@"public_media/company.png"]) {
         NSURL *url = [NSURL URLWithString:coOfferObj.linkOrDetail];
-        [_image setImageURL:url];
+        [_image sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
     }
 }
 
