@@ -217,6 +217,7 @@ TableBottomViewCellDelegate>
 - (AboutTableViewCell*)_setupAboutCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AboutTableViewCell *aboutCell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCell identifier]
                                                                     forIndexPath:indexPath];
+    aboutCell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row == COAboutProfileStyleFirstName) {
         aboutCell.lblDetail.text = self.profileObject.first_name;
         aboutCell.lblname.text = NSLocalizedString(@"FIRST_NAME", nil);
@@ -258,6 +259,7 @@ TableBottomViewCellDelegate>
         _tableBottomViewCell.lblUpdateButton = NSLocalizedString(@"UPDATE_PASSWORD", nil);
     }
     _tableBottomViewCell.delegate = self;
+    _tableBottomViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return _tableBottomViewCell;
 }
 

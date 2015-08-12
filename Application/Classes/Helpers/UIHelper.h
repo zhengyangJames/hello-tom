@@ -28,4 +28,5 @@
 
 + (NSArray *)getListOfferDetailWihtDict:(NSDictionary *)dict;
 + (NSString *)stringCurrencyFormatFromNumberDouble:(NSNumber*)number;
++ (NSString *)stringDecimalFormatFromNumberDouble:(NSNumber*)number;
 @end

@@ -53,6 +53,11 @@
 "CONFIRM_PASSWORD_REQUIRED"             = "Confirm password is required.";
 "CONFIRM_PASSWORD_MESSAGE"              = "Confirm password does not match";
 
+"FILTER_BULLK_NULL"                     = "Bulk Purchase is comming soon";
+"FILTER_CROWD_NULL"                     = "Crowdfunding is comming soon";
+"FILTER_SALE_NULL"                      = "Pre-Sales is comming soon";
+"FILTER_ALL_NULL"                       = "CoAssets is comming soon";
+
 "EMAIL_INVALID"                         = "Email is invalid.";
 "MESSEAGE_RESET_PASSWORD"               = "Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly";
 "YOUR_EMAIL_INVALID"                    = "Your email is invalid.";

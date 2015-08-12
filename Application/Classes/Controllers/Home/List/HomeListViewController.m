@@ -24,6 +24,13 @@
 #define kFILTER_PS  @"/PS"
 #define kFILTER_BP  @"/BP"
 
+typedef NS_ENUM(NSInteger, FilterType) {
+    FilterBullkType,
+    FilterCrowdType,
+    FilterSaleType,
+    FilterAllType
+};
+
 typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate,LoginViewControllerDelegate>
@@ -90,6 +97,24 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)_showAlertWithFilterNull:(NSInteger)filterType{
+    switch (filterType) {
+        case FilterBullkType:
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_BULLK_NULL", nil) delegate:nil tag:900];
+            break;
+        case FilterCrowdType:
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_CROWD_NULL", nil) delegate:nil tag:901];
+            break;
+        case FilterSaleType:
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_SALE_NULL", nil) delegate:nil tag:902];
+            break;
+        case FilterAllType:
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_ALL_NULL", nil) delegate:nil tag:903];
+            break;
+        default:  break;
+    }
+}
+
 #pragma mark - Setter Getter
 - (NSArray*)arrayData {
     if (!_arrayData) {
@@ -141,17 +166,21 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared]wsGetListOfferWithHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView beginUpdates];
-                for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
-                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                }
-                [_tableView endUpdates];
-            }];
+            [UIHelper hideLoadingFromView:self.view];
+            if (self.arrayData.count>0) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [_tableView beginUpdates];
+                    for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
+                        [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                    [_tableView endUpdates];
+                }];
+            } else {
+                [self _showAlertWithFilterNull:FilterAllType];
+            }
         } else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
         _leftButton.enabled = YES;
     }];
 }
@@ -162,17 +191,23 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared] wsGetListOffersFilter:typeFilter handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView beginUpdates];
-                for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
-                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                }
-                [_tableView endUpdates];
-            }];
+            [UIHelper hideLoadingFromView:self.view];
+            if (self.arrayData.count>0) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [_tableView beginUpdates];
+                    for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
+                        [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                    [_tableView endUpdates];
+                }];
+            } else {
+                if ([typeFilter isEqualToString:kFILTER_BP]) { [self _showAlertWithFilterNull:FilterBullkType]; }
+                else if ([typeFilter isEqualToString:kFILTER_CO]) { [self _showAlertWithFilterNull:FilterCrowdType]; }
+                else if ([typeFilter isEqualToString:kFILTER_PS]) { [self _showAlertWithFilterNull:FilterSaleType]; }
+            }
         } else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
         _leftButton.enabled = YES;
     }];
 }

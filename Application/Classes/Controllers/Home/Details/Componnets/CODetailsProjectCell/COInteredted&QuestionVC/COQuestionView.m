@@ -26,6 +26,7 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
@@ -34,7 +35,6 @@
 #pragma mark SetUp UI
 - (void)_setupUI {
     self.title = NSLocalizedString(@"QUESTION_TITLE", nil);
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
 }
 

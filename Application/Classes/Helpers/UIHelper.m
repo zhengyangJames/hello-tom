@@ -156,7 +156,7 @@
             CODetailsProfileObj *profileObj = [[CODetailsProfileObj alloc]init];
             profileObj.investor_count = [dict objectForKeyNotNull:@"investor_count"];
             profileObj.status = [dict objectForKeyNotNull:@"status"];
-            profileObj.min_annual_return = [dict valueForKeyNotNull:@"min_annual_return"];
+            profileObj.annualized_return = [dict valueForKeyNotNull:@"annualized_return"];
             profileObj.min_investment = [dict objectForKeyNotNull:@"min_investment"];
             profileObj.day_left = [dict objectForKeyNotNull:@"day_left"];
             profileObj.time_horizon = [dict objectForKeyNotNull:@"time_horizon"];
@@ -205,9 +205,15 @@
                         if (arrayObj.count > 0) {
                             for (NSDictionary *dictObj in arrayObj) {
                                 COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-                                offItem.linkOrDetail = [dictObj objectForKeyNotNull:@"url"];
-                                offItem.title = [dictObj objectForKeyNotNull:@"title"];
-                                [arrOffer addObject:offItem];
+                                if ([[dictObj objectForKeyNotNull:@"url"] isEqualToString:@"N/A"]) {
+                                    offItem.linkOrDetail = nil;
+                                    offItem.title = @"No Documents Uploaded";
+                                    [arrOffer addObject:offItem];
+                                } else {
+                                    offItem.linkOrDetail = [dictObj objectForKeyNotNull:@"url"];
+                                    offItem.title = [dictObj objectForKeyNotNull:@"title"];
+                                    [arrOffer addObject:offItem];
+                                }
                             }
                         } else {
                             COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
@@ -261,12 +267,19 @@
     
 }
 
++ (NSString *)stringDecimalFormatFromNumberDouble:(NSNumber*)number {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSString *cvString  = [formatter stringFromNumber:number];
+    return cvString;
+}
+
 + (NSString *)stringCurrencyFormatFromNumberDouble:(NSNumber*)number {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     NSString *cvString  = [formatter stringFromNumber:number];
-    NSString *returnString = [cvString substringToIndex:cvString.length - 3];
-    return returnString;
+    NSString *stringF = [cvString substringToIndex:cvString.length - 3];
+    return stringF;
 }
 
 @end
