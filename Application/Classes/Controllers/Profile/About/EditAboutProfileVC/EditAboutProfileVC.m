@@ -162,13 +162,25 @@
         _currentField = phoneNameTXT;
         [self _actionShowAleartViewWithTitle:NSLocalizedString(@"PHONE_REQUIRED", nil)];
         return NO;
-    } else if ([addressNameTXT.text isEmpty]) {
-        _currentField = addressNameTXT;
-        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"ADDRESS_REQUIRED", nil)];
-        
+    } else if ([self _checkStringIsNumberOrCharacter:countryTXT.text]) {
+        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"ERROR_COUNTRY", nil)];
         return NO;
     }
     return YES;
+}
+
+- (BOOL)_checkStringIsNumberOrCharacter:(NSString*)string {
+    if (string) {
+        BOOL check = false;
+        for (int i=0 ; i <string.length; i++) {
+            NSString *s = [string substringWithRange:NSMakeRange(i, 1)];
+            check = [string length] && isnumber([s characterAtIndex:0]);
+            if (check) {
+                break;
+            }
+        }
+        return check;
+    } else return YES;
 }
 
 #pragma mark - Web Service

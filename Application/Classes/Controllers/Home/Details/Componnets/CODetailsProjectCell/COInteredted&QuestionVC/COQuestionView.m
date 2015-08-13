@@ -51,7 +51,10 @@
 #pragma mark - Action
 - (void)__actionDone {
     [self.view endEditing:YES];
-    [self wsCallQuestion];
+    if (![textView.text isEmpty]) {
+        [self wsCallQuestion]; return;
+    }
+    [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"ERROR_QUESTION", nil) delegate:nil tag:1];
 }
 
 #pragma mark - Web Service

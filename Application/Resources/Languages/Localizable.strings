@@ -70,6 +70,8 @@
 "COMMENTARIES"                          = "Commentaries";
 "PRIVACY"                               = "Privacy";
 "BASIC_INFO"                            = "Basic Info";
+"ERROR_QUESTION"                        = "Question content is required";
+"ERROR_COUNTRY"                         = "country is invalid";
 
 "PASSWORD_CHANGE_SUCCESSFULLY"          = "Password has been changed successfully";
 "PASSWORD_NOT_CHANGED"                  = "Password was not changed";
