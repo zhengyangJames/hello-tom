@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FA93C1B7A13A600A80D3F /* LoadFileManager.m */; };
+		01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1437B1B7D1053003DF5F9 /* COOfferModel.m */; };
 		0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881A1B27CA7100B5656F /* NMCollectionView.m */; };
 		0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881C1B27CA7100B5656F /* NMCollectionViewCell.m */; };
 		0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881E1B27CA7100B5656F /* NMTableView.m */; };
@@ -239,6 +240,8 @@
 /* Begin PBXFileReference section */
 		012FA93C1B7A13A600A80D3F /* LoadFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadFileManager.m; sourceTree = "<group>"; };
 		012FA93D1B7A13A600A80D3F /* LoadFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadFileManager.h; sourceTree = "<group>"; };
+		01D1437A1B7D1053003DF5F9 /* COOfferModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOfferModel.h; sourceTree = "<group>"; };
+		01D1437B1B7D1053003DF5F9 /* COOfferModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOfferModel.m; sourceTree = "<group>"; };
 		0ECA88191B27CA7100B5656F /* NMCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCollectionView.h; sourceTree = "<group>"; };
 		0ECA881A1B27CA7100B5656F /* NMCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMCollectionView.m; sourceTree = "<group>"; };
 		0ECA881B1B27CA7100B5656F /* NMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCollectionViewCell.h; sourceTree = "<group>"; };
@@ -579,6 +582,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01D143791B7D1035003DF5F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01D1437A1B7D1053003DF5F9 /* COOfferModel.h */,
+				01D1437B1B7D1053003DF5F9 /* COOfferModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0ECA88181B27CA7100B5656F /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +739,7 @@
 				7F325E6E1B40E50800116445 /* Helpers */,
 				7F325E751B40E50800116445 /* Managers */,
 				7F325E781B40E50800116445 /* Object */,
+				01D143791B7D1035003DF5F9 /* Models */,
 				7F325E871B40E50800116445 /* Services */,
 			);
 			path = Classes;
@@ -1728,6 +1741,7 @@
 				7F325F7B1B40E50800116445 /* BaseNavigationController.m in Sources */,
 				7F187A231B7C59E30072423D /* CODetailsOffersItemObj.m in Sources */,
 				0ECA88401B27CA7100B5656F /* NMTableViewCell.m in Sources */,
+				01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */,
 				0ECA88481B27CA7100B5656F /* UIView+Identifier.m in Sources */,
 				7F325FDD1B40E50800116445 /* WSURLSessionManager+User.m in Sources */,
 				7F325FBD1B40E50800116445 /* WebViewSetting.m in Sources */,
