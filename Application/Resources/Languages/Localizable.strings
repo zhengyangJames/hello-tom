@@ -91,4 +91,9 @@
 "DAY_LEFT"                              = "%@";
 "GOAL"                                  = "%tu%% of goal";
 
-
+"ADDRESS"                               = "ADDRESS";
+"PROJECT"                               = "PROJECT";
+"OFFER"                                 = "OFFER";
+"DOCUMENTS"                             = "DOCUMENTS";
+"NoDocumentsUploaded"                   = "No Documents Uploaded";
+"DETAIL_DOCUMENT"                       = "The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";

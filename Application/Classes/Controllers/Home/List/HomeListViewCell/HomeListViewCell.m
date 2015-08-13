@@ -44,7 +44,7 @@
 
 #pragma mark - Set Get
 
-- (void)setObject:(COLIstOffersObject *)object {
+- (void)setObject:(COListOffersObject *)object {
     _object = object;
     NSURL *url = [NSURL URLWithString:_object.offerPhoto];
     [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];

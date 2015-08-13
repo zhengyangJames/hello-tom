@@ -7,7 +7,7 @@
 //
 
 #import "CODetailsAccessoryCell.h"
-#import "COOfferItemObj.h"
+#import "CODetailsOffersItemObj.h"
 
 @implementation CODetailsAccessoryCell
 
@@ -19,7 +19,7 @@
 
 #pragma mark - Set Get
 
-- (void)setCoOOfferItemObj:(COOfferItemObj *)coOOfferItemObj {
+- (void)setCoOOfferItemObj:(CODetailsOffersItemObj *)coOOfferItemObj {
     _coOOfferItemObj = coOOfferItemObj;
     self.detailsLabel.text = coOOfferItemObj.title;
 }

@@ -7,7 +7,7 @@
 //
 
 #import "CODetailsTextCell.h"
-#import "COOfferItemObj.h"
+#import "CODetailsOffersItemObj.h"
 
 @interface CODetailsTextCell () <UIWebViewDelegate>
 {
@@ -26,7 +26,7 @@
 }
 
 #pragma mark - Set Get
-- (void)setCoOfferItem:(COOfferItemObj *)coOfferItem {
+- (void)setCoOfferItem:(CODetailsOffersItemObj *)coOfferItem {
     _coOfferItem = coOfferItem;
     _headerLabel.text = coOfferItem.title;
     if (coOfferItem.htmlDetail) {

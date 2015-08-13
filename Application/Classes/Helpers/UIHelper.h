@@ -26,7 +26,8 @@
 
 + (UIImagePickerController *)showImagePickerAtController:(UIViewController *)controller withDelegate:(id)delegate andMode:(NSInteger)mode;
 
-+ (NSArray *)getListOfferDetailWihtDict:(NSDictionary *)dict;
 + (NSString *)stringCurrencyFormatFromNumberDouble:(NSNumber*)number;
 + (NSString *)stringDecimalFormatFromNumberDouble:(NSNumber*)number;
+
++ (NSAttributedString *)_getStringFromHtml:(NSString *)stringHtml;
 @end

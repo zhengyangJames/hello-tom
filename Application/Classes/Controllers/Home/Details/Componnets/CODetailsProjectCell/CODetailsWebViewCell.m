@@ -7,7 +7,7 @@
 //
 
 #import "CODetailsWebViewCell.h"
-#import "COOfferItemObj.h"
+#import "CODetailsOffersItemObj.h"
 
 @interface CODetailsWebViewCell ()
 {
@@ -30,7 +30,7 @@
 }
 
 #pragma mark - Set Get
-- (void)setCOOfferItemObj:(COOfferItemObj *)cOOfferItemObj {
+- (void)setCOOfferItemObj:(CODetailsOffersItemObj *)cOOfferItemObj {
     _cOOfferItemObj = cOOfferItemObj;
     _titler.text = cOOfferItemObj.title;
     NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,cOOfferItemObj.linkOrDetail];

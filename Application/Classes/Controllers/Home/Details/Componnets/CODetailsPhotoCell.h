@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class COOfferItemObj;
+@class CODetailsOffersItemObj;
 
 @interface CODetailsPhotoCell : UITableViewCell
 
-@property (strong, nonatomic) COOfferItemObj *coOfferObj;
+@property (strong, nonatomic) CODetailsOffersItemObj *coOfferObj;
 
 @end

@@ -9,7 +9,6 @@
 #import "BaseViewController.h"
 #import "CODetailsAccessoryCell.h"
 #import "CODetailsDelegate.h"
-#import "CODetailsOffersObject.h"
 #import "COProgressbarObj.h"
 #import "CODetailsWebViewCell.h"
 #import "CODetailsProjectBottomTVCell.h"

@@ -9,7 +9,7 @@
 #import "CODetailsPhotoCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NSString_stripHtml.h"
-#import "COOfferItemObj.h"
+#import "CODetailsOffersItemObj.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #define kCORNER_RADIUS_IMAGE 6
@@ -44,7 +44,7 @@
 
 #pragma mark - Set Get
 
-- (void)setCoOfferObj:(COOfferItemObj *)coOfferObj {
+- (void)setCoOfferObj:(CODetailsOffersItemObj *)coOfferObj {
     _coOfferObj = coOfferObj;
     _detailsTextView.text = coOfferObj.title;
     if (coOfferObj.linkOrDetail && ![coOfferObj.linkOrDetail rangeOfString:@"public_media/company.png"].length != 0) {

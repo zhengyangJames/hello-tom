@@ -17,8 +17,6 @@
 #import "WSURLSessionManager.h"
 #import "WSURLSessionManager+ListHome.h"
 #import "COProgressbarObj.h"
-#import "COOferObj.h"
-#import "COOfferItemObj.h"
 
 #define kFILTER_CO  @"/CO"
 #define kFILTER_PS  @"/PS"
