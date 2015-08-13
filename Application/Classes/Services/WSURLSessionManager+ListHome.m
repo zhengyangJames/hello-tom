@@ -184,8 +184,13 @@
                     NSMutableArray *arrSub = [NSMutableArray new];
                     if (arr.count > 0) {
                         for (NSDictionary *dic in arr) {
-                            CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc]init];
-                            [arrSub addObject:[obj mappingDetailsOffersItemSubDocument:dic andKey:key]];
+                            CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc] init];
+                            obj = [obj mappingDetailsOffersItemSubDocument:dic andKey:key];
+                            if(!obj.linkOrDetail) {
+                                [arrSub addObject:obj];
+                                break;
+                            }
+                            [arrSub addObject:obj];
                         }
                     } else {
                         CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc]init];

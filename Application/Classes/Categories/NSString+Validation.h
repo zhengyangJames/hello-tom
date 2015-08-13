@@ -13,4 +13,5 @@
 - (BOOL)isValidEmail;
 - (BOOL)isValidPasswordRegExr;
 - (BOOL)isValidPassword;
+
 @end

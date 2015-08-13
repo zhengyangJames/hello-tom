@@ -16,6 +16,6 @@
 - (CODetailsOffersObj*)mappingDetailsOffersItemDescription:(NSDictionary*)dicObj;
 - (CODetailsOffersObj*)mappingDetailsOffersItemProjectDesc:(NSDictionary*)dicObj;
 - (CODetailsOffersObj*)mappingDetailsOffersItemDocument;
-- (CODetailsOffersObj*)mappingDetailsOffersItemSubDocument:(NSDictionary*)arrayObj andKey:(NSString*)key;
+- (CODetailsOffersItemObj*)mappingDetailsOffersItemSubDocument:(NSDictionary*)arrayObj andKey:(NSString*)key;
 
 @end

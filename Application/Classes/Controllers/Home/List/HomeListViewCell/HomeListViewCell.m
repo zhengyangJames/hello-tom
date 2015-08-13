@@ -9,8 +9,6 @@
 #import "HomeListViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-#import "UIImage+animatedGIF.h"
-
 @implementation HomeListViewCell
 {
     __weak IBOutlet UIImageView *_imageBig;
@@ -33,13 +31,6 @@
     [_viewImageLogo.layer setBorderWidth:0.8];
     [_viewImageLogo.layer setBorderColor:[UIColor grayColor].CGColor];
     [self setNeedsDisplay];
-}
-
-#pragma mark - Private
-- (UIImage*)_loadGifImageLoading {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Preloader_8" withExtension:@"gif"];
-    UIImage *imageGif = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
-    return imageGif;
 }
 
 #pragma mark - Set Get

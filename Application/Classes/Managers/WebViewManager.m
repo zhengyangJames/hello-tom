@@ -31,7 +31,6 @@
     if (!_webView) {
         UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 16, [UIScreen mainScreen].bounds.size.height)];
         web.scrollView.scrollEnabled = NO;
-        //web.contentMode = UIViewContentModeScaleAspectFill;
         web.hidden = YES;
         web.delegate = self;
         [[kAppDelegate window] addSubview:web];
