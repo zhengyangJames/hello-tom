@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class COOfferItemObj;
+@class CODetailsOffersItemObj;
 
 @protocol CODetailsAccessoryCellDelegate;
 
@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel  *detailsLabel;
 @property (weak, nonatomic) id<CODetailsAccessoryCellDelegate> delegate;
 
-@property (nonatomic, strong) COOfferItemObj *coOOfferItemObj;
+@property (nonatomic, strong) CODetailsOffersItemObj *coOOfferItemObj;
 
 @end
 

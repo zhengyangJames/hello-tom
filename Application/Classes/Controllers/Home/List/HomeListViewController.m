@@ -17,12 +17,17 @@
 #import "WSURLSessionManager.h"
 #import "WSURLSessionManager+ListHome.h"
 #import "COProgressbarObj.h"
-#import "COOferObj.h"
-#import "COOfferItemObj.h"
 
 #define kFILTER_CO  @"/CO"
 #define kFILTER_PS  @"/PS"
 #define kFILTER_BP  @"/BP"
+
+typedef NS_ENUM(NSInteger, FilterType) {
+    FilterBullkType,
+    FilterCrowdType,
+    FilterSaleType,
+    FilterAllType
+};
 
 typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
@@ -61,7 +66,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = m_string(@"CoAssets");
+    self.navigationItem.title = NSLocalizedString(@"COASSETS_TITLE", nil);
     [self _setupLeftBarButton];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
@@ -71,7 +76,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 }
 
 - (void)_setupLeftBarButton {
-    _leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Filter")
+    _leftButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
                                                                   style:UIBarButtonItemStyleDone
                                                                  target:self
                                                                  action:@selector(__actionFilter)];
@@ -88,6 +93,24 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     vc.arrayObj = arr;
     vc.progressBarObj = self.profressbarObj;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)_showAlertWithFilterNull:(NSInteger)filterType{
+    switch (filterType) {
+        case FilterBullkType:
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_BULLK_NULL", nil) delegate:nil tag:900];
+            break;
+        case FilterCrowdType:
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_CROWD_NULL", nil) delegate:nil tag:901];
+            break;
+        case FilterSaleType:
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_SALE_NULL", nil) delegate:nil tag:902];
+            break;
+        case FilterAllType:
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_ALL_NULL", nil) delegate:nil tag:903];
+            break;
+        default:  break;
+    }
 }
 
 #pragma mark - Setter Getter
@@ -114,20 +137,12 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Action
 - (void)__actionFilter {
-    [CODropListVC presentWithTitle:m_string(@"Filter")
+    [CODropListVC presentWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
                               data:self.arrayListFilter
                      selectedIndex:_indexSelectFilter
                           parentVC:self
                          didSelect:^(NSInteger index) {
         _indexSelectFilter = index;
-//        NSArray *arraySort = self.arrayData;
-//        NSString *key = self.arrayListFilter[_indexSelectFilter];
-//        if (![key isEqualToString:@"All"]) {
-//            NSPredicate *pre = [NSPredicate predicateWithFormat:@"offerType CONTAINS[cd] %@",key];
-//            self.arraySort = [arraySort filteredArrayUsingPredicate:pre];
-//        }else {
-//            self.arraySort = self.arrayData;
-//        }
         self.arrayData = nil;
          if (_indexSelectFilter == 1) {
              [self _callWSGetListOfferFilter:kFILTER_BP];
@@ -149,17 +164,21 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared]wsGetListOfferWithHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView beginUpdates];
-                for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
-                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                }
-                [_tableView endUpdates];
-            }];
+            [UIHelper hideLoadingFromView:self.view];
+            if (self.arrayData.count>0) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [_tableView beginUpdates];
+                    for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
+                        [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                    [_tableView endUpdates];
+                }];
+            } else {
+                [self _showAlertWithFilterNull:FilterAllType];
+            }
         } else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
         _leftButton.enabled = YES;
     }];
 }
@@ -170,17 +189,23 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared] wsGetListOffersFilter:typeFilter handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView beginUpdates];
-                for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
-                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                }
-                [_tableView endUpdates];
-            }];
+            [UIHelper hideLoadingFromView:self.view];
+            if (self.arrayData.count>0) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [_tableView beginUpdates];
+                    for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
+                        [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                    [_tableView endUpdates];
+                }];
+            } else {
+                if ([typeFilter isEqualToString:kFILTER_BP]) { [self _showAlertWithFilterNull:FilterBullkType]; }
+                else if ([typeFilter isEqualToString:kFILTER_CO]) { [self _showAlertWithFilterNull:FilterCrowdType]; }
+                else if ([typeFilter isEqualToString:kFILTER_PS]) { [self _showAlertWithFilterNull:FilterSaleType]; }
+            }
         } else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
         _leftButton.enabled = YES;
     }];
 }
@@ -189,12 +214,18 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            [self _pushDetailVcWithID:responseObject];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+               [self _pushDetailVcWithID:responseObject];
+            }];
         } else {
             [UIHelper showError:error];
         }
+        
         [UIHelper hideLoadingFromView:self.view];
-        _leftButton.enabled = YES;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            _leftButton.enabled = YES;
+        }];
+        
     }];
 }
 

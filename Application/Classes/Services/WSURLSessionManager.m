@@ -133,7 +133,6 @@
     // Send Request
     [[sm dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-        DBG(@"%tu",httpResponse.statusCode);
         //check if error is exist
         if(httpResponse.statusCode >= 500) {
             NSDictionary *headerDict = httpResponse.allHeaderFields;

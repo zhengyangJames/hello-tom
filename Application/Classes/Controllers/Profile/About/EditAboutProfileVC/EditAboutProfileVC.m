@@ -124,13 +124,13 @@
 
 - (void)_setupUI {
     
-    self.navigationItem.title = m_string(@"Basic Info");
+    self.navigationItem.title = NSLocalizedString(@"BASIC_INFO", nil);
     [self _setupBarButtonCancel];
     [self _setupBarButtonDone];
 }
 
 - (void)_setupBarButtonDone {
-    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
+    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone:)];
@@ -140,7 +140,7 @@
 }
 
 - (void)_setupBarButtonCancel {
-    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Cancel")
+    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"CANCEL_TITLE", nil)
                                                                 style:UIBarButtonItemStyleDone
                                                                target:self
                                                                action:@selector(__actionDCancel:)];
@@ -152,23 +152,35 @@
 - (BOOL)_isValidation {
     if ([emailNameTXT.text isEmpty]) {
         _currentField = emailNameTXT;
-        [self _actionShowAleartViewWithTitle:@"Email  is required."];
+        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_REQUIRED", nil)];
         return NO;
     } else if (![emailNameTXT.text isValidEmail]) {
         _currentField = emailNameTXT;
-        [self _actionShowAleartViewWithTitle:@"Email is invalid."];
+        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_INVALID", nil)];
         return NO;
     } else if ([phoneNameTXT.text isEmpty]) {
         _currentField = phoneNameTXT;
-        [self _actionShowAleartViewWithTitle:@"Phone is required."];
+        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"PHONE_REQUIRED", nil)];
         return NO;
-    } else if ([addressNameTXT.text isEmpty]) {
-        _currentField = addressNameTXT;
-        [self _actionShowAleartViewWithTitle:@"Address is required."];
-        
+    } else if ([self _checkStringIsNumberOrCharacter:countryTXT.text]) {
+        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"ERROR_COUNTRY", nil)];
         return NO;
     }
     return YES;
+}
+
+- (BOOL)_checkStringIsNumberOrCharacter:(NSString*)string {
+    if (string) {
+        BOOL check = false;
+        for (int i=0 ; i <string.length; i++) {
+            NSString *s = [string substringWithRange:NSMakeRange(i, 1)];
+            check = [string length] && isnumber([s characterAtIndex:0]);
+            if (check) {
+                break;
+            }
+        }
+        return check;
+    } else return YES;
 }
 
 #pragma mark - Web Service
@@ -251,7 +263,7 @@
 
 - (IBAction)__actionCountryCode:(id)sender {
     [self.view endEditing:YES];
-    [CODropListView presentWithTitle:@"Phone Codes" data:self.arrayCountryCode selectedIndex:_indexActtionCountryCode
+    [CODropListView presentWithTitle:NSLocalizedString(@"PHONE_CODE_TITLE", nil) data:self.arrayCountryCode selectedIndex:_indexActtionCountryCode
                            didSelect:^(NSInteger index) {
         [dropListCountryCode setTitle:[self.arrayCountryCode[index] objectForKey:@"code"] forState:UIControlStateNormal];
         _indexActtionCountryCode = index;
@@ -260,9 +272,9 @@
 
 - (void)_actionShowAleartViewWithTitle:(NSString*)message {
     [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
+    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
                               message:m_string(message)
-                         cancelButton:m_string(@"OK")
+                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
                              delegate:self
                                   tag:0
                      arrayTitleButton:nil];

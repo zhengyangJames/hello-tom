@@ -7,20 +7,20 @@
 //
 
 #import "CODetailsDataSource.h"
-#import "COOferObj.h"
+#import "CODetailsOffersObj.h"
 
 
 
 @interface CODetailsDataSource ()
 
-@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate,CODetailsWebViewCellDelegate> controller;
+@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate> controller;
 
 @end
 
 @implementation CODetailsDataSource
 
 
-- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate,CODetailsWebViewCellDelegate>)controller tableView:(UITableView *)tableView {
+- (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller tableView:(UITableView *)tableView {
     self = [super init];
     if (self) {
         self.controller = controller;
@@ -114,34 +114,34 @@
 
 - (CODetailsPhotoCell*)tableView:(UITableView *)tableView cellDetailsPhotoForRowAtIndexPath:(NSIndexPath *)indexPath  {
     CODetailsPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsPhotoCell identifier]];
-    COOferObj *obj = [self _getItemAtindexPath:indexPath];
+    CODetailsOffersObj *obj = [self _getItemAtindexPath:indexPath];
     cell.coOfferObj = [obj.offerItemObjs objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (CODetailsAccessoryCell*)tableView:(UITableView *)tableView cellDetailsAccessoryForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsAccessoryCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsAccessoryCell identifier]];
-    COOferObj *obj = [self _getItemAtindexPath:indexPath];
+    CODetailsOffersObj *obj = [self _getItemAtindexPath:indexPath];
     cell.coOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row - 1];
     return cell;
 }
 
 - (CODetailsSectionCell*)tableView:(UITableView *)tableView cellDetailsSectionForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsSectionCell identifier]];
-    COOferObj *obj = [self.arrObject objectAtIndex:indexPath.section];
+    CODetailsOffersObj *obj = [self.arrObject objectAtIndex:indexPath.section];
     cell.titleSection = obj.type;
     return cell;
 }
 
 - (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsTextCell identifier]];
-    COOferObj *obj = [self _getItemAtindexPath:indexPath];
+    CODetailsOffersObj *obj = [self _getItemAtindexPath:indexPath];
     cell.coOfferItem = [obj.offerItemObjs objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (CODetailsProjectCell*)tableView:(UITableView *)tableView cellDetailsProjectTBVForRowAtIndexPath:(NSIndexPath *)indexPath {
-    COOferObj *obj = [self _getItemAtindexPath:indexPath];
+    CODetailsOffersObj *obj = [self _getItemAtindexPath:indexPath];
     CODetailsProjectCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectCell identifier]];
     cell.detailsProfile = [obj.offerItemObjs objectAtIndex:indexPath.row];
     cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
@@ -163,8 +163,7 @@
 
 - (CODetailsWebViewCell*)tableView:(UITableView*)tableView cellDetailsWebViewRowWithIndexPath:(NSIndexPath*)indexPath {
     CODetailsWebViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsWebViewCell identifier]];
-    cell.delegate = self.controller;
-    COOferObj *obj = [self _getItemAtindexPath:indexPath];
+    CODetailsOffersObj *obj = [self _getItemAtindexPath:indexPath];
     cell.cOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row];
     return cell;
 }
@@ -173,13 +172,13 @@
 
 - (NSInteger)_getNumofRowInSection:(NSInteger)section {
     NSInteger num = 0;
-    COOferObj *coOfer = [self.arrObject objectAtIndex:section];
+    CODetailsOffersObj *coOfer = [self.arrObject objectAtIndex:section];
     num = coOfer.offerItemObjs.count;
     return num;
 }
 
-- (COOferObj *)_getItemAtindexPath:(NSIndexPath *)indexpath {
-    COOferObj *obj = [self.arrObject objectAtIndex:indexpath.section];
+- (CODetailsOffersObj *)_getItemAtindexPath:(NSIndexPath *)indexpath {
+    CODetailsOffersObj *obj = [self.arrObject objectAtIndex:indexpath.section];
     return obj;
 }
 

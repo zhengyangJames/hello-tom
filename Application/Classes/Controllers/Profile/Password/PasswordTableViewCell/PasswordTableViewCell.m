@@ -30,16 +30,16 @@
         }
     } else if ([self.comfilmPassowrdTXT.text isEmpty]&&[self.newpassowrdTXT.text isEmpty]) {
         _boxTextField = self.newpassowrdTXT;
-        [self _setupShowAleartViewWithTitle:m_string(@"Passwords is required")];
+         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
     } else if ([self.newpassowrdTXT.text isEmpty]) {
         _boxTextField = self.newpassowrdTXT;
-        [self _setupShowAleartViewWithTitle:m_string(@"New password is required")];
+         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"NEW_PASSWORD_REQUIRED", nil) delegate:self tag:0];
     } else if ([self.comfilmPassowrdTXT.text isEmpty]) {
         _boxTextField = self.comfilmPassowrdTXT;
-        [self _setupShowAleartViewWithTitle:m_string(@"Confirm password is required")];
+         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"CONFIRM_PASSWORD_REQUIRED", nil) delegate:self tag:0];
     } else if (![self.newpassowrdTXT.text isEqualToString: self.comfilmPassowrdTXT.text]) {
         _boxTextField = self.comfilmPassowrdTXT;
-        [self _setupShowAleartViewWithTitle:m_string(@"Confirm Passwords don't match")];
+         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"CONFIRM_PASSWORD_MESSAGE", nil) delegate:self tag:0];
     }
 }
 
@@ -58,16 +58,6 @@
         [self.comfilmPassowrdTXT resignFirstResponder];
     }
     return YES;
-}
-
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [self endEditing:YES];
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
-                              message:m_string(message)
-                         cancelButton:m_string(@"OK")
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
 }
 
 #pragma mark Delegate

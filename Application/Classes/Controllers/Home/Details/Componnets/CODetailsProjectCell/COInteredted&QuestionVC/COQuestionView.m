@@ -26,6 +26,7 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
@@ -33,13 +34,12 @@
 
 #pragma mark SetUp UI
 - (void)_setupUI {
-    self.title = m_string(@"Questions");
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.title = NSLocalizedString(@"QUESTION_TITLE", nil);
     [self _setupRightNavigationButton];
 }
 
 - (void)_setupRightNavigationButton {
-    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
+    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone)];
@@ -51,17 +51,10 @@
 #pragma mark - Action
 - (void)__actionDone {
     [self.view endEditing:YES];
-    [self wsCallQuestion];
-}
-
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
-                              message:m_string(message)
-                         cancelButton:m_string(@"OK")
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
+    if (![textView.text isEmpty]) {
+        [self wsCallQuestion]; return;
+    }
+    [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"ERROR_QUESTION", nil) delegate:nil tag:1];
 }
 
 #pragma mark - Web Service
@@ -71,9 +64,8 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:textView.text,@"question", nil];
     [[WSURLSessionManager shared] wsPostQuestionWithOffersID:idoffer body:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            DBG(@"--%@--",responseObject);
             [kNotificationCenter postNotificationName:kNOTIFICATION_QUESTION object:nil];
-            [self _setupShowAleartViewWithTitle:m_string(@"Request sent")];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"REQUEST_SEND", nil) delegate:self tag:0];
         } else {
             [UIHelper showError:error];
         }

@@ -10,7 +10,6 @@
 #import "CODropListView.h"
 #import "CoDropListButtom.h"
 #import "COListProfileObject.h"
-#import "CODummyDataManager.h"
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
@@ -68,13 +67,13 @@
 
 - (void)_setupUI {
     
-    self.navigationItem.title = m_string(@"Basic Info");
+    self.navigationItem.title = NSLocalizedString(@"BASIC_INFO", nil);
     [self _setupBarButtonCancel];
     [self _setupBarButtonDone];
 }
 
 - (void)_setupBarButtonDone {
-    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
+    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone:)];
@@ -84,7 +83,7 @@
 }
 
 - (void)_setupBarButtonCancel {
-    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Cancel")
+    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"CANCEL_TITLE", nil)
                                                                 style:UIBarButtonItemStyleDone
                                                                target:self
                                                                action:@selector(__actionDCancel:)];
@@ -129,9 +128,9 @@
 - (void)_showActionSheet {
     UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
                                                             delegate:self
-                                                   cancelButtonTitle:m_string(@"Cancel")
+                                                   cancelButtonTitle:NSLocalizedString(@"CANCEL_TITLE", nil)
                                               destructiveButtonTitle:nil
-                                                   otherButtonTitles:m_string(@"Take a photo"),m_string(@"Choose existing"), nil];
+                                                   otherButtonTitles:NSLocalizedString(@"TAKE_PHOTO_TITLE", nil),NSLocalizedString(@"CHOOSE_EXISTING_TITLE", nil), nil];
     [actionSheet showInView:self.view];
 }
 

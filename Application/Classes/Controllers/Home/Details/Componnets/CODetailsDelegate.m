@@ -121,7 +121,6 @@
     }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 5) {
         return height = 85;
     }else if (indexPath.section == 3) {
-        DBG(@"++++ %f",dataSource.heightWebview);
         return dataSource.heightWebview;
     } else {
         return height = 44;

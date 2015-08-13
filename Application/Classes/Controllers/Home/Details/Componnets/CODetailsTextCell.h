@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-@class COOfferItemObj;
+@class CODetailsOffersItemObj;
 
 @interface CODetailsTextCell : UITableViewCell
-@property (strong, nonatomic) COOfferItemObj *coOfferItem;
+@property (strong, nonatomic) CODetailsOffersItemObj *coOfferItem;
 
 @end

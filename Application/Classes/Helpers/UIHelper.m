@@ -8,9 +8,8 @@
 
 #import "UIHelper.h"
 #import "MBProgressHUD.h"
-#import "COOferObj.h"
-#import "COOfferItemObj.h"
 #import "CODetailsProfileObj.h"
+#import "CODetailsProfileObj+Mapping.h"
 
 #define IS_IOS8             ((NSInteger)[[[UIDevice currentDevice] systemVersion] floatValue]) == 8
 
@@ -54,6 +53,17 @@
     [alert show];
     
 }
+
++ (void)showAlertViewErrorWithMessage:(NSString *)message delegate:(id)delegate tag:(NSInteger)tag {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
+                                                   message: message
+                                                  delegate: delegate
+                                         cancelButtonTitle:NSLocalizedString(@"OK_TITLE", nil)
+                                         otherButtonTitles: nil];
+    alert.tag = tag;
+    [alert show];
+}
+
 
 + (void)showActionsheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButton destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonsTitle:(NSArray *)arrayTitle delegate:(id)delegate tag:(NSInteger)tag showInView:(UIView *)view {
     
@@ -126,128 +136,26 @@
     return picker;
 }
 
-+ (NSArray *)getListOfferDetailWihtDict:(NSDictionary *)dict {
-    NSMutableArray *arrObj = [[NSMutableArray alloc] init];
-    if (dict) {
-        if ([dict objectForKeyNotNull:@"offer_title"]) {
-            COOferObj *off = [[COOferObj alloc] init];
-            COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-            offItem.title = [dict objectForKeyNotNull:@"offer_title"];
-            offItem.offerID = [dict objectForKeyNotNull:@"id"];
-            offItem.linkOrDetail = [dict objectForKeyNotNull:@"company_logo"];
-            off.type = @"title";
-            off.offerItemObjs = @[offItem];
-            [arrObj addObject:off];
-        }
-        
-        if ([dict objectForKeyNotNull:@"id"]) {
-            COOferObj *off = [[COOferObj alloc] init];
-            CODetailsProfileObj *profileObj = [[CODetailsProfileObj alloc]init];
-            profileObj.investor_count = [dict objectForKeyNotNull:@"investor_count"];
-            profileObj.status = [dict objectForKeyNotNull:@"status"];
-            profileObj.min_annual_return = [dict valueForKeyNotNull:@"min_annual_return"];
-            profileObj.min_investment = [dict objectForKeyNotNull:@"min_investment"];
-            profileObj.day_left = [dict objectForKeyNotNull:@"day_left"];
-            profileObj.time_horizon = [dict objectForKeyNotNull:@"time_horizon"];
-            off.type = @"project";
-            off.offerItemObjs = @[profileObj];
-            [arrObj addObject:off];
-        }
-        
-        if ([dict objectForKeyNotNull:@"short_description"]) {
-            COOferObj *off = [[COOferObj alloc] init];
-            COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-            offItem.title = @"OFFER";
-            offItem.htmlDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"short_description"]];
-            off.type = @"description";
-            off.offerItemObjs = @[offItem];
-            [arrObj addObject:off];
-        }
-        
-        if ([dict objectForKeyNotNull:@"project_description"]) {
-            COOferObj *off = [[COOferObj alloc] init];
-            COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-            offItem.title = @"PROJECT";
-            offItem.htmlDetail = [UIHelper _getStringFromHtml:[dict objectForKeyNotNull:@"project_description"]];
-            offItem.linkOrDetail = [dict objectForKeyNotNull:@"project_description"];
-            off.type = @"description";
-            off.offerItemObjs = @[offItem];
-            [arrObj addObject:off];
-        }
-        
-        if ([dict objectForKeyNotNull:@"documents"]) {
-            NSDictionary *dictDocument = [dict objectForKeyNotNull:@"documents"];
-            if (dictDocument) {
-                COOferObj *off = [[COOferObj alloc] init];
-                COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-                offItem.title = @"DOCUMENTS";
-                offItem.stringDetail = @"The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";
-                off.type = @"description";
-                off.offerItemObjs = @[offItem];
-                [arrObj addObject:off];
-                
-                for (NSString *key in [dictDocument allKeys]) {
-                    if ([dictDocument objectForKeyNotNull:key]) {
-                        COOferObj *off = [[COOferObj alloc] init];
-                        NSArray *arrayObj = [dictDocument objectForKeyNotNull:key];
-                        NSMutableArray *arrOffer = [[NSMutableArray alloc] init];
-                        if (arrayObj.count > 0) {
-                            for (NSDictionary *dictObj in arrayObj) {
-                                COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-                                offItem.linkOrDetail = [dictObj objectForKeyNotNull:@"url"];
-                                offItem.title = [dictObj objectForKeyNotNull:@"title"];
-                                [arrOffer addObject:offItem];
-                            }
-                        } else {
-                            COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-                            offItem.linkOrDetail = nil;
-                            offItem.title = @"No Documents Uploaded";
-                            [arrOffer addObject:offItem];
-                        }
-                        off.type = key;
-                        off.offerItemObjs = arrOffer;
-                        [arrObj addObject:off];
-                    }
-                }
-            }
-        }
-        
-        if ([dict objectForKeyNotNull:@"project"]) {
-            NSString *address = @"";
-            NSMutableDictionary *dictObject = [dict objectForKeyNotNull:@"project"];
-            NSString *address1 = [dictObject objectForKeyNotNull:@"address_1"];
-            if (address1 && ![address1 isEmpty]) {
-                address = [address stringByAppendingString:address1];
-            }
-            NSString *address2 = [dictObject objectForKeyNotNull:@"address_2"];
-            if (address2 && ![address2 isEmpty]) {
-                address = [[address stringByAppendingString:@"\n"] stringByAppendingString:address2];
-            }
-            NSString *city = [dictObject objectForKeyNotNull:@"city"];
-            if (city && ![city isEmpty]) {
-                address = [[address stringByAppendingString:@"\n"] stringByAppendingString:city];
-            }
-            NSString *country = [dictObject objectForKeyNotNull:@"country"];
-            if (country && ![country isEmpty]) {
-                address = [[address stringByAppendingString:@"\n"] stringByAppendingString:country];
-            }
-            COOferObj *off = [[COOferObj alloc] init];
-            COOfferItemObj *offItem = [[COOfferItemObj alloc] init];
-            offItem.title = @"ADDRESS";
-            offItem.stringDetail = address;
-            offItem.photo = [dictObject objectForKeyNotNull:@"photo"];
-            off.offerItemObjs = @[offItem];
-            [arrObj addObject:off];
-        }
-    }
-    return arrObj;
-}
-
 + (NSAttributedString *)_getStringFromHtml:(NSString *)stringHtml {
     NSString *htmlString = [DEFINE_HTML_FRAME stringByReplacingOccurrencesOfString:@"%@" withString:stringHtml];
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     return attributedString;
     
+}
+
++ (NSString *)stringDecimalFormatFromNumberDouble:(NSNumber*)number {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSString *cvString  = [formatter stringFromNumber:number];
+    return cvString;
+}
+
++ (NSString *)stringCurrencyFormatFromNumberDouble:(NSNumber*)number {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSString *cvString  = [formatter stringFromNumber:number];
+    NSString *stringF = [cvString substringToIndex:cvString.length - 3];
+    return stringF;
 }
 
 @end

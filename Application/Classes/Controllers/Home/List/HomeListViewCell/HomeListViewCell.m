@@ -7,11 +7,7 @@
 //
 
 #import "HomeListViewCell.h"
-#import "UIImageView+AFNetworking.h"
-#import "AFNetworking.h"
-#import "UIImage+Scaling.h"
-#import "UIImageView+Networking.h"
-#import "UIImage+animatedGIF.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation HomeListViewCell
 {
@@ -37,21 +33,12 @@
     [self setNeedsDisplay];
 }
 
-#pragma mark - Private
-- (UIImage*)_loadGifImageLoading {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Preloader_8" withExtension:@"gif"];
-    UIImage *imageGif = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
-    return imageGif;
-}
-
 #pragma mark - Set Get
 
-- (void)setObject:(COLIstOffersObject *)object {
+- (void)setObject:(COListOffersObject *)object {
     _object = object;
     NSURL *url = [NSURL URLWithString:_object.offerPhoto];
-//    [_imageBig setImageURL:url];
-    [_imageBig setImageWithURL:url];
-//    [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
+    [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
     NSString *strImage = [_object.offerCountry isEqualToString:@"Cambodia"] ? @"Globe" : _object.offerCountry;
     [_imageLogo setImage:[UIImage imageNamed:strImage]];
     [_lblDetail setText:_object.offerTitle];

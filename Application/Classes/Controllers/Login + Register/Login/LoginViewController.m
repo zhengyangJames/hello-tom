@@ -54,22 +54,13 @@
     return param;
 }
 
-- (void)_setupShowAleartViewWithTitle:(NSString*)message {
-    [UIHelper showAleartViewWithTitle:m_string(@"CoAssets")
-                              message:m_string(message)
-                         cancelButton:m_string(@"OK")
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
-}
-
-
 - (BOOL)_isValid {
     if ([_userName.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Username is required."];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_REQUIRED", nil) delegate:self tag:0];
          return NO;
     }else if ([_passWord.text isEmpty]) {
-        [self _setupShowAleartViewWithTitle:@"Password is required."];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
+
         return NO;
     }
     return YES;
@@ -87,7 +78,7 @@
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];
             }
         } else {
-            [UIHelper showAleartViewWithTitle:m_string(@"CoAssets") message:m_string(@"Invalid Grant") cancelButton:m_string(@"OK") delegate:nil tag:100 arrayTitleButton:nil];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"INVAlID_USERNAME_OR_PASSWORD", nil) delegate:self tag:100];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
@@ -95,6 +86,8 @@
 
 #pragma mark - Action
 - (IBAction)__actionLogin:(id)sender {
+    [_userName resignFirstResponder];
+    [_passWord resignFirstResponder];
     if ([self _isValid]) {
         [self _login];
     }

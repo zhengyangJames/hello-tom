@@ -8,6 +8,8 @@
 
 #import "CODetailsProgressViewCell.h"
 #import "NMDeviceHelper.h"
+#import "UIHelper.h"
+#import "COProgressbarObj+Formatter.h"
 
 @interface CODetailsProgressViewCell ()
 {
@@ -43,25 +45,9 @@
         float value = ([obj.goal doubleValue]*10)/1000;
         [_progressBar setProgress:value animated:NO];
     }
-    
-    double valueTitle = [obj.current_funded_amount doubleValue];
-    NSString *progressLabel = [NSString stringWithFormat:@"$%@",[[NSNumber numberWithDouble:valueTitle] stringValue]];
-    _titleProgressbarLable.text = progressLabel;
-    
-    double value = ([obj.goal doubleValue]);
-    NSString *stringValue = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:value] stringValue]];
-    if (stringValue.length > 4) {
-        NSRange range = NSMakeRange(0, 4);
-        NSString *sub = [stringValue substringWithRange:range];
-        NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",sub];
-        _progressBarBottomLable.text = progressBottomLbl;
-    } else {
-        NSString *progressBottomLbl = [NSString stringWithFormat:@"%@%% of goal",[[NSNumber numberWithDouble:value] stringValue]];
-        _progressBarBottomLable.text = progressBottomLbl;
-    }
-    
-    NSInteger total = (valueTitle * 100)/value;
-    _totalProgressbarLable.text = [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:total] stringValue]];
+    _titleProgressbarLable.text = obj.currencyStringFormatFromCurrentFundedAmount;
+    _progressBarBottomLable.text = obj.stringOfGoal;
+    _totalProgressbarLable.text = [@"of " stringByAppendingString:obj.stringOfTotalCurrency];
 }
 
 

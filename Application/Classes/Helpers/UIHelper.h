@@ -19,12 +19,15 @@
 + (void)showLoadingIndicator;
 + (void)hideLoadingIndicator;
 
++ (void)showAlertViewErrorWithMessage:(NSString *)message delegate:(id)delegate tag:(NSInteger)tag;
 + (void)showAleartViewWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton delegate:(id)delegate tag:(NSInteger)tag arrayTitleButton:(NSArray *)arrayTitel;
 + (void)showActionsheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButton destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonsTitle:(NSArray *)arrayTitle delegate:(id)delegate tag:(NSInteger)tag showInView:(UIView *)view;
 + (void)showError:(NSError *)error;
 
 + (UIImagePickerController *)showImagePickerAtController:(UIViewController *)controller withDelegate:(id)delegate andMode:(NSInteger)mode;
 
-+ (NSArray *)getListOfferDetailWihtDict:(NSDictionary *)dict;
++ (NSString *)stringCurrencyFormatFromNumberDouble:(NSNumber*)number;
++ (NSString *)stringDecimalFormatFromNumberDouble:(NSNumber*)number;
 
++ (NSAttributedString *)_getStringFromHtml:(NSString *)stringHtml;
 @end
