@@ -34,6 +34,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate,LoginViewControllerDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
+    __weak IBOutlet UIView *_noDataView;
+    __weak IBOutlet UILabel *_noDataLabel;
     UIBarButtonItem *_leftButton;
     NSInteger _indexSelectFilter;
     NSIndexPath *_indexPathForCell;
@@ -73,6 +75,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     _indexSelectFilter = 0;
     [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil]
      forCellReuseIdentifier:[HomeListViewCell identifier]];
+    _noDataView.hidden = YES;
 }
 
 - (void)_setupLeftBarButton {
@@ -95,19 +98,20 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)_showAlertWithFilterNull:(NSInteger)filterType{
+- (void)_showViewNoData:(NSInteger)filterType{
+    _noDataView.hidden = NO;
     switch (filterType) {
         case FilterBullkType:
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_BULLK_NULL", nil) delegate:nil tag:900];
+            _noDataLabel.text = NSLocalizedString(@"FILTER_BULLK_NULL",nil);
             break;
         case FilterCrowdType:
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_CROWD_NULL", nil) delegate:nil tag:901];
+            _noDataLabel.text = NSLocalizedString(@"FILTER_CROWD_NULL",nil);
             break;
         case FilterSaleType:
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_SALE_NULL", nil) delegate:nil tag:902];
+            _noDataLabel.text = NSLocalizedString(@"FILTER_SALE_NULL",nil);
             break;
         case FilterAllType:
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FILTER_ALL_NULL", nil) delegate:nil tag:903];
+            _noDataLabel.text = NSLocalizedString(@"FILTER_ALL_NULL",nil);
             break;
         default:  break;
     }
@@ -167,6 +171,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             [UIHelper hideLoadingFromView:self.view];
             if (self.arrayData.count>0) {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    _noDataView.hidden = YES;
                     [_tableView beginUpdates];
                     for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
                         [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -174,7 +179,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                     [_tableView endUpdates];
                 }];
             } else {
-                [self _showAlertWithFilterNull:FilterAllType];
+                [self _showViewNoData:FilterAllType];
             }
         } else {
             [UIHelper showError:error];
@@ -192,6 +197,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             [UIHelper hideLoadingFromView:self.view];
             if (self.arrayData.count>0) {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    _noDataView.hidden = YES;
                     [_tableView beginUpdates];
                     for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
                         [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -199,9 +205,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                     [_tableView endUpdates];
                 }];
             } else {
-                if ([typeFilter isEqualToString:kFILTER_BP]) { [self _showAlertWithFilterNull:FilterBullkType]; }
-                else if ([typeFilter isEqualToString:kFILTER_CO]) { [self _showAlertWithFilterNull:FilterCrowdType]; }
-                else if ([typeFilter isEqualToString:kFILTER_PS]) { [self _showAlertWithFilterNull:FilterSaleType]; }
+                if ([typeFilter isEqualToString:kFILTER_BP]) { [self _showViewNoData:FilterBullkType]; }
+                else if ([typeFilter isEqualToString:kFILTER_CO]) { [self _showViewNoData:FilterCrowdType]; }
+                else if ([typeFilter isEqualToString:kFILTER_PS]) { [self _showViewNoData:FilterSaleType]; }
             }
         } else {
             [UIHelper showError:error];
