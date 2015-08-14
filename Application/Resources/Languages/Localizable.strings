@@ -53,6 +53,11 @@
 "CONFIRM_PASSWORD_REQUIRED"             = "Confirm password is required.";
 "CONFIRM_PASSWORD_MESSAGE"              = "Confirm password does not match";
 
+"FILTER_BULLK_NULL"                     = "Bulk Purchase are comming soon";
+"FILTER_CROWD_NULL"                     = "Crowdfunding are comming soon";
+"FILTER_SALE_NULL"                      = "Pre-Sales are comming soon";
+"FILTER_ALL_NULL"                       = "CoAssets is comming soon";
+
 "EMAIL_INVALID"                         = "Email is invalid.";
 "MESSEAGE_RESET_PASSWORD"               = "Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly";
 "YOUR_EMAIL_INVALID"                    = "Your email is invalid.";
@@ -65,6 +70,8 @@
 "COMMENTARIES"                          = "Commentaries";
 "PRIVACY"                               = "Privacy";
 "BASIC_INFO"                            = "Basic Info";
+"ERROR_QUESTION"                        = "Question content is required.";
+"ERROR_COUNTRY"                         = "Country is invalid.";
 
 "PASSWORD_CHANGE_SUCCESSFULLY"          = "Password has been changed successfully";
 "PASSWORD_NOT_CHANGED"                  = "Password was not changed";
@@ -84,4 +91,9 @@
 "DAY_LEFT"                              = "%@";
 "GOAL"                                  = "%tu%% of goal";
 
-
+"ADDRESS"                               = "ADDRESS";
+"PROJECT"                               = "PROJECT";
+"OFFER"                                 = "OFFER";
+"DOCUMENTS"                             = "DOCUMENTS";
+"NoDocumentsUploaded"                   = "No Documents Uploaded";
+"DETAIL_DOCUMENT"                       = "The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";

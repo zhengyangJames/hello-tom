@@ -4,5 +4,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (stripHtml)
+
 - (NSString *)stringByStrippingHTML;
+
 @end

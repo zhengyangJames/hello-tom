@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -20,6 +20,7 @@
             <string>Raleway-Medium</string>
             <string>Raleway-Medium</string>
             <string>Raleway-Medium</string>
+            <string>Raleway-Medium</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -32,7 +33,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2w7-fg-DzT">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2w7-fg-DzT">
                         <rect key="frame" x="8" y="8" width="304" height="373"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n06-FT-xdd" userLabel="Project Site View">
@@ -79,22 +80,31 @@
                                 <rect key="frame" x="0.0" y="124" width="304" height="54"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bank@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="WUg-hQ-J7h">
-                                        <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                        <rect key="frame" x="16" y="2" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="3Ef-cs-1fU"/>
                                             <constraint firstAttribute="height" constant="24" id="WL8-kk-6h1"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="yCJ-k0-brf">
-                                        <rect key="frame" x="50" y="8" width="254" height="18"/>
+                                        <rect key="frame" x="50" y="0.0" width="254" height="19"/>
                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIN. INVESTMENT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="PNE-8V-w8P">
-                                        <rect key="frame" x="50" y="28" width="254" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIN. INVESTMENT" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="PNE-8V-w8P">
+                                        <rect key="frame" x="50" y="21" width="254" height="18"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="ebx-Tp-xIV"/>
+                                            <constraint firstAttribute="height" constant="18" id="IaB-r1-tdW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Singapore Dollars)" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-vm-CJK">
+                                        <rect key="frame" x="50" y="36" width="254" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="ca8-LC-xF3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,16 +113,19 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="WUg-hQ-J7h" firstAttribute="top" secondItem="uvR-Ej-54g" secondAttribute="top" constant="8" id="93C-fq-JZQ"/>
+                                    <constraint firstItem="1Rd-vm-CJK" firstAttribute="trailing" secondItem="PNE-8V-w8P" secondAttribute="trailing" id="8ho-7L-npr"/>
+                                    <constraint firstItem="WUg-hQ-J7h" firstAttribute="top" secondItem="uvR-Ej-54g" secondAttribute="top" constant="2" id="93C-fq-JZQ"/>
                                     <constraint firstItem="yCJ-k0-brf" firstAttribute="leading" secondItem="PNE-8V-w8P" secondAttribute="leading" id="CxO-8Q-xsO"/>
                                     <constraint firstItem="yCJ-k0-brf" firstAttribute="trailing" secondItem="PNE-8V-w8P" secondAttribute="trailing" id="EA7-F0-ttr"/>
                                     <constraint firstAttribute="height" constant="54" id="XtO-cJ-vlp"/>
-                                    <constraint firstItem="WUg-hQ-J7h" firstAttribute="top" secondItem="yCJ-k0-brf" secondAttribute="top" id="dtE-KW-3iZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="PNE-8V-w8P" secondAttribute="bottom" constant="4" id="gue-4M-IPr"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Rd-vm-CJK" secondAttribute="bottom" id="brY-sr-mek"/>
+                                    <constraint firstItem="WUg-hQ-J7h" firstAttribute="top" secondItem="yCJ-k0-brf" secondAttribute="top" constant="2" id="dtE-KW-3iZ"/>
                                     <constraint firstItem="WUg-hQ-J7h" firstAttribute="leading" secondItem="uvR-Ej-54g" secondAttribute="leading" constant="16" id="jYN-H7-dFW"/>
                                     <constraint firstAttribute="trailing" secondItem="yCJ-k0-brf" secondAttribute="trailing" id="pm0-jk-Y3T"/>
+                                    <constraint firstItem="1Rd-vm-CJK" firstAttribute="leading" secondItem="PNE-8V-w8P" secondAttribute="leading" id="skJ-MB-tKv"/>
                                     <constraint firstItem="PNE-8V-w8P" firstAttribute="top" secondItem="yCJ-k0-brf" secondAttribute="bottom" constant="2" id="v4p-0m-xxV"/>
                                     <constraint firstItem="yCJ-k0-brf" firstAttribute="leading" secondItem="WUg-hQ-J7h" secondAttribute="trailing" constant="10" id="vuG-NA-iPn"/>
+                                    <constraint firstItem="1Rd-vm-CJK" firstAttribute="top" secondItem="PNE-8V-w8P" secondAttribute="bottom" constant="-3" id="xnY-lJ-5yo"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWx-HV-BH1" userLabel="Project status View">

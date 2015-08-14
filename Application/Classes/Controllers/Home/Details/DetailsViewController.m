@@ -15,11 +15,11 @@
 #import "COInterestedViewController.h"
 #import "COQuestionView.h"
 #import "CODetailsProfileObj.h"
-#import "COOfferItemObj.h"
-#import "COOferObj.h"
 #import "COListProfileObject.h"
 #import "WebViewSetting.h"
 #import "WebViewManager.h"
+#import "CODetailsOffersObj.h"
+#import "CODetailsOffersItemObj.h"
 
 @interface DetailsViewController ()<UIGestureRecognizerDelegate>
 {
@@ -82,8 +82,8 @@
 
 - (void)_getHeightWebview {
     [UIHelper showLoadingInView:self.view];
-    COOferObj *offerObj = self.arrayObj[3];
-    COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+    CODetailsOffersObj *offerObj = self.arrayObj[3];
+    CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
     
     [[WebViewManager shared] getHeightWebViewWithStringHtml:offerItemObj.linkOrDetail heightForWebView:^(CGFloat height, UIWebView *web) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -119,8 +119,8 @@
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, headerView.frame.size.width, headerView.frame.size.height)];
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    COOferObj *offerObj = [self.arrayObj lastObject];
-    COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+    CODetailsOffersObj *offerObj = [self.arrayObj lastObject];
+    CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
     
     
     NSURL *url = [NSURL URLWithString:offerItemObj.photo];
@@ -138,9 +138,9 @@
         case CODetailsProjectActionInterested:
         {
             COInterestedViewController *vc = [[COInterestedViewController alloc]init];
-            COOferObj *offerObj = [self.arrayObj firstObject];
-            COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
-            COOferObj *offerObj2 = self.arrayObj[1];
+            CODetailsOffersObj *offerObj = [self.arrayObj firstObject];
+            CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+            CODetailsOffersObj *offerObj2 = self.arrayObj[1];
             CODetailsProfileObj *profileObj2 = [offerObj2.offerItemObjs lastObject];
             COListProfileObject *listProfile = [[COListProfileObject alloc]initWithDictionary:[kUserDefaults objectForKey:kPROFILE_OBJECT]];
             vc.object = @{@"offerID":offerItemObj.offerID,@"offerTitle":offerItemObj.title,@"amount":profileObj2.min_investment,@"email":listProfile.email};
@@ -150,8 +150,8 @@
         case CODetailsProjectActionQuestions:
         {
             COQuestionView *vc = [[COQuestionView alloc]init];
-            COOferObj *offerObj = [self.arrayObj firstObject];
-            COOfferItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+            CODetailsOffersObj *offerObj = [self.arrayObj firstObject];
+            CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
             vc.object = @{@"offerID":offerItemObj.offerID};
             [self.navigationController pushViewController:vc animated:YES];
         }
@@ -163,8 +163,8 @@
 
 - (void)detailsViewController:(CODetailsDelegate *)detailViewController didSelectedAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section > 4 && indexPath.section < 11 && indexPath.row != 0) {
-        COOferObj *obj = [self _getItemAtindexPath:indexPath];
-        COOfferItemObj *coOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row - 1];
+        CODetailsOffersObj *obj = [self _getItemAtindexPath:indexPath];
+        CODetailsOffersItemObj *coOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row - 1];
         if (coOOfferItemObj.linkOrDetail && ![coOOfferItemObj.linkOrDetail isEmpty]) {
             WebViewSetting *vc = [[WebViewSetting alloc]init];
             vc.titler = m_string(coOOfferItemObj.title);
@@ -175,8 +175,8 @@
     }
 }
 
-- (COOferObj *)_getItemAtindexPath:(NSIndexPath *)indexpath {
-    COOferObj *obj = [self.arrayObj objectAtIndex:indexpath.section];
+- (CODetailsOffersObj *)_getItemAtindexPath:(NSIndexPath *)indexpath {
+    CODetailsOffersObj *obj = [self.arrayObj objectAtIndex:indexpath.section];
     return obj;
 }
 

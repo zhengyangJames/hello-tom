@@ -53,6 +53,7 @@
         [_lblTell setNeedsUpdateConstraints];
     }
     _lblCoAssets.text = _contactObj.name;
+    _lblCity.text = _contactObj.city;
     _lblReg.text = _contactObj.regNo;
     _lblAdress.text = _contactObj.address_1;
     _lblAdress2.text = _contactObj.address_2;

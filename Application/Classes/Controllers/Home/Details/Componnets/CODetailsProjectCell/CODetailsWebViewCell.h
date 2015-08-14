@@ -8,12 +8,12 @@
 
 #import "BaseTableViewCell.h"
 
-@class COOfferItemObj;
+@class CODetailsOffersItemObj;
 
 @interface CODetailsWebViewCell : BaseTableViewCell
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UILabel *titler;
-@property (nonatomic, strong) COOfferItemObj *cOOfferItemObj;
+@property (nonatomic, strong) CODetailsOffersItemObj *cOOfferItemObj;
 
 @end

@@ -17,18 +17,25 @@
 #import "WSURLSessionManager.h"
 #import "WSURLSessionManager+ListHome.h"
 #import "COProgressbarObj.h"
-#import "COOferObj.h"
-#import "COOfferItemObj.h"
 
 #define kFILTER_CO  @"/CO"
 #define kFILTER_PS  @"/PS"
 #define kFILTER_BP  @"/BP"
+
+typedef NS_ENUM(NSInteger, FilterType) {
+    FilterBullkType,
+    FilterCrowdType,
+    FilterSaleType,
+    FilterAllType
+};
 
 typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 @interface HomeListViewController () <UITableViewDataSource,UITableViewDelegate,LoginViewControllerDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
+    __weak IBOutlet UIView *_noDataView;
+    __weak IBOutlet UILabel *_noDataLabel;
     UIBarButtonItem *_leftButton;
     NSInteger _indexSelectFilter;
     NSIndexPath *_indexPathForCell;
@@ -68,6 +75,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     _indexSelectFilter = 0;
     [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil]
      forCellReuseIdentifier:[HomeListViewCell identifier]];
+    _noDataView.hidden = YES;
 }
 
 - (void)_setupLeftBarButton {
@@ -88,6 +96,25 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     vc.arrayObj = arr;
     vc.progressBarObj = self.profressbarObj;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)_showViewNoData:(NSInteger)filterType{
+    _noDataView.hidden = NO;
+    switch (filterType) {
+        case FilterBullkType:
+            _noDataLabel.text = NSLocalizedString(@"FILTER_BULLK_NULL",nil);
+            break;
+        case FilterCrowdType:
+            _noDataLabel.text = NSLocalizedString(@"FILTER_CROWD_NULL",nil);
+            break;
+        case FilterSaleType:
+            _noDataLabel.text = NSLocalizedString(@"FILTER_SALE_NULL",nil);
+            break;
+        case FilterAllType:
+            _noDataLabel.text = NSLocalizedString(@"FILTER_ALL_NULL",nil);
+            break;
+        default:  break;
+    }
 }
 
 #pragma mark - Setter Getter
@@ -141,17 +168,22 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared]wsGetListOfferWithHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView beginUpdates];
-                for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
-                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                }
-                [_tableView endUpdates];
-            }];
+            [UIHelper hideLoadingFromView:self.view];
+            if (self.arrayData.count>0) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    _noDataView.hidden = YES;
+                    [_tableView beginUpdates];
+                    for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
+                        [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                    [_tableView endUpdates];
+                }];
+            } else {
+                [self _showViewNoData:FilterAllType];
+            }
         } else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
         _leftButton.enabled = YES;
     }];
 }
@@ -162,17 +194,24 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared] wsGetListOffersFilter:typeFilter handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView beginUpdates];
-                for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
-                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                }
-                [_tableView endUpdates];
-            }];
+            [UIHelper hideLoadingFromView:self.view];
+            if (self.arrayData.count>0) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    _noDataView.hidden = YES;
+                    [_tableView beginUpdates];
+                    for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
+                        [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                    [_tableView endUpdates];
+                }];
+            } else {
+                if ([typeFilter isEqualToString:kFILTER_BP]) { [self _showViewNoData:FilterBullkType]; }
+                else if ([typeFilter isEqualToString:kFILTER_CO]) { [self _showViewNoData:FilterCrowdType]; }
+                else if ([typeFilter isEqualToString:kFILTER_PS]) { [self _showViewNoData:FilterSaleType]; }
+            }
         } else {
             [UIHelper showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
         _leftButton.enabled = YES;
     }];
 }

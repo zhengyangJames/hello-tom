@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface COLIstOffersObject : NSObject
+@interface COListOffersObject : NSObject
 
 @property (strong, nonatomic) NSString *offerTitle;
 @property (strong, nonatomic) NSString *offerPhoto;

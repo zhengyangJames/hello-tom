@@ -94,16 +94,19 @@
 }
 
 - (IBAction)__actionRegister:(id)sender {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     RegisterViewController *vc = [[RegisterViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)__actionForgotPassword:(id)sender {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     ForgotPasswordViewController *vc = [[ForgotPasswordViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)__actionCancel:(id)sender {
+        [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
         [self.delegate loginViewController:self loginWithStyle:DismissLoginVC];
     }

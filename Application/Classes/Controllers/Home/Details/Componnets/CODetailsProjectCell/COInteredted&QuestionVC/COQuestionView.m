@@ -26,6 +26,7 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
@@ -34,7 +35,6 @@
 #pragma mark SetUp UI
 - (void)_setupUI {
     self.title = NSLocalizedString(@"QUESTION_TITLE", nil);
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
 }
 
@@ -51,7 +51,10 @@
 #pragma mark - Action
 - (void)__actionDone {
     [self.view endEditing:YES];
-    [self wsCallQuestion];
+    if (![textView.text isEmpty]) {
+        [self wsCallQuestion]; return;
+    }
+    [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"ERROR_QUESTION", nil) delegate:nil tag:1];
 }
 
 #pragma mark - Web Service

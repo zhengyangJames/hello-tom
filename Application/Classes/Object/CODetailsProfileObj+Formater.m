@@ -28,9 +28,9 @@
     }
 }
 - (NSString *)stringOfMinAnnualReturn {
-    if (self.time_horizon && self.min_annual_return) {
-        NSString *YIELD = [NSString stringWithFormat:NSLocalizedString(@"MIN_ANNUAL_RETURN", nil),self.min_annual_return,self.min_annual_return];
-        return YIELD;
+    if (self.annualized_return) {
+        NSString *annualized = [NSString stringWithFormat:NSLocalizedString(@"MIN_ANNUAL_RETURN", nil),self.annualized_return,self.annualized_return];
+        return annualized;
     } else {
         return NSLocalizedString(@"N/A", nil);
     }
@@ -40,7 +40,7 @@
     if (self.min_investment) {
         double number = [self.min_investment doubleValue];
         NSNumber *numberDouble = [NSNumber numberWithDouble:(double)number];
-        NSString *returnString = [UIHelper stringCurrencyFormatFromNumberDouble:numberDouble];
+        NSString *returnString = [UIHelper stringDecimalFormatFromNumberDouble:numberDouble];
         return returnString;
     } else {
         return NSLocalizedString(@"N/A", nil);

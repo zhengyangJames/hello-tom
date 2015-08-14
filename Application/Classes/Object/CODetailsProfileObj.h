@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString *investor_count;
 @property (nonatomic, strong) NSString *status;
-@property (nonatomic, strong) NSString *min_annual_return;
+@property (nonatomic, strong) NSString *annualized_return;
 @property (nonatomic, strong) NSString *min_investment;
 @property (nonatomic, strong) NSString *day_left;
 @property (nonatomic, strong) NSString *time_horizon;

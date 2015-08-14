@@ -12,7 +12,6 @@
 #import "CODetailsProjectCell.h"
 #import "CODetailsTextCell.h"
 #import "CODetailsSectionCell.h"
-#import "CODetailsOffersObject.h"
 #import "CODetailsProgressViewCell.h"
 #import "CODetailsProjectBottomTVCell.h"
 #import "COProgressbarObj.h"

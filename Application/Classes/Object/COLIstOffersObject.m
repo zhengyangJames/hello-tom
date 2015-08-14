@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "COLIstOffersObject.h"
+#import "COListOffersObject.h"
 
-@implementation COLIstOffersObject
+@implementation COListOffersObject
 
 - (instancetype)initWithDictionary:(NSDictionary*)dic {
     self = [super init];
