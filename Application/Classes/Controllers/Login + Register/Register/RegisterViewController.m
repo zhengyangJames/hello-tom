@@ -182,6 +182,7 @@
 }
 
 - (IBAction)__actionRegister:(id)sender {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     if (![self _isValidtion]) {
         return;
     }else{

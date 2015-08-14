@@ -249,6 +249,7 @@
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     if ([self _isValidation]) {
         if ([self.delegate respondsToSelector:@selector(editAboutProfile:profileUpdate:)]) {
             [self.delegate editAboutProfile:self profileUpdate:[self _getProfileObject]];
@@ -258,6 +259,7 @@
 }
 
 - (void)__actionDCancel:(id)sender {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
