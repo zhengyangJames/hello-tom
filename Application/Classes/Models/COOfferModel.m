@@ -12,9 +12,25 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"offerId" : @"id",
-        @"offerTitle" : @"offer_title",
-        @"offerType" : @"offer_type"
+        @"offerId"                  : @"id",
+        @"offerTitle"               : @"offer_title",
+        @"offerType"                : @"offer_type",
+        @"offerTimeHorizon"         : @"time_horizon",
+        @"offerMaxAnnualReturn"     : @"max_annual_return",
+        @"offerShortDescription"    : @"short_description",
+        @"offerProject"             : @"project",
+        @"offerMinInvestment"       : @"min_investment",
+        @"offerOwnerType"           : @"owner_type",
+        @"offerTokensPerFancy"      : @"tokens_per_fancy",
+        @"offerInterested"          : @"interested",
+        @"offerMinAnnualReturn"     : @"min_annual_return",
+        @"offerCurrency"            : @"currency"
+        
     };
 }
+
++ (NSValueTransformer *)offerProjectJSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:COProjectModel.class];
+}
+
 @end

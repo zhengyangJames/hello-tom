@@ -72,10 +72,22 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [self _setupLeftBarButton];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
-    _indexSelectFilter = 0;
     [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil]
      forCellReuseIdentifier:[HomeListViewCell identifier]];
     _noDataView.hidden = YES;
+    [self _setupSelectDefault];
+}
+
+- (void)_setupSelectDefault {
+    for (NSString *type in self.arrayListFilter) {
+        if ([type isEqualToString:@"All"]) {
+            _indexSelectFilter = [self.arrayListFilter indexOfObject:type];
+        }
+    }
+    if (!_indexSelectFilter) {
+            _indexSelectFilter = 0;
+    }
+
 }
 
 - (void)_setupLeftBarButton {
@@ -132,13 +144,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     return _arrayListFilter;
 }
 
-- (NSArray*)arraySort {
-    if (!_arraySort) {
-        return _arraySort = [[NSArray alloc] init];
-    }
-    return _arraySort;
-}
-
 #pragma mark - Action
 - (void)__actionFilter {
     [CODropListVC presentWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
@@ -146,13 +151,14 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                      selectedIndex:_indexSelectFilter
                           parentVC:self
                          didSelect:^(NSInteger index) {
-        _indexSelectFilter = index;
-        self.arrayData = nil;
-         if (_indexSelectFilter == 1) {
+         _indexSelectFilter = index;
+         NSString *offer_Type = self.arrayListFilter[index];
+         self.arrayData = nil;
+         if ([offer_Type isEqualToString:@"Bulk Purchase"]) {
              [self _callWSGetListOfferFilter:kFILTER_BP];
-         } else if (_indexSelectFilter == 2) {
+         } else if ([offer_Type isEqualToString:@"Crowdfunding"]) {
              [self _callWSGetListOfferFilter:kFILTER_CO];
-         } else if (_indexSelectFilter == 3) {
+         } else if ([offer_Type isEqualToString:@"Pre-Sales"]) {
              [self _callWSGetListOfferFilter:kFILTER_PS];
          } else {
              [self _callAPIGetAllOffers];
@@ -267,7 +273,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
         _indexPathForCell = indexPath;
     }else {
-        [self _callWSGetProgressbar:[[self.arrayData[indexPath.row] valueForKey:@"offerID"] stringValue]];
+        [self _callWSGetProgressbar:[[self.arrayData[indexPath.row] valueForKey:@"offerId"] stringValue]];
     }
 }
 
@@ -277,8 +283,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (HomeListViewCell*)_setupHomeListCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeListViewCell identifier]];
-    
-    cell.object = self.arrayData[indexPath.row];
+    cell.offerobject = self.arrayData[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     return cell;
 }

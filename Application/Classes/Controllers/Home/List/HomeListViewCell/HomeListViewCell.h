@@ -10,8 +10,11 @@
 #import "BaseTableViewCell.h"
 #import "COListOffersObject.h"
 
+@class COOfferModel;
+
 @interface HomeListViewCell : BaseTableViewCell
 
 @property (strong, nonatomic) COListOffersObject *object;
+@property (strong, nonatomic) COOfferModel *offerobject;
 
 @end

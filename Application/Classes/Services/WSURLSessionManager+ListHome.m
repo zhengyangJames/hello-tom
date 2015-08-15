@@ -25,8 +25,8 @@
             NSArray *arrayData = (NSArray*)responseObject;
             NSMutableArray *array = [[NSMutableArray alloc]init];
             for (NSDictionary *obj in arrayData) {
-                COListOffersObject *objList = [[COListOffersObject alloc]initWithDictionary:obj];
-                [array addObject:objList];
+                COOfferModel *offerModel = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:obj error:&error];
+                [array addObject:offerModel];
             }
             if (handler) {
                 handler(array, response, nil);
@@ -47,8 +47,7 @@
             for (NSDictionary *obj in arrayData) {
                 NSError *error = nil;
                 COOfferModel *offerModel = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:obj error:&error];
-                COListOffersObject *objList = [[COListOffersObject alloc]initWithDictionary:obj];
-                [array addObject:objList];
+                [array addObject:offerModel];
             }
             if (handler) {
                 handler(array,response,nil);
