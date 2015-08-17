@@ -7,6 +7,7 @@
 //
 
 #import "COOfferModel.h"
+#import "COProjectModel.h"
 
 @implementation COOfferModel
 

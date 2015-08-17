@@ -13,7 +13,7 @@
 @interface CODocumentModel : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSArray *value;
+@property (nonatomic, strong) NSArray *items;
 
 
 @end

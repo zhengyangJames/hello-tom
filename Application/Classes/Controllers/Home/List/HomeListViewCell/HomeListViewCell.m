@@ -37,12 +37,12 @@
 
 - (void)setOfferobject:(COOfferModel *)offerobject {
     _offerobject = offerobject;
-    NSURL *url = [NSURL URLWithString:_offerobject.offerProject.projectPhoto];
-    [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
-    NSString *strImage = [_offerobject.offerProject.projectCountry isEqualToString:@"Cambodia"] ? @"Globe" : _offerobject.offerProject.projectCountry;
-    [_imageLogo setImage:[UIImage imageNamed:strImage]];
+   // NSURL *url = [NSURL URLWithString:_offerobject.offerProject.projectPhoto];
+   // [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
+  //  NSString *strImage = [_offerobject.offerProject.projectCountry isEqualToString:@"Cambodia"] ? @"Globe" : _offerobject.offerProject.projectCountry;
+   // [_imageLogo setImage:[UIImage imageNamed:strImage]];
     [_lblTitle setText:_offerobject.offerTitle];
-    [_lblCountry setText:_offerobject.offerProject.projectCountry];
+//[_lblCountry setText:_offerobject.offerProject.projectCountry];
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
