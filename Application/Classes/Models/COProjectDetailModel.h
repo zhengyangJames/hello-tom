@@ -8,23 +8,27 @@
 
 #import <Mantle/Mantle.h>
 
-@class COOfferModel;
+@class COProjectModel;
 @class CODocumentModel;
+@class COTextModel;
 
 @interface COProjectDetailModel : MTLModel<MTLJSONSerializing>
 
-@property (nonatomic, strong) NSString *detailInvestorCount;
-@property (nonatomic, strong) NSString *detailAnnualReturn;
-@property (nonatomic, strong) NSString *detailStatus;
+@property (nonatomic, strong) NSString *detailId;
+@property (nonatomic, strong) NSString *detailOwnerType;
+@property (nonatomic, strong) NSString *detailOfferType;
+@property (nonatomic, strong) NSString *detailOfferTitle;
 @property (nonatomic, strong) NSString *detailCompanyLogo;
-@property (nonatomic, strong) CODocumentModel *detailDocuments;
+@property (nonatomic, strong) COProjectModel *detailProject;
+@property (nonatomic, strong) NSString *detailStatus;
+@property (nonatomic, strong) NSNumber *detailInvestorCount;
+@property (nonatomic, strong) NSNumber *detailMinInvestment;
+@property (nonatomic, strong) NSNumber *detailTimeHorizon;
 @property (nonatomic, strong) NSString *detailAnnualizedReturn;
-@property (nonatomic, strong) NSString *detailDayLeft;
-@property (nonatomic, strong) NSString *detailDeveloperName;
-@property (nonatomic, strong) NSString *detailDeveloperDescription;
-@property (nonatomic, strong) NSString *detailProjectDescription;
-@property (nonatomic, strong) NSString *detailHowToCrowdFundPic;
-@property (nonatomic, strong) NSString *detailHighlight;
-@property (nonatomic, strong) NSString *detailDescription;
+@property (nonatomic, strong) NSNumber *detailDayLeft;
+@property (nonatomic, strong) COTextModel *detailTextOffer;
+@property (nonatomic, strong) COTextModel *detailTextProject;
+@property (nonatomic, strong) CODocumentModel *detailDocuments;
+@property (nonatomic, strong) NSString *detailAddress;
 
 @end

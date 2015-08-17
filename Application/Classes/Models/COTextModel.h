@@ -1,5 +1,5 @@
 //
-//  CODocumentModel.h
+//  COTextModel.h
 //  CoAssets
 //
 //  Created by Nikmesoft_M008 on 8/17/15.
@@ -8,12 +8,9 @@
 
 #import <Mantle/Mantle.h>
 
-@class CODocumentItemModel;
-
-@interface CODocumentModel : MTLModel<MTLJSONSerializing>
+@interface COTextModel : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSArray *value;
-
+@property (nonatomic, strong) NSString *content;
 
 @end

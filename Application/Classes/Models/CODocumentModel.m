@@ -13,13 +13,13 @@
 
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"documentLicenses" : @"licenses",
-        @"documentOther" : @"others",
-        @"documentDeclarationFormList" : @"declaration_form_list",
-        @"documentRegistrationFormList" : @"registration_form_list",
-        @"documentLegalAppointment" : @"legal_appointment",
-        @"documentOwnership" : @"ownership",
+        @"title" : @"licenses",
+        @"value" : @"others",
     };
+}
+
++ (NSValueTransformer *)valueJSONTransformer {
+    return [MTLJSONAdapter arrayTransformerWithModelClass:CODocumentItemModel.class];
 }
 
 @end

@@ -181,6 +181,4 @@
     CODetailsOffersObj *obj = [self.arrObject objectAtIndex:indexpath.section];
     return obj;
 }
-
-
 @end

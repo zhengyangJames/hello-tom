@@ -235,6 +235,7 @@
 		BB3097D41B8239F100BF6861 /* COProjectDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D31B8239F100BF6861 /* COProjectDetailModel.m */; };
 		BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D61B8243F000BF6861 /* CODocumentModel.m */; };
 		BB3097DA1B824F0C00BF6861 /* CODocumentItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */; };
+		BB3097DD1B8283D000BF6861 /* COTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097DC1B8283D000BF6861 /* COTextModel.m */; };
 		BB5B9A461B790F15002D37AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB5B9A451B790F15002D37AF /* Localizable.strings */; };
 		BB821DF51B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.m in Sources */ = {isa = PBXBuildFile; fileRef = BB821DF41B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.m */; };
 		BB821DF81B7A5CC20040EDBF /* COProgressbarObj+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BB821DF71B7A5CC20040EDBF /* COProgressbarObj+Formatter.m */; };
@@ -572,6 +573,8 @@
 		BB3097D61B8243F000BF6861 /* CODocumentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODocumentModel.m; sourceTree = "<group>"; };
 		BB3097D81B824F0C00BF6861 /* CODocumentItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODocumentItemModel.h; sourceTree = "<group>"; };
 		BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODocumentItemModel.m; sourceTree = "<group>"; };
+		BB3097DB1B8283D000BF6861 /* COTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTextModel.h; sourceTree = "<group>"; };
+		BB3097DC1B8283D000BF6861 /* COTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTextModel.m; sourceTree = "<group>"; };
 		BB5B9A451B790F15002D37AF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BB821DF31B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CODetailsProfileObj+Formater.h"; sourceTree = "<group>"; };
 		BB821DF41B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CODetailsProfileObj+Formater.m"; sourceTree = "<group>"; };
@@ -607,6 +610,8 @@
 				BB3097D61B8243F000BF6861 /* CODocumentModel.m */,
 				BB3097D81B824F0C00BF6861 /* CODocumentItemModel.h */,
 				BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */,
+				BB3097DB1B8283D000BF6861 /* COTextModel.h */,
+				BB3097DC1B8283D000BF6861 /* COTextModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1795,6 +1800,7 @@
 				7F325F951B40E50800116445 /* CODetailsSectionCell.m in Sources */,
 				7F325F811B40E50800116445 /* NSString+Validation.m in Sources */,
 				7F325FCA1B40E50800116445 /* COSlidingCell.m in Sources */,
+				BB3097DD1B8283D000BF6861 /* COTextModel.m in Sources */,
 				7F325F831B40E50800116445 /* UIImage+Scaling.m in Sources */,
 				7F325FAC1B40E50800116445 /* EditCompanyVC.m in Sources */,
 				BBF4CC4C1B7EA08500F9A5FA /* COProjectModel.m in Sources */,
