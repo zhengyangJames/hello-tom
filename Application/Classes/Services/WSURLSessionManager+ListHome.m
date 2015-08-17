@@ -15,6 +15,7 @@
 #import "CODetailsProfileObj.h"
 #import "CODetailsProfileObj+Mapping.h"
 #import "COOfferModel.h"
+#import "COProjectDetailModel.h"
 
 @implementation WSURLSessionManager (ListHome)
 
@@ -65,6 +66,9 @@
     NSString *url = [urlOffer stringByAppendingString:offerID];
     [self sendURL:url params:nil body:nil method:METHOD_GET handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+                COProjectDetailModel *offerModel = [MTLJSONAdapter modelOfClass:[COProjectDetailModel class] fromJSONDictionary:responseObject error:&error];
+
+            
             NSArray *listOffer = [self getListOfferDetailWihtDictionary:responseObject];
             if (handler) {
                 handler(listOffer, response, nil);
