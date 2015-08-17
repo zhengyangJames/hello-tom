@@ -9,7 +9,6 @@
 #import "COOfferModel.h"
 #import "COProjectModel.h"
 #import "CODocumentModel.h"
-#import "CODocumentValueTransformer.h"
 #import "MTLValueTransformer.h"
 
 @implementation COOfferModel
@@ -44,7 +43,18 @@
 
 + (NSValueTransformer *)documentsJSONTransformer {
     return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
-        return [CODocumentValueTransformer convertToArrayWithDictionary:value];
+        NSMutableArray *array;
+        if (value) {
+            NSDictionary *dict = (NSDictionary*)value;
+            array = [[NSMutableArray alloc] init];
+            for (NSString *key in dict.allKeys) {
+                NSArray *items = [dict objectForKey:key];
+                NSDictionary *documentDict = @{@"title":key, @"items":items};
+                [array addObject:documentDict];
+            }
+        }
+        *success = YES;
+        return [MTLJSONAdapter modelsOfClass:[CODocumentModel class] fromJSONArray:array error:error];
     }];
 }
 

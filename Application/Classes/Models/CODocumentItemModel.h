@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-@interface CODocumentItemModel : NSObject
+@interface CODocumentItemModel : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, strong) NSString *docItemUrl;
 @property (nonatomic, strong) NSString *docItemTitle;
