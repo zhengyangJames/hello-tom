@@ -8,6 +8,7 @@
 
 #import "CODocumentValueTransformer.h"
 #import "CODocumentModel.h"
+#import "CODocumentItemModel.h"
 
 @implementation CODocumentValueTransformer
 
@@ -25,8 +26,15 @@
         for (NSString *key in dic.allKeys) {
             CODocumentModel *document = [[CODocumentModel alloc] init];
             NSArray *items = [dictionary objectForKey:key];
+            NSMutableArray *arrayAdd = [[NSMutableArray alloc] init];
+            for (NSDictionary *diction  in  items) {
+                CODocumentItemModel *itemModel = [[CODocumentItemModel alloc] init];
+                itemModel.docItemUrl = [diction objectForKey:@"url"];
+                itemModel.docItemTitle = [diction objectForKey:@"title"];
+                [arrayAdd addObject:itemModel];
+            }
             document.title = key;
-            document.items = items;
+            document.items = arrayAdd;
             [array addObject:document];
         }
     }

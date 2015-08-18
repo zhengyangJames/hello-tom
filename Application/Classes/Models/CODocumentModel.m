@@ -13,12 +13,8 @@
 
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-       
     };
 }
 
-+ (NSValueTransformer *)itemsJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:CODocumentItemModel.class];
-}
 
 @end
