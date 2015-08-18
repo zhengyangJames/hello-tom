@@ -65,6 +65,8 @@
     NSString *url = [urlOffer stringByAppendingString:offerID];
     [self sendURL:url params:nil body:nil method:METHOD_GET handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            NSError *error = nil;
+            COOfferModel *offer = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:responseObject error:&error];
             NSArray *listOffer = [self getListOfferDetailWihtDictionary:responseObject];
             if (handler) {
                 handler(listOffer, response, nil);

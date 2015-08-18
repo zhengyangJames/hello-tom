@@ -9,7 +9,6 @@
 #import <Mantle/Mantle.h>
 
 @class COProjectModel;
-@class CODocumentModel;
 
 @interface COOfferModel : MTLModel<MTLJSONSerializing>
 
@@ -29,7 +28,6 @@
 @property (nonatomic, strong) NSNumber *offerGoal;
 @property (nonatomic, strong) NSString *offerShortDescription;
 @property (nonatomic, strong) NSString *offerProjectDescription;
-@property (nonatomic, strong) CODocumentModel *detailDocuments;
-@property (nonatomic, strong) NSString *offerAddress;
+@property (nonatomic, strong) NSArray *documents;
 
 @end

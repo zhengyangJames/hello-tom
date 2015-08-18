@@ -8,6 +8,9 @@
 
 #import "COOfferModel.h"
 #import "COProjectModel.h"
+#import "CODocumentModel.h"
+#import "CODocumentValueTransformer.h"
+#import "MTLValueTransformer.h"
 
 @implementation COOfferModel
 
@@ -17,11 +20,32 @@
         @"offerTitle"               : @"offer_title",
         @"offerType"                : @"offer_type",
         @"offerProject"             : @"project",
+        @"offerOwnerType"           : @"owner_type",
+        @"offerCompanyLogo"         : @"company_logo",
+        @"offerStatus"              : @"status",
+        @"offerInvestorCount"       : @"investor_count",
+        @"offerMinInvestment"       : @"min_investment",
+        @"offerTimeHorizon"         : @"time_horizon",
+        @"offerAnnualizedReturn"    : @"annualized_return",
+        @"offerDayLeft"             : @"day_left",
+        @"offerCurrentFundedAmount" : @"current_funded_amount",
+        @"offerGoal"                : @"goal",
+        @"offerShortDescription"    : @"short_description",
+        @"offerProjectDescription"  : @"project_description",
+        @"documents"                : @"documents",
+        
+        
     };
 }
 
 + (NSValueTransformer *)offerProjectJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:COProjectModel.class];
+}
+
++ (NSValueTransformer *)documentsJSONTransformer {
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        return [CODocumentValueTransformer convertToArrayWithDictionary:value];
+    }];
 }
 
 @end
