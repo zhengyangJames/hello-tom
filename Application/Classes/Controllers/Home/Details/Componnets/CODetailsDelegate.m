@@ -10,6 +10,7 @@
 #import "CODetailsSectionCell.h"
 #import "CODetailsDataSource.h"
 #import "CODetailsWebViewCell.h"
+#import "COOfferModel.h"
 
 @interface CODetailsDelegate ()
 {
@@ -59,7 +60,7 @@
             return height;
         }
     } else if (indexPath.section == 1) {
-        if ([[dataSource.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+        if (self.model.showProgressBar) {
             if (indexPath.row == 0) {
                 return height = 379;
             } else if (indexPath.row == 1) {
@@ -103,7 +104,7 @@
     if (indexPath.section == 0) {
         return height = 67;
     } else if (indexPath.section == 1) {
-        if ([[dataSource.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+        if (self.model.showProgressBar) {
             if (indexPath.row == 0) {
                 return height = 379;
             } else if (indexPath.row == 1) {

@@ -31,4 +31,5 @@
 @property (nonatomic, strong) NSString *offerProjectDescription;
 @property (nonatomic, strong) NSArray *documents;
 
+- (BOOL)showProgressBar;
 @end

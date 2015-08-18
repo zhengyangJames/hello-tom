@@ -10,13 +10,14 @@
 
 #define IS_IOS8_OR_ABOVE    [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
 
+@class COOfferModel;
 @protocol CODetailsTableViewDelegate;
 
 
 @interface CODetailsDelegate : NSObject <UITableViewDelegate>
 
 - (instancetype)initWithController:(id<CODetailsTableViewDelegate>)controller;
-
+@property (strong, nonatomic) COOfferModel *model;
 @end
 
 @protocol CODetailsTableViewDelegate <NSObject>

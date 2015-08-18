@@ -58,12 +58,21 @@
     }];
 }
 
+
+
 - (NSString *)cellofferTitle {
     return @"OFFER";
 }
 
 - (NSString *)cellofferContent {
     return self.offerShortDescription;
+}
+
+- (BOOL)showProgressBar {
+    if (self.offerCurrentFundedAmount && self.offerGoal) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

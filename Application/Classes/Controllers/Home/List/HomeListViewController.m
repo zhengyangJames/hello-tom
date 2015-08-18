@@ -106,7 +106,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 - (void)_pushDetailVcWithID:(COOfferModel *)arr {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
     vc.model = arr;
-    vc.progressBarObj = self.profressbarObj;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

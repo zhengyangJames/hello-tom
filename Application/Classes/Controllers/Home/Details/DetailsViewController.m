@@ -74,41 +74,30 @@
 
 - (void)_reloadData {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        self.detailsDataSource.progressBarObj = self.progressBarObj;
-        //self.detailsDataSource.arrObject = self.arrayObj;
         self.detailsDataSource.model = self.model;
+        self.detailsDelegate.model = self.model;
         [self.tableView reloadData];
     }];
 }
 
 - (void)_getHeightWebview {
     [UIHelper showLoadingInView:self.view];
-    CODetailsOffersObj *offerObj = self.arrayObj[3];
-    CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+ //   CODetailsOffersObj *offerObj = self.arrayObj[3];
+ //   CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
     
-    [[WebViewManager shared] getHeightWebViewWithStringHtml:offerItemObj.linkOrDetail heightForWebView:^(CGFloat height, UIWebView *web) {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.detailsDataSource.heightWebview = height;
-            [self.tableView reloadData];
-            [UIHelper hideLoadingFromView:self.view];
-        }];
-    }];
+//    [[WebViewManager shared] getHeightWebViewWithStringHtml:offerItemObj.linkOrDetail heightForWebView:^(CGFloat height, UIWebView *web) {
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            self.detailsDataSource.heightWebview = height;
+//            [self.tableView reloadData];
+//            [UIHelper hideLoadingFromView:self.view];
+//        }];
+//    }];
 }
 
 #pragma mark Set Get 
 
 - (void)setModel:(COOfferModel *)model {
     _model = model;
-}
-
-- (void)setArrayObj:(NSArray *)arrayObj {
-    _arrayObj = arrayObj;
-    [self _reloadData];
-}
-
-- (void)setProgressBarObj:(COProgressbarObj *)progressBarObj {
-    _progressBarObj = progressBarObj;
-    [self _reloadData];
 }
 
 #pragma mark - Action 
@@ -123,65 +112,59 @@
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, headerView.frame.size.width, headerView.frame.size.height)];
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    CODetailsOffersObj *offerObj = [self.arrayObj lastObject];
-    CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+  //  CODetailsOffersObj *offerObj = [self.arrayObj lastObject];
+  //  CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
     
     
-    NSURL *url = [NSURL URLWithString:offerItemObj.photo];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    imageView.clipsToBounds = YES;
-    [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
-    [headerView addSubview:imageView];
-    [imageView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
-    self.tableView.tableHeaderView = headerView;
+    //NSURL *url = [NSURL URLWithString:offerItemObj.photo];
+    //imageView.contentMode = UIViewContentModeScaleAspectFill;
+   // imageView.clipsToBounds = YES;
+   // [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
+  //  [headerView addSubview:imageView];
+    //[imageView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
+   // self.tableView.tableHeaderView = headerView;
 }
 
 #pragma mark - Delegate
 - (void)detailsProfileAction:(CODetailsProjectBottomTVCell *)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction {
-    switch (detailsProjectAction) {
-        case CODetailsProjectActionInterested:
-        {
-            COInterestedViewController *vc = [[COInterestedViewController alloc]init];
-            CODetailsOffersObj *offerObj = [self.arrayObj firstObject];
-            CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
-            CODetailsOffersObj *offerObj2 = self.arrayObj[1];
-            CODetailsProfileObj *profileObj2 = [offerObj2.offerItemObjs lastObject];
-            COListProfileObject *listProfile = [[COListProfileObject alloc]initWithDictionary:[kUserDefaults objectForKey:kPROFILE_OBJECT]];
-            vc.object = @{@"offerID":offerItemObj.offerID,@"offerTitle":offerItemObj.title,@"amount":profileObj2.min_investment,@"email":listProfile.email};
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case CODetailsProjectActionQuestions:
-        {
-            COQuestionView *vc = [[COQuestionView alloc]init];
-            CODetailsOffersObj *offerObj = [self.arrayObj firstObject];
-            CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
-            vc.object = @{@"offerID":offerItemObj.offerID};
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        default:
-            break;
-    }
+//    switch (detailsProjectAction) {
+//        case CODetailsProjectActionInterested:
+//        {
+//            COInterestedViewController *vc = [[COInterestedViewController alloc]init];
+//            CODetailsOffersObj *offerObj = [self.arrayObj firstObject];
+//            CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+//            CODetailsOffersObj *offerObj2 = self.arrayObj[1];
+//            CODetailsProfileObj *profileObj2 = [offerObj2.offerItemObjs lastObject];
+//            COListProfileObject *listProfile = [[COListProfileObject alloc]initWithDictionary:[kUserDefaults objectForKey:kPROFILE_OBJECT]];
+//            vc.object = @{@"offerID":offerItemObj.offerID,@"offerTitle":offerItemObj.title,@"amount":profileObj2.min_investment,@"email":listProfile.email};
+//            [self.navigationController pushViewController:vc animated:YES];
+//        }
+//            break;
+//        case CODetailsProjectActionQuestions:
+//        {
+//            COQuestionView *vc = [[COQuestionView alloc]init];
+//            CODetailsOffersObj *offerObj = [self.arrayObj firstObject];
+//            CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
+//            vc.object = @{@"offerID":offerItemObj.offerID};
+//            [self.navigationController pushViewController:vc animated:YES];
+//        }
+//            break;
+//        default:
+//            break;
+//    }
 }
 
 - (void)detailsViewController:(CODetailsDelegate *)detailViewController didSelectedAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section > 4 && indexPath.section < 11 && indexPath.row != 0) {
-        CODetailsOffersObj *obj = [self _getItemAtindexPath:indexPath];
-        CODetailsOffersItemObj *coOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row - 1];
-        if (coOOfferItemObj.linkOrDetail && ![coOOfferItemObj.linkOrDetail isEmpty]) {
-            WebViewSetting *vc = [[WebViewSetting alloc]init];
-            vc.titler = m_string(coOOfferItemObj.title);
-            vc.webLink = coOOfferItemObj.linkOrDetail;
-            vc.isPresion = NO;
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+      //  CODetailsOffersItemObj *coOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row - 1];
+     //   if (coOOfferItemObj.linkOrDetail && ![coOOfferItemObj.linkOrDetail isEmpty]) {
+     //       WebViewSetting *vc = [[WebViewSetting alloc]init];
+     //       vc.titler = m_string(coOOfferItemObj.title);
+    //        vc.webLink = coOOfferItemObj.linkOrDetail;
+     //       vc.isPresion = NO;
+     //       [self.navigationController pushViewController:vc animated:YES];
+      //  }
     }
-}
-
-- (CODetailsOffersObj *)_getItemAtindexPath:(NSIndexPath *)indexpath {
-    CODetailsOffersObj *obj = [self.arrayObj objectAtIndex:indexpath.section];
-    return obj;
 }
 
 

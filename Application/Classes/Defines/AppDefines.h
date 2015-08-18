@@ -114,6 +114,7 @@
 #define kINDEX_SECTION_DOCUMENT                     4
 #define kCOUNT_ROW_FULL_INFO                        3
 #define kCOUNT_ROW_NO_PROGRESS                      2
+#define kDEFAULT_COUNT_OF_ROW                          1
 
 ////////////////////////////////////////////////////////////////
 #pragma mark - WEB LINK
