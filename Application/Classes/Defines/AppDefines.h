@@ -106,6 +106,15 @@
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY
 
+#define kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL       6
+#define kINDEX_SECTION_LOGO                         0
+#define kINDEX_SECTION_OFFER_INFO                   1
+#define kINDEX_SECTION_OFFER_DESCRIPTION            2
+#define kINDEX_SECTION_PROJECT_DESCRIPTION          3
+#define kINDEX_SECTION_DOCUMENT                     4
+#define kCOUNT_ROW_FULL_INFO                        3
+#define kCOUNT_ROW_NO_PROGRESS                      2
+
 ////////////////////////////////////////////////////////////////
 #pragma mark - WEB LINK
 

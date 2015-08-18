@@ -13,11 +13,13 @@
 #import "CODetailsWebViewCell.h"
 #import "CODetailsProjectBottomTVCell.h"
 
+@class COOfferModel;
+
 @interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 
 @property (strong, nonatomic) COProgressbarObj *progressBarObj;
 
 @property (nonatomic, strong) NSArray *arrayObj;
-
+@property (nonatomic, strong) COOfferModel *model;
 @end
 

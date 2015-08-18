@@ -58,4 +58,12 @@
     }];
 }
 
+- (NSString *)cellofferTitle {
+    return @"OFFER";
+}
+
+- (NSString *)cellofferContent {
+    return self.offerShortDescription;
+}
+
 @end

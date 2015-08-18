@@ -569,6 +569,7 @@
 		BB3097D61B8243F000BF6861 /* CODocumentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODocumentModel.m; sourceTree = "<group>"; };
 		BB3097D81B824F0C00BF6861 /* CODocumentItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODocumentItemModel.h; sourceTree = "<group>"; };
 		BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODocumentItemModel.m; sourceTree = "<group>"; };
+		BB30D5F21B838D9B00846F3A /* COOfferData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COOfferData.h; sourceTree = "<group>"; };
 		BB5B9A451B790F15002D37AF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BB821DF31B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CODetailsProfileObj+Formater.h"; sourceTree = "<group>"; };
 		BB821DF41B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CODetailsProfileObj+Formater.m"; sourceTree = "<group>"; };
@@ -602,6 +603,7 @@
 				BB3097D61B8243F000BF6861 /* CODocumentModel.m */,
 				BB3097D81B824F0C00BF6861 /* CODocumentItemModel.h */,
 				BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */,
+				BB30D5F21B838D9B00846F3A /* COOfferData.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";

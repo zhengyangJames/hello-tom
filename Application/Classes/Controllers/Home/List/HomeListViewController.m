@@ -103,9 +103,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Private
 
-- (void)_pushDetailVcWithID:(NSArray *)arr {
+- (void)_pushDetailVcWithID:(COOfferModel *)arr {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
-    vc.arrayObj = arr;
+    vc.model = arr;
     vc.progressBarObj = self.profressbarObj;
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -75,7 +75,8 @@
 - (void)_reloadData {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.detailsDataSource.progressBarObj = self.progressBarObj;
-        self.detailsDataSource.arrObject = self.arrayObj;
+        //self.detailsDataSource.arrObject = self.arrayObj;
+        self.detailsDataSource.model = self.model;
         [self.tableView reloadData];
     }];
 }
@@ -96,6 +97,9 @@
 
 #pragma mark Set Get 
 
+- (void)setModel:(COOfferModel *)model {
+    _model = model;
+}
 
 - (void)setArrayObj:(NSArray *)arrayObj {
     _arrayObj = arrayObj;

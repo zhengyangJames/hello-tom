@@ -20,10 +20,12 @@
 @protocol CODetailsAccessoryCellDelegate;
 @protocol CODetailsProjectBottomTVCellDelegate;
 @protocol CODetailsWebViewCellDelegate;
+@class COOfferModel;
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *arrObject;
+@property (strong, nonatomic) COOfferModel *model;
 @property (strong, nonatomic) COProgressbarObj *progressBarObj;
 @property (assign, nonatomic) CGFloat heightWebview;
 

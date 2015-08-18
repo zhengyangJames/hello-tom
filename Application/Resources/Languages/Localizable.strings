@@ -97,3 +97,18 @@
 "DOCUMENTS"                             = "DOCUMENTS";
 "NoDocumentsUploaded"                   = "No Documents Uploaded";
 "DETAIL_DOCUMENT"                       = "The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";
+
+
+"OFFER" = "";
+"PROJECT" ="";
+"DOCUMENTS" = "";
+"PROOF_OF_LICENSES" = "";
+"OTHER_DOCUMENTS" = "";
+"DECLARATION_FORM"="";
+"COMPANY_REGISTRATION"="";
+"LEGAL_APPOINTMENT"="";
+"PROOF_OF_OWNERSHIP"="";
+"ADDRESS"="";
+
+
+

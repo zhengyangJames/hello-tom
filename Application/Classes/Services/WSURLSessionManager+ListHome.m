@@ -67,9 +67,9 @@
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSError *error = nil;
             COOfferModel *offer = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:responseObject error:&error];
-            NSArray *listOffer = [self getListOfferDetailWihtDictionary:responseObject];
+      //      NSArray *listOffer = [self getListOfferDetailWihtDictionary:responseObject];
             if (handler) {
-                handler(listOffer, response, nil);
+                handler(offer, response, nil);
             }
         } else {
             if (handler) {

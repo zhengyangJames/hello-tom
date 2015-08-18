@@ -8,8 +8,9 @@
 
 #import "CODetailsDataSource.h"
 #import "CODetailsOffersObj.h"
-
-
+#import "COOfferData.h"
+#import "COOfferModel.h"
+#import "CODocumentModel.h"
 
 @interface CODetailsDataSource ()
 
@@ -61,20 +62,24 @@
 #pragma mark - TableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.arrObject count];
+   return kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.model.documents.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0 ||section == 2 || section == 3 || section == 4 || section == self.arrObject.count - 1) {
-        return [self _getNumofRowInSection:section];
-    } else if ( section == 1) {
+    if (section == kINDEX_SECTION_LOGO ||section == kINDEX_SECTION_OFFER_DESCRIPTION || section == kINDEX_SECTION_PROJECT_DESCRIPTION || section == kINDEX_SECTION_DOCUMENT || section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.model.documents.count - 1) {
+        return 1;
+    } else if ( section == kINDEX_SECTION_OFFER_INFO) {
         if ([self.progressBarObj.current_funded_amount isKindOfClass:[NSNumber class]]) {
-            return [self _getNumofRowInSection:section] + 2;
+            return kCOUNT_ROW_FULL_INFO;
         } else {
-            return [self _getNumofRowInSection:section] + 1;
+            return kCOUNT_ROW_NO_PROGRESS;
         }
     } else {
-        return [self _getNumofRowInSection:section] + 1;
+        CODocumentModel *document = [self.model.documents objectAtIndex:section - (kINDEX_SECTION_DOCUMENT+1)];
+        if (document.items.count > 0) {
+            return document.items.count;
+        }
+        return 1;
     }
 }
 
@@ -135,6 +140,8 @@
 
 - (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsTextCell identifier]];
+   
+    cell.data = self.model;
     CODetailsOffersObj *obj = [self _getItemAtindexPath:indexPath];
     cell.coOfferItem = [obj.offerItemObjs objectAtIndex:indexPath.row];
     return cell;

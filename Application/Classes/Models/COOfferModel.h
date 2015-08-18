@@ -7,10 +7,11 @@
 //
 
 #import <Mantle/Mantle.h>
+#import "COOfferData.h"
 
 @class COProjectModel;
 
-@interface COOfferModel : MTLModel<MTLJSONSerializing>
+@interface COOfferModel : MTLModel<MTLJSONSerializing, COOfferData>
 
 @property (nonatomic, strong) NSNumber *offerId;
 @property (nonatomic, strong) NSString *offerTitle;
