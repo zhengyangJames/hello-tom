@@ -62,67 +62,62 @@
 #pragma mark - TableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (self.model.documents) {
-        return kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.model.documents.count;
+    if (self.offerModel.documents) {
+        return kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.documents.count;
     }
     return kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == kINDEX_SECTION_OFFER_INFO) {
-        if (self.model.showProgressBar) {
+        if (self.offerModel.showProgressBar) {
             return kCOUNT_ROW_FULL_INFO;
         } else {
             return kCOUNT_ROW_NO_PROGRESS;
         }
     } else if ( section > kINDEX_SECTION_DOCUMENT) {
-        if (self.model.documents && self.model.documents.count > 0) {
-            if (section <= kINDEX_SECTION_DOCUMENT + self.model.documents.count) {
-                CODocumentModel *document = [self.model.documents objectAtIndex:section - (kINDEX_SECTION_DOCUMENT+1)];
+        if (self.offerModel.documents && self.offerModel.documents.count > 0) {
+            if (section <= kINDEX_SECTION_DOCUMENT + self.offerModel.documents.count) {
+                CODocumentModel *document = [self.offerModel.documents objectAtIndex:section - (kINDEX_SECTION_DOCUMENT+1)];
                 if (document.items && document.items.count > 0) {
                     return document.items.count;
                 }
-            } else {
-                return kDEFAULT_COUNT_OF_ROW;
             }
         }
-        return kDEFAULT_COUNT_OF_ROW;
-    } else {
-        return kDEFAULT_COUNT_OF_ROW;
     }
+    return kDEFAULT_COUNT_OF_ROW;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == kINDEX_SECTION_LOGO) {
+        return [self tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
+    } else if (indexPath.section == kINDEX_SECTION_OFFER_INFO) {
+        if (self.offerModel.showProgressBar) {
+            if (indexPath.row == 0) {
+                return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
+            } else if (indexPath.row == 1) {
+                return [self tableView:tableView detailsProgressViewRowAtIndexPath:indexPath];
+            } else {
+                return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
+            }
+        } else {
+            if (indexPath.row == 0) {
+                return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
+            } else {
+                return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
+            }
+        }
+    }else if (indexPath.section == kINDEX_SECTION_OFFER_DESCRIPTION || indexPath.section == kINDEX_SECTION_DOCUMENT || indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.documents.count - 1) {
+        return [self tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
+    } else if ( indexPath.section == kINDEX_SECTION_PROJECT_DESCRIPTION) {
+        return [self tableView:tableView cellDetailsWebViewRowWithIndexPath:indexPath];
+    } else {
+        if (indexPath.row == 0) {
+            return [self tableView:tableView cellDetailsSectionForRowAtIndexPath:indexPath];
+        }
+        return [self tableView:tableView cellDetailsAccessoryForRowAtIndexPath:indexPath];
+    }
     return nil;
-//    if (indexPath.section == 0) {
-//        return [self tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
-//    } else if (indexPath.section == 1) {
-//        if (self.model.showProgressBar) {
-//            if (indexPath.row == 0) {
-//                return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
-//            } else if (indexPath.row == 1) {
-//                return [self tableView:tableView detailsProgressViewRowAtIndexPath:indexPath];
-//            } else {
-//                return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
-//            }
-//        } else {
-//            if (indexPath.row == 0) {
-//                return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
-//            } else {
-//                return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
-//            }
-//        }
-//    }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == self.arrObject.count - 1) {
-//        return [self tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
-//    } else if ( indexPath.section == 3) {
-//        return [self tableView:tableView cellDetailsWebViewRowWithIndexPath:indexPath];
-//    } else {
-//        if (indexPath.row == 0) {
-//            return [self tableView:tableView cellDetailsSectionForRowAtIndexPath:indexPath];
-//        }
-//        return [self tableView:tableView cellDetailsAccessoryForRowAtIndexPath:indexPath];
-//    }
-//    return nil;
 }
 
 #pragma mark - Cells
@@ -148,7 +143,7 @@
 - (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsTextCell identifier]];
    
-    cell.data = self.model;
+    cell.data = self.offerModel;
    // cell.coOfferItem = [obj.offerItemObjs objectAtIndex:indexPath.row];
     return cell;
 }
@@ -175,7 +170,7 @@
 
 - (CODetailsWebViewCell*)tableView:(UITableView*)tableView cellDetailsWebViewRowWithIndexPath:(NSIndexPath*)indexPath {
     CODetailsWebViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsWebViewCell identifier]];
-   // cell.cOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row];
+       cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     return cell;
 }
 

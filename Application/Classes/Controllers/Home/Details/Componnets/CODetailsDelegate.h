@@ -17,7 +17,7 @@
 @interface CODetailsDelegate : NSObject <UITableViewDelegate>
 
 - (instancetype)initWithController:(id<CODetailsTableViewDelegate>)controller;
-@property (strong, nonatomic) COOfferModel *model;
+@property (strong, nonatomic) COOfferModel *offerModel;
 @end
 
 @protocol CODetailsTableViewDelegate <NSObject>

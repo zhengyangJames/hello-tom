@@ -16,6 +16,6 @@
 @class COOfferModel;
 
 @interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
-@property (nonatomic, strong) COOfferModel *model;
+@property (nonatomic, strong) COOfferModel *offerModel;
 @end
 

@@ -74,14 +74,15 @@
 
 - (void)_reloadData {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        self.detailsDataSource.model = self.model;
-        self.detailsDelegate.model = self.model;
+        self.detailsDataSource.offerModel = self.offerModel;
+        self.detailsDataSource.heightWebview = 200;
+        self.detailsDelegate.offerModel = self.offerModel;
         [self.tableView reloadData];
     }];
 }
 
 - (void)_getHeightWebview {
-    [UIHelper showLoadingInView:self.view];
+ //   [UIHelper showLoadingInView:self.view];
  //   CODetailsOffersObj *offerObj = self.arrayObj[3];
  //   CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
     
@@ -96,8 +97,8 @@
 
 #pragma mark Set Get 
 
-- (void)setModel:(COOfferModel *)model {
-    _model = model;
+- (void)setOfferModel:(COOfferModel *)offerModel {
+    _offerModel = offerModel;
 }
 
 #pragma mark - Action 

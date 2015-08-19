@@ -69,10 +69,7 @@
 }
 
 - (BOOL)showProgressBar {
-    if (self.offerCurrentFundedAmount && self.offerGoal) {
-        return YES;
-    }
-    return NO;
+    return self.offerCurrentFundedAmount && self.offerGoal;
 }
 
 @end

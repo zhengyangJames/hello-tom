@@ -60,7 +60,7 @@
             return height;
         }
     } else if (indexPath.section == 1) {
-        if (self.model.showProgressBar) {
+        if (self.offerModel.showProgressBar) {
             if (indexPath.row == 0) {
                 return height = 379;
             } else if (indexPath.row == 1) {
@@ -104,7 +104,7 @@
     if (indexPath.section == 0) {
         return height = 67;
     } else if (indexPath.section == 1) {
-        if (self.model.showProgressBar) {
+        if (self.offerModel.showProgressBar) {
             if (indexPath.row == 0) {
                 return height = 379;
             } else if (indexPath.row == 1) {

@@ -103,9 +103,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Private
 
-- (void)_pushDetailVcWithID:(COOfferModel *)arr {
+- (void)_pushDetailVcWithID:(COOfferModel *)model {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
-    vc.model = arr;
+    vc.offerModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
