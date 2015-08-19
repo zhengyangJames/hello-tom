@@ -62,17 +62,17 @@
     } else if (indexPath.section == 1) {
         if (self.offerModel.showProgressBar) {
             if (indexPath.row == 0) {
-                return height = 379;
+                return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else if (indexPath.row == 1) {
-                return height = 64;
+                return height = kHEIGHT_FOR_ROW_PROGRESS_INFO;
             } else {
-                return height = 115;
+                return height = kHEIGHT_FOR_ROW_ACTION_INFO;
             }
         } else {
             if (indexPath.row == 0) {
-                return height = 379;
+                return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else {
-                return height = 115;
+                return height = kHEIGHT_FOR_ROW_ACTION_INFO;
             }
         }
     }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 11) {
@@ -106,17 +106,17 @@
     } else if (indexPath.section == 1) {
         if (self.offerModel.showProgressBar) {
             if (indexPath.row == 0) {
-                return height = 379;
+                return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else if (indexPath.row == 1) {
-                return height = 64;
+                return height = kHEIGHT_FOR_ROW_PROGRESS_INFO;
             } else {
-                return height = 115;
+                return height = kHEIGHT_FOR_ROW_ACTION_INFO;
             }
         } else {
             if (indexPath.row == 0) {
-                return height = 379;
+                return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else {
-                return height = 115;
+                return height = kHEIGHT_FOR_ROW_ACTION_INFO;
             }
         }
     }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 5) {

@@ -25,19 +25,13 @@
 }
 
 #pragma mark - Set Get
-- (void)setCoOfferItem:(CODetailsOffersItemObj *)coOfferItem {
-    _coOfferItem = coOfferItem;
-
-    _headerLabel.text = coOfferItem.title;
-    if (coOfferItem.htmlDetail) {
-        [_detailsTextView setAttributedText:coOfferItem.htmlDetail];
-    } else {
-        [_detailsTextView setText:coOfferItem.stringDetail];
-    }
-}
 - (void)setData:(id<COOfferData>)data {
-    NSString *as = [self.data cellofferContent];
-    DBG(@"%@",as);
+    _data = data;
+    if (_data) {
+        NSString *as = [_data cellofferContent];
+        DBG(@"%@",as);
+    }
+
 }
 
 @end
