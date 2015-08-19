@@ -17,5 +17,6 @@
 
 @interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 @property (nonatomic, strong) COOfferModel *offerModel;
+@property (nonatomic, strong) COOfferModel *offerModelProgress;
 @end
 

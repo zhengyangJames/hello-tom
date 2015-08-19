@@ -70,7 +70,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == kINDEX_SECTION_OFFER_INFO) {
-        if (self.offerModel.showProgressBar) {
+        if (self.offerModelProgress.showProgressBar) {
             return kCOUNT_ROW_FULL_INFO;
         } else {
             return kCOUNT_ROW_NO_PROGRESS;
@@ -80,7 +80,9 @@
             if (section <= kINDEX_SECTION_DOCUMENT + self.offerModel.documents.count) {
                 CODocumentModel *document = [self.offerModel.documents objectAtIndex:section - (kINDEX_SECTION_DOCUMENT+1)];
                 if (document.items && document.items.count > 0) {
-                    return document.items.count;
+                    return document.items.count + kDEFAULT_COUNT_OF_ROW;
+                } else {
+                    return kDEFAULT_NUMBER_ROW_DOC_DETAIL;
                 }
             }
         }
@@ -92,7 +94,7 @@
     if (indexPath.section == kINDEX_SECTION_LOGO) {
         return [self tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
     } else if (indexPath.section == kINDEX_SECTION_OFFER_INFO) {
-        if (self.offerModel.showProgressBar) {
+        if (self.offerModelProgress.showProgressBar) {
             if (indexPath.row == 0) {
                 return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
             } else if (indexPath.row == 1) {
@@ -124,33 +126,13 @@
 
 - (CODetailsPhotoCell*)tableView:(UITableView *)tableView cellDetailsPhotoForRowAtIndexPath:(NSIndexPath *)indexPath  {
     CODetailsPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsPhotoCell identifier]];
-    //cell.coOfferObj = [obj.offerItemObjs objectAtIndex:indexPath.row];
-    return cell;
-}
-
-- (CODetailsAccessoryCell*)tableView:(UITableView *)tableView cellDetailsAccessoryForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsAccessoryCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsAccessoryCell identifier]];
-    //cell.coOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row - 1];
-    return cell;
-}
-
-- (CODetailsSectionCell*)tableView:(UITableView *)tableView cellDetailsSectionForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsSectionCell identifier]];
-
-    return cell;
-}
-
-- (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsTextCell identifier]];
-   
-    cell.data = self.offerModel;
-   // cell.coOfferItem = [obj.offerItemObjs objectAtIndex:indexPath.row];
+    cell.offerLogo = self.offerModel;
     return cell;
 }
 
 - (CODetailsProjectCell*)tableView:(UITableView *)tableView cellDetailsProjectTBVForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsProjectCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectCell identifier]];
-   // cell.detailsProfile = [obj.offerItemObjs objectAtIndex:indexPath.row];
+    cell.offerInfo = self.offerModel;
     cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     return cell;
 }
@@ -163,16 +145,47 @@
 
 - (CODetailsProgressViewCell*)tableView:(UITableView *)tableView detailsProgressViewRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsProgressViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProgressViewCell identifier]];
-    //cell.obj = self.progressBarObj;
+    cell.offerInfoProgress = self.offerModelProgress;
     cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
+    return cell;
+}
+
+- (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CODetailsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsTextCell identifier]];
+    if(indexPath.section == kINDEX_SECTION_OFFER_DESCRIPTION) {
+        cell.offerDescription = self.offerModel;
+    } else if (indexPath.section == kINDEX_SECTION_DOCUMENT) {
+        cell.offerDocumentInfo = self.offerModel;
+    } else if (indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.documents.count - 1 && self.offerModel.documents && self.offerModel.documents.count > 0) {
+        cell.offerAddress = self.offerModel;
+    }
     return cell;
 }
 
 - (CODetailsWebViewCell*)tableView:(UITableView*)tableView cellDetailsWebViewRowWithIndexPath:(NSIndexPath*)indexPath {
     CODetailsWebViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsWebViewCell identifier]];
-       cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
+    cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
+    cell.offerProject = self.offerModel;
     return cell;
 }
 
+- (CODetailsSectionCell*)tableView:(UITableView *)tableView cellDetailsSectionForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CODetailsSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsSectionCell identifier]];
+    cell.indexSection = indexPath.section - (kINDEX_SECTION_DOCUMENT +1);
+    cell.offerDocDetail  = self.offerModel;
+    return cell;
+}
+
+- (CODetailsAccessoryCell*)tableView:(UITableView *)tableView cellDetailsAccessoryForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CODetailsAccessoryCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsAccessoryCell identifier]];
+    cell.indexPath = [self _getIndexPathForAccessoryCell:indexPath];
+    cell.offerDocDetail = self.offerModel;
+    return cell;
+}
 #pragma mark - Privace
+- (NSIndexPath *)_getIndexPathForAccessoryCell:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section - (kINDEX_SECTION_DOCUMENT +1);
+    NSIndexPath *indexPathConverted = [NSIndexPath indexPathForRow:indexPath.row-kDEFAULT_COUNT_OF_ROW inSection:section];
+    return indexPathConverted;
+}
 @end

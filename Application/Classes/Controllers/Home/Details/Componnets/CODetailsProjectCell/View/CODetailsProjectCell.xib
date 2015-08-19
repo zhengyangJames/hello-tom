@@ -33,8 +33,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2w7-fg-DzT">
-                        <rect key="frame" x="8" y="8" width="304" height="373"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2w7-fg-DzT">
+                        <rect key="frame" x="8" y="8" width="304" height="372"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n06-FT-xdd" userLabel="Project Site View">
                                 <rect key="frame" x="0.0" y="62" width="304" height="54"/>
@@ -321,12 +321,12 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="_contentView" destination="2w7-fg-DzT" id="G7t-U6-01u"/>
-                <outlet property="_dayAgoLable" destination="hnt-9H-r33" id="yM4-mX-lFB"/>
-                <outlet property="_minYieldLable" destination="dAt-rO-1Go" id="buo-Y6-9WW"/>
-                <outlet property="_projectHorizonLable" destination="8SH-95-SCo" id="Ymr-wK-4U5"/>
-                <outlet property="_projectInteredtedLable" destination="9gN-aC-dQN" id="zgk-Bb-FeD"/>
-                <outlet property="_projectInvestmentLable" destination="yCJ-k0-brf" id="IP6-Z8-NFg"/>
-                <outlet property="_projectStatusLable" destination="K1z-Vt-JJy" id="3kc-Xa-Wsj"/>
+                <outlet property="_lblOfferDayLeft" destination="hnt-9H-r33" id="HUA-c6-9h5"/>
+                <outlet property="_lblOfferInvestor" destination="9gN-aC-dQN" id="U63-eS-hBj"/>
+                <outlet property="_lblOfferMinInvestment" destination="yCJ-k0-brf" id="qRV-Nf-ycy"/>
+                <outlet property="_lblOfferStatus" destination="K1z-Vt-JJy" id="4Ic-V2-noa"/>
+                <outlet property="_lblOfferTimeHorizon" destination="8SH-95-SCo" id="gfn-cS-Gac"/>
+                <outlet property="_lblOfferYield" destination="dAt-rO-1Go" id="nWz-AB-uYt"/>
             </connections>
             <point key="canvasLocation" x="-85" y="-260.5"/>
         </tableViewCell>

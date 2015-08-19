@@ -45,7 +45,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 @property (strong, nonatomic) NSArray *arrayListFilter;
 @property (strong, nonatomic) NSArray *arraySort;
 @property (strong, nonatomic) COProgressbarObj *profressbarObj;
-
+@property (nonatomic, strong) COOfferModel *offerModelProgress;
 @end
 
 @implementation HomeListViewController
@@ -105,6 +105,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)_pushDetailVcWithID:(COOfferModel *)model {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
+    vc.offerModelProgress = self.offerModelProgress;
     vc.offerModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -246,7 +247,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:offerID,@"offer_id", nil];
     [[WSURLSessionManager shared] wsGetProgressBarWithOfferID:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            self.profressbarObj = (COProgressbarObj*)responseObject;
+            self.offerModelProgress = responseObject;
             [self _callWSGetDetailsWithID:offerID];
         } else {
             [UIHelper showError:error];

@@ -6,14 +6,10 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "BaseTableViewCell.h"
+#import "COOfferData.h"
 
-@class CODetailsOffersItemObj;
+@interface CODetailsWebViewCell : UITableViewCell
 
-@interface CODetailsWebViewCell : BaseTableViewCell
-
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (weak, nonatomic) IBOutlet UILabel *titler;
-@property (nonatomic, strong) CODetailsOffersItemObj *cOOfferItemObj;
+@property (nonatomic, strong) id<COOfferProject> offerProject;
 
 @end

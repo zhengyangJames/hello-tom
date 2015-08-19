@@ -10,16 +10,17 @@
 #import "COPositive&NagitiveButton.h"
 #import "UIHelper.h"
 #import "CODetailsProfileObj+Formater.h"
+#import "COOfferModel.h"
 
 @interface CODetailsProjectCell ()
 {
     __weak IBOutlet UIView *_contentView;
-    __weak IBOutlet UILabel *_projectStatusLable;
-    __weak IBOutlet UILabel *_projectInteredtedLable;
-    __weak IBOutlet UILabel *_projectInvestmentLable;
-    __weak IBOutlet UILabel *_projectHorizonLable;
-    __weak IBOutlet UILabel *_dayAgoLable;
-    __weak IBOutlet UILabel *_minYieldLable;
+    __weak IBOutlet UILabel *_lblOfferStatus;
+    __weak IBOutlet UILabel *_lblOfferInvestor;
+    __weak IBOutlet UILabel *_lblOfferMinInvestment;
+    __weak IBOutlet UILabel *_lblOfferTimeHorizon;
+    __weak IBOutlet UILabel *_lblOfferYield;
+    __weak IBOutlet UILabel *_lblOfferDayLeft;
 }
 
 @end
@@ -46,19 +47,15 @@
 }
 
 #pragma mark - Set Get
-- (void)setDetailsProfile:(CODetailsProfileObj *)detailsProfile {
-    _detailsProfile = detailsProfile;
-    _projectStatusLable.text = detailsProfile.stringOfStatus;
-    
-    _projectInteredtedLable.text = detailsProfile.stringOfInvestorCount;
-    
-    _projectInvestmentLable.text = detailsProfile.currencyStringFormatFromInvestment ;
-    
-    _projectHorizonLable.text = detailsProfile.stringOfTimeHorizon;
 
-    _minYieldLable.text = detailsProfile.stringOfMinAnnualReturn;
-    
-    _dayAgoLable.text = detailsProfile.stringOfDayLeft;
+- (void)setOfferInfo:(id<COOfferInfo>)offerInfo {
+    _offerInfo = offerInfo;
+    _lblOfferStatus.text = _offerInfo.offerInfoStatus;
+    _lblOfferInvestor.text = _offerInfo.offerInfoInvestor;
+    _lblOfferMinInvestment.text = _offerInfo.offerInfoMinInvesment;
+    _lblOfferTimeHorizon.text = _offerInfo.offerInfoTimeHorizon;
+    _lblOfferYield.text= _offerInfo.offerInfoYield;
+    _lblOfferDayLeft.text= _offerInfo.offerInfoDayLeft;
 }
 
 #pragma mark - Action 

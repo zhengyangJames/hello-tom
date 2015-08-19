@@ -8,8 +8,53 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol COOfferData <NSObject>
+@protocol COOfferLogo <NSObject>
 
-- (NSString *)cellofferTitle;
-- (NSString *)cellofferContent;
+- (NSString *)offerLogoImage;
+- (NSString *)offerLogoTitle;
 @end
+
+@protocol COOfferInfo <NSObject>
+
+- (NSString *)offerInfoStatus;
+- (NSString *)offerInfoInvestor;
+- (NSString *)offerInfoMinInvesment;
+- (NSString *)offerInfoTimeHorizon;
+- (NSString *)offerInfoYield;
+- (NSString *)offerInfoDayLeft;
+- (NSString *)offerInfoGoalToString;
+- (NSString *)currentFundedAmountToString;
+- (NSString *)totalProgress;
+- (NSNumber *)goalOrigin;
+@end
+
+@protocol COOfferDescription <NSObject>
+
+- (NSString *)offerDescriptionTitle;
+- (NSString *)offerDescriptionContent;
+@end
+
+@protocol COOfferProject <NSObject>
+
+- (NSString *)offerProjectTitle;
+- (NSString *)offerProjectContent;
+@end
+
+@protocol COOfferDocument <NSObject>
+
+- (NSString *)offerDocumentTitle;
+- (NSString *)offerDocumentContent;
+@end
+
+@protocol COOfferAddress <NSObject>
+
+- (NSString *)offerAddressTitle;
+- (NSString *)offerAddressContent;
+@end
+
+@protocol COOfferDocumentDetail <NSObject>
+
+- (NSArray *)offerDocumentDetail;
+@end
+
+

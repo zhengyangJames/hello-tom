@@ -7,7 +7,14 @@
 //
 
 #import "CODetailsAccessoryCell.h"
-#import "CODetailsOffersItemObj.h"
+#import "CODocumentModel.h"
+#import "CODocumentItemModel.h"
+
+@interface CODetailsAccessoryCell() {
+    __weak IBOutlet UILabel  *_detailsLabel;
+}
+
+@end
 
 @implementation CODetailsAccessoryCell
 
@@ -19,9 +26,20 @@
 
 #pragma mark - Set Get
 
-- (void)setCoOOfferItemObj:(CODetailsOffersItemObj *)coOOfferItemObj {
-    _coOOfferItemObj = coOOfferItemObj;
-    self.detailsLabel.text = coOOfferItemObj.title;
+- (void)setOfferDocDetail:(id<COOfferDocumentDetail>)offerDocDetail {
+    _offerDocDetail = offerDocDetail;
+    NSArray *array = _offerDocDetail.offerDocumentDetail;
+    if (array && array.count > 0) {
+        CODocumentModel *docModel = [array objectAtIndex:self.indexPath.section];
+        if (docModel.items && docModel.items.count > 0) {
+            CODocumentItemModel *item = docModel.items[self.indexPath.row];
+            _detailsLabel.text = item.docItemTitle;
+        } else {
+            _detailsLabel.text = NSLocalizedString(@"NoDocumentsUploaded", nil);
+        }
+    } else {
+        _detailsLabel.text = NSLocalizedString(@"NoDocumentsUploaded", nil);
+    }
 }
 
 #pragma mark - Action

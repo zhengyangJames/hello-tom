@@ -60,7 +60,7 @@
             return height;
         }
     } else if (indexPath.section == 1) {
-        if (self.offerModel.showProgressBar) {
+        if (self.offerModelProgress.showProgressBar) {
             if (indexPath.row == 0) {
                 return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else if (indexPath.row == 1) {
@@ -104,7 +104,7 @@
     if (indexPath.section == 0) {
         return height = 67;
     } else if (indexPath.section == 1) {
-        if (self.offerModel.showProgressBar) {
+        if (self.offerModelProgress.showProgressBar) {
             if (indexPath.row == 0) {
                 return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else if (indexPath.row == 1) {
@@ -120,11 +120,11 @@
             }
         }
     }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 5) {
-        return height = 85;
+        return height = kHEIGHT_FOR_ROW_TEXT;
     }else if (indexPath.section == 3) {
         return dataSource.heightWebview;
     } else {
-        return height = 44;
+        return height = kHEIGHT_FOR_ROW_DEFAULT;
     }
 }
 

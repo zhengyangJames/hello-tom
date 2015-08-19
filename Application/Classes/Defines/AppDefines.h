@@ -115,9 +115,12 @@
 #define kCOUNT_ROW_FULL_INFO                        3
 #define kCOUNT_ROW_NO_PROGRESS                      2
 #define kDEFAULT_COUNT_OF_ROW                       1
+#define kDEFAULT_NUMBER_ROW_DOC_DETAIL              2
 #define kHEIGHT_FOR_ROW_DEFAULT_INFO                379
 #define kHEIGHT_FOR_ROW_PROGRESS_INFO               64
 #define kHEIGHT_FOR_ROW_ACTION_INFO                 115
+#define kHEIGHT_FOR_ROW_TEXT                        85
+#define kHEIGHT_FOR_ROW_DEFAULT                     44
 
 ////////////////////////////////////////////////////////////////
 #pragma mark - WEB LINK

@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "BaseView.h"
+#import "COOfferData.h"
 
 @interface CODetailsSectionCell : UITableViewCell
 
-@property (nonatomic, strong) NSString *titleSection;
+@property (nonatomic, strong) id<COOfferDocumentDetail> offerDocDetail;
+@property (nonatomic, assign) NSInteger indexSection;
 
 @end

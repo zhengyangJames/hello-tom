@@ -67,7 +67,6 @@
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSError *error = nil;
             COOfferModel *offer = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:responseObject error:&error];
-      //      NSArray *listOffer = [self getListOfferDetailWihtDictionary:responseObject];
             if (handler) {
                 handler(offer, response, nil);
             }
@@ -140,9 +139,9 @@
     [request setValue:valueToken forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-            COProgressbarObj *obj = [[COProgressbarObj alloc]initWithDictionnary:responseObject];
+            COOfferModel *offer = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:responseObject error:&error];
             if (handler) {
-                handler(obj, response, nil);
+                handler(offer, response, nil);
             }
         } else {
             if (handler) {
@@ -153,67 +152,5 @@
 }
 
 #pragma mark - Helper - Analyse Obj DetailsOffers
-- (NSArray *)getListOfferDetailWihtDictionary:(NSDictionary *)dict {
-    NSMutableArray *arrObj = [[NSMutableArray alloc] init];
-    if (dict) {
-        if ([dict objectForKeyNotNull:@"offer_title"]) {
-            CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc]init];
-            [arrObj addObject:[obj mappingDetailsOffersItemTitle:dict]];
-        }
-        
-        if ([dict objectForKeyNotNull:@"id"]) {
-            CODetailsProfileObj *profileObj = [[CODetailsProfileObj alloc]init];
-            [arrObj addObject:[profileObj mappingDetailsProfileObjects:dict]];
-        }
-        
-        if ([dict objectForKeyNotNull:@"short_description"]) {
-            CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc]init];
-            [arrObj addObject:[obj mappingDetailsOffersItemDescription:dict]];
-        }
-        
-        if ([dict objectForKeyNotNull:@"project_description"]) {
-            CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc]init];
-            [arrObj addObject:[obj mappingDetailsOffersItemProjectDesc:dict]];
-        }
-        
-        if ([dict objectForKeyNotNull:@"documents"]) {
-            NSDictionary *dictDocument = [dict objectForKeyNotNull:@"documents"];
-            if (dictDocument) {
-                CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc]init];
-                [arrObj addObject:[obj mappingDetailsOffersItemDocument]];
-                
-                for (NSString *key in [dictDocument allKeys]) {
-                    NSArray *arr = [dictDocument objectForKeyNotNull:key];
-                    CODetailsOffersObj *detailObj = [[CODetailsOffersObj alloc]init];
-                    NSMutableArray *arrSub = [NSMutableArray new];
-                    if (arr.count > 0) {
-                        for (NSDictionary *dic in arr) {
-                            CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc] init];
-                            obj = [obj mappingDetailsOffersItemSubDocument:dic andKey:key];
-                            if(!obj.linkOrDetail) {
-                                [arrSub addObject:obj];
-                                break;
-                            }
-                            [arrSub addObject:obj];
-                        }
-                    } else {
-                        CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc]init];
-                        [arrSub addObject:[obj mappingDetailsOffersItemSubDocument:nil andKey:nil]];
-                    }
-                    [detailObj setDetailsOffersItemDocument:arrSub type:key];
-                    [arrObj addObject:detailObj];
-                }
-            }
-        }
-        
-        if ([dict objectForKeyNotNull:@"project"]) {
-            CODetailsOffersItemObj *obj = [[CODetailsOffersItemObj alloc]init];
-            [arrObj addObject:[obj mappingDetailsOffersItemAddress:dict]];
-        }
-    }
-    return arrObj;
-}
-
-
 
 @end

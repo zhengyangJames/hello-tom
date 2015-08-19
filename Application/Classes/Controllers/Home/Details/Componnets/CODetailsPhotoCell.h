@@ -6,11 +6,10 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-@class CODetailsOffersItemObj;
+#import "COOfferData.h"
 
 @interface CODetailsPhotoCell : UITableViewCell
 
-@property (strong, nonatomic) CODetailsOffersItemObj *coOfferObj;
+@property (strong, nonatomic) id<COOfferLogo> offerLogo;
 
 @end

@@ -7,10 +7,10 @@
 //
 
 #import "BaseTableViewCell.h"
-#import "CODetailsProfileObj.h"
+#import "COOfferData.h"
 
 @interface CODetailsProjectCell : BaseTableViewCell
 
-@property (weak, nonatomic) CODetailsProfileObj *detailsProfile;
+@property (strong, nonatomic) id<COOfferInfo> offerInfo;
 
 @end

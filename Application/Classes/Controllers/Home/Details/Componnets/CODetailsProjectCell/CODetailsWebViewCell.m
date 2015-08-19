@@ -11,6 +11,8 @@
 
 @interface CODetailsWebViewCell ()
 {
+    __weak IBOutlet UIWebView *webView;
+    __weak IBOutlet UILabel *title;
     BOOL _isFinish;
 }
 
@@ -18,24 +20,25 @@
 
 @implementation CODetailsWebViewCell
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [_webView.scrollView setScrollEnabled:NO];
-    [_webView.scrollView setShowsHorizontalScrollIndicator:NO];
-    [_webView.scrollView setShowsVerticalScrollIndicator:NO];
-    [_webView setOpaque:NO];
-    [_webView setBackgroundColor:[UIColor clearColor]];
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [webView.scrollView setScrollEnabled:NO];
+    [webView.scrollView setShowsHorizontalScrollIndicator:NO];
+    [webView.scrollView setShowsVerticalScrollIndicator:NO];
+    [webView setOpaque:NO];
+    [webView setBackgroundColor:[UIColor clearColor]];
     _isFinish = NO;
     
 }
 
 #pragma mark - Set Get
-- (void)setCOOfferItemObj:(CODetailsOffersItemObj *)cOOfferItemObj {
-    _cOOfferItemObj = cOOfferItemObj;
-    _titler.text = cOOfferItemObj.title;
-    NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,cOOfferItemObj.linkOrDetail];
+
+- (void)setOfferProject:(id<COOfferProject>)offerProject {
+    _offerProject = offerProject;
+    title.text = _offerProject.offerProjectTitle;
+    NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,_offerProject.offerProjectContent];
     if (!_isFinish) {
-        [_webView loadHTMLString:formartHTML baseURL:nil];
+        [webView loadHTMLString:formartHTML baseURL:nil];
         _isFinish = !_isFinish;
     }
 }

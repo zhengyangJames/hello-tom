@@ -7,6 +7,7 @@
 //
 
 #import "CODetailsSectionCell.h"
+#import "CODocumentModel.h"
 
 @interface CODetailsSectionCell ()
 {
@@ -29,9 +30,13 @@
 
 
 #pragma mark - Set Get
-- (void)setTitleSection:(NSString *)titleSection {
-    _titleSection = titleSection;
-    _lblSection.text = [self _getTitleWithString:titleSection];
+- (void)setOfferDocDetail:(id<COOfferDocumentDetail>)offerDocDetail {
+    _offerDocDetail = offerDocDetail;
+    NSArray *array = _offerDocDetail.offerDocumentDetail;
+    if (array && array.count>0) {
+        CODocumentModel *docModel = [array objectAtIndex:self.indexSection];
+        _lblSection.text = [self _getTitleWithString:docModel.title];
+    }
 }
 
 - (NSString *)_getTitleWithString:(NSString *)string {

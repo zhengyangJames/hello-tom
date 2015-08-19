@@ -36,7 +36,7 @@
             </tableViewCellContentView>
             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="detailsLabel" destination="ir6-Xa-zq9" id="HyR-uM-bLj"/>
+                <outlet property="_detailsLabel" destination="ir6-Xa-zq9" id="lOU-zM-pCS"/>
             </connections>
             <point key="canvasLocation" x="202" y="277"/>
         </tableViewCell>

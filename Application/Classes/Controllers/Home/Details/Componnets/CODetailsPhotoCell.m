@@ -44,11 +44,11 @@
 
 #pragma mark - Set Get
 
-- (void)setCoOfferObj:(CODetailsOffersItemObj *)coOfferObj {
-    _coOfferObj = coOfferObj;
-    _detailsTextView.text = coOfferObj.title;
-    if (coOfferObj.linkOrDetail && ![coOfferObj.linkOrDetail rangeOfString:@"public_media/company.png"].length != 0) {
-        NSURL *url = [NSURL URLWithString:coOfferObj.linkOrDetail];
+- (void)setOfferLogo:(id<COOfferLogo>)offerLogo {
+    _offerLogo = offerLogo;
+    _detailsTextView.text = _offerLogo.offerLogoTitle;
+    if (_offerLogo.offerLogoImage && ![_offerLogo.offerLogoImage rangeOfString:@"public_media/company.png"].length != 0) {
+        NSURL *url = [NSURL URLWithString:_offerLogo.offerLogoImage];
         [_image sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"company_edit.jpg"]];
     } else {
         _image.image = [UIImage imageNamed:@"company_edit.jpg"];

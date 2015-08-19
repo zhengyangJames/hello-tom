@@ -39,15 +39,14 @@
 }
 
 #pragma mark - Set Get
-- (void)setObj:(COProgressbarObj *)obj {
-    _obj = obj;
-    if ([[obj valueForKey:@"goal"] isKindOfClass:[NSNumber class]]) {
-        float value = ([obj.goal doubleValue]*10)/1000;
-        [_progressBar setProgress:value animated:NO];
-    }
-    _titleProgressbarLable.text = obj.currencyStringFormatFromCurrentFundedAmount;
-    _progressBarBottomLable.text = obj.stringOfGoal;
-    _totalProgressbarLable.text = [@"of " stringByAppendingString:obj.stringOfTotalCurrency];
+- (void)setOfferInfoProgress:(id<COOfferInfo>)offerInfoProgress {
+    _offerInfoProgress = offerInfoProgress;
+    NSNumber *valueGoal = _offerInfoProgress.goalOrigin;
+    float value = ([valueGoal doubleValue]*10)/1000;
+    [_progressBar setProgress:value animated:NO];
+    _titleProgressbarLable.text = _offerInfoProgress.currentFundedAmountToString;
+    _progressBarBottomLable.text = _offerInfoProgress.offerInfoGoalToString;
+    _totalProgressbarLable.text = [@"of " stringByAppendingString:_offerInfoProgress.totalProgress];
 }
 
 

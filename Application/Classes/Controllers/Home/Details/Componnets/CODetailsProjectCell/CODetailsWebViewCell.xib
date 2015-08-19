@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OFFER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="J4Y-fc-BXA">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="J4Y-fc-BXA">
                         <rect key="frame" x="8" y="8" width="304" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="1PO-kU-thI"/>
@@ -45,8 +45,8 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="titler" destination="J4Y-fc-BXA" id="zlH-Zh-Ws3"/>
-                <outlet property="webView" destination="0f5-0N-kZZ" id="xsE-9B-KP8"/>
+                <outlet property="title" destination="J4Y-fc-BXA" id="AsF-70-t7c"/>
+                <outlet property="webView" destination="0f5-0N-kZZ" id="Rwv-ym-GT8"/>
             </connections>
             <point key="canvasLocation" x="-122" y="239.5"/>
         </tableViewCell>

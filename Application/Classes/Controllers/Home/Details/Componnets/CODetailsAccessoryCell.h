@@ -6,17 +6,15 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-@class CODetailsOffersItemObj;
+#import "COOfferData.h"
 
 @protocol CODetailsAccessoryCellDelegate;
 
 @interface CODetailsAccessoryCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel  *detailsLabel;
 @property (weak, nonatomic) id<CODetailsAccessoryCellDelegate> delegate;
-
-@property (nonatomic, strong) CODetailsOffersItemObj *coOOfferItemObj;
+@property (nonatomic, strong) id<COOfferDocumentDetail> offerDocDetail;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @end
 

@@ -99,16 +99,16 @@
 "DETAIL_DOCUMENT"                       = "The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";
 
 
-"OFFER" = "";
-"PROJECT" ="";
-"DOCUMENTS" = "";
+"OFFER"                                 = "OFFER";
+"PROJECT"                               = "PROJECT";
+"DOCUMENT"                              = "DOCUMENTS";
 "PROOF_OF_LICENSES" = "";
 "OTHER_DOCUMENTS" = "";
 "DECLARATION_FORM"="";
 "COMPANY_REGISTRATION"="";
 "LEGAL_APPOINTMENT"="";
 "PROOF_OF_OWNERSHIP"="";
-"ADDRESS"="";
+"ADDRESS"                               = "ADDRESS";
 
 
 

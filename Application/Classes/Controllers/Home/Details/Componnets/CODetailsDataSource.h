@@ -25,6 +25,7 @@
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
 @property (strong, nonatomic) COOfferModel *offerModel;
+@property (strong, nonatomic) COOfferModel *offerModelProgress;
 @property (assign, nonatomic) CGFloat heightWebview;
 
 - (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller

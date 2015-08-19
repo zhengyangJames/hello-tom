@@ -20,6 +20,8 @@
 #import "WebViewManager.h"
 #import "CODetailsOffersObj.h"
 #import "CODetailsOffersItemObj.h"
+#import "COOfferModel.h"
+#import "COProjectModel.h"
 
 @interface DetailsViewController ()<UIGestureRecognizerDelegate>
 {
@@ -30,7 +32,7 @@
 @property (strong, nonatomic) CODetailsDataSource *detailsDataSource;
 @property (strong, nonatomic) CODetailsDelegate *detailsDelegate;
 @property (nonatomic, weak) IBOutlet COSlidingView *headerSliderView;
-
+@property (nonatomic, strong) id<COOfferProject> offerProject;
 
 @end
 
@@ -68,31 +70,29 @@
     self.tableView.delegate   = self.detailsDelegate;
     self.detailsDataSource.heightWebview = 0;
     [self _reloadData];
-    
     [self _getHeightWebview];
 }
 
 - (void)_reloadData {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.detailsDataSource.offerModel = self.offerModel;
-        self.detailsDataSource.heightWebview = 200;
         self.detailsDelegate.offerModel = self.offerModel;
+        self.detailsDataSource.offerModelProgress = self.offerModelProgress;
+        self.detailsDelegate.offerModelProgress = self.offerModelProgress;
+        self.detailsDataSource.heightWebview = 300;
         [self.tableView reloadData];
     }];
 }
 
 - (void)_getHeightWebview {
- //   [UIHelper showLoadingInView:self.view];
- //   CODetailsOffersObj *offerObj = self.arrayObj[3];
- //   CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
-    
-//    [[WebViewManager shared] getHeightWebViewWithStringHtml:offerItemObj.linkOrDetail heightForWebView:^(CGFloat height, UIWebView *web) {
-//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//            self.detailsDataSource.heightWebview = height;
-//            [self.tableView reloadData];
-//            [UIHelper hideLoadingFromView:self.view];
-//        }];
-//    }];
+    [UIHelper showLoadingInView:self.view];
+    [[WebViewManager shared] getHeightWebViewWithStringHtml:self.offerModel.offerProjectDescription heightForWebView:^(CGFloat height, UIWebView *web) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.detailsDataSource.heightWebview = height;
+            [self.tableView reloadData];
+            [UIHelper hideLoadingFromView:self.view];
+        }];
+    }];
 }
 
 #pragma mark Set Get 
@@ -113,17 +113,13 @@
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, headerView.frame.size.width, headerView.frame.size.height)];
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
     
-  //  CODetailsOffersObj *offerObj = [self.arrayObj lastObject];
-  //  CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
-    
-    
-    //NSURL *url = [NSURL URLWithString:offerItemObj.photo];
-    //imageView.contentMode = UIViewContentModeScaleAspectFill;
-   // imageView.clipsToBounds = YES;
-   // [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
-  //  [headerView addSubview:imageView];
-    //[imageView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
-   // self.tableView.tableHeaderView = headerView;
+    NSURL *url = [NSURL URLWithString:self.offerModel.offerProject.projectPhoto];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
+    [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
+    [headerView addSubview:imageView];
+    [imageView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
+    self.tableView.tableHeaderView = headerView;
 }
 
 #pragma mark - Delegate
