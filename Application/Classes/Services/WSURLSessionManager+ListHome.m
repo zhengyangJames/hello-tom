@@ -139,9 +139,8 @@
     [request setValue:valueToken forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-            COOfferModel *offer = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:responseObject error:&error];
             if (handler) {
-                handler(offer, response, nil);
+                handler(responseObject, response, nil);
             }
         } else {
             if (handler) {

@@ -177,7 +177,7 @@
 
 - (NSString *)offerInfoGoalToString {
     if (self.offerGoal) {
-        double value = ([self.offerGoal doubleValue]);
+        double value = ([self.offerGoal doubleValue]);	
         int intConvert = (int)round(value);
         NSString *returnString = [NSString stringWithFormat:NSLocalizedString(@"GOAL", nil),intConvert];
         return returnString;

@@ -17,6 +17,7 @@
 #import "WSURLSessionManager.h"
 #import "WSURLSessionManager+ListHome.h"
 #import "COProgressbarObj.h"
+#import "COOfferModel.h"
 
 #define kFILTER_CO  @"/CO"
 #define kFILTER_PS  @"/PS"
@@ -247,9 +248,10 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:offerID,@"offer_id", nil];
     [[WSURLSessionManager shared] wsGetProgressBarWithOfferID:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            self.offerModelProgress = responseObject;
+            self.offerModelProgress = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:responseObject error:&error];
             [self _callWSGetDetailsWithID:offerID];
         } else {
+            [UIHelper hideLoadingFromView:self.view];
             [UIHelper showError:error];
         }
     }];
