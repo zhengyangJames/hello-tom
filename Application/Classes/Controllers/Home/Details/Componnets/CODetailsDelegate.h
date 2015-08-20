@@ -18,7 +18,6 @@
 
 - (instancetype)initWithController:(id<CODetailsTableViewDelegate>)controller;
 @property (strong, nonatomic) COOfferModel *offerModel;
-@property (strong, nonatomic) COOfferModel *offerModelProgress;
 @end
 
 @protocol CODetailsTableViewDelegate <NSObject>

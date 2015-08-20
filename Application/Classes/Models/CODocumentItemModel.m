@@ -17,4 +17,13 @@
     };
 }
 
+#pragma mark - doc item protocol
+
+- (NSString *)itemTitle {
+    return self.docItemTitle;
+}
+
+- (NSString *)itemUrl {
+    return self.docItemUrl;
+}
 @end

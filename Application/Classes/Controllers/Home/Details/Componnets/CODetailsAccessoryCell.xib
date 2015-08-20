@@ -26,16 +26,31 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQt-yE-gha" userLabel="Button - Action">
+                        <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="__actionTapCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fcf-Yg-w44"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="nQt-yE-gha" secondAttribute="trailing" id="7qw-J6-wPs"/>
+                    <constraint firstItem="nQt-yE-gha" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="LHm-db-Hi9"/>
+                    <constraint firstItem="nQt-yE-gha" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SrO-7p-LWb"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ir6-Xa-zq9" secondAttribute="bottom" constant="3.5" id="WPA-Y8-Ozx"/>
                     <constraint firstItem="ir6-Xa-zq9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="YgK-P2-xUN"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ir6-Xa-zq9" secondAttribute="trailing" constant="37" id="bgO-Nk-s2p"/>
                     <constraint firstItem="ir6-Xa-zq9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="cNh-Th-blq"/>
+                    <constraint firstAttribute="bottom" secondItem="nQt-yE-gha" secondAttribute="bottom" id="imA-Yw-JGS"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="_btnAction" destination="nQt-yE-gha" id="1Eu-SS-HNc"/>
                 <outlet property="_detailsLabel" destination="ir6-Xa-zq9" id="lOU-zM-pCS"/>
             </connections>
             <point key="canvasLocation" x="202" y="277"/>

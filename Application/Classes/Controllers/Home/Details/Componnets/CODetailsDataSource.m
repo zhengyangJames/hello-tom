@@ -11,11 +11,13 @@
 #import "COOfferData.h"
 #import "COOfferModel.h"
 #import "CODocumentModel.h"
+#import "COProjectModel.h"
+#import "COProjectFundedAmountModel.h"
 
-@interface CODetailsDataSource ()
+@interface CODetailsDataSource ()<CODetailsAccessoryCellDelegate>
 
 @property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate> controller;
-
+@property (assign, nonatomic) id<COOfferDocumentDetail> docDetail;
 @end
 
 @implementation CODetailsDataSource
@@ -62,25 +64,25 @@
 #pragma mark - TableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (self.offerModel.documents) {
-        return kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.documents.count;
+    if (self.offerModel.arrayDocuments) {
+        return kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.arrayDocuments.count;
     }
     return kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == kINDEX_SECTION_OFFER_INFO) {
-        if (self.offerModelProgress.showProgressBar) {
+        if (self.offerModel.offerProject.projectFundedAmount.showProgressBar) {
             return kCOUNT_ROW_FULL_INFO;
         } else {
             return kCOUNT_ROW_NO_PROGRESS;
         }
     } else if ( section > kINDEX_SECTION_DOCUMENT) {
-        if (self.offerModel.documents && self.offerModel.documents.count > 0) {
-            if (section <= kINDEX_SECTION_DOCUMENT + self.offerModel.documents.count) {
-                CODocumentModel *document = [self.offerModel.documents objectAtIndex:section - (kINDEX_SECTION_DOCUMENT+1)];
-                if (document.items && document.items.count > 0) {
-                    return document.items.count + kDEFAULT_COUNT_OF_ROW;
+        if (self.offerModel.arrayDocuments && self.offerModel.arrayDocuments.count > 0) {
+            if (section <= kINDEX_SECTION_DOCUMENT + self.offerModel.arrayDocuments.count) {
+                CODocumentModel *document = [self.offerModel.arrayDocuments objectAtIndex:section - (kINDEX_SECTION_DOCUMENT+1)];
+                if (document.arrayOfItems && document.arrayOfItems.count > 0) {
+                    return document.arrayOfItems.count + kDEFAULT_COUNT_OF_ROW;
                 } else {
                     return kDEFAULT_NUMBER_ROW_DOC_DETAIL;
                 }
@@ -94,7 +96,7 @@
     if (indexPath.section == kINDEX_SECTION_LOGO) {
         return [self tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
     } else if (indexPath.section == kINDEX_SECTION_OFFER_INFO) {
-        if (self.offerModelProgress.showProgressBar) {
+        if (self.offerModel.offerProject.projectFundedAmount.showProgressBar) {
             if (indexPath.row == 0) {
                 return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
             } else if (indexPath.row == 1) {
@@ -109,7 +111,7 @@
                 return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
             }
         }
-    }else if (indexPath.section == kINDEX_SECTION_OFFER_DESCRIPTION || indexPath.section == kINDEX_SECTION_DOCUMENT || indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.documents.count - 1) {
+    }else if (indexPath.section == kINDEX_SECTION_OFFER_DESCRIPTION || indexPath.section == kINDEX_SECTION_DOCUMENT || indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.arrayDocuments.count - 1) {
         return [self tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
     } else if ( indexPath.section == kINDEX_SECTION_PROJECT_DESCRIPTION) {
         return [self tableView:tableView cellDetailsWebViewRowWithIndexPath:indexPath];
@@ -145,7 +147,7 @@
 
 - (CODetailsProgressViewCell*)tableView:(UITableView *)tableView detailsProgressViewRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsProgressViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProgressViewCell identifier]];
-    cell.offerInfoProgress = self.offerModelProgress;
+    cell.projectInfoProgress = self.offerModel.offerProject.projectFundedAmount;
     cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     return cell;
 }
@@ -156,8 +158,8 @@
         cell.offerDescription = self.offerModel;
     } else if (indexPath.section == kINDEX_SECTION_DOCUMENT) {
         cell.offerDocumentInfo = self.offerModel;
-    } else if (indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.documents.count - 1 && self.offerModel.documents && self.offerModel.documents.count > 0) {
-        cell.offerAddress = self.offerModel;
+    } else if (indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.arrayDocuments.count - 1 && self.offerModel.arrayDocuments && self.offerModel.arrayDocuments.count > 0) {
+        cell.offerAddress = self.offerModel.offerProject;
     }
     return cell;
 }
@@ -171,21 +173,28 @@
 
 - (CODetailsSectionCell*)tableView:(UITableView *)tableView cellDetailsSectionForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsSectionCell identifier]];
-    cell.indexSection = indexPath.section - (kINDEX_SECTION_DOCUMENT +1);
-    cell.offerDocDetail  = self.offerModel;
+    if (self.offerModel.arrayDocuments && self.offerModel.arrayDocuments.count > 0) {
+        CODocumentModel *document =[self.offerModel.arrayDocuments objectAtIndex:indexPath.section - (kINDEX_SECTION_DOCUMENT +1)];
+        cell.docDetail = document;
+    }
     return cell;
 }
 
 - (CODetailsAccessoryCell*)tableView:(UITableView *)tableView cellDetailsAccessoryForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODetailsAccessoryCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsAccessoryCell identifier]];
-    cell.indexPath = [self _getIndexPathForAccessoryCell:indexPath];
-    cell.offerDocDetail = self.offerModel;
+    if (self.offerModel.documents && self.offerModel.arrayDocuments.count > 0) {
+        CODocumentModel *document =[self.offerModel.arrayDocuments objectAtIndex:indexPath.section - (kINDEX_SECTION_DOCUMENT +1)];
+        if (document && document.arrayOfItems.count > 0) {
+            cell.docDetailItem = [document.arrayOfItems objectAtIndex:indexPath.row - kDEFAULT_COUNT_OF_ROW];
+        }
+    }
+    cell.delegate =self;
     return cell;
 }
 #pragma mark - Privace
-- (NSIndexPath *)_getIndexPathForAccessoryCell:(NSIndexPath *)indexPath {
-    NSInteger section = indexPath.section - (kINDEX_SECTION_DOCUMENT +1);
-    NSIndexPath *indexPathConverted = [NSIndexPath indexPathForRow:indexPath.row-kDEFAULT_COUNT_OF_ROW inSection:section];
-    return indexPathConverted;
+- (void)showWebsiteWithTitle:(NSString *)title andUrl:(NSString *)url{
+    if ([self.delegate respondsToSelector:@selector(showWebSiteAtDetailVCWithTitle:andURl:)]) {
+        [self.delegate showWebSiteAtDetailVCWithTitle:title andURl:url];
+    }
 }
 @end

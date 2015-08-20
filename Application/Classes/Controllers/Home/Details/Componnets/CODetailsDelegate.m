@@ -11,7 +11,8 @@
 #import "CODetailsDataSource.h"
 #import "CODetailsWebViewCell.h"
 #import "COOfferModel.h"
-
+#import "COProjectModel.h"
+#import "COProjectFundedAmountModel.h"
 @interface CODetailsDelegate ()
 {
     
@@ -60,7 +61,7 @@
             return height;
         }
     } else if (indexPath.section == 1) {
-        if (self.offerModelProgress.showProgressBar) {
+        if (self.offerModel.offerProject.projectFundedAmount.showProgressBar) {
             if (indexPath.row == 0) {
                 return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else if (indexPath.row == 1) {
@@ -104,7 +105,7 @@
     if (indexPath.section == 0) {
         return height = 67;
     } else if (indexPath.section == 1) {
-        if (self.offerModelProgress.showProgressBar) {
+        if (self.offerModel.offerProject.projectFundedAmount.showProgressBar) {
             if (indexPath.row == 0) {
                 return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else if (indexPath.row == 1) {

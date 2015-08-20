@@ -8,10 +8,12 @@
 
 #import "CODropListVC.h"
 #import "BaseNavigationController.h"
+#import "COFilterListModel.h"
 
 @interface CODropListVC()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, weak) id<COFilterList> filterItem;
 
 @end
 
@@ -76,7 +78,10 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count;
+    if (self.dataArray) {
+        return self.dataArray.count;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,7 +90,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    if (self.dataArray && self.dataArray.count > 0) {
+        self.filterItem = self.dataArray[indexPath.row];
+        cell.textLabel.text = self.filterItem.filterTitle;
+    }
     if (self.selectedIndex == indexPath.row) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {

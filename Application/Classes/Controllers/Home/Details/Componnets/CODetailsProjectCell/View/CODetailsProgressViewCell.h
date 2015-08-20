@@ -11,6 +11,6 @@
 
 @interface CODetailsProgressViewCell : BaseTableViewCell
 
-@property (strong, nonatomic) id<COOfferInfo> offerInfoProgress;
+@property (strong, nonatomic) id<COProjectFundedAmount> projectInfoProgress;
 
 @end

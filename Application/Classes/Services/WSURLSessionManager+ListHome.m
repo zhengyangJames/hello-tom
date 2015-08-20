@@ -15,6 +15,7 @@
 #import "CODetailsProfileObj.h"
 #import "CODetailsProfileObj+Mapping.h"
 #import "COOfferModel.h"
+#import "COProjectFundedAmountModel.h"
 
 @implementation WSURLSessionManager (ListHome)
 
@@ -139,8 +140,10 @@
     [request setValue:valueToken forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            NSError *error = nil;
+            COProjectFundedAmountModel *amountModel = [MTLJSONAdapter modelOfClass:[COProjectFundedAmountModel class] fromJSONDictionary:responseObject error:&error];
             if (handler) {
-                handler(responseObject, response, nil);
+                handler(amountModel, response, nil);
             }
         } else {
             if (handler) {

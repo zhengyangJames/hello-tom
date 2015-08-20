@@ -122,6 +122,9 @@
 #define kHEIGHT_FOR_ROW_TEXT                        85
 #define kHEIGHT_FOR_ROW_DEFAULT                     44
 
+#define kFILTER_BP                                  @"/BP"
+#define kFILTER_CO                                  @"/CO"
+#define kFILTER_PS                                  @"/PS"
 ////////////////////////////////////////////////////////////////
 #pragma mark - WEB LINK
 

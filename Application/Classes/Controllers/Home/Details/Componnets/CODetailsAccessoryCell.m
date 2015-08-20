@@ -12,6 +12,7 @@
 
 @interface CODetailsAccessoryCell() {
     __weak IBOutlet UILabel  *_detailsLabel;
+    __weak IBOutlet UIButton *_btnAction;
 }
 
 @end
@@ -21,33 +22,25 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleGray;
+    _detailsLabel.text = NSLocalizedString(@"NoDocumentsUploaded", nil);
 }
 
 
 #pragma mark - Set Get
 
-- (void)setOfferDocDetail:(id<COOfferDocumentDetail>)offerDocDetail {
-    _offerDocDetail = offerDocDetail;
-    NSArray *array = _offerDocDetail.offerDocumentDetail;
-    if (array && array.count > 0) {
-        CODocumentModel *docModel = [array objectAtIndex:self.indexPath.section];
-        if (docModel.items && docModel.items.count > 0) {
-            CODocumentItemModel *item = docModel.items[self.indexPath.row];
-            _detailsLabel.text = item.docItemTitle;
-        } else {
-            _detailsLabel.text = NSLocalizedString(@"NoDocumentsUploaded", nil);
-        }
-    } else {
-        _detailsLabel.text = NSLocalizedString(@"NoDocumentsUploaded", nil);
+- (void)setDocDetailItem:(id<CODocumentItem>)docDetailItem {
+    _docDetailItem = docDetailItem;
+    if (docDetailItem.itemTitle) {
+        _detailsLabel.text = docDetailItem.itemTitle;
     }
 }
 
 #pragma mark - Action
 - (IBAction)__actionTapCell:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(detailsAccessoryCell:didSelectCell:)]) {
-        [self.delegate detailsAccessoryCell:self didSelectCell:nil];
+    if (_docDetailItem.itemTitle != nil) {
+        if ([self.delegate respondsToSelector:@selector(showWebsiteWithTitle:andUrl:)]) {
+            [self.delegate showWebsiteWithTitle:_docDetailItem.itemTitle andUrl:_docDetailItem.itemUrl];
+        }
     }
 }
-
-
 @end

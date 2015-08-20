@@ -7,6 +7,7 @@
 //
 
 #import "LoadFileManager.h"
+#import "COFilterListModel.h"
 
 @implementation LoadFileManager
 
@@ -39,4 +40,15 @@
     return documentsDirectory;
 }
 
++ (NSArray *)loadFileFilterListWithName:(NSString *)fileName {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    NSArray *array = [NSArray arrayWithContentsOfFile:filePath];
+    NSMutableArray *arrayAdd = [[NSMutableArray alloc]init];
+    for (NSDictionary *obj in array) {
+        NSError *error = nil;
+        COFilterListModel *filterModel = [MTLJSONAdapter modelOfClass:[COFilterListModel class] fromJSONDictionary:obj error:&error];
+        [arrayAdd addObject:filterModel];
+    }
+    return arrayAdd;
+}
 @end

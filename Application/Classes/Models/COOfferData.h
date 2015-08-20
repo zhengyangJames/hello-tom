@@ -22,10 +22,6 @@
 - (NSString *)offerInfoTimeHorizon;
 - (NSString *)offerInfoYield;
 - (NSString *)offerInfoDayLeft;
-- (NSString *)offerInfoGoalToString;
-- (NSString *)currentFundedAmountToString;
-- (NSString *)totalProgress;
-- (NSNumber *)goalOrigin;
 @end
 
 @protocol COOfferDescription <NSObject>
@@ -54,7 +50,20 @@
 
 @protocol COOfferDocumentDetail <NSObject>
 
-- (NSArray *)offerDocumentDetail;
+- (NSString *)offerDocumentDetailTitle;
+- (NSArray *)offerDocumentDetailContent;
 @end
 
+@protocol COProjectFundedAmount <NSObject>
 
+- (NSString *)offerInfoGoalToString;
+- (NSString *)currentFundedAmountToString;
+- (NSString *)totalProgress;
+- (NSNumber *)goalOrigin;
+@end
+
+@protocol CODocumentItem <NSObject>
+
+- (NSString *)itemTitle;
+- (NSString *)itemUrl;
+@end

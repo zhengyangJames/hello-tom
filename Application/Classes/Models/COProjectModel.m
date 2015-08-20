@@ -24,4 +24,14 @@
         @"projectName"          : @"name"
              };
 }
+
+#pragma mark - address protocol
+
+- (NSString *)offerAddressTitle {
+    return NSLocalizedString(@"ADDRESS", nil);
+}
+
+- (NSString *)offerAddressContent {
+    return [[[[self.projectAddress1 stringByAppendingString:@"\n"] stringByAppendingString:self.projectCity] stringByAppendingString:@"\n"] stringByAppendingString:self.projectCountry];
+}
 @end

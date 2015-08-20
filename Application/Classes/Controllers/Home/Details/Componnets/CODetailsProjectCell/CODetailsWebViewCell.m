@@ -7,7 +7,6 @@
 //
 
 #import "CODetailsWebViewCell.h"
-#import "CODetailsOffersItemObj.h"
 
 @interface CODetailsWebViewCell ()
 {

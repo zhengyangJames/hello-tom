@@ -6,22 +6,20 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "COOfferData.h"
+#import "CODocumentItemModel.h"
 
 @protocol CODetailsAccessoryCellDelegate;
 
 @interface CODetailsAccessoryCell : UITableViewCell
 
 @property (weak, nonatomic) id<CODetailsAccessoryCellDelegate> delegate;
-@property (nonatomic, strong) id<COOfferDocumentDetail> offerDocDetail;
-@property (nonatomic, strong) NSIndexPath *indexPath;
+@property (nonatomic, strong) id<CODocumentItem> docDetailItem;
 
 @end
 
 @protocol CODetailsAccessoryCellDelegate <NSObject>
 
 @optional
-- (void)detailsAccessoryCell:(CODetailsAccessoryCell*)detailsAccessoryCell
-               didSelectCell:(id) detailsAccessoryCellAction;
+- (void)showWebsiteWithTitle:(NSString *)title andUrl:(NSString *)url;
 
 @end

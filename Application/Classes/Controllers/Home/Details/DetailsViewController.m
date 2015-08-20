@@ -23,7 +23,7 @@
 #import "COOfferModel.h"
 #import "COProjectModel.h"
 
-@interface DetailsViewController ()<UIGestureRecognizerDelegate>
+@interface DetailsViewController ()<UIGestureRecognizerDelegate,DetailsDataSourceViewDelegate>
 {
     UIWebView   *_webView;
 }
@@ -68,6 +68,7 @@
     self.tableView.dataSource = self.detailsDataSource;
     self.detailsDelegate      = [[CODetailsDelegate alloc]initWithController:self];
     self.tableView.delegate   = self.detailsDelegate;
+    self.detailsDataSource.delegate = self;
     self.detailsDataSource.heightWebview = 0;
     [self _reloadData];
     [self _getHeightWebview];
@@ -77,8 +78,6 @@
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.detailsDataSource.offerModel = self.offerModel;
         self.detailsDelegate.offerModel = self.offerModel;
-        self.detailsDataSource.offerModelProgress = self.offerModelProgress;
-        self.detailsDelegate.offerModelProgress = self.offerModelProgress;
         self.detailsDataSource.heightWebview = 300;
         [self.tableView reloadData];
     }];
@@ -151,20 +150,6 @@
 //    }
 }
 
-- (void)detailsViewController:(CODetailsDelegate *)detailViewController didSelectedAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section > 4 && indexPath.section < 11 && indexPath.row != 0) {
-      //  CODetailsOffersItemObj *coOOfferItemObj = [obj.offerItemObjs objectAtIndex:indexPath.row - 1];
-     //   if (coOOfferItemObj.linkOrDetail && ![coOOfferItemObj.linkOrDetail isEmpty]) {
-     //       WebViewSetting *vc = [[WebViewSetting alloc]init];
-     //       vc.titler = m_string(coOOfferItemObj.title);
-    //        vc.webLink = coOOfferItemObj.linkOrDetail;
-     //       vc.isPresion = NO;
-     //       [self.navigationController pushViewController:vc animated:YES];
-      //  }
-    }
-}
-
-
 - (void)coDetailsWebViewCell:(CODetailsWebViewCell *)CODetailsWebViewCell heightWebview:(CGFloat)heightWebview {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [UIView animateWithDuration:1.5f
@@ -179,6 +164,14 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return YES;
+}
+
+- (void)showWebSiteAtDetailVCWithTitle:(NSString *)title andURl:(NSString *)url{
+    WebViewSetting *vc = [[WebViewSetting alloc]init];
+    vc.titler = title;
+    vc.webLink = url;
+    vc.isPresion = NO;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

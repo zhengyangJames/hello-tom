@@ -13,7 +13,6 @@
 {
     __weak IBOutlet UILabel *_lblSection;
 }
-
 @end
 
 @implementation CODetailsSectionCell
@@ -28,34 +27,11 @@
     [super setBounds:bounds];
 }
 
-
 #pragma mark - Set Get
-- (void)setOfferDocDetail:(id<COOfferDocumentDetail>)offerDocDetail {
-    _offerDocDetail = offerDocDetail;
-    NSArray *array = _offerDocDetail.offerDocumentDetail;
-    if (array && array.count>0) {
-        CODocumentModel *docModel = [array objectAtIndex:self.indexSection];
-        _lblSection.text = [self _getTitleWithString:docModel.title];
-    }
+- (void)setDocDetail:(id<COOfferDocumentDetail>)docDetail {
+    _docDetail = docDetail;
+    NSString *title = NSLocalizedString(_docDetail.offerDocumentDetailTitle, nil);
+    _lblSection.text = title;
 }
-
-- (NSString *)_getTitleWithString:(NSString *)string {
-    NSString *title = @"";
-    if ([string isEqualToString:@"declaration_form_list"]) {
-        title = NSLocalizedString(@"SECTION_DECLARATION_FORM", nil);
-    } else if ([string isEqualToString:@"legal_appointment"]) {
-        title = NSLocalizedString(@"SECTION_LEGAL_APPOINTMENT", nil);
-    } if ([string isEqualToString:@"licenses"]) {
-        title = NSLocalizedString(@"SECTION_PROOF_OF_LICENSES", nil);
-    } else if ([string isEqualToString:@"others"]) {
-        title = NSLocalizedString(@"SECTION_OTHER_DOCUMENTS", nil);
-    }if ([string isEqualToString:@"ownership"]) {
-        title = NSLocalizedString(@"SECTION_PROOF_OF_OWNERSHIP", nil);
-    } else if ([string isEqualToString:@"registration_form_list"]) {
-        title = NSLocalizedString(@"SECTION_COMPANY_REGISTRATION", nil);
-    }
-    return title;
-}
-
-
+	
 @end

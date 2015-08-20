@@ -18,10 +18,9 @@
 #import "WSURLSessionManager+ListHome.h"
 #import "COProgressbarObj.h"
 #import "COOfferModel.h"
-
-#define kFILTER_CO  @"/CO"
-#define kFILTER_PS  @"/PS"
-#define kFILTER_BP  @"/BP"
+#import "COProjectModel.h"
+#import "COProjectFundedAmountModel.h"
+#import "COFilterListModel.h"
 
 typedef NS_ENUM(NSInteger, FilterType) {
     FilterBullkType,
@@ -45,8 +44,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 @property (strong, nonatomic) NSArray *arrayData;
 @property (strong, nonatomic) NSArray *arrayListFilter;
 @property (strong, nonatomic) NSArray *arraySort;
-@property (strong, nonatomic) COProgressbarObj *profressbarObj;
-@property (nonatomic, strong) COOfferModel *offerModelProgress;
+@property (nonatomic, strong) COOfferModel *offerModel;
+@property (nonatomic, strong) id<COFilterList> filterItem;
 @end
 
 @implementation HomeListViewController
@@ -54,7 +53,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    [self _callAPIGetAllOffers];
+    [self _callWSGetListOfferFilter:@""];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -76,19 +75,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil]
      forCellReuseIdentifier:[HomeListViewCell identifier]];
     _noDataView.hidden = YES;
-    [self _setupSelectDefault];
-}
-
-- (void)_setupSelectDefault {
-    for (NSString *type in self.arrayListFilter) {
-        if ([type isEqualToString:@"All"]) {
-            _indexSelectFilter = [self.arrayListFilter indexOfObject:type];
-        }
-    }
-    if (!_indexSelectFilter) {
-            _indexSelectFilter = 0;
-    }
-
+    _indexSelectFilter = 0;
 }
 
 - (void)_setupLeftBarButton {
@@ -106,7 +93,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)_pushDetailVcWithID:(COOfferModel *)model {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
-    vc.offerModelProgress = self.offerModelProgress;
     vc.offerModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -140,7 +126,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (NSArray*)arrayListFilter {
     if (!_arrayListFilter) {
-        return _arrayListFilter = [LoadFileManager loadFilePlistWithName:@"FilterList"];
+        return _arrayListFilter = [LoadFileManager loadFileFilterListWithName:@"FilterList"];
     }
     return _arrayListFilter;
 }
@@ -153,47 +139,15 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                           parentVC:self
                          didSelect:^(NSInteger index) {
          _indexSelectFilter = index;
-         NSString *offer_Type = self.arrayListFilter[index];
+         self.filterItem = self.arrayListFilter[index];
          self.arrayData = nil;
-         if ([offer_Type isEqualToString:@"Bulk Purchase"]) {
-             [self _callWSGetListOfferFilter:kFILTER_BP];
-         } else if ([offer_Type isEqualToString:@"Crowdfunding"]) {
-             [self _callWSGetListOfferFilter:kFILTER_CO];
-         } else if ([offer_Type isEqualToString:@"Pre-Sales"]) {
-             [self _callWSGetListOfferFilter:kFILTER_PS];
-         } else {
-             [self _callAPIGetAllOffers];
-         }
+        [self _callWSGetListOfferFilter:self.filterItem.filterValue];
+
         [_tableView reloadData];
     }];
 }
 
 #pragma mark - CalAPI
-- (void)_callAPIGetAllOffers {
-    _leftButton.enabled = NO;
-    [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared]wsGetListOfferWithHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
-            self.arrayData = (NSArray*)responseObject;
-            [UIHelper hideLoadingFromView:self.view];
-            if (self.arrayData.count>0) {
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    _noDataView.hidden = YES;
-                    [_tableView beginUpdates];
-                    for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
-                        [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                    }
-                    [_tableView endUpdates];
-                }];
-            } else {
-                [self _showViewNoData:FilterAllType];
-            }
-        } else {
-            [UIHelper showError:error];
-        }
-        _leftButton.enabled = YES;
-    }];
-}
 
 - (void)_callWSGetListOfferFilter:(NSString*)typeFilter {
     _leftButton.enabled = NO;
@@ -212,9 +166,15 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                     [_tableView endUpdates];
                 }];
             } else {
-                if ([typeFilter isEqualToString:kFILTER_BP]) { [self _showViewNoData:FilterBullkType]; }
-                else if ([typeFilter isEqualToString:kFILTER_CO]) { [self _showViewNoData:FilterCrowdType]; }
-                else if ([typeFilter isEqualToString:kFILTER_PS]) { [self _showViewNoData:FilterSaleType]; }
+                if ([typeFilter isEqualToString:kFILTER_BP]) {
+                    [self _showViewNoData:FilterBullkType];
+                } else if ([typeFilter isEqualToString:kFILTER_CO]) {
+                    [self _showViewNoData:FilterCrowdType];
+                } else if ([typeFilter isEqualToString:kFILTER_PS]) {
+                    [self _showViewNoData:FilterSaleType];
+                } else {
+                    [self _showViewNoData:FilterAllType];
+                }
             }
         } else {
             [UIHelper showError:error];
@@ -228,9 +188,11 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-               [self _pushDetailVcWithID:responseObject];
+                self.offerModel = responseObject;
+                [self _callWSGetProgressbar:offerID];
             }];
         } else {
+            [UIHelper hideLoadingFromView:self.view];
             [UIHelper showError:error];
         }
         
@@ -248,8 +210,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:offerID,@"offer_id", nil];
     [[WSURLSessionManager shared] wsGetProgressBarWithOfferID:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            self.offerModelProgress = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:responseObject error:&error];
-            [self _callWSGetDetailsWithID:offerID];
+            [UIHelper hideLoadingFromView:self.view];
+            self.offerModel.offerProject.projectFundedAmount = responseObject;
+            [self _pushDetailVcWithID:self.offerModel];
         } else {
             [UIHelper hideLoadingFromView:self.view];
             [UIHelper showError:error];
@@ -275,7 +238,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
         _indexPathForCell = indexPath;
     }else {
-        [self _callWSGetProgressbar:[[self.arrayData[indexPath.row] valueForKey:@"offerId"] stringValue]];
+        [self _callWSGetDetailsWithID:[[self.arrayData[indexPath.row] valueForKey:@"offerId"]stringValue]];
     }
 }
 

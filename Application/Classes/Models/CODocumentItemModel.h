@@ -7,8 +7,9 @@
 //
 
 #import <Mantle/Mantle.h>
+#import "COOfferData.h"
 
-@interface CODocumentItemModel : MTLModel<MTLJSONSerializing>
+@interface CODocumentItemModel : MTLModel<MTLJSONSerializing,CODocumentItem>
 
 @property (nonatomic, strong) NSString *docItemUrl;
 @property (nonatomic, strong) NSString *docItemTitle;

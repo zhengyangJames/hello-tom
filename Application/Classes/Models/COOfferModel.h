@@ -11,7 +11,7 @@
 
 @class COProjectModel;
 
-@interface COOfferModel : MTLModel<MTLJSONSerializing, COOfferLogo,COOfferInfo,COOfferDescription,COOfferProject,COOfferDocument,COOfferAddress,COOfferDocumentDetail>
+@interface COOfferModel : MTLModel<MTLJSONSerializing, COOfferLogo,COOfferInfo,COOfferDescription,COOfferProject,COOfferDocument>
 
 @property (nonatomic, strong) NSNumber *offerId;
 @property (nonatomic, strong) NSString *offerTitle;
@@ -25,12 +25,10 @@
 @property (nonatomic, strong) NSNumber *offerTimeHorizon;
 @property (nonatomic, strong) NSString *offerAnnualizedReturn;
 @property (nonatomic, strong) NSNumber *offerDayLeft;
-@property (nonatomic, strong) NSNumber *offerCurrentFundedAmount;
-@property (nonatomic, strong) NSNumber *offerGoal;
 @property (nonatomic, strong) NSString *offerShortDescription;
 @property (nonatomic, strong) NSString *offerProjectDescription;
 @property (nonatomic, strong) NSArray *documents;
 
-- (BOOL)showProgressBar;
+- (NSArray *)arrayDocuments;
 - (NSString *)contentProjectWeb;
 @end

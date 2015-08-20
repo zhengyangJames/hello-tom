@@ -7,13 +7,14 @@
 //
 
 #import <Mantle/Mantle.h>
+#import "COOfferData.h"
 
 @class CODocumentItemModel;
 
-@interface CODocumentModel : MTLModel<MTLJSONSerializing>
+@interface CODocumentModel : MTLModel<MTLJSONSerializing,COOfferDocumentDetail>
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSArray *items;
 
-
+- (NSArray *)arrayOfItems;
 @end

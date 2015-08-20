@@ -35,12 +35,12 @@
 "BUTTON_INTERESTED"                     = "I want to invest again!";
 "BUTTON_QUESTION"                       = "Request sent.";
 
-"SECTION_DECLARATION_FORM"              = "DECLARATION FORM";
-"SECTION_LEGAL_APPOINTMENT"             = "LEGAL APPOINTMENT";
-"SECTION_PROOF_OF_LICENSES"             = "PROOF OF LICENSES";
-"SECTION_OTHER_DOCUMENTS"               = "OTHER DOCUMENTS";
-"SECTION_PROOF_OF_OWNERSHIP"            = "PROOF OF OWNERSHIP";
-"SECTION_COMPANY_REGISTRATION"          = "COMPANY REGISTRATION";
+"declaration_form_list"                 = "DECLARATION FORM";
+"legal_appointment"                     = "LEGAL APPOINTMENT";
+"licenses"                              = "PROOF OF LICENSES";
+"others"                                = "OTHER DOCUMENTS";
+"ownership"                             = "PROOF OF OWNERSHIP";
+"registration_form_list"                = "COMPANY REGISTRATION";
 
 "EMAIL_REQUIRED"                        = "Email is required.";
 "USERNAME_REQUIRED"                     = "Username is required.";
@@ -102,12 +102,6 @@
 "OFFER"                                 = "OFFER";
 "PROJECT"                               = "PROJECT";
 "DOCUMENT"                              = "DOCUMENTS";
-"PROOF_OF_LICENSES" = "";
-"OTHER_DOCUMENTS" = "";
-"DECLARATION_FORM"="";
-"COMPANY_REGISTRATION"="";
-"LEGAL_APPOINTMENT"="";
-"PROOF_OF_OWNERSHIP"="";
 "ADDRESS"                               = "ADDRESS";
 
 

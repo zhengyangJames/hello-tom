@@ -39,14 +39,14 @@
 }
 
 #pragma mark - Set Get
-- (void)setOfferInfoProgress:(id<COOfferInfo>)offerInfoProgress {
-    _offerInfoProgress = offerInfoProgress;
-    NSNumber *valueGoal = _offerInfoProgress.goalOrigin;
+- (void)setProjectInfoProgress:(id<COProjectFundedAmount>)projectInfoProgress {
+    _projectInfoProgress = projectInfoProgress;
+    NSNumber *valueGoal = _projectInfoProgress.goalOrigin;
     float value = ([valueGoal doubleValue]*10)/1000;
     [_progressBar setProgress:value animated:NO];
-    _titleProgressbarLable.text = _offerInfoProgress.currentFundedAmountToString;
-    _progressBarBottomLable.text = _offerInfoProgress.offerInfoGoalToString;
-    _totalProgressbarLable.text = [@"of " stringByAppendingString:_offerInfoProgress.totalProgress];
+    _titleProgressbarLable.text = _projectInfoProgress.currentFundedAmountToString;
+    _progressBarBottomLable.text = _projectInfoProgress.offerInfoGoalToString;
+    _totalProgressbarLable.text = [@"of " stringByAppendingString:_projectInfoProgress.totalProgress];
 }
 
 

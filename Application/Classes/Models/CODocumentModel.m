@@ -22,4 +22,15 @@
     return [MTLJSONAdapter arrayTransformerWithModelClass:[CODocumentItemModel class]];
 }
 
+- (NSArray *)arrayOfItems {
+    return self.items;
+}
+#pragma mark - doc detail protocol
+
+- (NSString *)offerDocumentDetailTitle {
+    return self.title;
+}
+- (NSArray *)offerDocumentDetailContent {
+    return self.items;
+}
 @end

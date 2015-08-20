@@ -2,9 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>Bulk Purchase</string>
-	<string>All</string>
-	<string>Crowdfunding</string>
-	<string>Pre-Sales</string>
+	<dict>
+		<key>key</key>
+		<string>All</string>
+		<key>value</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>Bulk Purchase</string>
+		<key>value</key>
+		<string>/BP</string>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>Crowdfunding</string>
+		<key>value</key>
+		<string>/CO</string>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>Pre-Sales</string>
+		<key>value</key>
+		<string>/PS</string>
+	</dict>
 </array>
 </plist>

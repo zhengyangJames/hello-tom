@@ -20,12 +20,12 @@
 @protocol CODetailsAccessoryCellDelegate;
 @protocol CODetailsProjectBottomTVCellDelegate;
 @protocol CODetailsWebViewCellDelegate;
+@protocol DetailsDataSourceViewDelegate;
 @class COOfferModel;
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
 @property (strong, nonatomic) COOfferModel *offerModel;
-@property (strong, nonatomic) COOfferModel *offerModelProgress;
 @property (assign, nonatomic) CGFloat heightWebview;
 
 - (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller
@@ -35,4 +35,11 @@
 - (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CODetailsAccessoryCell*)tableView:(UITableView *)tableView cellDetailsAccessoryForRowAtIndexPath:(NSIndexPath *)indexPath ;
 - (CODetailsWebViewCell*)tableView:(UITableView*)tableView cellDetailsWebViewRowWithIndexPath:(NSIndexPath*)indexPath;
+@property (nonatomic, strong) id<DetailsDataSourceViewDelegate>delegate;
+@end
+
+@protocol DetailsDataSourceViewDelegate <NSObject>
+
+- (void)showWebSiteAtDetailVCWithTitle:(NSString *)title andURl:(NSString *)url;
+
 @end

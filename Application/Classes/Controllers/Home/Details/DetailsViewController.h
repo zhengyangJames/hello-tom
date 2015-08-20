@@ -19,4 +19,3 @@
 @property (nonatomic, strong) COOfferModel *offerModel;
 @property (nonatomic, strong) COOfferModel *offerModelProgress;
 @end
-

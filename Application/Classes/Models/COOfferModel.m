@@ -10,6 +10,7 @@
 #import "COProjectModel.h"
 #import "CODocumentModel.h"
 #import "MTLValueTransformer.h"
+#import "COProjectFundedAmountModel.h"
 
 @implementation COOfferModel
 
@@ -27,8 +28,6 @@
         @"offerTimeHorizon"         : @"time_horizon",
         @"offerAnnualizedReturn"    : @"annualized_return",
         @"offerDayLeft"             : @"day_left",
-        @"offerCurrentFundedAmount" : @"current_funded_amount",
-        @"offerGoal"                : @"goal",
         @"offerShortDescription"    : @"short_description",
         @"offerProjectDescription"  : @"project_description",
         @"documents"                : @"documents",
@@ -58,12 +57,12 @@
     }];
 }
 
-- (BOOL)showProgressBar {
-    return self.offerCurrentFundedAmount && self.offerGoal;
-}
-
 - (NSString *)contentProjectWeb {
     return self.offerProjectDescription;
+}
+
+- (NSArray *)arrayDocuments {
+    return self.documents;
 }
 #pragma mark - logo protocol
 
@@ -102,22 +101,6 @@
 - (NSString *)offerDocumentContent {
     return NSLocalizedString(@"DETAIL_DOCUMENT", nil);
 }
-#pragma mark - offer address protocol
-
-- (NSString *)offerAddressTitle {
-    return NSLocalizedString(@"ADDRESS", nil);
-}
-
-- (NSString *)offerAddressContent {
-    return [[[[self.offerProject.projectAddress1 stringByAppendingString:@"\n"] stringByAppendingString:self.offerProject.projectCity] stringByAppendingString:@"\n"] stringByAppendingString:self.offerProject.projectCountry];
-}
-
-#pragma mark - offer document detail
-
-- (NSArray *)offerDocumentDetail {
-    return self.documents;
-}
-
 #pragma mark - offer info protocol
 
 - (NSString *)offerInfoStatus {
@@ -173,50 +156,5 @@
     } else {
         return NSLocalizedString(@"N/A", nil);
     }
-}
-
-- (NSString *)offerInfoGoalToString {
-    if (self.offerGoal) {
-        double value = ([self.offerGoal doubleValue]);	
-        int intConvert = (int)round(value);
-        NSString *returnString = [NSString stringWithFormat:NSLocalizedString(@"GOAL", nil),intConvert];
-        return returnString;
-    } else {
-        return NSLocalizedString(@"N/A", nil);
-    }
-}
-
-- (NSString *)currentFundedAmountToString {
-    if (self.offerCurrentFundedAmount) {
-        double number = [self.offerCurrentFundedAmount doubleValue];
-        NSNumber *numberDouble = [NSNumber numberWithDouble:(double)number];
-        NSString *returnString = [UIHelper stringCurrencyFormatFromNumberDouble:numberDouble];
-        return returnString;
-    } else {
-        return NSLocalizedString(@"N/A", nil);
-    }
-}
-
-- (NSString *)totalProgress {
-    if (self.offerCurrentFundedAmount && self.offerGoal) {
-        double valueCurrent= [self.offerCurrentFundedAmount doubleValue];
-        double valueGoal = ([self.offerGoal doubleValue]);
-        int total;
-        if(valueGoal != 0) {
-            total = (int)round((valueCurrent * 100)/valueGoal);
-        } else {
-            total = 0;
-        }
-        double totalDouble = (double)total;
-        NSNumber *numberTotal = [NSNumber numberWithDouble:totalDouble];
-        NSString *totalString = [UIHelper stringCurrencyFormatFromNumberDouble:numberTotal];
-        return totalString;
-    } else {
-        return nil;
-    }
-}
-
-- (NSNumber *)goalOrigin {
-    return self.offerGoal;
 }
 @end

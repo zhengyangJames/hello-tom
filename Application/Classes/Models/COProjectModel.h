@@ -7,8 +7,11 @@
 //
 
 #import <Mantle/Mantle.h>
+#import "COOfferData.h"
 
-@interface COProjectModel : MTLModel<MTLJSONSerializing>
+@class COProjectFundedAmountModel;
+
+@interface COProjectModel : MTLModel<MTLJSONSerializing,COOfferAddress>
 
 @property (nonatomic, strong) NSString *projectCity;
 @property (nonatomic, strong) NSString *projectCountry;
@@ -20,5 +23,5 @@
 @property (nonatomic, strong) NSString *projectAddress2;
 @property (nonatomic, strong) NSString *projectType;
 @property (nonatomic, strong) NSString *projectName;
-
+@property (nonatomic, strong) COProjectFundedAmountModel *projectFundedAmount;
 @end
