@@ -46,8 +46,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 @property (strong, nonatomic) NSArray *arraySort;
 @property (nonatomic, strong) COOfferModel *offerModel;
 @property (nonatomic, strong) id<COFilterList> filterItem;
-@end
-
+@end	
 @implementation HomeListViewController
 
 - (void)viewDidLoad {

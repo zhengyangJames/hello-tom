@@ -40,27 +40,6 @@
     }];
 }
 
-- (void)wsGetListOfferWithHandler:(WSURLSessionHandler)handler {
-    [self sendURL:WS_METHOD_GET_LIST_OFFERS params:nil body:nil method:METHOD_GET handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
-            NSArray *arrayData = (NSArray*)responseObject;
-            NSMutableArray *array = [[NSMutableArray alloc]init];
-            for (NSDictionary *obj in arrayData) {
-                NSError *error = nil;
-                COOfferModel *offerModel = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:obj error:&error];
-                [array addObject:offerModel];
-            }
-            if (handler) {
-                handler(array,response,nil);
-            }
-        } else {
-            if (handler) {
-                handler(nil,response,error);
-            }
-        }
-    }];
-}
-
 - (void)wsGetDetailsWithOffersID:(NSString *)offerID handler:(WSURLSessionHandler)handler {
     NSString *urlOffer = WS_METHOD_GET_LIST_OFFERS;
     NSString *url = [urlOffer stringByAppendingString:offerID];
