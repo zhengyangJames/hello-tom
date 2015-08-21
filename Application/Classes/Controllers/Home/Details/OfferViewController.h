@@ -7,15 +7,15 @@
 //
 
 #import "BaseViewController.h"
-#import "CODetailsAccessoryCell.h"
+#import "CODocumentItemCell.h"
 #import "CODetailsDelegate.h"
 #import "COProgressbarObj.h"
-#import "CODetailsWebViewCell.h"
-#import "CODetailsProjectBottomTVCell.h"
+#import "COOfferWebViewCell.h"
+#import "COOfferActionCell.h"
 
 @class COOfferModel;
 
-@interface DetailsViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
+@interface OfferViewController : BaseViewController <CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 @property (nonatomic, strong) COOfferModel *offerModel;
 @property (nonatomic, strong) COOfferModel *offerModelProgress;
 @end

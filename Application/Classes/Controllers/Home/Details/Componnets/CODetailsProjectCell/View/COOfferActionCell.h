@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 
 @protocol CODetailsProjectBottomTVCellDelegate;
 
-@interface CODetailsProjectBottomTVCell : BaseTableViewCell
+@interface COOfferActionCell : BaseTableViewCell
 
 @property (weak, nonatomic) id<CODetailsProjectBottomTVCellDelegate> delegate;
 
@@ -24,6 +24,6 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 @protocol CODetailsProjectBottomTVCellDelegate <NSObject>
 
 @optional
-- (void)detailsProfileAction:(CODetailsProjectBottomTVCell*)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction;
+- (void)detailsProfileAction:(COOfferActionCell*)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction;
 
 @end

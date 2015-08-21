@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "CODetailsProjectCell.h"
+#import "COOfferInfoCell.h"
 #import "COPositive&NagitiveButton.h"
 #import "UIHelper.h"
 #import "CODetailsProfileObj+Formater.h"
 #import "COOfferModel.h"
 
-@interface CODetailsProjectCell ()
+@interface COOfferInfoCell ()
 {
     __weak IBOutlet UIView *_contentView;
     __weak IBOutlet UILabel *_lblOfferStatus;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation CODetailsProjectCell
+@implementation COOfferInfoCell
 
 
 - (void)drawRect:(CGRect)rect {

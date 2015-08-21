@@ -8,7 +8,7 @@
 
 #import "COOfferData.h"
 
-@interface CODetailsWebViewCell : UITableViewCell
+@interface COOfferWebViewCell : UITableViewCell
 
 @property (nonatomic, strong) id<COOfferProject> offerProject;
 

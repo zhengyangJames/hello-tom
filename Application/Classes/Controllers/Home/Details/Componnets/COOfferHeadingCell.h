@@ -8,7 +8,7 @@
 
 #import "COOfferData.h"
 
-@interface CODetailsPhotoCell : UITableViewCell
+@interface COOfferHeadingCell : UITableViewCell
 
 @property (strong, nonatomic) id<COOfferLogo> offerLogo;
 

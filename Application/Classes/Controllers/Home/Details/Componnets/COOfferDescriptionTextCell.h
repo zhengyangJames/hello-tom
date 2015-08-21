@@ -8,7 +8,7 @@
 
 #import "COOfferData.h"
 
-@interface CODetailsTextCell : UITableViewCell
+@interface COOfferDescriptionTextCell : UITableViewCell
 @property (nonatomic, strong) id<COOfferDescription> offerDescription;
 @property (nonatomic, strong) id<COOfferDocument> offerDocumentInfo;
 @property (nonatomic, strong) id<COOfferAddress> offerAddress;

@@ -10,7 +10,7 @@
 #import "RegisterViewController.h"
 #import "ForgotPasswordViewController.h"
 #import "COBorderTextField.h"
-#import "DetailsViewController.h"
+#import "OfferViewController.h"
 #import "WSURLSessionManager+User.h"
 #import "NSString+MD5.h"
 #import "WSURLSessionManager+Profile.h"

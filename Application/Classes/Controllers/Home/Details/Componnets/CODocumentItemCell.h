@@ -10,7 +10,7 @@
 
 @protocol CODetailsAccessoryCellDelegate;
 
-@interface CODetailsAccessoryCell : UITableViewCell
+@interface CODocumentItemCell : UITableViewCell
 
 @property (weak, nonatomic) id<CODetailsAccessoryCellDelegate> delegate;
 @property (nonatomic, strong) id<CODocumentItem> docDetailItem;

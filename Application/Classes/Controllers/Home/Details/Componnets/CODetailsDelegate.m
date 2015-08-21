@@ -7,9 +7,9 @@
 //
 
 #import "CODetailsDelegate.h"
-#import "CODetailsSectionCell.h"
+#import "CODocumentSectionCell.h"
 #import "CODetailsDataSource.h"
-#import "CODetailsWebViewCell.h"
+#import "COOfferWebViewCell.h"
 #import "COOfferModel.h"
 #import "COProjectModel.h"
 #import "COProjectFundedAmountModel.h"
@@ -56,7 +56,7 @@
         if(IS_IOS8_OR_ABOVE) {
             return UITableViewAutomaticDimension;
         } else {
-            id cell = [dataSource tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
+            id cell = [dataSource tableView:tableView cellOfferHeadingForRowAtIndexPath:indexPath];
             height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
             return height;
         }
@@ -80,7 +80,7 @@
         if(IS_IOS8_OR_ABOVE) {
             return UITableViewAutomaticDimension;
         } else {
-            id Cell = [dataSource tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
+            id Cell = [dataSource tableView:tableView cellOfferTextForRowAtIndexPath:indexPath];
             return height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
         }
     }else if (indexPath.section == 3){
@@ -92,7 +92,7 @@
             if(IS_IOS8_OR_ABOVE) {
                 return UITableViewAutomaticDimension;
             } else {
-                id Cell = [dataSource tableView:tableView cellDetailsAccessoryForRowAtIndexPath:indexPath];
+                id Cell = [dataSource tableView:tableView cellDocumentItemForRowAtIndexPath:indexPath];
                 return height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
             }
         }

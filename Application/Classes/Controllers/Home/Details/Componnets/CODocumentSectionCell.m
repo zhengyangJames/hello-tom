@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "CODetailsSectionCell.h"
+#import "CODocumentSectionCell.h"
 #import "CODocumentModel.h"
 
-@interface CODetailsSectionCell ()
+@interface CODocumentSectionCell ()
 {
     __weak IBOutlet UILabel *_lblSection;
 }
 @end
 
-@implementation CODetailsSectionCell
+@implementation CODocumentSectionCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

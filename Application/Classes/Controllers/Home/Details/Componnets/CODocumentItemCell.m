@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "CODetailsAccessoryCell.h"
+#import "CODocumentItemCell.h"
 #import "CODocumentModel.h"
 #import "CODocumentItemModel.h"
 
-@interface CODetailsAccessoryCell() {
+@interface CODocumentItemCell() {
     __weak IBOutlet UILabel  *_detailsLabel;
     __weak IBOutlet UIButton *_btnAction;
 }
 
 @end
 
-@implementation CODetailsAccessoryCell
+@implementation CODocumentItemCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

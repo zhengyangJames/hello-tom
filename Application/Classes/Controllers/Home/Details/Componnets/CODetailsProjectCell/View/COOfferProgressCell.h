@@ -1,5 +1,5 @@
 //
-//  CODetailsProjectCell.h
+//  CODetailsProgressViewTableViewCell.h
 //  CoAssets
 //
 //  Created by TUONG DANG on 7/9/15.
@@ -9,8 +9,8 @@
 #import "BaseTableViewCell.h"
 #import "COOfferData.h"
 
-@interface CODetailsProjectCell : BaseTableViewCell
+@interface COOfferProgressCell : BaseTableViewCell
 
-@property (strong, nonatomic) id<COOfferInfo> offerInfo;
+@property (strong, nonatomic) id<COProjectFundedAmount> projectInfoProgress;
 
 @end

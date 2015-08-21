@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "CODetailsWebViewCell.h"
+#import "COOfferWebViewCell.h"
 
-@interface CODetailsWebViewCell ()
+@interface COOfferWebViewCell ()
 {
     __weak IBOutlet UIWebView *webView;
     __weak IBOutlet UILabel *title;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation CODetailsWebViewCell
+@implementation COOfferWebViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

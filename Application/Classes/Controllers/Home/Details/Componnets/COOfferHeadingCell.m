@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "CODetailsPhotoCell.h"
+#import "COOfferHeadingCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NSString_stripHtml.h"
 #import "CODetailsOffersItemObj.h"
@@ -14,7 +14,7 @@
 
 #define kCORNER_RADIUS_IMAGE 6
 
-@interface CODetailsPhotoCell ()
+@interface COOfferHeadingCell ()
 {
     __weak IBOutlet UIImageView *_image;
     __weak IBOutlet UITextView  *_detailsTextView;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation CODetailsPhotoCell
+@implementation COOfferHeadingCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

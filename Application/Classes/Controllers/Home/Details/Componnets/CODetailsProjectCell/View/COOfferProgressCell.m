@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "CODetailsProgressViewCell.h"
+#import "COOfferProgressCell.h"
 #import "NMDeviceHelper.h"
 #import "UIHelper.h"
 #import "COProgressbarObj+Formatter.h"
 
-@interface CODetailsProgressViewCell ()
+@interface COOfferProgressCell ()
 {
     __weak IBOutlet UILabel *_totalProgressbarLable;
     __weak IBOutlet UILabel *_titleProgressbarLable;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation CODetailsProgressViewCell
+@implementation COOfferProgressCell
 
 - (void)viewDidLoad {
     [super viewDidLoad];

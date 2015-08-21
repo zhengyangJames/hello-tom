@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CODetailsAccessoryCell.h"
-#import "CODetailsPhotoCell.h"
-#import "CODetailsProjectCell.h"
-#import "CODetailsTextCell.h"
-#import "CODetailsSectionCell.h"
-#import "CODetailsProgressViewCell.h"
-#import "CODetailsProjectBottomTVCell.h"
+#import "CODocumentItemCell.h"
+#import "COOfferHeadingCell.h"
+#import "COOfferInfoCell.h"
+#import "COOfferDescriptionTextCell.h"
+#import "CODocumentSectionCell.h"
+#import "COOfferProgressCell.h"
+#import "COOfferActionCell.h"
 #import "COProgressbarObj.h"
-#import "CODetailsWebViewCell.h"
+#import "COOfferWebViewCell.h"
 
 @protocol CODetailsAccessoryCellDelegate;
 @protocol CODetailsProjectBottomTVCellDelegate;
@@ -31,10 +31,10 @@
 - (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller
                          tableView:(UITableView*)tableView ;
 
-- (CODetailsPhotoCell*)tableView:(UITableView *)tableView cellDetailsPhotoForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (CODetailsAccessoryCell*)tableView:(UITableView *)tableView cellDetailsAccessoryForRowAtIndexPath:(NSIndexPath *)indexPath ;
-- (CODetailsWebViewCell*)tableView:(UITableView*)tableView cellDetailsWebViewRowWithIndexPath:(NSIndexPath*)indexPath;
+- (COOfferHeadingCell*)tableView:(UITableView *)tableView cellOfferHeadingForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (COOfferDescriptionTextCell*)tableView:(UITableView *)tableView cellOfferTextForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (CODocumentItemCell*)tableView:(UITableView *)tableView cellDocumentItemForRowAtIndexPath:(NSIndexPath *)indexPath ;
+- (COOfferWebViewCell*)tableView:(UITableView*)tableView cellOfferWebViewRowWithIndexPath:(NSIndexPath*)indexPath;
 @property (nonatomic, strong) id<DetailsDataSourceViewDelegate>delegate;
 @end
 

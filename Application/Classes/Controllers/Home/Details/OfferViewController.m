@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "DetailsViewController.h"
+#import "OfferViewController.h"
 #import "CODetailsDataSource.h"
 #import "CODetailsDelegate.h"
 #import "COSlidingView.h"
@@ -23,7 +23,7 @@
 #import "COOfferModel.h"
 #import "COProjectModel.h"
 
-@interface DetailsViewController ()<UIGestureRecognizerDelegate,DetailsDataSourceViewDelegate>
+@interface OfferViewController ()<UIGestureRecognizerDelegate,DetailsDataSourceViewDelegate>
 {
     UIWebView   *_webView;
 }
@@ -36,7 +36,7 @@
 
 @end
 
-@implementation DetailsViewController
+@implementation OfferViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -122,7 +122,7 @@
 }
 
 #pragma mark - Delegate
-- (void)detailsProfileAction:(CODetailsProjectBottomTVCell *)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction {
+- (void)detailsProfileAction:(COOfferActionCell *)detailsProfileCell didSelectAction:(CODetailsProjectAction)detailsProjectAction {
 //    switch (detailsProjectAction) {
 //        case CODetailsProjectActionInterested:
 //        {
@@ -150,7 +150,7 @@
 //    }
 }
 
-- (void)coDetailsWebViewCell:(CODetailsWebViewCell *)CODetailsWebViewCell heightWebview:(CGFloat)heightWebview {
+- (void)coDetailsWebViewCell:(COOfferWebViewCell *)CODetailsWebViewCell heightWebview:(CGFloat)heightWebview {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [UIView animateWithDuration:1.5f
                               delay:0.0f

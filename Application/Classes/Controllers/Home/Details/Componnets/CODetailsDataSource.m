@@ -27,29 +27,29 @@
     self = [super init];
     if (self) {
         self.controller = controller;
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsAccessoryCell identifier] bundle:nil]
-        forCellReuseIdentifier:[CODetailsAccessoryCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[CODocumentItemCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODocumentItemCell identifier]];
         
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsSectionCell identifier] bundle:nil]
-        forCellReuseIdentifier:[CODetailsSectionCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[CODocumentSectionCell identifier] bundle:nil]
+        forCellReuseIdentifier:[CODocumentSectionCell identifier]];
         
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsPhotoCell identifier] bundle:nil]
-        forCellReuseIdentifier:[CODetailsPhotoCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[COOfferHeadingCell identifier] bundle:nil]
+        forCellReuseIdentifier:[COOfferHeadingCell identifier]];
         
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsTextCell identifier] bundle:nil]
-        forCellReuseIdentifier:[CODetailsTextCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[COOfferDescriptionTextCell identifier] bundle:nil]
+        forCellReuseIdentifier:[COOfferDescriptionTextCell identifier]];
         
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectCell identifier] bundle:nil]
-        forCellReuseIdentifier:[CODetailsProjectCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[COOfferInfoCell identifier] bundle:nil]
+        forCellReuseIdentifier:[COOfferInfoCell identifier]];
         
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsProgressViewCell identifier] bundle:nil]
-        forCellReuseIdentifier:[CODetailsProgressViewCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[COOfferProgressCell identifier] bundle:nil]
+        forCellReuseIdentifier:[COOfferProgressCell identifier]];
         
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsProjectBottomTVCell identifier] bundle:nil]
-        forCellReuseIdentifier:[CODetailsProjectBottomTVCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[COOfferActionCell identifier] bundle:nil]
+        forCellReuseIdentifier:[COOfferActionCell identifier]];
         
-        [tableView registerNib:[UINib nibWithNibName:[CODetailsWebViewCell identifier] bundle:nil]
-        forCellReuseIdentifier:[CODetailsWebViewCell identifier]];
+        [tableView registerNib:[UINib nibWithNibName:[COOfferWebViewCell identifier] bundle:nil]
+        forCellReuseIdentifier:[COOfferWebViewCell identifier]];
     }
     return self;
 }
@@ -94,66 +94,66 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == kINDEX_SECTION_LOGO) {
-        return [self tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
+        return [self tableView:tableView cellOfferHeadingForRowAtIndexPath:indexPath];
     } else if (indexPath.section == kINDEX_SECTION_OFFER_INFO) {
         if (self.offerModel.offerProject.projectFundedAmount.showProgressBar) {
             if (indexPath.row == 0) {
-                return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
+                return [self tableView:tableView cellOfferInfoForRowAtIndexPath:indexPath];
             } else if (indexPath.row == 1) {
-                return [self tableView:tableView detailsProgressViewRowAtIndexPath:indexPath];
+                return [self tableView:tableView cellOfferProgressRowAtIndexPath:indexPath];
             } else {
-                return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
+                return [self tableView:tableView cellOfferActionForRowAtIndexPath:indexPath];
             }
         } else {
             if (indexPath.row == 0) {
-                return [self tableView:tableView cellDetailsProjectTBVForRowAtIndexPath:indexPath];
+                return [self tableView:tableView cellOfferInfoForRowAtIndexPath:indexPath];
             } else {
-                return [self tableView:tableView detailsProjectBottomTVCellForRowAtIndexPath:indexPath];
+                return [self tableView:tableView cellOfferActionForRowAtIndexPath:indexPath];
             }
         }
     }else if (indexPath.section == kINDEX_SECTION_OFFER_DESCRIPTION || indexPath.section == kINDEX_SECTION_DOCUMENT || indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.arrayDocuments.count - 1) {
-        return [self tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
+        return [self tableView:tableView cellOfferTextForRowAtIndexPath:indexPath];
     } else if ( indexPath.section == kINDEX_SECTION_PROJECT_DESCRIPTION) {
-        return [self tableView:tableView cellDetailsWebViewRowWithIndexPath:indexPath];
+        return [self tableView:tableView cellOfferWebViewRowWithIndexPath:indexPath];
     } else {
         if (indexPath.row == 0) {
-            return [self tableView:tableView cellDetailsSectionForRowAtIndexPath:indexPath];
+            return [self tableView:tableView cellDocumentSectionForRowAtIndexPath:indexPath];
         }
-        return [self tableView:tableView cellDetailsAccessoryForRowAtIndexPath:indexPath];
+        return [self tableView:tableView cellDocumentItemForRowAtIndexPath:indexPath];
     }
     return nil;
 }
 
 #pragma mark - Cells
 
-- (CODetailsPhotoCell*)tableView:(UITableView *)tableView cellDetailsPhotoForRowAtIndexPath:(NSIndexPath *)indexPath  {
-    CODetailsPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsPhotoCell identifier]];
+- (COOfferHeadingCell*)tableView:(UITableView *)tableView cellOfferHeadingForRowAtIndexPath:(NSIndexPath *)indexPath{
+    COOfferHeadingCell *cell = [tableView dequeueReusableCellWithIdentifier:[COOfferHeadingCell identifier]];
     cell.offerLogo = self.offerModel;
     return cell;
 }
 
-- (CODetailsProjectCell*)tableView:(UITableView *)tableView cellDetailsProjectTBVForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsProjectCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectCell identifier]];
+- (COOfferInfoCell*)tableView:(UITableView *)tableView cellOfferInfoForRowAtIndexPath:(NSIndexPath *)indexPath {
+    COOfferInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:[COOfferInfoCell identifier]];
     cell.offerInfo = self.offerModel;
     cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     return cell;
 }
 
-- (CODetailsProjectBottomTVCell*)tableView:(UITableView *)tableView detailsProjectBottomTVCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsProjectBottomTVCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProjectBottomTVCell identifier]];
+- (COOfferActionCell*)tableView:(UITableView *)tableView cellOfferActionForRowAtIndexPath:(NSIndexPath *)indexPath {
+    COOfferActionCell *cell = [tableView dequeueReusableCellWithIdentifier:[COOfferActionCell identifier]];
     cell.delegate = self.controller;
     return cell;
 }
 
-- (CODetailsProgressViewCell*)tableView:(UITableView *)tableView detailsProgressViewRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsProgressViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsProgressViewCell identifier]];
+- (COOfferProgressCell*)tableView:(UITableView *)tableView cellOfferProgressRowAtIndexPath:(NSIndexPath *)indexPath {
+    COOfferProgressCell *cell = [tableView dequeueReusableCellWithIdentifier:[COOfferProgressCell identifier]];
     cell.projectInfoProgress = self.offerModel.offerProject.projectFundedAmount;
     cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     return cell;
 }
 
-- (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsTextCell identifier]];
+- (COOfferDescriptionTextCell*)tableView:(UITableView *)tableView cellOfferTextForRowAtIndexPath:(NSIndexPath *)indexPath {
+    COOfferDescriptionTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[COOfferDescriptionTextCell identifier]];
     if(indexPath.section == kINDEX_SECTION_OFFER_DESCRIPTION) {
         cell.offerDescription = self.offerModel;
     } else if (indexPath.section == kINDEX_SECTION_DOCUMENT) {
@@ -164,15 +164,15 @@
     return cell;
 }
 
-- (CODetailsWebViewCell*)tableView:(UITableView*)tableView cellDetailsWebViewRowWithIndexPath:(NSIndexPath*)indexPath {
-    CODetailsWebViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsWebViewCell identifier]];
+- (COOfferWebViewCell*)tableView:(UITableView*)tableView cellOfferWebViewRowWithIndexPath:(NSIndexPath*)indexPath {
+    COOfferWebViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[COOfferWebViewCell identifier]];
     cell.separatorInset = UIEdgeInsetsMake(0.0, tableView.bounds.size.width+10, 0.0, 0.0);
     cell.offerProject = self.offerModel;
     return cell;
 }
 
-- (CODetailsSectionCell*)tableView:(UITableView *)tableView cellDetailsSectionForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsSectionCell identifier]];
+- (CODocumentSectionCell*)tableView:(UITableView *)tableView cellDocumentSectionForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CODocumentSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODocumentSectionCell identifier]];
     if (self.offerModel.arrayDocuments && self.offerModel.arrayDocuments.count > 0) {
         CODocumentModel *document =[self.offerModel.arrayDocuments objectAtIndex:indexPath.section - (kINDEX_SECTION_DOCUMENT +1)];
         cell.docDetail = document;
@@ -180,8 +180,8 @@
     return cell;
 }
 
-- (CODetailsAccessoryCell*)tableView:(UITableView *)tableView cellDetailsAccessoryForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CODetailsAccessoryCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODetailsAccessoryCell identifier]];
+- (CODocumentItemCell*)tableView:(UITableView *)tableView cellDocumentItemForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CODocumentItemCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODocumentItemCell identifier]];
     if (self.offerModel.documents && self.offerModel.arrayDocuments.count > 0) {
         CODocumentModel *document =[self.offerModel.arrayDocuments objectAtIndex:indexPath.section - (kINDEX_SECTION_DOCUMENT +1)];
         if (document && document.arrayOfItems.count > 0) {

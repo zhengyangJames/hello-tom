@@ -7,7 +7,7 @@
 //
 #import "COOfferData.h"
 
-@interface CODetailsSectionCell : UITableViewCell
+@interface CODocumentSectionCell : UITableViewCell
 
 @property (nonatomic, strong) id<COOfferDocumentDetail> docDetail;
 

@@ -10,7 +10,7 @@
 #import "HomeListViewCell.h"
 #import "LoadFileManager.h"
 #import "CODropListVC.h"
-#import "DetailsViewController.h"
+#import "OfferViewController.h"
 #import "LoginViewController.h"
 #import "COLIstOffersObject.h"
 #import "MBProgressHUD.h"
@@ -91,7 +91,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 #pragma mark - Private
 
 - (void)_pushDetailVcWithID:(COOfferModel *)model {
-    DetailsViewController *vc = [[DetailsViewController alloc]init];
+    OfferViewController *vc = [[OfferViewController alloc]init];
     vc.offerModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 }

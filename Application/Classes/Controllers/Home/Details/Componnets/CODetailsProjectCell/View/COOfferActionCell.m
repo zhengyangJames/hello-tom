@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "CODetailsProjectBottomTVCell.h"
+#import "COOfferActionCell.h"
 #import "COPositive&NagitiveButton.h"
 #import "WSURLSessionManager+ListHome.h"
 
 
-@interface CODetailsProjectBottomTVCell ()<UIAlertViewDelegate>
+@interface COOfferActionCell ()<UIAlertViewDelegate>
 {
     __weak IBOutlet COPositive_NagitiveButton *_interedtedBTN;
     __weak IBOutlet COPositive_NagitiveButton *_questionBTN;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation CODetailsProjectBottomTVCell
+@implementation COOfferActionCell
 
 #pragma mark - Action
 

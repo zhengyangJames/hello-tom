@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "CODetailsTextCell.h"
+#import "COOfferDescriptionTextCell.h"
 
-@interface CODetailsTextCell () <UIWebViewDelegate>
+@interface COOfferDescriptionTextCell () <UIWebViewDelegate>
 {
     __weak IBOutlet UITextView  *_detailsTextView;
     __weak IBOutlet UILabel     *_headerLabel;
 }
 @end
 
-@implementation CODetailsTextCell
+@implementation COOfferDescriptionTextCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
