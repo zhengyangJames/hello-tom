@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol COHomeOffer <NSObject>
+
+- (NSString *)homeOfferCompanyPhoto;
+- (NSString *)homeOfferCountry;
+- (NSString *)homeOfferTitle;
+- (NSNumber *)homeOfferID;
+- (NSString *)homeOfferType;
+
+@end
+
 @protocol COOfferLogo <NSObject>
 
 - (NSString *)offerLogoImage;

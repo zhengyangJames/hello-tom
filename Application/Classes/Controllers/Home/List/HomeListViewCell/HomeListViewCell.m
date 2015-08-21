@@ -35,15 +35,14 @@
 }
 
 #pragma mark - Set Get
-
-- (void)setOfferobject:(COOfferModel *)offerobject {
-    _offerobject = offerobject;
-    NSURL *url = [NSURL URLWithString:_offerobject.offerProject.projectPhoto];
+- (void)setHomeOffer:(id<COHomeOffer>)homeOffer {
+    _homeOffer = homeOffer;
+    NSURL *url = [NSURL URLWithString:_homeOffer.homeOfferCompanyPhoto];
     [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
-    NSString *strImage = [_offerobject.offerProject.projectCountry isEqualToString:@"Cambodia"] ? @"Globe" : _offerobject.offerProject.projectCountry;
+    NSString *strImage = [_homeOffer.homeOfferCountry isEqualToString:@"Cambodia"] ? @"Globe" : _homeOffer.homeOfferCountry;
     [_imageLogo setImage:[UIImage imageNamed:strImage]];
-    [_lblTitle setText:_offerobject.offerTitle];
-    [_lblCountry setText:_offerobject.offerProject.projectCountry];
+    [_lblTitle setText:_homeOffer.homeOfferTitle];
+    [_lblCountry setText:_homeOffer.homeOfferCountry];
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }

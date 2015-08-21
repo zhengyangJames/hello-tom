@@ -247,7 +247,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (HomeListViewCell*)_setupHomeListCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeListViewCell identifier]];
-    cell.offerobject = self.arrayData[indexPath.row];
+    cell.homeOffer = self.arrayData[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     return cell;
 }

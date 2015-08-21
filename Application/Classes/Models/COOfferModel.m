@@ -64,6 +64,30 @@
 - (NSArray *)arrayDocuments {
     return self.documents;
 }
+#pragma mark - home protocol
+
+- (NSString *)homeOfferCompanyPhoto {
+    COProjectModel *proModel = self.offerProject;
+    return proModel.projectPhoto;
+}
+
+- (NSString *)homeOfferCountry {
+    COProjectModel *proModel = self.offerProject;
+    return proModel.projectCountry;
+}
+
+- (NSString *)homeOfferTitle {
+    return self.offerTitle;
+}
+
+- (NSNumber *)homeOfferID {
+    return self.offerId;
+}
+
+- (NSString *)homeOfferType {
+    return self.offerType;
+}
+
 #pragma mark - logo protocol
 
 - (NSString *)offerLogoImage {

@@ -11,7 +11,7 @@
 
 @class COProjectModel;
 
-@interface COOfferModel : MTLModel<MTLJSONSerializing, COOfferLogo,COOfferInfo,COOfferDescription,COOfferProject,COOfferDocument>
+@interface COOfferModel : MTLModel<MTLJSONSerializing, COOfferLogo,COOfferInfo,COOfferDescription,COOfferProject,COOfferDocument,COHomeOffer>
 
 @property (nonatomic, strong) NSNumber *offerId;
 @property (nonatomic, strong) NSString *offerTitle;
