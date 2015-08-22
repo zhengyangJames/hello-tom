@@ -7,12 +7,12 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "COUserData.h"
 
 @interface AboutTableViewCell : BaseTableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *lblname;
-@property (weak, nonatomic) IBOutlet UILabel *lblDetail;
-
-
-
+@property (nonatomic, strong) id<COUserFirstName> userFirstName;
+@property (nonatomic, strong) id<COUserLastName> userLastName;
+@property (nonatomic, strong) id<COUserEmail> userEmail;
+@property (nonatomic, strong) id<COUserPhone> userPhone;
 @end

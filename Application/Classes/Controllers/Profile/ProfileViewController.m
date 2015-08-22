@@ -21,21 +21,7 @@
 #import "WSURLSessionManager+User.h"
 #import "AboutTableViewCellAddress.h"
 #import "TableBottomViewCell.h"
-
-#define DEFAULT_HEIGHT_CELL             44
-#define AUTO_HEIGHT_CELL_ABOUT          (self.view.bounds.size.height - (200+90))/4
-#define AUTO_HEIGHT_CELL_COMPANY        (self.view.bounds.size.height - (200+90+44))
-#define DEFAULT_HEIGHT_CELL_COMPANY     205
-#define AUTO_HEIGHT_CELL_PASSWORD       (self.view.bounds.size.height - (200+90))
-#define DEFAULT_HEIGHT_CELL_PASSWORD    171
-#define HIEGHT_HEADERVIEW               200
-#define HIEGHT_BOTTOMVIEW               90
-
-#define IS_IOS8_OR_ABOVE    [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
-
-#define UPDATE_ABOUT_PROFILE    @"Update profile"
-#define UPDATE_COMNPANY_PROFILE @"Update company profile"
-
+#import "COUserProfileModel.h"
 
 @interface ProfileViewController ()
 <UITableViewDataSource,
@@ -59,7 +45,7 @@ TableBottomViewCellDelegate>
 @property (strong, nonatomic) TableHeaderView       *tableheaderView;
 @property (weak, nonatomic  ) PasswordTableViewCell *passwordTableViewCell;
 @property (strong, nonatomic) NSArray               *arrayCountryCode;
-
+@property (strong, nonatomic) COUserProfileModel *userModel;
 @end
 
 @implementation ProfileViewController
@@ -153,6 +139,16 @@ TableBottomViewCellDelegate>
     return _profileObject;
 }
 
+- (COUserProfileModel *)userModel {
+    if (!_userModel) {
+        NSData *data = [kUserDefaults objectForKey:kPROFILE_JSON];
+        NSError *error = nil;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        COUserProfileModel *model =  [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:json error:&error];
+        return model;
+    }
+    return _userModel;
+}
 #pragma mark - Action
 - (void)__actionButtonUpdate:(NSString*)string {
     if ([string isEqualToString:UPDATE_ABOUT_PROFILE]) {
@@ -168,22 +164,6 @@ TableBottomViewCellDelegate>
 }
 
 #pragma mark - Web Service
-- (void)_callWSGetListProfile {
-    [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsGetProfileWithUserToken:[self _setupAccessToken] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && responseObject) {
-            self.profileObject = nil;
-            self.profileObject = (COListProfileObject*)responseObject;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView reloadData];
-            }];
-        }else {
-            [UIHelper showError:error];
-        }
-    }];
-    [UIHelper hideLoadingFromView:self.view];
-}
-
 
 - (void)_callWSChangePassword:(NSDictionary*)param {
     [UIHelper showLoadingInView:self.view];
@@ -219,19 +199,13 @@ TableBottomViewCellDelegate>
                                                                     forIndexPath:indexPath];
     aboutCell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row == COAboutProfileStyleFirstName) {
-        aboutCell.lblDetail.text = self.profileObject.first_name;
-        aboutCell.lblname.text = NSLocalizedString(@"FIRST_NAME", nil);
+        aboutCell.userFirstName = self.userModel;
     } else if (indexPath.row == COAboutProfileStyleLastNameSurname) {
-        aboutCell.lblDetail.text = self.profileObject.last_name;
-        aboutCell.lblname.text = NSLocalizedString(@"LAST_NAME", nil);
+        aboutCell.userLastName = self.userModel;
     } else if (indexPath.row == COAboutProfileStyleEmail) {
-        aboutCell.lblDetail.text = self.profileObject.email;
-        aboutCell.lblname.text = NSLocalizedString(@"EMAIl", nil);
+        aboutCell.userEmail = self.userModel;
     } else {
-        NSString *phoneCode = self.profileObject.country_prefix;
-        NSString *string = [NSString stringWithFormat:@"%@ %@",phoneCode,self.profileObject.cell_phone];
-        aboutCell.lblDetail.text = string;
-        aboutCell.lblname.text = NSLocalizedString(@"PHONE", nil);
+         aboutCell.userPhone = self.userModel;
     }
     return aboutCell;
 }

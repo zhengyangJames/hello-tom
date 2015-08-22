@@ -336,7 +336,7 @@
                 <constraint firstAttribute="bottom" secondItem="1My-n2-Eai" secondAttribute="bottom" id="f4b-UL-0fr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-136" y="117"/>
+            <point key="canvasLocation" x="-63" y="30"/>
         </view>
     </objects>
 </document>

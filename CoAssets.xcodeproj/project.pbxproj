@@ -235,6 +235,9 @@
 		BB25980E1B85526800D947AF /* COProjectFundedAmountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25980D1B85526800D947AF /* COProjectFundedAmountModel.m */; };
 		BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D61B8243F000BF6861 /* CODocumentModel.m */; };
 		BB3097DA1B824F0C00BF6861 /* CODocumentItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */; };
+		BB368EB21B87DF5C0066C646 /* COUserProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB11B87DF5C0066C646 /* COUserProfileModel.m */; };
+		BB368EB51B87E0E00066C646 /* COUserTokensModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB41B87E0E00066C646 /* COUserTokensModel.m */; };
+		BB368EB81B87E1F30066C646 /* COUserProfileDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */; };
 		BB48F1A01B86763E006F1921 /* COFilterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB48F19F1B86763E006F1921 /* COFilterListModel.m */; };
 		BB5B9A461B790F15002D37AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB5B9A451B790F15002D37AF /* Localizable.strings */; };
 		BB821DF51B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.m in Sources */ = {isa = PBXBuildFile; fileRef = BB821DF41B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.m */; };
@@ -574,6 +577,13 @@
 		BB3097D81B824F0C00BF6861 /* CODocumentItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODocumentItemModel.h; sourceTree = "<group>"; };
 		BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODocumentItemModel.m; sourceTree = "<group>"; };
 		BB30D5F21B838D9B00846F3A /* COOfferData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COOfferData.h; sourceTree = "<group>"; };
+		BB368EB01B87DF5C0066C646 /* COUserProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserProfileModel.h; sourceTree = "<group>"; };
+		BB368EB11B87DF5C0066C646 /* COUserProfileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserProfileModel.m; sourceTree = "<group>"; };
+		BB368EB31B87E0E00066C646 /* COUserTokensModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserTokensModel.h; sourceTree = "<group>"; };
+		BB368EB41B87E0E00066C646 /* COUserTokensModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserTokensModel.m; sourceTree = "<group>"; };
+		BB368EB61B87E1F30066C646 /* COUserProfileDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserProfileDetailModel.h; sourceTree = "<group>"; };
+		BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserProfileDetailModel.m; sourceTree = "<group>"; };
+		BB368EB91B87F3D60066C646 /* COUserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COUserData.h; sourceTree = "<group>"; };
 		BB48F19E1B86763E006F1921 /* COFilterListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFilterListModel.h; sourceTree = "<group>"; };
 		BB48F19F1B86763E006F1921 /* COFilterListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFilterListModel.m; sourceTree = "<group>"; };
 		BB5B9A451B790F15002D37AF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -601,6 +611,7 @@
 		01D143791B7D1035003DF5F9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BB368EAF1B87DF380066C646 /* UserProfileModel */,
 				01D1437A1B7D1053003DF5F9 /* COOfferModel.h */,
 				01D1437B1B7D1053003DF5F9 /* COOfferModel.m */,
 				BBF4CC4A1B7EA08500F9A5FA /* COProjectModel.h */,
@@ -1483,6 +1494,20 @@
 			path = COPopUpView;
 			sourceTree = "<group>";
 		};
+		BB368EAF1B87DF380066C646 /* UserProfileModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB368EB01B87DF5C0066C646 /* COUserProfileModel.h */,
+				BB368EB11B87DF5C0066C646 /* COUserProfileModel.m */,
+				BB368EB31B87E0E00066C646 /* COUserTokensModel.h */,
+				BB368EB41B87E0E00066C646 /* COUserTokensModel.m */,
+				BB368EB61B87E1F30066C646 /* COUserProfileDetailModel.h */,
+				BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */,
+				BB368EB91B87F3D60066C646 /* COUserData.h */,
+			);
+			path = UserProfileModel;
+			sourceTree = "<group>";
+		};
 		BB5B9A441B790E4D002D37AF /* Languages */ = {
 			isa = PBXGroup;
 			children = (
@@ -1753,6 +1778,7 @@
 				BB3097DA1B824F0C00BF6861 /* CODocumentItemModel.m in Sources */,
 				0ECA88491B27CA7100B5656F /* NMDeviceHelper.m in Sources */,
 				0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */,
+				BB368EB81B87E1F30066C646 /* COUserProfileDetailModel.m in Sources */,
 				7F325FB71B40E50800116445 /* ContactTableViewCell.m in Sources */,
 				7FA7E6BB1B4E7C4D00059B13 /* COQuestionView.m in Sources */,
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
@@ -1799,6 +1825,7 @@
 				7F325FBB1B40E50800116445 /* SettingViewController.m in Sources */,
 				0ECA88431B27CA7100B5656F /* NSDictionary+NotNULL.m in Sources */,
 				7F325F7D1B40E50800116445 /* BaseTableViewCell.m in Sources */,
+				BB368EB51B87E0E00066C646 /* COUserTokensModel.m in Sources */,
 				BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */,
 				7F325F951B40E50800116445 /* CODocumentSectionCell.m in Sources */,
 				7F325F811B40E50800116445 /* NSString+Validation.m in Sources */,
@@ -1836,6 +1863,7 @@
 				7F325FC61B40E50800116445 /* DropListObject.m in Sources */,
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
 				7F187A261B7C5C4F0072423D /* CODetailsOffersItemObj+Mapping.m in Sources */,
+				BB368EB21B87DF5C0066C646 /* COUserProfileModel.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,
 				7F2C77461B4E07BA00C69365 /* COOfferInfoCell.m in Sources */,
 				7F325F7F1B40E50800116445 /* BaseViewController.m in Sources */,

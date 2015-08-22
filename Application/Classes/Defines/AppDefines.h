@@ -78,6 +78,7 @@
 ///////////////////////////////////////////////////////////////////
 #pragma mark - STRING
 ///////////////////////////////////////////////////////////////////
+#define kPROFILE_JSON                               @"PROFILE_JSON"
 #define kPROFILE_OBJECT                             @"PROFILE_OBJECT"
 #define kUPDATE_PROFILE                             @"UpdateProfile"
 #define kACCESS_TOKEN                               @"access_token"
@@ -125,6 +126,8 @@
 #define kFILTER_BP                                  @"/BP"
 #define kFILTER_CO                                  @"/CO"
 #define kFILTER_PS                                  @"/PS"
+
+#define kUSER_PROFILE_FILE_NAME                     @"UserProfile"
 ////////////////////////////////////////////////////////////////
 #pragma mark - WEB LINK
 
@@ -135,6 +138,21 @@
 #define LINK_TERMS_OF_USE                           @"https://www.coassets.com/terms-of-use/"
 #define LINK_CODE_OF_CONDUCT                        @"https://www.coassets.com/code-of-conduct/"
 #define LINK_PRIVACY                                @"https://www.coassets.com/privacy/"
+////////////////////////////////////////////////////////////////
+#pragma mark - PROFILE DEFINE
+#define DEFAULT_HEIGHT_CELL                         44
+#define AUTO_HEIGHT_CELL_ABOUT                      (self.view.bounds.size.height - (200+90))/4
+#define AUTO_HEIGHT_CELL_COMPANY                    (self.view.bounds.size.height - (200+90+44))
+#define DEFAULT_HEIGHT_CELL_COMPANY                 205
+#define AUTO_HEIGHT_CELL_PASSWORD                   (self.view.bounds.size.height - (200+90))
+#define DEFAULT_HEIGHT_CELL_PASSWORD                171
+#define HIEGHT_HEADERVIEW                           200
+#define HIEGHT_BOTTOMVIEW                           90
+
+#define IS_IOS8_OR_ABOVE                            [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
+
+#define UPDATE_ABOUT_PROFILE                        @"Update profile"
+#define UPDATE_COMNPANY_PROFILE                     @"Update company profile"
 
 ////////////////////////////////////////////////////////////////
 

@@ -8,6 +8,7 @@
 
 #import "WSURLSessionManager+Profile.h"
 #import "COListProfileObject.h"
+#import "COUserProfileModel.h"
 
 @implementation WSURLSessionManager (Profile)
 

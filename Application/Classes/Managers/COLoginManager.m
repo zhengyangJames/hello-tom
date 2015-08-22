@@ -10,6 +10,7 @@
 #import "WSURLSessionManager+User.h"
 #import "WSURLSessionManager+Profile.h"
 #import "COListProfileObject.h"
+#import "COUserProfileModel.h"
 
 @implementation COLoginManager
 
@@ -48,6 +49,11 @@
     dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
+            NSDictionary *dic = responseObject;
+            NSError *error;
+            NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
+            [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+            [kUserDefaults synchronize];
             [self _zipDataProfile:responseObject];
             [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
             if (actionLoginManager) {
