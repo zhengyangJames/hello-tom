@@ -51,12 +51,20 @@
         if ([key isEqualToString:kPROFILE]) {
             NSDictionary *profile = [params objectForKey:kPROFILE];
             for(NSString *key in [profile allKeys]) {
-                s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[[profile objectForKey:key] urlEncode]];
+                NSString *object = [profile objectForKey:key];
+                if ([object isEqualToString:@""]) {
+                    object = @" ";
+                }
+                s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[object urlEncode]];
                 prefix = @"&";
             }
             break;
         }
-        s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[[params objectForKey:key] urlEncode]];
+        NSString *object = [params objectForKey:key];
+        if ([object isEqualToString:@""]) {
+            object = @" ";
+        }
+        s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[object urlEncode]];
         prefix = @"&";
     }
     return s;

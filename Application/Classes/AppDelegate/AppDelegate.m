@@ -46,7 +46,7 @@
 #pragma mark - Method
 
 - (void)_setUp3rdSDKs {
-    [Fabric with:@[CrashlyticsKit]];
+   // [Fabric with:@[CrashlyticsKit]];
 }
 
 

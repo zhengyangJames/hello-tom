@@ -42,11 +42,13 @@
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             [self wsGetProfileWithUserToken:paramToken handler:^(id responseObject, NSURLResponse *response, NSError *error) {
                 if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-                    NSDictionary *dic = responseObject;
-                    NSError *error;
-                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
-                    [kUserDefaults setObject:data forKey:kPROFILE_JSON];
-                    [kUserDefaults synchronize];
+                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                        NSDictionary *dic = responseObject;
+                        NSError *error;
+                        NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
+                        [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+                        [kUserDefaults synchronize];
+                    }];
                     if (handler) {
                         handler(responseObject,response,nil);
                     }

@@ -147,13 +147,13 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                           parentVC:self
                          didSelect:^(NSInteger index) {
          _indexSelectFilter = index;
-         self.filterItem = self.arrayListFilter[index];
+         if (self.arrayListFilter && self.arrayListFilter.count > 0) {
+             self.filterItem = self.arrayListFilter[index];
+        }
          self.arrayData = nil;
+         [_tableView reloadData];
          _leftButton.enabled = NO;
          [self _callWSGetListOfferFilter:self.filterItem.filterValue];
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [_tableView reloadData];
-        }];
     }];
 }
 
@@ -174,6 +174,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                     }
                     [_tableView endUpdates];
                 }];
+            } else {
+                [self _showViewNoData:self.filterItem.filterValue];
             }
         } else {
             [UIHelper showError:error];
@@ -225,11 +227,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 #pragma mark - TableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.arrayData && self.arrayData.count > 0) {
-        _noDataView.hidden = YES;
-    } else {
-        [self _showViewNoData:self.filterItem.filterValue];
+        return self.arrayData.count;
     }
-    return self.arrayData.count;
+    return 0;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

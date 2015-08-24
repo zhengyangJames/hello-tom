@@ -161,18 +161,18 @@
 - (BOOL)_isValidation {
     if ([emailNameTXT.text isEmpty]) {
         _currentField = emailNameTXT;
-        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
         return NO;
     } else if (![emailNameTXT.text isValidEmail]) {
         _currentField = emailNameTXT;
-        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"EMAIL_INVALID", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_INVALID", nil) delegate:self tag:0];
         return NO;
     } else if ([phoneNameTXT.text isEmpty]) {
         _currentField = phoneNameTXT;
-        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"PHONE_REQUIRED", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PHONE_REQUIRED", nil) delegate:self tag:0];
         return NO;
     } else if ([self _checkStringIsNumberOrCharacter:countryTXT.text]) {
-        [self _actionShowAleartViewWithTitle:NSLocalizedString(@"ERROR_COUNTRY", nil)];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"ERROR_COUNTRY", nil) delegate:self tag:0];
         return NO;
     }
     return YES;
@@ -197,44 +197,17 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _getAccessToken] body:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            [self _setDataWithObject:responseObject];
-            if ([self.delegate respondsToSelector:@selector(editAboutProfile:)]) {
-                [self.delegate editAboutProfile:self];
-            }
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                if ([self.delegate respondsToSelector:@selector(editAboutProfile:)]) {
+                    [self.delegate editAboutProfile:self];
+                }
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
         }else {
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
-}
-
-- (void)_setDataWithObject:(NSDictionary *)dic {
-    if ([dic objectForKeyNotNull:KEMAIL]) {
-        [self.aboutUserModel setNameOfUserEmail:[dic objectForKeyNotNull:KEMAIL]];
-    }
-    if ([dic objectForKeyNotNull:kNUM_COUNTRY]) {
-        [self.aboutUserModel setNameOfUserCountryCode:[dic objectForKeyNotNull:kNUM_COUNTRY]];
-    }
-    if ([dic objectForKeyNotNull:kNUM_CELL_PHONE]) {
-    [self.aboutUserModel setNumberOfUserPhone:[dic objectForKeyNotNull:kNUM_CELL_PHONE]];
-    }
-    if ([dic objectForKeyNotNull:KADDRESS]) {
-    [self.aboutUserModel setNameOfUserAddress1:[dic objectForKeyNotNull:KADDRESS]];
-    }
-    if ([dic objectForKeyNotNull:KADDRESS2]) {
-    [self.aboutUserModel setNameOfUserAddress2:[dic objectForKeyNotNull:KADDRESS2]];
-    }
-    if ([dic objectForKeyNotNull:KCITY]) {
-    [self.aboutUserModel setNameOfUserCity:[dic objectForKeyNotNull:KCITY]];
-    }
-    if ([dic objectForKeyNotNull:KSATE]) {
-    [self.aboutUserModel setNameOfUserRegion:[dic objectForKeyNotNull:KSATE]];
-    }
-    if ([dic objectForKeyNotNull:KCOUNTRY]) {
-    [self.aboutUserModel setNameOfUserCountry:[dic objectForKeyNotNull:KCOUNTRY]];
-    }
-
 }
 
 #pragma mark - Action
@@ -258,16 +231,6 @@
         [dropListCountryCode setTitle:[self.arrayCountryCode[index] objectForKey:@"code"] forState:UIControlStateNormal];
         _indexActtionCountryCode = index;
     }];
-}
-
-- (void)_actionShowAleartViewWithTitle:(NSString*)message {
-    [self.view endEditing:YES];
-    [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
-                              message:m_string(message)
-                         cancelButton:NSLocalizedString(@"OK_TITLE", nil)
-                             delegate:self
-                                  tag:0
-                     arrayTitleButton:nil];
 }
 
 #pragma mark - UIAlertView delegate

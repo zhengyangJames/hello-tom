@@ -39,7 +39,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
-+ (void)showAleartViewWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton delegate:(id)delegate tag:(NSInteger)tag arrayTitleButton:(NSArray *)arrayTitel {
++ (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton delegate:(id)delegate tag:(NSInteger)tag arrayTitleButton:(NSArray *)arrayTitel {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title
                                                    message: message
                                                   delegate: delegate
