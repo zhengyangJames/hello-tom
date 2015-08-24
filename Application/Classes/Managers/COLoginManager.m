@@ -54,7 +54,6 @@
             NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
             [kUserDefaults setObject:data forKey:kPROFILE_JSON];
             [kUserDefaults synchronize];
-            [self _zipDataProfile:responseObject];
             [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
             if (actionLoginManager) {
                 actionLoginManager(responseObject,YES);
@@ -65,24 +64,6 @@
             }
         }
     }];
-}
-
-- (void)_zipDataProfile:(NSDictionary*)dic {
-    NSMutableDictionary *dicPro = [NSMutableDictionary new];
-    dicPro[kUSER] = [dic objectForKeyNotNull:@"username"];
-    dicPro[KFRIST_NAME] = [dic objectForKeyNotNull:@"first_name"];
-    dicPro[KLAST_NAME] = [dic objectForKeyNotNull:@"last_name"];
-    dicPro[KEMAIL] = [dic objectForKeyNotNull:@"email"];
-    NSDictionary *dicProfile = [dic objectForKeyNotNull:@"profile"];
-    dicPro[kNUM_CELL_PHONE] = [dicProfile objectForKeyNotNull:@"cellphone"];
-    dicPro[kNUM_COUNTRY] = [dicProfile objectForKeyNotNull:@"country_prefix"];
-    dicPro[KADDRESS] = [dicProfile objectForKeyNotNull:@"address_1"];
-    dicPro[KADDRESS2] = [dicProfile objectForKeyNotNull:@"address_2"];
-    dicPro[KSATE] = [dicProfile objectForKeyNotNull:@"region_state"];
-    dicPro[KCITY] = [dicProfile objectForKeyNotNull:@"city"];
-    dicPro[KCOUNTRY] = [dicProfile objectForKeyNotNull:@"country"];
-    [kUserDefaults setObject:dicPro forKey:kPROFILE_OBJECT];
-    [kUserDefaults synchronize];
 }
 
 @end

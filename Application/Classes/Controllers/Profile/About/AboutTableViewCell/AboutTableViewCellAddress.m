@@ -19,30 +19,31 @@
 
 - (void)viewDidLoad {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.profileObject = self.profileObject;
 }
 
 #pragma mark Set - Get
-- (void)setProfileObject:(COListProfileObject *)profileObject {
-    _profileObject = profileObject;
+
+-(void)setUserAddress:(id<COUserAboutProfile>)userAddress {
+    _userAddress = userAddress;
+    
     NSString *link = @"";
-    NSString *address1 = _profileObject.address_1;
+    NSString *address1 = _userAddress.nameOfUserAddress1;
     if (address1 && ![address1 isEmpty]) {
         link = [link stringByAppendingString:address1];
     }
-    NSString *address2 = _profileObject.address_2;
+    NSString *address2 = _userAddress.nameOfUserAddress2;
     if (address2 && ![address2 isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:address2];
     }
-    NSString *postCode = _profileObject.region_state;
+    NSString *postCode = _userAddress.nameOfUserRegion;
     if (postCode && ![postCode isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:postCode];
     }
-    NSString *city = _profileObject.city;
+    NSString *city = _userAddress.nameOfUserCity;
     if (city && ![city isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:city];
     }
-    NSString *country = _profileObject.country;
+    NSString *country = _userAddress.nameOfUserCountry;
     if (country && ![country isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }

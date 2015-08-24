@@ -48,6 +48,14 @@
     if(!params) return s;
     NSString *prefix = @"";
     for (NSString *key in [params allKeys]) {
+        if ([key isEqualToString:kPROFILE]) {
+            NSDictionary *profile = [params objectForKey:kPROFILE];
+            for(NSString *key in [profile allKeys]) {
+                s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[[profile objectForKey:key] urlEncode]];
+                prefix = @"&";
+            }
+            break;
+        }
         s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[[params objectForKey:key] urlEncode]];
         prefix = @"&";
     }

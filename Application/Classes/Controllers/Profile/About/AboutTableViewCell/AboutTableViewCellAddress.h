@@ -7,10 +7,10 @@
 //
 
 #import "BaseTableViewCell.h"
-#import "COListProfileObject.h"
+#import "COUserData.h"
 
 @interface AboutTableViewCellAddress : BaseTableViewCell
 
-@property (strong ,nonatomic) COListProfileObject *profileObject;
+@property (strong ,nonatomic) id<COUserAboutProfile> userAddress;
 
 @end

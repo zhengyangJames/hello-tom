@@ -33,6 +33,7 @@
                 <outlet property="dropListCountryCode" destination="FjP-D5-1xD" id="vWo-kK-YIa"/>
                 <outlet property="emailNameTXT" destination="2Xm-1f-nuB" id="hsD-Jk-uE4"/>
                 <outlet property="phoneNameTXT" destination="OgW-cg-UNM" id="jb2-Wh-r4O"/>
+                <outlet property="postCodeTXT" destination="ec9-g0-11E" id="I1c-mL-a7t"/>
                 <outlet property="regionStateTXT" destination="RTr-2e-GOj" id="HOT-zl-Ge6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -57,7 +58,7 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Xm-1f-nuB" userLabel="First name Text Field" customClass="COBorderTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Xm-1f-nuB" userLabel="Email Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="49" width="280" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -114,7 +115,7 @@
                                     <nil key="highlightedColor"/>
                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Cellphone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgW-cg-UNM" userLabel="First name Text Field" customClass="COBorderTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Cellphone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgW-cg-UNM" userLabel="Phone Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="215" width="280" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -143,7 +144,7 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Address 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-Dg-2xW" userLabel="First name Text Field" customClass="COBorderTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Address 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-Dg-2xW" userLabel="Address 1 Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="299" width="280" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -161,7 +162,7 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Address 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WH0-Hw-MbH" userLabel="First name Text Field" customClass="COBorderTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Address 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WH0-Hw-MbH" userLabel="Address 2 Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="384" width="280" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -179,7 +180,7 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-tD-1zp" userLabel="First name Text Field" customClass="COBorderTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-tD-1zp" userLabel="City Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="468" width="280" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -197,7 +198,7 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Postal code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-g0-11E" userLabel="First name Text Field" customClass="COBorderTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Postal code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-g0-11E" userLabel="Postal Code Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="556" width="280" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -215,15 +216,6 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Region state" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTr-2e-GOj" userLabel="First name Text Field" customClass="COBorderTextField">
-                                    <rect key="frame" x="20" y="640" width="280" height="40"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="mmB-uj-LDo"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6S3-He-y8e">
                                     <rect key="frame" x="20" y="695" width="210" height="21"/>
                                     <constraints>
@@ -233,7 +225,7 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Country" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wly-oF-5Hj" userLabel="First name Text Field" customClass="COBorderTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Country" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wly-oF-5Hj" userLabel="Country Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="724" width="280" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -251,6 +243,15 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Region state" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTr-2e-GOj" userLabel="Region State Text Field" customClass="COBorderTextField">
+                                    <rect key="frame" x="20" y="640" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="mmB-uj-LDo"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                </textField>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>

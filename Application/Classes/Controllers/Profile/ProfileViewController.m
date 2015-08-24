@@ -13,8 +13,6 @@
 #import "EditAboutProfileVC.h"
 #import "EditCompanyVC.h"
 #import "LoadFileManager.h"
-#import "COListProfileObject.h"
-#import "COListProfileObject.h"
 #import "NSString+Validation.h"
 #import "WSURLSessionManager+Profile.h"
 #import "LoginViewController.h"
@@ -40,7 +38,6 @@ TableBottomViewCellDelegate>
     NSInteger _indexSelectSeg;
     NSDictionary *oldTokenObj;
 }
-@property (strong, nonatomic) COListProfileObject   *profileObject;
 @property (weak, nonatomic  ) TableBottomViewCell   *tableBottomViewCell;
 @property (strong, nonatomic) TableHeaderView       *tableheaderView;
 @property (weak, nonatomic  ) PasswordTableViewCell *passwordTableViewCell;
@@ -101,7 +98,7 @@ TableBottomViewCellDelegate>
 - (void)_setupEditAboutProfileVC {
     EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
     vc.delegate = self;
-    vc.dicProfile = [self.profileObject getProfileObject];
+    vc.aboutUserModel = self.userModel;
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
@@ -132,20 +129,13 @@ TableBottomViewCellDelegate>
     return _arrayCountryCode;
 }
 
-- (COListProfileObject*)profileObject {
-    if (!_profileObject) {
-        return _profileObject = [[COListProfileObject alloc]initWithDictionary:[kUserDefaults objectForKey:kPROFILE_OBJECT]];
-    }
-    return _profileObject;
-}
-
 - (COUserProfileModel *)userModel {
     if (!_userModel) {
         NSData *data = [kUserDefaults objectForKey:kPROFILE_JSON];
         NSError *error = nil;
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         COUserProfileModel *model =  [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:json error:&error];
-        return model;
+        return _userModel = model;
     }
     return _userModel;
 }
@@ -159,8 +149,8 @@ TableBottomViewCellDelegate>
 }
 
 - (void)__actionUpdateProfile {
-    self.profileObject = nil;
-    [self profileObject];
+    self.userModel = nil;
+    [self userModel];
 }
 
 #pragma mark - Web Service
@@ -212,7 +202,7 @@ TableBottomViewCellDelegate>
 
 - (AboutTableViewCellAddress*)_setupAboutCell_Address:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AboutTableViewCellAddress *cell = [tableView dequeueReusableCellWithIdentifier:[AboutTableViewCellAddress identifier]];
-    cell.profileObject = self.profileObject;
+    cell.userAddress = self.userModel;
     return cell;
 }
 
@@ -240,17 +230,17 @@ TableBottomViewCellDelegate>
 #pragma mark - TableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
-        return 6;
+        return kNUMBERS_OF_ROW_OF_ABOUT;
     } else {
-        return 2;
+        return kNUMBERS_OF_ROW_OF_CHANGE_PASS;
     }
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
-        if (indexPath.row == 4) {
+        if (indexPath.row == kNUMBERS_OF_ROW_OF_ABOUT - 2) {
             return [self _setupAboutCell_Address:tableView cellForRowAtIndexPath:indexPath];
-        } else if (indexPath.row == 5) {
+        } else if (indexPath.row == kNUMBERS_OF_ROW_OF_ABOUT - 1) {
             return [self _setupTableBottomViewCell:tableView cellForRowAtIndexPath:indexPath];
         } else {
             return [self _setupAboutCell:tableView cellForRowAtIndexPath:indexPath];
@@ -321,9 +311,13 @@ TableBottomViewCellDelegate>
     [self.view endEditing:YES];
 }
 
-- (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC profileUpdate:(NSDictionary *)profileUpdate {
-    [self.profileObject setProfileObject:profileUpdate];
-    editAboutProfileVC.profileObject = self.profileObject;
+- (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC{
+        _userModel = nil;
+        NSData *data = [kUserDefaults objectForKey:kPROFILE_JSON];
+        NSError *error = nil;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        COUserProfileModel *model =  [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:json error:&error];
+        self.userModel = model;
 }
 
 - (void)tableHeaderView:(TableHeaderView *)tableHeaderView indexSelectSegment:(NSInteger)indexSelect {

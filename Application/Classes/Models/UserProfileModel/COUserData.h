@@ -32,3 +32,30 @@
 - (NSString *)phoneContent;
 - (NSString *)phoneContentWithPrefix;
 @end
+
+@protocol COUserAboutProfile <NSObject>
+
+- (NSString *)nameOfUserName;
+- (NSString *)nameOfUserFirstName;
+- (NSString *)nameOfUserLastName;
+- (NSString *)nameOfUserEmail;
+- (NSString *)numberOfUserPhone;
+- (NSString *)nameOfUserAddress1;
+- (NSString *)nameOfUserRegion;
+- (NSString *)nameOfUserAddress2;
+- (NSString *)nameOfUserCity;
+- (NSString *)nameOfUserCountry;
+- (NSString *)nameOfUserCountryCode;
+
+- (void)setNameOfUserName:(NSString*)string;
+- (void)setNameOfUserFirstName:(NSString*)string;
+- (void)setNameOfUserLastName:(NSString*)string;
+- (void)setNameOfUserEmail:(NSString*)string;
+- (void)setNumberOfUserPhone:(NSString*)string;
+- (void)setNameOfUserAddress1:(NSString*)string;
+- (void)setNameOfUserRegion:(NSString*)string;
+- (void)setNameOfUserAddress2:(NSString*)string;
+- (void)setNameOfUserCity:(NSString*)string;
+- (void)setNameOfUserCountry:(NSString*)string;
+- (void)setNameOfUserCountryCode:(NSString*)string;
+@end

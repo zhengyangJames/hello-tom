@@ -103,7 +103,7 @@
 #define KCITY                                       @"city"
 #define KSATE                                       @"region_state"
 #define KCOUNTRY                                    @"country"
-
+#define kPROFILE                                    @"profile"
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY
 
@@ -128,6 +128,9 @@
 #define kFILTER_PS                                  @"/PS"
 
 #define kUSER_PROFILE_FILE_NAME                     @"UserProfile"
+
+#define kNUMBERS_OF_ROW_OF_ABOUT                    6
+#define kNUMBERS_OF_ROW_OF_CHANGE_PASS              2
 ////////////////////////////////////////////////////////////////
 #pragma mark - WEB LINK
 

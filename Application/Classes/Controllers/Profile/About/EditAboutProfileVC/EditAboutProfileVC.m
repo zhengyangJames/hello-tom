@@ -12,22 +12,25 @@
 #import "CoDropListButtom.h"
 #import "LoadFileManager.h"
 #import "WSURLSessionManager+Profile.h"
-
+#import "COUserProfileModel.h"
+#import "COUserProfileDetailModel.h"
 
 @interface EditAboutProfileVC () <UIAlertViewDelegate>
 {
     __weak IBOutlet COBorderTextField *emailNameTXT;
+    __weak IBOutlet CoDropListButtom  *dropListCountryCode;
     __weak IBOutlet COBorderTextField *phoneNameTXT;
     __weak IBOutlet COBorderTextField *addressNameTXT;
-    __weak IBOutlet COBorderTextField *regionStateTXT;
     __weak IBOutlet COBorderTextField *address2TXT;
     __weak IBOutlet COBorderTextField *cityTXT;
+    __weak IBOutlet COBorderTextField *postCodeTXT;
+    __weak IBOutlet COBorderTextField *regionStateTXT;
     __weak IBOutlet COBorderTextField *countryTXT;
-    __weak IBOutlet CoDropListButtom  *dropListCountryCode;
+
     __weak COBorderTextField *_currentField;
     NSInteger _indexActtionCountryCode;
 }
-
+@property (strong, nonatomic) id<COUserAboutProfile> userProfileModel;
 @property (strong,nonatomic) NSArray *arrayCountryCode;
 
 @end
@@ -37,29 +40,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    self.dicProfile = self.dicProfile;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    [self _setupData];
 }
 
+- (void)_setupData {
+    if (_userProfileModel) {
+        addressNameTXT.text = _userProfileModel.nameOfUserAddress1;
+        countryTXT.text = _userProfileModel.nameOfUserCountry;
+        address2TXT.text = _userProfileModel.nameOfUserAddress2;
+        phoneNameTXT.text = _userProfileModel.numberOfUserPhone;
+        emailNameTXT.text = _userProfileModel.nameOfUserEmail;
+        cityTXT.text = _userProfileModel.nameOfUserCity;
+        regionStateTXT.text = _userProfileModel.nameOfUserRegion;
+        NSString *phone = [self _getPhoneCode:_userProfileModel.nameOfUserCountryCode];
+        _indexActtionCountryCode = [self _getPhoneCodeForString:phone];
+        [dropListCountryCode setTitle:phone forState:UIControlStateNormal];
+    }
+}
 #pragma mark - Set Get
 
-- (void)setDicProfile:(NSDictionary *)dicProfile {
-    _dicProfile = dicProfile;
-    addressNameTXT.text = [_dicProfile valueForKey:KADDRESS];
-    countryTXT.text = [_dicProfile valueForKey:KCOUNTRY];
-    address2TXT.text = [_dicProfile valueForKey:KADDRESS2];
-    phoneNameTXT.text = [_dicProfile valueForKey:kNUM_CELL_PHONE];
-    emailNameTXT.text = [_dicProfile valueForKey:KEMAIL];
-    cityTXT.text = [_dicProfile valueForKey:KCITY];
-    regionStateTXT.text = [_dicProfile valueForKey:KSATE];
-    NSString *phone = [self _getPhoneCode:[_dicProfile valueForKey:kNUM_COUNTRY]];
-    _indexActtionCountryCode = [self _getPhoneCodeForString:phone];
-    [dropListCountryCode setTitle:phone forState:UIControlStateNormal];
+-(void)setAboutUserModel:(COUserProfileModel *)aboutUserModel {
+    _aboutUserModel = aboutUserModel;
+    if (_aboutUserModel) {
+        self.userProfileModel = _aboutUserModel;
+    }
+}
+
+- (void)setUserProfileModel:(id<COUserAboutProfile>)userProfileModel {
+    _userProfileModel = userProfileModel;
 }
 
 - (NSArray*)arrayCountryCode {
@@ -69,10 +83,6 @@
     return _arrayCountryCode;
 }
 
-- (void)setProfileObject:(COListProfileObject *)profileObject {
-    _profileObject = profileObject;
-}
-
 - (NSMutableDictionary*)_getAccessToken {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
@@ -80,23 +90,22 @@
     return dic;
 }
 
-
 - (NSDictionary*)_getProfileObject {
     NSString *phone = [self.arrayCountryCode[_indexActtionCountryCode] valueForKey:@"code"];
     NSMutableDictionary *obj = [[NSMutableDictionary alloc]init];
-    
-    [obj setValue:self.profileObject.username forKey:kUSER];
-    [obj setValue:self.profileObject.first_name forKey:KFRIST_NAME];
-    [obj setValue:self.profileObject.last_name forKey:KLAST_NAME];
-    [obj setValue:phone forKey:kNUM_COUNTRY];
-    [obj setValue:phoneNameTXT.text forKey:kNUM_CELL_PHONE];
-    [obj setValue:addressNameTXT.text  forKey:KADDRESS];
+    [obj setValue:self.userProfileModel.nameOfUserName forKey:kUSER];
+    [obj setValue:self.userProfileModel.nameOfUserFirstName forKey:KFRIST_NAME];
+    [obj setValue:self.userProfileModel.nameOfUserLastName forKey:KLAST_NAME];
     [obj setValue:emailNameTXT.text forKey:KEMAIL];
-    [obj setValue:cityTXT.text forKey:KCITY];
-    [obj setValue:countryTXT.text forKey:KCOUNTRY];
-    [obj setValue:address2TXT.text forKey:KADDRESS2];
-    [obj setValue:regionStateTXT.text forKey:KSATE];
-    
+    NSMutableDictionary *pro = [[NSMutableDictionary alloc] init];
+    [pro setValue:phone forKey:kNUM_COUNTRY];
+    [pro setValue:phoneNameTXT.text forKey:kNUM_CELL_PHONE];
+    [pro setValue:addressNameTXT.text  forKey:KADDRESS];
+    [pro setValue:cityTXT.text forKey:KCITY];
+    [pro setValue:countryTXT.text forKey:KCOUNTRY];
+    [pro setValue:address2TXT.text forKey:KADDRESS2];
+    [pro setValue:regionStateTXT.text forKey:KSATE];
+    [obj setValue:pro forKey:kPROFILE];
     return obj;
 }
 
@@ -188,8 +197,11 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _getAccessToken] body:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
+            [self _setDataWithObject:responseObject];
+            if ([self.delegate respondsToSelector:@selector(editAboutProfile:)]) {
+                [self.delegate editAboutProfile:self];
+            }
             [self dismissViewControllerAnimated:YES completion:nil];
-            [self _zipDataProfile:responseObject];
         }else {
             [UIHelper showError:error];
         }
@@ -197,53 +209,32 @@
     }];
 }
 
-- (void)_zipDataProfile:(NSDictionary*)dic {
-    NSMutableDictionary *dicPro = [NSMutableDictionary new];
-    if ([dic objectForKeyNotNull:@"username"]) {
-        dicPro[kUSER] = [dic objectForKeyNotNull:@"username"];
+- (void)_setDataWithObject:(NSDictionary *)dic {
+    if ([dic objectForKeyNotNull:KEMAIL]) {
+        [self.aboutUserModel setNameOfUserEmail:[dic objectForKeyNotNull:KEMAIL]];
     }
-    
-    if ([dic objectForKeyNotNull:@"first_name"]) {
-       dicPro[KFRIST_NAME] = [dic objectForKeyNotNull:@"first_name"];
+    if ([dic objectForKeyNotNull:kNUM_COUNTRY]) {
+        [self.aboutUserModel setNameOfUserCountryCode:[dic objectForKeyNotNull:kNUM_COUNTRY]];
     }
-    
-    if ([dic objectForKeyNotNull:@"last_name"]) {
-        dicPro[KLAST_NAME] = [dic objectForKeyNotNull:@"last_name"];
+    if ([dic objectForKeyNotNull:kNUM_CELL_PHONE]) {
+    [self.aboutUserModel setNumberOfUserPhone:[dic objectForKeyNotNull:kNUM_CELL_PHONE]];
     }
-    
-    if ([dic objectForKeyNotNull:@"email"]) {
-        dicPro[KEMAIL] = [dic objectForKeyNotNull:@"email"];
+    if ([dic objectForKeyNotNull:KADDRESS]) {
+    [self.aboutUserModel setNameOfUserAddress1:[dic objectForKeyNotNull:KADDRESS]];
     }
-    
-    if ([dic objectForKeyNotNull:@"cellphone"]) {
-        dicPro[kNUM_CELL_PHONE] = [dic objectForKeyNotNull:@"cellphone"];
+    if ([dic objectForKeyNotNull:KADDRESS2]) {
+    [self.aboutUserModel setNameOfUserAddress2:[dic objectForKeyNotNull:KADDRESS2]];
     }
-    
-    if ([dic objectForKeyNotNull:@"country_prefix"]) {
-        dicPro[kNUM_COUNTRY] = [dic objectForKeyNotNull:@"country_prefix"];
+    if ([dic objectForKeyNotNull:KCITY]) {
+    [self.aboutUserModel setNameOfUserCity:[dic objectForKeyNotNull:KCITY]];
     }
-    
-    if ([dic objectForKeyNotNull:@"address_1"]) {
-       dicPro[KADDRESS] = [dic objectForKeyNotNull:@"address_1"];
+    if ([dic objectForKeyNotNull:KSATE]) {
+    [self.aboutUserModel setNameOfUserRegion:[dic objectForKeyNotNull:KSATE]];
     }
-    
-    if ([dic objectForKeyNotNull:@"address_2"]) {
-        dicPro[KADDRESS2] = [dic objectForKeyNotNull:@"address_2"];
+    if ([dic objectForKeyNotNull:KCOUNTRY]) {
+    [self.aboutUserModel setNameOfUserCountry:[dic objectForKeyNotNull:KCOUNTRY]];
     }
-    
-    if ([dic objectForKeyNotNull:@"region_state"]) {
-        dicPro[KSATE] = [dic objectForKeyNotNull:@"region_state"];
-    }
-    
-    if ([dic objectForKeyNotNull:@"city"]) {
-         dicPro[KCITY] = [dic objectForKeyNotNull:@"city"];
-    }
-    
-    if ([dic objectForKeyNotNull:@"country"]) {
-        dicPro[KCOUNTRY] = [dic objectForKeyNotNull:@"country"];
-    }
-    [kUserDefaults setObject:dicPro forKey:kPROFILE_OBJECT];
-    [kUserDefaults synchronize];
+
 }
 
 #pragma mark - Action
@@ -251,9 +242,6 @@
 - (void)__actionDone:(id)sender {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     if ([self _isValidation]) {
-        if ([self.delegate respondsToSelector:@selector(editAboutProfile:profileUpdate:)]) {
-            [self.delegate editAboutProfile:self profileUpdate:[self _getProfileObject]];
-        }
         [self _callWSUpdateProfile];
     }
 }

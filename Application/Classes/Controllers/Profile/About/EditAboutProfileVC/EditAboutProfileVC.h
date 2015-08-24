@@ -7,21 +7,21 @@
 //
 
 #import "BaseViewController.h"
-#import "COListProfileObject.h"
+#import "COUserData.h"
+#import "COUserProfileModel.h"
 
 @protocol EditAboutProfileVCDelegate;
 
 @interface EditAboutProfileVC : BaseViewController
 
-@property (strong, nonatomic) COListProfileObject *profileObject;
-@property (strong, nonatomic) NSDictionary *dicProfile;
 @property (weak, nonatomic) id<EditAboutProfileVCDelegate> delegate;
+@property (strong, nonatomic) COUserProfileModel *aboutUserModel;
 
 @end
 
 @protocol EditAboutProfileVCDelegate <NSObject>
 
 @optional
-- (void)editAboutProfile:(EditAboutProfileVC*)editAboutProfileVC profileUpdate:(NSDictionary*)profileUpdate;
+- (void)editAboutProfile:(EditAboutProfileVC*)editAboutProfileVC;
 
 @end
