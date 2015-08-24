@@ -47,9 +47,14 @@
                     NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
                     [kUserDefaults setObject:data forKey:kPROFILE_JSON];
                     [kUserDefaults synchronize];
-                }
-                if (handler) {
-                    handler(responseObject,response,nil);
+                    if (handler) {
+                        handler(responseObject,response,nil);
+                    }
+
+                } else {
+                    if (handler) {
+                        handler(nil,response,error);
+                    }
                 }
             }];
 

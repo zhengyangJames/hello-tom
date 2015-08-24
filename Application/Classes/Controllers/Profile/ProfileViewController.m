@@ -132,10 +132,12 @@ TableBottomViewCellDelegate>
 - (COUserProfileModel *)userModel {
     if (!_userModel) {
         NSData *data = [kUserDefaults objectForKey:kPROFILE_JSON];
-        NSError *error = nil;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        COUserProfileModel *model =  [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:json error:&error];
-        return _userModel = model;
+        if (data) {
+            NSError *error = nil;
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            COUserProfileModel *model =  [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:json error:&error];
+            return _userModel = model;
+        }
     }
     return _userModel;
 }
@@ -312,12 +314,14 @@ TableBottomViewCellDelegate>
 }
 
 - (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC{
-        _userModel = nil;
-        NSData *data = [kUserDefaults objectForKey:kPROFILE_JSON];
+    _userModel = nil;
+    NSData *data = [kUserDefaults objectForKey:kPROFILE_JSON];
+    if (data) {
         NSError *error = nil;
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         COUserProfileModel *model =  [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:json error:&error];
         self.userModel = model;
+    }
 }
 
 - (void)tableHeaderView:(TableHeaderView *)tableHeaderView indexSelectSegment:(NSInteger)indexSelect {

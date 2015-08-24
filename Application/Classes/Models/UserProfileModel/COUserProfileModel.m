@@ -9,6 +9,7 @@
 #import "COUserProfileModel.h"
 #import "COUserTokensModel.h"
 #import "COUserProfileDetailModel.h"
+#import "COUserAccountModel.h"
 
 @implementation COUserProfileModel
 
@@ -23,6 +24,10 @@
         @"userProfile"      : @"profile",
         @"userFirstName"    : @"first_name",
     };
+}
+
++ (NSValueTransformer *)userAccountJSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:COUserAccountModel.class];
 }
 
 + (NSValueTransformer *)userTokensJSONTransformer {

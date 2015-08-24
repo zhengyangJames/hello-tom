@@ -238,6 +238,7 @@
 		BB368EB21B87DF5C0066C646 /* COUserProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB11B87DF5C0066C646 /* COUserProfileModel.m */; };
 		BB368EB51B87E0E00066C646 /* COUserTokensModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB41B87E0E00066C646 /* COUserTokensModel.m */; };
 		BB368EB81B87E1F30066C646 /* COUserProfileDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */; };
+		BB383E2F1B8BC1B000303E34 /* COUserAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */; };
 		BB48F1A01B86763E006F1921 /* COFilterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB48F19F1B86763E006F1921 /* COFilterListModel.m */; };
 		BB5B9A461B790F15002D37AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB5B9A451B790F15002D37AF /* Localizable.strings */; };
 		BB821DF51B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.m in Sources */ = {isa = PBXBuildFile; fileRef = BB821DF41B7A5A3F0040EDBF /* CODetailsProfileObj+Formater.m */; };
@@ -584,6 +585,8 @@
 		BB368EB61B87E1F30066C646 /* COUserProfileDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserProfileDetailModel.h; sourceTree = "<group>"; };
 		BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserProfileDetailModel.m; sourceTree = "<group>"; };
 		BB368EB91B87F3D60066C646 /* COUserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COUserData.h; sourceTree = "<group>"; };
+		BB383E2D1B8BC1B000303E34 /* COUserAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserAccountModel.h; sourceTree = "<group>"; };
+		BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserAccountModel.m; sourceTree = "<group>"; };
 		BB48F19E1B86763E006F1921 /* COFilterListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFilterListModel.h; sourceTree = "<group>"; };
 		BB48F19F1B86763E006F1921 /* COFilterListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFilterListModel.m; sourceTree = "<group>"; };
 		BB5B9A451B790F15002D37AF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -1499,6 +1502,8 @@
 			children = (
 				BB368EB01B87DF5C0066C646 /* COUserProfileModel.h */,
 				BB368EB11B87DF5C0066C646 /* COUserProfileModel.m */,
+				BB383E2D1B8BC1B000303E34 /* COUserAccountModel.h */,
+				BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */,
 				BB368EB31B87E0E00066C646 /* COUserTokensModel.h */,
 				BB368EB41B87E0E00066C646 /* COUserTokensModel.m */,
 				BB368EB61B87E1F30066C646 /* COUserProfileDetailModel.h */,
@@ -1855,6 +1860,7 @@
 				7F187A1D1B7C51EB0072423D /* CODetailsProfileObj+Mapping.m in Sources */,
 				012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */,
 				7F325F791B40E50800116445 /* AppDelegate.m in Sources */,
+				BB383E2F1B8BC1B000303E34 /* COUserAccountModel.m in Sources */,
 				0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */,
 				7FA7E6B91B4E7C4D00059B13 /* COInterestedViewController.m in Sources */,
 				7F325FAA1B40E50800116445 /* CompanyTableViewCell.m in Sources */,
