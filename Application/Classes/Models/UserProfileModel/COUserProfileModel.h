@@ -15,6 +15,8 @@
 
 @interface COUserProfileModel : MTLModel<MTLJSONSerializing,COUserFirstName,COUserLastName,COUserEmail,COUserPhone,COUserAboutProfile>
 
+@property (nonatomic, strong) NSString                  *userAccessToken;
+@property (nonatomic, strong) NSString                  *userTokenType;
 @property (nonatomic, strong) COUserAccountModel        *userAccount;
 @property (nonatomic, strong) COUserTokensModel         *userTokens;
 @property (nonatomic, strong) NSNumber                  *userId;
@@ -23,4 +25,9 @@
 @property (nonatomic, strong) NSString                  *userEmail;
 @property (nonatomic, strong) COUserProfileDetailModel  *userProfile;
 @property (nonatomic, strong) NSString                  *userFirstName;
+
+- (void)setValueAccessToken:(NSString *)string;
+- (void)setValueTokenType:(NSString *)string;
+- (NSString *)stringOfAccessToken;
+- (NSString *)stringOfTokenTye;
 @end

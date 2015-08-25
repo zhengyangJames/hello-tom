@@ -21,6 +21,7 @@
 #import "COProjectModel.h"
 #import "COProjectFundedAmountModel.h"
 #import "COFilterListModel.h"
+#import "COLoginManager.h"
 
 typedef NS_ENUM(NSInteger, FilterType) {
     FilterBullkType,
@@ -150,9 +151,16 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
          if (self.arrayListFilter && self.arrayListFilter.count > 0) {
              self.filterItem = self.arrayListFilter[index];
         }
-         self.arrayData = nil;
-         [_tableView reloadData];
-         _leftButton.enabled = NO;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            if (self.arrayData && self.arrayData.count > 0) {
+                self.arrayData = nil;
+                [_tableView reloadData];
+                
+            } else {
+                _noDataView.hidden = YES;
+            }
+            _leftButton.enabled = NO;
+        }];
          [self _callWSGetListOfferFilter:self.filterItem.filterValue];
     }];
 }
@@ -238,7 +246,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+    if (![[COLoginManager shared] getAccessToken]) {
         LoginViewController *vcLogin = [[LoginViewController alloc]init];
         vcLogin.delegate = self;
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];

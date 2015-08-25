@@ -79,6 +79,7 @@
 #pragma mark - STRING
 ///////////////////////////////////////////////////////////////////
 #define kPROFILE_JSON                               @"PROFILE_JSON"
+#define kPROFILE_TOKEN_JSON                               @"PROFILE_TOKEN_JSON"
 #define kPROFILE_OBJECT                             @"PROFILE_OBJECT"
 #define kUPDATE_PROFILE                             @"UpdateProfile"
 #define kACCESS_TOKEN                               @"access_token"
@@ -99,7 +100,6 @@
 #define KIMAGE                                      @"image"
 #define kNUM_COUNTRY                                @"country_prefix"
 #define kNUM_CELL_PHONE                             @"cellphone"
-#define KDEFAULT_LOGIN                              @"DefaultLogin"
 #define KCITY                                       @"city"
 #define KSATE                                       @"region_state"
 #define KCOUNTRY                                    @"country"

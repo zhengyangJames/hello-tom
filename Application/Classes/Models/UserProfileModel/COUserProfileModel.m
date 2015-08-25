@@ -37,6 +37,22 @@
 + (NSValueTransformer *)userProfileJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:COUserProfileDetailModel.class];
 }
+#pragma mark - setter, getter
+- (void)setValueAccessToken:(NSString *)string {
+    self.userAccessToken = string;
+}
+
+- (void)setValueTokenType:(NSString *)string {
+    self.userTokenType = string;
+}
+
+- (NSString *)stringOfAccessToken {
+    return self.userAccessToken;
+}
+
+- (NSString *)stringOfTokenTye {
+    return self.userTokenType;
+}
 
 #pragma mark - user first name protocol
 

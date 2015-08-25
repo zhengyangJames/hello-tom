@@ -14,6 +14,7 @@
 #import "WSURLSessionManager+Profile.h"
 #import "COUserProfileModel.h"
 #import "COUserProfileDetailModel.h"
+#import "COLoginManager.h"
 
 @interface EditAboutProfileVC () <UIAlertViewDelegate>
 {
@@ -50,6 +51,7 @@
 }
 
 - (void)_setupData {
+    self.userProfileModel = self.aboutUserModel;
     if (_userProfileModel) {
         addressNameTXT.text = _userProfileModel.nameOfUserAddress1;
         countryTXT.text = _userProfileModel.nameOfUserCountry;
@@ -65,11 +67,11 @@
 }
 #pragma mark - Set Get
 
--(void)setAboutUserModel:(COUserProfileModel *)aboutUserModel {
-    _aboutUserModel = aboutUserModel;
+- (COUserProfileModel *)aboutUserModel {
     if (_aboutUserModel) {
-        self.userProfileModel = _aboutUserModel;
+       return _aboutUserModel;
     }
+    return _aboutUserModel = [[COLoginManager shared] userModel];
 }
 
 - (void)setUserProfileModel:(id<COUserAboutProfile>)userProfileModel {
@@ -81,13 +83,6 @@
         return _arrayCountryCode = [LoadFileManager loadFileJsonWithName:@"JsonPhoneCode"];
     }
     return _arrayCountryCode;
-}
-
-- (NSMutableDictionary*)_getAccessToken {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
-    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
-    return dic;
 }
 
 - (NSDictionary*)_getProfileObject {
@@ -195,7 +190,7 @@
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[self _getAccessToken] body:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[[COLoginManager shared] getAccessToken] body:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 if ([self.delegate respondsToSelector:@selector(editAboutProfile:)]) {
@@ -239,5 +234,5 @@
     [_currentField becomeFirstResponder];
    _currentField = nil;
 }
-
+@synthesize aboutUserModel = _aboutUserModel;
 @end

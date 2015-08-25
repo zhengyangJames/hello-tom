@@ -40,41 +40,45 @@
 }
 
 + (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton delegate:(id)delegate tag:(NSInteger)tag arrayTitleButton:(NSArray *)arrayTitel {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title
-                                                   message: message
-                                                  delegate: delegate
-                                         cancelButtonTitle:cancelButton
-                                         otherButtonTitles: nil];
-    alert.tag = tag;
-    for (NSInteger i = 0; i< arrayTitel.count; i++) {
-        NSString *title_ = [arrayTitel objectAtIndex:i];
-        [alert addButtonWithTitle:title_];
-    }
-    [alert show];
-    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title
+                                                       message: message
+                                                      delegate: delegate
+                                             cancelButtonTitle:cancelButton
+                                             otherButtonTitles: nil];
+        alert.tag = tag;
+        for (NSInteger i = 0; i< arrayTitel.count; i++) {
+            NSString *title_ = [arrayTitel objectAtIndex:i];
+            [alert addButtonWithTitle:title_];
+        }
+        [alert show];
+    }];
 }
 
 + (void)showAlertViewErrorWithMessage:(NSString *)message delegate:(id)delegate tag:(NSInteger)tag {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
-                                                   message: message
-                                                  delegate: delegate
-                                         cancelButtonTitle:NSLocalizedString(@"OK_TITLE", nil)
-                                         otherButtonTitles: nil];
-    alert.tag = tag;
-    [alert show];
+   [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+       UIAlertView *alert = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
+                                                      message: message
+                                                     delegate: delegate
+                                            cancelButtonTitle:NSLocalizedString(@"OK_TITLE", nil)
+                                            otherButtonTitles: nil];
+       alert.tag = tag;
+       [alert show];
+   }];
 }
 
 
 + (void)showActionsheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButton destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonsTitle:(NSArray *)arrayTitle delegate:(id)delegate tag:(NSInteger)tag showInView:(UIView *)view {
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:delegate cancelButtonTitle:cancelButton destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:nil];
-    actionSheet.tag = tag;
-    
-    for (NSInteger i = 0; i < arrayTitle.count; i++) {
-        NSString *titleButton = [arrayTitle objectAtIndex:i];
-        [actionSheet addButtonWithTitle:titleButton];
-    }
-    [actionSheet showInView:view];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:delegate cancelButtonTitle:cancelButton destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:nil];
+        actionSheet.tag = tag;
+        
+        for (NSInteger i = 0; i < arrayTitle.count; i++) {
+            NSString *titleButton = [arrayTitle objectAtIndex:i];
+            [actionSheet addButtonWithTitle:titleButton];
+        }
+        [actionSheet showInView:view];
+    }];
 }
 
 + (void)showError:(NSError *)error {

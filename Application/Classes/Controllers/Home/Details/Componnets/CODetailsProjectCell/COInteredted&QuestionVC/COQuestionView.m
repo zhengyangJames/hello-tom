@@ -8,6 +8,7 @@
 
 #import "COQuestionView.h"
 #import "WSURLSessionManager+ListHome.h"
+#import "COLoginManager.h"
 
 @interface COQuestionView ()<UIAlertViewDelegate>
 {
@@ -27,7 +28,7 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+    if (![[COLoginManager shared] getAccessToken]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }

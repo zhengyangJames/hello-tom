@@ -12,6 +12,7 @@
 #import "KLCPopup.h"
 #import "COPopupInteredtedView.h"
 #import "COCheckBoxButton.h"
+#import "COLoginManager.h"
 
 @interface COInterestedViewController () <UIAlertViewDelegate,COCheckBoxButtonDelegate>
 {
@@ -38,7 +39,7 @@
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+    if (![[COLoginManager shared] getAccessToken]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }

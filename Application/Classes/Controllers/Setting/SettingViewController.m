@@ -11,6 +11,7 @@
 #import "ContacViewController.h"
 #import "WebViewSetting.h"
 #import "LoginViewController.h"
+#import "COLoginManager.h"
 
 @interface SettingViewController () <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,LoginViewControllerDelegate>
 {
@@ -37,7 +38,7 @@
     _webViewSetting = nil;
     [kUserDefaults setObject:@"2" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+    if (![[COLoginManager shared] getAccessToken]) {
         [self _replaceArraySettingLogOut];
     } else {
         [self _replaceArraySettingLogin];
@@ -127,7 +128,7 @@
 }
 
 - (void)_setupLoginAndLogout {
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+    if (![[COLoginManager shared] getAccessToken]) {
         [self _logginApllication];
     } else {
         [UIHelper showAlertViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil) message:NSLocalizedString(@"MESSAGE_LOGOUT", nil) cancelButton:NSLocalizedString(@"CANCEL_TITLE", nil) delegate:self tag:0 arrayTitleButton:@[NSLocalizedString(@"OK_TITLE", nil)]];
@@ -163,7 +164,8 @@
     }
     self.arraySetting = arr;
     [_tableView reloadData];
-    [kUserDefaults removeObjectForKey:KDEFAULT_LOGIN];
+    [kUserDefaults removeObjectForKey:kPROFILE_TOKEN_JSON];
+    [kUserDefaults removeObjectForKey:kPROFILE_JSON];
     [kUserDefaults removeObjectForKey:kACCESS_TOKEN];
     [kUserDefaults removeObjectForKey:kTOKEN_TYPE];
     [kUserDefaults removeObjectForKey:kPROFILE_OBJECT];

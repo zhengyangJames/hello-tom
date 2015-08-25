@@ -13,6 +13,7 @@
 #import "ProfileViewController.h"
 #import "HomeListViewController.h"
 #import "SettingViewController.h"
+#import "COLoginManager.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate>
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
@@ -109,7 +110,7 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 1) {
-        if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+        if (![[COLoginManager shared] getAccessToken]) {
             [self _setUpLogginVC];
             [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
         }

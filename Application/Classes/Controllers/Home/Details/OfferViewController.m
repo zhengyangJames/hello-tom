@@ -18,6 +18,7 @@
 #import "WebViewManager.h"
 #import "COOfferModel.h"
 #import "COProjectModel.h"
+#import "COLoginManager.h"
 
 @interface OfferViewController ()<UIGestureRecognizerDelegate,DetailsDataSourceViewDelegate,CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 {
@@ -50,7 +51,7 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+    if (![[COLoginManager shared] getAccessToken]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }
