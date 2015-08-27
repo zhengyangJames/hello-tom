@@ -13,10 +13,11 @@
 typedef void(^ActionLoginManager)(id object,BOOL sucess);
 
 @interface COLoginManager : NSObject
+
 + (id)shared;
-- (void)callAPILogin:(NSDictionary*)param actionLoginManager:(ActionLoginManager)actionLoginManager;
-- (void)callWSGetListProfile:(ActionLoginManager)actionLoginManager;
+
 @property (nonatomic, strong) COUserProfileModel *userModel;
-- (COUserProfileModel *)reloadDataModel;
-- (NSDictionary *)getAccessToken;
+
+- (void)callAPILogin:(ActionLoginManager)actionLoginManager;
+- (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager;
 @end

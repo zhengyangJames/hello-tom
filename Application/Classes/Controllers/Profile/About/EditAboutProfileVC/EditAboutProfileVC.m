@@ -15,6 +15,7 @@
 #import "COUserProfileModel.h"
 #import "COUserProfileDetailModel.h"
 #import "COLoginManager.h"
+#import "COUserProfileModel.h"
 
 @interface EditAboutProfileVC () <UIAlertViewDelegate>
 {
@@ -66,13 +67,6 @@
     }
 }
 #pragma mark - Set Get
-
-- (COUserProfileModel *)aboutUserModel {
-    if (_aboutUserModel) {
-       return _aboutUserModel;
-    }
-    return _aboutUserModel = [[COLoginManager shared] userModel];
-}
 
 - (void)setUserProfileModel:(id<COUserAboutProfile>)userProfileModel {
     _userProfileModel = userProfileModel;
@@ -190,7 +184,7 @@
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:[[COLoginManager shared] getAccessToken] body:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:self.aboutUserModel body:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 if ([self.delegate respondsToSelector:@selector(editAboutProfile:)]) {
@@ -204,7 +198,6 @@
         [UIHelper hideLoadingFromView:self.view];
     }];
 }
-
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {

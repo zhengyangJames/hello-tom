@@ -38,7 +38,7 @@
     _webViewSetting = nil;
     [kUserDefaults setObject:@"2" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
-    if (![[COLoginManager shared] getAccessToken]) {
+    if (![kUserDefaults objectForKey:kUSER]) {
         [self _replaceArraySettingLogOut];
     } else {
         [self _replaceArraySettingLogin];
@@ -128,7 +128,7 @@
 }
 
 - (void)_setupLoginAndLogout {
-    if (![[COLoginManager shared] getAccessToken]) {
+    if (![kUserDefaults objectForKey:kUSER]) {
         [self _logginApllication];
     } else {
         [UIHelper showAlertViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil) message:NSLocalizedString(@"MESSAGE_LOGOUT", nil) cancelButton:NSLocalizedString(@"CANCEL_TITLE", nil) delegate:self tag:0 arrayTitleButton:@[NSLocalizedString(@"OK_TITLE", nil)]];
@@ -169,6 +169,8 @@
     [kUserDefaults removeObjectForKey:kACCESS_TOKEN];
     [kUserDefaults removeObjectForKey:kTOKEN_TYPE];
     [kUserDefaults removeObjectForKey:kPROFILE_OBJECT];
+    [kUserDefaults removeObjectForKey:kUSER];
+    [kUserDefaults removeObjectForKey:kPASSWORD];
     [kUserDefaults synchronize];
 }
 

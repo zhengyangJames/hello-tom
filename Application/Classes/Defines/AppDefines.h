@@ -81,6 +81,7 @@
 #define kPROFILE_JSON                               @"PROFILE_JSON"
 #define kPROFILE_TOKEN_JSON                               @"PROFILE_TOKEN_JSON"
 #define kPROFILE_OBJECT                             @"PROFILE_OBJECT"
+#define kTOKEN_OBJECT                               @"token_object"
 #define kUPDATE_PROFILE                             @"UpdateProfile"
 #define kACCESS_TOKEN                               @"access_token"
 #define kTOKEN_TYPE                                 @"token_type"

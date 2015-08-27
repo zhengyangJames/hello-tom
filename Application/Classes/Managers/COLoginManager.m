@@ -12,11 +12,6 @@
 #import "COListProfileObject.h"
 #import "COUserProfileModel.h"
 
-@interface COLoginManager()
-
-@property (nonatomic, strong) NSDictionary *dictionToken;
-@end
-
 @implementation COLoginManager
 
 + (id)shared {
@@ -28,18 +23,21 @@
     return instance;
 }
 
-- (void)callAPILogin:(NSDictionary*)param actionLoginManager:(ActionLoginManager)actionLoginManager {
-    self.dictionToken = [[NSDictionary alloc] init];
-    [[WSURLSessionManager shared] wsLoginWithUser:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+- (void)callAPILogin:(ActionLoginManager)actionLoginManager {
+    [[WSURLSessionManager shared] wsLoginWithUserHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
-            NSError *error;
-            NSDictionary *dic = responseObject;
-            NSData *dataToken = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
-            [kUserDefaults setObject:dataToken forKey:kPROFILE_TOKEN_JSON];
-            [kUserDefaults synchronize];
-            [self callWSGetListProfile:^(id object,BOOL sucess){
+            [self tokenObject:responseObject callWSGetListProfile:^(id object,BOOL sucess){
+                if ([object isKindOfClass:[NSDictionary class]] && sucess) {
+                    NSError *error;
+                    COUserProfileModel *userProModel = [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:object error:&error];
+                    _userModel = userProModel;
+                    NSDictionary *dic = object;
+                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
+                    [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+                    [kUserDefaults synchronize];
+                }
                 if (actionLoginManager) {
-                    actionLoginManager(object,sucess);
+                    actionLoginManager(object,YES);
                 }
             }];
         } else {
@@ -50,29 +48,9 @@
     }];
 }
 
-- (NSDictionary*)getAccessToken {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    NSData *dataToken = [kUserDefaults objectForKey:kPROFILE_TOKEN_JSON];
-    if (dataToken) {
-        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:dataToken options:kNilOptions error:nil];
-        if (jsonDic) {
-            [dic setObject:[jsonDic objectForKey:kACCESS_TOKEN] forKey:kACCESS_TOKEN];
-            [dic setObject:[jsonDic objectForKey:kTOKEN_TYPE] forKey:kTOKEN_TYPE];
-        }
-        return dic;
-    }
-    return nil;
-}
-
-- (void)callWSGetListProfile:(ActionLoginManager)actionLoginManager {
-    [[WSURLSessionManager shared] wsGetProfileWithUserToken:[self getAccessToken] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+- (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager {
+    [[WSURLSessionManager shared] wsGetProfileWithUserToken:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            NSDictionary *dic = responseObject;
-            NSError *error;
-            NSData *dataProfile = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
-            [kUserDefaults setObject:dataProfile forKey:kPROFILE_JSON];
-            [kUserDefaults synchronize];
-            [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
             if (actionLoginManager) {
                 actionLoginManager(responseObject,YES);
             }
@@ -87,35 +65,20 @@
 - (COUserProfileModel *)userModel {
     if (_userModel) {
         return _userModel;
-    } else {
-        return _userModel = [self _getData];
+    }
+    NSError *error;
+    if ([kUserDefaults objectForKey:kPROFILE_JSON]) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:kPROFILE_JSON] options:0 error:&error];
+        if (dic) {
+            COUserProfileModel *userProModel = [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:dic error:&error];
+            return _userModel = userProModel;
+        }
     }
     return nil;
 }
 
-- (COUserProfileModel *)reloadDataModel {
-    if (self.userModel) {
-        self.userModel = nil;
-    }
-    return _userModel = [self _getData];
+- (void)setUserModel:(COUserProfileModel *)userModel {
+    _userModel = userModel;
 }
-
-- (COUserProfileModel *)_getData {
-    COUserProfileModel *model;
-    NSData *dataProfile = [kUserDefaults objectForKey:kPROFILE_JSON];
-    if (dataProfile) {
-        NSError *error = nil;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:dataProfile options:kNilOptions error:nil];
-        model =  [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:json error:&error];
-    }
-    NSData *dataToken = [kUserDefaults objectForKey:kPROFILE_TOKEN_JSON];
-    if (dataToken) {
-        NSError *error = nil;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:dataToken options:kNilOptions error:nil];
-        COUserProfileModel *modelToken =  [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:json error:&error];
-        [model setValueAccessToken:modelToken.stringOfAccessToken];
-        [model setValueTokenType:modelToken.stringOfTokenTye];
-    }
-    return model;
-}
+@synthesize userModel = _userModel;
 @end

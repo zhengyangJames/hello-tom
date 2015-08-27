@@ -110,7 +110,9 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 1) {
-        if (![[COLoginManager shared] getAccessToken]) {
+        if (![kUserDefaults objectForKey:kUSER]) {
+            [[COLoginManager shared] callAPILogin:^(id object, BOOL sucess) {
+            }];
             [self _setUpLogginVC];
             [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
         }

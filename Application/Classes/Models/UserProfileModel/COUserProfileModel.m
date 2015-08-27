@@ -15,6 +15,11 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
+        @"userRefreshToken" :@"refresh_toke",
+        @"userScope"        :@"scope",
+        @"userTokenType"    :@"token_type",
+        @"userAccessToken"  :@"access_token",
+        @"userExpriesIn"    :@"expires_in",
         @"userAccount"      : @"account",
         @"userTokens"       : @"tokens",
         @"userId"           : @"id",
@@ -37,23 +42,13 @@
 + (NSValueTransformer *)userProfileJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:COUserProfileDetailModel.class];
 }
-#pragma mark - setter, getter
-- (void)setValueAccessToken:(NSString *)string {
-    self.userAccessToken = string;
-}
-
-- (void)setValueTokenType:(NSString *)string {
-    self.userTokenType = string;
-}
 
 - (NSString *)stringOfAccessToken {
     return self.userAccessToken;
 }
-
-- (NSString *)stringOfTokenTye {
+- (NSString *)stringOfTokenType {
     return self.userTokenType;
 }
-
 #pragma mark - user first name protocol
 
 - (NSString *)firstNameTitle {

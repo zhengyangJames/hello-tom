@@ -28,7 +28,7 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    if (![[COLoginManager shared] getAccessToken]) {
+    if (![kUserDefaults objectForKey:kUSER]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }

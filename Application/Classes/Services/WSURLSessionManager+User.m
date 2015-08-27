@@ -7,11 +7,12 @@
 //
 
 #import "WSURLSessionManager+User.h"
+#import "COUserProfileModel.h"
 
 @implementation WSURLSessionManager (User)
 
-- (void)wsLoginWithUser:(NSDictionary*)param handler:(WSURLSessionHandler)handler {
-    NSString *postString = [self paramsToString:param];
+- (void)wsLoginWithUserHandler:(WSURLSessionHandler)handler {
+    NSString *postString = [self paramsToString:[self _creatUserInfo]];
     NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_POST_LOGIN body:body httpMethod:METHOD_POST];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
@@ -63,8 +64,8 @@
     }];
 }
 
-- (void)wsChangePassword:(NSDictionary*)paramToken body:(NSDictionary*)body handler:(WSURLSessionHandler)handler {
-    NSString *value = [NSString stringWithFormat:@"%@ %@",[paramToken  valueForKey:kTOKEN_TYPE],[paramToken valueForKey:kACCESS_TOKEN]];
+- (void)wsChangePassword:(COUserProfileModel *)paramToken body:(NSDictionary*)body handler:(WSURLSessionHandler)handler {
+    NSString *value = [NSString stringWithFormat:@"%@ %@",paramToken.stringOfTokenType,paramToken.stringOfAccessToken];
     NSString *postString = [self paramsToString:body];
     NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_POST_CHANGE_PASSWORD
@@ -83,5 +84,21 @@
         }
     }];
 }
-
+- (NSMutableDictionary*)_creatUserInfo {
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    param[kCLIENT_ID] = CLIENT_ID;
+    param[kCLIENT_SECRECT] = CLIENT_SECRECT;
+    param[kGRANT_TYPE] = GRANT_TYPE;
+    if (![kUserDefaults objectForKey:kUSER]) {
+        param[kUSER] = @"";
+    } else {
+        param[kUSER] = [kUserDefaults objectForKey:kUSER];
+    }
+    if (![kUserDefaults objectForKey:kPASSWORD]) {
+        param[kPASSWORD] = @"";
+    } else {
+        param[kPASSWORD] = [kUserDefaults objectForKey:kPASSWORD];
+    }
+    return param;
+}
 @end

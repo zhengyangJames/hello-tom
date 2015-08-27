@@ -9,6 +9,8 @@
 #import "WSURLSessionManager+Profile.h"
 #import "COListProfileObject.h"
 #import "COUserProfileModel.h"
+#import "WSURLSessionManager+User.h"
+#import "COLoginManager.h"
 
 @implementation WSURLSessionManager (Profile)
 
@@ -19,8 +21,11 @@
     [request setValue:value forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            NSMutableDictionary *mutaDic = [NSMutableDictionary dictionary];
+            [mutaDic addEntriesFromDictionary:paramToken];
+            [mutaDic addEntriesFromDictionary:responseObject];
             if (handler) {
-                handler(responseObject,response,nil);
+                handler(mutaDic,response,nil);
             }
         } else {
             if (handler) {
@@ -30,36 +35,23 @@
     }];
 }
 
-- (void)wsUpdateProfileWithUserToken:(NSDictionary *)paramToken body:(NSDictionary *)body handler:(WSURLSessionHandler)handler {
+- (void)wsUpdateProfileWithUserToken:(COUserProfileModel *)paramToken body:(NSDictionary *)body handler:(WSURLSessionHandler)handler {
     NSString *postString = [self paramsToString:body];
     NSData *paramBody = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *value = [NSString stringWithFormat:@"%@ %@",[paramToken  valueForKey:kTOKEN_TYPE],[paramToken valueForKey:kACCESS_TOKEN]];
+    NSString *value = [NSString stringWithFormat:@"%@ %@",paramToken.stringOfTokenType,paramToken.stringOfAccessToken];
     NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_GET_LIST_PROFIEL
                                                       body:paramBody
                                                 httpMethod:METHOD_PUT];
     [request setValue:value forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-            [self wsGetProfileWithUserToken:paramToken handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-                if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                        NSDictionary *dic = responseObject;
-                        NSError *error;
-                        NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
-                        [kUserDefaults setObject:data forKey:kPROFILE_JSON];
-                        [kUserDefaults synchronize];
-                    }];
+            [[COLoginManager shared] callAPILogin:^(id object, BOOL sucess) {
+                if (sucess && [object isKindOfClass:[NSDictionary class]]) {
                     if (handler) {
-                        handler(responseObject,response,nil);
-                    }
-
-                } else {
-                    if (handler) {
-                        handler(nil,response,error);
+                        handler(object,response,nil);
                     }
                 }
             }];
-
         } else {
             if (handler) {
                 handler(nil,response,error);
@@ -67,5 +59,28 @@
         }
     }];
 }
+- (NSMutableDictionary*)_createParamTokenWithModel:(COUserProfileModel *)model {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    dic[kACCESS_TOKEN] = model.stringOfAccessToken;
+    dic[kTOKEN_TYPE] = model.stringOfTokenType;
+    return dic;
+}
 
+- (NSMutableDictionary*)_creatUserInfo {
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    param[kCLIENT_ID] = CLIENT_ID;
+    param[kCLIENT_SECRECT] = CLIENT_SECRECT;
+    param[kGRANT_TYPE] = GRANT_TYPE;
+    if (![kUserDefaults objectForKey:kUSER]) {
+        param[kUSER] = @"";
+    } else {
+        param[kUSER] = [kUserDefaults objectForKey:kUSER];
+    }
+    if (![kUserDefaults objectForKey:kPASSWORD]) {
+        param[kPASSWORD] = @"";
+    } else {
+        param[kPASSWORD] = [kUserDefaults objectForKey:kPASSWORD];
+    }
+    return param;
+}
 @end

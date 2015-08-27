@@ -42,6 +42,7 @@
 #pragma mark - Private
 - (void)_login {
     [self _callWSLogin];
+    
 }
 
 - (NSMutableDictionary*)_creatUserInfo {
@@ -72,7 +73,9 @@
 #pragma mark - CallAPI
 - (void)_callWSLogin {
     [UIHelper showLoadingInView:self.view];
-    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
+    [kUserDefaults setObject:_userName.text forKey:kUSER];
+    [kUserDefaults setObject:_passWord.text forKey:kPASSWORD];
+    [[COLoginManager shared] callAPILogin:^(id object, BOOL sucess) {
         if (object && sucess) {
             if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];

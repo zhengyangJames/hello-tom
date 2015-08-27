@@ -246,7 +246,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (![[COLoginManager shared] getAccessToken]) {
+    if (![kUserDefaults objectForKey:kUSER]) {
         LoginViewController *vcLogin = [[LoginViewController alloc]init];
         vcLogin.delegate = self;
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];

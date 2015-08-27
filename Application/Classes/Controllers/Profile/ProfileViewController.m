@@ -99,18 +99,12 @@ TableBottomViewCellDelegate>
 - (void)_setupEditAboutProfileVC {
     EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
     vc.delegate = self;
+    vc.aboutUserModel = self.userModel;
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
 
 #pragma mark - Setter Getter
-
-- (NSMutableDictionary*)_setupAccessToken {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kACCESS_TOKEN] = [kUserDefaults valueForKey:kACCESS_TOKEN];
-    dic[kTOKEN_TYPE] = [kUserDefaults valueForKey:kTOKEN_TYPE];
-    return dic;
-}
 
 - (NSString*)_getPhoneCode:(NSString*)phoneCode {
     NSString *str = @"";
@@ -130,10 +124,10 @@ TableBottomViewCellDelegate>
 }
 
 - (COUserProfileModel *)userModel {
-    if (!_userModel) {
-            return _userModel = [[COLoginManager shared] userModel];
+    if (_userModel) {
+        return _userModel;
     }
-    return _userModel;
+    return _userModel = [[COLoginManager shared] userModel];
 }
 #pragma mark - Action
 - (void)__actionButtonUpdate:(NSString*)string {
@@ -153,7 +147,7 @@ TableBottomViewCellDelegate>
 
 - (void)_callWSChangePassword:(NSDictionary*)param {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsChangePassword:[self _setupAccessToken] body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsChangePassword:self.userModel body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_CHANGE_SUCCESSFULLY", nil) delegate:self tag:0];
         } else {
@@ -309,7 +303,7 @@ TableBottomViewCellDelegate>
 
 - (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC {
     _userModel = nil;
-    self.userModel = [[COLoginManager shared] reloadDataModel];
+
 }
 
 - (void)tableHeaderView:(TableHeaderView *)tableHeaderView indexSelectSegment:(NSInteger)indexSelect {
