@@ -13,7 +13,7 @@
 - (instancetype)initWithDictionary:(NSDictionary*)dic {
     self = [super init];
     if (self) {
-        self.username = [dic objectForKeyNotNull:kUSER];
+      //  self.username = [dic objectForKeyNotNull:kUSER];
         self.first_name = [dic objectForKeyNotNull:KFRIST_NAME];
         self.last_name = [dic objectForKeyNotNull:KLAST_NAME];
         self.email = [dic objectForKeyNotNull:KEMAIL];
@@ -31,7 +31,7 @@
 - (NSDictionary*)getProfileObject {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     if (self.username) {
-        dic[kUSER] = self.username ;
+    //    dic[kUSER] = self.username ;
     }
     if (self.first_name ) {
         dic[KFRIST_NAME] = self.first_name ;
@@ -67,9 +67,9 @@
 }
 
 - (void)setProfileObject:(NSDictionary*)dicObject {
-    if ([dicObject objectForKeyNotNull:kUSER]) {
-        self.username = [dicObject objectForKeyNotNull:kUSER];
-    }
+  //  if ([dicObject objectForKeyNotNull:kUSER]) {
+  //      self.username = [dicObject objectForKeyNotNull:kUSER];
+    //}
     if ([dicObject objectForKeyNotNull:KFRIST_NAME]) {
         self.first_name = [dicObject objectForKeyNotNull:KFRIST_NAME];
     }

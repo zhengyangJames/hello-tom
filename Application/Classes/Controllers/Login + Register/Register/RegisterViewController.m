@@ -127,6 +127,7 @@
     [[WSURLSessionManager shared] wsRegisterWithInfo:[self _getUserInfo] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if([[responseObject valueForKey:@"success"] isEqualToString:@"user created"]) {
+                [[COLoginManager shared] setUserModel:nil];
                 [self _callWSLogin];
             }else {
                 [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];
@@ -140,9 +141,7 @@
 }
 
 - (void)_callWSLogin {
-    [kUserDefaults setObject:_usernameTextField.text forKey:kUSER];
-    [kUserDefaults setObject:_passwordTextField.text forKey:kPASSWORD];
-    [[COLoginManager shared] callAPILogin:^(id object, BOOL sucess) {
+    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } else {

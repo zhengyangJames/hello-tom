@@ -38,7 +38,7 @@
     _webViewSetting = nil;
     [kUserDefaults setObject:@"2" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
-    if (![kUserDefaults objectForKey:kUSER]) {
+    if (![[COLoginManager shared] userModel]) {
         [self _replaceArraySettingLogOut];
     } else {
         [self _replaceArraySettingLogin];
@@ -128,7 +128,7 @@
 }
 
 - (void)_setupLoginAndLogout {
-    if (![kUserDefaults objectForKey:kUSER]) {
+    if (![[COLoginManager shared] userModel]) {
         [self _logginApllication];
     } else {
         [UIHelper showAlertViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil) message:NSLocalizedString(@"MESSAGE_LOGOUT", nil) cancelButton:NSLocalizedString(@"CANCEL_TITLE", nil) delegate:self tag:0 arrayTitleButton:@[NSLocalizedString(@"OK_TITLE", nil)]];
@@ -146,9 +146,9 @@
 
 - (void)_replaceArraySettingLogin {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
-    for (int i = 0 ; i < arr.count ; i ++) {
-        if ([arr[i] isEqualToString:NSLocalizedString(@"LOG_IN", nil)]) {
-            [arr replaceObjectAtIndex:i withObject:NSLocalizedString(@"LOG_OUT", nil)];
+    if (arr) {
+        if ([arr[arr.count - 1] isEqualToString:NSLocalizedString(@"LOG_IN", nil)]) {
+            [arr replaceObjectAtIndex:self.arraySetting.count - 1 withObject:NSLocalizedString(@"LOG_OUT", nil)];
         }
     }
     self.arraySetting = arr;
@@ -157,20 +157,15 @@
 
 - (void)_replaceArraySettingLogOut {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
-    for (int i = 0 ; i < arr.count ; i ++) {
-        if ([arr[i] isEqualToString:NSLocalizedString(@"LOG_OUT", nil)]) {
-            [arr replaceObjectAtIndex:i withObject:NSLocalizedString(@"LOG_IN", nil)];
+    if (arr) {
+        if ([arr[arr.count - 1] isEqualToString:NSLocalizedString(@"LOG_OUT", nil)]) {
+            [arr replaceObjectAtIndex:arr.count - 1 withObject:NSLocalizedString(@"LOG_IN", nil)];
         }
     }
     self.arraySetting = arr;
     [_tableView reloadData];
-    [kUserDefaults removeObjectForKey:kPROFILE_TOKEN_JSON];
+    [[COLoginManager shared] setUserModel:nil];
     [kUserDefaults removeObjectForKey:kPROFILE_JSON];
-    [kUserDefaults removeObjectForKey:kACCESS_TOKEN];
-    [kUserDefaults removeObjectForKey:kTOKEN_TYPE];
-    [kUserDefaults removeObjectForKey:kPROFILE_OBJECT];
-    [kUserDefaults removeObjectForKey:kUSER];
-    [kUserDefaults removeObjectForKey:kPASSWORD];
     [kUserDefaults synchronize];
 }
 

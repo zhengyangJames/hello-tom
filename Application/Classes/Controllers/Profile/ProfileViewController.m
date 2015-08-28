@@ -132,6 +132,7 @@ TableBottomViewCellDelegate>
 #pragma mark - Action
 - (void)__actionButtonUpdate:(NSString*)string {
     if ([string isEqualToString:UPDATE_ABOUT_PROFILE]) {
+        self.userModel = nil;
         [self _setupEditAboutProfileVC];
     } else {
         [kNotificationCenter postNotificationName:@"check_password" object:nil];
@@ -302,8 +303,7 @@ TableBottomViewCellDelegate>
 }
 
 - (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC {
-    _userModel = nil;
-
+    self.userModel = nil;
 }
 
 - (void)tableHeaderView:(TableHeaderView *)tableHeaderView indexSelectSegment:(NSInteger)indexSelect {

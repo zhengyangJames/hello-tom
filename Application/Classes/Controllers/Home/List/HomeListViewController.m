@@ -97,31 +97,15 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 }
 
 - (void)_showViewNoData:(NSString *)filterType{
-    NSInteger type;
-    if ([filterType isEqualToString:kFILTER_BP]) {
-        type = FilterBullkType;
-    } else if ([filterType isEqualToString:kFILTER_CO]) {
-        type = FilterCrowdType;
-    } else if ([filterType isEqualToString:kFILTER_PS]) {
-        type = FilterSaleType;
-    } else {
-        type = FilterAllType;
-    }
     _noDataView.hidden = NO;
-    switch (type) {
-        case FilterBullkType:
-            _noDataLabel.text = NSLocalizedString(@"FILTER_BULLK_NULL",nil);
-            break;
-        case FilterCrowdType:
-            _noDataLabel.text = NSLocalizedString(@"FILTER_CROWD_NULL",nil);
-            break;
-        case FilterSaleType:
-            _noDataLabel.text = NSLocalizedString(@"FILTER_SALE_NULL",nil);
-            break;
-        case FilterAllType:
-            _noDataLabel.text = NSLocalizedString(@"FILTER_ALL_NULL",nil);
-            break;
-        default:  break;
+    if ([filterType isEqualToString:kFILTER_BP]) {
+        _noDataLabel.text = NSLocalizedString(@"FILTER_BULLK_NULL",nil);
+    } else if ([filterType isEqualToString:kFILTER_CO]) {
+        _noDataLabel.text = NSLocalizedString(@"FILTER_CROWD_NULL",nil);
+    } else if ([filterType isEqualToString:kFILTER_PS]) {
+        _noDataLabel.text = NSLocalizedString(@"FILTER_SALE_NULL",nil);
+    } else {
+        _noDataLabel.text = NSLocalizedString(@"FILTER_ALL_NULL",nil);
     }
 }
 
@@ -183,7 +167,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                     [_tableView endUpdates];
                 }];
             } else {
-                [self _showViewNoData:self.filterItem.filterValue];
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self _showViewNoData:typeFilter];
+                }];
             }
         } else {
             [UIHelper showError:error];
@@ -246,7 +232,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (![kUserDefaults objectForKey:kUSER]) {
+    if (![[COLoginManager shared] userModel]) {
         LoginViewController *vcLogin = [[LoginViewController alloc]init];
         vcLogin.delegate = self;
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];

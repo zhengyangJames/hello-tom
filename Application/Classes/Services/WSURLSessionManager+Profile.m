@@ -45,8 +45,14 @@
     [request setValue:value forHTTPHeaderField:@"Authorization"];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-            [[COLoginManager shared] callAPILogin:^(id object, BOOL sucess) {
+            [[COLoginManager shared] tokenObject:[self _createParamTokenWithModel:paramToken] callWSGetListProfile:^(id object, BOOL sucess) {
                 if (sucess && [object isKindOfClass:[NSDictionary class]]) {
+                    [[COLoginManager shared] setUserModel:nil];
+                    NSError *error;
+                    NSDictionary *dic = object;
+                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
+                    [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+                    [kUserDefaults synchronize];
                     if (handler) {
                         handler(object,response,nil);
                     }
@@ -61,26 +67,16 @@
 }
 - (NSMutableDictionary*)_createParamTokenWithModel:(COUserProfileModel *)model {
     NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kACCESS_TOKEN] = model.stringOfAccessToken;
-    dic[kTOKEN_TYPE] = model.stringOfTokenType;
+    if (model.stringOfAccessToken) {
+        dic[kACCESS_TOKEN] = model.stringOfAccessToken;
+    } else {
+        dic[kACCESS_TOKEN] = @"";
+    }
+    if (model.stringOfTokenType) {
+        dic[kTOKEN_TYPE] = model.stringOfTokenType;
+    } else {
+        dic[kTOKEN_TYPE] = @"";
+    }
     return dic;
-}
-
-- (NSMutableDictionary*)_creatUserInfo {
-    NSMutableDictionary *param = [NSMutableDictionary new];
-    param[kCLIENT_ID] = CLIENT_ID;
-    param[kCLIENT_SECRECT] = CLIENT_SECRECT;
-    param[kGRANT_TYPE] = GRANT_TYPE;
-    if (![kUserDefaults objectForKey:kUSER]) {
-        param[kUSER] = @"";
-    } else {
-        param[kUSER] = [kUserDefaults objectForKey:kUSER];
-    }
-    if (![kUserDefaults objectForKey:kPASSWORD]) {
-        param[kPASSWORD] = @"";
-    } else {
-        param[kPASSWORD] = [kUserDefaults objectForKey:kPASSWORD];
-    }
-    return param;
 }
 @end

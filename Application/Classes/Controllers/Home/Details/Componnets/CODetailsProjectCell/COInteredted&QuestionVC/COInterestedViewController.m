@@ -39,7 +39,7 @@
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self _setupRightNavigationButton];
-    if (![kUserDefaults objectForKey:kUSER]) {
+    if (![[COLoginManager shared] userModel]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }

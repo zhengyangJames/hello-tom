@@ -18,6 +18,6 @@ typedef void(^ActionLoginManager)(id object,BOOL sucess);
 
 @property (nonatomic, strong) COUserProfileModel *userModel;
 
-- (void)callAPILogin:(ActionLoginManager)actionLoginManager;
+- (void)callAPILogin:(NSDictionary*)param actionLoginManager:(ActionLoginManager)actionLoginManager;
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager;
 @end

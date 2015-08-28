@@ -23,8 +23,8 @@
     return instance;
 }
 
-- (void)callAPILogin:(ActionLoginManager)actionLoginManager {
-    [[WSURLSessionManager shared] wsLoginWithUserHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+- (void)callAPILogin:(NSDictionary*)param actionLoginManager:(ActionLoginManager)actionLoginManager; {
+    [[WSURLSessionManager shared] wsLoginWithUserInfo:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
             [self tokenObject:responseObject callWSGetListProfile:^(id object,BOOL sucess){
                 if ([object isKindOfClass:[NSDictionary class]] && sucess) {
@@ -80,5 +80,6 @@
 - (void)setUserModel:(COUserProfileModel *)userModel {
     _userModel = userModel;
 }
+
 @synthesize userModel = _userModel;
 @end

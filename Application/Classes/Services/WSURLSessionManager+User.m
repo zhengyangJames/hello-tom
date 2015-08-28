@@ -11,8 +11,8 @@
 
 @implementation WSURLSessionManager (User)
 
-- (void)wsLoginWithUserHandler:(WSURLSessionHandler)handler {
-    NSString *postString = [self paramsToString:[self _creatUserInfo]];
+- (void)wsLoginWithUserInfo:(NSDictionary *)param handler:(WSURLSessionHandler)handler {
+    NSString *postString = [self paramsToString:param];
     NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_POST_LOGIN body:body httpMethod:METHOD_POST];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
@@ -83,22 +83,5 @@
             }
         }
     }];
-}
-- (NSMutableDictionary*)_creatUserInfo {
-    NSMutableDictionary *param = [NSMutableDictionary new];
-    param[kCLIENT_ID] = CLIENT_ID;
-    param[kCLIENT_SECRECT] = CLIENT_SECRECT;
-    param[kGRANT_TYPE] = GRANT_TYPE;
-    if (![kUserDefaults objectForKey:kUSER]) {
-        param[kUSER] = @"";
-    } else {
-        param[kUSER] = [kUserDefaults objectForKey:kUSER];
-    }
-    if (![kUserDefaults objectForKey:kPASSWORD]) {
-        param[kPASSWORD] = @"";
-    } else {
-        param[kPASSWORD] = [kUserDefaults objectForKey:kPASSWORD];
-    }
-    return param;
 }
 @end

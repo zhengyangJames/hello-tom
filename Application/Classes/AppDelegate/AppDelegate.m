@@ -14,6 +14,7 @@
 #import "HomeListViewController.h"
 #import "SettingViewController.h"
 #import "COLoginManager.h"
+#import "COUserProfileModel.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate>
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
@@ -110,12 +111,14 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 1) {
-        if (![kUserDefaults objectForKey:kUSER]) {
-            [[COLoginManager shared] callAPILogin:^(id object, BOOL sucess) {
+        if ([[COLoginManager shared] userModel]) {
+            [[COLoginManager shared] tokenObject:[self _createParamTokenWithModel:[[COLoginManager shared] userModel]] callWSGetListProfile:^(id object, BOOL sucess) {
             }];
+        } else {
             [self _setUpLogginVC];
             [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
         }
+
     }
 }
 
@@ -149,5 +152,18 @@
         default: break;
     }
 }
-
+- (NSMutableDictionary*)_createParamTokenWithModel:(COUserProfileModel *)model {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    if (model.stringOfAccessToken) {
+            dic[kACCESS_TOKEN] = model.stringOfAccessToken;
+    } else {
+        dic[kACCESS_TOKEN] = @"";
+    }
+    if (model.stringOfTokenType) {
+            dic[kTOKEN_TYPE] = model.stringOfTokenType;
+    } else {
+        dic[kTOKEN_TYPE] = @"";
+    }
+    return dic;
+}
 @end

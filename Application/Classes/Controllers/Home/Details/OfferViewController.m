@@ -51,7 +51,7 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
-    if (![kUserDefaults objectForKey:kUSER]) {
+    if (![[COLoginManager shared] userModel]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }
