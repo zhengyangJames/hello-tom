@@ -9,7 +9,6 @@
 #import "COOfferInfoCell.h"
 #import "COPositive&NagitiveButton.h"
 #import "UIHelper.h"
-#import "CODetailsProfileObj+Formater.h"
 #import "COOfferModel.h"
 
 @interface COOfferInfoCell ()

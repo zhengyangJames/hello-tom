@@ -14,7 +14,6 @@
 #import "WSURLSessionManager+User.h"
 #import "NSString+MD5.h"
 #import "WSURLSessionManager+Profile.h"
-#import "COListProfileObject.h"
 #import "COLoginManager.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
@@ -22,8 +21,6 @@
     __weak IBOutlet COBorderTextField *_userName;
     __weak IBOutlet COBorderTextField *_passWord;
 }
-@property (strong, nonatomic) COListProfileObject *profileObject;
-
 @end
 
 @implementation LoginViewController

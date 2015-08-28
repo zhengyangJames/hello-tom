@@ -8,7 +8,6 @@
 
 #import "COOfferActionCell.h"
 #import "COPositive&NagitiveButton.h"
-#import "WSURLSessionManager+ListHome.h"
 
 
 @interface COOfferActionCell ()<UIAlertViewDelegate>

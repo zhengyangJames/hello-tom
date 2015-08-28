@@ -7,7 +7,6 @@
 //
 
 #import "BaseViewController.h"
-#import "COBorderTextField.h"
 
 typedef void(^ActionDone)(NSString *orgName,NSString* address,UIImage *imageCompany);
 

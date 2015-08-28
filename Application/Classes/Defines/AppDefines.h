@@ -152,8 +152,12 @@
 #define DEFAULT_HEIGHT_CELL_PASSWORD                171
 #define HIEGHT_HEADERVIEW                           200
 #define HIEGHT_BOTTOMVIEW                           90
-#define HEIGHT_ADDRESS_CELL                         44
+#define DEFAULT_ADDRESS_CELL                         44
 #define IS_IOS8_OR_ABOVE                            [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
+
+#define HEIGHT_FOR_ROW_HOME                         248
+#define HEIGHT_SECTION_CONTACT                      40
+#define ESTIMATE_HEIGHT_FOR_ROW_CONTACT              185
 
 #define UPDATE_ABOUT_PROFILE                        @"Update profile"
 #define UPDATE_COMNPANY_PROFILE                     @"Update company profile"
@@ -169,6 +173,46 @@
 #define kNOTIFICATION_INTERESTED                    @"kNNOTIFICATION_INTERESTED"
 #define kNOTIFICATION_QUESTION                      @"kNNOTIFICATION_QUESTION"
 
-
+#define MESSEAGE_RESET_PASSWORD                     @"Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly"
 #define DEFINE_HTML_FRAME                           @"<span style=\"font-family: 'Raleway-Light'; font-size: 15\">%@</span>"
+//////////////////////////////////////////////////////////////
+#pragma mark - enum
+/////////////////////////////////////////////////////////////////
+typedef NS_ENUM(NSInteger, COSettingsStype) {
+    COSettingsStypeContact,
+    COSettingsStypeNew,
+    COSettingsStypeCommentaries,
+    COSettingsStypeTermOfUse,
+    COSettingsStypeCodeOfConduct,
+    COSettingsStypePrivacy,
+    COSettingsStypeLogout
+};
+
+typedef NS_ENUM(NSInteger, TableViewCellStyle) {
+    TableViewCellStyleAbout,        //0
+    //    TableViewCellStyleCompany,      //1
+    TableViewCellStylePasswork      //2
+};
+
+typedef NS_ENUM(NSInteger, COSegmentStyle) {
+    COSegmentStyleAbout,        //0
+    //    COSegmentStyleCompany,      //1
+    COSegmentStylePasswork      //2
+};
+
+typedef NS_ENUM(NSInteger, COAboutProfileStyle) {
+    COAboutProfileStyleFirstName,
+    COAboutProfileStyleLastNameSurname,
+    COAboutProfileStyleEmail,
+    COAboutProfileStylePhone,
+    COAboutProfileStyleAddress
+};
+typedef NS_ENUM(NSInteger, LoginWithStyle){
+    DismissLoginVC,
+    PushLoginVC
+};
+typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
+    CODetailsProjectActionInterested,
+    CODetailsProjectActionQuestions
+};
 #endif

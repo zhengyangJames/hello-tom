@@ -83,7 +83,7 @@
 }
 
 - (UIView*)_setupviewForHeaderInSection:(NSInteger)section {
-    UIView *view   = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 40)];
+    UIView *view   = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, HEIGHT_SECTION_CONTACT)];
     UILabel *label = [UILabel autoLayoutView];
     [label setFont:[UIFont fontWithName:@"Raleway-Medium" size:16]];
     [label setTextColor:KGREEN_COLOR];
@@ -127,7 +127,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 40;
+    return HEIGHT_SECTION_CONTACT;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -163,17 +163,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    return 185;
+    return ESTIMATE_HEIGHT_FOR_ROW_CONTACT;
 }
 
 - (ContactTableViewCell*)_setupContactCell:(UITableView*)tableView indexPath:(NSIndexPath*)indexPath {
     ContactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ContactTableViewCell identifier]];
     if (indexPath.section == 0) {
-        cell.contactObj = self.arrayData[0];
+        cell.contactModel = self.arrayData[0];
     } else if (indexPath.section == 1) {
-        cell.contactObj = self.arrayData[1];
+        cell.contactModel = self.arrayData[1];
     } else {
-        cell.contactObj = self.arrayData[2];
+        cell.contactModel = self.arrayData[2];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

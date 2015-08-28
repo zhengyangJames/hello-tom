@@ -8,7 +8,8 @@
 
 #import "BaseViewController.h"
 #import "COUserData.h"
-#import "COUserProfileModel.h"
+
+@class COUserProfileModel;
 
 @protocol EditAboutProfileVCDelegate;
 

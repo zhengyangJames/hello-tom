@@ -7,12 +7,19 @@
 //
 
 #import "CODetailsDataSource.h"
-#import "CODetailsOffersObj.h"
 #import "COOfferData.h"
 #import "COOfferModel.h"
 #import "CODocumentModel.h"
 #import "COProjectModel.h"
 #import "COProjectFundedAmountModel.h"
+#import "CODocumentItemCell.h"
+#import "COOfferHeadingCell.h"
+#import "COOfferInfoCell.h"
+#import "COOfferDescriptionTextCell.h"
+#import "CODocumentSectionCell.h"
+#import "COOfferProgressCell.h"
+#import "COOfferActionCell.h"
+#import "COOfferWebViewCell.h"
 
 @interface CODetailsDataSource ()<CODetailsAccessoryCellDelegate>
 

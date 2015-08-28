@@ -12,11 +12,9 @@
 #import "CODropListVC.h"
 #import "OfferViewController.h"
 #import "LoginViewController.h"
-#import "COLIstOffersObject.h"
 #import "MBProgressHUD.h"
 #import "WSURLSessionManager.h"
 #import "WSURLSessionManager+ListHome.h"
-#import "COProgressbarObj.h"
 #import "COOfferModel.h"
 #import "COProjectModel.h"
 #import "COProjectFundedAmountModel.h"
@@ -244,7 +242,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 248;
+    return HEIGHT_FOR_ROW_HOME;
 }
 
 - (HomeListViewCell*)_setupHomeListCell:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

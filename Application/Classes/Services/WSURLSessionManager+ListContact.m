@@ -7,8 +7,7 @@
 //
 
 #import "WSURLSessionManager+ListContact.h"
-#import "COListContactObject.h"
-#import "COLIstOffersObject.h"
+#import "COContactsModel.h"
 
 @implementation WSURLSessionManager (ListContact)
 
@@ -17,8 +16,9 @@
         if (!error && responseObject) {
             NSMutableArray *arrayData = [[NSMutableArray alloc]init];
             for (NSDictionary *data in responseObject) {
-                COListContactObject *objContac = [[COListContactObject alloc]initWithDictionary:data];
-                [arrayData addObject:objContac];
+                NSError *error;
+                COContactsModel *contactModel = [MTLJSONAdapter modelOfClass:[COContactsModel class] fromJSONDictionary:data error:&error];
+                [arrayData addObject:contactModel];
             }
             if (handler) {
                 handler(arrayData,response,nil);

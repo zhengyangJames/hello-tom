@@ -7,11 +7,6 @@
 //
 #import "BaseTableViewCell.h"
 
-typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
-    CODetailsProjectActionInterested,
-    CODetailsProjectActionQuestions
-};
-
 @protocol CODetailsProjectBottomTVCellDelegate;
 
 @interface COOfferActionCell : BaseTableViewCell

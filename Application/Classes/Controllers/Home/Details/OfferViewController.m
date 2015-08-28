@@ -19,6 +19,8 @@
 #import "COOfferModel.h"
 #import "COProjectModel.h"
 #import "COLoginManager.h"
+#import "COOfferActionCell.h"
+#import "CODocumentItemCell.h"
 
 @interface OfferViewController ()<UIGestureRecognizerDelegate,DetailsDataSourceViewDelegate,CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 {

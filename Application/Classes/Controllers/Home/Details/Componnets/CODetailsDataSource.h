@@ -7,21 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CODocumentItemCell.h"
-#import "COOfferHeadingCell.h"
-#import "COOfferInfoCell.h"
-#import "COOfferDescriptionTextCell.h"
-#import "CODocumentSectionCell.h"
-#import "COOfferProgressCell.h"
-#import "COOfferActionCell.h"
-#import "COProgressbarObj.h"
-#import "COOfferWebViewCell.h"
+
 
 @protocol CODetailsAccessoryCellDelegate;
 @protocol CODetailsProjectBottomTVCellDelegate;
 @protocol CODetailsWebViewCellDelegate;
 @protocol DetailsDataSourceViewDelegate;
 @class COOfferModel;
+@class COOfferHeadingCell;
+@class COOfferDescriptionTextCell;
+@class CODocumentItemCell;
+@class COOfferWebViewCell;
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 

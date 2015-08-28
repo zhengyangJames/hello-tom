@@ -12,7 +12,6 @@
 #import "CoDropListButtom.h"
 #import "LoadFileManager.h"
 #import "WSURLSessionManager+Profile.h"
-#import "COUserProfileModel.h"
 #import "COUserProfileDetailModel.h"
 #import "COLoginManager.h"
 #import "COUserProfileModel.h"

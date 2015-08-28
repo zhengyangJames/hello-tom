@@ -8,10 +8,6 @@
 
 #import "BaseViewController.h"
 
-typedef NS_ENUM(NSInteger, LoginWithStyle){
-    DismissLoginVC,
-    PushLoginVC
-};
 @protocol LoginViewControllerDelegate ;
 
 @interface LoginViewController : BaseViewController

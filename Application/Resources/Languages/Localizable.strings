@@ -104,5 +104,12 @@
 "DOCUMENT"                              = "DOCUMENTS";
 "ADDRESS"                               = "ADDRESS";
 
+"Contact"                               = "Contact";
+"News"                                  = "News";
+"Commentaries"                          = "Commentaries";
+"Terms of Use"                          = "Terms of Use";
+"Code of Conduct"                       = "Code of Conduct";
+"Privacy"                               = "Privacy";
+"Log Out"                               = "Log Out";
 
 

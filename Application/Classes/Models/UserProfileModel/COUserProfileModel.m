@@ -54,6 +54,10 @@
 - (NSString *)stringOfProfileEmail {
    return self.userEmail;
 }
+
+- (NSString *)stringOfUserName {
+    return self.userName;
+}
 #pragma mark - user first name protocol
 
 - (NSString *)firstNameTitle {

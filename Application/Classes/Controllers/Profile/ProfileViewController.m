@@ -277,7 +277,7 @@ TableBottomViewCellDelegate>
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath*)indexPath {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
         if (indexPath.row == 4) {
-            return HEIGHT_ADDRESS_CELL;
+            return DEFAULT_ADDRESS_CELL;
         } else {
             return DEFAULT_HEIGHT_CELL;
         }

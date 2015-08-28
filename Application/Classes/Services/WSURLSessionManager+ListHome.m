@@ -7,15 +7,10 @@
 //
 
 #import "WSURLSessionManager+ListHome.h"
-#import "COListOffersObject.h"
-#import "COProgressbarObj.h"
-#import "CODetailsOffersObj.h"
-#import "CODetailsOffersItemObj.h"
-#import "CODetailsOffersItemObj+Mapping.h"
-#import "CODetailsProfileObj.h"
-#import "CODetailsProfileObj+Mapping.h"
 #import "COOfferModel.h"
 #import "COProjectFundedAmountModel.h"
+#import "COLoginManager.h"
+#import "COUserProfileModel.h"
 
 @implementation WSURLSessionManager (ListHome)
 
@@ -62,7 +57,8 @@
     NSString *urlQuestion = WS_METHOD_POST_QUESTION;
     NSString *offerID = [NSString stringWithFormat:@"%@/",OffersID];
     NSString *url = [urlQuestion stringByAppendingString:offerID];
-    NSString *valueToken = [NSString stringWithFormat:@"%@ %@",[kUserDefaults valueForKey:kTOKEN_TYPE],[kUserDefaults valueForKey:kACCESS_TOKEN]];
+    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+    NSString *valueToken = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
     NSString *postString = [self paramsToString:body];
     NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [self createAuthRequest:url
@@ -87,7 +83,8 @@
     NSString *urlQuestion = WS_METHOD_POST_SUBSCRIBE;
     NSString *offerID = [NSString stringWithFormat:@"%@/",OffersID];
     NSString *url = [urlQuestion stringByAppendingString:offerID];
-    NSString *valueToken = [NSString stringWithFormat:@"%@ %@",[kUserDefaults valueForKey:kTOKEN_TYPE],[kUserDefaults valueForKey:kACCESS_TOKEN]];
+    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+    NSString *valueToken = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
     NSString *postString = [self paramsToString:amount];
     NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [self createAuthRequest:url
@@ -109,7 +106,8 @@
 }
 
 - (void)wsGetProgressBarWithOfferID:(NSDictionary*)bodyOfferID handler:(WSURLSessionHandler)handler {
-    NSString *valueToken = [NSString stringWithFormat:@"%@ %@",[kUserDefaults valueForKey:kTOKEN_TYPE],[kUserDefaults valueForKey:kACCESS_TOKEN]];
+    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+    NSString *valueToken = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
     NSString *URL = WS_METHOD_POST_PROGRESSBAR;
     NSString *postString = [self paramsToString:bodyOfferID];
     NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];

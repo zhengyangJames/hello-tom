@@ -87,7 +87,7 @@
         return dataSource.heightWebview;
     } else {
         if (indexPath.row == 0) {
-            return 44;
+            return DEFAULT_ADDRESS_CELL;
         } else {
             if(IS_IOS8_OR_ABOVE) {
                 return UITableViewAutomaticDimension;

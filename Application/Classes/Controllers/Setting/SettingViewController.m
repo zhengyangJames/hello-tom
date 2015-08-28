@@ -83,7 +83,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
     }
     cell.accessoryType = UITableViewCellSeparatorStyleSingleLine;
-    cell.textLabel.text = self.arraySetting[indexPath.row];
+    cell.textLabel.text = NSLocalizedString(self.arraySetting[indexPath.row],nil);
     cell.textLabel.textColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Raleway-Regular" size:17];
     return cell;
@@ -147,8 +147,8 @@
 - (void)_replaceArraySettingLogin {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
     if (arr) {
-        if ([arr[arr.count - 1] isEqualToString:NSLocalizedString(@"LOG_IN", nil)]) {
-            [arr replaceObjectAtIndex:self.arraySetting.count - 1 withObject:NSLocalizedString(@"LOG_OUT", nil)];
+        if ([arr[COSettingsStypeLogout] isEqualToString:NSLocalizedString(@"LOG_IN", nil)]) {
+            [arr replaceObjectAtIndex:COSettingsStypeLogout withObject:NSLocalizedString(@"LOG_OUT", nil)];
         }
     }
     self.arraySetting = arr;
@@ -158,8 +158,8 @@
 - (void)_replaceArraySettingLogOut {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
     if (arr) {
-        if ([arr[arr.count - 1] isEqualToString:NSLocalizedString(@"LOG_OUT", nil)]) {
-            [arr replaceObjectAtIndex:arr.count - 1 withObject:NSLocalizedString(@"LOG_IN", nil)];
+        if ([arr[COSettingsStypeLogout] isEqualToString:NSLocalizedString(@"LOG_OUT", nil)]) {
+            [arr replaceObjectAtIndex:COSettingsStypeLogout withObject:NSLocalizedString(@"LOG_IN", nil)];
         }
     }
     self.arraySetting = arr;

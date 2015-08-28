@@ -9,7 +9,6 @@
 #import "COOfferProgressCell.h"
 #import "NMDeviceHelper.h"
 #import "UIHelper.h"
-#import "COProgressbarObj+Formatter.h"
 
 @interface COOfferProgressCell ()
 {
