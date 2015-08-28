@@ -10,8 +10,8 @@
 
 @interface COOfferWebViewCell ()
 {
-    __weak IBOutlet UIWebView *webView;
-    __weak IBOutlet UILabel *title;
+    __weak IBOutlet UIWebView   *webView;
+    __weak IBOutlet UILabel     *title;
     BOOL _isFinish;
 }
 
@@ -24,8 +24,8 @@
     [webView.scrollView setScrollEnabled:NO];
     [webView.scrollView setShowsHorizontalScrollIndicator:NO];
     [webView.scrollView setShowsVerticalScrollIndicator:NO];
-    [webView setOpaque:NO];
-    [webView setBackgroundColor:[UIColor clearColor]];
+    [webView            setOpaque:NO];
+    [webView            setBackgroundColor:[UIColor clearColor]];
     _isFinish = NO;
     
 }

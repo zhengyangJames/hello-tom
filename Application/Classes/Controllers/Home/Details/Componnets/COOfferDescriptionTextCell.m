@@ -19,26 +19,26 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.selectionStyle     = UITableViewCellSelectionStyleNone;
 }
 
 #pragma mark - Set Get
 
 - (void)setOfferDescription:(id<COOfferDescription>)offerDescription {
-    _offerDescription = offerDescription;
-    _headerLabel.text = self.offerDescription.offerDescriptionTitle;
-    _detailsTextView.text = self.offerDescription.offerDescriptionContent;
+    _offerDescription       = offerDescription;
+    _headerLabel.text       = self.offerDescription.offerDescriptionTitle;
+    _detailsTextView.text   = self.offerDescription.offerDescriptionContent;
 }
 
 - (void)setOfferDocumentInfo:(id<COOfferDocument>)offerDocumentInfo {
-    _offerDocumentInfo = offerDocumentInfo;
-    _headerLabel.text = self.offerDocumentInfo.offerDocumentTitle;
-    _detailsTextView.text = self.offerDocumentInfo.offerDocumentContent;
+    _offerDocumentInfo      = offerDocumentInfo;
+    _headerLabel.text       = self.offerDocumentInfo.offerDocumentTitle;
+    _detailsTextView.text   = self.offerDocumentInfo.offerDocumentContent;
 }
 
 - (void)setOfferAddress:(id<COOfferAddress>)offerAddress {
-    _offerAddress = offerAddress;
-    _headerLabel.text = self.offerAddress.offerAddressTitle;
-    _detailsTextView.text = self.offerAddress.offerAddressContent;
+    _offerAddress           = offerAddress;
+    _headerLabel.text       = self.offerAddress.offerAddressTitle;
+    _detailsTextView.text   = self.offerAddress.offerAddressContent;
 }
 @end

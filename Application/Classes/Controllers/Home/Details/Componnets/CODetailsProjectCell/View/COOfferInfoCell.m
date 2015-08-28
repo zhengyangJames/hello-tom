@@ -48,13 +48,13 @@
 #pragma mark - Set Get
 
 - (void)setOfferInfo:(id<COOfferInfo>)offerInfo {
-    _offerInfo = offerInfo;
-    _lblOfferStatus.text = _offerInfo.offerInfoStatus;
-    _lblOfferInvestor.text = _offerInfo.offerInfoInvestor;
+    _offerInfo                  = offerInfo;
+    _lblOfferStatus.text        = _offerInfo.offerInfoStatus;
+    _lblOfferInvestor.text      = _offerInfo.offerInfoInvestor;
     _lblOfferMinInvestment.text = _offerInfo.offerInfoMinInvesment;
-    _lblOfferTimeHorizon.text = _offerInfo.offerInfoTimeHorizon;
-    _lblOfferYield.text= _offerInfo.offerInfoYield;
-    _lblOfferDayLeft.text= _offerInfo.offerInfoDayLeft;
+    _lblOfferTimeHorizon.text   = _offerInfo.offerInfoTimeHorizon;
+    _lblOfferYield.text         = _offerInfo.offerInfoYield;
+    _lblOfferDayLeft.text       = _offerInfo.offerInfoDayLeft;
 }
 
 #pragma mark - Action 

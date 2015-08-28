@@ -43,14 +43,14 @@
 - (void)setContactModel:(COContactsModel *)contactModel {
     _contactModel = contactModel;
     if ([_contactModel.stringOfContactName isEmpty]||[_contactModel.stringOfContactRegNo isEmpty]||[_contactModel.stringOfContactAddress1 isEmpty]||[_contactModel.stringOfContactAddress2 isEmpty]||[_contactModel.stringOfContactPhoneNumber isEmpty]||[_contactModel.stringOfContactPostalCode isEmpty]||[_contactModel.stringOfContactCountry isEmpty]||[_contactModel.stringOfContactCity isEmpty] ) {
-        [_lblTell setNeedsUpdateConstraints];
-        [_lblReg setNeedsUpdateConstraints];
-        [_lblAdress setNeedsUpdateConstraints];
-        [_lblAdress2 setNeedsUpdateConstraints];
-        [_lblPostCode setNeedsUpdateConstraints];
-        [_lblCountry setNeedsUpdateConstraints];
-        [_lblCity setNeedsUpdateConstraints];
-        [_lblTell setNeedsUpdateConstraints];
+        [_lblTell       setNeedsUpdateConstraints];
+        [_lblReg        setNeedsUpdateConstraints];
+        [_lblAdress     setNeedsUpdateConstraints];
+        [_lblAdress2    setNeedsUpdateConstraints];
+        [_lblPostCode   setNeedsUpdateConstraints];
+        [_lblCountry    setNeedsUpdateConstraints];
+        [_lblCity       setNeedsUpdateConstraints];
+        [_lblTell       setNeedsUpdateConstraints];
     }
     _lblCoAssets.text   =   _contactModel.stringOfContactName;
     _lblCity.text       =   _contactModel.stringOfContactCity;

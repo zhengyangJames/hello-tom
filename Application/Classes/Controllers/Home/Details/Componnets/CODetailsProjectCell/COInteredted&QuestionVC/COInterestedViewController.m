@@ -85,7 +85,6 @@
     NSString *email = _emailTextField.text;
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:amount,@"amount",email,@"email", nil];
     [[WSURLSessionManager shared] wsPostSubscribeWithOffersID:idoffer amount:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        DBG(@"%@",responseObject);
         if (responseObject && !error) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 _amountTextField.text = nil;
@@ -112,7 +111,8 @@
 }
 
 - (NSString*)_setupTitlePopup {
-    NSString *string = [NSString stringWithFormat:@"Thank you for crowdfunding, \n%@. \n\nPlease e-sign the contract sent to your email & proceed to make fund transfer within 5 working days. \n\nIf you have any queries, please feel free to call 65327008 or email admin@coassets.com. \nThank you & happy crowdfunding.",self.coInterested.stringOfOfferTitle];
+    NSString *string = [NSString stringWithFormat:NSLocalizedString(@"Interested_Popup", nil),self.coInterested.stringOfOfferTitle];
+    
     return string;
 }
 

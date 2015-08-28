@@ -22,7 +22,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleGray;
-    _detailsLabel.text = NSLocalizedString(@"NoDocumentsUploaded", nil);
+    _detailsLabel.text  = NSLocalizedString(@"NoDocumentsUploaded", nil);
 }
 
 

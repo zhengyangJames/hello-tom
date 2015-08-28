@@ -12,8 +12,8 @@
 
 @interface CODocumentItemCell : UITableViewCell
 
-@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate> delegate;
-@property (nonatomic, strong) id<CODocumentItem> docDetailItem;
+@property (weak, nonatomic)     id<CODetailsAccessoryCellDelegate> delegate;
+@property (nonatomic, strong)   id<CODocumentItem> docDetailItem;
 
 @end
 

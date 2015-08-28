@@ -12,10 +12,10 @@
 
 @interface COOfferProgressCell ()
 {
-    __weak IBOutlet UILabel *_totalProgressbarLable;
-    __weak IBOutlet UILabel *_titleProgressbarLable;
-    __weak IBOutlet UILabel *_progressBarBottomLable;
-    __weak IBOutlet UIProgressView *_progressBar;
+    __weak IBOutlet UILabel         *_totalProgressbarLable;
+    __weak IBOutlet UILabel         *_titleProgressbarLable;
+    __weak IBOutlet UILabel         *_progressBarBottomLable;
+    __weak IBOutlet UIProgressView  *_progressBar;
 }
 
 @end
@@ -30,22 +30,22 @@
     [super layoutSubviews];
     if ([self isDeviceVersion:@"7.0"]) {
         CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 10.5f);
-        _progressBar.transform = transform;
+        _progressBar.transform      = transform;
     } else {
         CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 1.5f);
-        _progressBar.transform = transform;
+        _progressBar.transform      = transform;
     }
 }
 
 #pragma mark - Set Get
 - (void)setProjectInfoProgress:(id<COProjectFundedAmount>)projectInfoProgress {
-    _projectInfoProgress = projectInfoProgress;
-    NSNumber *valueGoal = _projectInfoProgress.goalOrigin;
+    _projectInfoProgress            = projectInfoProgress;
+    NSNumber *valueGoal             = _projectInfoProgress.goalOrigin;
     float value = ([valueGoal doubleValue]*10)/1000;
     [_progressBar setProgress:value animated:NO];
-    _titleProgressbarLable.text = _projectInfoProgress.currentFundedAmountToString;
-    _progressBarBottomLable.text = _projectInfoProgress.offerInfoGoalToString;
-    _totalProgressbarLable.text = [@"of " stringByAppendingString:_projectInfoProgress.totalProgress];
+    _titleProgressbarLable.text     = _projectInfoProgress.currentFundedAmountToString;
+    _progressBarBottomLable.text    = _projectInfoProgress.offerInfoGoalToString;
+    _totalProgressbarLable.text     = [@"of " stringByAppendingString:_projectInfoProgress.totalProgress];
 }
 
 

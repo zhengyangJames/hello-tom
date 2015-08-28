@@ -23,8 +23,8 @@
 
 @interface CODetailsDataSource ()<CODetailsAccessoryCellDelegate>
 
-@property (weak, nonatomic) id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate> controller;
-@property (assign, nonatomic) id<COOfferDocumentDetail> docDetail;
+@property (weak, nonatomic)     id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate> controller;
+@property (assign, nonatomic)   id<COOfferDocumentDetail> docDetail;
 @end
 
 @implementation CODetailsDataSource

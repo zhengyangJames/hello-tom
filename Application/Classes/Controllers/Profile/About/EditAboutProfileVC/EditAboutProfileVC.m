@@ -51,16 +51,16 @@
 }
 
 - (void)_setupData {
-    self.userProfileModel = self.aboutUserModel;
+    self.userProfileModel   = self.aboutUserModel;
     if (_userProfileModel) {
         addressNameTXT.text = _userProfileModel.nameOfUserAddress1;
-        countryTXT.text = _userProfileModel.nameOfUserCountry;
-        address2TXT.text = _userProfileModel.nameOfUserAddress2;
-        phoneNameTXT.text = _userProfileModel.numberOfUserPhone;
-        emailNameTXT.text = _userProfileModel.nameOfUserEmail;
-        cityTXT.text = _userProfileModel.nameOfUserCity;
+        countryTXT.text     = _userProfileModel.nameOfUserCountry;
+        address2TXT.text    = _userProfileModel.nameOfUserAddress2;
+        phoneNameTXT.text   = _userProfileModel.numberOfUserPhone;
+        emailNameTXT.text   = _userProfileModel.nameOfUserEmail;
+        cityTXT.text        = _userProfileModel.nameOfUserCity;
         regionStateTXT.text = _userProfileModel.nameOfUserRegion;
-        NSString *phone = [self _getPhoneCode:_userProfileModel.nameOfUserCountryCode];
+        NSString *phone     = [self _getPhoneCode:_userProfileModel.nameOfUserCountryCode];
         _indexActtionCountryCode = [self _getPhoneCodeForString:phone];
         [dropListCountryCode setTitle:phone forState:UIControlStateNormal];
     }
