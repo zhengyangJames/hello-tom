@@ -15,6 +15,6 @@
 - (void)wsLoginWithUserInfo:(NSDictionary *)param handler:(WSURLSessionHandler)handler;
 - (void)wsRegisterWithInfo:(NSDictionary*)param handler:(WSURLSessionHandler)handler;
 - (void)wsForgotPassword:(NSDictionary*)param handler:(WSURLSessionHandler)handler;
-- (void)wsChangePassword:(COUserProfileModel *)paramToken body:(NSDictionary*)body handler:(WSURLSessionHandler)handler;
+- (void)wsChangePasswordWithBody:(NSDictionary*)body handler:(WSURLSessionHandler)handler;
 
 @end

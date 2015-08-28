@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "COOfferData.h"
 
 @interface COInterestedViewController : BaseViewController
-@property (strong, nonatomic) NSDictionary *object;
+@property (strong, nonatomic) id<COInterestedAction> coInterested;
 @end

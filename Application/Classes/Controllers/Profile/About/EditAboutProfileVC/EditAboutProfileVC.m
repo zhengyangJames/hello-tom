@@ -184,7 +184,7 @@
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsUpdateProfileWithUserToken:self.aboutUserModel body:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsUpdateProfileWithBody:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 if ([self.delegate respondsToSelector:@selector(editAboutProfile:)]) {

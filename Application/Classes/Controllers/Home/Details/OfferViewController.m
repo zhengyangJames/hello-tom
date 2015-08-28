@@ -23,14 +23,13 @@
 @interface OfferViewController ()<UIGestureRecognizerDelegate,DetailsDataSourceViewDelegate,CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 {
     UIWebView   *_webView;
+    id<COInterestedAction> offerInterested;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) CODetailsDataSource *detailsDataSource;
 @property (strong, nonatomic) CODetailsDelegate *detailsDelegate;
 @property (nonatomic, weak) IBOutlet COSlidingView *headerSliderView;
-@property (nonatomic, strong) id<COOfferProject> offerProject;
-
 @end
 
 @implementation OfferViewController
@@ -124,22 +123,15 @@
         case CODetailsProjectActionInterested:
         {
             COInterestedViewController *vc = [[COInterestedViewController alloc]init];
-            //CODetailsOffersObj *offerObj = [self.arrayObj firstObject];
-          //  CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
-           // CODetailsOffersObj *offerObj2 = self.arrayObj[1];
-           // CODetailsProfileObj *profileObj2 = [offerObj2.offerItemObjs lastObject];
-          //  COListProfileObject *listProfile = [[COListProfileObject alloc]initWithDictionary:[kUserDefaults objectForKey:kPROFILE_OBJECT]];
-          //  vc.object = @{@"offerID":offerItemObj.offerID,@"offerTitle":offerItemObj.title,@"amount":profileObj2.min_investment,@"email":listProfile.email};
+            vc.coInterested = self.offerModel;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case CODetailsProjectActionQuestions:
         {
-            COQuestionView *vc = [[COQuestionView alloc]init];
-          //  CODetailsOffersObj *offerObj = [self.arrayObj firstObject];
-          //  CODetailsOffersItemObj *offerItemObj = [offerObj.offerItemObjs lastObject];
-          //  vc.object = @{@"offerID":offerItemObj.offerID};
-            [self.navigationController pushViewController:vc animated:YES];
+            COQuestionView *quesView = [[COQuestionView alloc]init];
+            quesView.offerID = self.offerModel.numberIdOfOffer;
+            [self.navigationController pushViewController:quesView animated:YES];
         }
             break;
         default:

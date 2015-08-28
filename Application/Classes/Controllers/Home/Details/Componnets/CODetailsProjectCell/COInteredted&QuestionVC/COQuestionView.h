@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface COQuestionView : BaseViewController
-@property (strong, nonatomic) NSDictionary *object;
+@property (strong, nonatomic) NSNumber *offerID;
 @end

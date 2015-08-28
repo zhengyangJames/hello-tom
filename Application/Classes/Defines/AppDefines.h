@@ -144,7 +144,7 @@
 #define LINK_PRIVACY                                @"https://www.coassets.com/privacy/"
 ////////////////////////////////////////////////////////////////
 #pragma mark - PROFILE DEFINE
-#define DEFAULT_HEIGHT_CELL                         44
+#define DEFAULT_HEIGHT_CELL                         40
 #define AUTO_HEIGHT_CELL_ABOUT                      (self.view.bounds.size.height - (200+90))/4
 #define AUTO_HEIGHT_CELL_COMPANY                    (self.view.bounds.size.height - (200+90+44))
 #define DEFAULT_HEIGHT_CELL_COMPANY                 205
@@ -152,7 +152,7 @@
 #define DEFAULT_HEIGHT_CELL_PASSWORD                171
 #define HIEGHT_HEADERVIEW                           200
 #define HIEGHT_BOTTOMVIEW                           90
-
+#define HEIGHT_ADDRESS_CELL                         44
 #define IS_IOS8_OR_ABOVE                            [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
 
 #define UPDATE_ABOUT_PROFILE                        @"Update profile"

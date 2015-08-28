@@ -61,7 +61,7 @@
 #pragma mark - Web Service
 - (void)wsCallQuestion {
     [UIHelper showLoadingInView:self.view];
-    NSString *idoffer = [[self.object valueForKey:@"offerID"] stringValue];
+    NSString *idoffer = [self.offerID stringValue];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:textView.text,@"question", nil];
     [[WSURLSessionManager shared] wsPostQuestionWithOffersID:idoffer body:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {

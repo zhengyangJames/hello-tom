@@ -46,8 +46,13 @@
 - (NSString *)stringOfAccessToken {
     return self.userAccessToken;
 }
+
 - (NSString *)stringOfTokenType {
     return self.userTokenType;
+}
+
+- (NSString *)stringOfProfileEmail {
+   return self.userEmail;
 }
 #pragma mark - user first name protocol
 
@@ -111,6 +116,7 @@
 - (NSString *)nameOfUserEmail {
     return self.userEmail;
 }
+
 
 - (NSString *)numberOfUserPhone {
     COUserProfileDetailModel *proModel = self.userProfile;

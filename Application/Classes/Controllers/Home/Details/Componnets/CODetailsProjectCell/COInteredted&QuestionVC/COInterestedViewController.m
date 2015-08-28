@@ -30,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    self.object = self.object;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,12 +41,18 @@
     if (![[COLoginManager shared] userModel]) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
+    [self _reloadUI];
 }
 
 #pragma mark SetUp UI 
 - (void)_setupUI {
     self.title = NSLocalizedString(@"INTERESTED_TITLE", nil);
     _checkBoxButton.delegate = self;
+}
+
+- (void)_reloadUI {
+    _emailTextField.text = _coInterested.stringOfUserEmail;
+    _amountTextField.text = [_coInterested.numberOfOfferAmount stringValue];
 }
 
 - (void)_setupRightNavigationButton {
@@ -61,12 +66,9 @@
 }
 
 #pragma mark - Set Get
-- (void)setObject:(NSDictionary *)object {
-    _object = object;
-    [_emailTextField setText:[_object valueForKey:@"email"]];
-    [_amountTextField setText:[[_object valueForKey:@"amount"] stringValue]];
+- (void)setCoInterested:(id<COInterestedAction>)coInterested {
+    _coInterested = coInterested;
 }
-
 #pragma mark Action
 - (void)__actionDone {
     [self.view endEditing:YES];
@@ -78,7 +80,7 @@
 #pragma mark - Web Service
 - (void)_callWSInteredted {
     [UIHelper showLoadingInView:self.view];
-    NSString *idoffer = [[self.object valueForKey:@"offerID"] stringValue];
+    NSString *idoffer = [self.coInterested.numberIdOfOffer stringValue];
     NSString *amount = _amountTextField.text;
     NSString *email = _emailTextField.text;
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:amount,@"amount",email,@"email", nil];
@@ -110,7 +112,7 @@
 }
 
 - (NSString*)_setupTitlePopup {
-    NSString *string = [NSString stringWithFormat:@"Thank you for crowdfunding, \n%@. \n\nPlease e-sign the contract sent to your email & proceed to make fund transfer within 5 working days. \n\nIf you have any queries, please feel free to call 65327008 or email admin@coassets.com. \nThank you & happy crowdfunding.",[self.object valueForKey:@"offerTitle"]];
+    NSString *string = [NSString stringWithFormat:@"Thank you for crowdfunding, \n%@. \n\nPlease e-sign the contract sent to your email & proceed to make fund transfer within 5 working days. \n\nIf you have any queries, please feel free to call 65327008 or email admin@coassets.com. \nThank you & happy crowdfunding.",self.coInterested.stringOfOfferTitle];
     return string;
 }
 

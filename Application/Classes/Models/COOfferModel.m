@@ -11,6 +11,8 @@
 #import "CODocumentModel.h"
 #import "MTLValueTransformer.h"
 #import "COProjectFundedAmountModel.h"
+#import "COUserProfileModel.h"
+#import "COLoginManager.h"
 
 @implementation COOfferModel
 
@@ -64,6 +66,10 @@
 - (NSArray *)arrayDocuments {
     return self.documents;
 }
+
+- (NSNumber *)numberOfOfferId {
+    return self.offerId;
+}
 #pragma mark - home protocol
 
 - (NSString *)homeOfferCompanyPhoto {
@@ -88,6 +94,27 @@
     return self.offerType;
 }
 
+#pragma mark - interested action
+
+- (NSNumber *)numberIdOfOffer {
+    return self.offerId;
+}
+
+- (NSString *)stringOfOfferTitle {
+    return self.offerTitle;
+}
+
+- (NSNumber *)numberOfOfferAmount {
+    return self.offerMinInvestment;
+}
+
+- (NSString *)stringOfUserEmail {
+    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+    if (userModel) {
+        return userModel.stringOfProfileEmail;
+    }
+    return @"";
+}
 #pragma mark - logo protocol
 
 - (NSString *)offerLogoImage {

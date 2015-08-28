@@ -40,6 +40,14 @@
 - (NSString *)offerDescriptionContent;
 @end
 
+@protocol COInterestedAction <NSObject>
+
+- (NSNumber *)numberIdOfOffer;
+- (NSString *)stringOfOfferTitle;
+- (NSNumber *)numberOfOfferAmount;
+- (NSString *)stringOfUserEmail;
+@end
+
 @protocol COOfferProject <NSObject>
 
 - (NSString *)offerProjectTitle;

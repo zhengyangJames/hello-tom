@@ -239,7 +239,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
         _indexPathForCell = indexPath;
     }else {
-        [self _callWSGetDetailsWithModel:[[self.arrayData[indexPath.row] valueForKey:@"offerId"]stringValue]];
+        [self _callWSGetDetailsWithModel:[[self.arrayData[indexPath.row] numberOfOfferId]stringValue]];
     }
 }
 
@@ -266,7 +266,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
                                                                     completion:^{
-                [self _callWSGetProgressbar:[[self.arrayData[_indexPathForCell.row] valueForKey:@"offerID"] stringValue]];
+                [self _callWSGetProgressbar:[[self.arrayData[_indexPathForCell.row] numberOfOfferId] stringValue]];
             }];
             _indexPathForCell = nil;
         } break;

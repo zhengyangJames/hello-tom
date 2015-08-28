@@ -8,6 +8,7 @@
 
 #import "WSURLSessionManager+User.h"
 #import "COUserProfileModel.h"
+#import "COLoginManager.h"
 
 @implementation WSURLSessionManager (User)
 
@@ -64,8 +65,9 @@
     }];
 }
 
-- (void)wsChangePassword:(COUserProfileModel *)paramToken body:(NSDictionary*)body handler:(WSURLSessionHandler)handler {
-    NSString *value = [NSString stringWithFormat:@"%@ %@",paramToken.stringOfTokenType,paramToken.stringOfAccessToken];
+- (void)wsChangePasswordWithBody:(NSDictionary*)body handler:(WSURLSessionHandler)handler {
+    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+    NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
     NSString *postString = [self paramsToString:body];
     NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_POST_CHANGE_PASSWORD

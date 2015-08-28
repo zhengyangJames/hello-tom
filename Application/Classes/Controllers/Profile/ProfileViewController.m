@@ -148,7 +148,7 @@ TableBottomViewCellDelegate>
 
 - (void)_callWSChangePassword:(NSDictionary*)param {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsChangePassword:self.userModel body:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared]wsChangePasswordWithBody:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_CHANGE_SUCCESSFULLY", nil) delegate:self tag:0];
         } else {
@@ -261,13 +261,13 @@ TableBottomViewCellDelegate>
                 return height;
             }
         } else if (indexPath.row == 5) {
-            return height = 90;
+            return height = HIEGHT_BOTTOMVIEW;
         } else {
-            return 40;
+            return DEFAULT_HEIGHT_CELL;
         }
     } else {
         if (indexPath.row == 1) {
-            return 90;
+            return HIEGHT_BOTTOMVIEW;
         } else {
             return DEFAULT_HEIGHT_CELL_PASSWORD;
         }
@@ -277,13 +277,13 @@ TableBottomViewCellDelegate>
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath*)indexPath {
     if (TableViewCellStyleAbout == _indexSelectSeg) {
         if (indexPath.row == 4) {
-            return 44;
+            return HEIGHT_ADDRESS_CELL;
         } else {
-            return 40 ;
+            return DEFAULT_HEIGHT_CELL;
         }
     } else {
         if (indexPath.row == 1) {
-            return 90;
+            return HIEGHT_BOTTOMVIEW;
         } else {
             return DEFAULT_HEIGHT_CELL_PASSWORD;
         }

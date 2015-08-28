@@ -31,4 +31,5 @@
 - (NSString *)stringOfAccessToken;
 - (NSString *)stringOfTokenType;
 - (NSString *)stringOfUserName;
+- (NSString *)stringOfProfileEmail;
 @end
