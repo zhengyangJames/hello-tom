@@ -8,6 +8,7 @@
 
 #import "WSURLSessionManager.h"
 #import "AFNetworking.h"
+#import "WSCreateUserRequest.h"
 
 @interface WSURLSessionManager ()
 {
@@ -67,6 +68,19 @@
         s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[object urlEncode]];
         prefix = @"&";
     }
+    return s;
+}
+
+- (NSString*)paramsToStringWithRequest:(WSCreateUserRequest*)params {
+    NSString *s = @"";
+    if (!params) {
+        return s;
+    }
+    s = [s stringByAppendingFormat:@"%@",params.clientID];
+    s = [s stringByAppendingFormat:@"&%@",params.clientSecrect];
+    s = [s stringByAppendingFormat:@"&%@",params.grantType];
+    s = [s stringByAppendingFormat:@"&%@",params.userName];
+    s = [s stringByAppendingFormat:@"&%@",params.passWord];
     return s;
 }
 

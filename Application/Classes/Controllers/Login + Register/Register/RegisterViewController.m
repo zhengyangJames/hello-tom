@@ -17,6 +17,7 @@
 #import "WSURLSessionManager+User.h"
 #import "HomeListViewController.h"
 #import "COLoginManager.h"
+#import "WSCreateUserRequest.h"
 
 @interface RegisterViewController () <UIAlertViewDelegate,COCheckBoxButtonDelegate>
 {
@@ -103,14 +104,11 @@
     return dic;
 }
 
-- (NSMutableDictionary*)_creatUserInfo {
-    NSMutableDictionary *param = [NSMutableDictionary new];
-    param[kCLIENT_ID] = CLIENT_ID;
-    param[kCLIENT_SECRECT] = CLIENT_SECRECT;
-    param[kGRANT_TYPE] = GRANT_TYPE;
-    param[kUSER] = _usernameTextField.text;
-    param[kPASSWORD] = _passwordTextField.text;
-    return param;
+- (WSCreateUserRequest*)_createUserInfo {
+    WSCreateUserRequest *request = [[WSCreateUserRequest alloc] init];
+    request.userName = _usernameTextField.text;
+    request.passWord = _passwordTextField.text;
+    return request;
 }
 
 #pragma mark - Set Get
@@ -141,7 +139,7 @@
 }
 
 - (void)_callWSLogin {
-    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
+    [[COLoginManager shared] callAPILogin:[self _createUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } else {

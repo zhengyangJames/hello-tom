@@ -79,5 +79,6 @@
         dic[kTOKEN_TYPE] = @"";
     }
     return dic;
+    
 }
 @end

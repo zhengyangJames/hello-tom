@@ -12,8 +12,13 @@
 
 @implementation WSURLSessionManager (User)
 
-- (void)wsLoginWithUserInfo:(NSDictionary *)param handler:(WSURLSessionHandler)handler {
-    NSString *postString = [self paramsToString:param];
+- (void)wsLoginWithUserInfo:(id)param handler:(WSURLSessionHandler)handler {
+    NSString *postString;
+    if (param && [param isKindOfClass:[NSDictionary class]]) {
+        postString = [self paramsToString:param];
+    } else {
+        postString = [self paramsToStringWithRequest:param];
+    }
     NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_POST_LOGIN body:body httpMethod:METHOD_POST];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {

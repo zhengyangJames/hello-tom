@@ -10,15 +10,11 @@
 #import "COBorderTextField.h"
 #import "WSURLSessionManager+User.h"
 
-#define MESSEAGE_RESET_PASSWORD @"Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly"
-
 @interface ForgotPasswordViewController () <UIAlertViewDelegate>
 {
     __weak IBOutlet COBorderTextField *emailTextField;
 
 }
-
-
 @end
 
 @implementation ForgotPasswordViewController
@@ -32,8 +28,6 @@
     [super viewDidAppear:animated];
     [emailTextField becomeFirstResponder];
 }
-
-
 #pragma mark - Private
 
 - (BOOL)_isValidation {
@@ -46,8 +40,6 @@
     }
     return YES;
 }
-
-
 #pragma mark - Action
 - (IBAction)__actionCancel:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

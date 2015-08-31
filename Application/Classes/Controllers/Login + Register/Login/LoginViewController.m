@@ -15,6 +15,7 @@
 #import "NSString+MD5.h"
 #import "WSURLSessionManager+Profile.h"
 #import "COLoginManager.h"
+#import "WSCreateUserRequest.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 {
@@ -42,14 +43,11 @@
     
 }
 
-- (NSMutableDictionary*)_creatUserInfo {
-    NSMutableDictionary *param = [NSMutableDictionary new];
-    param[kCLIENT_ID] = CLIENT_ID;
-    param[kCLIENT_SECRECT] = CLIENT_SECRECT;
-    param[kGRANT_TYPE] = GRANT_TYPE;
-    param[kUSER] = _userName.text;
-    param[kPASSWORD] = _passWord.text;
-    return param;
+- (WSCreateUserRequest*)_createUserInfo {
+    WSCreateUserRequest *request = [[WSCreateUserRequest alloc] init];
+    request.userName = _userName.text;
+    request.passWord = _passWord.text;
+    return request;
 }
 
 - (BOOL)_isValid {
@@ -70,7 +68,7 @@
 #pragma mark - CallAPI
 - (void)_callWSLogin {
     [UIHelper showLoadingInView:self.view];
-    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
+    [[COLoginManager shared] callAPILogin:[self _createUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
             if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];

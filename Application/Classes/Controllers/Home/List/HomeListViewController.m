@@ -20,6 +20,7 @@
 #import "COProjectFundedAmountModel.h"
 #import "COFilterListModel.h"
 #import "COLoginManager.h"
+#import "COListFilterObject.h"
 
 typedef NS_ENUM(NSInteger, FilterType) {
     FilterBullkType,
@@ -36,14 +37,12 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     __weak IBOutlet UIView *_noDataView;
     __weak IBOutlet UILabel *_noDataLabel;
     UIBarButtonItem *_leftButton;
-    NSInteger _indexSelectFilter;
     NSIndexPath *_indexPathForCell;
 }
 @property (copy, nonatomic) ActionGetIndexPath actionGetIndexPath;
 @property (strong, nonatomic) NSArray *arrayData;
 @property (strong, nonatomic) NSArray *arrayListFilter;
 @property (nonatomic, strong) COOfferModel *offerModel;
-@property (nonatomic, strong) id<COFilterList> filterItem;
 @end	
 @implementation HomeListViewController
 
@@ -72,7 +71,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [_tableView registerNib:[UINib nibWithNibName:[HomeListViewCell identifier] bundle:nil]
      forCellReuseIdentifier:[HomeListViewCell identifier]];
     _noDataView.hidden = YES;
-    _indexSelectFilter = 0;
 }
 
 - (void)_setupLeftBarButton {
@@ -126,30 +124,29 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 - (void)__actionFilter {
     [CODropListVC presentWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
                               data:self.arrayListFilter
-                     selectedIndex:_indexSelectFilter
                           parentVC:self
                          didSelect:^(NSInteger index) {
-         _indexSelectFilter = index;
          if (self.arrayListFilter && self.arrayListFilter.count > 0) {
-             self.filterItem = self.arrayListFilter[index];
+             COListFilterObject *filterObject = self.arrayListFilter[index];
+             [self _callWSGetListOfferFilter:filterObject.value];
         }
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            if (self.arrayData && self.arrayData.count > 0) {
-                self.arrayData = nil;
-                [_tableView reloadData];
-                
-            } else {
-                _noDataView.hidden = YES;
-            }
-            _leftButton.enabled = NO;
-        }];
-         [self _callWSGetListOfferFilter:self.filterItem.filterValue];
+         
     }];
 }
 
 #pragma mark - CalAPI
 
 - (void)_callWSGetListOfferFilter:(NSString*)typeFilter {
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        if (self.arrayData && self.arrayData.count > 0) {
+            self.arrayData = nil;
+            [_tableView reloadData];
+            
+        } else {
+            _noDataView.hidden = YES;
+        }
+        _leftButton.enabled = NO;
+    }];
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetListOffersFilter:typeFilter handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {

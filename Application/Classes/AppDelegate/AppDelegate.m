@@ -112,7 +112,7 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 1) {
         if ([[COLoginManager shared] userModel]) {
-            [[COLoginManager shared] tokenObject:[self _createParamTokenWithModel:[[COLoginManager shared] userModel]] callWSGetListProfile:^(id object, BOOL sucess) {
+            [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, BOOL sucess) {
             }];
         } else {
             [self _setUpLogginVC];
@@ -151,19 +151,5 @@
             
         default: break;
     }
-}
-- (NSMutableDictionary*)_createParamTokenWithModel:(COUserProfileModel *)model {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    if (model.stringOfAccessToken) {
-            dic[kACCESS_TOKEN] = model.stringOfAccessToken;
-    } else {
-        dic[kACCESS_TOKEN] = @"";
-    }
-    if (model.stringOfTokenType) {
-            dic[kTOKEN_TYPE] = model.stringOfTokenType;
-    } else {
-        dic[kTOKEN_TYPE] = @"";
-    }
-    return dic;
 }
 @end

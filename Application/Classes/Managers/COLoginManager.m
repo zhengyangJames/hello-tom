@@ -23,7 +23,7 @@
     return instance;
 }
 
-- (void)callAPILogin:(NSDictionary*)param actionLoginManager:(ActionLoginManager)actionLoginManager; {
+- (void)callAPILogin:(id)param actionLoginManager:(ActionLoginManager)actionLoginManager; {
     [[WSURLSessionManager shared] wsLoginWithUserInfo:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
             [self tokenObject:responseObject callWSGetListProfile:^(id object,BOOL sucess){
@@ -49,6 +49,9 @@
 }
 
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager {
+    if (!token) {
+        token = [self _createParamTokenWithModel:[[COLoginManager shared] userModel]];
+    }
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (actionLoginManager) {
@@ -81,5 +84,19 @@
     _userModel = userModel;
 }
 
+- (NSMutableDictionary*)_createParamTokenWithModel:(COUserProfileModel *)model {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    if (model.stringOfAccessToken) {
+        dic[kACCESS_TOKEN] = model.stringOfAccessToken;
+    } else {
+        dic[kACCESS_TOKEN] = @"";
+    }
+    if (model.stringOfTokenType) {
+        dic[kTOKEN_TYPE] = model.stringOfTokenType;
+    } else {
+        dic[kTOKEN_TYPE] = @"";
+    }
+    return dic;
+}
 @synthesize userModel = _userModel;
 @end

@@ -14,7 +14,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) BaseTabBarController *baseTabBarController;
-@property (assign, nonatomic,readwrite) BOOL checkIsLogin;
 
 @end
 

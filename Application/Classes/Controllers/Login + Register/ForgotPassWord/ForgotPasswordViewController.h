@@ -7,7 +7,6 @@
 //
 
 #import "BaseViewController.h"
-#import "COListProfileObject.h"
 
 @interface ForgotPasswordViewController : BaseViewController
 

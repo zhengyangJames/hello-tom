@@ -244,6 +244,8 @@
 		BB821DF81B7A5CC20040EDBF /* COProgressbarObj+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BB821DF71B7A5CC20040EDBF /* COProgressbarObj+Formatter.m */; };
 		BBBD82021B8BE0720061FFF0 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD82001B8BE0720061FFF0 /* ForgotPasswordViewController.m */; };
 		BBBD82031B8BE0720061FFF0 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBD82011B8BE0720061FFF0 /* ForgotPasswordViewController.xib */; };
+		BBEB21061B94C0A2007221B4 /* COListFilterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB21051B94C0A2007221B4 /* COListFilterObject.m */; };
+		BBEB210A1B94CB36007221B4 /* WSCreateUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB21091B94CB36007221B4 /* WSCreateUserRequest.m */; };
 		BBF4CC4C1B7EA08500F9A5FA /* COProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF4CC4B1B7EA08500F9A5FA /* COProjectModel.m */; };
 /* End PBXBuildFile section */
 
@@ -597,6 +599,10 @@
 		BBBD81FF1B8BE0720061FFF0 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		BBBD82001B8BE0720061FFF0 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		BBBD82011B8BE0720061FFF0 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		BBEB21041B94C0A2007221B4 /* COListFilterObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COListFilterObject.h; sourceTree = "<group>"; };
+		BBEB21051B94C0A2007221B4 /* COListFilterObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COListFilterObject.m; sourceTree = "<group>"; };
+		BBEB21081B94CB36007221B4 /* WSCreateUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCreateUserRequest.h; sourceTree = "<group>"; };
+		BBEB21091B94CB36007221B4 /* WSCreateUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCreateUserRequest.m; sourceTree = "<group>"; };
 		BBF4CC4A1B7EA08500F9A5FA /* COProjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProjectModel.h; sourceTree = "<group>"; };
 		BBF4CC4B1B7EA08500F9A5FA /* COProjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COProjectModel.m; sourceTree = "<group>"; };
 		D073E4F729C05E9C9A1DB5F5 /* libPods-CoAssets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoAssets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1281,6 +1287,8 @@
 				7F187A221B7C59E30072423D /* CODetailsOffersItemObj.m */,
 				7F187A241B7C5C4F0072423D /* CODetailsOffersItemObj+Mapping.h */,
 				7F187A251B7C5C4F0072423D /* CODetailsOffersItemObj+Mapping.m */,
+				BBEB21041B94C0A2007221B4 /* COListFilterObject.h */,
+				BBEB21051B94C0A2007221B4 /* COListFilterObject.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -1288,6 +1296,7 @@
 		7F325E871B40E50800116445 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BBEB21071B94CA9D007221B4 /* Requests */,
 				7F325E901B40E50800116445 /* WSURLSessionManager.h */,
 				7F325E911B40E50800116445 /* WSURLSessionManager.m */,
 				7F325E8A1B40E50800116445 /* WSURLSessionManager+ListContact.h */,
@@ -1534,6 +1543,15 @@
 			name = Forgotpassword;
 			path = "Application/Classes/Controllers/Login + Register/Forgotpassword";
 			sourceTree = SOURCE_ROOT;
+		};
+		BBEB21071B94CA9D007221B4 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				BBEB21081B94CB36007221B4 /* WSCreateUserRequest.h */,
+				BBEB21091B94CB36007221B4 /* WSCreateUserRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -1804,6 +1822,7 @@
 				7F8E0BD81B5355A20045EFB0 /* COOfferWebViewCell.m in Sources */,
 				7F325FB01B40E50800116445 /* PasswordTableViewCell.m in Sources */,
 				0ECA88411B27CA7100B5656F /* NMView.m in Sources */,
+				BBEB210A1B94CB36007221B4 /* WSCreateUserRequest.m in Sources */,
 				7F325FD91B40E50800116445 /* COListProfileObject.m in Sources */,
 				BB821DF81B7A5CC20040EDBF /* COProgressbarObj+Formatter.m in Sources */,
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
@@ -1820,6 +1839,7 @@
 				7F325FDD1B40E50800116445 /* WSURLSessionManager+User.m in Sources */,
 				7F325FBD1B40E50800116445 /* WebViewSetting.m in Sources */,
 				0ECA88451B27CA7100B5656F /* NSString+Helpers.m in Sources */,
+				BBEB21061B94C0A2007221B4 /* COListFilterObject.m in Sources */,
 				7F325F7E1B40E50800116445 /* BaseView.m in Sources */,
 				7FC40C961B4F67B400F2325F /* COProgressbarObj.m in Sources */,
 				7F325FA61B40E50800116445 /* AboutTableViewCell.m in Sources */,
