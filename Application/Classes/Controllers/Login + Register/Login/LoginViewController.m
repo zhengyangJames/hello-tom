@@ -43,10 +43,11 @@
     
 }
 
-- (WSCreateUserRequest*)_createUserInfo {
+- (WSCreateUserRequest*)_creatUserInfo {
+    
     WSCreateUserRequest *request = [[WSCreateUserRequest alloc] init];
-    request.userName = _userName.text;
-    request.passWord = _passWord.text;
+    request.user = _userName.text;
+    request.password = _passWord.text;
     return request;
 }
 
@@ -68,7 +69,7 @@
 #pragma mark - CallAPI
 - (void)_callWSLogin {
     [UIHelper showLoadingInView:self.view];
-    [[COLoginManager shared] callAPILogin:[self _createUserInfo] actionLoginManager:^(id object, BOOL sucess) {
+    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
             if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];

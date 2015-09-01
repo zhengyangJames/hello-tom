@@ -7,46 +7,35 @@
 //
 
 #import "WSCreateUserRequest.h"
+#import "COUserProfileModel.h"
+#import "COLoginManager.h"
 
 @implementation WSCreateUserRequest
 
-#pragma mark - getter
-
-- (NSString *)clientID {
-    return [NSString stringWithFormat:@"%@=%@",kCLIENT_ID,[CLIENT_ID urlEncode]];
-}
-
-- (NSString *)clientSecrect {
-    return [NSString stringWithFormat:@"%@=%@",kCLIENT_SECRECT,[CLIENT_SECRECT urlEncode]];
-}
-
-- (NSString *)grantType {
-    return [NSString stringWithFormat:@"%@=%@",kGRANT_TYPE,[GRANT_TYPE urlEncode]];
-}
-
-- (NSString *)userName {
-    if (_userName) {
-        return [NSString stringWithFormat:@"%@=%@",kUSER,[_userName urlEncode]];
+- (NSMutableURLRequest *)requestWithUserInfo:(NSDictionary *)userInfo paramToken:(NSDictionary*)paramToken url:(NSString *)url httpMethod:(NSString *)method valueToken:(BOOL)isValue {
+    NSString *postString;
+    if (!paramToken) {
+       postString = [self paramsToString:userInfo user:self.user password:self.password];
     }
-    return kUSER;
-}
-
-- (NSString *)passWord {
-    if (_passWord) {
-        return [NSString stringWithFormat:@"%@=%@",kPASSWORD,[_passWord urlEncode]];
+    NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *bodyString = @"";
+    if(parambody != nil) {
+        bodyString = [[NSString alloc] initWithData:parambody encoding:NSUTF8StringEncoding];
     }
-    return kPASSWORD;
+    NSMutableURLRequest *request = [self createAuthRequest:url body:parambody httpMethod:method];
+    if (isValue) {
+        if ([[COLoginManager shared] userModel]) {
+            COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+            NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
+            [request setValue:value forHTTPHeaderField:@"Authorization"];
+        } else {
+            if ([paramToken objectForKey:kTOKEN_TYPE] && [paramToken objectForKey:kACCESS_TOKEN]) {
+                NSString *value = [NSString stringWithFormat:@"%@ %@",[paramToken  valueForKey:kTOKEN_TYPE],[paramToken valueForKey:kACCESS_TOKEN]];
+                [[NSURLCache sharedURLCache] removeAllCachedResponses];
+                [request setValue:value forHTTPHeaderField:@"Authorization"];
+            }
+        }
+    }
+    return request;
 }
-
-#pragma mark - setter 
-
-- (void)setUserName:(NSString *)userName {
-    _userName = userName;
-}
-
-- (void)setPassWord:(NSString *)passWord {
-    _passWord = passWord;
-}
-@synthesize userName = _userName;
-@synthesize passWord = _passWord;
 @end

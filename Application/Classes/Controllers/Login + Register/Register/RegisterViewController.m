@@ -104,10 +104,11 @@
     return dic;
 }
 
-- (WSCreateUserRequest*)_createUserInfo {
+- (WSCreateUserRequest*)_creatUserInfo {
+    
     WSCreateUserRequest *request = [[WSCreateUserRequest alloc] init];
-    request.userName = _usernameTextField.text;
-    request.passWord = _passwordTextField.text;
+    request.user = _usernameTextField.text;
+    request.password = _passwordTextField.text;
     return request;
 }
 
@@ -139,7 +140,7 @@
 }
 
 - (void)_callWSLogin {
-    [[COLoginManager shared] callAPILogin:[self _createUserInfo] actionLoginManager:^(id object, BOOL sucess) {
+    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } else {

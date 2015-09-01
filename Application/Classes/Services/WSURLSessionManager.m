@@ -71,19 +71,6 @@
     return s;
 }
 
-- (NSString*)paramsToStringWithRequest:(WSCreateUserRequest*)params {
-    NSString *s = @"";
-    if (!params) {
-        return s;
-    }
-    s = [s stringByAppendingFormat:@"%@",params.clientID];
-    s = [s stringByAppendingFormat:@"&%@",params.clientSecrect];
-    s = [s stringByAppendingFormat:@"&%@",params.grantType];
-    s = [s stringByAppendingFormat:@"&%@",params.userName];
-    s = [s stringByAppendingFormat:@"&%@",params.passWord];
-    return s;
-}
-
 - (NSString*)buildURL:(NSString*)url byParams:(NSDictionary*)params
 {
     if(!url) return url;

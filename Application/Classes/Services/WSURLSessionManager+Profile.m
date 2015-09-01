@@ -11,14 +11,13 @@
 #import "COUserProfileModel.h"
 #import "WSURLSessionManager+User.h"
 #import "COLoginManager.h"
+#import "WSCreateUserRequest.h"
 
 @implementation WSURLSessionManager (Profile)
 
 - (void)wsGetProfileWithUserToken:(NSDictionary*)paramToken handler:(WSURLSessionHandler)handler {
-    NSString *value = [NSString stringWithFormat:@"%@ %@",[paramToken  valueForKey:kTOKEN_TYPE],[paramToken valueForKey:kACCESS_TOKEN]];
-    [[NSURLCache sharedURLCache] removeAllCachedResponses];
-    NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_GET_LIST_PROFIEL body:nil httpMethod:METHOD_GET];
-    [request setValue:value forHTTPHeaderField:@"Authorization"];
+    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
+    NSMutableURLRequest *request = [userRequest requestWithUserInfo:nil paramToken:paramToken url:WS_METHOD_GET_LIST_PROFILE httpMethod:METHOD_GET valueToken:YES];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSMutableDictionary *mutaDic = [NSMutableDictionary dictionary];
@@ -36,16 +35,11 @@
 }
 
 - (void)wsUpdateProfileWithBody:(NSDictionary *)body handler:(WSURLSessionHandler)handler {
-    NSString *postString = [self paramsToString:body];
-    NSData *paramBody = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-    NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
-    NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_GET_LIST_PROFIEL
-                                                      body:paramBody
-                                                httpMethod:METHOD_PUT];
-    [request setValue:value forHTTPHeaderField:@"Authorization"];
+    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
+    NSMutableURLRequest *request = [userRequest requestWithUserInfo:body paramToken:nil url:WS_METHOD_GET_LIST_PROFILE httpMethod:METHOD_PUT valueToken:YES];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            COUserProfileModel *userModel = [[COLoginManager shared] userModel];
             [[COLoginManager shared] tokenObject:[self _createParamTokenWithModel:userModel] callWSGetListProfile:^(id object, BOOL sucess) {
                 if (sucess && [object isKindOfClass:[NSDictionary class]]) {
                     [[COLoginManager shared] setUserModel:nil];

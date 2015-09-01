@@ -9,18 +9,13 @@
 #import "WSURLSessionManager+User.h"
 #import "COUserProfileModel.h"
 #import "COLoginManager.h"
+#import "WSCreateUserRequest.h"
 
 @implementation WSURLSessionManager (User)
 
-- (void)wsLoginWithUserInfo:(id)param handler:(WSURLSessionHandler)handler {
-    NSString *postString;
-    if (param && [param isKindOfClass:[NSDictionary class]]) {
-        postString = [self paramsToString:param];
-    } else {
-        postString = [self paramsToStringWithRequest:param];
-    }
-    NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_POST_LOGIN body:body httpMethod:METHOD_POST];
+- (void)wsLoginWithUserInfo:(id)info handler:(WSURLSessionHandler)handler {
+    WSCreateUserRequest *userRequest = info;
+    NSMutableURLRequest *request = [userRequest requestWithUserInfo:nil paramToken:nil url:WS_METHOD_POST_LOGIN httpMethod:METHOD_POST valueToken:NO];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
@@ -34,10 +29,9 @@
     }];
 }
 
-- (void)wsRegisterWithInfo:(NSDictionary *)param handler:(WSURLSessionHandler)handler {
-    NSString *postString = [self paramsToString:param];
-    NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_POST_REFISTER body:body httpMethod:METHOD_POST];
+- (void)wsRegisterWithInfo:(NSDictionary*)info handler:(WSURLSessionHandler)handler {
+    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
+    NSMutableURLRequest *request = [userRequest requestWithUserInfo:info paramToken:nil url:WS_METHOD_POST_REGISTER httpMethod:METHOD_POST valueToken:NO];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
@@ -52,11 +46,8 @@
 }
 
 - (void)wsForgotPassword:(NSDictionary *)param handler:(WSURLSessionHandler)handler {
-    NSString *postString = [self paramsToString:param];
-    NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_POST_PORGOT_PASSWORD
-                                                      body:body
-                                                httpMethod:METHOD_POST];
+    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
+    NSMutableURLRequest *request = [userRequest requestWithUserInfo:param paramToken:nil url:WS_METHOD_POST_PORGOT_PASSWORD httpMethod:METHOD_POST valueToken:NO];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
@@ -71,14 +62,8 @@
 }
 
 - (void)wsChangePasswordWithBody:(NSDictionary*)body handler:(WSURLSessionHandler)handler {
-    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-    NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
-    NSString *postString = [self paramsToString:body];
-    NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableURLRequest *request = [self createAuthRequest:WS_METHOD_POST_CHANGE_PASSWORD
-                                                      body:parambody
-                                                httpMethod:METHOD_POST];
-    [request setValue:value forHTTPHeaderField:@"Authorization"];
+    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
+    NSMutableURLRequest *request = [userRequest requestWithUserInfo:body paramToken:nil url:WS_METHOD_POST_CHANGE_PASSWORD httpMethod:METHOD_POST valueToken:YES];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {

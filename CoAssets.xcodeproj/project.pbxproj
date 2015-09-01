@@ -246,6 +246,7 @@
 		BBBD82031B8BE0720061FFF0 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBD82011B8BE0720061FFF0 /* ForgotPasswordViewController.xib */; };
 		BBEB21061B94C0A2007221B4 /* COListFilterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB21051B94C0A2007221B4 /* COListFilterObject.m */; };
 		BBEB210A1B94CB36007221B4 /* WSCreateUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB21091B94CB36007221B4 /* WSCreateUserRequest.m */; };
+		BBEB210D1B9525F6007221B4 /* WSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB210C1B9525F6007221B4 /* WSRequest.m */; };
 		BBF4CC4C1B7EA08500F9A5FA /* COProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF4CC4B1B7EA08500F9A5FA /* COProjectModel.m */; };
 /* End PBXBuildFile section */
 
@@ -603,6 +604,8 @@
 		BBEB21051B94C0A2007221B4 /* COListFilterObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COListFilterObject.m; sourceTree = "<group>"; };
 		BBEB21081B94CB36007221B4 /* WSCreateUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCreateUserRequest.h; sourceTree = "<group>"; };
 		BBEB21091B94CB36007221B4 /* WSCreateUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCreateUserRequest.m; sourceTree = "<group>"; };
+		BBEB210B1B9525F6007221B4 /* WSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRequest.h; sourceTree = "<group>"; };
+		BBEB210C1B9525F6007221B4 /* WSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRequest.m; sourceTree = "<group>"; };
 		BBF4CC4A1B7EA08500F9A5FA /* COProjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProjectModel.h; sourceTree = "<group>"; };
 		BBF4CC4B1B7EA08500F9A5FA /* COProjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COProjectModel.m; sourceTree = "<group>"; };
 		D073E4F729C05E9C9A1DB5F5 /* libPods-CoAssets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoAssets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1549,6 +1552,8 @@
 			children = (
 				BBEB21081B94CB36007221B4 /* WSCreateUserRequest.h */,
 				BBEB21091B94CB36007221B4 /* WSCreateUserRequest.m */,
+				BBEB210B1B9525F6007221B4 /* WSRequest.h */,
+				BBEB210C1B9525F6007221B4 /* WSRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1868,6 +1873,7 @@
 				7F325F951B40E50800116445 /* CODocumentSectionCell.m in Sources */,
 				7F325F811B40E50800116445 /* NSString+Validation.m in Sources */,
 				7F325FCA1B40E50800116445 /* COSlidingCell.m in Sources */,
+				BBEB210D1B9525F6007221B4 /* WSRequest.m in Sources */,
 				7F325F831B40E50800116445 /* UIImage+Scaling.m in Sources */,
 				7F325FAC1B40E50800116445 /* EditCompanyVC.m in Sources */,
 				BB3C84E41B910C85004B8EF9 /* COContactsModel.m in Sources */,

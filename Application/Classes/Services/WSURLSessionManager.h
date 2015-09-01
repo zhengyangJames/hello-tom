@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class WSCreateUserRequest;
 typedef void (^WSURLSessionHandler)(id responseObject, NSURLResponse *response, NSError *error);
 
 @interface WSURLSessionManager : NSObject
@@ -18,7 +17,6 @@ typedef void (^WSURLSessionHandler)(id responseObject, NSURLResponse *response, 
          method:(NSString*)method handler:(WSURLSessionHandler)handler;
 - (void)sendRequest:(NSMutableURLRequest*)request handler:(WSURLSessionHandler)handler;
 - (NSString*)paramsToString:(NSDictionary*)params;
-- (NSString*)paramsToStringWithRequest:(WSCreateUserRequest*)params;
 - (NSMutableURLRequest*)createAuthRequest:(NSString*)url
                                       body:(NSData*)bodyData
                                 httpMethod:(NSString*)method;

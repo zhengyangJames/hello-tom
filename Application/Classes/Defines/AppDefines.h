@@ -54,9 +54,9 @@
 
 #define WS_METHOD_POST_LOGIN                        @"https://www.coassets.com/oauth2/access_token/"
 
-#define WS_METHOD_POST_REFISTER                     [WS_ENDPOINT stringByAppendingString:@"/profile/register/"]
+#define WS_METHOD_POST_REGISTER                     [WS_ENDPOINT stringByAppendingString:@"/profile/register/"]
 
-#define WS_METHOD_GET_LIST_PROFIEL                  [WS_ENDPOINT stringByAppendingString:@"/profile/"]
+#define WS_METHOD_GET_LIST_PROFILE                  [WS_ENDPOINT stringByAppendingString:@"/profile/"]
 
 #define WS_METHOD_POST_PORGOT_PASSWORD              [WS_ENDPOINT stringByAppendingString:@"/forget-password/"]
 

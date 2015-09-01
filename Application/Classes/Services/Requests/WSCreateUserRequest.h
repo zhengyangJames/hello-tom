@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WSRequest.h"
 
-@interface WSCreateUserRequest : NSObject
+@interface WSCreateUserRequest : WSRequest
 
-@property (nonatomic, strong) NSString *clientID;
-@property (nonatomic, strong) NSString *clientSecrect;
-@property (nonatomic, strong) NSString *grantType;
-@property (nonatomic, strong) NSString *userName;
-@property (nonatomic, strong) NSString *passWord;
+@property (nonatomic, strong) NSString *user;
+@property (nonatomic, strong) NSString *password;
+
+- (NSMutableURLRequest *)requestWithUserInfo:(NSDictionary *)userInfo paramToken:(NSDictionary*)paramToken url:(NSString *)url httpMethod:(NSString *)method valueToken:(BOOL)isValue;
 @end
