@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class COUserProfileModel;
+@class WSLoginRequest;
 
 typedef void(^ActionLoginManager)(id object,BOOL sucess);
 
@@ -18,6 +19,6 @@ typedef void(^ActionLoginManager)(id object,BOOL sucess);
 
 @property (nonatomic, strong) COUserProfileModel *userModel;
 
-- (void)callAPILogin:(id)param actionLoginManager:(ActionLoginManager)actionLoginManager;
+- (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager;
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager;
 @end

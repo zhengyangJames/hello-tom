@@ -237,6 +237,11 @@
 		BB368EB51B87E0E00066C646 /* COUserTokensModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB41B87E0E00066C646 /* COUserTokensModel.m */; };
 		BB368EB81B87E1F30066C646 /* COUserProfileDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */; };
 		BB383E2F1B8BC1B000303E34 /* COUserAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */; };
+		BB3A9F5E1B961692002EEB1C /* WSRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F5D1B961692002EEB1C /* WSRegisterRequest.m */; };
+		BB3A9F611B9624F9002EEB1C /* WSForgotPassWordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F601B9624F9002EEB1C /* WSForgotPassWordRequest.m */; };
+		BB3A9F641B962BB8002EEB1C /* WSChangePassWordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F631B962BB8002EEB1C /* WSChangePassWordRequest.m */; };
+		BB3A9F671B9659EC002EEB1C /* WSGetProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F661B9659EC002EEB1C /* WSGetProfileRequest.m */; };
+		BB3A9F6A1B9660DB002EEB1C /* WSUpdateProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F691B9660DB002EEB1C /* WSUpdateProfileRequest.m */; };
 		BB3C84E41B910C85004B8EF9 /* COContactsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3C84E31B910C85004B8EF9 /* COContactsModel.m */; };
 		BB48F1A01B86763E006F1921 /* COFilterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB48F19F1B86763E006F1921 /* COFilterListModel.m */; };
 		BB5B9A461B790F15002D37AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB5B9A451B790F15002D37AF /* Localizable.strings */; };
@@ -245,7 +250,7 @@
 		BBBD82021B8BE0720061FFF0 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD82001B8BE0720061FFF0 /* ForgotPasswordViewController.m */; };
 		BBBD82031B8BE0720061FFF0 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBD82011B8BE0720061FFF0 /* ForgotPasswordViewController.xib */; };
 		BBEB21061B94C0A2007221B4 /* COListFilterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB21051B94C0A2007221B4 /* COListFilterObject.m */; };
-		BBEB210A1B94CB36007221B4 /* WSCreateUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB21091B94CB36007221B4 /* WSCreateUserRequest.m */; };
+		BBEB210A1B94CB36007221B4 /* WSLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB21091B94CB36007221B4 /* WSLoginRequest.m */; };
 		BBEB210D1B9525F6007221B4 /* WSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB210C1B9525F6007221B4 /* WSRequest.m */; };
 		BBF4CC4C1B7EA08500F9A5FA /* COProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF4CC4B1B7EA08500F9A5FA /* COProjectModel.m */; };
 /* End PBXBuildFile section */
@@ -588,6 +593,16 @@
 		BB368EB91B87F3D60066C646 /* COUserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COUserData.h; sourceTree = "<group>"; };
 		BB383E2D1B8BC1B000303E34 /* COUserAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserAccountModel.h; sourceTree = "<group>"; };
 		BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserAccountModel.m; sourceTree = "<group>"; };
+		BB3A9F5C1B961692002EEB1C /* WSRegisterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRegisterRequest.h; sourceTree = "<group>"; };
+		BB3A9F5D1B961692002EEB1C /* WSRegisterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRegisterRequest.m; sourceTree = "<group>"; };
+		BB3A9F5F1B9624F9002EEB1C /* WSForgotPassWordRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSForgotPassWordRequest.h; sourceTree = "<group>"; };
+		BB3A9F601B9624F9002EEB1C /* WSForgotPassWordRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSForgotPassWordRequest.m; sourceTree = "<group>"; };
+		BB3A9F621B962BB8002EEB1C /* WSChangePassWordRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSChangePassWordRequest.h; sourceTree = "<group>"; };
+		BB3A9F631B962BB8002EEB1C /* WSChangePassWordRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSChangePassWordRequest.m; sourceTree = "<group>"; };
+		BB3A9F651B9659EC002EEB1C /* WSGetProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetProfileRequest.h; sourceTree = "<group>"; };
+		BB3A9F661B9659EC002EEB1C /* WSGetProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetProfileRequest.m; sourceTree = "<group>"; };
+		BB3A9F681B9660DB002EEB1C /* WSUpdateProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUpdateProfileRequest.h; sourceTree = "<group>"; };
+		BB3A9F691B9660DB002EEB1C /* WSUpdateProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUpdateProfileRequest.m; sourceTree = "<group>"; };
 		BB3C84E21B910C85004B8EF9 /* COContactsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COContactsModel.h; sourceTree = "<group>"; };
 		BB3C84E31B910C85004B8EF9 /* COContactsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COContactsModel.m; sourceTree = "<group>"; };
 		BB48F19E1B86763E006F1921 /* COFilterListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFilterListModel.h; sourceTree = "<group>"; };
@@ -602,8 +617,8 @@
 		BBBD82011B8BE0720061FFF0 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		BBEB21041B94C0A2007221B4 /* COListFilterObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COListFilterObject.h; sourceTree = "<group>"; };
 		BBEB21051B94C0A2007221B4 /* COListFilterObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COListFilterObject.m; sourceTree = "<group>"; };
-		BBEB21081B94CB36007221B4 /* WSCreateUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCreateUserRequest.h; sourceTree = "<group>"; };
-		BBEB21091B94CB36007221B4 /* WSCreateUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCreateUserRequest.m; sourceTree = "<group>"; };
+		BBEB21081B94CB36007221B4 /* WSLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLoginRequest.h; sourceTree = "<group>"; };
+		BBEB21091B94CB36007221B4 /* WSLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLoginRequest.m; sourceTree = "<group>"; };
 		BBEB210B1B9525F6007221B4 /* WSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRequest.h; sourceTree = "<group>"; };
 		BBEB210C1B9525F6007221B4 /* WSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRequest.m; sourceTree = "<group>"; };
 		BBF4CC4A1B7EA08500F9A5FA /* COProjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProjectModel.h; sourceTree = "<group>"; };
@@ -1550,10 +1565,20 @@
 		BBEB21071B94CA9D007221B4 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				BBEB21081B94CB36007221B4 /* WSCreateUserRequest.h */,
-				BBEB21091B94CB36007221B4 /* WSCreateUserRequest.m */,
+				BBEB21081B94CB36007221B4 /* WSLoginRequest.h */,
+				BBEB21091B94CB36007221B4 /* WSLoginRequest.m */,
 				BBEB210B1B9525F6007221B4 /* WSRequest.h */,
 				BBEB210C1B9525F6007221B4 /* WSRequest.m */,
+				BB3A9F5C1B961692002EEB1C /* WSRegisterRequest.h */,
+				BB3A9F5D1B961692002EEB1C /* WSRegisterRequest.m */,
+				BB3A9F5F1B9624F9002EEB1C /* WSForgotPassWordRequest.h */,
+				BB3A9F601B9624F9002EEB1C /* WSForgotPassWordRequest.m */,
+				BB3A9F621B962BB8002EEB1C /* WSChangePassWordRequest.h */,
+				BB3A9F631B962BB8002EEB1C /* WSChangePassWordRequest.m */,
+				BB3A9F651B9659EC002EEB1C /* WSGetProfileRequest.h */,
+				BB3A9F661B9659EC002EEB1C /* WSGetProfileRequest.m */,
+				BB3A9F681B9660DB002EEB1C /* WSUpdateProfileRequest.h */,
+				BB3A9F691B9660DB002EEB1C /* WSUpdateProfileRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1805,11 +1830,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3A9F5E1B961692002EEB1C /* WSRegisterRequest.m in Sources */,
 				7F325FC41B40E50800116445 /* DropListCell.m in Sources */,
 				7F325FCC1B40E50800116445 /* COSlidingView.m in Sources */,
 				7F325F8C1B40E50800116445 /* COOfferHeadingCell.m in Sources */,
 				7F325F7C1B40E50800116445 /* BaseTabBarController.m in Sources */,
+				BB3A9F6A1B9660DB002EEB1C /* WSUpdateProfileRequest.m in Sources */,
 				7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */,
+				BB3A9F641B962BB8002EEB1C /* WSChangePassWordRequest.m in Sources */,
 				0ECA884A1B27CA7100B5656F /* NMImageHelper.m in Sources */,
 				7F325F9D1B40E50800116445 /* HomeListViewController.m in Sources */,
 				7F187A201B7C59640072423D /* CODetailsOffersObj.m in Sources */,
@@ -1827,7 +1855,8 @@
 				7F8E0BD81B5355A20045EFB0 /* COOfferWebViewCell.m in Sources */,
 				7F325FB01B40E50800116445 /* PasswordTableViewCell.m in Sources */,
 				0ECA88411B27CA7100B5656F /* NMView.m in Sources */,
-				BBEB210A1B94CB36007221B4 /* WSCreateUserRequest.m in Sources */,
+				BB3A9F671B9659EC002EEB1C /* WSGetProfileRequest.m in Sources */,
+				BBEB210A1B94CB36007221B4 /* WSLoginRequest.m in Sources */,
 				7F325FD91B40E50800116445 /* COListProfileObject.m in Sources */,
 				BB821DF81B7A5CC20040EDBF /* COProgressbarObj+Formatter.m in Sources */,
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
@@ -1879,6 +1908,7 @@
 				BB3C84E41B910C85004B8EF9 /* COContactsModel.m in Sources */,
 				BBF4CC4C1B7EA08500F9A5FA /* COProjectModel.m in Sources */,
 				7F325FDB1B40E50800116445 /* WSURLSessionManager+ListContact.m in Sources */,
+				BB3A9F611B9624F9002EEB1C /* WSForgotPassWordRequest.m in Sources */,
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
 				7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */,

@@ -11,13 +11,13 @@
 #import "COUserProfileModel.h"
 #import "WSURLSessionManager+User.h"
 #import "COLoginManager.h"
-#import "WSCreateUserRequest.h"
+#import "WSGetProfileRequest.h"
+#import "WSUpdateProfileRequest.h"
 
 @implementation WSURLSessionManager (Profile)
 
 - (void)wsGetProfileWithUserToken:(NSDictionary*)paramToken handler:(WSURLSessionHandler)handler {
-    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
-    NSMutableURLRequest *request = [userRequest requestWithUserInfo:nil paramToken:paramToken url:WS_METHOD_GET_LIST_PROFILE httpMethod:METHOD_GET valueToken:YES];
+    WSGetProfileRequest *request = [[WSGetProfileRequest alloc] initGetProfileRequestWithBodyParams:paramToken];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSMutableDictionary *mutaDic = [NSMutableDictionary dictionary];
@@ -35,8 +35,7 @@
 }
 
 - (void)wsUpdateProfileWithBody:(NSDictionary *)body handler:(WSURLSessionHandler)handler {
-    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
-    NSMutableURLRequest *request = [userRequest requestWithUserInfo:body paramToken:nil url:WS_METHOD_GET_LIST_PROFILE httpMethod:METHOD_PUT valueToken:YES];
+    WSUpdateProfileRequest *request = [[WSUpdateProfileRequest alloc] initUpdateProfileRequestWithBodyParams:body];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             COUserProfileModel *userModel = [[COLoginManager shared] userModel];

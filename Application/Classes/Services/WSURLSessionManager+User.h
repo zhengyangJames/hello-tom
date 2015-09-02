@@ -12,9 +12,9 @@
 
 @interface WSURLSessionManager (User)
 
-- (void)wsLoginWithUserInfo:(id)info handler:(WSURLSessionHandler)handler;
-- (void)wsRegisterWithInfo:(NSDictionary*)param handler:(WSURLSessionHandler)handler;
-- (void)wsForgotPassword:(NSDictionary*)param handler:(WSURLSessionHandler)handler;
-- (void)wsChangePasswordWithBody:(NSDictionary*)body handler:(WSURLSessionHandler)handler;
+- (void)wsLoginWithRequest:(id)request handler:(WSURLSessionHandler)handler;
+- (void)wsRegisterWithRequest:(id)request handler:(WSURLSessionHandler)handler;
+- (void)wsForgotPasswordWithRequest:(id)request handler:(WSURLSessionHandler)handler;
+- (void)wsChangePasswordWithRequest:(id)request handler:(WSURLSessionHandler)handler;
 
 @end

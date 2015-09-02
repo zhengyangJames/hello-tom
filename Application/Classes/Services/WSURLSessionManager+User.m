@@ -9,13 +9,12 @@
 #import "WSURLSessionManager+User.h"
 #import "COUserProfileModel.h"
 #import "COLoginManager.h"
-#import "WSCreateUserRequest.h"
+#import "WSLoginRequest.h"
+#import "WSLoginRequest.h"
 
 @implementation WSURLSessionManager (User)
 
-- (void)wsLoginWithUserInfo:(id)info handler:(WSURLSessionHandler)handler {
-    WSCreateUserRequest *userRequest = info;
-    NSMutableURLRequest *request = [userRequest requestWithUserInfo:nil paramToken:nil url:WS_METHOD_POST_LOGIN httpMethod:METHOD_POST valueToken:NO];
+- (void)wsLoginWithRequest:(id)request handler:(WSURLSessionHandler)handler {
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
@@ -29,9 +28,7 @@
     }];
 }
 
-- (void)wsRegisterWithInfo:(NSDictionary*)info handler:(WSURLSessionHandler)handler {
-    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
-    NSMutableURLRequest *request = [userRequest requestWithUserInfo:info paramToken:nil url:WS_METHOD_POST_REGISTER httpMethod:METHOD_POST valueToken:NO];
+- (void)wsRegisterWithRequest:(id)request handler:(WSURLSessionHandler)handler;{
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
@@ -45,9 +42,7 @@
     }];
 }
 
-- (void)wsForgotPassword:(NSDictionary *)param handler:(WSURLSessionHandler)handler {
-    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
-    NSMutableURLRequest *request = [userRequest requestWithUserInfo:param paramToken:nil url:WS_METHOD_POST_PORGOT_PASSWORD httpMethod:METHOD_POST valueToken:NO];
+- (void)wsForgotPasswordWithRequest:(id)request handler:(WSURLSessionHandler)handler {
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
@@ -61,9 +56,7 @@
     }];
 }
 
-- (void)wsChangePasswordWithBody:(NSDictionary*)body handler:(WSURLSessionHandler)handler {
-    WSCreateUserRequest *userRequest = [[WSCreateUserRequest alloc] init];
-    NSMutableURLRequest *request = [userRequest requestWithUserInfo:body paramToken:nil url:WS_METHOD_POST_CHANGE_PASSWORD httpMethod:METHOD_POST valueToken:YES];
+- (void)wsChangePasswordWithRequest:(id)request handler:(WSURLSessionHandler)handler {
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {

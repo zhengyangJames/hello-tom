@@ -15,7 +15,7 @@
 #import "NSString+MD5.h"
 #import "WSURLSessionManager+Profile.h"
 #import "COLoginManager.h"
-#import "WSCreateUserRequest.h"
+#import "WSLoginRequest.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 {
@@ -43,11 +43,9 @@
     
 }
 
-- (WSCreateUserRequest*)_creatUserInfo {
+- (WSLoginRequest*)_setLoginRequest {
     
-    WSCreateUserRequest *request = [[WSCreateUserRequest alloc] init];
-    request.user = _userName.text;
-    request.password = _passWord.text;
+    WSLoginRequest *request = [[WSLoginRequest alloc] initLoginRequestWithUserName:_userName.text passWord:_passWord.text];
     return request;
 }
 
@@ -69,7 +67,7 @@
 #pragma mark - CallAPI
 - (void)_callWSLogin {
     [UIHelper showLoadingInView:self.view];
-    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
+    [[COLoginManager shared] callAPILoginWithRequest:[self _setLoginRequest] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
             if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];

@@ -10,8 +10,9 @@
 
 @interface WSRequest : NSMutableURLRequest
 
-- (NSString*)paramsToString:(NSDictionary*)params user:(NSString *)user password:(NSString *)password;
-- (NSMutableURLRequest*)createAuthRequest:(NSString*)url
-                                     body:(NSData*)bodyData
-                               httpMethod:(NSString*)method;
+- (id)createAuthRequest:(NSString*)url body:(NSData*)bodyData httpMethod:(NSString*)method;
+
+- (NSString*)stringToLoginWithUserName:(NSString *)userName password:(NSString *)password;
+- (NSString*)paramsToString:(NSDictionary*)params;
+
 @end

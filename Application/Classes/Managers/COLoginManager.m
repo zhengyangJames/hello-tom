@@ -23,14 +23,12 @@
     return instance;
 }
 
-- (void)callAPILogin:(id)param actionLoginManager:(ActionLoginManager)actionLoginManager; {
-    [[WSURLSessionManager shared] wsLoginWithUserInfo:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+- (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager {
+    [[WSURLSessionManager shared] wsLoginWithRequest:loginRequest handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
             [self tokenObject:responseObject callWSGetListProfile:^(id object,BOOL sucess){
                 if ([object isKindOfClass:[NSDictionary class]] && sucess) {
                     NSError *error;
-                    COUserProfileModel *userProModel = [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:object error:&error];
-                    _userModel = userProModel;
                     NSDictionary *dic = object;
                     NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
                     [kUserDefaults setObject:data forKey:kPROFILE_JSON];

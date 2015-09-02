@@ -8,7 +8,6 @@
 
 #import "WSURLSessionManager.h"
 #import "AFNetworking.h"
-#import "WSCreateUserRequest.h"
 
 @interface WSURLSessionManager ()
 {

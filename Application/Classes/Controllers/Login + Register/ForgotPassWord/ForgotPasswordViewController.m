@@ -9,6 +9,7 @@
 #import "ForgotPasswordViewController.h"
 #import "COBorderTextField.h"
 #import "WSURLSessionManager+User.h"
+#import "WSForgotPassWordRequest.h"
 
 @interface ForgotPasswordViewController () <UIAlertViewDelegate>
 {
@@ -54,11 +55,15 @@
     }
 }
 
+- (WSForgotPassWordRequest *)_setForgotPassRequest {
+    WSForgotPassWordRequest *request = [[WSForgotPassWordRequest alloc] initForgotPassWordRequestWithEmail:emailTextField.text];
+    return request;
+}
+
 #pragma mark - Web Service
 - (void)_callWSProgotPassoword {
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:emailTextField.text,@"email", nil];
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsForgotPassword:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsForgotPasswordWithRequest:[self _setForgotPassRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {;
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"MESSEAGE_RESET_PASSWORD", nil) delegate:self tag:10];
         } else {

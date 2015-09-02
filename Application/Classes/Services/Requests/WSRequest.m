@@ -20,45 +20,46 @@
 
 @implementation WSRequest
 
-
-- (NSString*)paramsToString:(NSDictionary*)params user:(NSString *)user password:(NSString *)password {
+- (NSString*)stringToLoginWithUserName:(NSString *)userName password:(NSString *)password {
     NSString *s = @"";
-    //neu k co param,
-    if(!params) {
-        s = [s stringByAppendingFormat:@"%@=%@",kCLIENT_ID,[CLIENT_ID urlEncode]];
-        s = [s stringByAppendingFormat:@"&%@=%@",kCLIENT_SECRECT,[CLIENT_SECRECT urlEncode]];
-        s = [s stringByAppendingFormat:@"&%@=%@",kGRANT_TYPE,[GRANT_TYPE urlEncode]];
-        s = [s stringByAppendingFormat:@"&%@=%@",kUSER,[user urlEncode]];
-        s = [s stringByAppendingFormat:@"&%@=%@",kPASSWORD,[password urlEncode]];
-    } else {
-        NSString *prefix = @"";
-        for (NSString *key in [params allKeys]) {
-            if ([key isEqualToString:kPROFILE]) {
-                NSDictionary *profile = [params objectForKey:kPROFILE];
-                for(NSString *key in [profile allKeys]) {
-                    NSString *object = [profile objectForKey:key];
-                    if ([object isEqualToString:@""]) {
-                        object = @" ";
-                    }
-                    s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[object urlEncode]];
-                    prefix = @"&";
+    s = [s stringByAppendingFormat:@"%@=%@",kCLIENT_ID,[CLIENT_ID urlEncode]];
+    s = [s stringByAppendingFormat:@"&%@=%@",kCLIENT_SECRECT,[CLIENT_SECRECT urlEncode]];
+    s = [s stringByAppendingFormat:@"&%@=%@",kGRANT_TYPE,[GRANT_TYPE urlEncode]];
+    s = [s stringByAppendingFormat:@"&%@=%@",kUSER,[userName urlEncode]];
+    s = [s stringByAppendingFormat:@"&%@=%@",kPASSWORD,[password urlEncode]];
+    return s;
+}
+
+- (NSString*)paramsToString:(NSDictionary*)params{
+    NSString *s = @"";
+    NSString *prefix = @"";
+    for (NSString *key in [params allKeys]) {
+        if ([key isEqualToString:kPROFILE]) {
+            NSDictionary *profile = [params objectForKey:kPROFILE];
+            for(NSString *key in [profile allKeys]) {
+                NSString *object = [profile objectForKey:key];
+                if ([object isEqualToString:@""]) {
+                    object = @" ";
                 }
-                break;
+                s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[object urlEncode]];
+                prefix = @"&";
             }
-            NSString *object = [params objectForKey:key];
+            break;
+        }
+        id object = [params objectForKey:key];
+        if ([object isKindOfClass:[NSString class]]) {
             if ([object isEqualToString:@""]) {
                 object = @" ";
             }
             s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[object urlEncode]];
             prefix = @"&";
         }
+
     }
-
     return s;
-
 }
 
-- (NSMutableURLRequest*)createAuthRequest:(NSString*)url
+- (id)createAuthRequest:(NSString*)url
                                      body:(NSData*)bodyData
                                httpMethod:(NSString*)method {
     
@@ -67,7 +68,7 @@
         bodyString = [[NSString alloc] initWithData:bodyData encoding:NSUTF8StringEncoding];
     }
     // create request
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:WS_TIME_OUT];
+    WSRequest *request = [[WSRequest alloc] initWithURL:[NSURL URLWithString:url]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:WS_TIME_OUT];
     [request setHTTPMethod:[method uppercaseString]];
     [request setHTTPBody:bodyData];
     [request setTimeoutInterval:WS_TIME_OUT];

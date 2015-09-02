@@ -17,7 +17,8 @@
 #import "WSURLSessionManager+User.h"
 #import "HomeListViewController.h"
 #import "COLoginManager.h"
-#import "WSCreateUserRequest.h"
+#import "WSLoginRequest.h"
+#import "WSRegisterRequest.h"
 
 @interface RegisterViewController () <UIAlertViewDelegate,COCheckBoxButtonDelegate>
 {
@@ -91,8 +92,12 @@
     }
     return YES;
 }
+- (WSRegisterRequest *)_setRegisterRequest {
+    WSRegisterRequest *request = [[WSRegisterRequest alloc] initRegisterRequestWithBody:[self _setBodyInfo]];
+    return request;
+}
 
-- (NSDictionary*)_getUserInfo {
+- (NSDictionary*)_setBodyInfo {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     dic[kUSER] = _usernameTextField.text;
     dic[kPASSWORD] = _passwordTextField.text;
@@ -104,13 +109,12 @@
     return dic;
 }
 
-- (WSCreateUserRequest*)_creatUserInfo {
+- (WSLoginRequest*)_setLoginRequest {
     
-    WSCreateUserRequest *request = [[WSCreateUserRequest alloc] init];
-    request.user = _usernameTextField.text;
-    request.password = _passwordTextField.text;
+    WSLoginRequest *request = [[WSLoginRequest alloc] initLoginRequestWithUserName:_usernameTextField.text passWord:_passwordTextField.text];
     return request;
 }
+
 
 #pragma mark - Set Get
 - (NSArray*)arrayListPhoneCode {
@@ -123,7 +127,7 @@
 #pragma mark - Web Service
 - (void)_callWSRegister {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsRegisterWithInfo:[self _getUserInfo] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsRegisterWithRequest:[self _setRegisterRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if([[responseObject valueForKey:@"success"] isEqualToString:@"user created"]) {
                 [[COLoginManager shared] setUserModel:nil];
@@ -140,7 +144,7 @@
 }
 
 - (void)_callWSLogin {
-    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
+    [[COLoginManager shared] callAPILoginWithRequest:[self _setLoginRequest] actionLoginManager:^(id object, BOOL sucess) {
         if (object && sucess) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } else {

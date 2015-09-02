@@ -21,6 +21,7 @@
 #import "TableBottomViewCell.h"
 #import "COUserProfileModel.h"
 #import "COLoginManager.h"
+#import "WSChangePassWordRequest.h"
 
 @interface ProfileViewController ()
 <UITableViewDataSource,
@@ -43,7 +44,7 @@ TableBottomViewCellDelegate>
 @property (strong, nonatomic) TableHeaderView       *tableheaderView;
 @property (weak, nonatomic  ) PasswordTableViewCell *passwordTableViewCell;
 @property (strong, nonatomic) NSArray               *arrayCountryCode;
-@property (strong, nonatomic) COUserProfileModel *userModel;
+@property (strong, nonatomic) COUserProfileModel    *userModel;
 @end
 
 @implementation ProfileViewController
@@ -146,9 +147,9 @@ TableBottomViewCellDelegate>
 
 #pragma mark - Web Service
 
-- (void)_callWSChangePassword:(NSDictionary*)param {
+- (void)_callWSChangePasswordWithNewPassWord:(NSString *)newPass{
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared]wsChangePasswordWithBody:param handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared]wsChangePasswordWithRequest:[self _setChangePassWordRequestWithPass:newPass] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_CHANGE_SUCCESSFULLY", nil) delegate:self tag:0];
         } else {
@@ -162,7 +163,10 @@ TableBottomViewCellDelegate>
     
 }
 
-
+- (WSChangePassWordRequest *)_setChangePassWordRequestWithPass:(NSString *)password {
+    WSChangePassWordRequest *request = [[WSChangePassWordRequest alloc] initChangePassWordRequestWithNewPassWord:password];
+    return request;
+}
 #pragma mark - TableView DataSource
 
 - (CGFloat)_heightForTableView:(UITableView*)tableView cell:(UITableViewCell*)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -292,8 +296,8 @@ TableBottomViewCellDelegate>
 
 
 #pragma mark - Other Delegate
-- (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell *)passwordTableViewCell newPassowrd:(NSString *)newPassowrd {
-    [self _callWSChangePassword:@{@"new_password":newPassowrd}];
+- (void)passwordTableViewCellTextFieldAction:(PasswordTableViewCell *)passwordTableViewCell newPassowrd:(NSString *)newPassoword {
+    [self _callWSChangePasswordWithNewPassWord:newPassoword];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
