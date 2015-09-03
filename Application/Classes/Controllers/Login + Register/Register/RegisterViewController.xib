@@ -32,7 +32,7 @@
                 <outlet property="_cellPhoneTextField" destination="bbl-qg-Gvn" id="3qR-Ny-UPu"/>
                 <outlet property="_comfilmPasswordTextField" destination="wgq-5i-3jo" id="n3h-3w-Va7"/>
                 <outlet property="_emailTextField" destination="mac-eL-ijI" id="xMt-sY-0pf"/>
-                <outlet property="_fristNameTextField" destination="Wvr-VK-fe3" id="lMZ-9U-Jva"/>
+                <outlet property="_firstNameTextField" destination="Wvr-VK-fe3" id="you-7S-OWl"/>
                 <outlet property="_lastNameTextField" destination="XNC-kM-vZF" id="Gpz-N3-WLI"/>
                 <outlet property="_passwordTextField" destination="KYv-jZ-u6d" id="T80-3P-9g6"/>
                 <outlet property="_usernameTextField" destination="DL9-jK-4kk" id="qGp-AF-9vo"/>

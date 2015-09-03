@@ -25,7 +25,7 @@
     __weak IBOutlet CoDropListButtom *btnSalutation;
     __weak IBOutlet CoDropListButtom *btnMobileNumber;
     __weak IBOutlet COCheckBoxButton *btnCheckBox;
-    __weak IBOutlet COBorderTextField *_fristNameTextField;
+    __weak IBOutlet COBorderTextField *_firstNameTextField;
     __weak IBOutlet COBorderTextField *_lastNameTextField;
     __weak IBOutlet COBorderTextField *_emailTextField;
     __weak IBOutlet COBorderTextField *_usernameTextField;
@@ -57,8 +57,8 @@
 }
 
 - (BOOL)_isValidtion {
-    if ([_fristNameTextField.text isEmpty]) {
-        _currentField = _fristNameTextField;
+    if ([_firstNameTextField.text isEmpty]) {
+        _currentField = _firstNameTextField;
         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FIRSTNAME_REQUIRED", nil) delegate:self tag:0];
         return NO;
     } else if ([_lastNameTextField.text isEmpty]) {
@@ -93,24 +93,19 @@
     return YES;
 }
 - (WSRegisterRequest *)_setRegisterRequest {
-    WSRegisterRequest *request = [[WSRegisterRequest alloc] initRegisterRequestWithData:[self _setDataToRegister]];
+    WSRegisterRequest *request  = [[WSRegisterRequest alloc] init];
+    request.registerUserName    = _usernameTextField.text;
+    request.registerPassWord    = _passwordTextField.text;
+    request.registerFirstName   = _firstNameTextField.text;
+    request.registerLastName    = _lastNameTextField.text;
+    request.registerEmail       = _emailTextField.text;
+    request.registerNumCountry  = [self.arrayListPhoneCode[_indexActtionPhoneCode] objectForKey:@"code"];
+    request.registerCellPhone   = _cellPhoneTextField.text;
+    request = [request initRegisterRequest];
     return request;
 }
 
-- (NSDictionary*)_setDataToRegister {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    dic[kUSER] = _usernameTextField.text;
-    dic[kPASSWORD] = _passwordTextField.text;
-    dic[KFRIST_NAME] = _fristNameTextField.text;
-    dic[KLAST_NAME] = _lastNameTextField.text;
-    dic[KEMAIL] = _emailTextField.text;
-    dic[kNUM_COUNTRY] = [self.arrayListPhoneCode[_indexActtionPhoneCode] objectForKey:@"code"];
-    dic[kNUM_CELL_PHONE] = _cellPhoneTextField.text;
-    return dic;
-}
-
 - (WSLoginRequest*)_setLoginRequest {
-    
     WSLoginRequest *request = [[WSLoginRequest alloc] initLoginRequestWithUserName:_usernameTextField.text passWord:_passwordTextField.text];
     return request;
 }
@@ -130,7 +125,7 @@
     [[WSURLSessionManager shared] wsRegisterWithRequest:[self _setRegisterRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if([[responseObject valueForKey:@"success"] isEqualToString:@"user created"]) {
-                [[COLoginManager shared] setUserModel:nil];
+                [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
                 [self _callWSLogin];
             }else {
                 [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];
