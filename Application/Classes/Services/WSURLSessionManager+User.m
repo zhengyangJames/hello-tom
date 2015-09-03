@@ -10,11 +10,13 @@
 #import "COUserProfileModel.h"
 #import "COLoginManager.h"
 #import "WSLoginRequest.h"
-#import "WSLoginRequest.h"
+#import "WSRegisterRequest.h"
+#import "WSForgotPassWordRequest.h"
+#import "WSChangePassWordRequest.h"
 
 @implementation WSURLSessionManager (User)
 
-- (void)wsLoginWithRequest:(id)request handler:(WSURLSessionHandler)handler {
+- (void)wsLoginWithRequest:(WSLoginRequest *)request handler:(WSURLSessionHandler)handler {
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
@@ -28,7 +30,7 @@
     }];
 }
 
-- (void)wsRegisterWithRequest:(id)request handler:(WSURLSessionHandler)handler;{
+- (void)wsRegisterWithRequest:(WSRegisterRequest *)request handler:(WSURLSessionHandler)handler;{
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
@@ -42,7 +44,7 @@
     }];
 }
 
-- (void)wsForgotPasswordWithRequest:(id)request handler:(WSURLSessionHandler)handler {
+- (void)wsForgotPasswordWithRequest:(WSForgotPassWordRequest *)request handler:(WSURLSessionHandler)handler {
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
@@ -56,7 +58,7 @@
     }];
 }
 
-- (void)wsChangePasswordWithRequest:(id)request handler:(WSURLSessionHandler)handler {
+- (void)wsChangePasswordWithRequest:(WSChangePassWordRequest *)request handler:(WSURLSessionHandler)handler {
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {

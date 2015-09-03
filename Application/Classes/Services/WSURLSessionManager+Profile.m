@@ -17,7 +17,7 @@
 @implementation WSURLSessionManager (Profile)
 
 - (void)wsGetProfileWithUserToken:(NSDictionary*)paramToken handler:(WSURLSessionHandler)handler {
-    WSGetProfileRequest *request = [[WSGetProfileRequest alloc] initGetProfileRequestWithBodyParams:paramToken];
+    WSGetProfileRequest *request = [[WSGetProfileRequest alloc] initGetProfileRequestWithParamsToken:paramToken];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSMutableDictionary *mutaDic = [NSMutableDictionary dictionary];

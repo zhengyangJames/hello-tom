@@ -11,5 +11,5 @@
 
 @interface WSGetProfileRequest : WSRequest
 
-- (instancetype)initGetProfileRequestWithBodyParams:(id)bodyParams;
+- (instancetype)initGetProfileRequestWithParamsToken:(id)paramToken;
 @end

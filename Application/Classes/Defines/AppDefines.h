@@ -172,6 +172,7 @@
 
 #define kNOTIFICATION_INTERESTED                    @"kNNOTIFICATION_INTERESTED"
 #define kNOTIFICATION_QUESTION                      @"kNNOTIFICATION_QUESTION"
+#define kNOTIFICATION_CHECK_PASS                    @"check_password"
 
 #define MESSEAGE_RESET_PASSWORD                     @"Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly"
 #define DEFINE_HTML_FRAME                           @"<span style=\"font-family: 'Raleway-Light'; font-size: 15\">%@</span>"

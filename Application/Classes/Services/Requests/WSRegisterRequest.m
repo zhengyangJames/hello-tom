@@ -10,10 +10,11 @@
 
 @implementation WSRegisterRequest
 
-- (instancetype)initRegisterRequestWithBody:(NSDictionary *)paramsBody {
-    NSString *postString = [self paramsToString:paramsBody];
+- (instancetype)initRegisterRequestWithData:(NSDictionary *)data {
+    NSString *postString = [self paramsToString:data];
     NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
     self = [self createAuthRequest:WS_METHOD_POST_REGISTER body:parambody httpMethod:METHOD_POST];
     return self;
 }
+
 @end

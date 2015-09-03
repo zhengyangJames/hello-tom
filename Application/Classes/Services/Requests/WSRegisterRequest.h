@@ -11,5 +11,5 @@
 
 @interface WSRegisterRequest : WSRequest
 
-- (instancetype)initRegisterRequestWithBody:(NSDictionary *)paramsBody;
+- (instancetype)initRegisterRequestWithData:(NSDictionary *)data;
 @end

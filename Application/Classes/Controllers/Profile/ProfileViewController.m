@@ -136,7 +136,7 @@ TableBottomViewCellDelegate>
         self.userModel = nil;
         [self _setupEditAboutProfileVC];
     } else {
-        [kNotificationCenter postNotificationName:@"check_password" object:nil];
+        [kNotificationCenter postNotificationName:kNOTIFICATION_CHECK_PASS object:nil];
     }
 }
 

@@ -93,11 +93,11 @@
     return YES;
 }
 - (WSRegisterRequest *)_setRegisterRequest {
-    WSRegisterRequest *request = [[WSRegisterRequest alloc] initRegisterRequestWithBody:[self _setBodyInfo]];
+    WSRegisterRequest *request = [[WSRegisterRequest alloc] initRegisterRequestWithData:[self _setDataToRegister]];
     return request;
 }
 
-- (NSDictionary*)_setBodyInfo {
+- (NSDictionary*)_setDataToRegister {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     dic[kUSER] = _usernameTextField.text;
     dic[kPASSWORD] = _passwordTextField.text;

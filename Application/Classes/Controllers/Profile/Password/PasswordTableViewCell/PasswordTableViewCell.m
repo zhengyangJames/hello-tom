@@ -18,7 +18,7 @@
 @implementation PasswordTableViewCell
 
 - (void)viewDidLoad {
-    [kNotificationCenter addObserver:self selector:@selector(__actionCheckPassword) name:@"check_password" object:nil];
+    [kNotificationCenter addObserver:self selector:@selector(__actionCheckPassword) name:kNOTIFICATION_CHECK_PASS object:nil];
     self.comfilmPassowrdTXT.delegate = self;
     self.newpassowrdTXT.delegate = self;
 }
