@@ -9,16 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "WSRequest.h"
 
+static NSString *kregisterUserName      = @"username";
+static NSString *kregisterPassWord      = @"password";
+static NSString *kregisterFirstName     = @"first_name";
+static NSString *kregisterLastName      = @"last_name";
+static NSString *kregisterEmail         = @"email";
+static NSString *kregisterNumCountry    = @"country_prefix";
+static NSString *kregisterCellPhone     = @"cellphone";
+
 @interface WSRegisterRequest : WSRequest
-
-- (id)initRegisterRequest;
-
-@property (nonatomic, strong) NSString *registerUserName;
-@property (nonatomic, strong) NSString *registerPassWord;
-@property (nonatomic, strong) NSString *registerFirstName;
-@property (nonatomic, strong) NSString *registerLastName;
-@property (nonatomic, strong) NSString *registerEmail;
-@property (nonatomic, strong) NSString *registerNumCountry;
-@property (nonatomic, strong) NSString *registerCellPhone;
 
 @end

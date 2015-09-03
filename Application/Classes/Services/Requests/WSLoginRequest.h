@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "WSRequest.h"
 
+static NSString *kUserName = @"username";
+static NSString *kPassWord = @"password";
+
 @interface WSLoginRequest : WSRequest
 
-- (instancetype)initLoginRequestWithUserName:(NSString *)userName passWord:(NSString *)password;
 @end

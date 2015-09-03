@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "WSRequest.h"
 
+static NSString *kForgotPassEmail = @"email";
+
 @interface WSForgotPassWordRequest : WSRequest
 
-- (instancetype)initForgotPassWordRequestWithEmail:(NSString *)email;
 @end

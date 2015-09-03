@@ -18,7 +18,42 @@
 #define CLIENT_SECRECT                              @"e88e20a9f9d642ed1e7e04ab0b72798b41455377"
 #define GRANT_TYPE                                  @"password"
 
+@interface WSRequest() {
+    NSString *bodyString;
+}
+
+@end
+
 @implementation WSRequest
+
+- (id)init {
+    self = [super init];
+    if (self) {        bodyString = @"";
+        bodyString = [bodyString stringByAppendingFormat:@"%@=%@",kCLIENT_ID,[CLIENT_ID urlEncode]];
+        bodyString = [bodyString stringByAppendingFormat:@"&%@=%@",kCLIENT_SECRECT,[CLIENT_SECRECT urlEncode]];
+        bodyString = [bodyString stringByAppendingFormat:@"&%@=%@",kGRANT_TYPE,[GRANT_TYPE urlEncode]];
+        NSData *parambody = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+        [self setHTTPBody:parambody];
+        [self setCachePolicy:NSURLRequestUseProtocolCachePolicy];
+        [self setTimeoutInterval:WS_TIME_OUT];
+        [self setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    }
+    return self;
+}
+#pragma mark - func set
+- (void)setBodyParam:(NSString *)param forKey:(NSString *)key {
+    bodyString = [bodyString stringByAppendingFormat:@"&%@=%@",key,[param urlEncode]];
+    NSData *parambody = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+    [self setHTTPBody:parambody];
+}
+
+- (void)setURLWithString:(NSString *)url {
+    [self setURL:[NSURL URLWithString:url]];
+}
+
+- (void)setMethodWithString:(NSString *)method {
+    [self setHTTPMethod:[method uppercaseString]];
+}
 
 - (NSString*)stringToLoginWithUserName:(NSString *)userName password:(NSString *)password {
     NSString *s = @"";
@@ -71,9 +106,6 @@
     WSRequest *request = [[WSRequest alloc] initWithURL:[NSURL URLWithString:url]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:WS_TIME_OUT];
     [request setHTTPMethod:[method uppercaseString]];
     [request setHTTPBody:bodyData];
-    [request setTimeoutInterval:WS_TIME_OUT];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    
     return request;
 }
 @end

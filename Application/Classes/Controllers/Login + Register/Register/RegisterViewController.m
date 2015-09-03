@@ -94,19 +94,25 @@
 }
 - (WSRegisterRequest *)_setRegisterRequest {
     WSRegisterRequest *request  = [[WSRegisterRequest alloc] init];
-    request.registerUserName    = _usernameTextField.text;
-    request.registerPassWord    = _passwordTextField.text;
-    request.registerFirstName   = _firstNameTextField.text;
-    request.registerLastName    = _lastNameTextField.text;
-    request.registerEmail       = _emailTextField.text;
-    request.registerNumCountry  = [self.arrayListPhoneCode[_indexActtionPhoneCode] objectForKey:@"code"];
-    request.registerCellPhone   = _cellPhoneTextField.text;
-    request = [request initRegisterRequest];
+    [request setMethodWithString:METHOD_POST];
+    [request setURLWithString:WS_METHOD_POST_REGISTER];
+    [request setBodyParam:_usernameTextField.text forKey:kregisterUserName];
+    [request setBodyParam:_passwordTextField.text forKey:kregisterPassWord];
+    [request setBodyParam:_firstNameTextField.text forKey:kregisterFirstName];
+    [request setBodyParam:_lastNameTextField.text forKey:kregisterLastName];
+    [request setBodyParam:_emailTextField.text forKey:kregisterEmail];
+    NSString *numCountry = [self.arrayListPhoneCode[_indexActtionPhoneCode] objectForKey:@"code"];
+    [request setBodyParam:numCountry forKey:kregisterNumCountry];
+    [request setBodyParam:_cellPhoneTextField.text forKey:kregisterCellPhone];
     return request;
 }
 
 - (WSLoginRequest*)_setLoginRequest {
-    WSLoginRequest *request = [[WSLoginRequest alloc] initLoginRequestWithUserName:_usernameTextField.text passWord:_passwordTextField.text];
+    WSLoginRequest *request = [[WSLoginRequest alloc] init];
+    [request setMethodWithString:METHOD_POST];
+    [request setURLWithString:WS_METHOD_POST_LOGIN];
+    [request setBodyParam:_usernameTextField.text forKey:kUserName];
+    [request setBodyParam:_passwordTextField.text forKey:kPassWord];
     return request;
 }
 
