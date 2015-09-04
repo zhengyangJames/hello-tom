@@ -12,17 +12,14 @@
 
 @implementation WSChangePassWordRequest
 
-- (instancetype)initChangePassWordRequestWithNewPassWord:(NSString *)password {
-    NSMutableDictionary *bodyInfo = [[NSMutableDictionary alloc] init];
-    if (password) {
-        [bodyInfo setObject:password forKey:@"new_password"];
+-(instancetype)init {
+    self = [super init];
+    if (self) {
+        COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+        NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
+        [self setValue:value forHTTPHeaderField:@"Authorization"];
     }
-    NSString *postString = [self paramsToString:bodyInfo];
-    NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    self = [self createAuthRequest:WS_METHOD_POST_CHANGE_PASSWORD body:parambody httpMethod:METHOD_POST];
-    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-    NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
-    [self setValue:value forHTTPHeaderField:@"Authorization"];
     return self;
 }
+
 @end

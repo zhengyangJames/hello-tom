@@ -45,10 +45,11 @@
 
 - (WSLoginRequest*)_setLoginRequest {
     WSLoginRequest *request = [[WSLoginRequest alloc] init];
-    [request setMethodWithString:METHOD_POST];
-    [request setURLWithString:WS_METHOD_POST_LOGIN];
+    [request setHTTPMethod:METHOD_POST];
+    [request setURL:[NSURL URLWithString:WS_METHOD_POST_LOGIN]];
     [request setBodyParam:_userName.text forKey:kUserName];
     [request setBodyParam:_passWord.text forKey:kPassWord];
+
     return request;
 }
 

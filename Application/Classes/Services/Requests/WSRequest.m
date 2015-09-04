@@ -98,10 +98,6 @@
                                      body:(NSData*)bodyData
                                httpMethod:(NSString*)method {
     
-    NSString *bodyString = @"";
-    if(bodyData != nil) {
-        bodyString = [[NSString alloc] initWithData:bodyData encoding:NSUTF8StringEncoding];
-    }
     // create request
     WSRequest *request = [[WSRequest alloc] initWithURL:[NSURL URLWithString:url]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:WS_TIME_OUT];
     [request setHTTPMethod:[method uppercaseString]];

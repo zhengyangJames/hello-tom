@@ -15,6 +15,7 @@
 #import "COUserProfileDetailModel.h"
 #import "COLoginManager.h"
 #import "COUserProfileModel.h"
+#import "WSUpdateProfileRequest.h"
 
 @interface EditAboutProfileVC () <UIAlertViewDelegate>
 {
@@ -78,23 +79,23 @@
     return _arrayCountryCode;
 }
 
-- (NSDictionary*)_getProfileObject {
+- (WSUpdateProfileRequest *)_setUpdateProfileRequest {
+    WSUpdateProfileRequest *request = [[WSUpdateProfileRequest alloc] init];
+    [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_PROFILE]];
+    [request setHTTPMethod:METHOD_PUT];
+    [request setBodyParam:self.userProfileModel.nameOfUserName forKey:kUpProfileUserName];
+    [request setBodyParam:self.userProfileModel.nameOfUserFirstName forKey:kUpProfileFirstName];
+    [request setBodyParam:self.userProfileModel.nameOfUserLastName forKey:kUpProfileLastName];
+    [request setBodyParam:emailNameTXT.text forKey:kUpProfileEmail];
     NSString *phone = [self.arrayCountryCode[_indexActtionCountryCode] valueForKey:@"code"];
-    NSMutableDictionary *obj = [[NSMutableDictionary alloc]init];
-    [obj setValue:self.userProfileModel.nameOfUserName forKey:kUSER];
-    [obj setValue:self.userProfileModel.nameOfUserFirstName forKey:KFRIST_NAME];
-    [obj setValue:self.userProfileModel.nameOfUserLastName forKey:KLAST_NAME];
-    [obj setValue:emailNameTXT.text forKey:KEMAIL];
-    NSMutableDictionary *pro = [[NSMutableDictionary alloc] init];
-    [pro setValue:phone forKey:kNUM_COUNTRY];
-    [pro setValue:phoneNameTXT.text forKey:kNUM_CELL_PHONE];
-    [pro setValue:addressNameTXT.text  forKey:KADDRESS];
-    [pro setValue:cityTXT.text forKey:KCITY];
-    [pro setValue:countryTXT.text forKey:KCOUNTRY];
-    [pro setValue:address2TXT.text forKey:KADDRESS2];
-    [pro setValue:regionStateTXT.text forKey:KSATE];
-    [obj setValue:pro forKey:kPROFILE];
-    return obj;
+    [request setBodyParam:phone forKey:kUpProfileNumCountry];
+    [request setBodyParam:phoneNameTXT.text forKey:kUpProfileCellPhone];
+    [request setBodyParam:addressNameTXT.text forKey:kUpProfileAddress1];
+    [request setBodyParam:address2TXT.text forKey:kUpProfileAddress2];
+    [request setBodyParam:cityTXT.text forKey:kUpProfileCity];
+    [request setBodyParam:countryTXT.text forKey:kUpProfileCountry];
+    [request setBodyParam:regionStateTXT.text forKey:kUpProfileState];
+    return request;
 }
 
 - (NSString*)_getPhoneCode:(NSString*)phoneCode {
@@ -183,7 +184,7 @@
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsUpdateProfileWithBody:[self _getProfileObject] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsUpdateProfileWithRequest:[self _setUpdateProfileRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 if ([self.delegate respondsToSelector:@selector(editAboutProfile:)]) {

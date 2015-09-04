@@ -94,8 +94,8 @@
 }
 - (WSRegisterRequest *)_setRegisterRequest {
     WSRegisterRequest *request  = [[WSRegisterRequest alloc] init];
-    [request setMethodWithString:METHOD_POST];
-    [request setURLWithString:WS_METHOD_POST_REGISTER];
+    [request setHTTPMethod:METHOD_POST];
+    [request setURL:[NSURL URLWithString:WS_METHOD_POST_REGISTER]];
     [request setBodyParam:_usernameTextField.text forKey:kregisterUserName];
     [request setBodyParam:_passwordTextField.text forKey:kregisterPassWord];
     [request setBodyParam:_firstNameTextField.text forKey:kregisterFirstName];
@@ -109,8 +109,8 @@
 
 - (WSLoginRequest*)_setLoginRequest {
     WSLoginRequest *request = [[WSLoginRequest alloc] init];
-    [request setMethodWithString:METHOD_POST];
-    [request setURLWithString:WS_METHOD_POST_LOGIN];
+    [request setHTTPMethod:METHOD_POST];
+    [request setURL:[NSURL URLWithString:WS_METHOD_POST_LOGIN]];
     [request setBodyParam:_usernameTextField.text forKey:kUserName];
     [request setBodyParam:_passwordTextField.text forKey:kPassWord];
     return request;

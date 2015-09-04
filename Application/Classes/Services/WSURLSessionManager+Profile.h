@@ -9,10 +9,11 @@
 #import "WSURLSessionManager.h"
 
 @class COUserProfileModel;
+@class WSUpdateProfileRequest;
 
 @interface WSURLSessionManager (Profile)
 
 - (void)wsGetProfileWithUserToken:(NSDictionary *)paramToken handler:(WSURLSessionHandler)handler;
-- (void)wsUpdateProfileWithBody:(NSDictionary*)body handler:(WSURLSessionHandler)handler;
+- (void)wsUpdateProfileWithRequest:(WSUpdateProfileRequest *)request handler:(WSURLSessionHandler)handler;
 
 @end

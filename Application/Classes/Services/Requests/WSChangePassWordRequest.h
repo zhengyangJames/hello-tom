@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "WSRequest.h"
 
+static NSString *kNewPassWord = @"new_password";
+
 @interface WSChangePassWordRequest : WSRequest
 
-- (instancetype)initChangePassWordRequestWithNewPassWord:(NSString *)password;
 @end

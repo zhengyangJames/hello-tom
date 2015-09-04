@@ -17,7 +17,10 @@
 @implementation WSURLSessionManager (Profile)
 
 - (void)wsGetProfileWithUserToken:(NSDictionary*)paramToken handler:(WSURLSessionHandler)handler {
-    WSGetProfileRequest *request = [[WSGetProfileRequest alloc] initGetProfileRequestWithParamsToken:paramToken];
+    WSGetProfileRequest *request = [[WSGetProfileRequest alloc] init];
+    [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_PROFILE]];
+    [request setHTTPMethod:METHOD_GET];
+    [request setValueWithTokenData:paramToken];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSMutableDictionary *mutaDic = [NSMutableDictionary dictionary];
@@ -34,8 +37,7 @@
     }];
 }
 
-- (void)wsUpdateProfileWithBody:(NSDictionary *)body handler:(WSURLSessionHandler)handler {
-    WSUpdateProfileRequest *request = [[WSUpdateProfileRequest alloc] initUpdateProfileRequestWithBodyParams:body];
+- (void)wsUpdateProfileWithRequest:(WSUpdateProfileRequest *)request handler:(WSURLSessionHandler)handler  {
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             COUserProfileModel *userModel = [[COLoginManager shared] userModel];

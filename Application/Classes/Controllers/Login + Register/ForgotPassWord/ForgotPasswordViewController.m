@@ -57,8 +57,8 @@
 
 - (WSForgotPassWordRequest *)_setForgotPassRequest {
     WSForgotPassWordRequest *request = [[WSForgotPassWordRequest alloc] init];
-    [request setMethodWithString:WS_METHOD_POST_PORGOT_PASSWORD];
-    [request setURLWithString:METHOD_POST];
+    [request setHTTPMethod:WS_METHOD_POST_PORGOT_PASSWORD];
+    [request setURL:[NSURL URLWithString:METHOD_POST]];
     [request setBodyParam:emailTextField.text forKey:kForgotPassEmail];
     return request;
 }

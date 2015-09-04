@@ -12,13 +12,10 @@
 
 @implementation WSUpdateProfileRequest
 
-- (instancetype)initUpdateProfileRequestWithBodyParams:(id)bodyParams {
-    NSString *postString = [self paramsToString:bodyParams];
-    NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    self = [self createAuthRequest:WS_METHOD_GET_LIST_PROFILE body:parambody httpMethod:METHOD_PUT];
-    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+- (void)setValueWithModel:(id)model {
+    COUserProfileModel *userModel = model;
     NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
     [self setValue:value forHTTPHeaderField:@"Authorization"];
-    return self;
 }
+
 @end

@@ -11,5 +11,5 @@
 
 @interface WSGetProfileRequest : WSRequest
 
-- (instancetype)initGetProfileRequestWithParamsToken:(id)paramToken;
+-(void)setValueWithTokenData:(NSDictionary *)tokenData;
 @end

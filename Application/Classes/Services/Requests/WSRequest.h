@@ -13,10 +13,7 @@
 - (id)createAuthRequest:(NSString*)url body:(NSData*)bodyData httpMethod:(NSString*)method;
 
 - (void)setBodyParam:(NSString *)param forKey:(NSString *)key;
-- (void)setURLWithString:(NSString *)url;
-- (void)setMethodWithString:(NSString *)method;
 
-- (NSString*)stringToLoginWithUserName:(NSString *)userName password:(NSString *)password;
 - (NSString*)paramsToString:(NSDictionary*)params;
 
 @end

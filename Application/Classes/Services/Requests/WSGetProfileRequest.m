@@ -12,22 +12,14 @@
 
 @implementation WSGetProfileRequest
 
-- (instancetype)initGetProfileRequestWithParamsToken:(id)paramToken {
-    NSString *postString = [self paramsToString:paramToken];
-    NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
-    self = [self createAuthRequest:WS_METHOD_GET_LIST_PROFILE body:parambody httpMethod:METHOD_GET];
-    if ([[COLoginManager shared] userModel]) {
-        COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-        NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
+-(void)setValueWithTokenData:(NSDictionary *)tokenData {
+    NSString *postString = [self paramsToString:tokenData];
+     NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
+    [self setHTTPBody:parambody];
+    if ([tokenData objectForKey:kTOKEN_TYPE] && [tokenData objectForKey:kACCESS_TOKEN]) {
+        NSString *value = [NSString stringWithFormat:@"%@ %@",[tokenData  valueForKey:kTOKEN_TYPE],[tokenData valueForKey:kACCESS_TOKEN]];
+        [[NSURLCache sharedURLCache] removeAllCachedResponses];
         [self setValue:value forHTTPHeaderField:@"Authorization"];
-    } else {
-        if ([paramToken objectForKey:kTOKEN_TYPE] && [paramToken objectForKey:kACCESS_TOKEN]) {
-            NSString *value = [NSString stringWithFormat:@"%@ %@",[paramToken  valueForKey:kTOKEN_TYPE],[paramToken valueForKey:kACCESS_TOKEN]];
-            [[NSURLCache sharedURLCache] removeAllCachedResponses];
-            [self setValue:value forHTTPHeaderField:@"Authorization"];
-        }
     }
-    return self;
 }
-
 @end

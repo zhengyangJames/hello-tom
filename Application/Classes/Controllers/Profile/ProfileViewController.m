@@ -164,7 +164,10 @@ TableBottomViewCellDelegate>
 }
 
 - (WSChangePassWordRequest *)_setChangePassWordRequestWithPass:(NSString *)password {
-    WSChangePassWordRequest *request = [[WSChangePassWordRequest alloc] initChangePassWordRequestWithNewPassWord:password];
+    WSChangePassWordRequest *request = [[WSChangePassWordRequest alloc] init];
+    [request setHTTPMethod:METHOD_POST];
+    [request setURL:[NSURL URLWithString:WS_METHOD_POST_CHANGE_PASSWORD]];
+    [request setBodyParam:password forKey:kNewPassWord];
     return request;
 }
 #pragma mark - TableView DataSource
