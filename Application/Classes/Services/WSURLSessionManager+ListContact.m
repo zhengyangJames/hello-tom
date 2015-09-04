@@ -8,11 +8,12 @@
 
 #import "WSURLSessionManager+ListContact.h"
 #import "COContactsModel.h"
+#import "WSGetListContactsRequest.h"
 
 @implementation WSURLSessionManager (ListContact)
 
-- (void)wsGetListContactWithHandler:(WSURLSessionHandler)handler {
-    [self sendURL:WS_METHOD_GET_LIST_CONTACT params:nil body:nil method:METHOD_GET handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+- (void)wsGetListContactWithRequest:(WSGetListContactsRequest *)request handler:(WSURLSessionHandler)handler {
+    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             NSMutableArray *arrayData = [[NSMutableArray alloc]init];
             for (NSDictionary *data in responseObject) {

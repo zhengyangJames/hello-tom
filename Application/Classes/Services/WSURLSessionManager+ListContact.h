@@ -8,8 +8,8 @@
 
 #import "WSURLSessionManager.h"
 
-@interface WSURLSessionManager (ListContact)
-- (void)wsGetListContactWithHandler:(WSURLSessionHandler)handler;
-//- (void)wsGetListOfferWithHandler:(WSURLSessionHandler)handler;
+@class WSGetListContactsRequest;
 
+@interface WSURLSessionManager (ListContact)
+- (void)wsGetListContactWithRequest:(WSGetListContactsRequest *)request handler:(WSURLSessionHandler)handler;
 @end

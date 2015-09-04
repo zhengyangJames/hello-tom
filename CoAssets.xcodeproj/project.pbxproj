@@ -237,6 +237,12 @@
 		BB368EB51B87E0E00066C646 /* COUserTokensModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB41B87E0E00066C646 /* COUserTokensModel.m */; };
 		BB368EB81B87E1F30066C646 /* COUserProfileDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */; };
 		BB383E2F1B8BC1B000303E34 /* COUserAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */; };
+		BB38EE261B99F2B200D15D58 /* WSPostQuestionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE251B99F2B200D15D58 /* WSPostQuestionRequest.m */; };
+		BB38EE291B99F74200D15D58 /* WSPostSubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE281B99F74200D15D58 /* WSPostSubscribeRequest.m */; };
+		BB38EE2F1B99FAD300D15D58 /* WSProjectFundInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE2E1B99FAD300D15D58 /* WSProjectFundInfoRequest.m */; };
+		BB38EE321B9A05F800D15D58 /* WSGetOfferInfoWithRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE311B9A05F800D15D58 /* WSGetOfferInfoWithRequest.m */; };
+		BB38EE351B9A0A8900D15D58 /* WSGetListOfferRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE341B9A0A8900D15D58 /* WSGetListOfferRequest.m */; };
+		BB38EE381B9A147500D15D58 /* WSGetListContactsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE371B9A147500D15D58 /* WSGetListContactsRequest.m */; };
 		BB3A9F5E1B961692002EEB1C /* WSRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F5D1B961692002EEB1C /* WSRegisterRequest.m */; };
 		BB3A9F611B9624F9002EEB1C /* WSForgotPassWordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F601B9624F9002EEB1C /* WSForgotPassWordRequest.m */; };
 		BB3A9F641B962BB8002EEB1C /* WSChangePassWordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F631B962BB8002EEB1C /* WSChangePassWordRequest.m */; };
@@ -593,6 +599,18 @@
 		BB368EB91B87F3D60066C646 /* COUserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COUserData.h; sourceTree = "<group>"; };
 		BB383E2D1B8BC1B000303E34 /* COUserAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserAccountModel.h; sourceTree = "<group>"; };
 		BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserAccountModel.m; sourceTree = "<group>"; };
+		BB38EE241B99F2B200D15D58 /* WSPostQuestionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPostQuestionRequest.h; sourceTree = "<group>"; };
+		BB38EE251B99F2B200D15D58 /* WSPostQuestionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPostQuestionRequest.m; sourceTree = "<group>"; };
+		BB38EE271B99F74200D15D58 /* WSPostSubscribeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPostSubscribeRequest.h; sourceTree = "<group>"; };
+		BB38EE281B99F74200D15D58 /* WSPostSubscribeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPostSubscribeRequest.m; sourceTree = "<group>"; };
+		BB38EE2D1B99FAD300D15D58 /* WSProjectFundInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSProjectFundInfoRequest.h; sourceTree = "<group>"; };
+		BB38EE2E1B99FAD300D15D58 /* WSProjectFundInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSProjectFundInfoRequest.m; sourceTree = "<group>"; };
+		BB38EE301B9A05F800D15D58 /* WSGetOfferInfoWithRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetOfferInfoWithRequest.h; sourceTree = "<group>"; };
+		BB38EE311B9A05F800D15D58 /* WSGetOfferInfoWithRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetOfferInfoWithRequest.m; sourceTree = "<group>"; };
+		BB38EE331B9A0A8900D15D58 /* WSGetListOfferRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetListOfferRequest.h; sourceTree = "<group>"; };
+		BB38EE341B9A0A8900D15D58 /* WSGetListOfferRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetListOfferRequest.m; sourceTree = "<group>"; };
+		BB38EE361B9A147500D15D58 /* WSGetListContactsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetListContactsRequest.h; sourceTree = "<group>"; };
+		BB38EE371B9A147500D15D58 /* WSGetListContactsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetListContactsRequest.m; sourceTree = "<group>"; };
 		BB3A9F5C1B961692002EEB1C /* WSRegisterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRegisterRequest.h; sourceTree = "<group>"; };
 		BB3A9F5D1B961692002EEB1C /* WSRegisterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRegisterRequest.m; sourceTree = "<group>"; };
 		BB3A9F5F1B9624F9002EEB1C /* WSForgotPassWordRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSForgotPassWordRequest.h; sourceTree = "<group>"; };
@@ -1579,6 +1597,18 @@
 				BB3A9F661B9659EC002EEB1C /* WSGetProfileRequest.m */,
 				BB3A9F681B9660DB002EEB1C /* WSUpdateProfileRequest.h */,
 				BB3A9F691B9660DB002EEB1C /* WSUpdateProfileRequest.m */,
+				BB38EE241B99F2B200D15D58 /* WSPostQuestionRequest.h */,
+				BB38EE251B99F2B200D15D58 /* WSPostQuestionRequest.m */,
+				BB38EE271B99F74200D15D58 /* WSPostSubscribeRequest.h */,
+				BB38EE281B99F74200D15D58 /* WSPostSubscribeRequest.m */,
+				BB38EE2D1B99FAD300D15D58 /* WSProjectFundInfoRequest.h */,
+				BB38EE2E1B99FAD300D15D58 /* WSProjectFundInfoRequest.m */,
+				BB38EE301B9A05F800D15D58 /* WSGetOfferInfoWithRequest.h */,
+				BB38EE311B9A05F800D15D58 /* WSGetOfferInfoWithRequest.m */,
+				BB38EE331B9A0A8900D15D58 /* WSGetListOfferRequest.h */,
+				BB38EE341B9A0A8900D15D58 /* WSGetListOfferRequest.m */,
+				BB38EE361B9A147500D15D58 /* WSGetListContactsRequest.h */,
+				BB38EE371B9A147500D15D58 /* WSGetListContactsRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1843,6 +1873,7 @@
 				7F187A201B7C59640072423D /* CODetailsOffersObj.m in Sources */,
 				7F325FDC1B40E50800116445 /* WSURLSessionManager+ListHome.m in Sources */,
 				7F325F7A1B40E50800116445 /* BaseCollectionViewCell.m in Sources */,
+				BB38EE261B99F2B200D15D58 /* WSPostQuestionRequest.m in Sources */,
 				7FA7E6C01B4E7CD500059B13 /* COOfferProgressCell.m in Sources */,
 				7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */,
 				BB3097DA1B824F0C00BF6861 /* CODocumentItemModel.m in Sources */,
@@ -1854,6 +1885,9 @@
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
 				7F8E0BD81B5355A20045EFB0 /* COOfferWebViewCell.m in Sources */,
 				7F325FB01B40E50800116445 /* PasswordTableViewCell.m in Sources */,
+				BB38EE351B9A0A8900D15D58 /* WSGetListOfferRequest.m in Sources */,
+				BB38EE321B9A05F800D15D58 /* WSGetOfferInfoWithRequest.m in Sources */,
+				BB38EE2F1B99FAD300D15D58 /* WSProjectFundInfoRequest.m in Sources */,
 				0ECA88411B27CA7100B5656F /* NMView.m in Sources */,
 				BB3A9F671B9659EC002EEB1C /* WSGetProfileRequest.m in Sources */,
 				BBEB210A1B94CB36007221B4 /* WSLoginRequest.m in Sources */,
@@ -1925,6 +1959,7 @@
 				0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */,
 				7F9A95AD1B54B4E6009EC20D /* AboutTableViewCellAddress.m in Sources */,
 				7F325FB21B40E50800116445 /* ProfileViewController.m in Sources */,
+				BB38EE381B9A147500D15D58 /* WSGetListContactsRequest.m in Sources */,
 				7F325FD31B40E50800116445 /* COListContactObject.m in Sources */,
 				7F325FC81B40E50800116445 /* COLineBottomView.m in Sources */,
 				0ECA88441B27CA7100B5656F /* NSFileManager+Directories.m in Sources */,
@@ -1939,6 +1974,7 @@
 				7F325F9B1B40E50800116445 /* HomeListViewCell.m in Sources */,
 				7F325FC61B40E50800116445 /* DropListObject.m in Sources */,
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
+				BB38EE291B99F74200D15D58 /* WSPostSubscribeRequest.m in Sources */,
 				7F187A261B7C5C4F0072423D /* CODetailsOffersItemObj+Mapping.m in Sources */,
 				BB368EB21B87DF5C0066C646 /* COUserProfileModel.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,

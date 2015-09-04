@@ -83,6 +83,7 @@
     WSUpdateProfileRequest *request = [[WSUpdateProfileRequest alloc] init];
     [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_PROFILE]];
     [request setHTTPMethod:METHOD_PUT];
+    [request setValueWithModel:[[COLoginManager shared] userModel]];
     [request setBodyParam:self.userProfileModel.nameOfUserName forKey:kUpProfileUserName];
     [request setBodyParam:self.userProfileModel.nameOfUserFirstName forKey:kUpProfileFirstName];
     [request setBodyParam:self.userProfileModel.nameOfUserLastName forKey:kUpProfileLastName];

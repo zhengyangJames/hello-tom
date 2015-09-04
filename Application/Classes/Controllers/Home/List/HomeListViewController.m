@@ -21,6 +21,9 @@
 #import "COFilterListModel.h"
 #import "COLoginManager.h"
 #import "COListFilterObject.h"
+#import "WSProjectFundInfoRequest.h"
+#import "WSGetOfferInfoWithRequest.h"
+#import "WSGetListOfferRequest.h"
 
 typedef NS_ENUM(NSInteger, FilterType) {
     FilterBullkType,
@@ -148,7 +151,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         _leftButton.enabled = NO;
     }];
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsGetListOffersFilter:typeFilter handle:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsGetListOffersWithRequest:[self _createGetListOfferRequestWithType:typeFilter] handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
             [UIHelper hideLoadingFromView:self.view];
@@ -175,13 +178,21 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     }];
 }
 
+- (WSGetListOfferRequest *)_createGetListOfferRequestWithType:(NSString *)offerType {
+    WSGetListOfferRequest *request = [[WSGetListOfferRequest alloc] init];
+    [request setHTTPMethod:METHOD_GET];
+    [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_OFFERS]];
+    request.offerType = offerType;
+    return request;
+}
+
 - (void)_callWSGetDetailsWithModel:(NSString*)offerID {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsGetDetailsWithOffersID:offerID handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsGetOfferInforWithRequest:[self _createOfferInfoRequestWithOfferID:offerID] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.offerModel = responseObject;
-                [self _callWSGetProgressbar:offerID];
+                [self _callWSGetFundInfo];
             }];
         } else {
             
@@ -195,11 +206,18 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     }];
 }
 
-- (void)_callWSGetProgressbar:(NSString*)offerID {
+- (WSGetOfferInfoWithRequest *)_createOfferInfoRequestWithOfferID:(NSString*)offerID {
+    WSGetOfferInfoWithRequest *request = [[WSGetOfferInfoWithRequest alloc] init];
+    [request setHTTPMethod:METHOD_GET];
+    [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_OFFERS]];
+    request.offerID = offerID;
+    return request;
+}
+
+- (void)_callWSGetFundInfo{
     _leftButton.enabled = NO;
     [UIHelper showLoadingInView:self.view];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:offerID,@"offer_id", nil];
-    [[WSURLSessionManager shared] wsGetProgressBarWithOfferID:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsGetProjectFundInfoWithRequest:[self _createFundInfoRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [UIHelper hideLoadingFromView:self.view];
@@ -213,6 +231,15 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     }];
 }
 
+- (WSProjectFundInfoRequest *)_createFundInfoRequest {
+    WSProjectFundInfoRequest *request = [[WSProjectFundInfoRequest alloc] init];
+    [request setURL:[NSURL URLWithString:WS_METHOD_POST_PROGRESSBAR]];
+    [request setHTTPMethod:METHOD_POST];
+    NSString *offerID = [self.offerModel.numberOfOfferId stringValue];
+    [request setBodyParam:offerID forKey:kFundOfferID];
+    [request setValueWithModel:[[COLoginManager shared] userModel]];
+    return request;
+}
 #pragma mark - TableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.arrayData && self.arrayData.count > 0) {
@@ -261,7 +288,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
                                                                     completion:^{
-                [self _callWSGetProgressbar:[[self.arrayData[_indexPathForCell.row] numberOfOfferId] stringValue]];
+                                                                        [self _callWSGetFundInfo];
             }];
             _indexPathForCell = nil;
         } break;

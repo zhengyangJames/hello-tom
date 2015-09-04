@@ -44,11 +44,11 @@
 ///////////////////////////////////////////////////////////////////
 #define WS_METHOD_POST_PROGRESSBAR                  [WS_ENDPOINT stringByAppendingString:@"/project_fund_info/"]
 
-#define WS_METHOD_POST_SUBSCRIBE                    [WS_ENDPOINT stringByAppendingString:@"/offers/subscribe/"]
+#define WS_METHOD_POST_SUBSCRIBE                    [WS_ENDPOINT stringByAppendingString:@"/offers/subscribe/%@/"]
 
-#define WS_METHOD_POST_QUESTION                     [WS_ENDPOINT stringByAppendingString:@"/offers/tellmemore/"]
+#define WS_METHOD_POST_QUESTION                     [WS_ENDPOINT stringByAppendingString:@"/offers/tellmemore/%@/"]
 
-#define WS_METHOD_GET_LIST_OFFERS                   [WS_ENDPOINT stringByAppendingString:@"/offers/{OFFERID}"]
+#define WS_METHOD_GET_LIST_OFFERS                   [WS_ENDPOINT stringByAppendingString:@"/offers/"]
 
 #define WS_METHOD_GET_LIST_CONTACT                  [WS_ENDPOINT stringByAppendingString:@"/company_info"]
 
@@ -79,7 +79,7 @@
 #pragma mark - STRING
 ///////////////////////////////////////////////////////////////////
 #define kPROFILE_JSON                               @"PROFILE_JSON"
-#define kPROFILE_TOKEN_JSON                               @"PROFILE_TOKEN_JSON"
+#define kPROFILE_TOKEN_JSON                         @"PROFILE_TOKEN_JSON"
 #define kPROFILE_OBJECT                             @"PROFILE_OBJECT"
 #define kTOKEN_OBJECT                               @"token_object"
 #define kUPDATE_PROFILE                             @"UpdateProfile"

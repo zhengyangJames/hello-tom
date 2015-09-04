@@ -9,6 +9,7 @@
 #import "COQuestionView.h"
 #import "WSURLSessionManager+ListHome.h"
 #import "COLoginManager.h"
+#import "WSPostQuestionRequest.h"
 
 @interface COQuestionView ()<UIAlertViewDelegate>
 {
@@ -49,6 +50,15 @@
     self.navigationItem.rightBarButtonItem = btBack;
 }
 
+- (WSPostQuestionRequest *)_createPostQuestionRequest {
+    WSPostQuestionRequest *request = [[WSPostQuestionRequest alloc] init];
+    [request setHTTPMethod:METHOD_POST];
+    [request setBodyParam:textView.text forKey:kPostQuestion];
+    NSString *url = [NSString stringWithFormat:WS_METHOD_POST_QUESTION,[self.offerID stringValue]];
+    [request setURL:[NSURL URLWithString:url]];
+    [request setValueWithModel:[[COLoginManager shared] userModel]];
+    return request;
+}
 #pragma mark - Action
 - (void)__actionDone {
     [self.view endEditing:YES];
@@ -61,9 +71,7 @@
 #pragma mark - Web Service
 - (void)wsCallQuestion {
     [UIHelper showLoadingInView:self.view];
-    NSString *idoffer = [self.offerID stringValue];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:textView.text,@"question", nil];
-    [[WSURLSessionManager shared] wsPostQuestionWithOffersID:idoffer body:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsPostQuestionWithRequest:[self _createPostQuestionRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [kNotificationCenter postNotificationName:kNOTIFICATION_QUESTION object:nil];
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"REQUEST_SEND", nil) delegate:self tag:0];

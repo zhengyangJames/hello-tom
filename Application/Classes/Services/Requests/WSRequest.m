@@ -94,14 +94,4 @@
     return s;
 }
 
-- (id)createAuthRequest:(NSString*)url
-                                     body:(NSData*)bodyData
-                               httpMethod:(NSString*)method {
-    
-    // create request
-    WSRequest *request = [[WSRequest alloc] initWithURL:[NSURL URLWithString:url]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:WS_TIME_OUT];
-    [request setHTTPMethod:[method uppercaseString]];
-    [request setHTTPBody:bodyData];
-    return request;
-}
 @end

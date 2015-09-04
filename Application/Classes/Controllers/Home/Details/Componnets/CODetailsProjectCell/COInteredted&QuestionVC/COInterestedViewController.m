@@ -13,6 +13,7 @@
 #import "COPopupInteredtedView.h"
 #import "COCheckBoxButton.h"
 #import "COLoginManager.h"
+#import "WSPostSubscribeRequest.h"
 
 @interface COInterestedViewController () <UIAlertViewDelegate,COCheckBoxButtonDelegate>
 {
@@ -78,13 +79,20 @@
 }
 
 #pragma mark - Web Service
+- (WSPostSubscribeRequest *)_createPostSubsRequest {
+    WSPostSubscribeRequest *request = [[WSPostSubscribeRequest alloc] init];
+    [request setHTTPMethod:METHOD_POST];
+    NSString *url = [NSString stringWithFormat:WS_METHOD_POST_SUBSCRIBE,[self.coInterested.numberIdOfOffer stringValue]];
+    [request setURL:[NSURL URLWithString:url]];
+    [request setBodyParam:_amountTextField.text forKey:kPostSubsAmount];
+    [request setBodyParam:_emailTextField.text forKey:kPostSubsEmail];
+    [request setValueWithModel:[[COLoginManager shared] userModel]];
+    return request;
+}
+
 - (void)_callWSInteredted {
     [UIHelper showLoadingInView:self.view];
-    NSString *idoffer = [self.coInterested.numberIdOfOffer stringValue];
-    NSString *amount = _amountTextField.text;
-    NSString *email = _emailTextField.text;
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:amount,@"amount",email,@"email", nil];
-    [[WSURLSessionManager shared] wsPostSubscribeWithOffersID:idoffer amount:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsPostSubscribeWithRequest:[self _createPostSubsRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject && !error) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 _amountTextField.text = nil;

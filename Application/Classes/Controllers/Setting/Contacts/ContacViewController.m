@@ -10,6 +10,7 @@
 #import "ContactTableViewCell.h"
 #import "WSURLSessionManager+ListContact.h"
 #import "WSURLSessionManager.h"
+#import "WSGetListContactsRequest.h"
 
 #define TitleSection0  @"SINGAPORE OFFICE"
 #define TitleSection1  @"MALAYSIA OFFICE"
@@ -99,7 +100,7 @@
 
 - (void)_wsGetListContact {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsGetListContactWithHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsGetListContactWithRequest:[self _createListContactsRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -111,6 +112,13 @@
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
+}
+
+- (WSGetListContactsRequest *)_createListContactsRequest {
+    WSGetListContactsRequest *request = [[WSGetListContactsRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[WS_METHOD_GET_LIST_CONTACT stringByAppendingString:@"/"]]];
+    [request setHTTPMethod:METHOD_GET];
+    return  request;
 }
 
 #pragma mark - TableView Delegate

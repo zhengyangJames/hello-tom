@@ -8,11 +8,17 @@
 
 #import "WSURLSessionManager.h"
 
+@class WSGetListOfferRequest;
+@class WSGetOfferInfoWithRequest;
+@class WSProjectFundInfoRequest;
+@class WSPostSubscribeRequest;
+@class WSPostQuestionRequest;
+
 @interface WSURLSessionManager (ListHome)
 
-- (void)wsGetListOffersFilter:(NSString*)offerType handle:(WSURLSessionHandler)handler;
-- (void)wsGetDetailsWithOffersID:(NSString*)offerID handler:(WSURLSessionHandler)handler;
-- (void)wsPostSubscribeWithOffersID:(NSString*)OffersID amount:(NSDictionary*)amount handler:(WSURLSessionHandler)handler;
-- (void)wsPostQuestionWithOffersID:(NSString*)OffersID body:(NSDictionary*)body handler:(WSURLSessionHandler)handler;
-- (void)wsGetProgressBarWithOfferID:(NSDictionary*)bodyOfferID handler:(WSURLSessionHandler)handler;
+- (void)wsGetListOffersWithRequest:(WSGetListOfferRequest *)request handle:(WSURLSessionHandler)handler;
+- (void)wsGetOfferInforWithRequest:(WSGetOfferInfoWithRequest *)request handler:(WSURLSessionHandler)handler;
+- (void)wsPostSubscribeWithRequest:(WSPostSubscribeRequest *)request handler:(WSURLSessionHandler)handler;
+- (void)wsPostQuestionWithRequest:(WSPostQuestionRequest *)request handler:(WSURLSessionHandler)handler;
+- (void)wsGetProjectFundInfoWithRequest:(WSProjectFundInfoRequest *)request handler:(WSURLSessionHandler)handler;
 @end
