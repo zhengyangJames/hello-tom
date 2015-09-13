@@ -9,7 +9,6 @@
 #import "EditCompanyVC.h"
 #import "CODropListView.h"
 #import "CoDropListButtom.h"
-#import "COListProfileObject.h"
 #import "COBorderTextField.h"
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -20,7 +19,6 @@
     __weak IBOutlet UIImageView *_imageCompany;
     NSInteger _indexActtionOrgType;
 }
-@property (strong, nonatomic) COListProfileObject *profileObject;
 
 @end
 
@@ -55,13 +53,6 @@
 - (void)setImageName:(UIImage *)imageName {
     _imageName = imageName;
     _imageCompany.image = _imageName;
-}
-
-- (COListProfileObject*)profileObject {
-    if (!_profileObject) {
-        _profileObject = [[COListProfileObject alloc] init];
-    }
-    return _profileObject;
 }
 
 #pragma mark - Private

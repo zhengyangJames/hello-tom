@@ -7,7 +7,6 @@
 //
 
 #import "WSURLSessionManager+Profile.h"
-#import "COListProfileObject.h"
 #import "COUserProfileModel.h"
 #import "WSURLSessionManager+User.h"
 #import "COLoginManager.h"

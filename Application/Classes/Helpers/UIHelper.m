@@ -8,8 +8,6 @@
 
 #import "UIHelper.h"
 #import "MBProgressHUD.h"
-#import "CODetailsProfileObj.h"
-#import "CODetailsProfileObj+Mapping.h"
 
 #define IS_IOS8             ((NSInteger)[[[UIDevice currentDevice] systemVersion] floatValue]) == 8
 

@@ -9,7 +9,6 @@
 #import "COLoginManager.h"
 #import "WSURLSessionManager+User.h"
 #import "WSURLSessionManager+Profile.h"
-#import "COListProfileObject.h"
 #import "COUserProfileModel.h"
 
 @implementation COLoginManager
@@ -78,10 +77,6 @@
     return nil;
 }
 
-- (void)setUserModel:(COUserProfileModel *)userModel {
-    _userModel = userModel;
-}
-
 - (NSMutableDictionary*)_createParamTokenWithModel:(COUserProfileModel *)model {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     if (model.stringOfAccessToken) {
@@ -96,5 +91,5 @@
     }
     return dic;
 }
-@synthesize userModel = _userModel;
+
 @end

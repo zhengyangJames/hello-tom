@@ -20,10 +20,10 @@
 #import "COProjectFundedAmountModel.h"
 #import "COFilterListModel.h"
 #import "COLoginManager.h"
-#import "COListFilterObject.h"
 #import "WSProjectFundInfoRequest.h"
 #import "WSGetOfferInfoWithRequest.h"
 #import "WSGetListOfferRequest.h"
+#import "COListFilterObject.h"
 
 typedef NS_ENUM(NSInteger, FilterType) {
     FilterBullkType,
