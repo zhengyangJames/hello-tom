@@ -28,7 +28,6 @@
 #define METHOD_GET                                  @"GET"
 
 #define WS_TIME_OUT                                 120
-
 #define WS_ERROR_DOMAIN                             @"COASSETS_ERROR_DOMAIN"
 //#define WS_ENDPOINT                                 @"https://www.coassets.com/api"
 //#define WS_METHOD_POST_LOGIN                        @"https://www.coassets.com/oauth2/access_token/"
