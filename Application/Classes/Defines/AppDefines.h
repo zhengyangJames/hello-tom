@@ -30,14 +30,18 @@
 #define WS_TIME_OUT                                 120
 
 #define WS_ERROR_DOMAIN                             @"COASSETS_ERROR_DOMAIN"
-#define WS_ENDPOINT                                 @"https://www.coassets.com/api"
+//#define WS_ENDPOINT                                 @"https://www.coassets.com/api"
+//#define WS_METHOD_POST_LOGIN                        @"https://www.coassets.com/oauth2/access_token/"
+//#define CLIENT_ID                                   @"4c6a28b0137ff54909b3"
+//#define CLIENT_SECRECT                              @"e88e20a9f9d642ed1e7e04ab0b72798b41455377"
+
+#define WS_ENDPOINT                                 @"http://52.74.247.116/api"
+#define WS_METHOD_POST_LOGIN                        @"http://52.74.247.116/o/token/"
+#define CLIENT_ID                                   @"AoB2Dn2P93FFYkd2Hcd15opIaC9lIn8ciIPNg44O"
+#define CLIENT_SECRECT                              @"E5SVOzDAICZ2fUJBx8uWFfb7eUZumkZ9QrSoCsLRgvAAQVEdMQ98TWyZdF07rQLbpX0sbJETOxsXJgoy2pUbpYlEQFnvHguPkFEH92fwHiAR2p6Yhxf1hwdTGkCruBKF"
 
 #define WS_ACCESS_TOKEN                             @"dda346478c319db6faa474aace302858fe247e5c"
-
 #define COREDATA_STORE_NAME                         @"CoAssest"
-
-#define CLIENT_ID                                   @"4c6a28b0137ff54909b3"
-#define CLIENT_SECRECT                              @"e88e20a9f9d642ed1e7e04ab0b72798b41455377"
 #define GRANT_TYPE                                  @"password"
 ///////////////////////////////////////////////////////////////////
 #pragma mark - WSMAnager - METHOD SERVICES
@@ -51,8 +55,6 @@
 #define WS_METHOD_GET_LIST_OFFERS                   [WS_ENDPOINT stringByAppendingString:@"/offers/"]
 
 #define WS_METHOD_GET_LIST_CONTACT                  [WS_ENDPOINT stringByAppendingString:@"/company_info"]
-
-#define WS_METHOD_POST_LOGIN                        @"https://www.coassets.com/oauth2/access_token/"
 
 #define WS_METHOD_POST_REGISTER                     [WS_ENDPOINT stringByAppendingString:@"/profile/register/"]
 

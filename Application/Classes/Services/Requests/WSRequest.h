@@ -10,7 +10,7 @@
 
 @interface WSRequest : NSMutableURLRequest
 
-- (id)createAuthRequest:(NSString*)url body:(NSData*)bodyData httpMethod:(NSString*)method;
+//- (id)createAuthRequest:(NSString*)url body:(NSData*)bodyData httpMethod:(NSString*)method;
 - (void)setBodyParam:(NSString *)param forKey:(NSString *)key;
 - (NSString*)paramsToString:(NSDictionary*)params;
 @end

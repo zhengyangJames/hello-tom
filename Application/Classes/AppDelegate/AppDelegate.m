@@ -112,7 +112,7 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 1) {
         if ([[COLoginManager shared] userModel]) {
-            [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, BOOL sucess) {
+            [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
             }];
         } else {
             [self _setUpLogginVC];

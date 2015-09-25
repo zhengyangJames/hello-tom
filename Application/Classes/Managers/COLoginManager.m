@@ -25,21 +25,27 @@
 - (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager {
     [[WSURLSessionManager shared] wsLoginWithRequest:loginRequest handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
-            [self tokenObject:responseObject callWSGetListProfile:^(id object,BOOL sucess){
-                if ([object isKindOfClass:[NSDictionary class]] && sucess) {
-                    NSError *error;
+            [self tokenObject:responseObject callWSGetListProfile:^(id object, NSError *error){
+                if ([object isKindOfClass:[NSDictionary class]] && !error) {
                     NSDictionary *dic = object;
-                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
+                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
                     [kUserDefaults setObject:data forKey:kPROFILE_JSON];
                     [kUserDefaults synchronize];
-                }
-                if (actionLoginManager) {
-                    actionLoginManager(object,YES);
+                    if (actionLoginManager) {
+                        actionLoginManager(object,nil);
+                    }
+                } else {
+                    if (actionLoginManager) {
+                        actionLoginManager(nil,error);
+                    }
                 }
             }];
         } else {
+            NSString *errorCode = [NSString stringWithFormat:@"%tu",error.code];
+            NSString *errorMessage = NSLocalizedString(@"INVAlID_USERNAME_OR_PASSWORD", nil);
+            NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:0 userInfo:@{@"message":errorMessage, @"code":errorCode}];
             if (actionLoginManager) {
-                actionLoginManager(nil,NO);
+                actionLoginManager(nil,error);
             }
         }
     }];
@@ -52,11 +58,11 @@
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (actionLoginManager) {
-                actionLoginManager(responseObject,YES);
+                actionLoginManager(responseObject,nil);
             }
         }else {
             if (actionLoginManager) {
-                actionLoginManager(nil,NO);
+                actionLoginManager(nil,error);
             }
         }
     }];

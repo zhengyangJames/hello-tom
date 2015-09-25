@@ -14,8 +14,6 @@
 #define kCLIENT_SECRECT                             @"client_secret"
 #define kGRANT_TYPE                                 @"grant_type"
 
-#define CLIENT_ID                                   @"4c6a28b0137ff54909b3"
-#define CLIENT_SECRECT                              @"e88e20a9f9d642ed1e7e04ab0b72798b41455377"
 #define GRANT_TYPE                                  @"password"
 
 @interface WSRequest() {
@@ -28,18 +26,20 @@
 
 - (id)init {
     self = [super init];
-    if (self) {        bodyString = @"";
+    if (self) {
+        bodyString = @"";
         bodyString = [bodyString stringByAppendingFormat:@"%@=%@",kCLIENT_ID,[CLIENT_ID urlEncode]];
         bodyString = [bodyString stringByAppendingFormat:@"&%@=%@",kCLIENT_SECRECT,[CLIENT_SECRECT urlEncode]];
         bodyString = [bodyString stringByAppendingFormat:@"&%@=%@",kGRANT_TYPE,[GRANT_TYPE urlEncode]];
-        NSData *parambody = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
-        [self setHTTPBody:parambody];
+        //NSData *parambody = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+        //[self setHTTPBody:parambody];
         [self setCachePolicy:NSURLRequestUseProtocolCachePolicy];
         [self setTimeoutInterval:WS_TIME_OUT];
         [self setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     }
     return self;
 }
+
 #pragma mark - func set
 - (void)setBodyParam:(NSString *)param forKey:(NSString *)key {
     bodyString = [bodyString stringByAppendingFormat:@"&%@=%@",key,[param urlEncode]];

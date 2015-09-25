@@ -40,12 +40,11 @@
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-            [[COLoginManager shared] tokenObject:[self _createParamTokenWithModel:userModel] callWSGetListProfile:^(id object, BOOL sucess) {
-                if (sucess && [object isKindOfClass:[NSDictionary class]]) {
+            [[COLoginManager shared] tokenObject:[self _createParamTokenWithModel:userModel] callWSGetListProfile:^(id object, NSError *error) {
+                if (!error && [object isKindOfClass:[NSDictionary class]]) {
                     [[COLoginManager shared] setUserModel:nil];
-                    NSError *error;
                     NSDictionary *dic = object;
-                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
+                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
                     [kUserDefaults setObject:data forKey:kPROFILE_JSON];
                     [kUserDefaults synchronize];
                     if (handler) {

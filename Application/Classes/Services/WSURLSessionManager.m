@@ -135,6 +135,7 @@
     
 }
 
+
 - (void)sendRequest:(NSMutableURLRequest *)request handler:(WSURLSessionHandler)handler {
     DBG(@"NM-WS-REQUEST-URL: %@",request.URL.absoluteString);
     DBG(@"NM-WS-REQUEST-METHOD: %@",request.HTTPMethod);
@@ -176,13 +177,23 @@
         }
         else
         {
-            if(handler)
-            {
-                handler(responseObject,response,nil);
+            if (error) {
+                NSString *errorCode = [NSString stringWithFormat:@"%tu",error.code];
+                NSString *errorMessage = error.localizedDescription;
+                NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:0 userInfo:@{@"message":errorMessage, @"code":errorCode}];
+                if(handler)
+                {
+                    handler(nil,nil,error);
+                }
+                
+            } else {
+                if(handler)
+                {
+                    handler(responseObject,response,nil);
+                }
             }
         }
     }] resume];
 }
-
 
 @end

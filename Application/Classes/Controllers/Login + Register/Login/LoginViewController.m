@@ -17,7 +17,7 @@
 #import "COLoginManager.h"
 #import "WSLoginRequest.h"
 
-@interface LoginViewController ()<UIAlertViewDelegate>
+@interface LoginViewController ()
 {
     __weak IBOutlet COBorderTextField *_userName;
     __weak IBOutlet COBorderTextField *_passWord;
@@ -71,14 +71,14 @@
 #pragma mark - CallAPI
 - (void)_callWSLogin {
     [UIHelper showLoadingInView:self.view];
-    [[COLoginManager shared] callAPILoginWithRequest:[self _setLoginRequest] actionLoginManager:^(id object, BOOL sucess) {
-        if (object && sucess) {
+    [[COLoginManager shared] callAPILoginWithRequest:[self _setLoginRequest] actionLoginManager:^(id object, NSError *error) {
+        if (object && !error ) {
             [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
             if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];
             }
         } else {
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"INVAlID_USERNAME_OR_PASSWORD", nil) delegate:self tag:100];
+            [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
@@ -110,12 +110,6 @@
     if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
         [self.delegate loginViewController:self loginWithStyle:DismissLoginVC];
     }
-}
-
-#pragma mark - UIAlertView delegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-
 }
 
 @end

@@ -145,8 +145,8 @@
 }
 
 - (void)_callWSLogin {
-    [[COLoginManager shared] callAPILoginWithRequest:[self _setLoginRequest] actionLoginManager:^(id object, BOOL sucess) {
-        if (object && sucess) {
+    [[COLoginManager shared] callAPILoginWithRequest:[self _setLoginRequest] actionLoginManager:^(id object, NSError *error) {
+        if (object && !error) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } else {
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"INVALID_GRANT", nil) delegate:self tag:100];

@@ -152,9 +152,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     }];
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetListOffersWithRequest:[self _createGetListOfferRequestWithType:typeFilter] handle:^(id responseObject, NSURLResponse *response, NSError *error) {
+        [UIHelper hideLoadingFromView:self.view];
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
-            [UIHelper hideLoadingFromView:self.view];
             if (self.arrayData.count>0) {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     _noDataView.hidden = YES;

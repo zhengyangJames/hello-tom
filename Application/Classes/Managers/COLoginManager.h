@@ -11,7 +11,7 @@
 @class COUserProfileModel;
 @class WSLoginRequest;
 
-typedef void(^ActionLoginManager)(id object,BOOL sucess);
+typedef void(^ActionLoginManager)(id object, NSError *error);
 
 @interface COLoginManager : NSObject
 
