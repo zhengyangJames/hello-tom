@@ -102,8 +102,6 @@
             
         case COSettingsStypeNew: return [self _pushWebViewSetting:LINK_NEW titler:NSLocalizedString(@"NEWS", nil)];
             
-        case COSettingsStypeCommentaries: return [self _pushWebViewSetting:LINK_COMMENTARIES titler:NSLocalizedString(@"COMMENTARIES", nil)];
-            
         case COSettingsStypeTermOfUse: return [self _pushWebViewSetting:LINK_TERMS_OF_USE titler:NSLocalizedString(@"TERM_OF_USE", nil)];
             
         case COSettingsStypeCodeOfConduct: return [self _pushWebViewSetting:LINK_CODE_OF_CONDUCT titler:NSLocalizedString(@"CODE_OF_CONDUCT", nil)];

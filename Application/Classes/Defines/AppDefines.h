@@ -137,11 +137,11 @@
 
 #define WEB_SAFARI_LINK                             @"http://coassets.com/terms-of-use/"
 
-#define LINK_NEW                                    @"https://www.coassets.com/news/"
-#define LINK_COMMENTARIES                           @"https://www.coassets.com/blog/"
-#define LINK_TERMS_OF_USE                           @"https://www.coassets.com/terms-of-use/"
-#define LINK_CODE_OF_CONDUCT                        @"https://www.coassets.com/code-of-conduct/"
-#define LINK_PRIVACY                                @"https://www.coassets.com/privacy/"
+#define WEB_SAFARI_LINK                             @"http://coassets.com/terms-of-use/"
+#define LINK_NEW                                    @"http://coassets.com/news/apps/"
+#define LINK_TERMS_OF_USE                           @"http://www.coassets.com/apps/terms-of-use/"
+#define LINK_CODE_OF_CONDUCT                        @"http://www.coassets.com/apps/code-of-conduct/"
+#define LINK_PRIVACY                                @"http://www.coassets.com/apps/privacy/"
 ////////////////////////////////////////////////////////////////
 #pragma mark - PROFILE DEFINE
 #define DEFAULT_HEIGHT_CELL                         40
@@ -182,7 +182,6 @@
 typedef NS_ENUM(NSInteger, COSettingsStype) {
     COSettingsStypeContact,
     COSettingsStypeNew,
-    COSettingsStypeCommentaries,
     COSettingsStypeTermOfUse,
     COSettingsStypeCodeOfConduct,
     COSettingsStypePrivacy,
