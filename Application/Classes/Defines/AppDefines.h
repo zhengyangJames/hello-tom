@@ -37,7 +37,7 @@
 #define WS_ENDPOINT                                 @"http://52.74.247.116/api"
 #define WS_METHOD_POST_LOGIN                        @"http://52.74.247.116/o/token/"
 #define CLIENT_ID                                   @"AoB2Dn2P93FFYkd2Hcd15opIaC9lIn8ciIPNg44O"
-#define CLIENT_SECRECT                              @"E5SVOzDAICZ2fUJBx8uWFfb7eUZumkZ9QrSoCsLRgvAAQVEdMQ98TWyZdF07rQLbpX0sbJETOxsXJgoy2pUbpYlEQFnvHguPkFEH92fwHiAR2p6Yhxf1hwdTGkCruBKF"
+#define CLIENT_SECRECT @"E5SVOzDAICZ2fUJBx8uWFfb7eUZumkZ9QrSoCsLRgvAAQVEdMQ98TWyZdF07rQLbpX0sbJETOxsXJgoy2pUbpYlEQFnvHguPkFEH92fwHiAR2p6Yhxf1hwdTGkCruBKF"
 
 #define WS_ACCESS_TOKEN                             @"dda346478c319db6faa474aace302858fe247e5c"
 #define COREDATA_STORE_NAME                         @"CoAssest"
@@ -187,6 +187,13 @@ typedef NS_ENUM(NSInteger, COSettingsStype) {
     COSettingsStypeCodeOfConduct,
     COSettingsStypePrivacy,
     COSettingsStypeLogout
+};
+
+typedef NS_ENUM(NSInteger, COProfilesStype) {
+    COProfilesStypeProfile,
+    COProfilesStypeAccount,
+    COProfilesStypePortfolio,
+    COProfilesStypeDealsOngoing
 };
 
 typedef NS_ENUM(NSInteger, TableViewCellStyle) {
