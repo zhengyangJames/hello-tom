@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     self.textColor = [UIColor blackColor];
-    self.font = [UIFont fontWithName:@"Raleway-Regular" size:17];
+    self.font = [UIFont fontWithName:@"Raleway-Regular" size:15];
 }
 
 
