@@ -195,14 +195,12 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                 [self _callWSGetFundInfo];
             }];
         } else {
-            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [UIHelper hideLoadingFromView:self.view];
+                _leftButton.enabled = YES;
+            }];
             [UIHelper showError:error];
         }
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [UIHelper hideLoadingFromView:self.view];
-            _leftButton.enabled = YES;
-        }];
-        
     }];
 }
 
@@ -220,14 +218,16 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared] wsGetProjectFundInfoWithRequest:[self _createFundInfoRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [UIHelper hideLoadingFromView:self.view];
                 self.offerModel.offerProject.projectFundedAmount = responseObject;
                 [self _pushDetailVcWithID:self.offerModel];
             }];
         } else {
-            [UIHelper hideLoadingFromView:self.view];
             [UIHelper showError:error];
         }
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [UIHelper hideLoadingFromView:self.view];
+            _leftButton.enabled = YES;
+        }];
     }];
 }
 
