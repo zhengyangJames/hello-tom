@@ -59,6 +59,9 @@
 "FILTER_ALL_NULL"                       = "CoAssets is comming soon";
 
 "EMAIL_INVALID"                         = "Email is invalid.";
+"PASSWORD_INVALID"                      = "Password is invalid.";
+"USERNAME_INVALID"                      = "Username is invalid.";
+
 "MESSEAGE_RESET_PASSWORD"               = "Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly";
 "YOUR_EMAIL_INVALID"                    = "Your email is invalid.";
 "INVALID_GRANT"                         = "Invalid Grant";

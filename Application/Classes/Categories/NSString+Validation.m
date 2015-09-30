@@ -40,4 +40,20 @@
     return [passwordTest evaluateWithObject:self];
 }
 
+- (BOOL)isCheckWhitleSpace {
+    NSRange whiteSpaceRange = [self rangeOfString:@" "];
+    if (whiteSpaceRange.location != NSNotFound) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isCheckCharacterRequiesment {
+    NSCharacterSet * set = [[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789@.+-_"] invertedSet];
+    if ([self rangeOfCharacterFromSet:set].location != NSNotFound) {
+        return YES;
+    }
+    return NO;
+}
+
 @end
