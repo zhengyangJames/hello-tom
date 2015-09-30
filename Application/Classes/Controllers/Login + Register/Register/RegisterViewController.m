@@ -162,7 +162,7 @@
                 [UIHelper hideLoadingFromView:self.view];
             }
         } else {
-            [UIHelper showError:error];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];
             [UIHelper hideLoadingFromView:self.view];
         }
     }];

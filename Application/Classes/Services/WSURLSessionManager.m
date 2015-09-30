@@ -162,7 +162,7 @@
             NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:0 userInfo:@{@"message":errorMessage, @"code":errorCode}];
             if(handler)
             {
-                handler(nil,response,error);
+                handler(responseObject,response,error);
             }
             return;
         }
@@ -170,25 +170,20 @@
             NSInteger errorCode = 500;
             NSString *errorMessage = @"The response is invalid.";
             NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:errorCode userInfo:@{@"message":errorMessage}];
-            if(handler)
-            {
+            if(handler) {
                 handler(nil,response,error);
             }
-        }
-        else
-        {
+        } else {
             if (error) {
                 NSString *errorCode = [NSString stringWithFormat:@"%tu",error.code];
                 NSString *errorMessage = error.localizedDescription;
                 NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:0 userInfo:@{@"message":errorMessage, @"code":errorCode}];
-                if(handler)
-                {
+                if(handler) {
                     handler(nil,nil,error);
                 }
                 
             } else {
-                if(handler)
-                {
+                if(handler) {
                     handler(responseObject,response,nil);
                 }
             }
