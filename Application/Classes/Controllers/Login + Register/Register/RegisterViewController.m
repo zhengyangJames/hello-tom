@@ -82,7 +82,7 @@
         _currentField = _usernameTextField;
         return NO;
     }else if ([_usernameTextField.text isCheckCharacterRequiesment]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ERROR", nil) delegate:self tag:0];
         _currentField = _usernameTextField;
         return NO;
     } else if ([_passwordTextField.text isEmpty]) {
@@ -94,7 +94,7 @@
         _currentField = _passwordTextField;
         return NO;
     } else if ([_passwordTextField.text isCheckCharacterRequiesment]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_ERROR", nil) delegate:self tag:0];
         _currentField = _passwordTextField;
         return NO;
     } else if ([_comfilmPasswordTextField.text isEmpty] ) {
@@ -106,7 +106,7 @@
         _currentField = _comfilmPasswordTextField;
         return NO;
     } else if ([_passwordTextField.text isCheckCharacterRequiesment]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_ERROR", nil) delegate:self tag:0];
         _currentField = _comfilmPasswordTextField;
         return NO;
     } else if (![_comfilmPasswordTextField.text isEqualToString:_passwordTextField.text]) {
