@@ -152,13 +152,15 @@
 #define AUTO_HEIGHT_CELL_PASSWORD                   (self.view.bounds.size.height - (200+90))
 #define DEFAULT_HEIGHT_CELL_PASSWORD                171
 #define HIEGHT_HEADERVIEW                           200
-#define HIEGHT_BOTTOMVIEW                           90
+#define HIEGHT_BOTTOMVIEW                           70
 #define DEFAULT_ADDRESS_CELL                         44
 #define IS_IOS8_OR_ABOVE                            [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
 
 #define HEIGHT_FOR_ROW_HOME                         248
 #define HEIGHT_SECTION_CONTACT                      40
 #define ESTIMATE_HEIGHT_FOR_ROW_CONTACT              185
+
+#define HEIGHT_FOR_IMAGE_ROW                        220
 
 #define UPDATE_ABOUT_PROFILE                        @"Update profile"
 #define UPDATE_COMNPANY_PROFILE                     @"Update company profile"
@@ -200,6 +202,19 @@ typedef NS_ENUM(NSInteger, TableViewCellStyle) {
     TableViewCellStyleAbout,        //0
     //    TableViewCellStyleCompany,      //1
     TableViewCellStylePasswork      //2
+};
+
+typedef NS_ENUM(NSInteger, NProfileStyle) {
+    NProfileStyleAbout = 0,
+    NProfileStyleCompany,
+    NProfileStyleInvestorProfile
+};
+
+typedef NS_ENUM(NSInteger, NProfileActionStyle) {
+    NProfileActionUpdateProfile = 0,
+    NProfileActionChangePassWord,
+    NProfileActionUpdateCompany,
+    NProfileActionUpdateInvestor
 };
 
 typedef NS_ENUM(NSInteger, COSegmentStyle) {

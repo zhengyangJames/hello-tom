@@ -58,4 +58,5 @@
 - (void)setNameOfUserCity:(NSString*)string;
 - (void)setNameOfUserCountry:(NSString*)string;
 - (void)setNameOfUserCountryCode:(NSString*)string;
+
 @end

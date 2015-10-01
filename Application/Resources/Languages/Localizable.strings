@@ -118,3 +118,8 @@
 "Log Out"                               = "Log Out";
 
 "Interested_Popup"                      = "Thank you for crowdfunding, \n%@. \n\nPlease e-sign the contract sent to your email & proceed to make fund transfer within 5 working days. \n\nIf you have any queries, please feel free to call 65327008 or email admin@coassets.com. \nThank you & happy crowdfunding.";
+
+"KEY_ACTION_UPDATEPROFILE"              = "Update profile";
+"KEY_ACTION_UPDATECOMPANY"              = "Update company profile";
+"KEY_ACTION_UPDATEINVESTOR"             = "Update investor profile";
+"KEY_ACTION_UPDATECHANGEPASSWORD"       = "Change password";
