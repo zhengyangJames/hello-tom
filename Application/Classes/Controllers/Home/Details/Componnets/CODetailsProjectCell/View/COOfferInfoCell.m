@@ -20,6 +20,7 @@
     __weak IBOutlet UILabel *_lblOfferTimeHorizon;
     __weak IBOutlet UILabel *_lblOfferYield;
     __weak IBOutlet UILabel *_lblOfferDayLeft;
+    __weak IBOutlet UILabel *_lblOfferCurrency;
 }
 
 @end
@@ -55,6 +56,7 @@
     _lblOfferTimeHorizon.text   = _offerInfo.offerInfoTimeHorizon;
     _lblOfferYield.text         = _offerInfo.offerInfoYield;
     _lblOfferDayLeft.text       = _offerInfo.offerInfoDayLeft;
+    _lblOfferCurrency.text      = _offerInfo.offerInfoCurrency;
 }
 
 #pragma mark - Action 

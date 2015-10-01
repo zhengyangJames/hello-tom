@@ -19,6 +19,7 @@
 @property (nonatomic, strong) COProjectModel *offerProject;
 @property (nonatomic, strong) NSString *offerOwnerType;
 @property (nonatomic, strong) NSString *offerCompanyLogo;
+@property (nonatomic, strong) NSString *offerCurrency;
 @property (nonatomic, strong) NSString *offerStatus;
 @property (nonatomic, strong) NSNumber *offerInvestorCount;
 @property (nonatomic, strong) NSNumber *offerMinInvestment;

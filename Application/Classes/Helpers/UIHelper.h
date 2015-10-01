@@ -30,4 +30,6 @@
 + (NSString *)stringDecimalFormatFromNumberDouble:(NSNumber*)number;
 
 + (NSAttributedString *)_getStringFromHtml:(NSString *)stringHtml;
+
++ (NSString *)getStringCurrencyOfferWithKey:(NSString*)keyCurrency ;
 @end

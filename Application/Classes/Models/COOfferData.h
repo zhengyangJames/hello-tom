@@ -32,6 +32,7 @@
 - (NSString *)offerInfoTimeHorizon;
 - (NSString *)offerInfoYield;
 - (NSString *)offerInfoDayLeft;
+- (NSString *)offerInfoCurrency;
 @end
 
 @protocol COOfferDescription <NSObject>
