@@ -709,12 +709,12 @@
 		0E98D3981BBCC8EA008FFFBD /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				0E98D3991BBCC8EA008FFFBD /* Account */,
-				0E98D3A11BBCC8EA008FFFBD /* Deals */,
-				0E98D3A51BBCC8EA008FFFBD /* DetailsProfile */,
 				0E98D3D51BBCC8EA008FFFBD /* ProfileViewControllers.h */,
 				0E98D3D61BBCC8EA008FFFBD /* ProfileViewControllers.m */,
 				0E98D3D71BBCC8EA008FFFBD /* ProfileViewControllers.xib */,
+				0E98D3991BBCC8EA008FFFBD /* Account */,
+				0E98D3A11BBCC8EA008FFFBD /* Deals */,
+				0E98D3A51BBCC8EA008FFFBD /* DetailsProfile */,
 				0E98D3D81BBCC8EA008FFFBD /* Protfolio */,
 			);
 			path = Profile;
