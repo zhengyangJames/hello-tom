@@ -77,12 +77,36 @@
         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_REQUIRED", nil) delegate:self tag:0];
         _currentField = _usernameTextField;
         return NO;
+    } else if ([_usernameTextField.text isCheckWhitleSpace]) {
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_INVALID", nil) delegate:self tag:0];
+        _currentField = _usernameTextField;
+        return NO;
+    }else if ([_usernameTextField.text isCheckCharacterRequiesment]) {
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ERROR", nil) delegate:self tag:0];
+        _currentField = _usernameTextField;
+        return NO;
     } else if ([_passwordTextField.text isEmpty]) {
         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
         _currentField = _passwordTextField;
         return NO;
+    } else if ([_passwordTextField.text isCheckWhitleSpace]) {
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_INVALID", nil) delegate:self tag:0];
+        _currentField = _passwordTextField;
+        return NO;
+    } else if ([_passwordTextField.text isCheckCharacterRequiesment]) {
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_ERROR", nil) delegate:self tag:0];
+        _currentField = _passwordTextField;
+        return NO;
     } else if ([_comfilmPasswordTextField.text isEmpty] ) {
         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
+        _currentField = _comfilmPasswordTextField;
+        return NO;
+    } else if ([_comfilmPasswordTextField.text isCheckWhitleSpace]) {
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_INVALID", nil) delegate:self tag:0];
+        _currentField = _comfilmPasswordTextField;
+        return NO;
+    } else if ([_passwordTextField.text isCheckCharacterRequiesment]) {
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_ERROR", nil) delegate:self tag:0];
         _currentField = _comfilmPasswordTextField;
         return NO;
     } else if (![_comfilmPasswordTextField.text isEqualToString:_passwordTextField.text]) {
@@ -138,7 +162,7 @@
                 [UIHelper hideLoadingFromView:self.view];
             }
         } else {
-            [UIHelper showError:error];
+            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];
             [UIHelper hideLoadingFromView:self.view];
         }
     }];

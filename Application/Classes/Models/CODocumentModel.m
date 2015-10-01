@@ -9,6 +9,8 @@
 #import "CODocumentModel.h"
 #import "CODocumentItemModel.h"
 
+
+
 @implementation CODocumentModel
 
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
@@ -19,10 +21,25 @@
 }
 
 + (NSValueTransformer *)itemsJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[CODocumentItemModel class]];
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        if (value && [value isKindOfClass:[NSArray class]]) {
+            NSMutableArray *finalArray = [NSMutableArray array];
+            for (NSDictionary *dict in value) {
+                NSURL *url = [NSURL URLWithString:[dict objectForKey:@"url"]];
+                if(url && url.scheme && url.host) {
+                    [finalArray addObject:dict];
+                }
+            }
+            *success = YES;
+            return [MTLJSONAdapter modelsOfClass:[CODocumentItemModel class] fromJSONArray:finalArray error:error];
+        }
+        *success = YES;
+        return nil;
+    }];
 }
 
 - (NSArray *)arrayOfItems {
+
     return self.items;
 }
 #pragma mark - doc detail protocol

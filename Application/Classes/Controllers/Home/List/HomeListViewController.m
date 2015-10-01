@@ -220,7 +220,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared] wsGetProjectFundInfoWithRequest:[self _createFundInfoRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [UIHelper hideLoadingFromView:self.view];
                 self.offerModel.offerProject.projectFundedAmount = responseObject;
                 [self _pushDetailVcWithID:self.offerModel];
             }];

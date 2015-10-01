@@ -132,7 +132,7 @@
 }
 
 - (NSString *)offerDescriptionContent {
-    return self.offerShortDescription;
+    return [UIHelper _getStringFromHtml:self.offerShortDescription].string;
 }
 
 #pragma mark - offer project protocol

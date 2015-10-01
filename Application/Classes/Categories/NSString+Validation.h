@@ -13,5 +13,6 @@
 - (BOOL)isValidEmail;
 - (BOOL)isValidPasswordRegExr;
 - (BOOL)isValidPassword;
-
+- (BOOL)isCheckWhitleSpace;
+- (BOOL)isCheckCharacterRequiesment;
 @end
