@@ -19,4 +19,11 @@
 @property (nonatomic, strong) id<COCompanyName> compantName;
 @property (nonatomic, strong) id<COCompanyAdress> companyAdress;
 
+@property (nonatomic, strong) id<COInvestorType> investorType;
+@property (nonatomic, strong) id<COInvestorPreference> investorPreference;
+@property (nonatomic, strong) id<COInvestorAmount> investorAmount;
+@property (nonatomic, strong) id<COInvestorTarget> investorTarget;
+@property (nonatomic, strong) id<COInvestorDuration> investorDuration;
+@property (nonatomic, strong) id<COInvestorCountries> investorCountries;
+
 @end

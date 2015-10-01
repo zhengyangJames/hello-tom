@@ -126,3 +126,10 @@
 
 "COMPANY_NAME"                          = "Org name";
 "COMPANY_ADRESS"                        = "Address";
+
+"INVESTOR_TYPE"                         = "Investor Type";
+"INVESTOR_PREFERENCE"                   = "Project Preference";
+"INVESTOR_AMOUNT"                       = "Investment Amount";
+"INVESTOR_TARGET"                       = "Target Returns (Annualized)";
+"INVESTOR_DURATION"                     = "Duration Preference";
+"INVESTOR_COUNTRIES"                    = "Countries Preference";

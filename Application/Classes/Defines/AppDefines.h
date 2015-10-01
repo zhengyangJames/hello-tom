@@ -239,6 +239,15 @@ typedef NS_ENUM(NSInteger, COCompanyProfileStyle) {
     COCompanyProfileStyleAdress
 };
 
+typedef NS_ENUM(NSInteger, COInvedtorProfileStyle) {
+    COInvedtorProfileStyleType = 0,
+    COInvedtorProfileStylePreference,
+    COInvedtorProfileStyleAmount,
+    COInvedtorProfileStyleTarget,
+    COInvedtorProfileStyleDuration,
+    COInvedtorProfileStyleCountries
+};
+
 typedef NS_ENUM(NSInteger, LoginWithStyle){
     DismissLoginVC,
     PushLoginVC

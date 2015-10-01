@@ -58,4 +58,40 @@
     _lblDetail.text = _companyAdress.companyAdressContent;
 }
 
+- (void)setInvestorType:(id<COInvestorType>)investorType {
+    _investorType = investorType;
+    _lblName.text = investorType.COInvestorTypeTitle;
+    _lblDetail.text = investorType.COInvestorTypeContent;
+}
+
+- (void)setInvestorPreference:(id<COInvestorPreference>)investorPreference {
+    _investorPreference = investorPreference;
+    _lblName.text = investorPreference.COInvestorPreferenceTitle;
+    _lblDetail.text = investorPreference.COInvestorPreferenceContent;
+}
+
+- (void)setInvestorAmount:(id<COInvestorAmount>)investorAmount {
+    _investorAmount = investorAmount;
+    _lblName.text = investorAmount.COInvestorAmountTitle;
+    _lblDetail.text = investorAmount.COInvestorAmountContent;
+}
+
+- (void)setInvestorTarget:(id<COInvestorTarget>)investorTarget {
+    _investorTarget = investorTarget;
+    _lblName.text = investorTarget.COInvestorTargetTitle;
+    _lblDetail.text = investorTarget.COInvestorTargetContent;
+}
+
+- (void)setInvestorDuration:(id<COInvestorDuration>)investorDuration {
+    _investorDuration = investorDuration;
+    _lblName.text = investorDuration.COInvestorDurationTitle;
+    _lblDetail.text = investorDuration.COInvestorDurationContent;
+}
+
+- (void)setInvestorCountries:(id<COInvestorCountries>)investorCountries {
+    _investorCountries = investorCountries;
+    _lblName.text = investorCountries.COInvestorCountriesTitle;
+    _lblDetail.text = investorCountries.COInvestorCountriesContent;
+}
+
 @end

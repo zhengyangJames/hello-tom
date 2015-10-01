@@ -13,6 +13,7 @@
 #import "NProfileAdressCell.h"
 #import "COUserProfileModel.h"
 #import "COUserCompanyModel.h"
+#import "COUserInverstorModel.h"
 
 @interface NProfileDataSource ()
 {
@@ -83,13 +84,7 @@
         cell.actionStyle = NProfileActionUpdateInvestor;
         return cell;
     }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell identifier]];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
-    }
-    cell.textLabel.text = @"SANYI";
-    return cell;
+    return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
 }
 
 - (NprofileButtonCell *)tableview:(UITableView *)tableview buttonCellForRowAtIndexpath:(NSIndexPath *)indexPath {
@@ -126,7 +121,19 @@
         }
             break;
         case NProfileStyleInvestorProfile: {
-            
+            if (indexPath.row == COInvedtorProfileStyleType) {
+                cell.investorType = self.invedtorModel;
+            } else if (indexPath.row == COInvedtorProfileStylePreference) {
+                cell.investorPreference = self.invedtorModel;
+            } else if (indexPath.row == COInvedtorProfileStyleAmount) {
+                cell.investorAmount = self.invedtorModel;
+            } else if (indexPath.row == COInvedtorProfileStyleTarget) {
+                cell.investorTarget = self.invedtorModel;
+            } else if (indexPath.row == COInvedtorProfileStyleDuration) {
+                cell.investorDuration = self.invedtorModel;
+            } else {
+                cell.investorCountries = self.invedtorModel;
+            }
         }
     }
     return cell;

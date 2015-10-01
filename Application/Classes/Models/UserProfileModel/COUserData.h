@@ -52,6 +52,42 @@
 
 @end
 
+@protocol COInvestorType <NSObject>
+
+- (NSString *)COInvestorTypeTitle;
+- (NSString *)COInvestorTypeContent;
+@end
+
+@protocol COInvestorPreference <NSObject>
+
+- (NSString *)COInvestorPreferenceTitle;
+- (NSString *)COInvestorPreferenceContent;
+@end
+
+@protocol COInvestorAmount <NSObject>
+
+- (NSString *)COInvestorAmountTitle;
+- (NSString *)COInvestorAmountContent;
+@end
+
+@protocol COInvestorTarget <NSObject>
+
+- (NSString *)COInvestorTargetTitle;
+- (NSString *)COInvestorTargetContent;
+@end
+
+@protocol COInvestorDuration <NSObject>
+
+- (NSString *)COInvestorDurationTitle;
+- (NSString *)COInvestorDurationContent;
+@end
+
+@protocol COInvestorCountries <NSObject>
+
+- (NSString *)COInvestorCountriesTitle;
+- (NSString *)COInvestorCountriesContent;
+@end
+
 @protocol COUserAboutProfile <NSObject>
 
 - (NSString *)nameOfUserName;

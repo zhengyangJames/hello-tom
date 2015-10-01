@@ -21,15 +21,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="214" translatesAutoresizingMaskIntoConstraints="NO" id="xc1-Qz-68p">
-                        <rect key="frame" x="95" y="12.5" width="215" height="18"/>
+                        <rect key="frame" x="110" y="12.5" width="200" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="grj-X5-xYI"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="grj-X5-xYI"/>
+                            </mask>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salutation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkN-L2-YBA">
-                        <rect key="frame" x="10" y="12.5" width="85" height="18"/>
+                        <rect key="frame" x="10" y="12.5" width="100" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="85" id="8K5-YO-UhR"/>
+                            <constraint firstAttribute="width" constant="100" id="KYz-yz-BBp"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,6 +56,7 @@
                 <outlet property="_lblDetail" destination="xc1-Qz-68p" id="s0h-Au-jFz"/>
                 <outlet property="_lblName" destination="vkN-L2-YBA" id="Zxo-ua-tDW"/>
             </connections>
+            <point key="canvasLocation" x="167" y="180"/>
         </tableViewCell>
     </objects>
 </document>

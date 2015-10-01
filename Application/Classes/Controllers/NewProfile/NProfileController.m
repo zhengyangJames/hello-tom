@@ -12,6 +12,7 @@
 #import "NProfileHeaderView.h"
 #import "COUserProfileModel.h"
 #import "COUserCompanyModel.h"
+#import "COUserInverstorModel.h"
 #import "COLoginManager.h"
 
 @interface NProfileController ()<NProfileHeaderViewDelegate>
@@ -26,6 +27,7 @@
 @property (nonatomic, assign) NSInteger profileStyle;
 @property (nonatomic, strong) COUserProfileModel *userModel;
 @property (nonatomic, strong) COUserCompanyModel *companyModel;
+@property (nonatomic, strong) COUserInverstorModel *investorModel;
 
 @end
 
@@ -47,6 +49,7 @@
     self.profileDatasource.profileStyle = NProfileStyleAbout;
     self.profileDatasource.userModel = self.userModel;
     self.profileDatasource.companyModel = self.companyModel;
+    self.profileDatasource.invedtorModel = self.investorModel;
     
     _tableView.delegate = self.profileDelegate;
     _tableView.dataSource = self.profileDatasource;
@@ -82,11 +85,19 @@
     return _companyModel = [[COUserCompanyModel alloc] init];
 }
 
+- (COUserInverstorModel *)investorModel {
+    if (_investorModel) {
+        return _investorModel;
+    }
+    return _investorModel = [[COUserInverstorModel alloc] init];
+}
+
 #pragma mark - Private
 - (void)_reloadTableview {
     self.profileDatasource.profileStyle = self.profileStyle;
     self.profileDatasource.userModel = self.userModel;
     self.profileDatasource.companyModel = self.companyModel;
+    self.profileDatasource.invedtorModel = self.investorModel;
     [_tableView reloadData];
 }
 

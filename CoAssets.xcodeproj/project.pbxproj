@@ -13,6 +13,7 @@
 		0E8AA6141BBD433800C704AC /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AA6121BBD433800C704AC /* NProfileAdressCell.m */; };
 		0E8AA6151BBD433800C704AC /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8AA6131BBD433800C704AC /* NProfileAdressCell.xib */; };
 		0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */; };
+		0E93F8CE1BBD8AB90079D5AE /* COUserInverstorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93F8CD1BBD8AB90079D5AE /* COUserInverstorModel.m */; };
 		0E98D3E01BBCC8EA008FFFBD /* AccountViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D39C1BBCC8EA008FFFBD /* AccountViewCell.m */; };
 		0E98D3E11BBCC8EA008FFFBD /* AccountViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D39D1BBCC8EA008FFFBD /* AccountViewCell.xib */; };
 		0E98D3E21BBCC8EA008FFFBD /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D39F1BBCC8EA008FFFBD /* AccountViewController.m */; };
@@ -298,6 +299,8 @@
 		0E8AA6131BBD433800C704AC /* NProfileAdressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileAdressCell.xib; sourceTree = "<group>"; };
 		0E93F8C61BBD6FFC0079D5AE /* COUserCompanyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserCompanyModel.h; sourceTree = "<group>"; };
 		0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserCompanyModel.m; sourceTree = "<group>"; };
+		0E93F8CC1BBD8AB90079D5AE /* COUserInverstorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserInverstorModel.h; sourceTree = "<group>"; };
+		0E93F8CD1BBD8AB90079D5AE /* COUserInverstorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserInverstorModel.m; sourceTree = "<group>"; };
 		0E98D39B1BBCC8EA008FFFBD /* AccountViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewCell.h; sourceTree = "<group>"; };
 		0E98D39C1BBCC8EA008FFFBD /* AccountViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewCell.m; sourceTree = "<group>"; };
 		0E98D39D1BBCC8EA008FFFBD /* AccountViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewCell.xib; sourceTree = "<group>"; };
@@ -1740,6 +1743,8 @@
 		BB368EAF1B87DF380066C646 /* UserProfileModel */ = {
 			isa = PBXGroup;
 			children = (
+				0E93F8CC1BBD8AB90079D5AE /* COUserInverstorModel.h */,
+				0E93F8CD1BBD8AB90079D5AE /* COUserInverstorModel.m */,
 				0E93F8C61BBD6FFC0079D5AE /* COUserCompanyModel.h */,
 				0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */,
 				BB368EB01B87DF5C0066C646 /* COUserProfileModel.h */,
@@ -2099,6 +2104,7 @@
 				7FA7E6C01B4E7CD500059B13 /* COOfferProgressCell.m in Sources */,
 				7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */,
 				BB3097DA1B824F0C00BF6861 /* CODocumentItemModel.m in Sources */,
+				0E93F8CE1BBD8AB90079D5AE /* COUserInverstorModel.m in Sources */,
 				0ECA88491B27CA7100B5656F /* NMDeviceHelper.m in Sources */,
 				0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */,
 				0EC9682B1BBD1DF10026D035 /* NProfileDelegate.m in Sources */,
