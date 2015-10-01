@@ -16,4 +16,7 @@
 @property (nonatomic, strong) id<COUserEmail> userEmail;
 @property (nonatomic, strong) id<COUserPhone> userPhone;
 
+@property (nonatomic, strong) id<COCompanyName> compantName;
+@property (nonatomic, strong) id<COCompanyAdress> companyAdress;
+
 @end

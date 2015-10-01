@@ -33,7 +33,7 @@
                     <rect key="frame" x="10" y="154" width="300" height="34"/>
                     <segments>
                         <segment title="About"/>
-                        <segment title="Password"/>
+                        <segment title="Company"/>
                         <segment title="Investor Profile"/>
                     </segments>
                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

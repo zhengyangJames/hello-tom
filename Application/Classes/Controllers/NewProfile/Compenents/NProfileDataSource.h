@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 @class COUserProfileModel;
+@class COUserCompanyModel;
+
 @interface NProfileDataSource :NSObject <UITableViewDataSource>
 
 @property (nonatomic, strong) COUserProfileModel *userModel;
-@property (nonatomic, strong) NSArray *arrayObject;
+@property (nonatomic, strong) COUserCompanyModel *companyModel;
 @property (nonatomic, assign) NSInteger profileStyle;
 
 - (id)initWithTableview:(UITableView *)tableview;

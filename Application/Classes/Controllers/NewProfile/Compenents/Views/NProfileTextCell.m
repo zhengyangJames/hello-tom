@@ -46,4 +46,16 @@
     _lblDetail.text = _userPhone.phoneContentWithPrefix;
 }
 
+- (void)setCompantName:(id<COCompanyName>)compantName {
+    _compantName = compantName;
+    _lblName.text = _compantName.companyNameTitle;
+    _lblDetail.text = _compantName.companyNameContent;
+}
+
+- (void)setCompanyAdress:(id<COCompanyAdress>)companyAdress {
+    _companyAdress = companyAdress;
+    _lblName.text = _companyAdress.companyAdressTitle;
+    _lblDetail.text = _companyAdress.companyAdressContent;
+}
+
 @end

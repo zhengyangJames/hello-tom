@@ -161,6 +161,9 @@
 #define ESTIMATE_HEIGHT_FOR_ROW_CONTACT              185
 
 #define HEIGHT_FOR_IMAGE_ROW                        220
+#define NUM_OF_ROW_ABOUT                            7
+#define NUM_OF_ROW_COMPANY                          4
+#define NUM_OF_ROW_INVESTOR                         7
 
 #define UPDATE_ABOUT_PROFILE                        @"Update profile"
 #define UPDATE_COMNPANY_PROFILE                     @"Update company profile"
@@ -230,6 +233,12 @@ typedef NS_ENUM(NSInteger, COAboutProfileStyle) {
     COAboutProfileStylePhone,
     COAboutProfileStyleAddress
 };
+
+typedef NS_ENUM(NSInteger, COCompanyProfileStyle) {
+    COCompanyProfileStyleName = 1,
+    COCompanyProfileStyleAdress
+};
+
 typedef NS_ENUM(NSInteger, LoginWithStyle){
     DismissLoginVC,
     PushLoginVC

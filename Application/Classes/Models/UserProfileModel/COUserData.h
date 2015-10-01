@@ -33,6 +33,25 @@
 - (NSString *)phoneContentWithPrefix;
 @end
 
+
+@protocol COCompanyName <NSObject>
+
+- (NSString *)companyNameTitle;
+- (NSString *)companyNameContent;
+@end
+
+@protocol COCompanyAdress <NSObject>
+
+- (NSString *)companyAdressTitle;
+- (NSString *)companyAdressContent;
+@end
+
+@protocol COCompanyImage <NSObject>
+
+- (NSURL *)companyImageURL;
+
+@end
+
 @protocol COUserAboutProfile <NSObject>
 
 - (NSString *)nameOfUserName;

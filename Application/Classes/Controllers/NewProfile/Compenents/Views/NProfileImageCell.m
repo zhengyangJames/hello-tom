@@ -15,4 +15,8 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
+- (void)setCompanyImage:(id<COCompanyImage>)companyImage {
+    _companyImage = companyImage;
+}
+
 @end

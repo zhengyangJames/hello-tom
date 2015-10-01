@@ -12,6 +12,7 @@
 #import "NProfileTextCell.h"
 #import "NProfileAdressCell.h"
 #import "COUserProfileModel.h"
+#import "COUserCompanyModel.h"
 
 @interface NProfileDataSource ()
 {
@@ -34,9 +35,6 @@
 }
 
 #pragma mark - Setter, Gettr
-- (void)setArrayObject:(NSArray *)arrayObject {
-    _arrayObject = arrayObject;
-}
 
 - (void)setProfileStyle:(NSInteger)profileStyle {
     _profileStyle = profileStyle;
@@ -46,18 +44,22 @@
     _userModel = userModel;
 }
 
+- (void)setCompanyModel:(COUserCompanyModel *)companyModel {
+    _companyModel = companyModel;
+}
+
 #pragma mark - Cells
 
 - (UITableViewCell *)tableview:(UITableView *)tableView aboutCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.arrayObject.count - 1) {
+    if (indexPath.row == NUM_OF_ROW_ABOUT- 1) {
         NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionChangePassWord;
         return cell;
-    } else if (indexPath.row == self.arrayObject.count - 2) {
+    } else if (indexPath.row == NUM_OF_ROW_ABOUT - 2) {
         NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateProfile;
         return cell;
-    } else if (indexPath.row == self.arrayObject.count - 3) {
+    } else if (indexPath.row == NUM_OF_ROW_ABOUT - 3) {
         return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
     }
     return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
@@ -67,22 +69,16 @@
 - (UITableViewCell *)tableview:(UITableView *)tableView companyCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
-    } else if (indexPath.row == self.arrayObject.count - 1) {
+    } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
         NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateCompany;
         return cell;
     }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell identifier]];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
-    }
-    cell.textLabel.text = [self.arrayObject objectAtIndex:indexPath.row];
-    return cell;
+    return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
 }
 
 - (UITableViewCell *)tableview:(UITableView *)tableView investorProfileCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.arrayObject.count - 1) {
+    if (indexPath.row == NUM_OF_ROW_INVESTOR - 1) {
         NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateInvestor;
         return cell;
@@ -92,7 +88,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
     }
-    cell.textLabel.text = [self.arrayObject objectAtIndex:indexPath.row];
+    cell.textLabel.text = @"SANYI";
     return cell;
 }
 
@@ -108,14 +104,30 @@
 
 - (NProfileTextCell *)tableview:(UITableView *)tableview textCellForRowAtIndexpath:(NSIndexPath *)indexPath {
     NProfileTextCell *cell = [tableview dequeueReusableCellWithIdentifier:[NProfileTextCell identifier]];
-    if (indexPath.row == COAboutProfileStyleFirstName) {
-        cell.userFirstName = self.userModel;
-    } else if (indexPath.row == COAboutProfileStyleLastNameSurname) {
-        cell.userLastName = self.userModel;
-    } else if (indexPath.row == COAboutProfileStyleEmail) {
-        cell.userEmail = self.userModel;
-    } else {
-        cell.userPhone = self.userModel;
+    switch (self.profileStyle) {
+        case NProfileStyleAbout: {
+            if (indexPath.row == COAboutProfileStyleFirstName) {
+                cell.userFirstName = self.userModel;
+            } else if (indexPath.row == COAboutProfileStyleLastNameSurname) {
+                cell.userLastName = self.userModel;
+            } else if (indexPath.row == COAboutProfileStyleEmail) {
+                cell.userEmail = self.userModel;
+            } else {
+                cell.userPhone = self.userModel;
+            }
+        }
+            break;
+        case NProfileStyleCompany: {
+            if (indexPath.row == COCompanyProfileStyleName) {
+                cell.compantName = self.companyModel;
+            } else  {
+                cell.companyAdress = self.companyModel;
+            }
+        }
+            break;
+        case NProfileStyleInvestorProfile: {
+            
+        }
     }
     return cell;
 }
@@ -128,7 +140,15 @@
 
 #pragma mark - Datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arrayObject.count;
+    switch (self.profileStyle) {
+        case NProfileStyleAbout:
+            return NUM_OF_ROW_ABOUT;
+        case NProfileStyleCompany:
+            return NUM_OF_ROW_COMPANY;
+        case NProfileStyleInvestorProfile:
+            return NUM_OF_ROW_INVESTOR;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -159,7 +179,7 @@
 
 #pragma mark - Height all cell
 - (CGFloat)tableview:(UITableView *)tableView heightForAboutCellAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.arrayObject.count - 1 || indexPath.row == self.arrayObject.count - 2) {
+    if (indexPath.row == NUM_OF_ROW_ABOUT - 1 || indexPath.row == NUM_OF_ROW_ABOUT - 2) {
         return HIEGHT_BOTTOMVIEW;
     }
     return DEFAULT_HEIGHT_CELL;
@@ -168,14 +188,14 @@
 - (CGFloat)tableview:(UITableView *)tableView heightForCompanyCellAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         return HEIGHT_FOR_IMAGE_ROW;
-    } else if (indexPath.row == self.arrayObject.count - 1) {
+    } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
         return HIEGHT_BOTTOMVIEW;
     }
     return DEFAULT_HEIGHT_CELL;
 }
 
 - (CGFloat)tableview:(UITableView *)tableView heightForInvestorProfileCellAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.arrayObject.count - 1) {
+    if (indexPath.row == NUM_OF_ROW_INVESTOR - 1) {
         return HIEGHT_BOTTOMVIEW;
     }
     return DEFAULT_HEIGHT_CELL;

@@ -12,6 +12,7 @@
 		01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1437B1B7D1053003DF5F9 /* COOfferModel.m */; };
 		0E8AA6141BBD433800C704AC /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AA6121BBD433800C704AC /* NProfileAdressCell.m */; };
 		0E8AA6151BBD433800C704AC /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8AA6131BBD433800C704AC /* NProfileAdressCell.xib */; };
+		0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */; };
 		0E98D3E01BBCC8EA008FFFBD /* AccountViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D39C1BBCC8EA008FFFBD /* AccountViewCell.m */; };
 		0E98D3E11BBCC8EA008FFFBD /* AccountViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D39D1BBCC8EA008FFFBD /* AccountViewCell.xib */; };
 		0E98D3E21BBCC8EA008FFFBD /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D39F1BBCC8EA008FFFBD /* AccountViewController.m */; };
@@ -295,6 +296,8 @@
 		0E8AA6111BBD433800C704AC /* NProfileAdressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileAdressCell.h; sourceTree = "<group>"; };
 		0E8AA6121BBD433800C704AC /* NProfileAdressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileAdressCell.m; sourceTree = "<group>"; };
 		0E8AA6131BBD433800C704AC /* NProfileAdressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileAdressCell.xib; sourceTree = "<group>"; };
+		0E93F8C61BBD6FFC0079D5AE /* COUserCompanyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserCompanyModel.h; sourceTree = "<group>"; };
+		0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserCompanyModel.m; sourceTree = "<group>"; };
 		0E98D39B1BBCC8EA008FFFBD /* AccountViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewCell.h; sourceTree = "<group>"; };
 		0E98D39C1BBCC8EA008FFFBD /* AccountViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewCell.m; sourceTree = "<group>"; };
 		0E98D39D1BBCC8EA008FFFBD /* AccountViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewCell.xib; sourceTree = "<group>"; };
@@ -974,7 +977,6 @@
 		0EC968251BBD1D830026D035 /* Compenents */ = {
 			isa = PBXGroup;
 			children = (
-				0EC968321BBD25020026D035 /* Models */,
 				0EC9682C1BBD20FE0026D035 /* Views */,
 				0EC968261BBD1DAB0026D035 /* NProfileDataSource.h */,
 				0EC968271BBD1DAB0026D035 /* NProfileDataSource.m */,
@@ -1004,13 +1006,6 @@
 				0E8AA6131BBD433800C704AC /* NProfileAdressCell.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		0EC968321BBD25020026D035 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		0ECA88181B27CA7100B5656F /* Base */ = {
@@ -1745,6 +1740,8 @@
 		BB368EAF1B87DF380066C646 /* UserProfileModel */ = {
 			isa = PBXGroup;
 			children = (
+				0E93F8C61BBD6FFC0079D5AE /* COUserCompanyModel.h */,
+				0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */,
 				BB368EB01B87DF5C0066C646 /* COUserProfileModel.h */,
 				BB368EB11B87DF5C0066C646 /* COUserProfileModel.m */,
 				BB383E2D1B8BC1B000303E34 /* COUserAccountModel.h */,
@@ -2123,6 +2120,7 @@
 				BB48F1A01B86763E006F1921 /* COFilterListModel.m in Sources */,
 				0E98D3E61BBCC8EA008FFFBD /* AboutTableViewCell.m in Sources */,
 				7F325F971B40E50800116445 /* COOfferDescriptionTextCell.m in Sources */,
+				0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */,
 				7FB802BB1B4CE25700173A58 /* NSMutableString+FontSize.m in Sources */,
 				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,
 				7F325FA41B40E50800116445 /* RegisterViewController.m in Sources */,

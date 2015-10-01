@@ -123,3 +123,6 @@
 "KEY_ACTION_UPDATECOMPANY"              = "Update company profile";
 "KEY_ACTION_UPDATEINVESTOR"             = "Update investor profile";
 "KEY_ACTION_UPDATECHANGEPASSWORD"       = "Change password";
+
+"COMPANY_NAME"                          = "Org name";
+"COMPANY_ADRESS"                        = "Address";
