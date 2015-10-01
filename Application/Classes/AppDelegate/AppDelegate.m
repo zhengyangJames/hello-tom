@@ -10,7 +10,7 @@
 #import "LoginViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-#import "ProfileViewController.h"
+#import "ProfileViewControllers.h"
 #import "HomeListViewController.h"
 #import "SettingViewController.h"
 #import "COLoginManager.h"
@@ -81,7 +81,7 @@
 //Setup Profile
 - (BaseNavigationController*)baseProfileNAV {
     if (!_baseProfileNAV) {
-        ProfileViewController *profileVC = [[ProfileViewController alloc] init];
+        ProfileViewControllers *profileVC = [[ProfileViewControllers alloc] init];
         BaseNavigationController *profileNAV = [[BaseNavigationController alloc] initWithRootViewController:profileVC];
         UITabBarItem *tabbarProfile = [[UITabBarItem alloc]initWithTitle:m_string(@"Profile")
                                                                    image:[UIImage imageNamed:@"ic_contac_2"]
