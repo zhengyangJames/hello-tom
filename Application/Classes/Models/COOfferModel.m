@@ -24,6 +24,7 @@
         @"offerProject"             : @"project",
         @"offerOwnerType"           : @"owner_type",
         @"offerCompanyLogo"         : @"company_logo",
+        @"offerCurrency"            : @"currency",
         @"offerStatus"              : @"status",
         @"offerInvestorCount"       : @"investor_count",
         @"offerMinInvestment"       : @"min_investment",
@@ -153,6 +154,17 @@
     return NSLocalizedString(@"DETAIL_DOCUMENT", nil);
 }
 #pragma mark - offer info protocol
+
+- (NSString *)offerInfoCurrency {
+    DBG(@"%@",self.offerCurrency);
+    if (self.offerCurrency) {
+        NSString *currency = [UIHelper getStringCurrencyOfferWithKey:self.offerCurrency];
+        return currency;
+    } else {
+        return m_string(@"N/A");
+    }
+}
+
 
 - (NSString *)offerInfoStatus {
     if (self.offerStatus) {

@@ -321,6 +321,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="_contentView" destination="2w7-fg-DzT" id="G7t-U6-01u"/>
+                <outlet property="_lblOfferCurrency" destination="1Rd-vm-CJK" id="sdx-kH-Qel"/>
                 <outlet property="_lblOfferDayLeft" destination="hnt-9H-r33" id="HUA-c6-9h5"/>
                 <outlet property="_lblOfferInvestor" destination="9gN-aC-dQN" id="U63-eS-hBj"/>
                 <outlet property="_lblOfferMinInvestment" destination="yCJ-k0-brf" id="qRV-Nf-ycy"/>
