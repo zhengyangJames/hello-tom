@@ -34,8 +34,8 @@
 //#define CLIENT_ID                                   @"4c6a28b0137ff54909b3"
 //#define CLIENT_SECRECT                              @"e88e20a9f9d642ed1e7e04ab0b72798b41455377"
 
-#define WS_ENDPOINT                                 @"http://52.74.247.116/api"
-#define WS_METHOD_POST_LOGIN                        @"http://52.74.247.116/o/token/"
+#define WS_ENDPOINT                                 @"https://www.coassets.com/api"
+#define WS_METHOD_POST_LOGIN                        @"https://www.coassets.com/o/token/"
 #define CLIENT_ID                                   @"AoB2Dn2P93FFYkd2Hcd15opIaC9lIn8ciIPNg44O"
 #define CLIENT_SECRECT @"E5SVOzDAICZ2fUJBx8uWFfb7eUZumkZ9QrSoCsLRgvAAQVEdMQ98TWyZdF07rQLbpX0sbJETOxsXJgoy2pUbpYlEQFnvHguPkFEH92fwHiAR2p6Yhxf1hwdTGkCruBKF"
 
@@ -185,6 +185,15 @@
 //////////////////////////////////////////////////////////////
 #pragma mark - enum
 /////////////////////////////////////////////////////////////////
+
+typedef NS_ENUM(NSInteger, CODealsStype) {
+    CODealsStypeOngoing,
+    CODealsStypeFunded,
+    CODealsStypeCompleted,
+    CODealsStypeSuggest
+};
+
+
 typedef NS_ENUM(NSInteger, COSettingsStype) {
     COSettingsStypeContact,
     COSettingsStypeNew,

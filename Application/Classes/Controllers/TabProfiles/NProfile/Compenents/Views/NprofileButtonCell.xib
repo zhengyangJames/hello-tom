@@ -36,6 +36,9 @@
                                 <exclude reference="kOy-Dh-ghT"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="__actionButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="r3R-nd-08R"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -48,7 +51,7 @@
             <connections>
                 <outlet property="_btnAction" destination="Ylt-hd-xhK" id="38K-ud-5xH"/>
             </connections>
-            <point key="canvasLocation" x="203" y="288.5"/>
+            <point key="canvasLocation" x="238" y="227.5"/>
         </tableViewCell>
     </objects>
 </document>

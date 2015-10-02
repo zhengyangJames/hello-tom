@@ -19,6 +19,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     _segmentControl.selectedSegmentIndex = 0;
+    [_segmentControl setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:15]} forState:UIControlStateNormal];
 }
 
 - (IBAction)__actionChangeValueSegment:(id)sender {

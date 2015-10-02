@@ -15,17 +15,20 @@
 #import "COUserCompanyModel.h"
 #import "COUserInverstorModel.h"
 
-@interface NProfileDataSource ()
+@interface NProfileDataSource () <profileButtonCellDelegate>
 {
     __weak UITableView *_tableview;
 }
+@property (weak, nonatomic) id<profileButtonCellDelegate> controller;
+
 @end
 
 @implementation NProfileDataSource
 
-- (id)initWithTableview:(UITableView *)tableview {
+- (id)initWithTableview:(UITableView *)tableview controller:(id<profileButtonCellDelegate>)controller {
     self = [super init];
     if (self) {
+        self.controller = controller;
         _tableview = tableview;
         [_tableview registerNib:[UINib nibWithNibName:[NprofileButtonCell identifier] bundle:nil] forCellReuseIdentifier:[NprofileButtonCell identifier]];
         [_tableview registerNib:[UINib nibWithNibName:[NProfileImageCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileImageCell identifier]];
@@ -55,10 +58,12 @@
     if (indexPath.row == NUM_OF_ROW_ABOUT- 1) {
         NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionChangePassWord;
+        cell.delegate = self.controller;
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_ABOUT - 2) {
         NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateProfile;
+        cell.delegate = self.controller;
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_ABOUT - 3) {
         return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
@@ -185,9 +190,26 @@
 }
 
 #pragma mark - Height all cell
+
+- (CGFloat)tableview:(UITableView *)tableView heightForAdressRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 0.0;
+    if(IS_IOS8_OR_ABOVE) {
+        height = UITableViewAutomaticDimension;
+        return height;
+    } else {
+        NProfileAdressCell *cell = [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+        [cell setNeedsUpdateConstraints];
+        [cell updateConstraintsIfNeeded];
+        CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+        return cellSize.height;
+    }
+}
+
 - (CGFloat)tableview:(UITableView *)tableView heightForAboutCellAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == NUM_OF_ROW_ABOUT - 1 || indexPath.row == NUM_OF_ROW_ABOUT - 2) {
         return HIEGHT_BOTTOMVIEW;
+    } else if (indexPath.row == NUM_OF_ROW_ABOUT - 3) {
+        return [self tableview:tableView heightForAdressRowAtIndexPath:indexPath];
     }
     return DEFAULT_HEIGHT_CELL;
 }
@@ -206,6 +228,13 @@
         return HIEGHT_BOTTOMVIEW;
     }
     return DEFAULT_HEIGHT_CELL;
+}
+
+#pragma mark - Delegate For Cell
+- (void)acctionButtonProfileCell:(NprofileButtonCell *)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle {
+    if ([self.delegate respondsToSelector:@selector(acctionButtonProfileCell:buttonStyle:)]) {
+        [self.delegate actionProfileDataSourceDelegate:self actionForCellButton:buttonStyle];
+    }
 }
 
 @end

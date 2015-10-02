@@ -42,4 +42,10 @@
     [_btnAction setTitle:actionName forState:UIControlStateNormal];
 }
 
+- (IBAction)__actionButton:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(acctionButtonProfileCell:buttonStyle:)]) {
+        [self.delegate acctionButtonProfileCell:self buttonStyle:self.actionStyle];
+    }
+}
+
 @end

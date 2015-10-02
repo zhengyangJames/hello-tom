@@ -18,15 +18,6 @@
     NSDictionary *headers = @{ @"authorization": headerString };
     [self setHTTPMethod:METHOD_GET];
     [self setAllHTTPHeaderFields:headers];
-    
-//    NSString *postString = [self paramsToString:tokenData];
-    
-//     NSData *parambody = [postString dataUsingEncoding:NSUTF8StringEncoding];
-//    [self setHTTPBody:parambody];
-//    if ([tokenData objectForKey:kTOKEN_TYPE] && [tokenData objectForKey:kACCESS_TOKEN]) {
-//        NSString *value = [NSString stringWithFormat:@"%@ %@",[tokenData  valueForKey:kTOKEN_TYPE],[tokenData valueForKey:kACCESS_TOKEN]];
-//        [[NSURLCache sharedURLCache] removeAllCachedResponses];
-//        [self setValue:value forHTTPHeaderField:@"Authorization"];
-//    }
+
 }
 @end
