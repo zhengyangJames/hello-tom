@@ -29,5 +29,9 @@
     _lbNumOfValue.text = @"$0.00";
 }
 
+- (void)setImageName:(NSString *)imageName {
+    _imageName = imageName;
+    [_imgThumbnail setImage:[UIImage imageNamed:_imageName]];
+}
 
 @end

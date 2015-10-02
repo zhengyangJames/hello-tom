@@ -106,4 +106,8 @@
     [self _pushViewControllerWithIndexPath:indexPath.row];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return DEFAULT_HEIGHT_CELL;
+}
+
 @end

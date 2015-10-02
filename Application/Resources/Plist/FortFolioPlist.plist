@@ -2,9 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>Ongoing Project</string>
-	<string>Ongoing Investment Amount</string>
-	<string>Funded &amp;Completed Project</string>
-	<string>Funded &amp;Completed Investment Amount</string>
+	<dict>
+		<key>image</key>
+		<string>ic_loadding</string>
+		<key>text</key>
+		<string>Ongoing Project</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>ic_money</string>
+		<key>text</key>
+		<string>Ongoing Investment Amount</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>ic_homes</string>
+		<key>text</key>
+		<string>Funded &amp;Completed Project</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>ic_Check</string>
+		<key>text</key>
+		<string>Funded &amp;Completed Investment Amount</string>
+	</dict>
 </array>
 </plist>

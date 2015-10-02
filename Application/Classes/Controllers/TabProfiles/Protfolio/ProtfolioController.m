@@ -67,7 +67,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PortFolioCell *cell = [_collectionView dequeueReusableCellWithReuseIdentifier:[PortFolioCell identifier] forIndexPath:indexPath];
-    cell.object = self.arrayList[indexPath.row];
+    cell.object = [self.arrayList[indexPath.row] objectForKey:@"text"];
+    cell.imageName = [self.arrayList[indexPath.row] objectForKey:@"image"];
     return cell;
 }
 
