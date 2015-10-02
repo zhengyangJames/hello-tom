@@ -31,5 +31,7 @@
 
 + (NSAttributedString *)_getStringFromHtml:(NSString *)stringHtml;
 
-+ (NSString *)getStringCurrencyOfferWithKey:(NSString*)keyCurrency ;
++ (NSString *)getStringCurrencyOfferWithKey:(NSString*)keyCurrency;
++ (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font;
+
 @end

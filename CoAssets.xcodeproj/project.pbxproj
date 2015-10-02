@@ -828,21 +828,13 @@
 		0E89565D1BBE2497007E36BF /* Compenents */ = {
 			isa = PBXGroup;
 			children = (
-				0E89565E1BBE2497007E36BF /* Models */,
+				0E8956631BBE2497007E36BF /* Views */,
 				0E89565F1BBE2497007E36BF /* NProfileDataSource.h */,
 				0E8956601BBE2497007E36BF /* NProfileDataSource.m */,
 				0E8956611BBE2497007E36BF /* NProfileDelegate.h */,
 				0E8956621BBE2497007E36BF /* NProfileDelegate.m */,
-				0E8956631BBE2497007E36BF /* Views */,
 			);
 			path = Compenents;
-			sourceTree = "<group>";
-		};
-		0E89565E1BBE2497007E36BF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		0E8956631BBE2497007E36BF /* Views */ = {

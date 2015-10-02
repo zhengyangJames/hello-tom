@@ -12,6 +12,7 @@
 {
     __weak IBOutlet UILabel *_lblName;
     __weak IBOutlet UILabel *_lblDetail;
+    __weak IBOutlet NSLayoutConstraint *_widthOfLabelNameContraint;
 }
 @end
 
@@ -93,5 +94,6 @@
     _lblName.text = investorCountries.COInvestorCountriesTitle;
     _lblDetail.text = investorCountries.COInvestorCountriesContent;
 }
+
 
 @end

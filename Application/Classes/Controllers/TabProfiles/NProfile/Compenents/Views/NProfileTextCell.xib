@@ -55,6 +55,7 @@
             <connections>
                 <outlet property="_lblDetail" destination="xc1-Qz-68p" id="s0h-Au-jFz"/>
                 <outlet property="_lblName" destination="vkN-L2-YBA" id="Zxo-ua-tDW"/>
+                <outlet property="_widthOfLabelNameContraint" destination="KYz-yz-BBp" id="g5u-k3-mcu"/>
             </connections>
             <point key="canvasLocation" x="167" y="180"/>
         </tableViewCell>
