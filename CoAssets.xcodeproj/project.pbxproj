@@ -81,6 +81,14 @@
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
 		1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
 		1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
+		1EF23C241BBE85C9006020C2 /* ic_Check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C1C1BBE85C9006020C2 /* ic_Check@2x.png */; };
+		1EF23C251BBE85C9006020C2 /* ic_Check@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C1D1BBE85C9006020C2 /* ic_Check@3x.png */; };
+		1EF23C281BBE85C9006020C2 /* ic_loadding@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C201BBE85C9006020C2 /* ic_loadding@2x.png */; };
+		1EF23C291BBE85C9006020C2 /* ic_loadding@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C211BBE85C9006020C2 /* ic_loadding@3x.png */; };
+		1EF23C2A1BBE85C9006020C2 /* ic_money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C221BBE85C9006020C2 /* ic_money@2x.png */; };
+		1EF23C2B1BBE85C9006020C2 /* ic_money@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C231BBE85C9006020C2 /* ic_money@3x.png */; };
+		1EF23C2E1BBE8691006020C2 /* ic_homes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C2C1BBE8691006020C2 /* ic_homes@2x.png */; };
+		1EF23C2F1BBE8691006020C2 /* ic_homes@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C2D1BBE8691006020C2 /* ic_homes@3x.png */; };
 		7F2C77461B4E07BA00C69365 /* COOfferInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77441B4E07BA00C69365 /* COOfferInfoCell.m */; };
 		7F2C77471B4E07BA00C69365 /* COOfferInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C77451B4E07BA00C69365 /* COOfferInfoCell.xib */; };
 		7F325F791B40E50800116445 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DBA1B40E50800116445 /* AppDelegate.m */; };
@@ -409,6 +417,14 @@
 		1EF23C171BBE6BAF006020C2 /* EditPasswordProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPasswordProfileVC.h; sourceTree = "<group>"; };
 		1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPasswordProfileVC.m; sourceTree = "<group>"; };
 		1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPasswordProfileVC.xib; sourceTree = "<group>"; };
+		1EF23C1C1BBE85C9006020C2 /* ic_Check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Check@2x.png"; sourceTree = "<group>"; };
+		1EF23C1D1BBE85C9006020C2 /* ic_Check@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Check@3x.png"; sourceTree = "<group>"; };
+		1EF23C201BBE85C9006020C2 /* ic_loadding@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_loadding@2x.png"; sourceTree = "<group>"; };
+		1EF23C211BBE85C9006020C2 /* ic_loadding@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_loadding@3x.png"; sourceTree = "<group>"; };
+		1EF23C221BBE85C9006020C2 /* ic_money@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_money@2x.png"; sourceTree = "<group>"; };
+		1EF23C231BBE85C9006020C2 /* ic_money@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_money@3x.png"; sourceTree = "<group>"; };
+		1EF23C2C1BBE8691006020C2 /* ic_homes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homes@2x.png"; sourceTree = "<group>"; };
+		1EF23C2D1BBE8691006020C2 /* ic_homes@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homes@3x.png"; sourceTree = "<group>"; };
 		33762D818FFC66A8E09B06FB /* Pods-CoAssets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoAssets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets.debug.xcconfig"; sourceTree = "<group>"; };
 		7ECA63A1BFE20EC1EB40B842 /* Pods-CoAssets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoAssets.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets.release.xcconfig"; sourceTree = "<group>"; };
 		7F2C77431B4E07BA00C69365 /* COOfferInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOfferInfoCell.h; sourceTree = "<group>"; };
@@ -1635,6 +1651,14 @@
 		7F325F5E1B40E50800116445 /* Images Other */ = {
 			isa = PBXGroup;
 			children = (
+				1EF23C2C1BBE8691006020C2 /* ic_homes@2x.png */,
+				1EF23C2D1BBE8691006020C2 /* ic_homes@3x.png */,
+				1EF23C1C1BBE85C9006020C2 /* ic_Check@2x.png */,
+				1EF23C1D1BBE85C9006020C2 /* ic_Check@3x.png */,
+				1EF23C201BBE85C9006020C2 /* ic_loadding@2x.png */,
+				1EF23C211BBE85C9006020C2 /* ic_loadding@3x.png */,
+				1EF23C221BBE85C9006020C2 /* ic_money@2x.png */,
+				1EF23C231BBE85C9006020C2 /* ic_money@3x.png */,
 				7F933D361B5790D600B7EB9C /* company_edit.jpg */,
 				7FB9C06E1B4FDA0700FC1B47 /* ic_btn_left.png */,
 				7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */,
@@ -1896,6 +1920,7 @@
 				7F32603D1B40E50800116445 /* ic_contac_2_heightlight@3x.png in Resources */,
 				7F8529271B43935B00CFAEB5 /* Indonesia.png in Resources */,
 				7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */,
+				1EF23C2E1BBE8691006020C2 /* ic_homes@2x.png in Resources */,
 				0E8956211BBE1C14007E36BF /* DealsController.xib in Resources */,
 				7F3260511B40E50800116445 /* ic_peopel@3x.png in Resources */,
 				0E8956831BBE2497007E36BF /* NProfileController.xib in Resources */,
@@ -1909,7 +1934,10 @@
 				7F3260491B40E50800116445 /* ic_Left@2x.png in Resources */,
 				0E8956151BBE1AC9007E36BF /* TabProfileController.xib in Resources */,
 				7F325F861B40E50800116445 /* CODocumentItemCell.xib in Resources */,
+				1EF23C281BBE85C9006020C2 /* ic_loadding@2x.png in Resources */,
 				7F3260601B40E50800116445 /* ic_uncheck@3x.png in Resources */,
+				1EF23C241BBE85C9006020C2 /* ic_Check@2x.png in Resources */,
+				1EF23C2B1BBE85C9006020C2 /* ic_money@3x.png in Resources */,
 				7F32601F1B40E50800116445 /* Raleway-Bold.ttf in Resources */,
 				7F3260591B40E50800116445 /* ic_setting_2@3x.png in Resources */,
 				7F85292C1B43935B00CFAEB5 /* Singapore.png in Resources */,
@@ -1936,10 +1964,12 @@
 				7F32602F1B40E50800116445 /* Close_Circle_Line@2x.png in Resources */,
 				0E8956331BBE1F8B007E36BF /* PortFolioCell.xib in Resources */,
 				7FCD18B61B4BBBF4000B81A2 /* COPopupInteredtedView.xib in Resources */,
+				1EF23C2A1BBE85C9006020C2 /* ic_money@2x.png in Resources */,
 				7F3260361B40E50800116445 /* ic_calendar@3x.png in Resources */,
 				1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */,
 				7F325FB81B40E50800116445 /* ContactTableViewCell.xib in Resources */,
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
+				1EF23C291BBE85C9006020C2 /* ic_loadding@3x.png in Resources */,
 				7FA7E6BC1B4E7C4D00059B13 /* COQuestionView.xib in Resources */,
 				7F32603B1B40E50800116445 /* ic_contac_2@3x.png in Resources */,
 				7F325F9C1B40E50800116445 /* HomeListViewCell.xib in Resources */,
@@ -1981,6 +2011,7 @@
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
 				7F85292F1B43935B00CFAEB5 /* United States.png in Resources */,
+				1EF23C251BBE85C9006020C2 /* ic_Check@3x.png in Resources */,
 				7F32601E1B40E50800116445 /* Raleway-BlackItalic.ttf in Resources */,
 				7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */,
 				7F3260451B40E50800116445 /* ic_home_heightlight@2x.png in Resources */,
@@ -1998,6 +2029,7 @@
 				7F8529291B43935B00CFAEB5 /* Malaysia.png in Resources */,
 				7F3260321B40E50800116445 /* Ic_back@3x.png in Resources */,
 				7F32605B1B40E50800116445 /* ic_setting_2_heighlight@3x.png in Resources */,
+				1EF23C2F1BBE8691006020C2 /* ic_homes@3x.png in Resources */,
 				7F325FCB1B40E50800116445 /* COSlidingCell.xib in Resources */,
 				7F3260281B40E50800116445 /* Raleway-Medium.ttf in Resources */,
 				7F3260201B40E50800116445 /* Raleway-BoldItalic.ttf in Resources */,

@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSString *object;
 
+@property (nonatomic, strong) NSString *imageName;
+
 @end
