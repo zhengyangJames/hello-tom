@@ -190,9 +190,26 @@
 }
 
 #pragma mark - Height all cell
+
+- (CGFloat)tableview:(UITableView *)tableView heightForAdressRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 0.0;
+    if(IS_IOS8_OR_ABOVE) {
+        height = UITableViewAutomaticDimension;
+        return height;
+    } else {
+        NProfileAdressCell *cell = [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+        [cell setNeedsUpdateConstraints];
+        [cell updateConstraintsIfNeeded];
+        CGSize cellSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+        return cellSize.height;
+    }
+}
+
 - (CGFloat)tableview:(UITableView *)tableView heightForAboutCellAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == NUM_OF_ROW_ABOUT - 1 || indexPath.row == NUM_OF_ROW_ABOUT - 2) {
         return HIEGHT_BOTTOMVIEW;
+    } else if (indexPath.row == NUM_OF_ROW_ABOUT - 3) {
+        return [self tableview:tableView heightForAdressRowAtIndexPath:indexPath];
     }
     return DEFAULT_HEIGHT_CELL;
 }
