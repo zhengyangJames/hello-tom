@@ -133,3 +133,10 @@
 "INVESTOR_TARGET"                       = "Target Returns (Annualized)";
 "INVESTOR_DURATION"                     = "Duration Preference";
 "INVESTOR_COUNTRIES"                    = "Countries Preference";
+
+"ON_GOING"                              = "Deals that you have supported and are still ongoing.";
+"FUNDED"                                = "Deals that you have supported that are funded successfully.";
+"COMPLETED"                             = "Deals that you have supported that have been completed payout.";
+"SUGEST"                                = "Deals you might be interested in";
+"TITLE_LABEL"                           = "You currently have no deals.";
+"TITLE_BUTTON"                          = "Click Here To Get Started!";

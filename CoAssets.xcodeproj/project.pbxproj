@@ -48,10 +48,6 @@
 		0E98D3ED1BBCC8EA008FFFBD /* CompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3B61BBCC8EA008FFFBD /* CompanyTableViewCell.xib */; };
 		0E98D3EE1BBCC8EA008FFFBD /* EditCompanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3B91BBCC8EA008FFFBD /* EditCompanyVC.m */; };
 		0E98D3EF1BBCC8EA008FFFBD /* EditCompanyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3BA1BBCC8EA008FFFBD /* EditCompanyVC.xib */; };
-		0E98D3F01BBCC8EA008FFFBD /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3BE1BBCC8EA008FFFBD /* AboutView.m */; };
-		0E98D3F11BBCC8EA008FFFBD /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3BF1BBCC8EA008FFFBD /* AboutView.xib */; };
-		0E98D3F21BBCC8EA008FFFBD /* DetailsProfileViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3C21BBCC8EA008FFFBD /* DetailsProfileViewControllers.m */; };
-		0E98D3F31BBCC8EA008FFFBD /* DetailsProfileViewControllers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3C31BBCC8EA008FFFBD /* DetailsProfileViewControllers.xib */; };
 		0E98D3F41BBCC8EA008FFFBD /* PasswordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3C81BBCC8EA008FFFBD /* PasswordTableViewCell.m */; };
 		0E98D3F51BBCC8EA008FFFBD /* PasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3C91BBCC8EA008FFFBD /* PasswordTableViewCell.xib */; };
 		0E98D3F61BBCC8EA008FFFBD /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3CB1BBCC8EA008FFFBD /* ProfileViewController.m */; };
@@ -353,12 +349,6 @@
 		0E98D3B81BBCC8EA008FFFBD /* EditCompanyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCompanyVC.h; sourceTree = "<group>"; };
 		0E98D3B91BBCC8EA008FFFBD /* EditCompanyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCompanyVC.m; sourceTree = "<group>"; };
 		0E98D3BA1BBCC8EA008FFFBD /* EditCompanyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditCompanyVC.xib; sourceTree = "<group>"; };
-		0E98D3BD1BBCC8EA008FFFBD /* AboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutView.h; sourceTree = "<group>"; };
-		0E98D3BE1BBCC8EA008FFFBD /* AboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutView.m; sourceTree = "<group>"; };
-		0E98D3BF1BBCC8EA008FFFBD /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
-		0E98D3C11BBCC8EA008FFFBD /* DetailsProfileViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsProfileViewControllers.h; sourceTree = "<group>"; };
-		0E98D3C21BBCC8EA008FFFBD /* DetailsProfileViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsProfileViewControllers.m; sourceTree = "<group>"; };
-		0E98D3C31BBCC8EA008FFFBD /* DetailsProfileViewControllers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsProfileViewControllers.xib; sourceTree = "<group>"; };
 		0E98D3C71BBCC8EA008FFFBD /* PasswordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordTableViewCell.h; sourceTree = "<group>"; };
 		0E98D3C81BBCC8EA008FFFBD /* PasswordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordTableViewCell.m; sourceTree = "<group>"; };
 		0E98D3C91BBCC8EA008FFFBD /* PasswordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordTableViewCell.xib; sourceTree = "<group>"; };
@@ -880,7 +870,6 @@
 			children = (
 				0E98D3A61BBCC8EA008FFFBD /* About */,
 				0E98D3B21BBCC8EA008FFFBD /* Company */,
-				0E98D3BB1BBCC8EA008FFFBD /* DetailsProfileViewController */,
 				0E98D3C51BBCC8EA008FFFBD /* Password */,
 				0E98D3CA1BBCC8EA008FFFBD /* ProfileViewController.h */,
 				0E98D3CB1BBCC8EA008FFFBD /* ProfileViewController.m */,
@@ -950,43 +939,6 @@
 				0E98D3BA1BBCC8EA008FFFBD /* EditCompanyVC.xib */,
 			);
 			path = EditCompanyVC;
-			sourceTree = "<group>";
-		};
-		0E98D3BB1BBCC8EA008FFFBD /* DetailsProfileViewController */ = {
-			isa = PBXGroup;
-			children = (
-				0E98D3BC1BBCC8EA008FFFBD /* AboutStyleView */,
-				0E98D3C01BBCC8EA008FFFBD /* CompanyView */,
-				0E98D3C11BBCC8EA008FFFBD /* DetailsProfileViewControllers.h */,
-				0E98D3C21BBCC8EA008FFFBD /* DetailsProfileViewControllers.m */,
-				0E98D3C31BBCC8EA008FFFBD /* DetailsProfileViewControllers.xib */,
-				0E98D3C41BBCC8EA008FFFBD /* InvestorProfileView */,
-			);
-			path = DetailsProfileViewController;
-			sourceTree = "<group>";
-		};
-		0E98D3BC1BBCC8EA008FFFBD /* AboutStyleView */ = {
-			isa = PBXGroup;
-			children = (
-				0E98D3BD1BBCC8EA008FFFBD /* AboutView.h */,
-				0E98D3BE1BBCC8EA008FFFBD /* AboutView.m */,
-				0E98D3BF1BBCC8EA008FFFBD /* AboutView.xib */,
-			);
-			path = AboutStyleView;
-			sourceTree = "<group>";
-		};
-		0E98D3C01BBCC8EA008FFFBD /* CompanyView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CompanyView;
-			sourceTree = "<group>";
-		};
-		0E98D3C41BBCC8EA008FFFBD /* InvestorProfileView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = InvestorProfileView;
 			sourceTree = "<group>";
 		};
 		0E98D3C51BBCC8EA008FFFBD /* Password */ = {
@@ -1905,7 +1857,6 @@
 				7F325FC31B40E50800116445 /* CODropListView.xib in Resources */,
 				7FA7E6BA1B4E7C4D00059B13 /* COInterestedViewController.xib in Resources */,
 				7F3260231B40E50800116445 /* Raleway-ExtraLight.ttf in Resources */,
-				0E98D3F11BBCC8EA008FFFBD /* AboutView.xib in Resources */,
 				0E8956271BBE1C82007E36BF /* ProtfolioController.xib in Resources */,
 				0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */,
 				7F3260731B40E50800116445 /* JsonCountry.json in Resources */,
@@ -1953,7 +1904,6 @@
 				7F3260601B40E50800116445 /* ic_uncheck@3x.png in Resources */,
 				7F32601F1B40E50800116445 /* Raleway-Bold.ttf in Resources */,
 				7F3260591B40E50800116445 /* ic_setting_2@3x.png in Resources */,
-				0E98D3F31BBCC8EA008FFFBD /* DetailsProfileViewControllers.xib in Resources */,
 				7F85292C1B43935B00CFAEB5 /* Singapore.png in Resources */,
 				7F3260711B40E50800116445 /* ic_placeholder.png in Resources */,
 				7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */,
@@ -2160,7 +2110,6 @@
 				7F325FDE1B40E50800116445 /* WSURLSessionManager.m in Sources */,
 				7F325F871B40E50800116445 /* CODetailsDataSource.m in Sources */,
 				7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */,
-				0E98D3F21BBCC8EA008FFFBD /* DetailsProfileViewControllers.m in Sources */,
 				7F325FA21B40E50800116445 /* LoginViewController.m in Sources */,
 				7F325F851B40E50800116445 /* CODocumentItemCell.m in Sources */,
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
@@ -2227,7 +2176,6 @@
 				BB368EB21B87DF5C0066C646 /* COUserProfileModel.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,
 				7F2C77461B4E07BA00C69365 /* COOfferInfoCell.m in Sources */,
-				0E98D3F01BBCC8EA008FFFBD /* AboutView.m in Sources */,
 				7F325F7F1B40E50800116445 /* BaseViewController.m in Sources */,
 				0E8956821BBE2497007E36BF /* NProfileController.m in Sources */,
 			);

@@ -185,6 +185,15 @@
 //////////////////////////////////////////////////////////////
 #pragma mark - enum
 /////////////////////////////////////////////////////////////////
+
+typedef NS_ENUM(NSInteger, CODealsStype) {
+    CODealsStypeOngoing,
+    CODealsStypeFunded,
+    CODealsStypeCompleted,
+    CODealsStypeSuggest
+};
+
+
 typedef NS_ENUM(NSInteger, COSettingsStype) {
     COSettingsStypeContact,
     COSettingsStypeNew,
