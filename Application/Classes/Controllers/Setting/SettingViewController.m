@@ -12,7 +12,6 @@
 #import "WebViewSetting.h"
 #import "LoginViewController.h"
 #import "COLoginManager.h"
-#import "ProfileViewController.h"
 @interface SettingViewController () <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,LoginViewControllerDelegate>
 {
     __weak IBOutlet UITableView *_tableView;

@@ -16,6 +16,7 @@
 #import "COLoginManager.h"
 #import "EditAboutProfileVC.h"
 #import "EditPasswordProfileVC.h"
+#import "EditCompanyVC.h"
 
 @interface NProfileController ()<NProfileHeaderViewDelegate,profileButtonCellDelegate,EditAboutProfileVCDelegate>
 {
@@ -125,6 +126,13 @@
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
 
+- (void)_setupEditCompanyVC {
+    EditCompanyVC *vc = [[EditCompanyVC alloc]init];
+    
+    BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
+}
+
 #pragma mark - NProfileDeaderViewDelegate
 - (void)nprofileHeaderView:(NProfileHeaderView *)profileHeader didSelectindex:(NSInteger)index {
     self.profileStyle = index;
@@ -138,6 +146,9 @@
             break;
         case NProfileActionChangePassWord:
             [self _setupEditPasswordVC];
+            break;
+        case NProfileActionUpdateCompany:
+            [self _setupEditCompanyVC];
             break;
         default:
             break;
