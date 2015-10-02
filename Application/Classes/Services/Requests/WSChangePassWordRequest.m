@@ -16,8 +16,11 @@
     self = [super init];
     if (self) {
         COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-        NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
-        [self setValue:value forHTTPHeaderField:@"Authorization"];
+        
+        NSString *headerString = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
+        NSDictionary *headers = @{ @"Authorization": headerString };
+        [self setAllHTTPHeaderFields:headers];
+
     }
     return self;
 }

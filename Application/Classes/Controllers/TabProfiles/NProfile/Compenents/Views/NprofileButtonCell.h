@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol profileButtonCellDelegate;
+
 @interface NprofileButtonCell : UITableViewCell
 
 @property (nonatomic, assign) NSInteger actionStyle;
+@property (weak, nonatomic) id<profileButtonCellDelegate> delegate;
 
 @end
+
+@protocol profileButtonCellDelegate <NSObject> 
+
+@optional
+- (void)acctionButtonProfileCell:(NprofileButtonCell*)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle;
+
+@end
+

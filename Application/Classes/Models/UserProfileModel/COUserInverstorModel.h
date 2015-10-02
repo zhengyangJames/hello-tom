@@ -7,7 +7,7 @@
 //
 
 #import "MTLModel.h"
-
-@interface COUserInverstorModel : MTLModel
+#import "COUserData.h"
+@interface COUserInverstorModel : MTLModel<COInvestorType, COInvestorAmount, COInvestorCountries, COInvestorDuration, COInvestorPreference, COInvestorTarget>
 
 @end

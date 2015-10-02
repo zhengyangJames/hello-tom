@@ -9,11 +9,20 @@
 #import "NProfileDelegate.h"
 #import "NProfileDataSource.h"
 
+@interface NProfileDelegate ()
+{
+    
+}
+@property (weak, nonatomic) id<ProfileActionTableViewDelegate> controller;
+
+@end
+
 @implementation NProfileDelegate
 
-- (id)initWithTableview:(UITableView *)tableview {
+- (instancetype)initWithController:(id<ProfileActionTableViewDelegate>)controller {
     self = [super init];
     if (self) {
+        self.controller = controller;
     }
     return self;
 }

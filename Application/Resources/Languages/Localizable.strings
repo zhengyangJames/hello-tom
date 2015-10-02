@@ -140,3 +140,5 @@
 "SUGEST"                                = "Deals you might be interested in";
 "TITLE_LABEL"                           = "You currently have no deals.";
 "TITLE_BUTTON"                          = "Click Here To Get Started!";
+
+"VIEW_PASSWORD"                         = "Update Password";

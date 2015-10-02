@@ -14,8 +14,10 @@
 #import "COUserCompanyModel.h"
 #import "COUserInverstorModel.h"
 #import "COLoginManager.h"
+#import "EditAboutProfileVC.h"
+#import "EditPasswordProfileVC.h"
 
-@interface NProfileController ()<NProfileHeaderViewDelegate>
+@interface NProfileController ()<NProfileHeaderViewDelegate,ProfileActionTableViewDelegate,profileButtonCellDelegate,EditAboutProfileVCDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     __weak NProfileHeaderView *_headerView;
@@ -38,13 +40,21 @@
     [self _setupUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self setNeedsStatusBarAppearanceUpdate];
+    [_tableView reloadData];
+}
+
 #pragma mark - SetupUI
 - (void)_setupUI {
     self.navigationItem.title = @"Profile";
-    NProfileDataSource *datasource = [[NProfileDataSource alloc] initWithTableview:_tableView];
-    NProfileDelegate *delegate = [[NProfileDelegate alloc] initWithTableview:_tableView];
+    NProfileDataSource *datasource = [[NProfileDataSource alloc] initWithTableview:_tableView controller:self];
+    NProfileDelegate *delegate = [[NProfileDelegate alloc] initWithController:self];
     self.profileDatasource = datasource;
     self.profileDelegate = delegate;
+
     
     self.profileDatasource.profileStyle = NProfileStyleAbout;
     self.profileDatasource.userModel = self.userModel;
@@ -101,10 +111,45 @@
     [_tableView reloadData];
 }
 
+- (void)_setupEditAboutProfileVC {
+    EditAboutProfileVC *vc = [[EditAboutProfileVC alloc]init];
+    vc.delegate = self;
+    vc.aboutUserModel = self.userModel;
+    BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
+}
+
+- (void)_setupEditPasswordVC {
+    EditPasswordProfileVC *vc = [[EditPasswordProfileVC alloc]init];
+    
+    BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
+}
+
 #pragma mark - NProfileDeaderViewDelegate
 - (void)nprofileHeaderView:(NProfileHeaderView *)profileHeader didSelectindex:(NSInteger)index {
     self.profileStyle = index;
     [self _reloadTableview];
+}
+
+- (void)acctionButtonProfileCell:(NprofileButtonCell *)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle {
+    switch (buttonStyle) {
+        case NProfileActionUpdateProfile:
+            self.userModel = nil;
+            [self _setupEditAboutProfileVC];
+            break;
+        case NProfileActionChangePassWord:
+            
+            [self _setupEditPasswordVC];
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - Delegate EditProfile
+- (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC {
+    self.userModel = nil;
 }
 
 @end

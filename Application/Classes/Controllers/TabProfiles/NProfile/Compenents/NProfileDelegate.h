@@ -8,8 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+static const CGFloat kHeightForCellDefaultText = 60;
+static const CGFloat kHeightForCellDefaultButton = 75;
+
+@protocol ProfileActionTableViewDelegate;
+
 @interface NProfileDelegate : NSObject <UITableViewDelegate>
 
-- (id)initWithTableview:(UITableView *)tableview;
+- (instancetype)initWithController:(id<ProfileActionTableViewDelegate>)controller;
+
+@end
+
+@protocol ProfileActionTableViewDelegate <NSObject>
+
+@optional
+- (void)actionProfileDelegate:(NProfileDelegate*)profileDelegate didSelectedAtIndexPath:(NSIndexPath *)indexPath;
+
+
 
 @end

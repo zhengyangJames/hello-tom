@@ -47,6 +47,7 @@
 
 - (void)_setTilerLabelAndButton {
     _greatLabel.text = m_string(@"TITLE_LABEL");
+    [__greatButton setTitle:m_string(@"TITLE_BUTTON") forState:UIControlStateNormal];
 }
 
 - (void)_setHiddenLabelAndButton:(BOOL)value {

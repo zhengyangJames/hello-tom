@@ -11,6 +11,6 @@
 
 static NSString *kNewPassWord = @"new_password";
 
-@interface WSChangePassWordRequest : WSRequest
+@interface WSChangePassWordRequest : NSMutableURLRequest
 
 @end
