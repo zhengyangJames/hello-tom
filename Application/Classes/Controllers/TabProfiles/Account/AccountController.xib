@@ -5,9 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NProfileController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountController">
             <connections>
-                <outlet property="_tableView" destination="1Sn-rv-AgZ" id="7cX-Hz-GYN"/>
+                <outlet property="_tableView" destination="6dl-yj-VWm" id="joP-I4-7tV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,17 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Sn-rv-AgZ">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6dl-yj-VWm">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="1Sn-rv-AgZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9X7-YV-1ky"/>
-                <constraint firstAttribute="trailing" secondItem="1Sn-rv-AgZ" secondAttribute="trailing" id="Rmv-Rm-QUV"/>
-                <constraint firstItem="1Sn-rv-AgZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tlg-Q4-sy6"/>
-                <constraint firstAttribute="bottom" secondItem="1Sn-rv-AgZ" secondAttribute="bottom" id="ffM-p7-waX"/>
+                <constraint firstAttribute="bottom" secondItem="6dl-yj-VWm" secondAttribute="bottom" id="2Gf-YI-CZu"/>
+                <constraint firstAttribute="trailing" secondItem="6dl-yj-VWm" secondAttribute="trailing" id="VeT-Oh-7Iz"/>
+                <constraint firstItem="6dl-yj-VWm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dbm-3i-zuk"/>
+                <constraint firstItem="6dl-yj-VWm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fKM-Qj-pdN"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
