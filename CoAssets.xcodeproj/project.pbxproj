@@ -38,22 +38,6 @@
 		0E8956831BBE2497007E36BF /* NProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956751BBE2497007E36BF /* NProfileController.xib */; };
 		0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */; };
 		0E93F8CE1BBD8AB90079D5AE /* COUserInverstorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93F8CD1BBD8AB90079D5AE /* COUserInverstorModel.m */; };
-		0E98D3E61BBCC8EA008FFFBD /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3A91BBCC8EA008FFFBD /* AboutTableViewCell.m */; };
-		0E98D3E71BBCC8EA008FFFBD /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3AA1BBCC8EA008FFFBD /* AboutTableViewCell.xib */; };
-		0E98D3E81BBCC8EA008FFFBD /* AboutTableViewCellAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3AC1BBCC8EA008FFFBD /* AboutTableViewCellAddress.m */; };
-		0E98D3E91BBCC8EA008FFFBD /* AboutTableViewCellAddress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3AD1BBCC8EA008FFFBD /* AboutTableViewCellAddress.xib */; };
-		0E98D3EC1BBCC8EA008FFFBD /* CompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3B51BBCC8EA008FFFBD /* CompanyTableViewCell.m */; };
-		0E98D3ED1BBCC8EA008FFFBD /* CompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3B61BBCC8EA008FFFBD /* CompanyTableViewCell.xib */; };
-		0E98D3EE1BBCC8EA008FFFBD /* EditCompanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3B91BBCC8EA008FFFBD /* EditCompanyVC.m */; };
-		0E98D3EF1BBCC8EA008FFFBD /* EditCompanyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3BA1BBCC8EA008FFFBD /* EditCompanyVC.xib */; };
-		0E98D3F41BBCC8EA008FFFBD /* PasswordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3C81BBCC8EA008FFFBD /* PasswordTableViewCell.m */; };
-		0E98D3F51BBCC8EA008FFFBD /* PasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3C91BBCC8EA008FFFBD /* PasswordTableViewCell.xib */; };
-		0E98D3F61BBCC8EA008FFFBD /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3CB1BBCC8EA008FFFBD /* ProfileViewController.m */; };
-		0E98D3F71BBCC8EA008FFFBD /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3CC1BBCC8EA008FFFBD /* ProfileViewController.xib */; };
-		0E98D3F81BBCC8EA008FFFBD /* TableBottomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3CF1BBCC8EA008FFFBD /* TableBottomViewCell.m */; };
-		0E98D3F91BBCC8EA008FFFBD /* TableBottomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3D01BBCC8EA008FFFBD /* TableBottomViewCell.xib */; };
-		0E98D3FA1BBCC8EA008FFFBD /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D3D31BBCC8EA008FFFBD /* TableHeaderView.m */; };
-		0E98D3FB1BBCC8EA008FFFBD /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E98D3D41BBCC8EA008FFFBD /* TableHeaderView.xib */; };
 		0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881A1B27CA7100B5656F /* NMCollectionView.m */; };
 		0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881C1B27CA7100B5656F /* NMCollectionViewCell.m */; };
 		0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881E1B27CA7100B5656F /* NMTableView.m */; };
@@ -1893,7 +1877,6 @@
 				0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */,
 				7F3260731B40E50800116445 /* JsonCountry.json in Resources */,
 				7F32602A1B40E50800116445 /* Raleway-Regular.ttf in Resources */,
-				0E98D3F71BBCC8EA008FFFBD /* ProfileViewController.xib in Resources */,
 				BB5B9A461B790F15002D37AF /* Localizable.strings in Resources */,
 				7F32603F1B40E50800116445 /* ic_droplist@2x.png in Resources */,
 				7F32605E1B40E50800116445 /* ic_uncheck.png in Resources */,
@@ -1904,7 +1887,6 @@
 				7F32604C1B40E50800116445 /* ic_line_char@3x.png in Resources */,
 				7F2C77471B4E07BA00C69365 /* COOfferInfoCell.xib in Resources */,
 				7F3260311B40E50800116445 /* Ic_back@2x.png in Resources */,
-				0E98D3FB1BBCC8EA008FFFBD /* TableHeaderView.xib in Resources */,
 				7F325F981B40E50800116445 /* COOfferDescriptionTextCell.xib in Resources */,
 				7F3260391B40E50800116445 /* ic_Check@3x.png in Resources */,
 				7F3260721B40E50800116445 /* Images.xcassets in Resources */,
@@ -1926,7 +1908,6 @@
 				0E8956831BBE2497007E36BF /* NProfileController.xib in Resources */,
 				7F32603E1B40E50800116445 /* ic_droplist.png in Resources */,
 				7F3260411B40E50800116445 /* ic_Earth@2x.png in Resources */,
-				0E98D3E71BBCC8EA008FFFBD /* AboutTableViewCell.xib in Resources */,
 				7F32604F1B40E50800116445 /* ic_meoney@3x.png in Resources */,
 				7F3260251B40E50800116445 /* Raleway-Italic.ttf in Resources */,
 				7F8529221B43935B00CFAEB5 /* Brazil.png in Resources */,
@@ -1957,7 +1938,6 @@
 				7F3260331B40E50800116445 /* ic_bank@2x.png in Resources */,
 				0EED2E711B5E2B94006730E2 /* appicon.png in Resources */,
 				7F3260581B40E50800116445 /* ic_setting_2@2x.png in Resources */,
-				0E98D3ED1BBCC8EA008FFFBD /* CompanyTableViewCell.xib in Resources */,
 				7F3260371B40E50800116445 /* ic_Check.png in Resources */,
 				7F3260741B40E50800116445 /* JsonPhoneCode.json in Resources */,
 				7F325FCD1B40E50800116445 /* COSlidingView.xib in Resources */,
@@ -1973,11 +1953,9 @@
 				7FA7E6BC1B4E7C4D00059B13 /* COQuestionView.xib in Resources */,
 				7F32603B1B40E50800116445 /* ic_contac_2@3x.png in Resources */,
 				7F325F9C1B40E50800116445 /* HomeListViewCell.xib in Resources */,
-				0E98D3F91BBCC8EA008FFFBD /* TableBottomViewCell.xib in Resources */,
 				7F3260561B40E50800116445 /* ic_setting@2x.png in Resources */,
 				7F85292A1B43935B00CFAEB5 /* New Zealand.png in Resources */,
 				7F3260341B40E50800116445 /* ic_bank@3x.png in Resources */,
-				0E98D3F51BBCC8EA008FFFBD /* PasswordTableViewCell.xib in Resources */,
 				7F8E0BD91B5355A20045EFB0 /* COOfferWebViewCell.xib in Resources */,
 				7F85292B1B43935B00CFAEB5 /* Philippines.png in Resources */,
 				7F32601D1B40E50800116445 /* Raleway-Black.ttf in Resources */,
@@ -2015,10 +1993,8 @@
 				7F32601E1B40E50800116445 /* Raleway-BlackItalic.ttf in Resources */,
 				7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */,
 				7F3260451B40E50800116445 /* ic_home_heightlight@2x.png in Resources */,
-				0E98D3EF1BBCC8EA008FFFBD /* EditCompanyVC.xib in Resources */,
 				7F32602E1B40E50800116445 /* Raleway-ThinItalic.ttf in Resources */,
 				0E8956811BBE2497007E36BF /* NProfileTextCell.xib in Resources */,
-				0E98D3E91BBCC8EA008FFFBD /* AboutTableViewCellAddress.xib in Resources */,
 				0E8956791BBE2497007E36BF /* NProfileAdressCell.xib in Resources */,
 				7F8529241B43935B00CFAEB5 /* China.png in Resources */,
 				1E67FAA11BBB773D008F433C /* ProfileList.plist in Resources */,
@@ -2119,10 +2095,8 @@
 				7F325FB71B40E50800116445 /* ContactTableViewCell.m in Sources */,
 				7FA7E6BB1B4E7C4D00059B13 /* COQuestionView.m in Sources */,
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
-				0E98D3F61BBCC8EA008FFFBD /* ProfileViewController.m in Sources */,
 				7F8E0BD81B5355A20045EFB0 /* COOfferWebViewCell.m in Sources */,
 				BB38EE351B9A0A8900D15D58 /* WSGetListOfferRequest.m in Sources */,
-				0E98D3E81BBCC8EA008FFFBD /* AboutTableViewCellAddress.m in Sources */,
 				0E8956201BBE1C14007E36BF /* DealsController.m in Sources */,
 				BB38EE321B9A05F800D15D58 /* WSGetOfferInfoWithRequest.m in Sources */,
 				BB38EE2F1B99FAD300D15D58 /* WSProjectFundInfoRequest.m in Sources */,
@@ -2132,7 +2106,6 @@
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
 				0E89567E1BBE2497007E36BF /* NProfileImageCell.m in Sources */,
 				BB48F1A01B86763E006F1921 /* COFilterListModel.m in Sources */,
-				0E98D3E61BBCC8EA008FFFBD /* AboutTableViewCell.m in Sources */,
 				7F325F971B40E50800116445 /* COOfferDescriptionTextCell.m in Sources */,
 				0E8956321BBE1F8B007E36BF /* PortFolioCell.m in Sources */,
 				0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */,
@@ -2159,7 +2132,6 @@
 				0E89567C1BBE2497007E36BF /* NProfileHeaderView.m in Sources */,
 				7F85290F1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m in Sources */,
 				7F325FC01B40E50800116445 /* COCheckBoxButton.m in Sources */,
-				0E98D3F41BBCC8EA008FFFBD /* PasswordTableViewCell.m in Sources */,
 				7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */,
 				BB25980E1B85526800D947AF /* COProjectFundedAmountModel.m in Sources */,
 				7F325FBB1B40E50800116445 /* SettingViewController.m in Sources */,
@@ -2174,7 +2146,6 @@
 				0E89567A1BBE2497007E36BF /* NprofileButtonCell.m in Sources */,
 				7F325FCA1B40E50800116445 /* COSlidingCell.m in Sources */,
 				BBEB210D1B9525F6007221B4 /* WSRequest.m in Sources */,
-				0E98D3F81BBCC8EA008FFFBD /* TableBottomViewCell.m in Sources */,
 				0E8956261BBE1C82007E36BF /* ProtfolioController.m in Sources */,
 				7F325F831B40E50800116445 /* UIImage+Scaling.m in Sources */,
 				BB3C84E41B910C85004B8EF9 /* COContactsModel.m in Sources */,
@@ -2192,10 +2163,8 @@
 				0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */,
 				BBBD82021B8BE0720061FFF0 /* ForgotPasswordViewController.m in Sources */,
 				7FA7E6C51B4E7EAA00059B13 /* COOfferActionCell.m in Sources */,
-				0E98D3EC1BBCC8EA008FFFBD /* CompanyTableViewCell.m in Sources */,
 				7F325F991B40E50800116445 /* OfferViewController.m in Sources */,
 				7F325FB91B40E50800116445 /* ContacViewController.m in Sources */,
-				0E98D3FA1BBCC8EA008FFFBD /* TableHeaderView.m in Sources */,
 				7F325FBF1B40E50800116445 /* COBorderTextField.m in Sources */,
 				0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */,
 				BB38EE381B9A147500D15D58 /* WSGetListContactsRequest.m in Sources */,
@@ -2211,7 +2180,6 @@
 				7FA7E6B91B4E7C4D00059B13 /* COInterestedViewController.m in Sources */,
 				1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */,
 				7F325F9B1B40E50800116445 /* HomeListViewCell.m in Sources */,
-				0E98D3EE1BBCC8EA008FFFBD /* EditCompanyVC.m in Sources */,
 				7F325FC61B40E50800116445 /* DropListObject.m in Sources */,
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
 				BB38EE291B99F74200D15D58 /* WSPostSubscribeRequest.m in Sources */,
