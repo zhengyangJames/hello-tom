@@ -10,25 +10,20 @@
 #import "NProfileDataSource.h"
 
 @interface NProfileDelegate ()
-{
-    
-}
-@property (weak, nonatomic) id<ProfileActionTableViewDelegate> controller;
 
 @end
 
 @implementation NProfileDelegate
 
-- (instancetype)initWithController:(id<ProfileActionTableViewDelegate>)controller {
+- (instancetype)initWithTableView:(UITableView *)tableView {
     self = [super init];
     if (self) {
-        self.controller = controller;
     }
     return self;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
+    return DEFAULT_HEIGHT_CELL;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

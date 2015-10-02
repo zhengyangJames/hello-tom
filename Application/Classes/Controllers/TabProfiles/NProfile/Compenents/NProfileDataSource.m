@@ -58,12 +58,10 @@
     if (indexPath.row == NUM_OF_ROW_ABOUT- 1) {
         NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionChangePassWord;
-        cell.delegate = self.controller;
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_ABOUT - 2) {
         NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateProfile;
-        cell.delegate = self.controller;
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_ABOUT - 3) {
         return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
@@ -94,6 +92,7 @@
 
 - (NprofileButtonCell *)tableview:(UITableView *)tableview buttonCellForRowAtIndexpath:(NSIndexPath *)indexPath {
     NprofileButtonCell *cell = [tableview dequeueReusableCellWithIdentifier:[NprofileButtonCell identifier]];
+    cell.delegate = self.controller;
     return cell;
 }
 
@@ -228,13 +227,6 @@
         return HIEGHT_BOTTOMVIEW;
     }
     return DEFAULT_HEIGHT_CELL;
-}
-
-#pragma mark - Delegate For Cell
-- (void)acctionButtonProfileCell:(NprofileButtonCell *)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle {
-    if ([self.delegate respondsToSelector:@selector(acctionButtonProfileCell:buttonStyle:)]) {
-        [self.delegate actionProfileDataSourceDelegate:self actionForCellButton:buttonStyle];
-    }
 }
 
 @end

@@ -17,7 +17,7 @@
 #import "EditAboutProfileVC.h"
 #import "EditPasswordProfileVC.h"
 
-@interface NProfileController ()<NProfileHeaderViewDelegate,ProfileActionTableViewDelegate,profileButtonCellDelegate,EditAboutProfileVCDelegate>
+@interface NProfileController ()<NProfileHeaderViewDelegate,profileButtonCellDelegate,EditAboutProfileVCDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     __weak NProfileHeaderView *_headerView;
@@ -44,14 +44,13 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
-    [_tableView reloadData];
 }
 
 #pragma mark - SetupUI
 - (void)_setupUI {
     self.navigationItem.title = @"Profile";
     NProfileDataSource *datasource = [[NProfileDataSource alloc] initWithTableview:_tableView controller:self];
-    NProfileDelegate *delegate = [[NProfileDelegate alloc] initWithController:self];
+    NProfileDelegate *delegate = [[NProfileDelegate alloc] initWithTableView:_tableView];
     self.profileDatasource = datasource;
     self.profileDelegate = delegate;
 
@@ -135,11 +134,9 @@
 - (void)acctionButtonProfileCell:(NprofileButtonCell *)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle {
     switch (buttonStyle) {
         case NProfileActionUpdateProfile:
-            self.userModel = nil;
             [self _setupEditAboutProfileVC];
             break;
         case NProfileActionChangePassWord:
-            
             [self _setupEditPasswordVC];
             break;
         default:
@@ -150,6 +147,7 @@
 #pragma mark - Delegate EditProfile
 - (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC {
     self.userModel = nil;
+    [self _reloadTableview];
 }
 
 @end
