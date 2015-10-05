@@ -107,7 +107,7 @@
 #define KCOUNTRY                                    @"country"
 #define kPROFILE                                    @"profile"
 
-#define kUPDATE_VERSION                                    @"Update_version"
+#define kUPDATE_VERSION                             @"Update_version_2.0"
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY
 
