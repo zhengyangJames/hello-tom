@@ -127,5 +127,10 @@
     _widthOfLabelNameContraint.constant = width;
 }
 
+- (void)setUserName:(id<COUserName>)userName {
+    _userName = userName;
+    _lblName.text = userName.userNameTitle;
+    _lblDetail.text = userName.userNameContent;
+}
 
 @end

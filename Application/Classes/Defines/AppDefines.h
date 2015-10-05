@@ -161,7 +161,7 @@
 #define ESTIMATE_HEIGHT_FOR_ROW_CONTACT              185
 
 #define HEIGHT_FOR_IMAGE_ROW                        220
-#define NUM_OF_ROW_ABOUT                            7
+#define NUM_OF_ROW_ABOUT                            8
 #define NUM_OF_ROW_COMPANY                          4
 #define NUM_OF_ROW_INVESTOR                         7
 
@@ -236,6 +236,7 @@ typedef NS_ENUM(NSInteger, COSegmentStyle) {
 };
 
 typedef NS_ENUM(NSInteger, COAboutProfileStyle) {
+    COAboutProfileStyleUserName = 0,
     COAboutProfileStyleFirstName,
     COAboutProfileStyleLastNameSurname,
     COAboutProfileStyleEmail,

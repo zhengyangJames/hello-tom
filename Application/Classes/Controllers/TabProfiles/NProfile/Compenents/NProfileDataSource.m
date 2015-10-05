@@ -111,6 +111,8 @@
                 cell.userLastName = self.userModel;
             } else if (indexPath.row == COAboutProfileStyleEmail) {
                 cell.userEmail = self.userModel;
+            } else if (indexPath.row == COAboutProfileStyleUserName) {
+                cell.userName = self.userModel;
             } else {
                 cell.userPhone = self.userModel;
             }
@@ -138,6 +140,7 @@
             } else {
                 cell.investorCountries = self.invedtorModel;
             }
+            break;
         }
     }
     return cell;

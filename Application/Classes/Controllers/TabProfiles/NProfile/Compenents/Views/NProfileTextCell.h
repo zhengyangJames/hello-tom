@@ -11,6 +11,7 @@
 
 @interface NProfileTextCell : UITableViewCell
 
+@property (nonatomic, strong) id<COUserName> userName;
 @property (nonatomic, strong) id<COUserFirstName> userFirstName;
 @property (nonatomic, strong) id<COUserLastName> userLastName;
 @property (nonatomic, strong) id<COUserEmail> userEmail;

@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol COUserName  <NSObject>
+
+- (NSString *)userNameTitle;
+- (NSString *)userNameContent;
+
+@end
+
 @protocol COUserFirstName  <NSObject>
 
 - (NSString *)firstNameTitle;
