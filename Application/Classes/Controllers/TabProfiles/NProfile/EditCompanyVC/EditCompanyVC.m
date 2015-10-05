@@ -10,12 +10,16 @@
 #import "CODropListView.h"
 #import "CoDropListButtom.h"
 #import "COBorderTextField.h"
+@import AssetsLibrary;
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
     __weak IBOutlet CoDropListButtom *_btnOrgType;
     __weak IBOutlet COBorderTextField *orgNameTextField;
     __weak IBOutlet COBorderTextField *addressTextField;
+    __weak IBOutlet COBorderTextField *address2TextField;
+    __weak IBOutlet COBorderTextField *orgCityTextField;
+    __weak IBOutlet COBorderTextField *countryTextField;
     __weak IBOutlet UIImageView *_imageCompany;
     NSInteger _indexActtionOrgType;
 }
@@ -52,14 +56,14 @@
 
 - (void)setImageName:(UIImage *)imageName {
     _imageName = imageName;
-    _imageCompany.image = _imageName;
+//    _imageCompany.image = [UIImage imageNamed:_imageName];
 }
 
 #pragma mark - Private
 
 - (void)_setupUI {
     
-    self.navigationItem.title = NSLocalizedString(@"BASIC_INFO", nil);
+    self.navigationItem.title = m_string(@"C_PROFILE");
     [self _setupBarButtonCancel];
     [self _setupBarButtonDone];
 }
@@ -90,18 +94,14 @@
 
 - (void)__actionDone:(id)sender {
     if (self.actionDone) {
-        self.actionDone(orgNameTextField.text,addressTextField.text,_imageCompany.image);
+        self.actionDone(orgNameTextField.text,addressTextField.text,self.imageName);
     }
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)__actionDCancel:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (IBAction)__actionPickImage:(id)sender {
@@ -146,7 +146,11 @@
 {
     UIImage *image = info[@"UIImagePickerControllerEditedImage"];
     [_imageCompany setImage:image];
+
+    
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 @end

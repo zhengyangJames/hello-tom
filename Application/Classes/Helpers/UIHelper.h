@@ -33,5 +33,5 @@
 
 + (NSString *)getStringCurrencyOfferWithKey:(NSString*)keyCurrency;
 + (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font;
-
++ (NSString *)getLinkImageWithUrl:(NSURL*)urlImage;
 @end

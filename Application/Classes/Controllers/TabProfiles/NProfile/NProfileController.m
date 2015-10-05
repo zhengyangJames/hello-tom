@@ -65,7 +65,7 @@
     _tableView.dataSource = self.profileDatasource;
     _tableView.tableHeaderView = [self _headerView];
     _tableView.tableFooterView = [UIView new];
-    self.title = m_string(@"A_PROFILE");
+    self.title = m_string(@"PROFILE");
     [self _reloadTableview];
 }
 
@@ -128,20 +128,15 @@
 
 - (void)_setupEditCompanyVC {
     EditCompanyVC *vc = [[EditCompanyVC alloc]init];
-    
+    vc.actionDone = ^(NSString *orgName,NSString* address,UIImage *imageCompany){
+
+    };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
 
 #pragma mark - NProfileDeaderViewDelegate
 - (void)nprofileHeaderView:(NProfileHeaderView *)profileHeader didSelectindex:(NSInteger)index {
-    switch (index) {
-        case NProfileStyleAbout: _stringTitle = m_string(@"A_PROFILE"); break;
-        case NProfileStyleCompany: _stringTitle = m_string(@"C_PROFILE"); break;
-        case NProfileStyleInvestorProfile: _stringTitle = m_string(@"I_PROFILE"); break;
-        default: break;
-    }
-    self.title = _stringTitle;
     self.profileStyle = index;
     [self _reloadTableview];
 }

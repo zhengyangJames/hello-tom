@@ -25,6 +25,9 @@
                     <constraint firstAttribute="trailing" secondItem="q3B-Ms-ly8" secondAttribute="trailing" constant="10" id="zOe-6t-8A5"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="_imageCompany" destination="q3B-Ms-ly8" id="FMY-jF-s3r"/>
+            </connections>
             <point key="canvasLocation" x="50" y="263.5"/>
         </tableViewCell>
     </objects>

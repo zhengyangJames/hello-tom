@@ -41,6 +41,8 @@
 @end
 
 
+#pragma mark - Company
+
 @protocol COCompanyName <NSObject>
 
 - (NSString *)companyNameTitle;
@@ -55,9 +57,13 @@
 
 @protocol COCompanyImage <NSObject>
 
-- (NSURL *)companyImageURL;
+- (NSString *)companyImageURL;
+
+- (void)setCompanyImageURL:(NSString*)imageURL;
 
 @end
+
+#pragma mark - Investor
 
 @protocol COInvestorType <NSObject>
 
@@ -94,6 +100,8 @@
 - (NSString *)COInvestorCountriesTitle;
 - (NSString *)COInvestorCountriesContent;
 @end
+
+#pragma mark - About Profile
 
 @protocol COUserAboutProfile <NSObject>
 

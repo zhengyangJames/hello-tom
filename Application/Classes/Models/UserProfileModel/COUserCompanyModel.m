@@ -10,6 +10,8 @@
 
 @implementation COUserCompanyModel
 
+#pragma mark - company protocol
+
 - (NSString *)companyNameTitle {
     return m_string(@"COMPANY_NAME");
 }
@@ -17,6 +19,8 @@
     return @"Nikme";
     //return self.companyDetails.companyName;
 }
+
+#pragma mark - address1 protocol 
 
 - (NSString *)companyAdressTitle {
     return m_string(@"COMPANY_ADRESS");
@@ -27,9 +31,20 @@
     //return self.companyDetails.companyAdress;
 }
 
-- (NSURL *)companyImageURL {
-   // return self.companyDetails.companyURL;
-    return nil;
+#pragma mark - address2 protocol
+
+
+#pragma mark - image protocol 
+
+- (NSString *)companyImageURL {
+    return self.imageUrl;
 }
 
+- (void)setCompanyImageURL:(NSString *)imageURL {
+    self.imageUrl = imageURL;
+}
+
+#pragma mark - orgCity protocol 
+
+#pragma mark - Country protocol 
 @end

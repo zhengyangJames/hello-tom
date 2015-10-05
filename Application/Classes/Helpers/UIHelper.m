@@ -185,4 +185,11 @@
     return [[[NSAttributedString alloc] initWithString:string attributes:attributes] size].width;
 }
 
++ (NSString *)getLinkImageWithUrl:(NSURL*)urlImage {
+    NSString *imageName = urlImage.path.lastPathComponent;
+    NSString *urlDocument = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *localPath = [urlDocument stringByAppendingPathComponent:imageName];
+    return localPath;
+}
+
 @end
