@@ -55,6 +55,7 @@
     if (!token) {
         token = [self _createParamTokenWithModel:[[COLoginManager shared] userModel]];
     }
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (actionLoginManager) {

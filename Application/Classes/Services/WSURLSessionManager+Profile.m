@@ -39,19 +39,22 @@
 - (void)wsUpdateProfileWithRequest:(WSUpdateProfileRequest *)request handler:(WSURLSessionHandler)handler  {
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
-            COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-            [[COLoginManager shared] tokenObject:[self _createParamTokenWithModel:userModel] callWSGetListProfile:^(id object, NSError *error) {
-                if (!error && [object isKindOfClass:[NSDictionary class]]) {
-                    [[COLoginManager shared] setUserModel:nil];
-                    NSDictionary *dic = object;
-                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
-                    [kUserDefaults setObject:data forKey:kPROFILE_JSON];
-                    [kUserDefaults synchronize];
-                    if (handler) {
-                        handler(object,response,nil);
-                    }
-                }
-            }];
+            COUserProfileModel *userModel = [self _updateProfileUserModel:responseObject];
+//            [[COLoginManager shared] tokenObject:[self _createParamTokenWithModel:userModel] callWSGetListProfile:^(id object, NSError *error) {
+//                if (!error && [object isKindOfClass:[NSDictionary class]]) {
+//                    [[COLoginManager shared] setUserModel:nil];
+//                    NSDictionary *dic = object;
+//                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+//                    [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+//                    [kUserDefaults synchronize];
+//                    if (handler) {
+//                        handler(object,response,nil);
+//                    }
+//                }
+//            }];
+            if (handler) {
+                handler(userModel,response,nil);
+            }
         } else {
             if (handler) {
                 handler(nil,response,error);
@@ -59,6 +62,30 @@
         }
     }];
 }
+
+- (COUserProfileModel*)_updateProfileUserModel:(NSDictionary*)obj {
+    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+    [userModel setUserFirstName:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileFirstName]]];
+    [userModel setUserLastName:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileLastName]]];
+    [userModel setUserEmail:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileEmail]]];
+    [userModel setNumberOfUserPhone:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileCellPhone]]];
+    [userModel setNameOfUserAddress1:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileAddress1]]];
+    [userModel setNameOfUserAddress2:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileAddress2]]];
+    [userModel setNameOfUserCity:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileCity]]];
+    [userModel setNameOfUserCountry:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileCountry]]];
+    [userModel setNameOfUserCountryCode:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileNumCountry]]];
+    [userModel setNameOfUserRegion:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpProfileState]]];
+    return userModel;
+}
+
+- (id)_setModelNullOrNotNull:(NSString*)string {
+    if ([string isEmpty]) {
+        return nil;
+    } else {
+        return string;
+    }
+}
+
 - (NSMutableDictionary*)_createParamTokenWithModel:(COUserProfileModel *)model {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     if (model.stringOfAccessToken) {

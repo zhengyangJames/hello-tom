@@ -13,11 +13,14 @@
 @implementation WSGetProfileRequest
 
 -(void)setValueWithTokenData:(NSDictionary *)tokenData {
+    
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
     NSString *headerString = [NSString stringWithFormat:@"%@ %@",[tokenData objectForKeyNotNull:kTOKEN_TYPE], [tokenData objectForKeyNotNull:kACCESS_TOKEN]];
-    NSDictionary *headers = @{ @"authorization": headerString };
+    NSDictionary *headers = @{ @"Authorization": headerString };
     [self setHTTPMethod:METHOD_GET];
     [self setAllHTTPHeaderFields:headers];
 
 }
+
+
 @end
