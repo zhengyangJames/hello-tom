@@ -27,6 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self _checkinVersion];
     self.window.rootViewController = self.baseTabBarController;
     self.baseTabBarController.delegate = self;
     [self _setUp3rdSDKs];
@@ -49,6 +50,20 @@
 
 - (void)_setUp3rdSDKs {
     [Fabric with:@[CrashlyticsKit]];
+}
+
+#pragma mark - Check is Version
+
+- (void)_checkinVersion {
+    NSString *version = [NSString stringWithFormat:@"%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+    if ([version floatValue] >= 2.0) {
+        if (![kUserDefaults boolForKey:kUPDATE_VERSION]) {
+            [kUserDefaults setBool:YES forKey:kUPDATE_VERSION];
+            [[COLoginManager shared] setUserModel:nil];
+            [kUserDefaults removeObjectForKey:kPROFILE_JSON];
+            [kUserDefaults synchronize];
+        }
+    }
 }
 
 

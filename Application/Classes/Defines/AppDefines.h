@@ -106,6 +106,8 @@
 #define KSATE                                       @"region_state"
 #define KCOUNTRY                                    @"country"
 #define kPROFILE                                    @"profile"
+
+#define kUPDATE_VERSION                                    @"Update_version"
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY
 

@@ -144,3 +144,7 @@
 "VIEW_PASSWORD"                         = "Update Password";
 
 "USERNAME"                              = "User name";
+
+"A_PROFILE"                               = "About Profile";
+"C_PROFILE"                               = "Company Profile";
+"I_PROFILE"                               = "Investor Profile";

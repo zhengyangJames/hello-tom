@@ -22,6 +22,7 @@
 {
     __weak IBOutlet UITableView *_tableView;
     __weak NProfileHeaderView *_headerView;
+    NSString *_stringTitle;
 }
 
 @property (nonatomic, strong) NProfileDataSource *profileDatasource;
@@ -49,7 +50,6 @@
 
 #pragma mark - SetupUI
 - (void)_setupUI {
-    self.navigationItem.title = @"Profile";
     NProfileDataSource *datasource = [[NProfileDataSource alloc] initWithTableview:_tableView controller:self];
     NProfileDelegate *delegate = [[NProfileDelegate alloc] initWithTableView:_tableView];
     self.profileDatasource = datasource;
@@ -65,7 +65,7 @@
     _tableView.dataSource = self.profileDatasource;
     _tableView.tableHeaderView = [self _headerView];
     _tableView.tableFooterView = [UIView new];
-    
+    self.title = m_string(@"A_PROFILE");
     [self _reloadTableview];
 }
 
@@ -135,23 +135,23 @@
 
 #pragma mark - NProfileDeaderViewDelegate
 - (void)nprofileHeaderView:(NProfileHeaderView *)profileHeader didSelectindex:(NSInteger)index {
+    switch (index) {
+        case NProfileStyleAbout: _stringTitle = m_string(@"A_PROFILE"); break;
+        case NProfileStyleCompany: _stringTitle = m_string(@"C_PROFILE"); break;
+        case NProfileStyleInvestorProfile: _stringTitle = m_string(@"I_PROFILE"); break;
+        default: break;
+    }
+    self.title = _stringTitle;
     self.profileStyle = index;
     [self _reloadTableview];
 }
 
 - (void)acctionButtonProfileCell:(NprofileButtonCell *)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle {
     switch (buttonStyle) {
-        case NProfileActionUpdateProfile:
-            [self _setupEditAboutProfileVC];
-            break;
-        case NProfileActionChangePassWord:
-            [self _setupEditPasswordVC];
-            break;
-        case NProfileActionUpdateCompany:
-            [self _setupEditCompanyVC];
-            break;
-        default:
-            break;
+        case NProfileActionUpdateProfile: [self _setupEditAboutProfileVC]; break;
+        case NProfileActionChangePassWord: [self _setupEditPasswordVC]; break;
+        case NProfileActionUpdateCompany: [self _setupEditCompanyVC]; break;
+        default: break;
     }
 }
 

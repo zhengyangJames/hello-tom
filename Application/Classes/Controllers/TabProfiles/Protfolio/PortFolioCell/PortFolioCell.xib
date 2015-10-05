@@ -20,10 +20,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
-                        <rect key="frame" x="8" y="66" width="200" height="29"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
+                        <rect key="frame" x="0.0" y="62" width="216" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="29" id="9d3-GK-CGI"/>
+                            <constraint firstAttribute="height" constant="24" id="9d3-GK-CGI"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="28"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -37,22 +37,22 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="134" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-2Y-WKU" userLabel="LabelText" customClass="BaseLabel">
-                        <rect key="frame" x="8" y="103" width="200" height="45.5"/>
-                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                        <rect key="frame" x="0.0" y="86" width="216" height="62.5"/>
+                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ctf-2Y-WKU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="9M7-YV-0E6"/>
+                    <constraint firstItem="ctf-2Y-WKU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9M7-YV-0E6"/>
                     <constraint firstAttribute="centerX" secondItem="l4l-7c-aca" secondAttribute="centerX" id="9Q6-4W-pbR"/>
                     <constraint firstAttribute="bottom" secondItem="ctf-2Y-WKU" secondAttribute="bottom" constant="8" id="9jN-oO-T4y"/>
-                    <constraint firstItem="ctf-2Y-WKU" firstAttribute="top" secondItem="Vql-CH-7V5" secondAttribute="bottom" constant="8" id="I64-0F-Qq2"/>
-                    <constraint firstItem="Vql-CH-7V5" firstAttribute="top" secondItem="l4l-7c-aca" secondAttribute="bottom" constant="8" id="SC3-dL-Hgy"/>
-                    <constraint firstItem="Vql-CH-7V5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ebE-Sb-d48"/>
+                    <constraint firstItem="ctf-2Y-WKU" firstAttribute="top" secondItem="Vql-CH-7V5" secondAttribute="bottom" id="I64-0F-Qq2"/>
+                    <constraint firstItem="Vql-CH-7V5" firstAttribute="top" secondItem="l4l-7c-aca" secondAttribute="bottom" constant="4" id="SC3-dL-Hgy"/>
+                    <constraint firstItem="Vql-CH-7V5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ebE-Sb-d48"/>
                     <constraint firstItem="l4l-7c-aca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="gRd-uX-ZWy"/>
-                    <constraint firstAttribute="trailing" secondItem="ctf-2Y-WKU" secondAttribute="trailing" constant="8" id="uLk-EA-jUc"/>
-                    <constraint firstAttribute="trailing" secondItem="Vql-CH-7V5" secondAttribute="trailing" constant="8" id="vaB-60-Xyi"/>
+                    <constraint firstAttribute="trailing" secondItem="ctf-2Y-WKU" secondAttribute="trailing" id="uLk-EA-jUc"/>
+                    <constraint firstAttribute="trailing" secondItem="Vql-CH-7V5" secondAttribute="trailing" id="vaB-60-Xyi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
