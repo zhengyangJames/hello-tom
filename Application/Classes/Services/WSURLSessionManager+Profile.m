@@ -52,6 +52,10 @@
 //                    }
 //                }
 //            }];
+            NSDictionary *dic = responseObject;
+            NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+            [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+            [kUserDefaults synchronize];
             if (handler) {
                 handler(userModel,response,nil);
             }
