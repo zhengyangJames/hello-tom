@@ -67,8 +67,8 @@
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
 		1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
 		1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
-		1EF23C241BBE85C9006020C2 /* ic_Check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C1C1BBE85C9006020C2 /* ic_Check@2x.png */; };
-		1EF23C251BBE85C9006020C2 /* ic_Check@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C1D1BBE85C9006020C2 /* ic_Check@3x.png */; };
+		1EF23C241BBE85C9006020C2 /* ic_Check_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C1C1BBE85C9006020C2 /* ic_Check_red@2x.png */; };
+		1EF23C251BBE85C9006020C2 /* ic_Check_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C1D1BBE85C9006020C2 /* ic_Check_red@3x.png */; };
 		1EF23C281BBE85C9006020C2 /* ic_loadding@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C201BBE85C9006020C2 /* ic_loadding@2x.png */; };
 		1EF23C291BBE85C9006020C2 /* ic_loadding@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C211BBE85C9006020C2 /* ic_loadding@3x.png */; };
 		1EF23C2A1BBE85C9006020C2 /* ic_money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C221BBE85C9006020C2 /* ic_money@2x.png */; };
@@ -382,8 +382,8 @@
 		1EF23C171BBE6BAF006020C2 /* EditPasswordProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPasswordProfileVC.h; sourceTree = "<group>"; };
 		1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPasswordProfileVC.m; sourceTree = "<group>"; };
 		1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPasswordProfileVC.xib; sourceTree = "<group>"; };
-		1EF23C1C1BBE85C9006020C2 /* ic_Check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Check@2x.png"; sourceTree = "<group>"; };
-		1EF23C1D1BBE85C9006020C2 /* ic_Check@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Check@3x.png"; sourceTree = "<group>"; };
+		1EF23C1C1BBE85C9006020C2 /* ic_Check_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Check_red@2x.png"; sourceTree = "<group>"; };
+		1EF23C1D1BBE85C9006020C2 /* ic_Check_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Check_red@3x.png"; sourceTree = "<group>"; };
 		1EF23C201BBE85C9006020C2 /* ic_loadding@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_loadding@2x.png"; sourceTree = "<group>"; };
 		1EF23C211BBE85C9006020C2 /* ic_loadding@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_loadding@3x.png"; sourceTree = "<group>"; };
 		1EF23C221BBE85C9006020C2 /* ic_money@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_money@2x.png"; sourceTree = "<group>"; };
@@ -1517,8 +1517,8 @@
 			children = (
 				1EF23C2C1BBE8691006020C2 /* ic_homes@2x.png */,
 				1EF23C2D1BBE8691006020C2 /* ic_homes@3x.png */,
-				1EF23C1C1BBE85C9006020C2 /* ic_Check@2x.png */,
-				1EF23C1D1BBE85C9006020C2 /* ic_Check@3x.png */,
+				1EF23C1C1BBE85C9006020C2 /* ic_Check_red@2x.png */,
+				1EF23C1D1BBE85C9006020C2 /* ic_Check_red@3x.png */,
 				1EF23C201BBE85C9006020C2 /* ic_loadding@2x.png */,
 				1EF23C211BBE85C9006020C2 /* ic_loadding@3x.png */,
 				1EF23C221BBE85C9006020C2 /* ic_money@2x.png */,
@@ -1797,7 +1797,7 @@
 				7F325F861B40E50800116445 /* CODocumentItemCell.xib in Resources */,
 				1EF23C281BBE85C9006020C2 /* ic_loadding@2x.png in Resources */,
 				7F3260601B40E50800116445 /* ic_uncheck@3x.png in Resources */,
-				1EF23C241BBE85C9006020C2 /* ic_Check@2x.png in Resources */,
+				1EF23C241BBE85C9006020C2 /* ic_Check_red@2x.png in Resources */,
 				1EF23C2B1BBE85C9006020C2 /* ic_money@3x.png in Resources */,
 				7F32601F1B40E50800116445 /* Raleway-Bold.ttf in Resources */,
 				7F3260591B40E50800116445 /* ic_setting_2@3x.png in Resources */,
@@ -1870,7 +1870,7 @@
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
 				7F85292F1B43935B00CFAEB5 /* United States.png in Resources */,
-				1EF23C251BBE85C9006020C2 /* ic_Check@3x.png in Resources */,
+				1EF23C251BBE85C9006020C2 /* ic_Check_red@3x.png in Resources */,
 				7F32601E1B40E50800116445 /* Raleway-BlackItalic.ttf in Resources */,
 				7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */,
 				7F3260451B40E50800116445 /* ic_home_heightlight@2x.png in Resources */,
