@@ -38,7 +38,7 @@
     return self;
 }
 
-#pragma mark - Setter, Gettr
+#pragma mark - Setter, Getter
 
 - (void)setProfileStyle:(NSInteger)profileStyle {
     _profileStyle = profileStyle;
@@ -71,14 +71,27 @@
 }
 
 - (UITableViewCell *)tableview:(UITableView *)tableView companyCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
-    } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
-        NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
-        cell.actionStyle = NProfileActionUpdateCompany;
-        return cell;
+    if (!self.companyModel.companyImageURL) {
+        if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 1) {
+            NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
+            cell.actionStyle = NProfileActionUpdateCompany;
+            return cell;
+        } else if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 2) {
+            return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+        }
+        return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
+    } else {
+        if (indexPath.row == 0) {
+            return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
+        } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
+            NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
+            cell.actionStyle = NProfileActionUpdateCompany;
+            return cell;
+        } else if (indexPath.row == NUM_OF_ROW_COMPANY - 2) {
+            return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+        }
+        return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
     }
-    return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
 }
 
 - (UITableViewCell *)tableview:(UITableView *)tableView investorProfileCellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -98,6 +111,7 @@
 
 - (NProfileImageCell *)tableview:(UITableView *)tableview imageCellForRowAtIndexpath:(NSIndexPath *)indexPath {
     NProfileImageCell *cell = [tableview dequeueReusableCellWithIdentifier:[NProfileImageCell identifier]];
+    cell.companyImage = self.companyModel;
     return cell;
 }
 
@@ -116,16 +130,18 @@
             } else {
                 cell.userPhone = self.userModel;
             }
-        }
-            break;
+        } break;
         case NProfileStyleCompany: {
-            if (indexPath.row == COCompanyProfileStyleName) {
-                cell.compantName = self.companyModel;
-            } else  {
-                cell.companyAdress = self.companyModel;
+            if (!self.companyModel.imageUrl) {
+                if (indexPath.row == COCompanyProfileStyleName -1) {
+                    cell.companytName = self.companyModel;
+                }
+            } else {
+                if (indexPath.row == COCompanyProfileStyleName) {
+                    cell.companytName = self.companyModel;
+                }
             }
-        }
-            break;
+        } break;
         case NProfileStyleInvestorProfile: {
             if (indexPath.row == COInvedtorProfileStyleType) {
                 cell.investorType = self.invedtorModel;
@@ -139,8 +155,7 @@
                 cell.investorDuration = self.invedtorModel;
             } else {
                 cell.investorCountries = self.invedtorModel;
-            }
-            break;
+            } break;
         }
     }
     return cell;
@@ -148,19 +163,26 @@
 
 - (NProfileAdressCell *)tableview:(UITableView *)tableview adressCellForRowAtIndexpath:(NSIndexPath *)indexPath {
     NProfileAdressCell *cell = [tableview dequeueReusableCellWithIdentifier:[NProfileAdressCell identifier]];
-    cell.userAddress = self.userModel;
+    switch (self.profileStyle) {
+        case NProfileStyleAbout:
+            cell.userAddress = self.userModel;
+            break;
+        case NProfileStyleCompany:
+            cell.userAddressCompany = self.companyModel;
+            break;
+        default: break;
+    }
     return cell;
 }
 
 #pragma mark - Datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (self.profileStyle) {
-        case NProfileStyleAbout:
-            return NUM_OF_ROW_ABOUT;
+        case NProfileStyleAbout: return NUM_OF_ROW_ABOUT;
         case NProfileStyleCompany:
+            if (!self.companyModel.companyImageURL) { return NUM_OF_ROW_COMPANY_NO_IMAGE; }
             return NUM_OF_ROW_COMPANY;
-        case NProfileStyleInvestorProfile:
-            return NUM_OF_ROW_INVESTOR;
+        case NProfileStyleInvestorProfile: return NUM_OF_ROW_INVESTOR;
     }
     return 0;
 }
@@ -217,12 +239,23 @@
 }
 
 - (CGFloat)tableview:(UITableView *)tableView heightForCompanyCellAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return HEIGHT_FOR_IMAGE_ROW;
-    } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
-        return HIEGHT_BOTTOMVIEW;
+    if (!self.companyModel.companyImageURL) {
+        if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 1) {
+            return HIEGHT_BOTTOMVIEW;
+        } else if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 2) {
+            return [self tableview:tableView heightForAdressRowAtIndexPath:indexPath];
+        }
+        return DEFAULT_HEIGHT_CELL;
+    } else {
+        if (indexPath.row == 0) {
+            return HEIGHT_FOR_IMAGE_ROW;
+        } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
+            return HIEGHT_BOTTOMVIEW;
+        } else if (indexPath.row == NUM_OF_ROW_COMPANY - 2) {
+            return [self tableview:tableView heightForAdressRowAtIndexPath:indexPath];
+        }
+        return DEFAULT_HEIGHT_CELL;
     }
-    return DEFAULT_HEIGHT_CELL;
 }
 
 - (CGFloat)tableview:(UITableView *)tableView heightForInvestorProfileCellAtIndexPath:(NSIndexPath *)indexPath {

@@ -15,11 +15,11 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"userRefreshToken" :@"refresh_toke",
-        @"userScope"        :@"scope",
-        @"userTokenType"    :@"token_type",
-        @"userAccessToken"  :@"access_token",
-        @"userExpriesIn"    :@"expires_in",
+        @"userRefreshToken" : @"refresh_toke",
+        @"userScope"        : @"scope",
+        @"userTokenType"    : @"token_type",
+        @"userAccessToken"  : @"access_token",
+        @"userExpriesIn"    : @"expires_in",
         @"userAccount"      : @"account",
         @"userTokens"       : @"tokens",
         @"userId"           : @"id",
@@ -133,38 +133,31 @@
 
 
 - (NSString *)numberOfUserPhone {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    return proModel.profileCellPhone;
+    return self.userProfile.profileCellPhone;
 }
 
 - (NSString *)nameOfUserAddress1 {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    return proModel.profileAddress1;
+    return self.userProfile.profileAddress1;
 }
 
 - (NSString *)nameOfUserRegion {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    return proModel.profileRegionState;
+    return self.userProfile.profileRegionState;
 }
 
 - (NSString *)nameOfUserAddress2 {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    return proModel.profileAddress2;
+    return self.userProfile.profileAddress2;
 }
 
 - (NSString *)nameOfUserCity {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    return proModel.profileCity;
+    return self.userProfile.profileCity;
 }
 
 - (NSString *)nameOfUserCountry {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    return proModel.profileCountry;
+    return self.userProfile.profileCountry;
 }
 
 - (NSString *)nameOfUserCountryCode {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    return proModel.profileCountryPrefix;
+    return self.userProfile.profileCountryPrefix;
 }
 //set
 
@@ -185,38 +178,31 @@
 }
 
 - (void)setNumberOfUserPhone:(NSString*)string {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    proModel.profileCellPhone = string;
+    self.userProfile.profileCellPhone = string;
 }
 
 - (void)setNameOfUserAddress1:(NSString*)string {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    proModel.profileAddress1 = string;
+    self.userProfile.profileAddress1 = string;
 }
 
 - (void)setNameOfUserRegion:(NSString*)string {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    proModel.profileRegionState = string;
+    self.userProfile.profileRegionState = string;
 }
 
 - (void)setNameOfUserAddress2:(NSString*)string {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    proModel.profileAddress2 = string;
+    self.userProfile.profileAddress2 = string;
 }
 
 - (void)setNameOfUserCity:(NSString*)string {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    proModel.profileCity = string;
+    self.userProfile.profileCity = string;
 }
 
 - (void)setNameOfUserCountry:(NSString*)string {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    proModel.profileCountry = string;
+    self.userProfile.profileCountry = string;
 }
 
 - (void)setNameOfUserCountryCode:(NSString*)string {
-    COUserProfileDetailModel *proModel = self.userProfile;
-    proModel.profileCountryPrefix = string;
+    self.userProfile.profileCountryPrefix = string;
 }
 
 @end

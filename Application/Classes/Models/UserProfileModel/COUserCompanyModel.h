@@ -11,8 +11,9 @@
 
 @interface COUserCompanyModel : MTLModel<COCompanyAdress, COCompanyName, COCompanyImage>
 
-@property (nonatomic, strong) NSString *imageUrl;
+@property (strong, nonatomic) NSString *imageUrl;
 @property (strong, nonatomic) NSString *orgName;
+@property (strong, nonatomic) NSString *orgType;
 @property (strong, nonatomic) NSString *address;
 @property (strong, nonatomic) NSString *address2;
 @property (strong, nonatomic) NSString *orgCity;

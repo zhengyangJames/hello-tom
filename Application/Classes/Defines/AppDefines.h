@@ -165,6 +165,7 @@
 #define HEIGHT_FOR_IMAGE_ROW                        220
 #define NUM_OF_ROW_ABOUT                            8
 #define NUM_OF_ROW_COMPANY                          4
+#define NUM_OF_ROW_COMPANY_NO_IMAGE                 3
 #define NUM_OF_ROW_INVESTOR                         7
 
 #define UPDATE_ABOUT_PROFILE                        @"Update profile"
@@ -247,7 +248,8 @@ typedef NS_ENUM(NSInteger, COAboutProfileStyle) {
 };
 
 typedef NS_ENUM(NSInteger, COCompanyProfileStyle) {
-    COCompanyProfileStyleName = 1,
+    COCompanyProfileStyleImage = 0,
+    COCompanyProfileStyleName,
     COCompanyProfileStyleAdress
 };
 

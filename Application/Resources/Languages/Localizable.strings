@@ -96,7 +96,7 @@
 "DAY_LEFT"                              = "%@";
 "GOAL"                                  = "%tu%% of goal";
 
-"ADDRESS"                               = "ADDRESS";
+"ADDRESSNAME"                           = "Address";
 "PROJECT"                               = "PROJECT";
 "OFFER"                                 = "OFFER";
 "DOCUMENTS"                             = "DOCUMENTS";
@@ -146,6 +146,7 @@
 "USERNAME"                              = "User name";
 
 "PROFILE"                               = "Profile";
-"A_PROFILE"                             = "About Profile";
-"C_PROFILE"                             = "Company Profile";
-"I_PROFILE"                             = "Investor Profile";
+
+"C_PROFILE"                             = "Company profile";
+
+"NoCompanyAssociated"                   = "No company associated";

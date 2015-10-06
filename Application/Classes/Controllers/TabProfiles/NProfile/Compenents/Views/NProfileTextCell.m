@@ -55,20 +55,19 @@
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
 
-- (void)setCompantName:(id<COCompanyName>)compantName {
-    _compantName = compantName;
-    _lblName.text = _compantName.companyNameTitle;
-    _lblDetail.text = _compantName.companyNameContent;
-    
-    [self _updateWidthOfLabelNameWithString:_lblName.text];
-}
-
-- (void)setCompanyAdress:(id<COCompanyAdress>)companyAdress {
-    _companyAdress = companyAdress;
-    _lblName.text = _companyAdress.companyAdressTitle;
-    _lblDetail.text = _companyAdress.companyAdressContent;
-    
-    [self _updateWidthOfLabelNameWithString:_lblName.text];
+- (void)setCompanytName:(id<COCompanyName>)companytName {
+    _companytName = companytName;
+    if (![_companytName.companyNameContent isEqualToString:m_string(@"NoCompanyAssociated")]) {
+        _lblName.text = _companytName.companyNameTitle;
+        _lblDetail.text = _companytName.companyNameContent;
+        [self _updateWidthOfLabelNameWithString:_lblName.text];
+    } else {
+        _lblName.text = nil;
+        _lblDetail.text = _companytName.companyNameContent;
+        [_lblDetail setTextAlignment:NSTextAlignmentCenter];
+        _widthOfLabelNameContraint.constant = 0;
+        [self setNeedsUpdateConstraints];
+    }
 }
 
 - (void)setInvestorType:(id<COInvestorType>)investorType {
@@ -119,18 +118,21 @@
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
 
+- (void)setUserName:(id<COUserName>)userName {
+    _userName = userName;
+    _lblName.text = userName.userNameTitle;
+    _lblDetail.text = userName.userNameContent;
+    [self _updateWidthOfLabelNameWithString:_lblName.text];
+}
+
 - (void)_updateWidthOfLabelNameWithString:(NSString *)string {
     CGFloat width = [UIHelper widthOfString:string withFont:[UIFont systemFontOfSize:16]];
     if (width < 87) {
         width = 87;
     }
+    [_lblDetail setTextAlignment:NSTextAlignmentRight];
     _widthOfLabelNameContraint.constant = width;
-}
-
-- (void)setUserName:(id<COUserName>)userName {
-    _userName = userName;
-    _lblName.text = userName.userNameTitle;
-    _lblDetail.text = userName.userNameContent;
+    [self setNeedsUpdateConstraints];
 }
 
 @end

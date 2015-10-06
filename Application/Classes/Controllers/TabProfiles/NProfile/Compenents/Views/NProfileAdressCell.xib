@@ -60,6 +60,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="_txtDetail" destination="2nV-J9-AqG" id="CzU-Yn-KRs"/>
+                <outlet property="_txtName" destination="kbO-pN-Kgg" id="qPx-le-5Fb"/>
+                <outlet property="_widthOfLabelNameContraint" destination="X4i-xg-2xa" id="6s6-5P-8Ha"/>
             </connections>
             <point key="canvasLocation" x="333" y="254"/>
         </tableViewCell>

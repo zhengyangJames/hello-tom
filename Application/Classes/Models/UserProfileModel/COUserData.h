@@ -47,19 +47,31 @@
 
 - (NSString *)companyNameTitle;
 - (NSString *)companyNameContent;
+- (void)setCompanyNameContent:(NSString*)string;
+
 @end
 
 @protocol COCompanyAdress <NSObject>
 
 - (NSString *)companyAdressTitle;
-- (NSString *)companyAdressContent;
+- (NSString *)companyAdressContent1;
+- (NSString *)companyAdressContent2;
+- (NSString *)companyOrgtype;
+- (NSString *)companyCity;
+- (NSString *)companyCountry;
+
+- (void)setCompanyAdressContent1:(NSString*)string;
+- (void)setCompanyAdressContent2:(NSString*)string;
+- (void)setCompanyOrgtype:(NSString*)string;
+- (void)setCompanyCity:(NSString*)string;
+- (void)setCompanyCountry:(NSString*)string;
+
 @end
 
 @protocol COCompanyImage <NSObject>
 
 - (NSString *)companyImageURL;
-
-- (void)setCompanyImageURL:(NSString*)imageURL;
+- (void)setCompanyImageURL:(UIImage*)imageCompany;
 
 @end
 

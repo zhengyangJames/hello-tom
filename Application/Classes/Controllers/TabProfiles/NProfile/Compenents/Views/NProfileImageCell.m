@@ -22,12 +22,12 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    [_imageCompany sd_setImageWithURL:[NSURL URLWithString:@"http://www.tapchidanong.org/product_images/h/616/chau-tu-na-3289%284%29__92564_zoom.jpg"]];
 }
 
 - (void)setCompanyImage:(id<COCompanyImage>)companyImage {
     _companyImage = companyImage;
-
+    DBG(@"%@",_companyImage.companyImageURL);
+    [_imageCompany sd_setImageWithURL:[NSURL URLWithString:_companyImage.companyImageURL]];
 }
 
 @end

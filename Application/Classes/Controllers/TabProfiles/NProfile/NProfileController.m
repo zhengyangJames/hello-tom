@@ -121,7 +121,6 @@
 
 - (void)_setupEditPasswordVC {
     EditPasswordProfileVC *vc = [[EditPasswordProfileVC alloc]init];
-    
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }

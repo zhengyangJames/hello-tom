@@ -10,41 +10,92 @@
 
 @implementation COUserCompanyModel
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @ {
+        @"imageUrl"  : @"imageUrl",
+        @"orgName"   : @"orgName",
+        @"orgType"   : @"orgType",
+        @"address"   : @"address",
+        @"address2"  : @"address2",
+        @"orgCity"   : @"orgCity",
+        @"country"   : @"country",
+    };
+}
+
 #pragma mark - company protocol
 
 - (NSString *)companyNameTitle {
     return m_string(@"COMPANY_NAME");
 }
 - (NSString *)companyNameContent {
-    return @"Nikme";
-    //return self.companyDetails.companyName;
+    if (self.orgName) {
+        return @"Nikme Software";
+    }
+    return m_string(@"NoCompanyAssociated");
 }
 
-#pragma mark - address1 protocol 
+- (void)setCompanyNameContent:(NSString *)string {
+    self.orgName = string;
+}
+
+#pragma mark - address protocol
 
 - (NSString *)companyAdressTitle {
     return m_string(@"COMPANY_ADRESS");
 }
 
-- (NSString *)companyAdressContent {
-    return @"Ngo Thi Nham";
-    //return self.companyDetails.companyAdress;
+- (NSString *)companyAdressContent1 {
+    return @" 01 Ngo Thi Nham";
 }
 
-#pragma mark - address2 protocol
+- (NSString *)companyAdressContent2 {
+    return @"100 Nguyen luong bang";
+//    return self.address2;
+}
 
+- (NSString *)companyOrgtype {
+    return @"2";
+}
+
+- (NSString *)companyCity {
+    return @"Da Nang";
+//    return self.orgCity;
+}
+
+- (NSString *)companyCountry {
+    return @"Viet Nam";
+//    return self.country;
+}
+
+- (void)setCompanyAdressContent1:(NSString *)string {
+    self.address = string;
+}
+
+- (void)setCompanyAdressContent2:(NSString *)string {
+    self.address2 = string;
+}
+
+- (void)setCompanyCity:(NSString *)string {
+    self.orgCity = string;
+}
+
+- (void)setCompanyOrgtype:(NSString *)string {
+    
+}
+
+- (void)setCompanyCountry:(NSString *)string {
+    self.country = string;
+}
 
 #pragma mark - image protocol 
 
 - (NSString *)companyImageURL {
-    return self.imageUrl;
+    NSString *url = [[NSURL URLWithString:@"http://www.tapchidanong.org/product_images/h/616/chau-tu-na-3289%284%29__92564_zoom.jpg"] absoluteString];
+    return self.imageUrl = url;
 }
 
-- (void)setCompanyImageURL:(NSString *)imageURL {
-    self.imageUrl = imageURL;
+- (void)setCompanyImageURL:(UIImage *)imageURL {
+//    self.imageUrl = imageURL;
 }
 
-#pragma mark - orgCity protocol 
-
-#pragma mark - Country protocol 
 @end

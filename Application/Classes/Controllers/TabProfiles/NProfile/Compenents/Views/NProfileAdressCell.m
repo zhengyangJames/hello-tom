@@ -11,6 +11,8 @@
 @interface NProfileAdressCell ()
 {
     __weak IBOutlet UITextView *_txtDetail;
+    __weak IBOutlet UILabel *_txtName;
+    __weak IBOutlet NSLayoutConstraint *_widthOfLabelNameContraint;
 }
 @end
 
@@ -23,7 +25,7 @@
 
 #pragma mark Set - Get
 
--(void)setUserAddress:(id<COUserAboutProfile>)userAddress {
+- (void)setUserAddress:(id<COUserAboutProfile>)userAddress {
     _userAddress = userAddress;
     
     NSString *link = @"";
@@ -48,6 +50,40 @@
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }
     _txtDetail.text = link;
+    [_txtDetail setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+}
+
+- (void)setUserAddressCompany:(id<COCompanyAdress>)userAddressCompany {
+    _userAddressCompany = userAddressCompany;
+    NSString *link = @"";
+    NSString *address1 = _userAddressCompany.companyAdressContent1;
+    if (address1 && ![address1 isEmpty]) {
+        link = [link stringByAppendingString:address1];
+    }
+    NSString *address2 = _userAddressCompany.companyAdressContent2;
+    if (address2 && ![address2 isEmpty]) {
+        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:address2];
+    }
+    NSString *city = _userAddressCompany.companyCity;
+    if (city && ![city isEmpty]) {
+        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:city];
+    }
+    NSString *country = _userAddressCompany.companyCountry;
+    if (country && ![country isEmpty]) {
+        link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
+    }
+    if (!link) {
+        _txtDetail.text = m_string(@"NoCompanyAssociated");
+        _txtName.text = nil;
+        [_txtDetail setTextAlignment:NSTextAlignmentCenter];
+        _widthOfLabelNameContraint.constant = 0;
+    } else {
+        _txtDetail.text = link;
+        _txtName.text = m_string(@"ADDRESSNAME");
+        [_txtDetail setTextAlignment:NSTextAlignmentRight];
+        _widthOfLabelNameContraint.constant = 75;
+    }
     [_txtDetail setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
