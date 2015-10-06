@@ -10,6 +10,20 @@
 		012BDB9F1BA535F700252D12 /* COListFilterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDB8F1BA535F700252D12 /* COListFilterObject.m */; };
 		012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FA93C1B7A13A600A80D3F /* LoadFileManager.m */; };
 		01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1437B1B7D1053003DF5F9 /* COOfferModel.m */; };
+		0E39FA621BC4247000880834 /* NProfileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4C1BC4247000880834 /* NProfileDataSource.m */; };
+		0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4E1BC4247000880834 /* NProfileDelegate.m */; };
+		0E39FA641BC4247000880834 /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA511BC4247000880834 /* NProfileAdressCell.m */; };
+		0E39FA651BC4247000880834 /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E39FA521BC4247000880834 /* NProfileAdressCell.xib */; };
+		0E39FA661BC4247000880834 /* NprofileButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA541BC4247000880834 /* NprofileButtonCell.m */; };
+		0E39FA671BC4247000880834 /* NprofileButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E39FA551BC4247000880834 /* NprofileButtonCell.xib */; };
+		0E39FA681BC4247000880834 /* NProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA571BC4247000880834 /* NProfileHeaderView.m */; };
+		0E39FA691BC4247000880834 /* NProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E39FA581BC4247000880834 /* NProfileHeaderView.xib */; };
+		0E39FA6A1BC4247000880834 /* NProfileImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA5A1BC4247000880834 /* NProfileImageCell.m */; };
+		0E39FA6B1BC4247000880834 /* NProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E39FA5B1BC4247000880834 /* NProfileImageCell.xib */; };
+		0E39FA6C1BC4247000880834 /* NProfileNodataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA5D1BC4247000880834 /* NProfileNodataCell.m */; };
+		0E39FA6D1BC4247000880834 /* NProfileNodataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E39FA5E1BC4247000880834 /* NProfileNodataCell.xib */; };
+		0E39FA6E1BC4247000880834 /* NProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA601BC4247000880834 /* NProfileTextCell.m */; };
+		0E39FA6F1BC4247000880834 /* NProfileTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E39FA611BC4247000880834 /* NProfileTextCell.xib */; };
 		0E8956141BBE1AC9007E36BF /* TabProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956121BBE1AC9007E36BF /* TabProfileController.m */; };
 		0E8956151BBE1AC9007E36BF /* TabProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956131BBE1AC9007E36BF /* TabProfileController.xib */; };
 		0E89561A1BBE1BB2007E36BF /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956181BBE1BB2007E36BF /* AccountController.m */; };
@@ -22,18 +36,6 @@
 		0E89562D1BBE1D9F007E36BF /* AccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E89562B1BBE1D9F007E36BF /* AccountCell.xib */; };
 		0E8956321BBE1F8B007E36BF /* PortFolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956301BBE1F8B007E36BF /* PortFolioCell.m */; };
 		0E8956331BBE1F8B007E36BF /* PortFolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956311BBE1F8B007E36BF /* PortFolioCell.xib */; };
-		0E8956761BBE2497007E36BF /* NProfileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956601BBE2497007E36BF /* NProfileDataSource.m */; };
-		0E8956771BBE2497007E36BF /* NProfileDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956621BBE2497007E36BF /* NProfileDelegate.m */; };
-		0E8956781BBE2497007E36BF /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956651BBE2497007E36BF /* NProfileAdressCell.m */; };
-		0E8956791BBE2497007E36BF /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956661BBE2497007E36BF /* NProfileAdressCell.xib */; };
-		0E89567A1BBE2497007E36BF /* NprofileButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956681BBE2497007E36BF /* NprofileButtonCell.m */; };
-		0E89567B1BBE2497007E36BF /* NprofileButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956691BBE2497007E36BF /* NprofileButtonCell.xib */; };
-		0E89567C1BBE2497007E36BF /* NProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E89566B1BBE2497007E36BF /* NProfileHeaderView.m */; };
-		0E89567D1BBE2497007E36BF /* NProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E89566C1BBE2497007E36BF /* NProfileHeaderView.xib */; };
-		0E89567E1BBE2497007E36BF /* NProfileImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E89566E1BBE2497007E36BF /* NProfileImageCell.m */; };
-		0E89567F1BBE2497007E36BF /* NProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E89566F1BBE2497007E36BF /* NProfileImageCell.xib */; };
-		0E8956801BBE2497007E36BF /* NProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956711BBE2497007E36BF /* NProfileTextCell.m */; };
-		0E8956811BBE2497007E36BF /* NProfileTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956721BBE2497007E36BF /* NProfileTextCell.xib */; };
 		0E8956821BBE2497007E36BF /* NProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956741BBE2497007E36BF /* NProfileController.m */; };
 		0E8956831BBE2497007E36BF /* NProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956751BBE2497007E36BF /* NProfileController.xib */; };
 		0E8956891BBE88E4007E36BF /* EditCompanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956871BBE88E4007E36BF /* EditCompanyVC.m */; };
@@ -65,8 +67,6 @@
 		1E67FAD11BBB9C12008F433C /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */; };
 		1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
-		1EE78CA91BC3CF9B009D625A /* NProfileNodataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE78CA71BC3CF9B009D625A /* NProfileNodataCell.m */; };
-		1EE78CAA1BC3CF9B009D625A /* NProfileNodataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE78CA81BC3CF9B009D625A /* NProfileNodataCell.xib */; };
 		1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */; };
 		1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
 		1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
@@ -289,6 +289,28 @@
 		012FA93D1B7A13A600A80D3F /* LoadFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadFileManager.h; sourceTree = "<group>"; };
 		01D1437A1B7D1053003DF5F9 /* COOfferModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOfferModel.h; sourceTree = "<group>"; };
 		01D1437B1B7D1053003DF5F9 /* COOfferModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOfferModel.m; sourceTree = "<group>"; };
+		0E39FA4B1BC4247000880834 /* NProfileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDataSource.h; sourceTree = "<group>"; };
+		0E39FA4C1BC4247000880834 /* NProfileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileDataSource.m; sourceTree = "<group>"; };
+		0E39FA4D1BC4247000880834 /* NProfileDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDelegate.h; sourceTree = "<group>"; };
+		0E39FA4E1BC4247000880834 /* NProfileDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileDelegate.m; sourceTree = "<group>"; };
+		0E39FA501BC4247000880834 /* NProfileAdressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileAdressCell.h; sourceTree = "<group>"; };
+		0E39FA511BC4247000880834 /* NProfileAdressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileAdressCell.m; sourceTree = "<group>"; };
+		0E39FA521BC4247000880834 /* NProfileAdressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileAdressCell.xib; sourceTree = "<group>"; };
+		0E39FA531BC4247000880834 /* NprofileButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NprofileButtonCell.h; sourceTree = "<group>"; };
+		0E39FA541BC4247000880834 /* NprofileButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NprofileButtonCell.m; sourceTree = "<group>"; };
+		0E39FA551BC4247000880834 /* NprofileButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NprofileButtonCell.xib; sourceTree = "<group>"; };
+		0E39FA561BC4247000880834 /* NProfileHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileHeaderView.h; sourceTree = "<group>"; };
+		0E39FA571BC4247000880834 /* NProfileHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileHeaderView.m; sourceTree = "<group>"; };
+		0E39FA581BC4247000880834 /* NProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileHeaderView.xib; sourceTree = "<group>"; };
+		0E39FA591BC4247000880834 /* NProfileImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileImageCell.h; sourceTree = "<group>"; };
+		0E39FA5A1BC4247000880834 /* NProfileImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileImageCell.m; sourceTree = "<group>"; };
+		0E39FA5B1BC4247000880834 /* NProfileImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileImageCell.xib; sourceTree = "<group>"; };
+		0E39FA5C1BC4247000880834 /* NProfileNodataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileNodataCell.h; sourceTree = "<group>"; };
+		0E39FA5D1BC4247000880834 /* NProfileNodataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileNodataCell.m; sourceTree = "<group>"; };
+		0E39FA5E1BC4247000880834 /* NProfileNodataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileNodataCell.xib; sourceTree = "<group>"; };
+		0E39FA5F1BC4247000880834 /* NProfileTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileTextCell.h; sourceTree = "<group>"; };
+		0E39FA601BC4247000880834 /* NProfileTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileTextCell.m; sourceTree = "<group>"; };
+		0E39FA611BC4247000880834 /* NProfileTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileTextCell.xib; sourceTree = "<group>"; };
 		0E8956111BBE1AC9007E36BF /* TabProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabProfileController.h; sourceTree = "<group>"; };
 		0E8956121BBE1AC9007E36BF /* TabProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabProfileController.m; sourceTree = "<group>"; };
 		0E8956131BBE1AC9007E36BF /* TabProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabProfileController.xib; sourceTree = "<group>"; };
@@ -307,25 +329,6 @@
 		0E89562F1BBE1F8B007E36BF /* PortFolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortFolioCell.h; sourceTree = "<group>"; };
 		0E8956301BBE1F8B007E36BF /* PortFolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortFolioCell.m; sourceTree = "<group>"; };
 		0E8956311BBE1F8B007E36BF /* PortFolioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortFolioCell.xib; sourceTree = "<group>"; };
-		0E89565F1BBE2497007E36BF /* NProfileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDataSource.h; sourceTree = "<group>"; };
-		0E8956601BBE2497007E36BF /* NProfileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileDataSource.m; sourceTree = "<group>"; };
-		0E8956611BBE2497007E36BF /* NProfileDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDelegate.h; sourceTree = "<group>"; };
-		0E8956621BBE2497007E36BF /* NProfileDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileDelegate.m; sourceTree = "<group>"; };
-		0E8956641BBE2497007E36BF /* NProfileAdressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileAdressCell.h; sourceTree = "<group>"; };
-		0E8956651BBE2497007E36BF /* NProfileAdressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileAdressCell.m; sourceTree = "<group>"; };
-		0E8956661BBE2497007E36BF /* NProfileAdressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileAdressCell.xib; sourceTree = "<group>"; };
-		0E8956671BBE2497007E36BF /* NprofileButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NprofileButtonCell.h; sourceTree = "<group>"; };
-		0E8956681BBE2497007E36BF /* NprofileButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NprofileButtonCell.m; sourceTree = "<group>"; };
-		0E8956691BBE2497007E36BF /* NprofileButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NprofileButtonCell.xib; sourceTree = "<group>"; };
-		0E89566A1BBE2497007E36BF /* NProfileHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileHeaderView.h; sourceTree = "<group>"; };
-		0E89566B1BBE2497007E36BF /* NProfileHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileHeaderView.m; sourceTree = "<group>"; };
-		0E89566C1BBE2497007E36BF /* NProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileHeaderView.xib; sourceTree = "<group>"; };
-		0E89566D1BBE2497007E36BF /* NProfileImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileImageCell.h; sourceTree = "<group>"; };
-		0E89566E1BBE2497007E36BF /* NProfileImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileImageCell.m; sourceTree = "<group>"; };
-		0E89566F1BBE2497007E36BF /* NProfileImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileImageCell.xib; sourceTree = "<group>"; };
-		0E8956701BBE2497007E36BF /* NProfileTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileTextCell.h; sourceTree = "<group>"; };
-		0E8956711BBE2497007E36BF /* NProfileTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileTextCell.m; sourceTree = "<group>"; };
-		0E8956721BBE2497007E36BF /* NProfileTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileTextCell.xib; sourceTree = "<group>"; };
 		0E8956731BBE2497007E36BF /* NProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileController.h; sourceTree = "<group>"; };
 		0E8956741BBE2497007E36BF /* NProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileController.m; sourceTree = "<group>"; };
 		0E8956751BBE2497007E36BF /* NProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileController.xib; sourceTree = "<group>"; };
@@ -382,9 +385,6 @@
 		1E8790881BBE4667003B2CED /* EditAboutProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAboutProfileVC.h; sourceTree = "<group>"; };
 		1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAboutProfileVC.m; sourceTree = "<group>"; };
 		1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAboutProfileVC.xib; sourceTree = "<group>"; };
-		1EE78CA61BC3CF9B009D625A /* NProfileNodataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileNodataCell.h; sourceTree = "<group>"; };
-		1EE78CA71BC3CF9B009D625A /* NProfileNodataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileNodataCell.m; sourceTree = "<group>"; };
-		1EE78CA81BC3CF9B009D625A /* NProfileNodataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileNodataCell.xib; sourceTree = "<group>"; };
 		1EF1DD8A1BC3896300CD3C78 /* WSUpdateCompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUpdateCompanyProfile.h; sourceTree = "<group>"; };
 		1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUpdateCompanyProfile.m; sourceTree = "<group>"; };
 		1EF23C171BBE6BAF006020C2 /* EditPasswordProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPasswordProfileVC.h; sourceTree = "<group>"; };
@@ -732,6 +732,51 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0E39FA491BC4247000880834 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0E39FA4A1BC4247000880834 /* Models */,
+				0E39FA4B1BC4247000880834 /* NProfileDataSource.h */,
+				0E39FA4C1BC4247000880834 /* NProfileDataSource.m */,
+				0E39FA4D1BC4247000880834 /* NProfileDelegate.h */,
+				0E39FA4E1BC4247000880834 /* NProfileDelegate.m */,
+				0E39FA4F1BC4247000880834 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0E39FA4A1BC4247000880834 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0E39FA4F1BC4247000880834 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E39FA501BC4247000880834 /* NProfileAdressCell.h */,
+				0E39FA511BC4247000880834 /* NProfileAdressCell.m */,
+				0E39FA521BC4247000880834 /* NProfileAdressCell.xib */,
+				0E39FA531BC4247000880834 /* NprofileButtonCell.h */,
+				0E39FA541BC4247000880834 /* NprofileButtonCell.m */,
+				0E39FA551BC4247000880834 /* NprofileButtonCell.xib */,
+				0E39FA561BC4247000880834 /* NProfileHeaderView.h */,
+				0E39FA571BC4247000880834 /* NProfileHeaderView.m */,
+				0E39FA581BC4247000880834 /* NProfileHeaderView.xib */,
+				0E39FA591BC4247000880834 /* NProfileImageCell.h */,
+				0E39FA5A1BC4247000880834 /* NProfileImageCell.m */,
+				0E39FA5B1BC4247000880834 /* NProfileImageCell.xib */,
+				0E39FA5C1BC4247000880834 /* NProfileNodataCell.h */,
+				0E39FA5D1BC4247000880834 /* NProfileNodataCell.m */,
+				0E39FA5E1BC4247000880834 /* NProfileNodataCell.xib */,
+				0E39FA5F1BC4247000880834 /* NProfileTextCell.h */,
+				0E39FA601BC4247000880834 /* NProfileTextCell.m */,
+				0E39FA611BC4247000880834 /* NProfileTextCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0E8955E81BBE1A78007E36BF /* TabProfiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -804,49 +849,12 @@
 				0E8956851BBE88E4007E36BF /* EditCompanyVC */,
 				1EF23C161BBE6AD5006020C2 /* EditPasswordProfileVC */,
 				1E8790871BBE4667003B2CED /* EditAboutProfileVC */,
-				0E89565D1BBE2497007E36BF /* Compenents */,
+				0E39FA491BC4247000880834 /* Components */,
 				0E8956731BBE2497007E36BF /* NProfileController.h */,
 				0E8956741BBE2497007E36BF /* NProfileController.m */,
 				0E8956751BBE2497007E36BF /* NProfileController.xib */,
 			);
 			path = NProfile;
-			sourceTree = "<group>";
-		};
-		0E89565D1BBE2497007E36BF /* Compenents */ = {
-			isa = PBXGroup;
-			children = (
-				0E8956631BBE2497007E36BF /* Views */,
-				0E89565F1BBE2497007E36BF /* NProfileDataSource.h */,
-				0E8956601BBE2497007E36BF /* NProfileDataSource.m */,
-				0E8956611BBE2497007E36BF /* NProfileDelegate.h */,
-				0E8956621BBE2497007E36BF /* NProfileDelegate.m */,
-			);
-			path = Compenents;
-			sourceTree = "<group>";
-		};
-		0E8956631BBE2497007E36BF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0E8956641BBE2497007E36BF /* NProfileAdressCell.h */,
-				0E8956651BBE2497007E36BF /* NProfileAdressCell.m */,
-				0E8956661BBE2497007E36BF /* NProfileAdressCell.xib */,
-				0E8956671BBE2497007E36BF /* NprofileButtonCell.h */,
-				0E8956681BBE2497007E36BF /* NprofileButtonCell.m */,
-				0E8956691BBE2497007E36BF /* NprofileButtonCell.xib */,
-				0E89566A1BBE2497007E36BF /* NProfileHeaderView.h */,
-				0E89566B1BBE2497007E36BF /* NProfileHeaderView.m */,
-				0E89566C1BBE2497007E36BF /* NProfileHeaderView.xib */,
-				0E89566D1BBE2497007E36BF /* NProfileImageCell.h */,
-				0E89566E1BBE2497007E36BF /* NProfileImageCell.m */,
-				0E89566F1BBE2497007E36BF /* NProfileImageCell.xib */,
-				0E8956701BBE2497007E36BF /* NProfileTextCell.h */,
-				0E8956711BBE2497007E36BF /* NProfileTextCell.m */,
-				0E8956721BBE2497007E36BF /* NProfileTextCell.xib */,
-				1EE78CA61BC3CF9B009D625A /* NProfileNodataCell.h */,
-				1EE78CA71BC3CF9B009D625A /* NProfileNodataCell.m */,
-				1EE78CA81BC3CF9B009D625A /* NProfileNodataCell.xib */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		0E8956851BBE88E4007E36BF /* EditCompanyVC */ = {
@@ -1778,6 +1786,7 @@
 				7F3260571B40E50800116445 /* ic_setting@3x.png in Resources */,
 				7F32604B1B40E50800116445 /* ic_line_char@2x.png in Resources */,
 				7F32604C1B40E50800116445 /* ic_line_char@3x.png in Resources */,
+				0E39FA691BC4247000880834 /* NProfileHeaderView.xib in Resources */,
 				7F2C77471B4E07BA00C69365 /* COOfferInfoCell.xib in Resources */,
 				7F3260311B40E50800116445 /* Ic_back@2x.png in Resources */,
 				7F325F981B40E50800116445 /* COOfferDescriptionTextCell.xib in Resources */,
@@ -1789,6 +1798,7 @@
 				7F325FBC1B40E50800116445 /* SettingViewController.xib in Resources */,
 				7F325F8D1B40E50800116445 /* COOfferHeadingCell.xib in Resources */,
 				7F325FBA1B40E50800116445 /* ContacViewController.xib in Resources */,
+				0E39FA671BC4247000880834 /* NprofileButtonCell.xib in Resources */,
 				7F3260421B40E50800116445 /* ic_Earth@3x.png in Resources */,
 				7F325F9A1B40E50800116445 /* OfferViewController.xib in Resources */,
 				0E89561B1BBE1BB2007E36BF /* AccountController.xib in Resources */,
@@ -1796,6 +1806,7 @@
 				7F8529271B43935B00CFAEB5 /* Indonesia.png in Resources */,
 				7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */,
 				1EF23C2E1BBE8691006020C2 /* ic_homes@2x.png in Resources */,
+				0E39FA6B1BC4247000880834 /* NProfileImageCell.xib in Resources */,
 				0E8956211BBE1C14007E36BF /* DealsController.xib in Resources */,
 				7F3260511B40E50800116445 /* ic_peopel@3x.png in Resources */,
 				0E8956831BBE2497007E36BF /* NProfileController.xib in Resources */,
@@ -1814,19 +1825,18 @@
 				1EF23C2B1BBE85C9006020C2 /* ic_money@3x.png in Resources */,
 				7F32601F1B40E50800116445 /* Raleway-Bold.ttf in Resources */,
 				7F3260591B40E50800116445 /* ic_setting_2@3x.png in Resources */,
+				0E39FA651BC4247000880834 /* NProfileAdressCell.xib in Resources */,
 				7F85292C1B43935B00CFAEB5 /* Singapore.png in Resources */,
 				7F3260711B40E50800116445 /* ic_placeholder.png in Resources */,
 				7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */,
 				0E89562D1BBE1D9F007E36BF /* AccountCell.xib in Resources */,
-				0E89567F1BBE2497007E36BF /* NProfileImageCell.xib in Resources */,
 				1E67FAD11BBB9C12008F433C /* FortFolioPlist.plist in Resources */,
 				7F3260471B40E50800116445 /* ic_info@2x.png in Resources */,
 				7F32603A1B40E50800116445 /* ic_contac_2@2x.png in Resources */,
 				7F32604A1B40E50800116445 /* ic_Left@3x.png in Resources */,
+				0E39FA6F1BC4247000880834 /* NProfileTextCell.xib in Resources */,
 				7F3260431B40E50800116445 /* ic_home@2x.png in Resources */,
 				7F3260211B40E50800116445 /* Raleway-ExtraBold.ttf in Resources */,
-				0E89567B1BBE2497007E36BF /* NprofileButtonCell.xib in Resources */,
-				0E89567D1BBE2497007E36BF /* NProfileHeaderView.xib in Resources */,
 				7F32605D1B40E50800116445 /* ic_setting_heightline@3x.png in Resources */,
 				7F3260331B40E50800116445 /* ic_bank@2x.png in Resources */,
 				0EED2E711B5E2B94006730E2 /* appicon.png in Resources */,
@@ -1861,7 +1871,6 @@
 				7F933D371B5790D600B7EB9C /* company_edit.jpg in Resources */,
 				7F32602B1B40E50800116445 /* Raleway-SemiBold.ttf in Resources */,
 				7F32604D1B40E50800116445 /* ic_loadding.gif in Resources */,
-				1EE78CAA1BC3CF9B009D625A /* NProfileNodataCell.xib in Resources */,
 				7F32605A1B40E50800116445 /* ic_setting_2_heighlight@2x.png in Resources */,
 				7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */,
 				7F3260551B40E50800116445 /* ic_peropel@3x.png in Resources */,
@@ -1883,14 +1892,13 @@
 				7FA7E6C11B4E7CD500059B13 /* COOfferProgressCell.xib in Resources */,
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
+				0E39FA6D1BC4247000880834 /* NProfileNodataCell.xib in Resources */,
 				7F85292F1B43935B00CFAEB5 /* United States.png in Resources */,
 				1EF23C251BBE85C9006020C2 /* ic_Check_red@3x.png in Resources */,
 				7F32601E1B40E50800116445 /* Raleway-BlackItalic.ttf in Resources */,
 				7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */,
 				7F3260451B40E50800116445 /* ic_home_heightlight@2x.png in Resources */,
 				7F32602E1B40E50800116445 /* Raleway-ThinItalic.ttf in Resources */,
-				0E8956811BBE2497007E36BF /* NProfileTextCell.xib in Resources */,
-				0E8956791BBE2497007E36BF /* NProfileAdressCell.xib in Resources */,
 				7F8529241B43935B00CFAEB5 /* China.png in Resources */,
 				1E67FAA11BBB773D008F433C /* ProfileList.plist in Resources */,
 				7F3260221B40E50800116445 /* Raleway-ExtraBoldItalic.ttf in Resources */,
@@ -1963,15 +1971,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E8956771BBE2497007E36BF /* NProfileDelegate.m in Sources */,
 				BB3A9F5E1B961692002EEB1C /* WSRegisterRequest.m in Sources */,
+				0E39FA621BC4247000880834 /* NProfileDataSource.m in Sources */,
 				7F325FC41B40E50800116445 /* DropListCell.m in Sources */,
 				7F325FCC1B40E50800116445 /* COSlidingView.m in Sources */,
 				7F325F8C1B40E50800116445 /* COOfferHeadingCell.m in Sources */,
 				7F325F7C1B40E50800116445 /* BaseTabBarController.m in Sources */,
 				BB3A9F6A1B9660DB002EEB1C /* WSUpdateProfileRequest.m in Sources */,
 				7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */,
-				0E8956761BBE2497007E36BF /* NProfileDataSource.m in Sources */,
 				BB3A9F641B962BB8002EEB1C /* WSChangePassWordRequest.m in Sources */,
 				0ECA884A1B27CA7100B5656F /* NMImageHelper.m in Sources */,
 				1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */,
@@ -1999,8 +2006,9 @@
 				BB3A9F671B9659EC002EEB1C /* WSGetProfileRequest.m in Sources */,
 				BBEB210A1B94CB36007221B4 /* WSLoginRequest.m in Sources */,
 				0ECA88421B27CA7100B5656F /* NMViewController.m in Sources */,
-				0E89567E1BBE2497007E36BF /* NProfileImageCell.m in Sources */,
 				BB48F1A01B86763E006F1921 /* COFilterListModel.m in Sources */,
+				0E39FA641BC4247000880834 /* NProfileAdressCell.m in Sources */,
+				0E39FA6C1BC4247000880834 /* NProfileNodataCell.m in Sources */,
 				7F325F971B40E50800116445 /* COOfferDescriptionTextCell.m in Sources */,
 				0E8956321BBE1F8B007E36BF /* PortFolioCell.m in Sources */,
 				1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */,
@@ -2013,6 +2021,7 @@
 				01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */,
 				0ECA88481B27CA7100B5656F /* UIView+Identifier.m in Sources */,
 				7F325FDD1B40E50800116445 /* WSURLSessionManager+User.m in Sources */,
+				0E39FA661BC4247000880834 /* NprofileButtonCell.m in Sources */,
 				7F325FBD1B40E50800116445 /* WebViewSetting.m in Sources */,
 				0ECA88451B27CA7100B5656F /* NSString+Helpers.m in Sources */,
 				7F325F7E1B40E50800116445 /* BaseView.m in Sources */,
@@ -2026,8 +2035,6 @@
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				7F325FC91B40E50800116445 /* COPositive&NagitiveButton.m in Sources */,
 				7F32601B1B40E50800116445 /* main.m in Sources */,
-				1EE78CA91BC3CF9B009D625A /* NProfileNodataCell.m in Sources */,
-				0E89567C1BBE2497007E36BF /* NProfileHeaderView.m in Sources */,
 				7F85290F1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m in Sources */,
 				7F325FC01B40E50800116445 /* COCheckBoxButton.m in Sources */,
 				7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */,
@@ -2041,12 +2048,13 @@
 				1E67FAC41BBB9149008F433C /* BaseLabel.m in Sources */,
 				1E67FAB41BBB8882008F433C /* COAwatarView.m in Sources */,
 				7F325F811B40E50800116445 /* NSString+Validation.m in Sources */,
-				0E89567A1BBE2497007E36BF /* NprofileButtonCell.m in Sources */,
 				7F325FCA1B40E50800116445 /* COSlidingCell.m in Sources */,
 				BBEB210D1B9525F6007221B4 /* WSRequest.m in Sources */,
 				0E8956261BBE1C82007E36BF /* ProtfolioController.m in Sources */,
 				7F325F831B40E50800116445 /* UIImage+Scaling.m in Sources */,
+				0E39FA6E1BC4247000880834 /* NProfileTextCell.m in Sources */,
 				BB3C84E41B910C85004B8EF9 /* COContactsModel.m in Sources */,
+				0E39FA6A1BC4247000880834 /* NProfileImageCell.m in Sources */,
 				BBF4CC4C1B7EA08500F9A5FA /* COProjectModel.m in Sources */,
 				7F325FDB1B40E50800116445 /* WSURLSessionManager+ListContact.m in Sources */,
 				BB3A9F611B9624F9002EEB1C /* WSForgotPassWordRequest.m in Sources */,
@@ -2055,7 +2063,6 @@
 				7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
 				7FE6ED611B54EB1600FA481E /* WebViewManager.m in Sources */,
-				0E8956781BBE2497007E36BF /* NProfileAdressCell.m in Sources */,
 				0E8956141BBE1AC9007E36BF /* TabProfileController.m in Sources */,
 				7FCD18AC1B4BB060000B81A2 /* KLCPopup.m in Sources */,
 				0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */,
@@ -2071,9 +2078,9 @@
 				7F325FC81B40E50800116445 /* COLineBottomView.m in Sources */,
 				0ECA88441B27CA7100B5656F /* NSFileManager+Directories.m in Sources */,
 				012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */,
-				0E8956801BBE2497007E36BF /* NProfileTextCell.m in Sources */,
 				7F325F791B40E50800116445 /* AppDelegate.m in Sources */,
 				BB383E2F1B8BC1B000303E34 /* COUserAccountModel.m in Sources */,
+				0E39FA681BC4247000880834 /* NProfileHeaderView.m in Sources */,
 				0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */,
 				7FA7E6B91B4E7C4D00059B13 /* COInterestedViewController.m in Sources */,
 				1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */,
@@ -2081,6 +2088,7 @@
 				7F325FC61B40E50800116445 /* DropListObject.m in Sources */,
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
 				BB38EE291B99F74200D15D58 /* WSPostSubscribeRequest.m in Sources */,
+				0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */,
 				BB368EB21B87DF5C0066C646 /* COUserProfileModel.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,
 				7F2C77461B4E07BA00C69365 /* COOfferInfoCell.m in Sources */,

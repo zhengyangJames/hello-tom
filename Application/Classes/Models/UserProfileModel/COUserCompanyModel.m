@@ -102,7 +102,7 @@
 
 - (NSInteger)numOfItemInTableview {
     if (!self.imageUrl) {
-        if (!self.orgName || !self.orgCity) {
+        if (!self.orgName) {
             return NUM_OF_ROW_COMPANY - 2;
         }
         return NUM_OF_ROW_COMPANY - 1;
@@ -126,9 +126,6 @@
     
 }
 - (NSInteger)indexOfAddressCell {
-    if (!self.orgCity) {
-        return NSIntegerMax;
-    }
     if (!self.orgName) {
         return NSIntegerMax;
     }
@@ -142,23 +139,13 @@
     if (!self.imageUrl) {
         if (!self.orgName) {
             return 1;
-        } else {
-            if (!self.orgCity) {
-                return 1;
-            } else {
-                return 2;
-            }
         }
+        return 2;
     } else {
         if (!self.orgName) {
             return 2;
-        } else {
-            if (!self.orgCity) {
-                return 2;
-            } else {
-                return 3;
-            }
         }
+        return 3;
     }
 }
 - (NSInteger)indexOfImageCell {
