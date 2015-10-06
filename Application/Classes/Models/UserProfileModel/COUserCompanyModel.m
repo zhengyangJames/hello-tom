@@ -98,6 +98,8 @@
     self.country = string;
 }
 
+#pragma mark - COUserCompany
+
 - (NSInteger)numOfItemInTableview {
     if (!self.imageUrl) {
         if (!self.orgName || !self.orgCity) {

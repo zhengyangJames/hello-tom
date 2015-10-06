@@ -26,6 +26,9 @@
     NSString *_orgType;
     NSString *_urlImageProfile;
 }
+
+@property (nonatomic, strong) NSArray *arrayOrgType;
+
 @end
 
 @implementation EditCompanyVC
@@ -58,6 +61,14 @@
     [orgCityTextField setText:_companyUserModel.companyCity];
     [countryTextField setText:_companyUserModel.companyCountry];
     
+}
+
+- (NSArray *)arrayOrgType {
+    if (_arrayOrgType) {
+        return _arrayOrgType;
+    }
+    _arrayOrgType = @[@"Developer",@"Agency",@"Reseller",@"Funds",@"Others ",@"Route Sale"];
+    return _arrayOrgType;
 }
 
 #pragma mark - Private
@@ -122,7 +133,7 @@
 
 - (void)__actionDCancel:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)__actionPickImage:(id)sender {
@@ -130,22 +141,17 @@
 }
 
 - (IBAction)__actionOrgType:(id)sender {
-    NSArray *array = @[@"Developer",@"Agency",@"Reseller",@"Funds",@"Others ",@"Route Sale"];
     [self.view endEditing:NO];
-    [CODropListView presentWithTitle:@"Org Type" data:array selectedIndex:_indexActtionOrgType didSelect:^(NSInteger index) {
-        [_btnOrgType setTitle:array[index] forState:UIControlStateNormal];
+    [CODropListView presentWithTitle:@"Org Type" data:self.arrayOrgType selectedIndex:_indexActtionOrgType didSelect:^(NSInteger index) {
+        NSString *type = self.arrayOrgType[index];
+        [_btnOrgType setTitle:type forState:UIControlStateNormal];
         _indexActtionOrgType = index;
-        _orgType = array[index];
+        _orgType = type;
     }];
 }
 
 - (void)_showActionSheet {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
-                                                            delegate:self
-                                                   cancelButtonTitle:NSLocalizedString(@"CANCEL_TITLE", nil)
-                                              destructiveButtonTitle:nil
-                                                   otherButtonTitles:NSLocalizedString(@"TAKE_PHOTO_TITLE", nil),NSLocalizedString(@"CHOOSE_EXISTING_TITLE", nil), nil];
-    [actionSheet showInView:self.view];
+    [UIHelper showActionsheetWithTitle:nil cancelButtonTitle:m_string(@"CANCEL_TITLE") destructiveButtonTitle:nil otherButtonsTitle:@[m_string(@"TAKE_PHOTO_TITLE"), m_string(@"CHOOSE_EXISTING_TITLE")] delegate:self tag:100 showInView:self.view];
 }
 
 #pragma mark - WS update info
@@ -158,15 +164,10 @@
 
 #pragma mark - Delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 0:
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
-            break;
-        case 1:
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
-            break;
-        default:
-            break;
+    if (actionSheet.tag == 100) {
+        if (actionSheet.cancelButtonIndex != buttonIndex) {
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:buttonIndex];
+        }
     }
 }
 

@@ -105,7 +105,7 @@
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = delegate;
     switch (mode) {
-        case 0:
+        case 1:
             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
                 picker.sourceType = UIImagePickerControllerSourceTypeCamera;
                 picker.mediaTypes = @[(NSString *)kUTTypeImage];
@@ -118,7 +118,7 @@
                 }
             }
             break;
-        case 1:
+        case 2:
             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
                 picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
                 picker.allowsEditing = YES;
