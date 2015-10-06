@@ -98,7 +98,86 @@
     self.country = string;
 }
 
-#pragma mark - image protocol 
+- (NSInteger)numOfItemInTableview {
+    if (!self.imageUrl) {
+        if (!self.orgName || !self.orgCity) {
+            return NUM_OF_ROW_COMPANY - 2;
+        }
+        return NUM_OF_ROW_COMPANY - 1;
+    } else {
+        if (!self.orgName) {
+            return NUM_OF_ROW_COMPANY - 1;
+        }
+        return NUM_OF_ROW_COMPANY;
+    }
+}
+
+- (NSInteger)indexOfNameCell {
+    if (!self.orgName) {
+        return NSIntegerMax;
+    }
+    
+    if (!self.imageUrl) {
+        return 0;
+    }
+    return 1;
+    
+}
+- (NSInteger)indexOfAddressCell {
+    if (!self.orgCity) {
+        return NSIntegerMax;
+    }
+    if (!self.orgName) {
+        return NSIntegerMax;
+    }
+    
+    if (!self.imageUrl) {
+        return 1;
+    }
+    return 2;
+}
+- (NSInteger)indexOfButtonCell {
+    if (!self.imageUrl) {
+        if (!self.orgName) {
+            return 1;
+        } else {
+            if (!self.orgCity) {
+                return 1;
+            } else {
+                return 2;
+            }
+        }
+    } else {
+        if (!self.orgName) {
+            return 2;
+        } else {
+            if (!self.orgCity) {
+                return 2;
+            } else {
+                return 3;
+            }
+        }
+    }
+}
+- (NSInteger)indexOfImageCell {
+    if (!self.imageUrl) {
+        return NSIntegerMax;
+    }
+    return 0;
+    
+}
+- (NSInteger)indexOfNoDataCell {
+    if (self.orgName) {
+        return NSIntegerMax;
+    }
+    
+    if (!self.imageUrl) {
+        return 0;
+    }
+    return 1;
+}
+
+#pragma mark - image protocol
 
 - (NSString *)companyImageURL {
     if (self.imageUrl) {

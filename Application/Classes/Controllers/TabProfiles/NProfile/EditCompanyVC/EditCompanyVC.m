@@ -176,9 +176,8 @@
     UIImage *image = info[@"UIImagePickerControllerEditedImage"];
     [_imageCompany setImage:image];
     if (image) {
-        _urlImageProfile = [[NSURL URLWithString:@"http://www.tapchidanong.org/product_images/h/616/chau-tu-na-3289%284%29__92564_zoom.jpg"] absoluteString];
+        _urlImageProfile = @"http://www.tapchidanong.org/product_images/h/616/chau-tu-na-3289%284%29__92564_zoom.jpg";
     }
-    
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 

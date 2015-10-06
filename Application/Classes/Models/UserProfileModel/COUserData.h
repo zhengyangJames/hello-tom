@@ -113,6 +113,17 @@
 - (NSString *)COInvestorCountriesContent;
 @end
 
+@protocol COUserCompany <NSObject>
+
+- (NSInteger)numOfItemInTableview;
+- (NSInteger)indexOfNameCell;
+- (NSInteger)indexOfAddressCell;
+- (NSInteger)indexOfButtonCell;
+- (NSInteger)indexOfImageCell;
+- (NSInteger)indexOfNoDataCell;
+
+@end
+
 #pragma mark - About Profile
 
 @protocol COUserAboutProfile <NSObject>
