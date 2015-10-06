@@ -71,7 +71,7 @@
 }
 
 - (UITableViewCell *)tableview:(UITableView *)tableView companyCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!self.companyModel.companyImageURL) {
+    if (!self.companyModel.imageUrl) {
         if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 1) {
             NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
             cell.actionStyle = NProfileActionUpdateCompany;
@@ -180,7 +180,7 @@
     switch (self.profileStyle) {
         case NProfileStyleAbout: return NUM_OF_ROW_ABOUT;
         case NProfileStyleCompany:
-            if (!self.companyModel.companyImageURL) { return NUM_OF_ROW_COMPANY_NO_IMAGE; }
+            if (!self.companyModel.imageUrl) { return NUM_OF_ROW_COMPANY_NO_IMAGE; }
             return NUM_OF_ROW_COMPANY;
         case NProfileStyleInvestorProfile: return NUM_OF_ROW_INVESTOR;
     }
@@ -239,7 +239,7 @@
 }
 
 - (CGFloat)tableview:(UITableView *)tableView heightForCompanyCellAtIndexPath:(NSIndexPath *)indexPath {
-    if (!self.companyModel.companyImageURL) {
+    if (!self.companyModel.imageUrl) {
         if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 1) {
             return HIEGHT_BOTTOMVIEW;
         } else if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 2) {

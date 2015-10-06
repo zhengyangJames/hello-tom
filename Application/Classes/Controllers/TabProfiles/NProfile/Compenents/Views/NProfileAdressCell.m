@@ -50,6 +50,7 @@
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }
     _txtDetail.text = link;
+    [_txtDetail setTextAlignment:NSTextAlignmentRight];
     [_txtDetail setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
@@ -73,7 +74,7 @@
     if (country && ![country isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }
-    if (!link) {
+    if ([link isEmpty]) {
         _txtDetail.text = m_string(@"NoCompanyAssociated");
         _txtName.text = nil;
         [_txtDetail setTextAlignment:NSTextAlignmentCenter];

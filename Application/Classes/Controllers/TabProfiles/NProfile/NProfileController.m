@@ -92,7 +92,7 @@
     if (_companyModel) {
         return _companyModel;
     }
-    return _companyModel = [[COUserCompanyModel alloc] init];
+    return _companyModel = [[COLoginManager shared] companyModel];
 }
 
 - (COUserInverstorModel *)investorModel {
@@ -127,8 +127,10 @@
 
 - (void)_setupEditCompanyVC {
     EditCompanyVC *vc = [[EditCompanyVC alloc]init];
-    vc.actionDone = ^(NSString *orgName,NSString* address,UIImage *imageCompany){
-
+    vc.companyUserModel = self.companyModel;
+    vc.actionDone = ^(COUserCompanyModel *companyUserModel) {
+        self.companyModel = nil;
+        [self _reloadTableview];
     };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];

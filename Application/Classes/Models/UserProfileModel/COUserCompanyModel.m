@@ -12,13 +12,12 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"imageUrl"  : @"imageUrl",
-        @"orgName"   : @"orgName",
-        @"orgType"   : @"orgType",
-        @"address"   : @"address",
-        @"address2"  : @"address2",
-        @"orgCity"   : @"orgCity",
-        @"country"   : @"country",
+        @"imageUrl"  : @"image_profile",
+        @"orgName"   : @"org_name",
+        @"address"   : @"cp_address_1",
+        @"address2"  : @"cp_address_2",
+        @"orgCity"   : @"cp_city",
+        @"country"   : @"cp_country",
     };
 }
 
@@ -29,7 +28,7 @@
 }
 - (NSString *)companyNameContent {
     if (self.orgName) {
-        return @"Nikme Software";
+        return self.orgName;
     }
     return m_string(@"NoCompanyAssociated");
 }
@@ -45,26 +44,38 @@
 }
 
 - (NSString *)companyAdressContent1 {
-    return @" 01 Ngo Thi Nham";
+    if (self.address) {
+        return self.address;
+    }
+    return nil;
 }
 
 - (NSString *)companyAdressContent2 {
-    return @"100 Nguyen luong bang";
-//    return self.address2;
+    if (self.address2) {
+        return self.address2;
+    }
+    return nil;
 }
 
 - (NSString *)companyOrgtype {
-    return @"2";
+    if (self.orgType) {
+        return self.orgType;
+    }
+    return nil;
 }
 
 - (NSString *)companyCity {
-    return @"Da Nang";
-//    return self.orgCity;
+    if (self.orgCity) {
+        return self.orgCity;
+    }
+    return nil;
 }
 
 - (NSString *)companyCountry {
-    return @"Viet Nam";
-//    return self.country;
+    if (self.country) {
+        return self.country;
+    }
+    return nil;
 }
 
 - (void)setCompanyAdressContent1:(NSString *)string {
@@ -80,7 +91,7 @@
 }
 
 - (void)setCompanyOrgtype:(NSString *)string {
-    
+    self.orgType = string;
 }
 
 - (void)setCompanyCountry:(NSString *)string {
@@ -90,12 +101,14 @@
 #pragma mark - image protocol 
 
 - (NSString *)companyImageURL {
-    NSString *url = [[NSURL URLWithString:@"http://www.tapchidanong.org/product_images/h/616/chau-tu-na-3289%284%29__92564_zoom.jpg"] absoluteString];
-    return self.imageUrl = url;
+    if (self.imageUrl) {
+        return self.imageUrl;
+    }
+    return nil;
 }
 
-- (void)setCompanyImageURL:(UIImage *)imageURL {
-//    self.imageUrl = imageURL;
+- (void)setCompanyImageURL:(NSString *)imageURL {
+    self.imageUrl = imageURL;
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "WSURLSessionManager+User.h"
 #import "WSURLSessionManager+Profile.h"
 #import "COUserProfileModel.h"
+#import "COUserCompanyModel.h"
 
 @implementation COLoginManager
 
@@ -80,6 +81,23 @@
             COUserProfileModel *userProModel = [MTLJSONAdapter modelOfClass:[COUserProfileModel class] fromJSONDictionary:dic error:&error];
             return _userModel = userProModel;
         }
+    }
+    return nil;
+}
+
+- (COUserCompanyModel *)companyModel {
+//    if (_companyModel) {
+//        return _companyModel;
+//    }
+    NSError *error;
+    if ([kUserDefaults objectForKey:UPDATE_COMPANY_PROFILE_JSON]) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_COMPANY_PROFILE_JSON] options:0 error:&error];
+        if (dic) {
+            COUserCompanyModel *userProModel = [MTLJSONAdapter modelOfClass:[COUserCompanyModel class] fromJSONDictionary:dic error:&error];
+            return _companyModel = userProModel;
+        }
+    } else {
+        return _companyModel = [[COUserCompanyModel alloc]init];
     }
     return nil;
 }

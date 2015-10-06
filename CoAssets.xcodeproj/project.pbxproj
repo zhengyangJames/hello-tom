@@ -65,6 +65,7 @@
 		1E67FAD11BBB9C12008F433C /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */; };
 		1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
+		1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */; };
 		1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
 		1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
 		1EF23C241BBE85C9006020C2 /* ic_Check_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C1C1BBE85C9006020C2 /* ic_Check_red@2x.png */; };
@@ -379,6 +380,8 @@
 		1E8790881BBE4667003B2CED /* EditAboutProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAboutProfileVC.h; sourceTree = "<group>"; };
 		1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAboutProfileVC.m; sourceTree = "<group>"; };
 		1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAboutProfileVC.xib; sourceTree = "<group>"; };
+		1EF1DD8A1BC3896300CD3C78 /* WSUpdateCompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUpdateCompanyProfile.h; sourceTree = "<group>"; };
+		1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUpdateCompanyProfile.m; sourceTree = "<group>"; };
 		1EF23C171BBE6BAF006020C2 /* EditPasswordProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPasswordProfileVC.h; sourceTree = "<group>"; };
 		1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPasswordProfileVC.m; sourceTree = "<group>"; };
 		1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPasswordProfileVC.xib; sourceTree = "<group>"; };
@@ -1657,6 +1660,8 @@
 			children = (
 				BBEB21081B94CB36007221B4 /* WSLoginRequest.h */,
 				BBEB21091B94CB36007221B4 /* WSLoginRequest.m */,
+				1EF1DD8A1BC3896300CD3C78 /* WSUpdateCompanyProfile.h */,
+				1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */,
 				BBEB210B1B9525F6007221B4 /* WSRequest.h */,
 				BBEB210C1B9525F6007221B4 /* WSRequest.m */,
 				BB3A9F5C1B961692002EEB1C /* WSRegisterRequest.h */,
@@ -1989,6 +1994,7 @@
 				BB48F1A01B86763E006F1921 /* COFilterListModel.m in Sources */,
 				7F325F971B40E50800116445 /* COOfferDescriptionTextCell.m in Sources */,
 				0E8956321BBE1F8B007E36BF /* PortFolioCell.m in Sources */,
+				1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */,
 				0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */,
 				7FB802BB1B4CE25700173A58 /* NSMutableString+FontSize.m in Sources */,
 				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,

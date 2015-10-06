@@ -57,16 +57,16 @@
 
 - (void)setCompanytName:(id<COCompanyName>)companytName {
     _companytName = companytName;
-    if (![_companytName.companyNameContent isEqualToString:m_string(@"NoCompanyAssociated")]) {
-        _lblName.text = _companytName.companyNameTitle;
-        _lblDetail.text = _companytName.companyNameContent;
-        [self _updateWidthOfLabelNameWithString:_lblName.text];
-    } else {
+    if ([_companytName.companyNameContent isEqualToString:m_string(@"NoCompanyAssociated")]) {
         _lblName.text = nil;
         _lblDetail.text = _companytName.companyNameContent;
         [_lblDetail setTextAlignment:NSTextAlignmentCenter];
         _widthOfLabelNameContraint.constant = 0;
         [self setNeedsUpdateConstraints];
+    } else {
+        _lblName.text = _companytName.companyNameTitle;
+        _lblDetail.text = _companytName.companyNameContent;
+        [self _updateWidthOfLabelNameWithString:_lblName.text];
     }
 }
 

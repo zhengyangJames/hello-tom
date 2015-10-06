@@ -150,3 +150,5 @@
 "C_PROFILE"                             = "Company profile";
 
 "NoCompanyAssociated"                   = "No company associated";
+
+"UPDATE_COMPANY_PROFILE"                = "Update profile copany";

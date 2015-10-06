@@ -106,7 +106,7 @@
 #define KSATE                                       @"region_state"
 #define KCOUNTRY                                    @"country"
 #define kPROFILE                                    @"profile"
-
+#define UPDATE_COMPANY_PROFILE_JSON                 @"Update profile copany"
 #define kUPDATE_VERSION                             @"Update_version_2.0"
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY

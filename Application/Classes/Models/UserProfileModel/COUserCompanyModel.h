@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "MTLModel.h"
+#import <Mantle/Mantle.h>
 #import "COUserData.h"
 
-@interface COUserCompanyModel : MTLModel<COCompanyAdress, COCompanyName, COCompanyImage>
+@interface COUserCompanyModel : MTLModel<MTLJSONSerializing,COCompanyAdress, COCompanyName, COCompanyImage>
 
 @property (strong, nonatomic) NSString *imageUrl;
 @property (strong, nonatomic) NSString *orgName;

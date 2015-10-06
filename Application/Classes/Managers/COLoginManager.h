@@ -10,6 +10,7 @@
 
 @class COUserProfileModel;
 @class WSLoginRequest;
+@class COUserCompanyModel;
 
 typedef void(^ActionLoginManager)(id object, NSError *error);
 
@@ -18,6 +19,7 @@ typedef void(^ActionLoginManager)(id object, NSError *error);
 + (id)shared;
 
 @property (nonatomic, strong) COUserProfileModel *userModel;
+@property (nonatomic, strong) COUserCompanyModel *companyModel;
 
 - (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager;
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager;

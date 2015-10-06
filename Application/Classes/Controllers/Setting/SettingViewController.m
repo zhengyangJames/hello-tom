@@ -162,7 +162,9 @@
     self.arraySetting = arr;
     [_tableView reloadData];
     [[COLoginManager shared] setUserModel:nil];
+    [[COLoginManager shared] setCompanyModel:nil];
     [kUserDefaults removeObjectForKey:kPROFILE_JSON];
+    [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults synchronize];
 }
 
