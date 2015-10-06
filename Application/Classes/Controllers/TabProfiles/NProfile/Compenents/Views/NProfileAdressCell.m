@@ -74,17 +74,8 @@
     if (country && ![country isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }
-    if ([link isEmpty]) {
-        _txtDetail.text = m_string(@"NoCompanyAssociated");
-        _txtName.text = nil;
-        [_txtDetail setTextAlignment:NSTextAlignmentCenter];
-        _widthOfLabelNameContraint.constant = 0;
-    } else {
-        _txtDetail.text = link;
-        _txtName.text = m_string(@"ADDRESSNAME");
-        [_txtDetail setTextAlignment:NSTextAlignmentRight];
-        _widthOfLabelNameContraint.constant = 75;
-    }
+    _txtDetail.text = link;
+    _txtName.text = m_string(@"ADDRESSNAME");
     [_txtDetail setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }

@@ -14,6 +14,7 @@
 #import "COUserProfileModel.h"
 #import "COUserCompanyModel.h"
 #import "COUserInverstorModel.h"
+#import "NProfileNodataCell.h"
 
 @interface NProfileDataSource () <profileButtonCellDelegate>
 {
@@ -34,6 +35,7 @@
         [_tableview registerNib:[UINib nibWithNibName:[NProfileImageCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileImageCell identifier]];
         [_tableview registerNib:[UINib nibWithNibName:[NProfileTextCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileTextCell identifier]];
         [_tableview registerNib:[UINib nibWithNibName:[NProfileAdressCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileAdressCell identifier]];
+        [_tableview registerNib:[UINib nibWithNibName:[NProfileNodataCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileNodataCell identifier]];
     }
     return self;
 }
@@ -72,25 +74,45 @@
 
 - (UITableViewCell *)tableview:(UITableView *)tableView companyCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!self.companyModel.imageUrl) {
-        if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 1) {
+        if (!self.companyModel.orgName) {
+            if (indexPath.row == 0) {
+                return [self tableview:tableView noDataCellForRowAtIndexpath:indexPath];
+            }
             NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
             cell.actionStyle = NProfileActionUpdateCompany;
             return cell;
-        } else if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 2) {
-            return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+        } else {
+            if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 1) {
+                NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
+                cell.actionStyle = NProfileActionUpdateCompany;
+                return cell;
+            } else if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 2) {
+                return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+            }
+            return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
         }
-        return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
     } else {
-        if (indexPath.row == 0) {
-            return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
-        } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
+        if (!self.companyModel.orgName) {
+            if (indexPath.row == 0) {
+                return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
+            } else if (indexPath.row == 1) {
+                return [self tableview:tableView noDataCellForRowAtIndexpath:indexPath];
+            }
             NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
             cell.actionStyle = NProfileActionUpdateCompany;
             return cell;
-        } else if (indexPath.row == NUM_OF_ROW_COMPANY - 2) {
-            return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+        } else {
+            if (indexPath.row == 0) {
+                return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
+            } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
+                NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
+                cell.actionStyle = NProfileActionUpdateCompany;
+                return cell;
+            } else if (indexPath.row == NUM_OF_ROW_COMPANY - 2) {
+                return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+            }
+            return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
         }
-        return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
     }
 }
 
@@ -101,6 +123,11 @@
         return cell;
     }
     return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
+}
+
+- (NProfileNodataCell *)tableview:(UITableView *)tableview noDataCellForRowAtIndexpath:(NSIndexPath *)indexPath {
+    NProfileNodataCell *cell = [tableview dequeueReusableCellWithIdentifier:[NProfileNodataCell identifier]];
+    return cell;
 }
 
 - (NprofileButtonCell *)tableview:(UITableView *)tableview buttonCellForRowAtIndexpath:(NSIndexPath *)indexPath {
@@ -180,8 +207,17 @@
     switch (self.profileStyle) {
         case NProfileStyleAbout: return NUM_OF_ROW_ABOUT;
         case NProfileStyleCompany:
-            if (!self.companyModel.imageUrl) { return NUM_OF_ROW_COMPANY_NO_IMAGE; }
-            return NUM_OF_ROW_COMPANY;
+            if (!self.companyModel.imageUrl) {
+                if (!self.companyModel.orgName) {
+                    return 2;
+                }
+                return NUM_OF_ROW_COMPANY_NO_IMAGE;
+            } else {
+                if (!self.companyModel.orgName) {
+                    return 3;
+                }
+                return NUM_OF_ROW_COMPANY;
+            }
         case NProfileStyleInvestorProfile: return NUM_OF_ROW_INVESTOR;
     }
     return 0;
@@ -240,21 +276,38 @@
 
 - (CGFloat)tableview:(UITableView *)tableView heightForCompanyCellAtIndexPath:(NSIndexPath *)indexPath {
     if (!self.companyModel.imageUrl) {
-        if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 1) {
-            return HIEGHT_BOTTOMVIEW;
-        } else if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 2) {
-            return [self tableview:tableView heightForAdressRowAtIndexPath:indexPath];
+        if (!self.companyModel.orgName) {
+            if (indexPath.row == 0) {
+                return 150;
+            } else {
+                return HIEGHT_BOTTOMVIEW;
+            }
+        } else {
+            if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 1) {
+                return HIEGHT_BOTTOMVIEW;
+            } else if (indexPath.row == NUM_OF_ROW_COMPANY_NO_IMAGE - 2) {
+                return [self tableview:tableView heightForAdressRowAtIndexPath:indexPath];
+            }
+            return DEFAULT_HEIGHT_CELL;
         }
-        return DEFAULT_HEIGHT_CELL;
     } else {
-        if (indexPath.row == 0) {
-            return HEIGHT_FOR_IMAGE_ROW;
-        } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
+        if (!self.companyModel.orgName) {
+            if (indexPath.row == 0) {
+                return HEIGHT_FOR_IMAGE_ROW;
+            } else if (indexPath.row == 1) {
+                return 150;
+            }
             return HIEGHT_BOTTOMVIEW;
-        } else if (indexPath.row == NUM_OF_ROW_COMPANY - 2) {
-            return [self tableview:tableView heightForAdressRowAtIndexPath:indexPath];
+        } else {
+            if (indexPath.row == 0) {
+                return HEIGHT_FOR_IMAGE_ROW;
+            } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
+                return HIEGHT_BOTTOMVIEW;
+            } else if (indexPath.row == NUM_OF_ROW_COMPANY - 2) {
+                return [self tableview:tableView heightForAdressRowAtIndexPath:indexPath];
+            }
+            return DEFAULT_HEIGHT_CELL;
         }
-        return DEFAULT_HEIGHT_CELL;
     }
 }
 

@@ -32,6 +32,13 @@
     self.navigationItem.leftBarButtonItem = backButtonItem;
 }
 
+- (void)_setupRightBarButton {
+    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(__actionLoadSF:)];
+    [btDone setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
+                          forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = btDone;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -55,6 +62,7 @@
     [_webView.scrollView setScrollEnabled:YES];
     [_webView.scrollView setUserInteractionEnabled:YES];
     [self _setupWebView];
+    [self _setupRightBarButton];
 }
 
 - (void)_setupWebView {
@@ -79,6 +87,11 @@
     } else {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
+}
+
+- (void)__actionLoadSF:(id)sender {
+    NSURL *url = [NSURL URLWithString:self.webLink];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 

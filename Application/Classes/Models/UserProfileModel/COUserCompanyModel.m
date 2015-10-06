@@ -27,7 +27,7 @@
     return m_string(@"COMPANY_NAME");
 }
 - (NSString *)companyNameContent {
-    if (self.orgName) {
+    if ( self.orgName) {
         return self.orgName;
     }
     return m_string(@"NoCompanyAssociated");

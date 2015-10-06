@@ -65,6 +65,8 @@
 		1E67FAD11BBB9C12008F433C /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */; };
 		1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
+		1EE78CA91BC3CF9B009D625A /* NProfileNodataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE78CA71BC3CF9B009D625A /* NProfileNodataCell.m */; };
+		1EE78CAA1BC3CF9B009D625A /* NProfileNodataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE78CA81BC3CF9B009D625A /* NProfileNodataCell.xib */; };
 		1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */; };
 		1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
 		1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
@@ -380,6 +382,9 @@
 		1E8790881BBE4667003B2CED /* EditAboutProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAboutProfileVC.h; sourceTree = "<group>"; };
 		1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAboutProfileVC.m; sourceTree = "<group>"; };
 		1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAboutProfileVC.xib; sourceTree = "<group>"; };
+		1EE78CA61BC3CF9B009D625A /* NProfileNodataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileNodataCell.h; sourceTree = "<group>"; };
+		1EE78CA71BC3CF9B009D625A /* NProfileNodataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileNodataCell.m; sourceTree = "<group>"; };
+		1EE78CA81BC3CF9B009D625A /* NProfileNodataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileNodataCell.xib; sourceTree = "<group>"; };
 		1EF1DD8A1BC3896300CD3C78 /* WSUpdateCompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUpdateCompanyProfile.h; sourceTree = "<group>"; };
 		1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUpdateCompanyProfile.m; sourceTree = "<group>"; };
 		1EF23C171BBE6BAF006020C2 /* EditPasswordProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPasswordProfileVC.h; sourceTree = "<group>"; };
@@ -837,6 +842,9 @@
 				0E8956701BBE2497007E36BF /* NProfileTextCell.h */,
 				0E8956711BBE2497007E36BF /* NProfileTextCell.m */,
 				0E8956721BBE2497007E36BF /* NProfileTextCell.xib */,
+				1EE78CA61BC3CF9B009D625A /* NProfileNodataCell.h */,
+				1EE78CA71BC3CF9B009D625A /* NProfileNodataCell.m */,
+				1EE78CA81BC3CF9B009D625A /* NProfileNodataCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1853,6 +1861,7 @@
 				7F933D371B5790D600B7EB9C /* company_edit.jpg in Resources */,
 				7F32602B1B40E50800116445 /* Raleway-SemiBold.ttf in Resources */,
 				7F32604D1B40E50800116445 /* ic_loadding.gif in Resources */,
+				1EE78CAA1BC3CF9B009D625A /* NProfileNodataCell.xib in Resources */,
 				7F32605A1B40E50800116445 /* ic_setting_2_heighlight@2x.png in Resources */,
 				7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */,
 				7F3260551B40E50800116445 /* ic_peropel@3x.png in Resources */,
@@ -2017,6 +2026,7 @@
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				7F325FC91B40E50800116445 /* COPositive&NagitiveButton.m in Sources */,
 				7F32601B1B40E50800116445 /* main.m in Sources */,
+				1EE78CA91BC3CF9B009D625A /* NProfileNodataCell.m in Sources */,
 				0E89567C1BBE2497007E36BF /* NProfileHeaderView.m in Sources */,
 				7F85290F1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m in Sources */,
 				7F325FC01B40E50800116445 /* COCheckBoxButton.m in Sources */,

@@ -33,13 +33,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
+    self.companyUserModel = self.companyUserModel;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
-    self.companyUserModel = self.companyUserModel;
+
 }
 
 
@@ -154,16 +154,6 @@
     NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
     [kUserDefaults setObject:data forKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults synchronize];
-    
-//    COUserCompanyModel *userModel = [[COUserCompanyModel alloc] init];
-//    [userModel setCompanyImageURL:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpCPProfileImage]]];
-//    [userModel setCompanyNameContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpCPProfileOrgName]]];
-//    [userModel setCompanyOrgtype:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpCPProfileOrgType]]];
-//    [userModel setCompanyAdressContent1:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpCPProfileAddress1]]];
-//    [userModel setCompanyAdressContent2:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpCPProfileAddress2]]];
-//    [userModel setCompanyCity:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpCPProfileCity]]];
-//    [userModel setCompanyCountry:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpCPProfileCountry]]];
-//    return userModel;
 }
 
 #pragma mark - Delegate
