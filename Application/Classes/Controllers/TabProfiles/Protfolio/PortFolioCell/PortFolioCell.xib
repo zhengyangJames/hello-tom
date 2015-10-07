@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
@@ -17,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="216" height="157"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="216" height="156.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
@@ -36,8 +37,8 @@
                             <constraint firstAttribute="width" constant="38" id="L0c-CT-T3C"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="134" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-2Y-WKU" userLabel="LabelText" customClass="BaseLabel">
-                        <rect key="frame" x="0.0" y="86" width="216" height="62.5"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funded &amp;Completed Projects" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="134" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-2Y-WKU" userLabel="LabelText" customClass="COLabelTextAligin">
+                        <rect key="frame" x="0.0" y="94" width="216" height="54.5"/>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -47,13 +48,19 @@
                     <constraint firstItem="ctf-2Y-WKU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9M7-YV-0E6"/>
                     <constraint firstAttribute="centerX" secondItem="l4l-7c-aca" secondAttribute="centerX" id="9Q6-4W-pbR"/>
                     <constraint firstAttribute="bottom" secondItem="ctf-2Y-WKU" secondAttribute="bottom" constant="8" id="9jN-oO-T4y"/>
-                    <constraint firstItem="ctf-2Y-WKU" firstAttribute="top" secondItem="Vql-CH-7V5" secondAttribute="bottom" id="I64-0F-Qq2"/>
+                    <constraint firstItem="ctf-2Y-WKU" firstAttribute="top" secondItem="Vql-CH-7V5" secondAttribute="bottom" constant="8" id="I64-0F-Qq2"/>
                     <constraint firstItem="Vql-CH-7V5" firstAttribute="top" secondItem="l4l-7c-aca" secondAttribute="bottom" constant="4" id="SC3-dL-Hgy"/>
                     <constraint firstItem="Vql-CH-7V5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ebE-Sb-d48"/>
                     <constraint firstItem="l4l-7c-aca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="gRd-uX-ZWy"/>
                     <constraint firstAttribute="trailing" secondItem="ctf-2Y-WKU" secondAttribute="trailing" id="uLk-EA-jUc"/>
                     <constraint firstAttribute="trailing" secondItem="Vql-CH-7V5" secondAttribute="trailing" id="vaB-60-Xyi"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ctf-2Y-WKU" secondAttribute="bottom" id="wrV-Js-FOd"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="9jN-oO-T4y"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="_imgThumbnail" destination="l4l-7c-aca" id="Bh7-3g-3Yy"/>

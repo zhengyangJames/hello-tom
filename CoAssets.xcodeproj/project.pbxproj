@@ -68,6 +68,7 @@
 		1E6A5DCF1BC4BEC200D587BC /* COAccountInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */; settings = {ASSET_TAGS = (); }; };
 		1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
+		1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */; settings = {ASSET_TAGS = (); }; };
 		1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */; };
 		1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
 		1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
@@ -389,6 +390,8 @@
 		1E8790881BBE4667003B2CED /* EditAboutProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAboutProfileVC.h; sourceTree = "<group>"; };
 		1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAboutProfileVC.m; sourceTree = "<group>"; };
 		1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAboutProfileVC.xib; sourceTree = "<group>"; };
+		1E8F8A101BC4FA92004CEF26 /* COLabelTextAligin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLabelTextAligin.h; sourceTree = "<group>"; };
+		1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLabelTextAligin.m; sourceTree = "<group>"; };
 		1EF1DD8A1BC3896300CD3C78 /* WSUpdateCompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUpdateCompanyProfile.h; sourceTree = "<group>"; };
 		1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUpdateCompanyProfile.m; sourceTree = "<group>"; };
 		1EF23C171BBE6BAF006020C2 /* EditPasswordProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPasswordProfileVC.h; sourceTree = "<group>"; };
@@ -982,6 +985,15 @@
 			path = EditAboutProfileVC;
 			sourceTree = "<group>";
 		};
+		1E8F8A0F1BC4FA6F004CEF26 /* COLabelTopAligin */ = {
+			isa = PBXGroup;
+			children = (
+				1E8F8A101BC4FA92004CEF26 /* COLabelTextAligin.h */,
+				1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */,
+			);
+			path = COLabelTopAligin;
+			sourceTree = "<group>";
+		};
 		1EF23C161BBE6AD5006020C2 /* EditPasswordProfileVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1259,6 +1271,7 @@
 		7F325E451B40E50800116445 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				1E8F8A0F1BC4FA6F004CEF26 /* COLabelTopAligin */,
 				1E67FAB11BBB8866008F433C /* COAwatarView */,
 				7FCD18A91B4BAC00000B81A2 /* COPopUpView */,
 				7F325E461B40E50800116445 /* COBorderTextField */,
@@ -2060,6 +2073,7 @@
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
 				7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */,
+				1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
 				7FE6ED611B54EB1600FA481E /* WebViewManager.m in Sources */,
 				0E8956141BBE1AC9007E36BF /* TabProfileController.m in Sources */,

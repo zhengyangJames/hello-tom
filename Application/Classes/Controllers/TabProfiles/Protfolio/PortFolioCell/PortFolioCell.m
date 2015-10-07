@@ -25,13 +25,16 @@
 #pragma mark - Set Get
 - (void)setObject:(NSString *)object {
     _object = object;
+    _lbNameDetail.numberOfLines = 0;
     _lbNameDetail.text = object;
     _lbNumOfValue.text = @"$0.00";
+    [_lbNameDetail setNeedsUpdateConstraints];
 }
 
 - (void)setImageName:(NSString *)imageName {
     _imageName = imageName;
     [_imgThumbnail setImage:[UIImage imageNamed:_imageName]];
 }
+
 
 @end
