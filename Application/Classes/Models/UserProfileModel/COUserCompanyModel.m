@@ -101,15 +101,13 @@
 #pragma mark - COUserCompany
 
 - (NSInteger)numOfItemInTableview {
+    if (!self.orgName) {
+        return NUM_OF_ROW_COMPANY - 2;
+    }
+    
     if (!self.imageUrl) {
-        if (!self.orgName) {
-            return NUM_OF_ROW_COMPANY - 2;
-        }
         return NUM_OF_ROW_COMPANY - 1;
     } else {
-        if (!self.orgName) {
-            return NUM_OF_ROW_COMPANY - 1;
-        }
         return NUM_OF_ROW_COMPANY;
     }
 }
@@ -136,20 +134,19 @@
     return 2;
 }
 - (NSInteger)indexOfButtonCell {
-    if (!self.imageUrl) {
-        if (!self.orgName) {
-            return 1;
-        }
-        return 2;
+    
+    if (!self.orgName) {
+        return 1;
     } else {
-        if (!self.orgName) {
+        if (!self.imageUrl) {
             return 2;
+        } else {
+            return 3;
         }
-        return 3;
     }
 }
 - (NSInteger)indexOfImageCell {
-    if (!self.imageUrl) {
+    if (!self.orgName || !self.imageUrl) {
         return NSIntegerMax;
     }
     return 0;
@@ -159,11 +156,7 @@
     if (self.orgName) {
         return NSIntegerMax;
     }
-    
-    if (!self.imageUrl) {
-        return 0;
-    }
-    return 1;
+    return 0;
 }
 
 #pragma mark - image protocol
