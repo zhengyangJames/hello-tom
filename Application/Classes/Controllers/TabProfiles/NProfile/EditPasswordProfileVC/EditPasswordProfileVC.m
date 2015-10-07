@@ -148,12 +148,14 @@
 
 #pragma mark Delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [_boxTextField becomeFirstResponder];
-    _boxTextField = nil;
     if (alertView.tag == 1) {
-         [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [_boxTextField becomeFirstResponder];
+    _boxTextField = nil;
+}
 
 @end

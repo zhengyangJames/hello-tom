@@ -87,24 +87,13 @@
     AccountCell *cell = [tableView dequeueReusableCellWithIdentifier:[AccountCell identifier]
                                                         forIndexPath:indexPath];
     switch (indexPath.row) {
-        case COAccountOngoingStype:
-            cell.accountOnGoing = self.accountModel;
-            break;
-        case COAccountFundedStype:
-            cell.accountFunded = self.accountModel;
-            break;
-        case COAccountCompleteStype:
-            cell.accountCompleted = self.accountModel;
-            break;
-        case COAccountPotentialStype:
-            cell.accountPotential = self.accountModel;
-            break;
-        case COAccountRealsStype:
-            cell.accountRealised = self.accountModel;
-            break;
+        case COAccountOngoingStype: cell.accountOnGoing = self.accountModel; break;
+        case COAccountFundedStype: cell.accountFunded = self.accountModel; break;
+        case COAccountCompleteStype: cell.accountCompleted = self.accountModel; break;
+        case COAccountPotentialStype: cell.accountPotential = self.accountModel; break;
+        case COAccountRealsStype: cell.accountRealised = self.accountModel; break;
         default:  break;
     }
-    
     return cell;
 }
 
