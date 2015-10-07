@@ -104,6 +104,7 @@
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = delegate;
+    [picker setAllowsEditing:YES];
     switch (mode) {
         case 1:
             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -179,6 +180,63 @@
     };
     return [objCurrency objectForKeyNotNull:keyCurrency];
 }
+
++ (NSString *)getStringCurrencyOfferWithVaule:(NSString*)value {
+    NSDictionary *objCurrency = @ {@"SGD": @"Singapore Dollars",
+        @"USD" : @"US Dollars",
+        @"GBP" : @"British Pounds",
+        @"EUR" : @"Euros",
+        @"JPY" : @"Japanese Yen",
+        @"CNY" : @"Chinese Yuan",
+        @"TWD" : @"Taiwan Dollar",
+        @"CAD" : @"Canadian Dollars",
+        @"HKD" : @"Hongkong Dollar",
+        @"AUD" : @"Australia Dollar",
+        @"MYR" : @"Malaysia Ringit",
+        @"THB" : @"Thai Baht",
+        @"PHP" : @"Philippine Peso",
+        @"IDR" : @"Indonesia Rupiah",
+        @"VND" : @"Vietnamese Dong"
+    };
+    NSString *key;
+    for (int i = 0 ; i < [objCurrency allKeys].count ; i ++ ) {
+        NSArray *arr = [objCurrency allValues];
+        NSString *str = arr[i];
+        if ([str isEqualToString:value]) {
+            NSArray *arrkey = [objCurrency allKeys];
+            key = arrkey[i];
+            break;
+        }
+    }
+    return key;
+}
+
++ (NSArray*)getArrayCurrency {
+    NSDictionary *objCurrency = @ {@"SGD": @"Singapore Dollars",
+        @"USD" : @"US Dollars",
+        @"GBP" : @"British Pounds",
+        @"EUR" : @"Euros",
+        @"JPY" : @"Japanese Yen",
+        @"CNY" : @"Chinese Yuan",
+        @"TWD" : @"Taiwan Dollar",
+        @"CAD" : @"Canadian Dollars",
+        @"HKD" : @"Hongkong Dollar",
+        @"AUD" : @"Australia Dollar",
+        @"MYR" : @"Malaysia Ringit",
+        @"THB" : @"Thai Baht",
+        @"PHP" : @"Philippine Peso",
+        @"IDR" : @"Indonesia Rupiah",
+        @"VND" : @"Vietnamese Dong"
+    };
+    NSArray *array = [objCurrency allValues];
+    return array;
+}
+
++ (NSArray*)getInvestorType {
+    NSArray *array = @[@"Retail Investor",@"High Net Worth",@"Institutional Investor",@"Developer",@"Agent",@"Business",@"Financier",@"Media",@"Services",@"Educator",@"Others"];
+    return array;
+}
+
 
 + (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font {
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];

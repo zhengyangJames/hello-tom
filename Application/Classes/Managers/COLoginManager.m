@@ -11,6 +11,7 @@
 #import "WSURLSessionManager+Profile.h"
 #import "COUserProfileModel.h"
 #import "COUserCompanyModel.h"
+#import "COUserInverstorModel.h"
 
 @implementation COLoginManager
 
@@ -98,6 +99,23 @@
         }
     } else {
         return _companyModel = [[COUserCompanyModel alloc]init];
+    }
+    return nil;
+}
+
+- (COUserInverstorModel *)investorModel {
+//    if (_investorModel) {
+//        return _investorModel;
+//    }
+    NSError *error;
+    if ([kUserDefaults objectForKey:UPDATE_INVESTOR_PROFILE_JSON]) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_INVESTOR_PROFILE_JSON] options:0 error:&error];
+        if (dic) {
+            COUserInverstorModel *userProModel = [MTLJSONAdapter modelOfClass:[COUserInverstorModel class] fromJSONDictionary:dic error:&error];
+            return _investorModel = userProModel;
+        }
+    } else {
+        return _investorModel = [[COUserInverstorModel alloc]init];
     }
     return nil;
 }

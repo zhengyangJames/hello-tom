@@ -17,6 +17,7 @@
 #import "EditAboutProfileVC.h"
 #import "EditPasswordProfileVC.h"
 #import "EditCompanyVC.h"
+#import "EditInvestmentProfileVC.h"
 
 @interface NProfileController ()<NProfileHeaderViewDelegate,profileButtonCellDelegate,EditAboutProfileVCDelegate>
 {
@@ -99,7 +100,7 @@
     if (_investorModel) {
         return _investorModel;
     }
-    return _investorModel = [[COUserInverstorModel alloc] init];
+    return _investorModel = [[COLoginManager shared] investorModel];
 }
 
 #pragma mark - Private
@@ -128,8 +129,19 @@
 - (void)_setupEditCompanyVC {
     EditCompanyVC *vc = [[EditCompanyVC alloc]init];
     vc.companyUserModel = self.companyModel;
-    vc.actionDone = ^(COUserCompanyModel *companyUserModel) {
+    vc.actionDone = ^() {
         self.companyModel = nil;
+        [self _reloadTableview];
+    };
+    BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
+}
+
+- (void)_setupEditInvestorVC {
+    EditInvestmentProfileVC *vc = [[EditInvestmentProfileVC alloc]init];
+    vc.investorUserModel = self.investorModel;
+    vc.actionDone = ^(){
+        self.investorModel = nil;
         [self _reloadTableview];
     };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
@@ -147,6 +159,7 @@
         case NProfileActionUpdateProfile: [self _setupEditAboutProfileVC]; break;
         case NProfileActionChangePassWord: [self _setupEditPasswordVC]; break;
         case NProfileActionUpdateCompany: [self _setupEditCompanyVC]; break;
+        case NProfileActionUpdateInvestor: [self _setupEditInvestorVC]; break;
         default: break;
     }
 }

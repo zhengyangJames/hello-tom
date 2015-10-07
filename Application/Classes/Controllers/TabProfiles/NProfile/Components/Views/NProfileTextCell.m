@@ -86,10 +86,11 @@
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
 
-- (void)setInvestorAmount:(id<COInvestorAmount>)investorAmount {
+- (void)setInvestorAmount:(id<COInvestorAmount,COCureency>)investorAmount {
     _investorAmount = investorAmount;
+    NSString *str = [NSString stringWithFormat:@"%@ %@",[UIHelper getStringCurrencyOfferWithVaule:[investorAmount COCureencyContent]],investorAmount.COInvestorAmountContent];
     _lblName.text = investorAmount.COInvestorAmountTitle;
-    _lblDetail.text = investorAmount.COInvestorAmountContent;
+    _lblDetail.text = str;
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }

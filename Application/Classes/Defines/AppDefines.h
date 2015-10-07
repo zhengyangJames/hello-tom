@@ -109,6 +109,7 @@
 #define KCOUNTRY                                    @"country"
 #define kPROFILE                                    @"profile"
 #define UPDATE_COMPANY_PROFILE_JSON                 @"Update profile copany"
+#define UPDATE_INVESTOR_PROFILE_JSON                 @"Update profile investor"
 #define kUPDATE_VERSION                             @"Update_version_2.0"
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY

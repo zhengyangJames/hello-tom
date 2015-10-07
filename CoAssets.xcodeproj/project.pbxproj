@@ -69,6 +69,9 @@
 		1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
 		1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */; settings = {ASSET_TAGS = (); }; };
+		1EA610D61BC5071B00BF3A47 /* EditInvestmentProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D41BC5071B00BF3A47 /* EditInvestmentProfileVC.m */; settings = {ASSET_TAGS = (); }; };
+		1EA610D71BC5071B00BF3A47 /* EditInvestmentProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */; settings = {ASSET_TAGS = (); }; };
+		1EA610DA1BC51C2700BF3A47 /* WSUpdateInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */; settings = {ASSET_TAGS = (); }; };
 		1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */; };
 		1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
 		1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
@@ -392,6 +395,11 @@
 		1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAboutProfileVC.xib; sourceTree = "<group>"; };
 		1E8F8A101BC4FA92004CEF26 /* COLabelTextAligin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLabelTextAligin.h; sourceTree = "<group>"; };
 		1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLabelTextAligin.m; sourceTree = "<group>"; };
+		1EA610D31BC5071B00BF3A47 /* EditInvestmentProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditInvestmentProfileVC.h; path = Application/Classes/Controllers/TabProfiles/NProfile/EditInvestmentProfileVC/EditInvestmentProfileVC.h; sourceTree = SOURCE_ROOT; };
+		1EA610D41BC5071B00BF3A47 /* EditInvestmentProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditInvestmentProfileVC.m; path = Application/Classes/Controllers/TabProfiles/NProfile/EditInvestmentProfileVC/EditInvestmentProfileVC.m; sourceTree = SOURCE_ROOT; };
+		1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditInvestmentProfileVC.xib; path = Application/Classes/Controllers/TabProfiles/NProfile/EditInvestmentProfileVC/EditInvestmentProfileVC.xib; sourceTree = SOURCE_ROOT; };
+		1EA610D81BC51C2700BF3A47 /* WSUpdateInvestorProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUpdateInvestorProfile.h; sourceTree = "<group>"; };
+		1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUpdateInvestorProfile.m; sourceTree = "<group>"; };
 		1EF1DD8A1BC3896300CD3C78 /* WSUpdateCompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUpdateCompanyProfile.h; sourceTree = "<group>"; };
 		1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUpdateCompanyProfile.m; sourceTree = "<group>"; };
 		1EF23C171BBE6BAF006020C2 /* EditPasswordProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPasswordProfileVC.h; sourceTree = "<group>"; };
@@ -845,6 +853,7 @@
 		0E89565C1BBE2497007E36BF /* NProfile */ = {
 			isa = PBXGroup;
 			children = (
+				1EA610CD1BC506DA00BF3A47 /* EditInvestmentProfileVC */,
 				0E8956851BBE88E4007E36BF /* EditCompanyVC */,
 				1EF23C161BBE6AD5006020C2 /* EditPasswordProfileVC */,
 				1E8790871BBE4667003B2CED /* EditAboutProfileVC */,
@@ -992,6 +1001,17 @@
 				1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */,
 			);
 			path = COLabelTopAligin;
+			sourceTree = "<group>";
+		};
+		1EA610CD1BC506DA00BF3A47 /* EditInvestmentProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				1EA610D31BC5071B00BF3A47 /* EditInvestmentProfileVC.h */,
+				1EA610D41BC5071B00BF3A47 /* EditInvestmentProfileVC.m */,
+				1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */,
+			);
+			name = EditInvestmentProfileVC;
+			path = EditInvestmentProfile;
 			sourceTree = "<group>";
 		};
 		1EF23C161BBE6AD5006020C2 /* EditPasswordProfileVC */ = {
@@ -1688,6 +1708,8 @@
 				BBEB21091B94CB36007221B4 /* WSLoginRequest.m */,
 				1EF1DD8A1BC3896300CD3C78 /* WSUpdateCompanyProfile.h */,
 				1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */,
+				1EA610D81BC51C2700BF3A47 /* WSUpdateInvestorProfile.h */,
+				1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */,
 				BBEB210B1B9525F6007221B4 /* WSRequest.h */,
 				BBEB210C1B9525F6007221B4 /* WSRequest.m */,
 				BB3A9F5C1B961692002EEB1C /* WSRegisterRequest.h */,
@@ -1925,6 +1947,7 @@
 				7F3260201B40E50800116445 /* Raleway-BoldItalic.ttf in Resources */,
 				7F325FC51B40E50800116445 /* DropListCell.xib in Resources */,
 				7F32604E1B40E50800116445 /* ic_meoney@2x.png in Resources */,
+				1EA610D71BC5071B00BF3A47 /* EditInvestmentProfileVC.xib in Resources */,
 				7F8529211B43935B00CFAEB5 /* Australia.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2058,6 +2081,7 @@
 				7F325F951B40E50800116445 /* CODocumentSectionCell.m in Sources */,
 				1E67FAC41BBB9149008F433C /* BaseLabel.m in Sources */,
 				1E67FAB41BBB8882008F433C /* COAwatarView.m in Sources */,
+				1EA610D61BC5071B00BF3A47 /* EditInvestmentProfileVC.m in Sources */,
 				7F325F811B40E50800116445 /* NSString+Validation.m in Sources */,
 				7F325FCA1B40E50800116445 /* COSlidingCell.m in Sources */,
 				BBEB210D1B9525F6007221B4 /* WSRequest.m in Sources */,
@@ -2089,6 +2113,7 @@
 				012BDB9F1BA535F700252D12 /* COListFilterObject.m in Sources */,
 				0E89561A1BBE1BB2007E36BF /* AccountController.m in Sources */,
 				7F325FC81B40E50800116445 /* COLineBottomView.m in Sources */,
+				1EA610DA1BC51C2700BF3A47 /* WSUpdateInvestorProfile.m in Sources */,
 				0ECA88441B27CA7100B5656F /* NSFileManager+Directories.m in Sources */,
 				012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */,
 				7F325F791B40E50800116445 /* AppDelegate.m in Sources */,

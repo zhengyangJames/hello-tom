@@ -77,10 +77,29 @@
 
 #pragma mark - Investor
 
+@protocol COCureency <NSObject>
+
+- (NSString *)COCureencyContent;
+
+@end
+
+@protocol CODescriptions <NSObject>
+
+- (NSString *)CODescriptionsContent;
+
+@end
+
+@protocol COWebsite <NSObject>
+
+- (NSString *)COWebsiteContent;
+
+@end
+
 @protocol COInvestorType <NSObject>
 
 - (NSString *)COInvestorTypeTitle;
 - (NSString *)COInvestorTypeContent;
+
 @end
 
 @protocol COInvestorPreference <NSObject>
@@ -112,6 +131,8 @@
 - (NSString *)COInvestorCountriesTitle;
 - (NSString *)COInvestorCountriesContent;
 @end
+
+#pragma mark User Company
 
 @protocol COUserCompany <NSObject>
 

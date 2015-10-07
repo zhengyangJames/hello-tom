@@ -38,4 +38,9 @@
 
 + (NSMutableDictionary*)getParamTokenWithModel:(COUserProfileModel *)model;
 + (NSString*)formartDoubleVauleWithAccountInvest:(NSNumber*)vaule;
+
++ (NSString *)getStringCurrencyOfferWithVaule:(NSString*)value;
+
++ (NSArray*)getArrayCurrency;
++ (NSArray*)getInvestorType;
 @end

@@ -147,7 +147,9 @@
 
 "PROFILE"                               = "Profile";
 
-"C_PROFILE"                             = "Company profile";
+"C_PROFILE"                             = "Company Profile";
+
+"I_PROFILE"                             = "Investment Profile";
 
 "NoCompanyAssociated"                   = "No company associated";
 

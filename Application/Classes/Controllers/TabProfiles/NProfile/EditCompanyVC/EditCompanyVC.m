@@ -60,7 +60,6 @@
     [address2TextField setText:_companyUserModel.companyAdressContent2];
     [orgCityTextField setText:_companyUserModel.companyCity];
     [countryTextField setText:_companyUserModel.companyCountry];
-    
 }
 
 - (NSArray *)arrayOrgType {
@@ -112,25 +111,6 @@
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
-- (NSDictionary *)_creatUpdateInfoCompany {
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    [dic setValue:[self _setModelNilOrNotNil:orgCityTextField.text] forKey:kUpCPProfileCity];
-    [dic setValue:[self _setModelNilOrNotNil:addressTextField.text] forKey:kUpCPProfileAddress1];
-    [dic setValue:[self _setModelNilOrNotNil:address2TextField.text] forKey:kUpCPProfileAddress2];
-    [dic setValue:[self _setModelNilOrNotNil:orgNameTextField.text] forKey:kUpCPProfileOrgName];
-    [dic setValue:[self _setModelNilOrNotNil:countryTextField.text] forKey:kUpCPProfileCountry];
-    [dic setValue:[self _setModelNilOrNotNil:_urlImageProfile] forKey:kUpCPProfileImage];
-    return dic;
-}
-
-- (id)_setModelNilOrNotNil:(NSString*)string {
-    if ([string isEmpty]) {
-        return nil;
-    } else {
-        return string;
-    }
-}
-
 - (void)__actionDCancel:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -156,6 +136,25 @@
 
 #pragma mark - WS update info
 
+- (NSDictionary *)_creatUpdateInfoCompany {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setValue:[self _setModelNilOrNotNil:orgCityTextField.text] forKey:kUpCPProfileCity];
+    [dic setValue:[self _setModelNilOrNotNil:addressTextField.text] forKey:kUpCPProfileAddress1];
+    [dic setValue:[self _setModelNilOrNotNil:address2TextField.text] forKey:kUpCPProfileAddress2];
+    [dic setValue:[self _setModelNilOrNotNil:orgNameTextField.text] forKey:kUpCPProfileOrgName];
+    [dic setValue:[self _setModelNilOrNotNil:countryTextField.text] forKey:kUpCPProfileCountry];
+    [dic setValue:[self _setModelNilOrNotNil:_urlImageProfile] forKey:kUpCPProfileImage];
+    return dic;
+}
+
+- (id)_setModelNilOrNotNil:(NSString*)string {
+    if ([string isEmpty]) {
+        return nil;
+    } else {
+        return string;
+    }
+}
+
 - (void)_updateProfileUserModel:(NSDictionary*)obj {
     NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
     [kUserDefaults setObject:data forKey:UPDATE_COMPANY_PROFILE_JSON];
@@ -174,10 +173,12 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
-    [_imageCompany setImage:image];
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
     if (image) {
+        [_imageCompany setImage:image];
         _urlImageProfile = @"http://www.tapchidanong.org/product_images/h/616/chau-tu-na-3289%284%29__92564_zoom.jpg";
+    } else {
+        DBG(@"/********-No-Image-Choice-*********/");
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

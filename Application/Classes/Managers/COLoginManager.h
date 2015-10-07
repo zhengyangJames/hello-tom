@@ -11,6 +11,7 @@
 @class COUserProfileModel;
 @class WSLoginRequest;
 @class COUserCompanyModel;
+@class COUserInverstorModel;
 
 typedef void(^ActionLoginManager)(id object, NSError *error);
 
@@ -20,6 +21,7 @@ typedef void(^ActionLoginManager)(id object, NSError *error);
 
 @property (nonatomic, strong) COUserProfileModel *userModel;
 @property (nonatomic, strong) COUserCompanyModel *companyModel;
+@property (nonatomic, strong) COUserInverstorModel *investorModel;
 
 - (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager;
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager;
