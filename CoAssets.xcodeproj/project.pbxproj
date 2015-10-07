@@ -62,9 +62,10 @@
 		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
 		1E67FAA11BBB773D008F433C /* ProfileList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAA01BBB773D008F433C /* ProfileList.plist */; };
 		1E67FAB41BBB8882008F433C /* COAwatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAB31BBB8882008F433C /* COAwatarView.m */; };
-		1E67FABB1BBB8C0F008F433C /* AccountPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FABA1BBB8C0F008F433C /* AccountPlist.plist */; };
 		1E67FAC41BBB9149008F433C /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAC31BBB9149008F433C /* BaseLabel.m */; };
 		1E67FAD11BBB9C12008F433C /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */; };
+		1E6A5DCC1BC4B84000D587BC /* WSGetAccountInvestment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */; settings = {ASSET_TAGS = (); }; };
+		1E6A5DCF1BC4BEC200D587BC /* COAccountInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */; settings = {ASSET_TAGS = (); }; };
 		1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
 		1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */; };
@@ -378,10 +379,13 @@
 		1E67FAA01BBB773D008F433C /* ProfileList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProfileList.plist; sourceTree = "<group>"; };
 		1E67FAB21BBB8882008F433C /* COAwatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COAwatarView.h; sourceTree = "<group>"; };
 		1E67FAB31BBB8882008F433C /* COAwatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COAwatarView.m; sourceTree = "<group>"; };
-		1E67FABA1BBB8C0F008F433C /* AccountPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AccountPlist.plist; sourceTree = "<group>"; };
 		1E67FAC21BBB9149008F433C /* BaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLabel.h; sourceTree = "<group>"; };
 		1E67FAC31BBB9149008F433C /* BaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLabel.m; sourceTree = "<group>"; };
 		1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FortFolioPlist.plist; sourceTree = "<group>"; };
+		1E6A5DCA1BC4B84000D587BC /* WSGetAccountInvestment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetAccountInvestment.h; sourceTree = "<group>"; };
+		1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetAccountInvestment.m; sourceTree = "<group>"; };
+		1E6A5DCD1BC4BEC200D587BC /* COAccountInvestmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COAccountInvestmentModel.h; sourceTree = "<group>"; };
+		1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COAccountInvestmentModel.m; sourceTree = "<group>"; };
 		1E8790881BBE4667003B2CED /* EditAboutProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAboutProfileVC.h; sourceTree = "<group>"; };
 		1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAboutProfileVC.m; sourceTree = "<group>"; };
 		1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAboutProfileVC.xib; sourceTree = "<group>"; };
@@ -735,7 +739,6 @@
 		0E39FA491BC4247000880834 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0E39FA4A1BC4247000880834 /* Models */,
 				0E39FA4B1BC4247000880834 /* NProfileDataSource.h */,
 				0E39FA4C1BC4247000880834 /* NProfileDataSource.m */,
 				0E39FA4D1BC4247000880834 /* NProfileDelegate.h */,
@@ -743,13 +746,6 @@
 				0E39FA4F1BC4247000880834 /* Views */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		0E39FA4A1BC4247000880834 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		0E39FA4F1BC4247000880834 /* Views */ = {
@@ -1566,7 +1562,6 @@
 				7F325F771B40E50800116445 /* FilterList.plist */,
 				7F325F781B40E50800116445 /* SettingPlist.plist */,
 				1E67FAA01BBB773D008F433C /* ProfileList.plist */,
-				1E67FABA1BBB8C0F008F433C /* AccountPlist.plist */,
 				1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */,
 			);
 			path = Plist;
@@ -1639,6 +1634,8 @@
 				BB368EB61B87E1F30066C646 /* COUserProfileDetailModel.h */,
 				BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */,
 				BB368EB91B87F3D60066C646 /* COUserData.h */,
+				1E6A5DCD1BC4BEC200D587BC /* COAccountInvestmentModel.h */,
+				1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */,
 			);
 			path = UserProfileModel;
 			sourceTree = "<group>";
@@ -1702,6 +1699,8 @@
 				BB38EE341B9A0A8900D15D58 /* WSGetListOfferRequest.m */,
 				BB38EE361B9A147500D15D58 /* WSGetListContactsRequest.h */,
 				BB38EE371B9A147500D15D58 /* WSGetListContactsRequest.m */,
+				1E6A5DCA1BC4B84000D587BC /* WSGetAccountInvestment.h */,
+				1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1886,7 +1885,6 @@
 				1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */,
 				7F8529281B43935B00CFAEB5 /* Japan.png in Resources */,
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
-				1E67FABB1BBB8C0F008F433C /* AccountPlist.plist in Resources */,
 				7F3260761B40E50800116445 /* FilterList.plist in Resources */,
 				7F32603C1B40E50800116445 /* ic_contac_2_heightlight@2x.png in Resources */,
 				7FA7E6C11B4E7CD500059B13 /* COOfferProgressCell.xib in Resources */,
@@ -2050,6 +2048,7 @@
 				7F325F811B40E50800116445 /* NSString+Validation.m in Sources */,
 				7F325FCA1B40E50800116445 /* COSlidingCell.m in Sources */,
 				BBEB210D1B9525F6007221B4 /* WSRequest.m in Sources */,
+				1E6A5DCC1BC4B84000D587BC /* WSGetAccountInvestment.m in Sources */,
 				0E8956261BBE1C82007E36BF /* ProtfolioController.m in Sources */,
 				7F325F831B40E50800116445 /* UIImage+Scaling.m in Sources */,
 				0E39FA6E1BC4247000880834 /* NProfileTextCell.m in Sources */,
@@ -2093,6 +2092,7 @@
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,
 				7F2C77461B4E07BA00C69365 /* COOfferInfoCell.m in Sources */,
 				7F325F7F1B40E50800116445 /* BaseViewController.m in Sources */,
+				1E6A5DCF1BC4BEC200D587BC /* COAccountInvestmentModel.m in Sources */,
 				0E8956821BBE2497007E36BF /* NProfileController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2214,7 +2214,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "62d780c5-5610-4409-91f9-f7bc0a51bb16";
+				PROVISIONING_PROFILE = "795d54f6-f3f4-4d42-9db1-d44b3c75f16e";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2237,7 +2237,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "62d780c5-5610-4409-91f9-f7bc0a51bb16";
+				PROVISIONING_PROFILE = "795d54f6-f3f4-4d42-9db1-d44b3c75f16e";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

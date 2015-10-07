@@ -124,6 +124,43 @@
 
 @end
 
+#pragma mark - Account Invetment
+@protocol COAccountOnGoing <NSObject>
+
+- (NSString *)accOngoingTitle;
+- (NSNumber *)accOngoingInvestment;
+
+@end
+
+@protocol COAccountFunded <NSObject>
+
+- (NSString *)accFundedTitle;
+- (NSNumber *)accFundedInvestment;
+
+@end
+
+@protocol COAccountCompleted <NSObject>
+
+- (NSString *)accCompletedtitle;
+- (NSNumber *)accCompletedInvestment;
+
+@end
+
+@protocol COAccountRealised <NSObject>
+
+- (NSString *)accRealisedTitle;
+- (NSNumber *)accRealisedPayouts;
+
+@end
+
+@protocol COAccountPotential <NSObject>
+
+- (NSString *)accPotentialTitle;
+- (NSNumber *)accPotentialPayouts;
+
+@end
+
+
 #pragma mark - About Profile
 
 @protocol COUserAboutProfile <NSObject>

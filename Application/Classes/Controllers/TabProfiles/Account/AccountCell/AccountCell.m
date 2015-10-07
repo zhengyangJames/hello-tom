@@ -22,9 +22,34 @@
     [super awakeFromNib];
 }
 
-- (void)setObject:(NSString *)object {
-    _object = object;
-    _lblDetail.text = object;
+- (void)setAccountOnGoing:(id<COAccountOnGoing>)accountOnGoing {
+    _accountOnGoing = accountOnGoing;
+    _lblValue.text = [UIHelper formartDoubleVauleWithAccountInvest:[_accountOnGoing accOngoingInvestment]];
+    _lblDetail.text = [_accountOnGoing accOngoingTitle];
+}
+
+- (void)setAccountCompleted:(id<COAccountCompleted>)accountCompleted {
+    _accountCompleted = accountCompleted;
+    _lblValue.text = [UIHelper formartDoubleVauleWithAccountInvest:[_accountCompleted accCompletedInvestment]];
+    _lblDetail.text = [_accountCompleted accCompletedtitle];
+}
+
+- (void)setAccountFunded:(id<COAccountFunded>)accountFunded {
+    _accountFunded = accountFunded;
+    _lblValue.text = [UIHelper formartDoubleVauleWithAccountInvest:[_accountFunded accFundedInvestment]];
+    _lblDetail.text = [_accountFunded accFundedTitle];
+}
+
+- (void)setAccountPotential:(id<COAccountPotential>)accountPotential {
+    _accountPotential = accountPotential;
+    _lblValue.text = [UIHelper formartDoubleVauleWithAccountInvest:[_accountPotential accPotentialPayouts]];
+    _lblDetail.text = [_accountPotential accPotentialTitle];
+}
+
+- (void)setAccountRealised:(id<COAccountRealised>)accountRealised {
+    _accountRealised = accountRealised;
+    _lblValue.text = [UIHelper formartDoubleVauleWithAccountInvest:[_accountRealised accRealisedPayouts]];
+    _lblDetail.text = [_accountRealised accRealisedTitle];
 }
 
 @end

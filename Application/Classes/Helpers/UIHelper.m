@@ -192,4 +192,23 @@
     return localPath;
 }
 
++ (NSMutableDictionary*)getParamTokenWithModel:(COUserProfileModel *)model {
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    if (model.stringOfAccessToken) {
+        dic[kACCESS_TOKEN] = model.stringOfAccessToken;
+    } else {
+        dic[kACCESS_TOKEN] = @"";
+    }
+    if (model.stringOfTokenType) {
+        dic[kTOKEN_TYPE] = model.stringOfTokenType;
+    } else {
+        dic[kTOKEN_TYPE] = @"";
+    }
+    return dic;
+}
+
++ (NSString*)formartDoubleVauleWithAccountInvest:(NSNumber*)vaule {
+    return [NSString stringWithFormat:@"$%.2f",[vaule doubleValue]];
+}
+
 @end

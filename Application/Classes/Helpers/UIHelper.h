@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "COUserProfileModel.h"
 
 @interface UIHelper : NSObject
 
@@ -34,4 +35,7 @@
 + (NSString *)getStringCurrencyOfferWithKey:(NSString*)keyCurrency;
 + (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font;
 + (NSString *)getLinkImageWithUrl:(NSURL*)urlImage;
+
++ (NSMutableDictionary*)getParamTokenWithModel:(COUserProfileModel *)model;
++ (NSString*)formartDoubleVauleWithAccountInvest:(NSNumber*)vaule;
 @end

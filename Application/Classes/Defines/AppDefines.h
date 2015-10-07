@@ -62,6 +62,8 @@
 #define WS_METHOD_POST_PORGOT_PASSWORD              [WS_ENDPOINT stringByAppendingString:@"/forget-password/"]
 
 #define WS_METHOD_POST_CHANGE_PASSWORD              [WS_ENDPOINT stringByAppendingString:@"/change-password/"]
+
+#define WS_METHOD_GET_ACCOUNT_INVESTER              [WS_ENDPOINT stringByAppendingString:@"/investment_dashboard/"]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////
@@ -187,6 +189,14 @@
 //////////////////////////////////////////////////////////////
 #pragma mark - enum
 /////////////////////////////////////////////////////////////////
+
+typedef NS_ENUM(NSInteger, COAccountInvestStype) {
+    COAccountOngoingStype,
+    COAccountFundedStype,
+    COAccountCompleteStype,
+    COAccountRealsStype,
+    COAccountPotentialStype
+};
 
 typedef NS_ENUM(NSInteger, CODealsStype) {
     CODealsStypeOngoing,

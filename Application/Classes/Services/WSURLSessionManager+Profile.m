@@ -12,6 +12,7 @@
 #import "COLoginManager.h"
 #import "WSGetProfileRequest.h"
 #import "WSUpdateProfileRequest.h"
+#import "WSGetAccountInvestment.h"
 
 @implementation WSURLSessionManager (Profile)
 
@@ -93,4 +94,24 @@
     return dic;
     
 }
+
+#pragma mark - WS Get Account
+
+- (void)wsGetAccountInvestment:(NSDictionary *)paramToken handler:(WSURLSessionHandler)handler {
+    WSGetAccountInvestment *request = [[WSGetAccountInvestment alloc]init];
+    [request setURL:[NSURL URLWithString:WS_METHOD_GET_ACCOUNT_INVESTER]];
+    [request setHeaderWithToken:paramToken];
+    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            if (handler) {
+                handler(responseObject,response,nil);
+            }
+        } else {
+            if (handler) {
+                handler(nil,response,error);
+            }
+        }
+    }];
+}
+
 @end

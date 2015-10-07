@@ -54,7 +54,7 @@
 
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager {
     if (!token) {
-        token = [self _createParamTokenWithModel:[[COLoginManager shared] userModel]];
+        token = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
     }
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
@@ -102,19 +102,5 @@
     return nil;
 }
 
-- (NSMutableDictionary*)_createParamTokenWithModel:(COUserProfileModel *)model {
-    NSMutableDictionary *dic = [NSMutableDictionary new];
-    if (model.stringOfAccessToken) {
-        dic[kACCESS_TOKEN] = model.stringOfAccessToken;
-    } else {
-        dic[kACCESS_TOKEN] = @"";
-    }
-    if (model.stringOfTokenType) {
-        dic[kTOKEN_TYPE] = model.stringOfTokenType;
-    } else {
-        dic[kTOKEN_TYPE] = @"";
-    }
-    return dic;
-}
 
 @end
