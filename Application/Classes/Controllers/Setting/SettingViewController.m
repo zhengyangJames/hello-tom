@@ -162,9 +162,7 @@
     }
     self.arraySetting = arr;
     [_tableView reloadData];
-    [[COLoginManager shared] setUserModel:nil];
-    [kUserDefaults removeObjectForKey:kPROFILE_JSON];
-    [kUserDefaults synchronize];
+    [kAppDelegate clearData];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
