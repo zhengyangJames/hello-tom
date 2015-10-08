@@ -12,6 +12,7 @@
 #import "COUserProfileModel.h"
 #import "COUserCompanyModel.h"
 #import "COUserInverstorModel.h"
+#import "COAccountInvestmentModel.h"
 
 @implementation COLoginManager
 

@@ -104,7 +104,7 @@
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = delegate;
-    [picker setAllowsEditing:YES];
+    [picker setAllowsEditing:NO];
     switch (mode) {
         case 1:
             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -122,7 +122,6 @@
         case 2:
             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
                 picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                picker.allowsEditing = YES;
                 if(IS_IOS8) {
                     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                         [controller presentViewController:picker animated:YES completion:nil];
@@ -133,8 +132,7 @@
             }
             break;
             
-        default:
-            break;
+        default: break;
     }
     return picker;
 }
