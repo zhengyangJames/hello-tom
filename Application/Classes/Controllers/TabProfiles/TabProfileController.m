@@ -56,7 +56,6 @@
 
 - (void)_pushViewAccountVC {
     AccountController *vc = [[AccountController alloc]init];
-    vc.accountModel = [[COLoginManager shared] accountModel];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

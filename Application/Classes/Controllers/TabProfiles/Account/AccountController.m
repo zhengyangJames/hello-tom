@@ -51,24 +51,13 @@
 
 #pragma mark - Set Get
 
+- (COAccountInvestmentModel *)accountModel {
+    if (_accountModel) {
+        return _accountModel;
+    }
+    return _accountModel = [[COLoginManager shared] accountModel];
+}
 
-
-#pragma mark - WS
-//- (void)wsGetAccountInverstment {
-//    [UIHelper showLoadingInView:self.view];
-//    NSDictionary *paramToken = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
-//    [[WSURLSessionManager shared] wsGetAccountInvestment:paramToken handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-//        if (responseObject &&[responseObject isKindOfClass:[NSDictionary class]] && !error) {
-//            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-//            [dic addEntriesFromDictionary:responseObject];
-//            COAccountInvestmentModel *model = [MTLJSONAdapter modelOfClass:[COAccountInvestmentModel class] fromJSONDictionary:dic error:nil];
-//            self.accountModel = model;
-//        } else {
-//            [UIHelper showError:error];
-//        }
-//        [UIHelper hideLoadingFromView:self.view];
-//    }];
-//}
 
 #pragma mark - UITableView - Delegate
 

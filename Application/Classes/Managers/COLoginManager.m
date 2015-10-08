@@ -138,10 +138,11 @@
         if (responseObject &&[responseObject isKindOfClass:[NSDictionary class]] && !error) {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
             [dic addEntriesFromDictionary:responseObject];
-            COAccountInvestmentModel *model = [MTLJSONAdapter modelOfClass:[COAccountInvestmentModel class] fromJSONDictionary:dic error:nil];
-            self.accountModel = model;
+            NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+            [kUserDefaults setObject:data forKey:UPDATE_ACCOUNT_PROFILE_JSON];
+            [kUserDefaults synchronize];
             if (AcccountGetInvestor) {
-                AcccountGetInvestor(model,nil);
+                AcccountGetInvestor(dic,nil);
             }
         } else {
             if (AcccountGetInvestor) {
@@ -154,6 +155,14 @@
 - (COAccountInvestmentModel *)accountModel {
     if (_accountModel) {
         return _accountModel;
+    }
+    NSError *error;
+    if ([kUserDefaults objectForKey:UPDATE_ACCOUNT_PROFILE_JSON]) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_ACCOUNT_PROFILE_JSON] options:0 error:&error];
+        if (dic) {
+            COAccountInvestmentModel *userProModel = [MTLJSONAdapter modelOfClass:[COAccountInvestmentModel class] fromJSONDictionary:dic error:&error];
+            return _accountModel = userProModel;
+        }
     }
     return nil;
 }

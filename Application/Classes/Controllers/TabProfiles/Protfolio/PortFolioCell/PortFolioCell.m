@@ -27,7 +27,7 @@
     _object = object;
     _lbNameDetail.numberOfLines = 0;
     _lbNameDetail.text = object;
-    _lbNumOfValue.text = @"$0.00";
+    _lbNumOfValue.text = @"0.00";
     [_lbNameDetail setNeedsUpdateConstraints];
 }
 

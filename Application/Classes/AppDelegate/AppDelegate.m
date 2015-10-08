@@ -124,10 +124,11 @@
     [[COLoginManager shared] setUserModel:nil];
     [[COLoginManager shared] setCompanyModel:nil];
     [[COLoginManager shared] setInvestorModel:nil];
+    [[COLoginManager shared] setAccountModel:nil];
     [kUserDefaults removeObjectForKey:kPROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_INVESTOR_PROFILE_JSON];
-    [kUserDefaults synchronize];
+    [kUserDefaults removeObjectForKey:UPDATE_ACCOUNT_PROFILE_JSON];
     [kUserDefaults synchronize];
 }
 
@@ -136,8 +137,7 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 1) {
         if ([[COLoginManager shared] userModel]) {
-            [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
-            }];
+            [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {}];
         } else {
             [self _setUpLogginVC];
             [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
