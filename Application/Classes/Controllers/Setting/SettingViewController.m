@@ -161,13 +161,7 @@
     }
     self.arraySetting = arr;
     [_tableView reloadData];
-    [[COLoginManager shared] setUserModel:nil];
-    [[COLoginManager shared] setCompanyModel:nil];
-    [[COLoginManager shared] setInvestorModel:nil];
-    [kUserDefaults removeObjectForKey:kPROFILE_JSON];
-    [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
-    [kUserDefaults removeObjectForKey:UPDATE_INVESTOR_PROFILE_JSON];
-    [kUserDefaults synchronize];
+    [kAppDelegate clearData];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
