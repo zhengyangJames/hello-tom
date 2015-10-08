@@ -98,8 +98,8 @@
     return m_string(@"INVESTOR_DURATION");
 }
 - (NSString *)COInvestorDurationContent {
-    if (self.target) {
-        return self.target;
+    if (self.duration) {
+        return self.duration;
     }
     return @"Unknown";
 }

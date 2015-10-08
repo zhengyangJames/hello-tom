@@ -60,6 +60,7 @@
 		0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883C1B27CA7100B5656F /* NMUIHelper.m */; };
 		0EED2E711B5E2B94006730E2 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
 		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
+		1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; settings = {ASSET_TAGS = (); }; };
 		1E67FAA11BBB773D008F433C /* ProfileList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAA01BBB773D008F433C /* ProfileList.plist */; };
 		1E67FAB41BBB8882008F433C /* COAwatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAB31BBB8882008F433C /* COAwatarView.m */; };
 		1E67FAC41BBB9149008F433C /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAC31BBB9149008F433C /* BaseLabel.m */; };
@@ -380,6 +381,8 @@
 		0EED2E701B5E2B94006730E2 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		0EED2E731B5E2E08006730E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0EFEB4B01B2724B2001195B7 /* CoAssets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoAssets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E4B347A1BC62846006F2200 /* COBorderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COBorderTextView.h; sourceTree = "<group>"; };
+		1E4B347B1BC62846006F2200 /* COBorderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COBorderTextView.m; sourceTree = "<group>"; };
 		1E67FAA01BBB773D008F433C /* ProfileList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProfileList.plist; sourceTree = "<group>"; };
 		1E67FAB21BBB8882008F433C /* COAwatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COAwatarView.h; sourceTree = "<group>"; };
 		1E67FAB31BBB8882008F433C /* COAwatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COAwatarView.m; sourceTree = "<group>"; };
@@ -975,6 +978,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1E4B34791BC62823006F2200 /* COTextViewBorder */ = {
+			isa = PBXGroup;
+			children = (
+				1E4B347A1BC62846006F2200 /* COBorderTextView.h */,
+				1E4B347B1BC62846006F2200 /* COBorderTextView.m */,
+			);
+			path = COTextViewBorder;
+			sourceTree = "<group>";
+		};
 		1E67FAB11BBB8866008F433C /* COAwatarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1291,6 +1303,7 @@
 		7F325E451B40E50800116445 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				1E4B34791BC62823006F2200 /* COTextViewBorder */,
 				1E8F8A0F1BC4FA6F004CEF26 /* COLabelTopAligin */,
 				1E67FAB11BBB8866008F433C /* COAwatarView */,
 				7FCD18A91B4BAC00000B81A2 /* COPopUpView */,
@@ -2113,6 +2126,7 @@
 				012BDB9F1BA535F700252D12 /* COListFilterObject.m in Sources */,
 				0E89561A1BBE1BB2007E36BF /* AccountController.m in Sources */,
 				7F325FC81B40E50800116445 /* COLineBottomView.m in Sources */,
+				1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */,
 				1EA610DA1BC51C2700BF3A47 /* WSUpdateInvestorProfile.m in Sources */,
 				0ECA88441B27CA7100B5656F /* NSFileManager+Directories.m in Sources */,
 				012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */,
