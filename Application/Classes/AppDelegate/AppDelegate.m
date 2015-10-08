@@ -31,6 +31,7 @@
     self.window.rootViewController = self.baseTabBarController;
     self.baseTabBarController.delegate = self;
     [self _setUp3rdSDKs];
+    [self _checkVersionAndClearData];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -118,6 +119,23 @@
     return _baseSettingNAV;
 }
 
+#pragma mark - CheckVertion
+
+- (void)_checkVersionAndClearData {
+    NSString *version = [kUserDefaults objectForKey:KEY_VERSION];
+    if (!version || [version isEmpty]) {
+        NSString *bundleVS = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+        [kUserDefaults setObject:bundleVS forKey:KEY_VERSION];
+        [kUserDefaults synchronize];
+        [self clearData];
+    }
+}
+
+- (void)clearData {
+    [[COLoginManager shared] setUserModel:nil];
+    [kUserDefaults removeObjectForKey:kPROFILE_JSON];
+    [kUserDefaults synchronize];
+}
 
 #pragma mark - Tabbar Delegate
 
