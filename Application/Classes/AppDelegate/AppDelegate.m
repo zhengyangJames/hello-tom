@@ -118,6 +118,8 @@
     }
 }
 
+#pragma mark - ClearData
+
 - (void)clearData {
     [[COLoginManager shared] setUserModel:nil];
     [[COLoginManager shared] setCompanyModel:nil];

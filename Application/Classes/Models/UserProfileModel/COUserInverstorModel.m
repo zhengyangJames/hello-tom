@@ -29,7 +29,7 @@
     if (self.currency) {
         return self.currency;
     }
-    return @"SGD";
+    return @"Singapore Dollars";
 }
 #pragma mark - Description
 - (NSString *)CODescriptionsContent {

@@ -68,9 +68,15 @@
     _countriesTextField.text = [_investorUserModel COInvestorCountriesContent];
     _descriptionTextField.text = [_investorUserModel CODescriptionsContent];
     _websiteTextField.text = [_investorUserModel COWebsiteContent];
-    [_btnCurrency setTitle:[_investorUserModel COCureencyContent] forState:UIControlStateNormal];
-    [_btnInvestor setTitle:[_investorUserModel COInvestorTypeContent] forState:UIControlStateNormal];
-    [_btnProject setTitle:[_investorUserModel COInvestorPreferenceContent] forState:UIControlStateNormal];
+    NSString *currency = [_investorUserModel COCureencyContent];
+    _indexActtionCureency = [self _getCurrencyForString:currency];
+    [_btnCurrency setTitle:currency forState:UIControlStateNormal];
+    NSString *Invertor = [_investorUserModel COInvestorTypeContent];
+    _indexActtionInvestor = [self _getInvertorForString:Invertor];
+    [_btnInvestor setTitle:Invertor forState:UIControlStateNormal];
+    NSString *project = [_investorUserModel COInvestorPreferenceContent];
+    _indexActtionProject = [self _getProjectForString:project];
+    [_btnProject setTitle:project forState:UIControlStateNormal];
 }
 
 - (NSArray *)arrayCurrency {
@@ -80,11 +86,31 @@
     return _arrayCurrency = [UIHelper getArrayCurrency];
 }
 
+- (NSInteger)_getCurrencyForString:(NSString*)string{
+    NSInteger num = 0;
+    for (int i = 0 ; i < self.arrayCurrency.count; i++) {
+        if ([string isEqualToString:self.arrayCurrency[i]]) {
+            num = i ;
+        }
+    }
+    return num;
+}
+
 - (NSArray *)arrayInvertor {
     if (_arrayInvertor) {
         return _arrayInvertor;
     }
     return _arrayInvertor = [UIHelper getInvestorType];
+}
+
+- (NSInteger)_getInvertorForString:(NSString*)string {
+    NSInteger num = 0;
+    for (int i = 0 ; i < self.arrayInvertor.count; i++) {
+        if ([string isEqualToString:self.arrayInvertor[i]]) {
+            num = i ;
+        }
+    }
+    return num;
 }
 
 - (NSArray *)arrayProject {
@@ -93,6 +119,17 @@
     }
     return _arrayProject = @[@"Bulk Purchase",@"Crowdfunding",@"Pre-Sales"];
 }
+
+- (NSInteger)_getProjectForString:(NSString*)string {
+    NSInteger num = 0;
+    for (int i = 0 ; i < self.arrayProject.count; i++) {
+        if ([string isEqualToString:self.arrayProject[i]]) {
+            num = i ;
+        }
+    }
+    return num;
+}
+
 
 #pragma mark - Private
 
