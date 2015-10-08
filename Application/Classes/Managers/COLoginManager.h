@@ -12,8 +12,10 @@
 @class WSLoginRequest;
 @class COUserCompanyModel;
 @class COUserInverstorModel;
+@class COAccountInvestmentModel;
 
 typedef void(^ActionLoginManager)(id object, NSError *error);
+typedef void(^AcccountGetInvestor)(id object, NSError *error);
 
 @interface COLoginManager : NSObject
 
@@ -22,6 +24,7 @@ typedef void(^ActionLoginManager)(id object, NSError *error);
 @property (nonatomic, strong) COUserProfileModel *userModel;
 @property (nonatomic, strong) COUserCompanyModel *companyModel;
 @property (nonatomic, strong) COUserInverstorModel *investorModel;
+@property (nonatomic, strong) COAccountInvestmentModel *accountModel;
 
 - (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager;
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager;

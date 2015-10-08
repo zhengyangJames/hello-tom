@@ -155,7 +155,7 @@
     [[WSURLSessionManager shared] wsRegisterWithRequest:[self _setRegisterRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if([[responseObject valueForKey:@"success"] isEqualToString:@"user created"]) {
-                [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
+//                [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
                 [self _callWSLogin];
             }else {
                 [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];

@@ -12,6 +12,7 @@
 #import "NProfileController.h"
 #import "ProtfolioController.h"
 #import "LoadFileManager.h"
+#import "COLoginManager.h"
 
 @interface TabProfileController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -55,6 +56,7 @@
 
 - (void)_pushViewAccountVC {
     AccountController *vc = [[AccountController alloc]init];
+    vc.accountModel = [[COLoginManager shared] accountModel];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

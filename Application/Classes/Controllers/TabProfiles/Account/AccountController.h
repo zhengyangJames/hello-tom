@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "COAccountInvestmentModel.h"
 
 @interface AccountController : BaseViewController
-
+@property (strong, nonatomic) COAccountInvestmentModel *accountModel;
 @end

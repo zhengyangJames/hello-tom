@@ -11,7 +11,7 @@
 #import "LoadFileManager.h"
 #import "WSURLSessionManager+Profile.h"
 #import "COLoginManager.h"
-#import "COAccountInvestmentModel.h"
+
 
 #define NUMBER_OF_ROW       5
 
@@ -20,7 +20,7 @@
     __weak IBOutlet UITableView *_tableView;
     
 }
-@property (strong, nonatomic) COAccountInvestmentModel *accountModel;
+
 
 @end
 
@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setUpUI];
-    [self wsGetAccountInverstment];
+//    [self wsGetAccountInverstment];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,27 +51,24 @@
 
 #pragma mark - Set Get
 
-- (void)setAccountModel:(COAccountInvestmentModel *)accountModel {
-    _accountModel = accountModel;
-    [_tableView reloadData];
-}
+
 
 #pragma mark - WS
-- (void)wsGetAccountInverstment {
-    [UIHelper showLoadingInView:self.view];
-    NSDictionary *paramToken = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
-    [[WSURLSessionManager shared] wsGetAccountInvestment:paramToken handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (responseObject &&[responseObject isKindOfClass:[NSDictionary class]] && !error) {
-            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-            [dic addEntriesFromDictionary:responseObject];
-            COAccountInvestmentModel *model = [MTLJSONAdapter modelOfClass:[COAccountInvestmentModel class] fromJSONDictionary:dic error:nil];
-            self.accountModel = model;
-        } else {
-            [UIHelper showError:error];
-        }
-        [UIHelper hideLoadingFromView:self.view];
-    }];
-}
+//- (void)wsGetAccountInverstment {
+//    [UIHelper showLoadingInView:self.view];
+//    NSDictionary *paramToken = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
+//    [[WSURLSessionManager shared] wsGetAccountInvestment:paramToken handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+//        if (responseObject &&[responseObject isKindOfClass:[NSDictionary class]] && !error) {
+//            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+//            [dic addEntriesFromDictionary:responseObject];
+//            COAccountInvestmentModel *model = [MTLJSONAdapter modelOfClass:[COAccountInvestmentModel class] fromJSONDictionary:dic error:nil];
+//            self.accountModel = model;
+//        } else {
+//            [UIHelper showError:error];
+//        }
+//        [UIHelper hideLoadingFromView:self.view];
+//    }];
+//}
 
 #pragma mark - UITableView - Delegate
 
@@ -106,4 +103,5 @@
     return DEFAULT_HEIGHT_CELL;
 }
 
+@synthesize accountModel = _accountModel;
 @end

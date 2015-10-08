@@ -34,9 +34,18 @@
                     NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
                     [kUserDefaults setObject:data forKey:kPROFILE_JSON];
                     [kUserDefaults synchronize];
-                    if (actionLoginManager) {
-                        actionLoginManager(object,nil);
-                    }
+                    [self wsGetAccountInverstment:^(id object, NSError *error){
+                        if (object) {
+                            if (actionLoginManager) {
+                                actionLoginManager(object,nil);
+                            }
+                        } else {
+                            if (actionLoginManager) {
+                                actionLoginManager(nil,error);
+                            }
+                        }
+                    }];
+
                 } else {
                     if (actionLoginManager) {
                         actionLoginManager(nil,error);
@@ -105,9 +114,9 @@
 }
 
 - (COUserInverstorModel *)investorModel {
-//    if (_investorModel) {
-//        return _investorModel;
-//    }
+    //    if (_investorModel) {
+    //        return _investorModel;
+    //    }
     NSError *error;
     if ([kUserDefaults objectForKey:UPDATE_INVESTOR_PROFILE_JSON]) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_INVESTOR_PROFILE_JSON] options:0 error:&error];
@@ -121,5 +130,32 @@
     return nil;
 }
 
+#pragma mark -Account Investor WS
+
+- (void)wsGetAccountInverstment:(AcccountGetInvestor)AcccountGetInvestor {
+    NSDictionary *paramToken = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
+    [[WSURLSessionManager shared] wsGetAccountInvestment:paramToken handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (responseObject &&[responseObject isKindOfClass:[NSDictionary class]] && !error) {
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+            [dic addEntriesFromDictionary:responseObject];
+            COAccountInvestmentModel *model = [MTLJSONAdapter modelOfClass:[COAccountInvestmentModel class] fromJSONDictionary:dic error:nil];
+            self.accountModel = model;
+            if (AcccountGetInvestor) {
+                AcccountGetInvestor(model,nil);
+            }
+        } else {
+            if (AcccountGetInvestor) {
+                AcccountGetInvestor(nil,error);
+            }
+        }
+    }];
+}
+
+- (COAccountInvestmentModel *)accountModel {
+    if (_accountModel) {
+        return _accountModel;
+    }
+    return nil;
+}
 
 @end
