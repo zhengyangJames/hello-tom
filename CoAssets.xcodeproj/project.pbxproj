@@ -750,11 +750,11 @@
 		0E39FA491BC4247000880834 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0E39FA4F1BC4247000880834 /* Views */,
 				0E39FA4B1BC4247000880834 /* NProfileDataSource.h */,
 				0E39FA4C1BC4247000880834 /* NProfileDataSource.m */,
 				0E39FA4D1BC4247000880834 /* NProfileDelegate.h */,
 				0E39FA4E1BC4247000880834 /* NProfileDelegate.m */,
-				0E39FA4F1BC4247000880834 /* Views */,
 			);
 			path = Components;
 			sourceTree = "<group>";

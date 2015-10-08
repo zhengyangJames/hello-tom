@@ -22,8 +22,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
-                        <rect key="frame" x="0.0" y="62" width="216" height="24"/>
+                        <rect key="frame" x="48" y="66.5" width="120" height="24"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="120" id="4fR-TQ-MfK"/>
                             <constraint firstAttribute="height" constant="24" id="9d3-GK-CGI"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="28"/>
@@ -31,14 +32,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_meoney@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="l4l-7c-aca">
-                        <rect key="frame" x="89" y="20" width="38" height="38"/>
+                        <rect key="frame" x="89" y="24.5" width="38" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="EwA-I8-CVT"/>
                             <constraint firstAttribute="width" constant="38" id="L0c-CT-T3C"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funded &amp;Completed Projects" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="134" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-2Y-WKU" userLabel="LabelText" customClass="COLabelTextAligin">
-                        <rect key="frame" x="0.0" y="94" width="216" height="54.5"/>
+                        <rect key="frame" x="0.0" y="98.5" width="216" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="tmg-tn-sgK"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -58,10 +62,18 @@
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="ebE-Sb-d48"/>
+                        <exclude reference="vaB-60-Xyi"/>
+                        <exclude reference="gRd-uX-ZWy"/>
                         <exclude reference="9jN-oO-T4y"/>
+                        <exclude reference="wrV-Js-FOd"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="Vql-CH-7V5" firstAttribute="centerY" secondItem="KGk-i7-Jjw" secondAttribute="centerY" id="Jln-D8-o05"/>
+                <constraint firstItem="Vql-CH-7V5" firstAttribute="centerX" secondItem="KGk-i7-Jjw" secondAttribute="centerX" id="Pxp-uc-aM8"/>
+            </constraints>
             <connections>
                 <outlet property="_imgThumbnail" destination="l4l-7c-aca" id="Bh7-3g-3Yy"/>
                 <outlet property="_lbNameDetail" destination="ctf-2Y-WKU" id="ynq-oc-osi"/>

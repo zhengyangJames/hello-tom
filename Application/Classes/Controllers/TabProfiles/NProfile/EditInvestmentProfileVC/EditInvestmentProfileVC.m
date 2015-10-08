@@ -64,7 +64,6 @@
     } else {
         _targetTextField.text = [_investorUserModel COInvestorTargetContent];
     }
-    
     _investmentTextField.text = [_investorUserModel COInvestorAmountContent];
     _countriesTextField.text = [_investorUserModel COInvestorCountriesContent];
     _descriptionTextField.text = [_investorUserModel CODescriptionsContent];

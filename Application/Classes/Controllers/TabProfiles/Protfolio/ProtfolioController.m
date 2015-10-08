@@ -60,12 +60,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat width = ([UIScreen mainScreen].bounds.size.width - 18) / 2;
-    CGFloat height;
-    if (IS_IPHONE_4) {
-        height = ([UIScreen mainScreen].bounds.size.height - 131) / 2;
-    } else {
-        height = heightCollectionViewCellSize;
-    }
+    CGFloat height = ([UIScreen mainScreen].bounds.size.height - 131) / 2;
     CGSize size = CGSizeMake(width, height);
     return size;
 }
