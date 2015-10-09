@@ -9,6 +9,7 @@
 #import "EditInvestmentProfileVC.h"
 #import "CODropListView.h"
 #import "COBorderTextField.h"
+#import "COBorderTextView.h"
 #import "CoDropListButtom.h"
 #import "WSUpdateInvestorProfile.h"
 
@@ -20,8 +21,8 @@
     __weak IBOutlet COBorderTextField *_investmentTextField;
     __weak IBOutlet COBorderTextField *_durationTextField;
     __weak IBOutlet COBorderTextField *_targetTextField;
-    __weak IBOutlet COBorderTextField *_countriesTextField;
-    __weak IBOutlet COBorderTextField *_descriptionTextField;
+    __weak IBOutlet COBorderTextView *_countriesTextField;
+    __weak IBOutlet COBorderTextView *_descriptionTextField;
     __weak IBOutlet COBorderTextField *_websiteTextField;
     
     NSInteger _indexActtionInvestor;
