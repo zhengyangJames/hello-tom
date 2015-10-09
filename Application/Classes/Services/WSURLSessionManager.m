@@ -109,10 +109,10 @@
                                       body:(NSData*)bodyData
                                 httpMethod:(NSString*)method {
     
-    NSString *bodyString = @"";
-    if(bodyData != nil) {
-        bodyString = [[NSString alloc] initWithData:bodyData encoding:NSUTF8StringEncoding];
-    }
+//    NSString *bodyString = @"";
+//    if(bodyData != nil) {
+//        bodyString = [[NSString alloc] initWithData:bodyData encoding:NSUTF8StringEncoding];
+//    }
     // create request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:WS_TIME_OUT];
     [request setHTTPMethod:[method uppercaseString]];

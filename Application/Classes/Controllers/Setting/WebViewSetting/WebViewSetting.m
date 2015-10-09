@@ -48,6 +48,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     if ( [_webView isLoading] ) {
         [_webView stopLoading];
     }
