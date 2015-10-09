@@ -31,9 +31,12 @@
                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="19"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toN-I8-BVM">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toN-I8-BVM">
                         <rect key="frame" x="8" y="28" width="304" height="48"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" button="YES" link="YES" image="YES" selected="YES"/>
+                        </accessibility>
                         <string key="text">Invest in Canyon de Boracay Premier to own a piece of the booming tourism in Boracay
 Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist destination, known for its Powder - Fine Sands and Prestine Waters,</string>
                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
@@ -57,7 +60,7 @@ Invest in the booming tourism in Philippines -Boracay, Philippine's top tourist 
                 <outlet property="_detailsTextView" destination="toN-I8-BVM" id="MMT-F7-KTs"/>
                 <outlet property="_headerLabel" destination="eAq-0U-7fu" id="AKR-nZ-SFl"/>
             </connections>
-            <point key="canvasLocation" x="105" y="154.5"/>
+            <point key="canvasLocation" x="-36" y="-8.5"/>
         </tableViewCell>
     </objects>
 </document>

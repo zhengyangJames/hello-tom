@@ -73,6 +73,9 @@
 		1EA610D61BC5071B00BF3A47 /* EditInvestmentProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D41BC5071B00BF3A47 /* EditInvestmentProfileVC.m */; settings = {ASSET_TAGS = (); }; };
 		1EA610D71BC5071B00BF3A47 /* EditInvestmentProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */; settings = {ASSET_TAGS = (); }; };
 		1EA610DA1BC51C2700BF3A47 /* WSUpdateInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */; settings = {ASSET_TAGS = (); }; };
+		1ECEAE6F1BC75A50006FE0CA /* COUserPortFolioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE6E1BC75A50006FE0CA /* COUserPortFolioModel.m */; settings = {ASSET_TAGS = (); }; };
+		1ECEAE781BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE771BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m */; settings = {ASSET_TAGS = (); }; };
+		1ECEAE7B1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE7A1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m */; settings = {ASSET_TAGS = (); }; };
 		1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */; };
 		1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
 		1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
@@ -403,6 +406,12 @@
 		1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditInvestmentProfileVC.xib; path = Application/Classes/Controllers/TabProfiles/NProfile/EditInvestmentProfileVC/EditInvestmentProfileVC.xib; sourceTree = SOURCE_ROOT; };
 		1EA610D81BC51C2700BF3A47 /* WSUpdateInvestorProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUpdateInvestorProfile.h; sourceTree = "<group>"; };
 		1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUpdateInvestorProfile.m; sourceTree = "<group>"; };
+		1ECEAE6D1BC75A50006FE0CA /* COUserPortFolioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserPortFolioModel.h; sourceTree = "<group>"; };
+		1ECEAE6E1BC75A50006FE0CA /* COUserPortFolioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserPortFolioModel.m; sourceTree = "<group>"; };
+		1ECEAE761BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserPortfolioOnGoingInvestmentModel.h; sourceTree = "<group>"; };
+		1ECEAE771BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserPortfolioOnGoingInvestmentModel.m; sourceTree = "<group>"; };
+		1ECEAE791BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserPortfolioCompleteInvestmentModel.h; sourceTree = "<group>"; };
+		1ECEAE7A1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserPortfolioCompleteInvestmentModel.m; sourceTree = "<group>"; };
 		1EF1DD8A1BC3896300CD3C78 /* WSUpdateCompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUpdateCompanyProfile.h; sourceTree = "<group>"; };
 		1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUpdateCompanyProfile.m; sourceTree = "<group>"; };
 		1EF23C171BBE6BAF006020C2 /* EditPasswordProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPasswordProfileVC.h; sourceTree = "<group>"; };
@@ -733,19 +742,7 @@
 			children = (
 				BB3C84E11B9109D5004B8EF9 /* ContactsModel */,
 				BB368EAF1B87DF380066C646 /* UserProfileModel */,
-				01D1437A1B7D1053003DF5F9 /* COOfferModel.h */,
-				01D1437B1B7D1053003DF5F9 /* COOfferModel.m */,
-				BBF4CC4A1B7EA08500F9A5FA /* COProjectModel.h */,
-				BBF4CC4B1B7EA08500F9A5FA /* COProjectModel.m */,
-				BB3097D51B8243F000BF6861 /* CODocumentModel.h */,
-				BB3097D61B8243F000BF6861 /* CODocumentModel.m */,
-				BB3097D81B824F0C00BF6861 /* CODocumentItemModel.h */,
-				BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */,
-				BB30D5F21B838D9B00846F3A /* COOfferData.h */,
-				BB25980C1B85526800D947AF /* COProjectFundedAmountModel.h */,
-				BB25980D1B85526800D947AF /* COProjectFundedAmountModel.m */,
-				BB48F19E1B86763E006F1921 /* COFilterListModel.h */,
-				BB48F19F1B86763E006F1921 /* COFilterListModel.m */,
+				1ECEAE881BC76175006FE0CA /* OfferModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1024,6 +1021,162 @@
 			);
 			name = EditInvestmentProfileVC;
 			path = EditInvestmentProfile;
+			sourceTree = "<group>";
+		};
+		1ECEAE7D1BC75DC9006FE0CA /* COPortfolioModel */ = {
+			isa = PBXGroup;
+			children = (
+				1ECEAE6D1BC75A50006FE0CA /* COUserPortFolioModel.h */,
+				1ECEAE6E1BC75A50006FE0CA /* COUserPortFolioModel.m */,
+				1ECEAE761BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.h */,
+				1ECEAE771BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m */,
+				1ECEAE791BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.h */,
+				1ECEAE7A1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m */,
+			);
+			name = COPortfolioModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE811BC75F95006FE0CA /* COInverstorModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E93F8CC1BBD8AB90079D5AE /* COUserInverstorModel.h */,
+				0E93F8CD1BBD8AB90079D5AE /* COUserInverstorModel.m */,
+			);
+			name = COInverstorModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE821BC75FA9006FE0CA /* COCompanyModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E93F8C61BBD6FFC0079D5AE /* COUserCompanyModel.h */,
+				0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */,
+			);
+			name = COCompanyModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE831BC75FBF006FE0CA /* COAboutProfileModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB368EB01B87DF5C0066C646 /* COUserProfileModel.h */,
+				BB368EB11B87DF5C0066C646 /* COUserProfileModel.m */,
+				BB368EB61B87E1F30066C646 /* COUserProfileDetailModel.h */,
+				BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */,
+			);
+			name = COAboutProfileModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE841BC75FCF006FE0CA /* COAccountModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB383E2D1B8BC1B000303E34 /* COUserAccountModel.h */,
+				BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */,
+			);
+			name = COAccountModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE851BC75FDC006FE0CA /* COTokensModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB368EB31B87E0E00066C646 /* COUserTokensModel.h */,
+				BB368EB41B87E0E00066C646 /* COUserTokensModel.m */,
+			);
+			name = COTokensModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE861BC76056006FE0CA /* COInvestmentModel */ = {
+			isa = PBXGroup;
+			children = (
+				1E6A5DCD1BC4BEC200D587BC /* COAccountInvestmentModel.h */,
+				1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */,
+			);
+			name = COInvestmentModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE871BC760A0006FE0CA /* COProfileModel */ = {
+			isa = PBXGroup;
+			children = (
+				1ECEAE811BC75F95006FE0CA /* COInverstorModel */,
+				1ECEAE851BC75FDC006FE0CA /* COTokensModel */,
+				1ECEAE821BC75FA9006FE0CA /* COCompanyModel */,
+				1ECEAE831BC75FBF006FE0CA /* COAboutProfileModel */,
+			);
+			name = COProfileModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE881BC76175006FE0CA /* OfferModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB30D5F21B838D9B00846F3A /* COOfferData.h */,
+				1ECEAE891BC76196006FE0CA /* COOfferModel */,
+				1ECEAE8A1BC7619D006FE0CA /* COProjectModel */,
+				1ECEAE8B1BC761AC006FE0CA /* DocumentModel */,
+				1ECEAE8E1BC761EB006FE0CA /* COProjectFundedAmountModel */,
+				1ECEAE8F1BC761F3006FE0CA /* COFilterListModel */,
+			);
+			name = OfferModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE891BC76196006FE0CA /* COOfferModel */ = {
+			isa = PBXGroup;
+			children = (
+				01D1437A1B7D1053003DF5F9 /* COOfferModel.h */,
+				01D1437B1B7D1053003DF5F9 /* COOfferModel.m */,
+			);
+			name = COOfferModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE8A1BC7619D006FE0CA /* COProjectModel */ = {
+			isa = PBXGroup;
+			children = (
+				BBF4CC4A1B7EA08500F9A5FA /* COProjectModel.h */,
+				BBF4CC4B1B7EA08500F9A5FA /* COProjectModel.m */,
+			);
+			name = COProjectModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE8B1BC761AC006FE0CA /* DocumentModel */ = {
+			isa = PBXGroup;
+			children = (
+				1ECEAE8C1BC761CF006FE0CA /* CODocumentModel */,
+				1ECEAE8D1BC761D8006FE0CA /* CODocumentItemModel */,
+			);
+			name = DocumentModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE8C1BC761CF006FE0CA /* CODocumentModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB3097D51B8243F000BF6861 /* CODocumentModel.h */,
+				BB3097D61B8243F000BF6861 /* CODocumentModel.m */,
+			);
+			name = CODocumentModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE8D1BC761D8006FE0CA /* CODocumentItemModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB3097D81B824F0C00BF6861 /* CODocumentItemModel.h */,
+				BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */,
+			);
+			name = CODocumentItemModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE8E1BC761EB006FE0CA /* COProjectFundedAmountModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB25980C1B85526800D947AF /* COProjectFundedAmountModel.h */,
+				BB25980D1B85526800D947AF /* COProjectFundedAmountModel.m */,
+			);
+			name = COProjectFundedAmountModel;
+			sourceTree = "<group>";
+		};
+		1ECEAE8F1BC761F3006FE0CA /* COFilterListModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB48F19E1B86763E006F1921 /* COFilterListModel.h */,
+				BB48F19F1B86763E006F1921 /* COFilterListModel.m */,
+			);
+			name = COFilterListModel;
 			sourceTree = "<group>";
 		};
 		1EF23C161BBE6AD5006020C2 /* EditPasswordProfileVC */ = {
@@ -1667,21 +1820,11 @@
 		BB368EAF1B87DF380066C646 /* UserProfileModel */ = {
 			isa = PBXGroup;
 			children = (
-				0E93F8CC1BBD8AB90079D5AE /* COUserInverstorModel.h */,
-				0E93F8CD1BBD8AB90079D5AE /* COUserInverstorModel.m */,
-				0E93F8C61BBD6FFC0079D5AE /* COUserCompanyModel.h */,
-				0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */,
-				BB368EB01B87DF5C0066C646 /* COUserProfileModel.h */,
-				BB368EB11B87DF5C0066C646 /* COUserProfileModel.m */,
-				BB383E2D1B8BC1B000303E34 /* COUserAccountModel.h */,
-				BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */,
-				BB368EB31B87E0E00066C646 /* COUserTokensModel.h */,
-				BB368EB41B87E0E00066C646 /* COUserTokensModel.m */,
-				BB368EB61B87E1F30066C646 /* COUserProfileDetailModel.h */,
-				BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */,
+				1ECEAE871BC760A0006FE0CA /* COProfileModel */,
+				1ECEAE841BC75FCF006FE0CA /* COAccountModel */,
+				1ECEAE861BC76056006FE0CA /* COInvestmentModel */,
+				1ECEAE7D1BC75DC9006FE0CA /* COPortfolioModel */,
 				BB368EB91B87F3D60066C646 /* COUserData.h */,
-				1E6A5DCD1BC4BEC200D587BC /* COAccountInvestmentModel.h */,
-				1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */,
 			);
 			path = UserProfileModel;
 			sourceTree = "<group>";
@@ -2075,10 +2218,12 @@
 				7F325F801B40E50800116445 /* NSArray+Sort.m in Sources */,
 				7F325FDE1B40E50800116445 /* WSURLSessionManager.m in Sources */,
 				7F325F871B40E50800116445 /* CODetailsDataSource.m in Sources */,
+				1ECEAE7B1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m in Sources */,
 				7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */,
 				0E8956891BBE88E4007E36BF /* EditCompanyVC.m in Sources */,
 				7F325FA21B40E50800116445 /* LoginViewController.m in Sources */,
 				7F325F851B40E50800116445 /* CODocumentItemCell.m in Sources */,
+				1ECEAE781BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m in Sources */,
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				7F325FC91B40E50800116445 /* COPositive&NagitiveButton.m in Sources */,
 				7F32601B1B40E50800116445 /* main.m in Sources */,
@@ -2126,6 +2271,7 @@
 				012BDB9F1BA535F700252D12 /* COListFilterObject.m in Sources */,
 				0E89561A1BBE1BB2007E36BF /* AccountController.m in Sources */,
 				7F325FC81B40E50800116445 /* COLineBottomView.m in Sources */,
+				1ECEAE6F1BC75A50006FE0CA /* COUserPortFolioModel.m in Sources */,
 				1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */,
 				1EA610DA1BC51C2700BF3A47 /* WSUpdateInvestorProfile.m in Sources */,
 				0ECA88441B27CA7100B5656F /* NSFileManager+Directories.m in Sources */,

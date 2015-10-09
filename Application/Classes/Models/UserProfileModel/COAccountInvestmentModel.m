@@ -7,6 +7,9 @@
 //
 
 #import "COAccountInvestmentModel.h"
+#import "COUserPortFolioModel.h"
+#import "COUserPortfolioOnGoingInvestmentModel.h"
+#import "COUserPortfolioCompleteInvestmentModel.h"
 
 @implementation COAccountInvestmentModel
 
@@ -17,15 +20,21 @@
         @"completedInvestment"     : @"completed_invested_amt",
         @"realisedPayouts"         : @"total_paid_payout",
         @"potentialPayouts"        : @"total_unpaid_payout",
+        @"userPortfolio"           : @"portfolio",
     };
 }
+
++ (NSValueTransformer *)userPortfolioJSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:COUserPortFolioModel.class];
+}
+
 
 - (NSString*)accOngoingTitle {
     return m_string(@"Ongoing Investment");
 }
 
 - (NSNumber*)accOngoingInvestment {
-    return self.ongoingInvestment;
+    return self.ongoingInvestment ;
 }
 
 - (NSString*)accFundedTitle {
@@ -33,7 +42,7 @@
 }
 
 - (NSNumber*)accFundedInvestment {
-    return self.fundedInvestment;
+    return self.fundedInvestment ;
 }
 
 - (NSString*)accCompletedtitle {
@@ -58,6 +67,62 @@
 
 - (NSNumber*)accPotentialPayouts {
     return self.potentialPayouts;
+}
+
+#pragma mark Portfolio
+
+- (NSString*)OngoingProjectsImage {
+    return @"ic_loadding";
+}
+
+- (NSString*)OngoingProjectsTitle {
+    return @"Ongoing Projects";
+}
+
+- (NSNumber*)OngoingProjectsVaule {
+    COUserPortFolioModel *port = self.userPortfolio;
+    return port.ongoingProjects;
+}
+
+- (NSString*)COOngoingInvestmentImage {
+    return @"ic_money";
+}
+
+- (NSString*)COOngoingInvestmentTitle {
+    return @"Ongoing Investment Amount";
+}
+
+- (NSNumber*)COOngoingInvestmentVaule {
+    COUserPortFolioModel *port = self.userPortfolio;
+    COUserPortfolioOnGoingInvestmentModel *ongoing = port.ongoingInvestment;
+    return ongoing.onGoingAmount;
+}
+
+- (NSString*)COCompletedProjectsImage {
+    return @"ic_homes";
+}
+
+- (NSString*)COCompletedProjectsTitle {
+    return @"Funded &Completed Projects";
+}
+
+- (NSNumber*)COCompletedProjectsVaule {
+    COUserPortFolioModel *port = self.userPortfolio;
+    return port.fundedAndCompletedProjects;
+}
+
+- (NSString*)COCompletedInvestmentImage {
+    return @"ic_Check_red";
+}
+
+- (NSString*)COCompletedInvestmentTitle {
+    return @"Funded &Completed Investment Amount";
+}
+
+- (NSNumber*)COCompletedInvestmentVaule {
+    COUserPortFolioModel *port = self.userPortfolio;
+    COUserPortfolioCompleteInvestmentModel *complete = port.fundedAndCompletedInvestment;
+    return complete.completedAmount;
 }
 
 @end

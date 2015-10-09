@@ -12,7 +12,7 @@
 
 @implementation WSChangePassWordRequest
 
--(instancetype)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         COUserProfileModel *userModel = [[COLoginManager shared] userModel];

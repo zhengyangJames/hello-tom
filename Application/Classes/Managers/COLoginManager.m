@@ -13,6 +13,7 @@
 #import "COUserCompanyModel.h"
 #import "COUserInverstorModel.h"
 #import "COAccountInvestmentModel.h"
+#import "COUserPortFolioModel.h"
 
 @implementation COLoginManager
 
@@ -136,6 +137,7 @@
     NSDictionary *paramToken = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
     [[WSURLSessionManager shared] wsGetAccountInvestment:paramToken handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject &&[responseObject isKindOfClass:[NSDictionary class]] && !error) {
+            DBG(@"%@",responseObject);
             NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
             [dic addEntriesFromDictionary:responseObject];
             NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
@@ -166,5 +168,8 @@
     }
     return nil;
 }
+
+#pragma mark - Protfolio 
+
 
 @end

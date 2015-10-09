@@ -195,6 +195,13 @@
 #pragma mark - enum
 /////////////////////////////////////////////////////////////////
 
+typedef NS_ENUM(NSInteger, COPortfolioProfile) {
+    COPortfolioOngoingStype,
+    COPortfolioInvesterStype,
+    COPortfolioCompleteStype,
+    COPortfolioFundedStype,
+};
+
 typedef NS_ENUM(NSInteger, COAccountInvestStype) {
     COAccountOngoingStype,
     COAccountFundedStype,

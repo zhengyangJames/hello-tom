@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
@@ -22,24 +21,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
-                        <rect key="frame" x="48" y="66.5" width="120" height="24"/>
+                        <rect key="frame" x="8" y="66" width="200" height="26"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="4fR-TQ-MfK"/>
-                            <constraint firstAttribute="height" constant="24" id="9d3-GK-CGI"/>
+                            <constraint firstAttribute="height" constant="26" id="9d3-GK-CGI"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="28"/>
+                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="22"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_meoney@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="l4l-7c-aca">
-                        <rect key="frame" x="89" y="24.5" width="38" height="38"/>
+                        <rect key="frame" x="89" y="24" width="38" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="EwA-I8-CVT"/>
                             <constraint firstAttribute="width" constant="38" id="L0c-CT-T3C"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funded &amp;Completed Projects" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="134" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-2Y-WKU" userLabel="LabelText" customClass="COLabelTextAligin">
-                        <rect key="frame" x="0.0" y="98.5" width="216" height="50"/>
+                        <rect key="frame" x="0.0" y="100" width="216" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="tmg-tn-sgK"/>
                         </constraints>
@@ -49,29 +47,17 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Vql-CH-7V5" secondAttribute="trailing" constant="8" id="4f3-z5-GLj"/>
+                    <constraint firstItem="Vql-CH-7V5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="994-ln-jj3"/>
                     <constraint firstItem="ctf-2Y-WKU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9M7-YV-0E6"/>
                     <constraint firstAttribute="centerX" secondItem="l4l-7c-aca" secondAttribute="centerX" id="9Q6-4W-pbR"/>
-                    <constraint firstAttribute="bottom" secondItem="ctf-2Y-WKU" secondAttribute="bottom" constant="8" id="9jN-oO-T4y"/>
                     <constraint firstItem="ctf-2Y-WKU" firstAttribute="top" secondItem="Vql-CH-7V5" secondAttribute="bottom" constant="8" id="I64-0F-Qq2"/>
                     <constraint firstItem="Vql-CH-7V5" firstAttribute="top" secondItem="l4l-7c-aca" secondAttribute="bottom" constant="4" id="SC3-dL-Hgy"/>
-                    <constraint firstItem="Vql-CH-7V5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ebE-Sb-d48"/>
-                    <constraint firstItem="l4l-7c-aca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="gRd-uX-ZWy"/>
+                    <constraint firstItem="Vql-CH-7V5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="btL-Go-ehn"/>
                     <constraint firstAttribute="trailing" secondItem="ctf-2Y-WKU" secondAttribute="trailing" id="uLk-EA-jUc"/>
-                    <constraint firstAttribute="trailing" secondItem="Vql-CH-7V5" secondAttribute="trailing" id="vaB-60-Xyi"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="ctf-2Y-WKU" secondAttribute="bottom" id="wrV-Js-FOd"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="ebE-Sb-d48"/>
-                        <exclude reference="vaB-60-Xyi"/>
-                        <exclude reference="gRd-uX-ZWy"/>
-                        <exclude reference="9jN-oO-T4y"/>
-                        <exclude reference="wrV-Js-FOd"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <constraints>
-                <constraint firstItem="Vql-CH-7V5" firstAttribute="centerY" secondItem="KGk-i7-Jjw" secondAttribute="centerY" id="Jln-D8-o05"/>
                 <constraint firstItem="Vql-CH-7V5" firstAttribute="centerX" secondItem="KGk-i7-Jjw" secondAttribute="centerX" id="Pxp-uc-aM8"/>
             </constraints>
             <connections>

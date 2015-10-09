@@ -23,18 +23,33 @@
 }
 
 #pragma mark - Set Get
-- (void)setObject:(NSString *)object {
-    _object = object;
-    _lbNameDetail.numberOfLines = 0;
-    _lbNameDetail.text = object;
-    _lbNumOfValue.text = @"0.00";
-    [_lbNameDetail setNeedsUpdateConstraints];
+
+- (void)setCompletedInvestment:(id<COCompletedInvestment>)CompletedInvestment {
+    _CompletedInvestment = CompletedInvestment;
+    [_imgThumbnail setImage:[UIImage imageNamed:[_CompletedInvestment COCompletedInvestmentImage]]];
+    _lbNameDetail.text = [_CompletedInvestment COCompletedInvestmentTitle];
+    _lbNumOfValue.text = [UIHelper formartDoubleVauleWithAccountInvest:[_CompletedInvestment COCompletedInvestmentVaule]];
 }
 
-- (void)setImageName:(NSString *)imageName {
-    _imageName = imageName;
-    [_imgThumbnail setImage:[UIImage imageNamed:_imageName]];
+- (void)setCompletedProjects:(id<COCompletedProjects>)CompletedProjects {
+    _CompletedProjects = CompletedProjects;
+    [_imgThumbnail setImage:[UIImage imageNamed:[_CompletedProjects COCompletedProjectsImage]]];
+    _lbNameDetail.text = [_CompletedProjects COCompletedProjectsTitle];
+    _lbNumOfValue.text = [[_CompletedProjects COCompletedProjectsVaule] stringValue];
 }
 
+- (void)setOngoingInvestment:(id<COOngoingInvestment>)OngoingInvestment {
+    _OngoingInvestment = OngoingInvestment;
+    [_imgThumbnail setImage:[UIImage imageNamed:[_OngoingInvestment COOngoingInvestmentImage]]];
+    _lbNameDetail.text = [_OngoingInvestment COOngoingInvestmentTitle];
+    _lbNumOfValue.text = [UIHelper formartDoubleVauleWithAccountInvest:[_OngoingInvestment COOngoingInvestmentVaule]];
+}
+
+- (void)setOngoingProjects:(id<COOngoingProjects>)OngoingProjects {
+    _OngoingProjects = OngoingProjects;
+    [_imgThumbnail setImage:[UIImage imageNamed:[_OngoingProjects OngoingProjectsImage]]];
+    _lbNameDetail.text = [_OngoingProjects OngoingProjectsTitle];
+    _lbNumOfValue.text = [[_OngoingProjects OngoingProjectsVaule] stringValue];
+}
 
 @end

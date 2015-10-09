@@ -211,3 +211,37 @@
 - (void)setNameOfUserCountryCode:(NSString*)string;
 
 @end
+
+#pragma mark - Portfolio
+
+@protocol COOngoingProjects <NSObject>
+
+- (NSString *)OngoingProjectsTitle;
+- (NSString *)OngoingProjectsImage;
+- (NSNumber *)OngoingProjectsVaule;
+
+@end
+
+@protocol COOngoingInvestment <NSObject>
+
+- (NSString *)COOngoingInvestmentTitle;
+- (NSString *)COOngoingInvestmentImage;
+- (NSNumber *)COOngoingInvestmentVaule;
+
+@end
+
+@protocol COCompletedProjects <NSObject>
+
+- (NSString *)COCompletedProjectsTitle;
+- (NSString *)COCompletedProjectsImage;
+- (NSNumber *)COCompletedProjectsVaule;
+
+@end
+
+@protocol COCompletedInvestment <NSObject>
+
+- (NSString *)COCompletedInvestmentTitle;
+- (NSString *)COCompletedInvestmentImage;
+- (NSNumber *)COCompletedInvestmentVaule;
+
+@end
