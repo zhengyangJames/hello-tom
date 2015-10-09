@@ -55,16 +55,10 @@
 
 - (void)setInvestorUserModel:(COUserInverstorModel *)investorUserModel {
     _investorUserModel = investorUserModel;
-    if ([[_investorUserModel COInvestorDurationContent] isEqualToString:@"Unknown"]) {
-        _durationTextField.text = @"0";
-    } else {
-        _durationTextField.text = [_investorUserModel COInvestorDurationContent];
-    }
-    if ([[_investorUserModel COInvestorTargetContent] isEqualToString:@"Unknown"]) {
-        _targetTextField.text = @"0";
-    } else {
-        _targetTextField.text = [_investorUserModel COInvestorTargetContent];
-    }
+    NSString *stringDuration = [UIHelper formatStringUnknown:[_investorUserModel COInvestorDurationContent]];
+    _durationTextField.text = [UIHelper formartStringDuration:stringDuration];
+    NSString *stringTagert = [UIHelper formatStringUnknown:[_investorUserModel COInvestorTargetContent]];
+    _targetTextField.text = [UIHelper formartStringTarget:stringTagert];
     _investmentTextField.text = [_investorUserModel COInvestorAmountContent];
     _countriesTextField.text = [_investorUserModel COInvestorCountriesContent];
     _descriptionTextField.text = [_investorUserModel CODescriptionsContent];
@@ -162,11 +156,14 @@
 }
 
 #pragma mark - WS
+
 - (NSDictionary *)_creatUpdateInfoInvestor {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    NSString *duration = [UIHelper getNumberInstring:[UIHelper formatStringUnknown:_durationTextField.text]];
+    [dic setValue:[self _setModelNilOrNotNil:duration] forKey:kUpIVProfileDuration];
+    NSString *target = [UIHelper getNumberInstring:[UIHelper formatStringUnknown:_targetTextField.text]];
+    [dic setValue:[self _setModelNilOrNotNil:target] forKey:kUpIVProfileTarget];
     [dic setValue:[self _setModelNilOrNotNil:_investmentTextField.text] forKey:kUpIVProfileInvestment];
-    [dic setValue:[self _setModelNilOrNotNil:_durationTextField.text] forKey:kUpIVProfileDuration];
-    [dic setValue:[self _setModelNilOrNotNil:_targetTextField.text] forKey:kUpIVProfileTarget];
     [dic setValue:[self _setModelNilOrNotNil:_countriesTextField.text] forKey:kUpIVProfileCountries];
     [dic setValue:[self _setModelNilOrNotNil:_descriptionTextField.text] forKey:kUpIVProfileDescriptions];
     [dic setValue:[self _setModelNilOrNotNil:_websiteTextField.text] forKey:kUpIVProfileWebsite];
@@ -189,7 +186,6 @@
     [kUserDefaults setObject:data forKey:UPDATE_INVESTOR_PROFILE_JSON];
     [kUserDefaults synchronize];
 }
-
 
 #pragma mark - Action
 

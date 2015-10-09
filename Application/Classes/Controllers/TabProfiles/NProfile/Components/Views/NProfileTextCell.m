@@ -98,7 +98,7 @@
 - (void)setInvestorTarget:(id<COInvestorTarget>)investorTarget {
     _investorTarget = investorTarget;
     _lblName.text = investorTarget.COInvestorTargetTitle;
-    _lblDetail.text = investorTarget.COInvestorTargetContent;
+    _lblDetail.text = [UIHelper formartStringTarget:investorTarget.COInvestorTargetContent];
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
@@ -106,7 +106,7 @@
 - (void)setInvestorDuration:(id<COInvestorDuration>)investorDuration {
     _investorDuration = investorDuration;
     _lblName.text = investorDuration.COInvestorDurationTitle;
-    _lblDetail.text = investorDuration.COInvestorDurationContent;
+    _lblDetail.text = [UIHelper formartStringDuration:investorDuration.COInvestorDurationContent];
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }

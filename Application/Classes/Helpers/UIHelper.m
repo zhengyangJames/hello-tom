@@ -267,4 +267,51 @@
     return [NSString stringWithFormat:@"$%.2f",[vaule doubleValue]];
 }
 
++ (NSString *)formatStringUnknown:(NSString *)string {
+    if ([string isEqualToString:@"Unknown"]) {
+        return @"0";
+    }
+    if ([string isEqualToString:@"0"]) {
+        return @"Unknown";
+    }
+    if ([string isEmpty]) {
+        return @"Unknown";
+    }
+    return string;
+}
+
++ (NSString*)formartStringDuration:(NSString*)string {
+    if ([string isEqualToString:@"Unknown"] || [string isEqualToString:@"0"]) {
+        return string;
+    }
+    return [NSString stringWithFormat:@"%@ mth",string];
+}
+
++ (NSString*)formartStringTarget:(NSString*)string {
+    if ([string isEqualToString:@"Unknown"] || [string isEqualToString:@"0"]) {
+        return string;
+    }
+    return [NSString stringWithFormat:@"%@ %%",string];
+}
+
++ (NSString*)getNumberInstring:(NSString*)vaule {
+    // Intermediate
+    NSString *numberString;
+    NSScanner *scanner = [NSScanner scannerWithString:vaule];
+    NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    // Throw away characters before the first number.
+    [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+    // Collect numbers.
+    [scanner scanCharactersFromSet:numbers intoString:&numberString];
+    // Result.
+    return numberString;
+}
+
++ (NSString*)formartDoubleVauleWithPortfolio:(NSNumber*)vaule {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterScientificStyle];
+    NSString *cvString  = [formatter stringFromNumber:vaule];
+    return cvString;
+}
+
 @end

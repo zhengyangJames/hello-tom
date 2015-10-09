@@ -43,4 +43,9 @@
 
 + (NSArray*)getArrayCurrency;
 + (NSArray*)getInvestorType;
+
++ (NSString *)formatStringUnknown:(NSString *)string;
++ (NSString*)formartStringDuration:(NSString*)string;
++ (NSString*)formartStringTarget:(NSString*)string;
++ (NSString*)getNumberInstring:(NSString*)vaule;
 @end
