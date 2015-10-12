@@ -247,7 +247,7 @@
 
 - (CGFloat)tableview:(UITableView *)tableView heightForCompanyCellAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == [self.company indexOfImageCell]) {
-        return HEIGHT_FOR_IMAGE_ROW;
+        return ([UIScreen mainScreen].bounds.size.width - 20);
     } else if (indexPath.row == [self.company indexOfNoDataCell]) {
         return 150;
     } else if (indexPath.row == [self.company indexOfNameCell]) {

@@ -56,9 +56,17 @@
 - (void)setInvestorUserModel:(COUserInverstorModel *)investorUserModel {
     _investorUserModel = investorUserModel;
     NSString *stringDuration = [UIHelper formatStringUnknown:[_investorUserModel COInvestorDurationContent]];
-    _durationTextField.text = [UIHelper formartStringDuration:stringDuration];
+    if ([stringDuration isEqualToString:@"0"]){
+        _durationTextField.placeholder = @"0";
+    } else {
+        _durationTextField.text = stringDuration;
+    }
     NSString *stringTagert = [UIHelper formatStringUnknown:[_investorUserModel COInvestorTargetContent]];
-    _targetTextField.text = [UIHelper formartStringTarget:stringTagert];
+    if ([stringTagert isEqualToString:@"0"]) {
+        _targetTextField.placeholder = @"0";
+    } else {
+        _targetTextField.text = stringTagert;
+    }
     _investmentTextField.text = [_investorUserModel COInvestorAmountContent];
     _countriesTextField.text = [_investorUserModel COInvestorCountriesContent];
     _descriptionTextField.text = [_investorUserModel CODescriptionsContent];
@@ -124,7 +132,6 @@
     }
     return num;
 }
-
 
 #pragma mark - Private
 

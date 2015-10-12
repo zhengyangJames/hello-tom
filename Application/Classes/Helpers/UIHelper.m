@@ -104,7 +104,7 @@
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = delegate;
-    [picker setAllowsEditing:NO];
+    [picker setAllowsEditing:YES];
     switch (mode) {
         case 1:
             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -309,9 +309,11 @@
 
 + (NSString*)formartDoubleVauleWithPortfolio:(NSNumber*)vaule {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterScientificStyle];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     NSString *cvString  = [formatter stringFromNumber:vaule];
-    return cvString;
+    NSNumber *number = [NSNumber numberWithChar:[cvString integerValue]];
+    NSString *format = [NSString stringWithFormat:@"$%.2f",[number doubleValue]];
+    return format;
 }
 
 @end

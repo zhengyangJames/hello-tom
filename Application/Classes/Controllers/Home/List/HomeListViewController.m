@@ -24,6 +24,7 @@
 #import "WSGetOfferInfoWithRequest.h"
 #import "WSGetListOfferRequest.h"
 #import "COListFilterObject.h"
+#import "COLoginManager.h"
 
 typedef NS_ENUM(NSInteger, FilterType) {
     FilterBullkType,
@@ -52,7 +53,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    [self _callWSGetListOfferFilter:@""];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -60,7 +60,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
-    
+    [self _checkIsReloadListHome];
     [kUserDefaults setObject:@"0" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
 }
@@ -88,6 +88,13 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 }
 
 #pragma mark - Private
+
+- (void)_checkIsReloadListHome {
+    if (![COLoginManager shared].isReloadListHome) {
+        [self _callWSGetListOfferFilter:@""];
+        [COLoginManager shared].isReloadListHome = YES;
+    }
+}
 
 - (void)_pushDetailVcWithID:(COOfferModel *)model {
     OfferViewController *vc = [[OfferViewController alloc]init];
@@ -142,8 +149,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 - (void)_callWSGetListOfferFilter:(NSString*)typeFilter {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         if (self.arrayData && self.arrayData.count > 0) {
-            self.arrayData = nil;
-            [_tableView reloadData];
+//            self.arrayData = nil;
+//            [_tableView reloadData];
             
         } else {
             _noDataView.hidden = YES;

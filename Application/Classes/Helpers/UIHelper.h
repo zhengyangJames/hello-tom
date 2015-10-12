@@ -48,4 +48,5 @@
 + (NSString*)formartStringDuration:(NSString*)string;
 + (NSString*)formartStringTarget:(NSString*)string;
 + (NSString*)getNumberInstring:(NSString*)vaule;
++ (NSString*)formartDoubleVauleWithPortfolio:(NSNumber*)vaule ;
 @end

@@ -17,7 +17,7 @@
 
 @implementation COLoginManager
 
-+ (id)shared {
++ (COLoginManager *)shared {
     static COLoginManager *instance = nil;
     static dispatch_once_t oneTOken;
     dispatch_once(&oneTOken, ^{
@@ -68,7 +68,6 @@
     if (!token) {
         token = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
     }
-    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (actionLoginManager) {

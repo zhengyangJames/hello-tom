@@ -65,7 +65,7 @@
                 <outlet property="_lbNameDetail" destination="ctf-2Y-WKU" id="ynq-oc-osi"/>
                 <outlet property="_lbNumOfValue" destination="Vql-CH-7V5" id="fOJ-Uf-3Bx"/>
             </connections>
-            <point key="canvasLocation" x="151" y="394.5"/>
+            <point key="canvasLocation" x="247" y="392.5"/>
         </tableViewCell>
     </objects>
     <resources>

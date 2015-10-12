@@ -49,10 +49,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="7eQ-Sz-dnh">
-                                            <rect key="frame" x="30" y="10" width="260" height="165"/>
+                                            <rect key="frame" x="67.5" y="10" width="185" height="165"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17a-uG-CJK">
-                                            <rect key="frame" x="30" y="11" width="260" height="165"/>
+                                            <rect key="frame" x="67.5" y="10" width="185" height="165"/>
                                             <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -64,13 +64,13 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="17a-uG-CJK" firstAttribute="centerX" secondItem="7eQ-Sz-dnh" secondAttribute="centerX" id="0MQ-E6-TJD"/>
-                                        <constraint firstItem="7eQ-Sz-dnh" firstAttribute="top" secondItem="lK7-US-ccv" secondAttribute="top" constant="10" id="3OY-Oa-UDc"/>
+                                        <constraint firstItem="7eQ-Sz-dnh" firstAttribute="top" secondItem="lK7-US-ccv" secondAttribute="top" constant="10" id="1Ss-vV-qOo"/>
                                         <constraint firstItem="17a-uG-CJK" firstAttribute="height" secondItem="7eQ-Sz-dnh" secondAttribute="height" id="Jle-Dj-hyL"/>
-                                        <constraint firstItem="7eQ-Sz-dnh" firstAttribute="leading" secondItem="lK7-US-ccv" secondAttribute="leading" constant="30" id="KKk-4r-D7T"/>
-                                        <constraint firstItem="17a-uG-CJK" firstAttribute="centerY" secondItem="7eQ-Sz-dnh" secondAttribute="centerY" constant="0.5" id="NFT-7S-mA9"/>
-                                        <constraint firstAttribute="trailing" secondItem="7eQ-Sz-dnh" secondAttribute="trailing" constant="30" id="S6I-xh-5Rr"/>
-                                        <constraint firstAttribute="bottom" secondItem="7eQ-Sz-dnh" secondAttribute="bottom" constant="10" id="t01-nw-xM9"/>
+                                        <constraint firstItem="17a-uG-CJK" firstAttribute="centerY" secondItem="7eQ-Sz-dnh" secondAttribute="centerY" id="NFT-7S-mA9"/>
+                                        <constraint firstItem="7eQ-Sz-dnh" firstAttribute="width" secondItem="lK7-US-ccv" secondAttribute="height" multiplier="1:1" id="eCL-iA-MZ1"/>
                                         <constraint firstItem="17a-uG-CJK" firstAttribute="width" secondItem="7eQ-Sz-dnh" secondAttribute="width" id="udP-Kk-goE"/>
+                                        <constraint firstItem="7eQ-Sz-dnh" firstAttribute="centerX" secondItem="lK7-US-ccv" secondAttribute="centerX" id="yQN-HB-yo3"/>
+                                        <constraint firstAttribute="bottom" secondItem="7eQ-Sz-dnh" secondAttribute="bottom" constant="10" id="yuG-IP-Pkg"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2W-Vo-vwG" userLabel="Bottom View">
@@ -270,7 +270,7 @@
                 <constraint firstAttribute="trailing" secondItem="dYJ-vI-i4p" secondAttribute="trailing" id="ahZ-WA-4io"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="188" y="447.5"/>
+            <point key="canvasLocation" x="73" y="423.5"/>
         </view>
     </objects>
     <resources>

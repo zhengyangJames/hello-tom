@@ -20,6 +20,7 @@
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
 @property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
 @property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
+
 @end
 
 @implementation AppDelegate
@@ -42,7 +43,10 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {}
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {}
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    COLoginManager *manager = [COLoginManager shared];
+    manager.isReloadListHome = NO;
+}
 
 - (void)applicationWillTerminate:(UIApplication *)application {}
 
@@ -137,12 +141,17 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 1) {
         if ([[COLoginManager shared] userModel]) {
-            [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {}];
+            [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
+                [[COLoginManager shared] setUserModel:nil];
+                NSDictionary *dic = object;
+                NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+                [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+                [kUserDefaults synchronize];
+            }];
         } else {
             [self _setUpLogginVC];
             [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
         }
-
     }
 }
 
