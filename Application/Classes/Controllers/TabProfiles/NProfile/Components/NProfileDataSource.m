@@ -16,6 +16,7 @@
 #import "COUserInverstorModel.h"
 #import "NProfileNodataCell.h"
 #import "COUserData.h"
+#import "NProfileCountrieCell.h"
 
 @interface NProfileDataSource () <profileButtonCellDelegate>
 {
@@ -38,6 +39,7 @@
         [_tableview registerNib:[UINib nibWithNibName:[NProfileTextCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileTextCell identifier]];
         [_tableview registerNib:[UINib nibWithNibName:[NProfileAdressCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileAdressCell identifier]];
         [_tableview registerNib:[UINib nibWithNibName:[NProfileNodataCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileNodataCell identifier]];
+        [_tableview registerNib:[UINib nibWithNibName:[NProfileCountrieCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileCountrieCell identifier]];
     }
     return self;
 }
@@ -104,9 +106,15 @@
         cell.actionStyle = NProfileActionUpdateInvestor;
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_INVESTOR - 2) {
-        return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+        return [self tableview:tableView noContrieCellForRowAtIndexpath:indexPath];
     }
     return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
+}
+
+- (NProfileCountrieCell *)tableview:(UITableView *)tableview noContrieCellForRowAtIndexpath:(NSIndexPath *)indexPath {
+    NProfileCountrieCell *cell = [tableview dequeueReusableCellWithIdentifier:[NProfileCountrieCell identifier]];
+    cell.userAddressInvestor = self.invedtorModel;
+    return cell;
 }
 
 - (NProfileNodataCell *)tableview:(UITableView *)tableview noDataCellForRowAtIndexpath:(NSIndexPath *)indexPath {
@@ -181,9 +189,6 @@
         case NProfileStyleCompany:
             cell.userAddressCompany = self.companyModel;
             break;
-        case NProfileStyleInvestorProfile:
-            cell.userAddressInvestor = self.invedtorModel;
-            break;
         default: break;
     }
     return cell;
@@ -192,6 +197,7 @@
 #pragma mark - Datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (self.profileStyle) {
+            
         case NProfileStyleAbout: return NUM_OF_ROW_ABOUT;
         case NProfileStyleCompany: return [self.company numOfItemInTableview];
         case NProfileStyleInvestorProfile: return NUM_OF_ROW_INVESTOR;
@@ -256,7 +262,7 @@
 
 - (CGFloat)tableview:(UITableView *)tableView heightForCompanyCellAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == [self.company indexOfImageCell]) {
-        return self.heightForCellImage;
+        return [self.companyModel.heightForImage floatValue];
     } else if (indexPath.row == [self.company indexOfNoDataCell]) {
         return DEFAULT_HEIGHT_NO_DATA_CELL;
     } else if (indexPath.row == [self.company indexOfNameCell]) {

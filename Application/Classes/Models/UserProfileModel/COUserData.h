@@ -71,8 +71,9 @@
 @protocol COCompanyImage <NSObject>
 
 - (NSString *)companyImageURL;
-- (void)setCompanyImageURL:(UIImage*)imageCompany;
-
+- (NSString *)heightForImage;
+- (void)setCompanyImageURL:(NSString*)imageCompany;
+- (void)setHeightForImage:(NSString*)imageHeight;
 @end
 
 #pragma mark - Investor

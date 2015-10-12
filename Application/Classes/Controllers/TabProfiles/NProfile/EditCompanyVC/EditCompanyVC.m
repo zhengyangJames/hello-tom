@@ -27,6 +27,7 @@
     NSInteger _indexActtionOrgType;
     NSString *_orgType;
     NSString *_urlImageProfile;
+    CGFloat _heightImage;
 }
 
 @property (nonatomic, strong) NSArray *arrayOrgType;
@@ -108,7 +109,7 @@
 - (void)__actionDone:(id)sender {
     [self _updateProfileUserModel:[self _creatUpdateInfoCompany]];
     if (self.actionDone) {
-        self.actionDone(_heightTopView.constant);
+        self.actionDone(_heightImage);
     }
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
@@ -147,6 +148,8 @@
     [dic setValue:[self _setModelNilOrNotNil:orgNameTextField.text] forKey:kUpCPProfileOrgName];
     [dic setValue:[self _setModelNilOrNotNil:countryTextField.text] forKey:kUpCPProfileCountry];
     [dic setValue:[self _setModelNilOrNotNil:_urlImageProfile] forKey:kUpCPProfileImage];
+    NSString *height = [NSString stringWithFormat:@"%f",_heightImage];
+    [dic setValue:[self _setModelNilOrNotNil:height] forKey:kUpCPProfileImageHeight];
     return dic;
 }
 
@@ -188,12 +191,11 @@
 }
 
 - (void)_updateHeightViewTop:(UIImage *)image {
-    CGFloat heightTopView;
     CGSize sizeImage = image.size;
     CGFloat defaultHeight = ([UIScreen mainScreen].bounds.size.width - 40);
     CGFloat ratioImage = sizeImage.height/sizeImage.width;
-    heightTopView = ratioImage*defaultHeight;
-    _heightTopView.constant = heightTopView;
+    _heightImage = ratioImage*defaultHeight;
+    _heightTopView.constant = _heightImage;
     [_contentView setNeedsUpdateConstraints];
 }
 

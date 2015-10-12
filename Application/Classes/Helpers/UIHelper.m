@@ -315,4 +315,10 @@
     return format;
 }
 
++ (CGFloat)convertStringToCGfloat:(NSString*)string {
+    NSNumber *number = [NSNumber numberWithChar:[string characterAtIndex:string.length]];
+    return [number floatValue];
+}
+
+
 @end

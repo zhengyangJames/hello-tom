@@ -131,7 +131,6 @@
     vc.companyUserModel = self.companyModel;
     vc.actionDone = ^(CGFloat updateForCellImage) {
         self.companyModel = nil;
-        self.profileDatasource.heightForCellImage = updateForCellImage;
         [self _reloadTableview];
     };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];

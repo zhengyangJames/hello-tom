@@ -70,6 +70,8 @@
 		1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
 		1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */; settings = {ASSET_TAGS = (); }; };
+		1E9B84BB1BCBA63100B30A51 /* NProfileCountrieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9B84B91BCBA63100B30A51 /* NProfileCountrieCell.m */; settings = {ASSET_TAGS = (); }; };
+		1E9B84BC1BCBA63100B30A51 /* NProfileCountrieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9B84BA1BCBA63100B30A51 /* NProfileCountrieCell.xib */; settings = {ASSET_TAGS = (); }; };
 		1EA610D61BC5071B00BF3A47 /* EditInvestmentProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D41BC5071B00BF3A47 /* EditInvestmentProfileVC.m */; settings = {ASSET_TAGS = (); }; };
 		1EA610D71BC5071B00BF3A47 /* EditInvestmentProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */; settings = {ASSET_TAGS = (); }; };
 		1EA610DA1BC51C2700BF3A47 /* WSUpdateInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */; settings = {ASSET_TAGS = (); }; };
@@ -401,6 +403,9 @@
 		1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAboutProfileVC.xib; sourceTree = "<group>"; };
 		1E8F8A101BC4FA92004CEF26 /* COLabelTextAligin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLabelTextAligin.h; sourceTree = "<group>"; };
 		1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLabelTextAligin.m; sourceTree = "<group>"; };
+		1E9B84B81BCBA63100B30A51 /* NProfileCountrieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileCountrieCell.h; sourceTree = "<group>"; };
+		1E9B84B91BCBA63100B30A51 /* NProfileCountrieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileCountrieCell.m; sourceTree = "<group>"; };
+		1E9B84BA1BCBA63100B30A51 /* NProfileCountrieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileCountrieCell.xib; sourceTree = "<group>"; };
 		1EA610D31BC5071B00BF3A47 /* EditInvestmentProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditInvestmentProfileVC.h; path = Application/Classes/Controllers/TabProfiles/NProfile/EditInvestmentProfileVC/EditInvestmentProfileVC.h; sourceTree = SOURCE_ROOT; };
 		1EA610D41BC5071B00BF3A47 /* EditInvestmentProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditInvestmentProfileVC.m; path = Application/Classes/Controllers/TabProfiles/NProfile/EditInvestmentProfileVC/EditInvestmentProfileVC.m; sourceTree = SOURCE_ROOT; };
 		1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditInvestmentProfileVC.xib; path = Application/Classes/Controllers/TabProfiles/NProfile/EditInvestmentProfileVC/EditInvestmentProfileVC.xib; sourceTree = SOURCE_ROOT; };
@@ -762,6 +767,9 @@
 		0E39FA4F1BC4247000880834 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1E9B84B81BCBA63100B30A51 /* NProfileCountrieCell.h */,
+				1E9B84B91BCBA63100B30A51 /* NProfileCountrieCell.m */,
+				1E9B84BA1BCBA63100B30A51 /* NProfileCountrieCell.xib */,
 				0E39FA501BC4247000880834 /* NProfileAdressCell.h */,
 				0E39FA511BC4247000880834 /* NProfileAdressCell.m */,
 				0E39FA521BC4247000880834 /* NProfileAdressCell.xib */,
@@ -2083,6 +2091,7 @@
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
 				0E39FA6D1BC4247000880834 /* NProfileNodataCell.xib in Resources */,
 				7F85292F1B43935B00CFAEB5 /* United States.png in Resources */,
+				1E9B84BC1BCBA63100B30A51 /* NProfileCountrieCell.xib in Resources */,
 				1EF23C251BBE85C9006020C2 /* ic_Check_red@3x.png in Resources */,
 				7F32601E1B40E50800116445 /* Raleway-BlackItalic.ttf in Resources */,
 				7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */,
@@ -2251,6 +2260,7 @@
 				0E39FA6A1BC4247000880834 /* NProfileImageCell.m in Sources */,
 				BBF4CC4C1B7EA08500F9A5FA /* COProjectModel.m in Sources */,
 				7F325FDB1B40E50800116445 /* WSURLSessionManager+ListContact.m in Sources */,
+				1E9B84BB1BCBA63100B30A51 /* NProfileCountrieCell.m in Sources */,
 				BB3A9F611B9624F9002EEB1C /* WSForgotPassWordRequest.m in Sources */,
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,

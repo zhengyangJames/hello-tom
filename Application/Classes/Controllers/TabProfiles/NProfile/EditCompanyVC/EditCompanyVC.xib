@@ -24,11 +24,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditCompanyVC">
             <connections>
                 <outlet property="_btnOrgType" destination="029-Hg-mts" id="k1c-Rs-c5d"/>
+                <outlet property="_contentView" destination="xfM-ij-YzH" id="W95-yX-I9g"/>
                 <outlet property="_heightTopView" destination="7Ac-UJ-pPf" id="GIA-eI-VsW"/>
                 <outlet property="_imageCompany" destination="7eQ-Sz-dnh" id="7hC-jw-tL9"/>
                 <outlet property="address2TextField" destination="nl3-PP-geN" id="A4s-re-2MH"/>
                 <outlet property="addressTextField" destination="ZgE-kC-jx8" id="3hA-Ea-5nl"/>
-                <outlet property="contentView" destination="xfM-ij-YzH" id="mGA-Yg-QwF"/>
                 <outlet property="countryTextField" destination="M36-6y-rQe" id="Qnm-I6-7Va"/>
                 <outlet property="orgCityTextField" destination="O9j-Kd-VlM" id="jJO-AO-NCs"/>
                 <outlet property="orgNameTextField" destination="8g3-u0-Njx" id="HaR-9Z-axj"/>

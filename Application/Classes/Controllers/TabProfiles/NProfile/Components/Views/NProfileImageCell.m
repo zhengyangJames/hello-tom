@@ -26,7 +26,6 @@
 
 - (void)setCompanyImage:(id<COCompanyImage>)companyImage {
     _companyImage = companyImage;
-    DBG(@"%@",_companyImage.companyImageURL);
     [_imageCompany setContentMode:UIViewContentModeScaleAspectFill];
     _imageCompany.translatesAutoresizingMaskIntoConstraints = NO;
     [_imageCompany sd_setImageWithURL:[NSURL URLWithString:_companyImage.companyImageURL]];

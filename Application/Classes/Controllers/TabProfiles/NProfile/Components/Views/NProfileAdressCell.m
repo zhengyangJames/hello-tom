@@ -12,7 +12,6 @@
 {
     __weak IBOutlet UITextView *_txtDetail;
     __weak IBOutlet UILabel *_txtName;
-    __weak IBOutlet NSLayoutConstraint *_widthOfLabelNameContraint;
 }
 @end
 
@@ -76,14 +75,6 @@
     }
     _txtDetail.text = link;
     _txtName.text = m_string(@"ADDRESSNAME");
-    [_txtDetail setNeedsUpdateConstraints];
-    [self updateConstraintsIfNeeded];
-}
-
-- (void)setUserAddressInvestor:(id<COInvestorCountries>)userAddressInvestor {
-    _userAddressInvestor = userAddressInvestor;
-    _txtDetail.text = [_userAddressInvestor COInvestorCountriesContent];
-    _txtName.text = [_userAddressInvestor COInvestorCountriesTitle];
     [_txtDetail setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }

@@ -13,6 +13,7 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
         @"imageUrl"  : @"image_profile",
+        @"imageHeight"  : @"height_image_profile",
         @"orgName"   : @"org_name",
         @"address"   : @"cp_address_1",
         @"address2"  : @"cp_address_2",
@@ -103,12 +104,12 @@
 - (NSInteger)numOfItemInTableview {
     if (!self.orgName) {
         return NUM_OF_ROW_COMPANY - 2;
-    }
-    
-    if (!self.imageUrl) {
-        return NUM_OF_ROW_COMPANY - 1;
     } else {
-        return NUM_OF_ROW_COMPANY;
+        if (!self.imageUrl) {
+            return NUM_OF_ROW_COMPANY - 1;
+        } else {
+            return NUM_OF_ROW_COMPANY;
+        }
     }
 }
 
@@ -134,7 +135,6 @@
     return 2;
 }
 - (NSInteger)indexOfButtonCell {
-    
     if (!self.orgName) {
         return 1;
     } else {
@@ -150,8 +150,8 @@
         return NSIntegerMax;
     }
     return 0;
-    
 }
+
 - (NSInteger)indexOfNoDataCell {
     if (self.orgName) {
         return NSIntegerMax;
@@ -170,6 +170,17 @@
 
 - (void)setCompanyImageURL:(NSString *)imageURL {
     self.imageUrl = imageURL;
+}
+
+- (NSString *)heightForImage {
+    if (self.imageHeight) {
+        return self.imageHeight;
+    }
+    return [NSString stringWithFormat:@"%f",([UIScreen mainScreen].bounds.size.width - 40)];
+}
+
+- (void)setHeightForImage:(NSString *)imageHeight {
+    self.imageHeight = imageHeight;
 }
 
 @end

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
@@ -21,8 +20,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="36.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nV-J9-AqG">
-                        <rect key="frame" x="5" y="24" width="305" height="12.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="90" translatesAutoresizingMaskIntoConstraints="NO" id="kbO-pN-Kgg">
+                        <rect key="frame" x="10" y="0.0" width="75" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="Wtr-zk-2Oa"/>
+                            <constraint firstAttribute="width" constant="75" id="qYe-1K-Zkq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="2nV-J9-AqG">
+                        <rect key="frame" x="85" y="0.0" width="227" height="36.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="02o-co-85T"/>
@@ -32,24 +41,14 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                     </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countries Preference" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="90" translatesAutoresizingMaskIntoConstraints="NO" id="kbO-pN-Kgg">
-                        <rect key="frame" x="10" y="4" width="189" height="24.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24.5" id="Wtr-zk-2Oa"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kbO-pN-Kgg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ft1-hC-7dn"/>
                     <constraint firstAttribute="bottom" secondItem="2nV-J9-AqG" secondAttribute="bottom" id="LGH-pj-h8C"/>
-                    <constraint firstItem="2nV-J9-AqG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="TmX-3f-gRk"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="kbO-pN-Kgg" secondAttribute="trailing" constant="113" id="XNt-CS-5ea"/>
-                    <constraint firstAttribute="trailing" secondItem="2nV-J9-AqG" secondAttribute="trailing" constant="10" id="gdw-au-IVR"/>
-                    <constraint firstItem="2nV-J9-AqG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="qWH-ga-Gsg"/>
-                    <constraint firstItem="kbO-pN-Kgg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="roo-9s-wYb"/>
+                    <constraint firstItem="2nV-J9-AqG" firstAttribute="leading" secondItem="kbO-pN-Kgg" secondAttribute="trailing" id="cuz-kK-vo0"/>
+                    <constraint firstAttribute="trailing" secondItem="2nV-J9-AqG" secondAttribute="trailing" constant="8" id="gdw-au-IVR"/>
+                    <constraint firstItem="2nV-J9-AqG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qWH-ga-Gsg"/>
+                    <constraint firstItem="kbO-pN-Kgg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="roo-9s-wYb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

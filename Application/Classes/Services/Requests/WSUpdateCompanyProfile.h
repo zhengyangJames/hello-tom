@@ -9,6 +9,7 @@
 #import "WSRequest.h"
 
 static NSString *kUpCPProfileImage       = @"image_profile";
+static NSString *kUpCPProfileImageHeight = @"height_image_profile";
 static NSString *kUpCPProfileOrgName     = @"org_name";
 static NSString *kUpCPProfileOrgType     = @"org_type";
 static NSString *kUpCPProfileAddress1     = @"cp_address_1";
