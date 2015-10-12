@@ -210,24 +210,23 @@
 }
 
 + (NSArray*)getArrayCurrency {
-    NSDictionary *objCurrency = @ {@"SGD": @"Singapore Dollars",
-        @"USD" : @"US Dollars",
-        @"GBP" : @"British Pounds",
-        @"EUR" : @"Euros",
-        @"JPY" : @"Japanese Yen",
-        @"CNY" : @"Chinese Yuan",
-        @"TWD" : @"Taiwan Dollar",
-        @"CAD" : @"Canadian Dollars",
-        @"HKD" : @"Hongkong Dollar",
-        @"AUD" : @"Australia Dollar",
-        @"MYR" : @"Malaysia Ringit",
-        @"THB" : @"Thai Baht",
-        @"PHP" : @"Philippine Peso",
-        @"IDR" : @"Indonesia Rupiah",
-        @"VND" : @"Vietnamese Dong"
-    };
-    NSArray *array = [objCurrency allValues];
-    return array;
+    NSArray *objCurrency = @[@"Singapore Dollars",
+        @"US Dollars",
+        @"British Pounds",
+        @"Euros",
+        @"Japanese Yen",
+        @"Chinese Yuan",
+        @"Taiwan Dollar",
+        @"Canadian Dollars",
+        @"Hongkong Dollar",
+        @"Australia Dollar",
+        @"Malaysia Ringit",
+        @"Thai Baht",
+        @"Philippine Peso",
+        @"Indonesia Rupiah",
+        @"Vietnamese Dong"
+    ];
+    return objCurrency;
 }
 
 + (NSArray*)getInvestorType {

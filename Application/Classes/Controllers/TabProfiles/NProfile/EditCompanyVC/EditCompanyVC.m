@@ -22,6 +22,8 @@
     __weak IBOutlet COBorderTextField *orgCityTextField;
     __weak IBOutlet COBorderTextField *countryTextField;
     __weak IBOutlet UIImageView *_imageCompany;
+    __weak IBOutlet UIView *_contentView;
+    __weak IBOutlet NSLayoutConstraint *_heightTopView;
     NSInteger _indexActtionOrgType;
     NSString *_orgType;
     NSString *_urlImageProfile;
@@ -77,6 +79,8 @@
     self.navigationItem.title = m_string(@"C_PROFILE");
     [self _setupBarButtonCancel];
     [self _setupBarButtonDone];
+    _heightTopView.constant = ([UIScreen mainScreen].bounds.size.width - 40);
+    [_contentView setNeedsUpdateConstraints];
 }
 
 - (void)_setupBarButtonDone {
@@ -117,6 +121,7 @@
 }
 
 - (IBAction)__actionPickImage:(id)sender {
+    [self.view endEditing:YES];
     [self _showActionSheet];
 }
 
