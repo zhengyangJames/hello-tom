@@ -27,12 +27,6 @@
     }
 }
 
-- (void)prepareForInterfaceBuilder {
-    [super prepareForInterfaceBuilder];
-    self.layer.borderWidth = 1;
-    self.layer.borderColor = [UIColor blackColor].CGColor;
-}
-
 @end
 
 

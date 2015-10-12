@@ -320,5 +320,11 @@
     return [number floatValue];
 }
 
++ (NSString*)formartFoatVauleWithPortfolio:(NSNumber*)vaule {
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSString *formattedNumberString = [numberFormatter stringFromNumber:vaule];
+    return formattedNumberString;
+}
 
 @end

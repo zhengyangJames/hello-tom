@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="90" translatesAutoresizingMaskIntoConstraints="NO" id="kbO-pN-Kgg">
-                        <rect key="frame" x="10" y="0.0" width="75" height="22"/>
+                        <rect key="frame" x="10" y="4" width="75" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="Wtr-zk-2Oa"/>
                             <constraint firstAttribute="width" constant="75" id="qYe-1K-Zkq"/>
@@ -48,7 +48,7 @@
                     <constraint firstItem="2nV-J9-AqG" firstAttribute="leading" secondItem="kbO-pN-Kgg" secondAttribute="trailing" id="cuz-kK-vo0"/>
                     <constraint firstAttribute="trailing" secondItem="2nV-J9-AqG" secondAttribute="trailing" constant="8" id="gdw-au-IVR"/>
                     <constraint firstItem="2nV-J9-AqG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qWH-ga-Gsg"/>
-                    <constraint firstItem="kbO-pN-Kgg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="roo-9s-wYb"/>
+                    <constraint firstItem="kbO-pN-Kgg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="roo-9s-wYb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

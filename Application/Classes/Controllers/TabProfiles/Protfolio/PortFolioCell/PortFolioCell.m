@@ -28,7 +28,7 @@
     _CompletedInvestment = CompletedInvestment;
     [_imgThumbnail setImage:[UIImage imageNamed:[_CompletedInvestment COCompletedInvestmentImage]]];
     _lbNameDetail.text = [_CompletedInvestment COCompletedInvestmentTitle];
-    _lbNumOfValue.text = [UIHelper formartDoubleVauleWithAccountInvest:[_CompletedInvestment COCompletedInvestmentVaule]];
+    _lbNumOfValue.text = [UIHelper formartFoatVauleWithPortfolio:[_CompletedInvestment COCompletedInvestmentVaule]];
 }
 
 - (void)setCompletedProjects:(id<COCompletedProjects>)CompletedProjects {
@@ -42,7 +42,7 @@
     _OngoingInvestment = OngoingInvestment;
     [_imgThumbnail setImage:[UIImage imageNamed:[_OngoingInvestment COOngoingInvestmentImage]]];
     _lbNameDetail.text = [_OngoingInvestment COOngoingInvestmentTitle];
-    _lbNumOfValue.text = [UIHelper formartDoubleVauleWithAccountInvest:[_OngoingInvestment COOngoingInvestmentVaule]];
+    _lbNumOfValue.text = [UIHelper formartFoatVauleWithPortfolio:[_OngoingInvestment COOngoingInvestmentVaule]];
 }
 
 - (void)setOngoingProjects:(id<COOngoingProjects>)OngoingProjects {

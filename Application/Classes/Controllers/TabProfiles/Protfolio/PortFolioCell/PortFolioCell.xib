@@ -7,7 +7,9 @@
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway-Regular</string>
-            <string>Raleway-Regular</string>
+        </mutableArray>
+        <mutableArray key="Raleway-SemiBold.ttf">
+            <string>Raleway-SemiBold</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -20,20 +22,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="216" height="156.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
                         <rect key="frame" x="8" y="66" width="200" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="9d3-GK-CGI"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="22"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="32"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_meoney@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="l4l-7c-aca">
-                        <rect key="frame" x="89" y="24" width="38" height="38"/>
+                        <rect key="frame" x="85.5" y="17" width="45" height="45"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="38" id="EwA-I8-CVT"/>
-                            <constraint firstAttribute="width" constant="38" id="L0c-CT-T3C"/>
+                            <constraint firstAttribute="height" constant="45" id="EwA-I8-CVT"/>
+                            <constraint firstAttribute="width" constant="45" id="L0c-CT-T3C"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funded &amp;Completed Projects" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="134" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-2Y-WKU" userLabel="LabelText" customClass="COLabelTextAligin">
@@ -42,7 +44,7 @@
                             <constraint firstAttribute="height" constant="50" id="tmg-tn-sgK"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -65,7 +67,7 @@
                 <outlet property="_lbNameDetail" destination="ctf-2Y-WKU" id="ynq-oc-osi"/>
                 <outlet property="_lbNumOfValue" destination="Vql-CH-7V5" id="fOJ-Uf-3Bx"/>
             </connections>
-            <point key="canvasLocation" x="247" y="392.5"/>
+            <point key="canvasLocation" x="203" y="355.5"/>
         </tableViewCell>
     </objects>
     <resources>
