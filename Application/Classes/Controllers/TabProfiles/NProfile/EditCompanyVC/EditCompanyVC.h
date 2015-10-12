@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "COUserCompanyModel.h"
 
-typedef void(^ActionDone)();
+typedef void(^ActionDone)(CGFloat updateForCellImage);
 
 @interface EditCompanyVC : BaseViewController
 

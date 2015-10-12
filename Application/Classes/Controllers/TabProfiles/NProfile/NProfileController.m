@@ -129,8 +129,9 @@
 - (void)_setupEditCompanyVC {
     EditCompanyVC *vc = [[EditCompanyVC alloc]init];
     vc.companyUserModel = self.companyModel;
-    vc.actionDone = ^() {
+    vc.actionDone = ^(CGFloat updateForCellImage) {
         self.companyModel = nil;
+        self.profileDatasource.heightForCellImage = updateForCellImage;
         [self _reloadTableview];
     };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];

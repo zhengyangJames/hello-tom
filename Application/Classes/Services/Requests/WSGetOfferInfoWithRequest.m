@@ -14,7 +14,7 @@
 - (void)setOfferID:(NSString *)offerID {
     _offerID = offerID;
     if (self.URL && _offerID) {
-        NSString * url = [[self.URL absoluteString] stringByAppendingString:[_offerID stringByAppendingString:@"/"]];
+        NSString * url = [[[self.URL absoluteString] stringByAppendingString:@"/"] stringByAppendingString:[_offerID stringByAppendingString:@"/"]];
         [self setURL:[NSURL URLWithString:url]];
     }
 }

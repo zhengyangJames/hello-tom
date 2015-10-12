@@ -103,6 +103,8 @@
         NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateInvestor;
         return cell;
+    } else if (indexPath.row == NUM_OF_ROW_INVESTOR - 2) {
+        return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
     }
     return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
 }
@@ -179,6 +181,9 @@
         case NProfileStyleCompany:
             cell.userAddressCompany = self.companyModel;
             break;
+        case NProfileStyleInvestorProfile:
+            cell.userAddressInvestor = self.invedtorModel;
+            break;
         default: break;
     }
     return cell;
@@ -220,6 +225,10 @@
     return 44;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
+}
+
 #pragma mark - Height all cell
 
 - (CGFloat)tableview:(UITableView *)tableView heightForAdressRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -247,9 +256,9 @@
 
 - (CGFloat)tableview:(UITableView *)tableView heightForCompanyCellAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == [self.company indexOfImageCell]) {
-        return ([UIScreen mainScreen].bounds.size.width - 20);
+        return self.heightForCellImage;
     } else if (indexPath.row == [self.company indexOfNoDataCell]) {
-        return 150;
+        return DEFAULT_HEIGHT_NO_DATA_CELL;
     } else if (indexPath.row == [self.company indexOfNameCell]) {
         return DEFAULT_HEIGHT_CELL;
     } else if (indexPath.row == [self.company indexOfAddressCell]) {
@@ -262,6 +271,8 @@
 - (CGFloat)tableview:(UITableView *)tableView heightForInvestorProfileCellAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == NUM_OF_ROW_INVESTOR - 1) {
         return HIEGHT_BOTTOMVIEW;
+    } else if (indexPath.row == NUM_OF_ROW_INVESTOR - 2) {
+        return [self tableview:tableView heightForAdressRowAtIndexPath:indexPath];
     }
     return DEFAULT_HEIGHT_CELL;
 }

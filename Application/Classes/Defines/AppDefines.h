@@ -153,6 +153,7 @@
 ////////////////////////////////////////////////////////////////
 #pragma mark - PROFILE DEFINE
 #define DEFAULT_HEIGHT_CELL                         40
+#define DEFAULT_HEIGHT_NO_DATA_CELL                 150
 #define AUTO_HEIGHT_CELL_ABOUT                      (self.view.bounds.size.height - (200+90))/4
 #define AUTO_HEIGHT_CELL_COMPANY                    (self.view.bounds.size.height - (200+90+44))
 #define DEFAULT_HEIGHT_CELL_COMPANY                 205

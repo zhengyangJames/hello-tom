@@ -213,7 +213,7 @@
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lK7-US-ccv" userLabel="Top View">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="7eQ-Sz-dnh">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="7eQ-Sz-dnh">
                                             <rect key="frame" x="20" y="10" width="280" height="165"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17a-uG-CJK">

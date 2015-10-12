@@ -79,8 +79,6 @@
     self.navigationItem.title = m_string(@"C_PROFILE");
     [self _setupBarButtonCancel];
     [self _setupBarButtonDone];
-    _heightTopView.constant = ([UIScreen mainScreen].bounds.size.width - 40);
-    [_contentView setNeedsUpdateConstraints];
 }
 
 - (void)_setupBarButtonDone {
@@ -110,7 +108,7 @@
 - (void)__actionDone:(id)sender {
     [self _updateProfileUserModel:[self _creatUpdateInfoCompany]];
     if (self.actionDone) {
-        self.actionDone();
+        self.actionDone(_heightTopView.constant);
     }
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
@@ -179,6 +177,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+    [self _updateHeightViewTop:image];
     if (image) {
         [_imageCompany setImage:image];
         _urlImageProfile = @"http://www.tapchidanong.org/product_images/h/616/chau-tu-na-3289%284%29__92564_zoom.jpg";
@@ -188,6 +187,14 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-
+- (void)_updateHeightViewTop:(UIImage *)image {
+    CGFloat heightTopView;
+    CGSize sizeImage = image.size;
+    CGFloat defaultHeight = ([UIScreen mainScreen].bounds.size.width - 40);
+    CGFloat ratioImage = sizeImage.height/sizeImage.width;
+    heightTopView = ratioImage*defaultHeight;
+    _heightTopView.constant = heightTopView;
+    [_contentView setNeedsUpdateConstraints];
+}
 
 @end

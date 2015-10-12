@@ -19,7 +19,7 @@
 @property (nonatomic, strong) COUserCompanyModel<COCompanyImage> *companyModel;
 @property (nonatomic, strong) COUserInverstorModel *invedtorModel;
 @property (nonatomic, assign) NSInteger profileStyle;
-
+@property (nonatomic, assign) CGFloat heightForCellImage;
 
 - (id)initWithTableview:(UITableView *)tableview controller:(id<profileButtonCellDelegate>)controller;
 

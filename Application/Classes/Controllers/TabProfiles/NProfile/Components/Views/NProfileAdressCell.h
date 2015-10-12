@@ -12,4 +12,5 @@
 @interface NProfileAdressCell : UITableViewCell
 @property (strong ,nonatomic) id<COUserAboutProfile> userAddress;
 @property (strong ,nonatomic) id<COCompanyAdress> userAddressCompany;
+@property (strong ,nonatomic) id<COInvestorCountries> userAddressInvestor;
 @end

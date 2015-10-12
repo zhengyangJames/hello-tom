@@ -130,6 +130,7 @@
 
 - (NSString *)COInvestorCountriesTitle;
 - (NSString *)COInvestorCountriesContent;
+
 @end
 
 #pragma mark User Company

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "COUserData.h"
 
+
+
 @interface NProfileImageCell : UITableViewCell
 
 @property (nonatomic, strong) id<COCompanyImage> companyImage;
