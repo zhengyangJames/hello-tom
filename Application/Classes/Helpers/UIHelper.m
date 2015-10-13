@@ -179,7 +179,7 @@
     return [objCurrency objectForKeyNotNull:keyCurrency];
 }
 
-+ (NSString *)getStringCurrencyOfferWithVaule:(NSString*)value {
++ (NSString *)getStringCurrencyOfferWithValue:(NSString*)value {
     NSDictionary *objCurrency = @ {@"SGD": @"Singapore Dollars",
         @"USD" : @"US Dollars",
         @"GBP" : @"British Pounds",
@@ -262,8 +262,8 @@
     return dic;
 }
 
-+ (NSString*)formartDoubleVauleWithAccountInvest:(NSNumber*)vaule {
-    return [NSString stringWithFormat:@"$%.2f",[vaule doubleValue]];
++ (NSString*)formartDoubleValueWithAccountInvest:(NSNumber*)value {
+    return [NSString stringWithFormat:@"$%.2f",[value doubleValue]];
 }
 
 + (NSString *)formatStringUnknown:(NSString *)string {
@@ -293,10 +293,10 @@
     return [NSString stringWithFormat:@"%@ %%",string];
 }
 
-+ (NSString*)getNumberInstring:(NSString*)vaule {
++ (NSString*)getNumberInstring:(NSString*)value {
     // Intermediate
     NSString *numberString;
-    NSScanner *scanner = [NSScanner scannerWithString:vaule];
+    NSScanner *scanner = [NSScanner scannerWithString:value];
     NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
     // Throw away characters before the first number.
     [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
@@ -313,10 +313,10 @@
     return [number floatValue];
 }
 
-+ (NSString*)formartFoatVauleWithPortfolio:(NSNumber*)vaule {
++ (NSString*)formartFoatValueWithPortfolio:(NSNumber*)value {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    NSString *formattedNumberString = [numberFormatter stringFromNumber:vaule];
+    NSString *formattedNumberString = [numberFormatter stringFromNumber:value];
     return formattedNumberString;
 }
 

@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Sanyi. All rights reserved.
 //
 
-#import "NprofileButtonCell.h"
+#import "NProfileButtonCell.h"
 #import "COPositive&NagitiveButton.h"
 
-@interface NprofileButtonCell ()
+@interface NProfileButtonCell ()
 {
     __weak IBOutlet COPositive_NagitiveButton *_btnAction;
 }
 @end
 
-@implementation NprofileButtonCell
+@implementation NProfileButtonCell
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.separatorInset = UIEdgeInsetsMake(0, CGRectGetWidth([UIScreen mainScreen].bounds), 0, 0);

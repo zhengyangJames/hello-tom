@@ -154,7 +154,7 @@
     [self _reloadTableview];
 }
 
-- (void)acctionButtonProfileCell:(NprofileButtonCell *)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle {
+- (void)acctionButtonProfileCell:(NProfileButtonCell *)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle {
     switch (buttonStyle) {
         case NProfileActionUpdateProfile: [self _setupEditAboutProfileVC]; break;
         case NProfileActionChangePassWord: [self _setupEditPasswordVC]; break;

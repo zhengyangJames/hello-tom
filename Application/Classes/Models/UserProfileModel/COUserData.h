@@ -220,7 +220,7 @@
 
 - (NSString *)OngoingProjectsTitle;
 - (NSString *)OngoingProjectsImage;
-- (NSNumber *)OngoingProjectsVaule;
+- (NSNumber *)OngoingProjectsValue;
 
 @end
 
@@ -228,7 +228,7 @@
 
 - (NSString *)COOngoingInvestmentTitle;
 - (NSString *)COOngoingInvestmentImage;
-- (NSNumber *)COOngoingInvestmentVaule;
+- (NSNumber *)COOngoingInvestmentValue;
 
 @end
 
@@ -236,7 +236,7 @@
 
 - (NSString *)COCompletedProjectsTitle;
 - (NSString *)COCompletedProjectsImage;
-- (NSNumber *)COCompletedProjectsVaule;
+- (NSNumber *)COCompletedProjectsValue;
 
 @end
 
@@ -244,6 +244,6 @@
 
 - (NSString *)COCompletedInvestmentTitle;
 - (NSString *)COCompletedInvestmentImage;
-- (NSNumber *)COCompletedInvestmentVaule;
+- (NSNumber *)COCompletedInvestmentValue;
 
 @end

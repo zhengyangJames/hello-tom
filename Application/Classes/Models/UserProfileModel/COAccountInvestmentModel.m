@@ -79,7 +79,7 @@
     return @"Ongoing Projects";
 }
 
-- (NSNumber*)OngoingProjectsVaule {
+- (NSNumber*)OngoingProjectsValue {
     COUserPortFolioModel *port = self.userPortfolio;
     return port.ongoingProjects;
 }
@@ -92,7 +92,7 @@
     return @"Ongoing Investment Amount";
 }
 
-- (NSNumber*)COOngoingInvestmentVaule {
+- (NSNumber*)COOngoingInvestmentValue {
     COUserPortFolioModel *port = self.userPortfolio;
     COUserPortfolioOnGoingInvestmentModel *ongoing = port.ongoingInvestment;
     return ongoing.onGoingAmount;
@@ -106,7 +106,7 @@
     return @"Funded &Completed Projects";
 }
 
-- (NSNumber*)COCompletedProjectsVaule {
+- (NSNumber*)COCompletedProjectsValue {
     COUserPortFolioModel *port = self.userPortfolio;
     return port.fundedAndCompletedProjects;
 }
@@ -119,7 +119,7 @@
     return @"Funded &Completed Investment Amount";
 }
 
-- (NSNumber*)COCompletedInvestmentVaule {
+- (NSNumber*)COCompletedInvestmentValue {
     COUserPortFolioModel *port = self.userPortfolio;
     COUserPortfolioCompleteInvestmentModel *complete = port.fundedAndCompletedInvestment;
     return complete.completedAmount;

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NprofileButtonCell.h"
+#import "NProfileButtonCell.h"
 #import "COUserData.h"
 @class COUserProfileModel;
 @class COUserCompanyModel;

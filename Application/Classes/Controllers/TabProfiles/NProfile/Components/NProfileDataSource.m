@@ -7,7 +7,7 @@
 //
 
 #import "NProfileDataSource.h"
-#import "NprofileButtonCell.h"
+#import "NProfileButtonCell.h"
 #import "NProfileImageCell.h"
 #import "NProfileTextCell.h"
 #import "NProfileAdressCell.h"
@@ -34,7 +34,7 @@
     if (self) {
         self.controller = controller;
         _tableview = tableview;
-        [_tableview registerNib:[UINib nibWithNibName:[NprofileButtonCell identifier] bundle:nil] forCellReuseIdentifier:[NprofileButtonCell identifier]];
+        [_tableview registerNib:[UINib nibWithNibName:[NProfileButtonCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileButtonCell identifier]];
         [_tableview registerNib:[UINib nibWithNibName:[NProfileImageCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileImageCell identifier]];
         [_tableview registerNib:[UINib nibWithNibName:[NProfileTextCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileTextCell identifier]];
         [_tableview registerNib:[UINib nibWithNibName:[NProfileAdressCell identifier] bundle:nil] forCellReuseIdentifier:[NProfileAdressCell identifier]];
@@ -71,11 +71,11 @@
 
 - (UITableViewCell *)tableview:(UITableView *)tableView aboutCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == NUM_OF_ROW_ABOUT- 1) {
-        NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
+        NProfileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionChangePassWord;
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_ABOUT - 2) {
-        NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
+        NProfileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateProfile;
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_ABOUT - 3) {
@@ -94,7 +94,7 @@
     } else if (indexPath.row == [self.company indexOfAddressCell]) {
         return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
     } else {
-        NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
+        NProfileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateCompany;
         return cell;
     }
@@ -102,7 +102,7 @@
 
 - (UITableViewCell *)tableview:(UITableView *)tableView investorProfileCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == NUM_OF_ROW_INVESTOR - 1) {
-        NprofileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
+        NProfileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateInvestor;
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_INVESTOR - 2) {
@@ -122,8 +122,8 @@
     return cell;
 }
 
-- (NprofileButtonCell *)tableview:(UITableView *)tableview buttonCellForRowAtIndexpath:(NSIndexPath *)indexPath {
-    NprofileButtonCell *cell = [tableview dequeueReusableCellWithIdentifier:[NprofileButtonCell identifier]];
+- (NProfileButtonCell *)tableview:(UITableView *)tableview buttonCellForRowAtIndexpath:(NSIndexPath *)indexPath {
+    NProfileButtonCell *cell = [tableview dequeueReusableCellWithIdentifier:[NProfileButtonCell identifier]];
     cell.delegate = self.controller;
     return cell;
 }

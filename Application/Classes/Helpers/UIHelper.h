@@ -37,9 +37,9 @@
 + (NSString *)getLinkImageWithUrl:(NSURL*)urlImage;
 
 + (NSMutableDictionary*)getParamTokenWithModel:(COUserProfileModel *)model;
-+ (NSString*)formartDoubleVauleWithAccountInvest:(NSNumber*)vaule;
++ (NSString*)formartDoubleValueWithAccountInvest:(NSNumber*)value;
 
-+ (NSString *)getStringCurrencyOfferWithVaule:(NSString*)value;
++ (NSString *)getStringCurrencyOfferWithValue:(NSString*)value;
 
 + (NSArray*)getArrayCurrency;
 + (NSArray*)getInvestorType;
@@ -47,7 +47,7 @@
 + (NSString *)formatStringUnknown:(NSString *)string;
 + (NSString*)formartStringDuration:(NSString*)string;
 + (NSString*)formartStringTarget:(NSString*)string;
-+ (NSString*)getNumberInstring:(NSString*)vaule;
++ (NSString*)getNumberInstring:(NSString*)value;
 
-+ (NSString*)formartFoatVauleWithPortfolio:(NSNumber*)vaule;
++ (NSString*)formartFoatValueWithPortfolio:(NSNumber*)value;
 @end
