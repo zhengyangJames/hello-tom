@@ -12,6 +12,8 @@
 #import "COBorderTextView.h"
 #import "CoDropListButtom.h"
 #import "WSUpdateInvestorProfile.h"
+#import "WSURLSessionManager+Profile.h"
+#import "COLoginManager.h"
 
 @interface EditInvestmentProfileVC ()
 {
@@ -197,14 +199,42 @@
     [kUserDefaults synchronize];
 }
 
+- (void)_callWSUpdateInvertorProfile {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsUpdateInvestorProfile:[self _setUpdateInvertorProfileRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        [UIHelper showLoadingInView:self.view];
+        if (self.actionDone) {
+            self.actionDone();
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+}
+
+- (WSUpdateInvestorProfile *)_setUpdateInvertorProfileRequest {
+    WSUpdateInvestorProfile *request = [[WSUpdateInvestorProfile alloc] init];
+    [request setURL:[NSURL URLWithString:WS_METHOD_GET_PROFILE_INVESTER]];
+    [request setHTTPMethod:METHOD_POST];
+    [request setRequestWithTOken];
+    [request setBodyParam:[UIHelper getStringCurrencyOfferWithValue:_btnCurrency.titleLabel.text]  forKey:kUpIVProfileCurrency];
+    [request setBodyParam:[self _setModelNilOrNotNil:_descriptionTextField.text] forKey:kUpIVProfileDescriptions];
+    [request setBodyParam:[self _setModelNilOrNotNil:_investmentTextField.text] forKey:kUpIVProfileInvestment];
+    [request setBodyParam:[self _setModelNilOrNotNil:_countriesTextField.text] forKey:kUpIVProfileCountries];
+    NSString *duration = [UIHelper getNumberInstring:[UIHelper formatStringUnknown:_durationTextField.text]];
+    [request setBodyParam:[self _setModelNilOrNotNil:duration] forKey:kUpIVProfileDuration];
+    [request setBodyParam:[UIHelper getProjectTypeWithValue:_btnProject.titleLabel.text] forKey:kUpIVProfileProject];
+    NSString *target = [UIHelper getNumberInstring:[UIHelper formatStringUnknown:_targetTextField.text]];
+    [request setBodyParam:[self _setModelNilOrNotNil:target] forKey:kUpIVProfileTarget];
+    [request setBodyParam:[UIHelper getInvestorTypeWithValue:_btnInvestor.titleLabel.text] forKey:kUpIVProfileInvestor];
+    [request setBodyParam:[self _setModelNilOrNotNil:_websiteTextField.text] forKey:kUpIVProfileWebsite];
+    return request;
+}
+
+
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
-    [self _updateProfileUserModel:[self _creatUpdateInfoInvestor]];
-    if (self.actionDone) {
-        self.actionDone();
-    }
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self _callWSUpdateInvertorProfile];
+
 }
 
 

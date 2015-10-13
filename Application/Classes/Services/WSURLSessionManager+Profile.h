@@ -7,6 +7,7 @@
 //
 
 #import "WSURLSessionManager.h"
+#import "WSUpdateInvestorProfile.h"
 
 @class COUserProfileModel;
 @class WSUpdateProfileRequest;
@@ -17,4 +18,5 @@
 - (void)wsUpdateProfileWithRequest:(WSUpdateProfileRequest *)request handler:(WSURLSessionHandler)handler;
 - (void)wsGetAccountInvestment:(NSDictionary *)paramToken handler:(WSURLSessionHandler)handler;
 - (void)wsGetInvestorProfile:(NSDictionary *)paramToken handler:(WSURLSessionHandler)handler;
+- (void)wsUpdateInvestorProfile:(WSUpdateInvestorProfile*)request handler:(WSURLSessionHandler)handler;
 @end

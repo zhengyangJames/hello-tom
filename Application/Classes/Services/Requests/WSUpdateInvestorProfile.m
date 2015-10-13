@@ -8,13 +8,15 @@
 
 #import "WSUpdateInvestorProfile.h"
 #import "COUserInverstorModel.h"
+#import "COLoginManager.h"
 
 @implementation WSUpdateInvestorProfile
 
-- (void)setRequestWithModel:(id)model {
-//    COUserInverstorModel *userModel = model;
-//    NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
-//    [self setValue:value forHTTPHeaderField:@"Authorization"];
+- (void)setRequestWithTOken {
+    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
+    NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
+    [self setValue:value forHTTPHeaderField:@"Authorization"];
+    [self setURL:[NSURL URLWithString:WS_METHOD_GET_PROFILE_INVESTER]];
 }
 
 @end

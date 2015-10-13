@@ -248,28 +248,45 @@
 + (NSString *)getInvestorTypeWithKey:(NSString *)key {
     NSDictionary *dic = @{
                           @"AGY" : @"Agent",
-                          
                           @"BSN" : @"Business",
-                          
                           @"DEV" : @"Developer",
-                          
                           @"EDU" : @"Educator",
-                          
                           @"FIN" : @"Financier",
-                          
                           @"HNW" : @"High Net Worth",
-                          
                           @"INI" : @"Institutional Investor",
-                          
                           @"MED" : @"Media",
-                          
                           @"NRM" : @"Retail Investor",
-                          
                           @"OTH" : @"Others",
-                          
                           @"SER" : @"Services"
                           };
     return [dic objectForKeyNotNull:key];
+}
+
++ (NSString *)getInvestorTypeWithValue:(NSString *)value {
+    NSDictionary *dic = @{
+                          @"AGY" : @"Agent",
+                          @"BSN" : @"Business",
+                          @"DEV" : @"Developer",
+                          @"EDU" : @"Educator",
+                          @"FIN" : @"Financier",
+                          @"HNW" : @"High Net Worth",
+                          @"INI" : @"Institutional Investor",
+                          @"MED" : @"Media",
+                          @"NRM" : @"Retail Investor",
+                          @"OTH" : @"Others",
+                          @"SER" : @"Services"
+                          };
+    NSString *key;
+    for (int i = 0 ; i < [dic allKeys].count ; i ++ ) {
+        NSArray *arr = [dic allValues];
+        NSString *str = arr[i];
+        if ([str isEqualToString:value]) {
+            NSArray *arrkey = [dic allKeys];
+            key = arrkey[i];
+            break;
+        }
+    }
+    return key;
 }
 
 + (NSArray *)arrayProjectType {
@@ -284,14 +301,31 @@
 + (NSString *)getProjectTypeWithKey:(NSString*)key {
     NSDictionary *dic = @{
                           @"BKP" : @"Bulk Purchases",
-                          
                           @"DEV" : @"Pre-sales",
-                          
                           @"EQC" : @"Crowdfunding",
-                          
                           @"FXR" : @"Crowdfunding"
                           };
     return [dic objectForKeyNotNull:key];
+}
+
++ (NSString *)getProjectTypeWithValue:(NSString*)value {
+    NSDictionary *dic = @{
+                          @"BKP" : @"Bulk Purchases",
+                          @"DEV" : @"Pre-sales",
+                          @"EQC" : @"Crowdfunding",
+                          @"FXR" : @"Crowdfunding"
+                          };
+    NSString *key;
+    for (int i = 0 ; i < [dic allKeys].count ; i ++ ) {
+        NSArray *arr = [dic allValues];
+        NSString *str = arr[i];
+        if ([str isEqualToString:value]) {
+            NSArray *arrkey = [dic allKeys];
+            key = arrkey[i];
+            break;
+        }
+    }
+    return key;
 }
 
 + (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font {

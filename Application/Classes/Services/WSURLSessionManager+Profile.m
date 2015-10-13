@@ -14,6 +14,7 @@
 #import "WSUpdateProfileRequest.h"
 #import "WSGetAccountInvestment.h"
 #import "WSGetInvestorProfile.h"
+#import "COUserInverstorModel.h"
 
 @implementation WSURLSessionManager (Profile)
 
@@ -129,6 +130,35 @@
             }
         }
     }];
+}
+
+- (void)wsUpdateInvestorProfile:(WSUpdateInvestorProfile*)request handler:(WSURLSessionHandler)handler {
+    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            COUserInverstorModel *model = [self _updateInvestorProfile:(NSDictionary*)responseObject];
+            if (handler) {
+                handler(model,response,nil);
+            }
+        } else {
+            if (handler) {
+                handler(nil,response,error);
+            }
+        }
+    }];
+}
+
+- (COUserInverstorModel*)_updateInvestorProfile:(NSDictionary*)obj {
+    COUserInverstorModel *model = [[COLoginManager shared] investorModel];
+    [model setCOCureencyContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileCurrency]]];
+    [model setCODescriptionsContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileDescriptions]]];
+    [model setCOInvestorAmountContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileInvestment]]];
+    [model setCOInvestorCountriesContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileCountries]]];
+    [model setCOInvestorDurationContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileDuration]]];
+    [model setCOInvestorPreferenceContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileProject]]];
+    [model setCOInvestorTargetContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileTarget]]];
+    [model setCOInvestorTypeContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileInvestor]]];
+    [model setCOWebsiteContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileWebsite]]];
+    return model;
 }
 
 @end

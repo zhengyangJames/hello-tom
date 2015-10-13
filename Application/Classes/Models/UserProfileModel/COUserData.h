@@ -81,18 +81,21 @@
 @protocol COCureency <NSObject>
 
 - (NSString *)COCureencyContent;
+- (void)setCOCureencyContent:(NSString*)string;
 
 @end
 
 @protocol CODescriptions <NSObject>
 
 - (NSString *)CODescriptionsContent;
+- (void)setCODescriptionsContent:(NSString*)string;
 
 @end
 
 @protocol COWebsite <NSObject>
 
 - (NSString *)COWebsiteContent;
+- (void)setCOWebsiteContent:(NSString*)string;
 
 @end
 
@@ -100,6 +103,7 @@
 
 - (NSString *)COInvestorTypeTitle;
 - (NSString *)COInvestorTypeContent;
+- (void)setCOInvestorTypeContent:(NSString*)string;
 
 @end
 
@@ -107,6 +111,7 @@
 
 - (NSString *)COInvestorPreferenceTitle;
 - (NSString *)COInvestorPreferenceContent;
+- (void)setCOInvestorPreferenceContent:(NSString*)string;
 
 @end
 
@@ -114,24 +119,31 @@
 
 - (NSString *)COInvestorAmountTitle;
 - (NSString *)COInvestorAmountContent;
+- (void)setCOInvestorAmountContent:(NSString*)string;
+
 @end
 
 @protocol COInvestorTarget <NSObject>
 
 - (NSString *)COInvestorTargetTitle;
 - (NSString *)COInvestorTargetContent;
+- (void)setCOInvestorTargetContent:(NSString*)string;
+
 @end
 
 @protocol COInvestorDuration <NSObject>
 
 - (NSString *)COInvestorDurationTitle;
 - (NSString *)COInvestorDurationContent;
+- (void)setCOInvestorDurationContent:(NSString*)string;
+
 @end
 
 @protocol COInvestorCountries <NSObject>
 
 - (NSString *)COInvestorCountriesTitle;
 - (NSString *)COInvestorCountriesContent;
+- (void)setCOInvestorCountriesContent:(NSString*)string;
 
 @end
 

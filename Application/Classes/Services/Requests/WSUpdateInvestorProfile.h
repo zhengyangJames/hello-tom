@@ -22,5 +22,5 @@ static NSString *kUpIVProfileDescriptions   = @"description";
 static NSString *kUpIVProfileWebsite        = @"iv_website";
 
 @interface WSUpdateInvestorProfile : WSRequest
-- (void)setRequestWithModel:(id)model;
+- (void)setRequestWithTOken;
 @end

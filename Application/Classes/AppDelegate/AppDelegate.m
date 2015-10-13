@@ -131,7 +131,7 @@
     [[COLoginManager shared] setAccountModel:nil];
     [kUserDefaults removeObjectForKey:kPROFILE_JSON];
 //    [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
-//    [kUserDefaults removeObjectForKey:UPDATE_INVESTOR_PROFILE_JSON];
+    [kUserDefaults removeObjectForKey:UPDATE_INVESTOR_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_ACCOUNT_PROFILE_JSON];
     [kUserDefaults synchronize];
 }
