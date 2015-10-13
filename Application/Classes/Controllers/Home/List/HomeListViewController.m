@@ -147,30 +147,26 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 #pragma mark - CalAPI
 
 - (void)_callWSGetListOfferFilter:(NSString*)typeFilter {
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        if (self.arrayData && self.arrayData.count > 0) {
-//            self.arrayData = nil;
-//            [_tableView reloadData];
-            
-        } else {
-            _noDataView.hidden = YES;
-        }
-        _leftButton.enabled = NO;
-    }];
+    if (self.arrayData && self.arrayData.count > 0) {
+        self.arrayData = nil;
+        [_tableView reloadData];
+        
+    } else {
+        _noDataView.hidden = YES;
+    }
+    _leftButton.enabled = NO;
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetListOffersWithRequest:[self _createGetListOfferRequestWithType:typeFilter] handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         [UIHelper hideLoadingFromView:self.view];
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = (NSArray*)responseObject;
             if (self.arrayData.count>0) {
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    _noDataView.hidden = YES;
-                    [_tableView beginUpdates];
-                    for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
-                        [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                    }
-                    [_tableView endUpdates];
-                }];
+                _noDataView.hidden = YES;
+                [_tableView beginUpdates];
+                for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
+                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                }
+                [_tableView endUpdates];
             } else {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     [self _showViewNoData:typeFilter];

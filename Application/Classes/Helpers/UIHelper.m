@@ -303,16 +303,9 @@
     // Collect numbers.
     [scanner scanCharactersFromSet:numbers intoString:&numberString];
     // Result.
-    return numberString;
-}
-
-+ (NSString*)formartDoubleVauleWithPortfolio:(NSNumber*)vaule {
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSString *cvString  = [formatter stringFromNumber:vaule];
-    NSNumber *number = [NSNumber numberWithChar:[cvString integerValue]];
-    NSString *format = [NSString stringWithFormat:@"$%.2f",[number doubleValue]];
-    return format;
+    NSInteger integer = [numberString integerValue];
+    NSString *string = [NSString stringWithFormat:@"%li",integer];
+    return string;
 }
 
 + (CGFloat)convertStringToCGfloat:(NSString*)string {

@@ -51,6 +51,7 @@
 
 - (void)_pushViewDetailProfileVC {
     NProfileController *vc = [[NProfileController alloc]init];
+    [self _updateProfile];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -82,6 +83,19 @@
         _arrayList = [LoadFileManager loadFilePlistWithName:@"ProfileList"];
     }
     return _arrayList;
+}
+
+#pragma mark - WS Update Profile
+- (void)_updateProfile {
+    [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
+        if (object && [object isKindOfClass:[NSDictionary class]]) {
+            [[COLoginManager shared] setUserModel:nil];
+            NSDictionary *dic = object;
+            NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+            [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+            [kUserDefaults synchronize];
+        }
+    }];
 }
 
 #pragma mark - UITableView - Delegate

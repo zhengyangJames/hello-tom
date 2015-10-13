@@ -17,6 +17,7 @@
 @implementation WSURLSessionManager (Profile)
 
 - (void)wsGetProfileWithUserToken:(NSDictionary*)paramToken handler:(WSURLSessionHandler)handler {
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     WSGetProfileRequest *request = [[WSGetProfileRequest alloc] init];
     [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_PROFILE]];
     [request setHTTPMethod:METHOD_GET];
@@ -41,10 +42,6 @@
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             COUserProfileModel *userModel = [self _updateProfileUserModel:responseObject];
-            NSDictionary *dic = responseObject;
-            NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
-            [kUserDefaults setObject:data forKey:kPROFILE_JSON];
-            [kUserDefaults synchronize];
             if (handler) {
                 handler(userModel,response,nil);
             }

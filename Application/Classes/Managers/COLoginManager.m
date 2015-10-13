@@ -31,22 +31,19 @@
         if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
             [self tokenObject:responseObject callWSGetListProfile:^(id object, NSError *error){
                 if ([object isKindOfClass:[NSDictionary class]] && !error) {
-                    NSDictionary *dic = object;
+                    __block NSDictionary *dic = object;
                     NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
                     [kUserDefaults setObject:data forKey:kPROFILE_JSON];
                     [kUserDefaults synchronize];
                     [self wsGetAccountInverstment:^(id object, NSError *error){
-                        if (object) {
-                            if (actionLoginManager) {
-                                actionLoginManager(object,nil);
-                            }
+                        if (error && !object) {
+                            [UIHelper showError:error];
                         } else {
                             if (actionLoginManager) {
-                                actionLoginManager(nil,error);
+                                actionLoginManager(dic,nil);
                             }
                         }
                     }];
-
                 } else {
                     if (actionLoginManager) {
                         actionLoginManager(nil,error);
@@ -70,8 +67,20 @@
     }
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            if (actionLoginManager) {
-                actionLoginManager(responseObject,nil);
+            if ([responseObject isKindOfClass:[NSDictionary class]] && !error) {
+                NSDictionary *dicProfile = (NSDictionary*)responseObject;
+                NSData *data = [NSJSONSerialization dataWithJSONObject:dicProfile options:0 error:nil];
+                [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+                [kUserDefaults synchronize];
+                if (dicProfile) {
+                    if (actionLoginManager) {
+                        actionLoginManager(dicProfile,nil);
+                    }
+                } else {
+                    if (actionLoginManager) {
+                        actionLoginManager(nil,error);
+                    }
+                }
             }
         }else {
             if (actionLoginManager) {
@@ -97,9 +106,6 @@
 }
 
 - (COUserCompanyModel *)companyModel {
-//    if (_companyModel) {
-//        return _companyModel;
-//    }
     NSError *error;
     if ([kUserDefaults objectForKey:UPDATE_COMPANY_PROFILE_JSON]) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_COMPANY_PROFILE_JSON] options:0 error:&error];
@@ -114,9 +120,6 @@
 }
 
 - (COUserInverstorModel *)investorModel {
-    //    if (_investorModel) {
-    //        return _investorModel;
-    //    }
     NSError *error;
     if ([kUserDefaults objectForKey:UPDATE_INVESTOR_PROFILE_JSON]) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_INVESTOR_PROFILE_JSON] options:0 error:&error];
@@ -136,7 +139,7 @@
     NSDictionary *paramToken = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
     [[WSURLSessionManager shared] wsGetAccountInvestment:paramToken handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject &&[responseObject isKindOfClass:[NSDictionary class]] && !error) {
-            DBG(@"%@",responseObject);
+//            DBG(@"%@",responseObject);
             NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
             [dic addEntriesFromDictionary:responseObject];
             NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];

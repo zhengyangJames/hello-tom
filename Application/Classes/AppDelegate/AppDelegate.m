@@ -140,17 +140,12 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 1) {
-        if ([[COLoginManager shared] userModel]) {
-            [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
-                [[COLoginManager shared] setUserModel:nil];
-                NSDictionary *dic = object;
-                NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
-                [kUserDefaults setObject:data forKey:kPROFILE_JSON];
-                [kUserDefaults synchronize];
-            }];
-        } else {
+        if (![[COLoginManager shared] userModel]) {
             [self _setUpLogginVC];
             [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
+        } else {
+            [[COLoginManager shared] setInvestorModel:nil];
+            [[COLoginManager shared] wsGetAccountInverstment:^(id object, NSError *error) { }];
         }
     }
 }
@@ -185,4 +180,5 @@
         default: break;
     }
 }
+
 @end

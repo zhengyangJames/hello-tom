@@ -192,11 +192,11 @@
 
 - (void)_updateHeightViewTop:(UIImage *)image {
     CGSize sizeImage = image.size;
-    CGFloat defaultHeight = ([UIScreen mainScreen].bounds.size.width - 40);
+    CGFloat defaultHeight = ([UIScreen mainScreen].bounds.size.width - 20);
     CGFloat ratioImage = sizeImage.height/sizeImage.width;
     _heightImage = ratioImage*defaultHeight;
     _heightTopView.constant = _heightImage;
-    [_contentView setNeedsUpdateConstraints];
+    [_contentView updateConstraintsIfNeeded];
 }
 
 @end

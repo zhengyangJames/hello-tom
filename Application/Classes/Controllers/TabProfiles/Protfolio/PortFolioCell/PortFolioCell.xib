@@ -22,7 +22,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="216" height="156.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_meoney@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="l4l-7c-aca">
+                        <rect key="frame" x="85" y="17" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="EwA-I8-CVT"/>
+                            <constraint firstAttribute="width" constant="45" id="L0c-CT-T3C"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
                         <rect key="frame" x="8" y="66" width="200" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="9d3-GK-CGI"/>
@@ -31,13 +38,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_meoney@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="l4l-7c-aca">
-                        <rect key="frame" x="85.5" y="17" width="45" height="45"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="45" id="EwA-I8-CVT"/>
-                            <constraint firstAttribute="width" constant="45" id="L0c-CT-T3C"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funded &amp;Completed Projects" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="134" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-2Y-WKU" userLabel="LabelText" customClass="COLabelTextAligin">
                         <rect key="frame" x="0.0" y="100" width="216" height="50"/>
                         <constraints>
@@ -50,6 +50,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Vql-CH-7V5" secondAttribute="trailing" constant="8" id="4f3-z5-GLj"/>
+                    <constraint firstItem="Vql-CH-7V5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="6WK-Xa-br0"/>
                     <constraint firstItem="Vql-CH-7V5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="994-ln-jj3"/>
                     <constraint firstItem="ctf-2Y-WKU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9M7-YV-0E6"/>
                     <constraint firstAttribute="centerX" secondItem="l4l-7c-aca" secondAttribute="centerX" id="9Q6-4W-pbR"/>
@@ -59,9 +60,6 @@
                     <constraint firstAttribute="trailing" secondItem="ctf-2Y-WKU" secondAttribute="trailing" id="uLk-EA-jUc"/>
                 </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstItem="Vql-CH-7V5" firstAttribute="centerX" secondItem="KGk-i7-Jjw" secondAttribute="centerX" id="Pxp-uc-aM8"/>
-            </constraints>
             <connections>
                 <outlet property="_imgThumbnail" destination="l4l-7c-aca" id="Bh7-3g-3Yy"/>
                 <outlet property="_lbNameDetail" destination="ctf-2Y-WKU" id="ynq-oc-osi"/>

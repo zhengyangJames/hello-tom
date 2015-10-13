@@ -30,4 +30,6 @@ typedef void(^AcccountGetInvestor)(id object, NSError *error);
 
 - (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager;
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager;
+
+- (void)wsGetAccountInverstment:(AcccountGetInvestor)AcccountGetInvestor;
 @end
