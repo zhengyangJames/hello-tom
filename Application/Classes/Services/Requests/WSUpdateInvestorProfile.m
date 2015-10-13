@@ -7,9 +7,14 @@
 //
 
 #import "WSUpdateInvestorProfile.h"
+#import "COUserInverstorModel.h"
 
 @implementation WSUpdateInvestorProfile
 
-
+- (void)setRequestWithModel:(id)model {
+//    COUserInverstorModel *userModel = model;
+//    NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
+//    [self setValue:value forHTTPHeaderField:@"Authorization"];
+}
 
 @end

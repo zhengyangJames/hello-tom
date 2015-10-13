@@ -31,16 +31,15 @@
         if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
             [self tokenObject:responseObject callWSGetListProfile:^(id object, NSError *error){
                 if ([object isKindOfClass:[NSDictionary class]] && !error) {
-                    __block NSDictionary *dic = object;
-                    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
-                    [kUserDefaults setObject:data forKey:kPROFILE_JSON];
-                    [kUserDefaults synchronize];
-                    [self wsGetAccountInverstment:^(id object, NSError *error){
+                    NSDictionary *dicProfile = (NSDictionary*)object;
+                    [self wsGetAccountInverstment:^(id object, NSError *errorAcccountInvestor){
                         if (error && !object) {
-                            [UIHelper showError:error];
+                            if (actionLoginManager) {
+                                actionLoginManager(nil,errorAcccountInvestor);
+                            }
                         } else {
                             if (actionLoginManager) {
-                                actionLoginManager(dic,nil);
+                                actionLoginManager(dicProfile,nil);
                             }
                         }
                     }];
@@ -72,15 +71,17 @@
                 NSData *data = [NSJSONSerialization dataWithJSONObject:dicProfile options:0 error:nil];
                 [kUserDefaults setObject:data forKey:kPROFILE_JSON];
                 [kUserDefaults synchronize];
-                if (dicProfile) {
-                    if (actionLoginManager) {
-                        actionLoginManager(dicProfile,nil);
+                [self getProfileInvestor:token actionBlock:^(id object, NSError *errorInvestor) {
+                    if (object && !errorInvestor) {
+                        if (actionLoginManager) {
+                            actionLoginManager(dicProfile,nil);
+                        }
+                    } else {
+                        if (actionLoginManager) {
+                            actionLoginManager(nil,errorInvestor);
+                        }
                     }
-                } else {
-                    if (actionLoginManager) {
-                        actionLoginManager(nil,error);
-                    }
-                }
+                }];
             }
         }else {
             if (actionLoginManager) {
@@ -89,6 +90,26 @@
         }
     }];
 }
+
+- (void)getProfileInvestor:(NSDictionary *)token actionBlock:(ProfileGetInvestor)actionBlock {
+    [[WSURLSessionManager shared] wsGetInvestorProfile:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if ([responseObject isKindOfClass:[NSDictionary class]] && !error) {
+            NSDictionary *dicProfile = (NSDictionary*)responseObject;
+            NSData *data = [NSJSONSerialization dataWithJSONObject:dicProfile options:0 error:nil];
+            [kUserDefaults setObject:data forKey:UPDATE_INVESTOR_PROFILE_JSON];
+            [kUserDefaults synchronize];
+            if (actionBlock) {
+                actionBlock(responseObject,nil);
+            }
+        } else {
+            if (actionBlock) {
+                actionBlock(nil,error);
+            }
+        }
+    }];
+}
+
+#pragma mark - Set Get Model
 
 - (COUserProfileModel *)userModel {
     if (_userModel) {
@@ -120,6 +141,9 @@
 }
 
 - (COUserInverstorModel *)investorModel {
+    if (_investorModel) {
+        return _investorModel;
+    }
     NSError *error;
     if ([kUserDefaults objectForKey:UPDATE_INVESTOR_PROFILE_JSON]) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_INVESTOR_PROFILE_JSON] options:0 error:&error];
@@ -127,8 +151,6 @@
             COUserInverstorModel *userProModel = [MTLJSONAdapter modelOfClass:[COUserInverstorModel class] fromJSONDictionary:dic error:&error];
             return _investorModel = userProModel;
         }
-    } else {
-        return _investorModel = [[COUserInverstorModel alloc]init];
     }
     return nil;
 }

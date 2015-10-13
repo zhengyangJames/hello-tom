@@ -11,7 +11,7 @@
 
 @interface WSURLSessionManager ()
 {
-    
+    BOOL _isCheckUnknownError;
 }
 @property (nonatomic, strong) NSOperationQueue *serviceQueue;
 @property (nonatomic, strong) NSURLSession *urlSession;
@@ -26,7 +26,6 @@
     dispatch_once(&oneToken,^{
         instance = [[self alloc]init];
     });
-
     return instance;
 }
 
@@ -109,10 +108,6 @@
                                       body:(NSData*)bodyData
                                 httpMethod:(NSString*)method {
     
-//    NSString *bodyString = @"";
-//    if(bodyData != nil) {
-//        bodyString = [[NSString alloc] initWithData:bodyData encoding:NSUTF8StringEncoding];
-//    }
     // create request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:WS_TIME_OUT];
     [request setHTTPMethod:[method uppercaseString]];
@@ -140,7 +135,6 @@
     DBG(@"NM-WS-REQUEST-URL: %@",request.URL.absoluteString);
     DBG(@"NM-WS-REQUEST-METHOD: %@",request.HTTPMethod);
     DBG(@"NM-WS-REQUEST-BODY: %@",[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
-    
     // Initialize Session Configuration
     NSURLSessionConfiguration *urlSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     // Initialize Session Manager
@@ -152,14 +146,13 @@
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         //check if error is exist
         if(httpResponse.statusCode >= 500) {
-            NSDictionary *headerDict = httpResponse.allHeaderFields;
             NSString *errorCode = @"Unknown Error";
             NSString *errorMessage = @"Unknown Error";
-            if([headerDict objectForKeyNotNull:@"Nm-Code"] && [headerDict objectForKeyNotNull:@"Nm-Message"]) {
-                errorCode = [headerDict objectForKey:@"Nm-Code"];
-                errorMessage = [headerDict objectForKey:@"Nm-Message"];
-            }
             NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:0 userInfo:@{@"message":errorMessage, @"code":errorCode}];
+            if (!_isCheckUnknownError) {
+                _isCheckUnknownError = YES;
+                [self sendRequest:request handler:nil];
+            }
             if(handler)
             {
                 handler(responseObject,response,error);
@@ -186,6 +179,7 @@
                 if(handler) {
                     handler(responseObject,response,nil);
                 }
+                _isCheckUnknownError = NO;
             }
         }
     }] resume];

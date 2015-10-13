@@ -16,5 +16,5 @@
 - (void)wsGetProfileWithUserToken:(NSDictionary *)paramToken handler:(WSURLSessionHandler)handler;
 - (void)wsUpdateProfileWithRequest:(WSUpdateProfileRequest *)request handler:(WSURLSessionHandler)handler;
 - (void)wsGetAccountInvestment:(NSDictionary *)paramToken handler:(WSURLSessionHandler)handler;
-
+- (void)wsGetInvestorProfile:(NSDictionary *)paramToken handler:(WSURLSessionHandler)handler;
 @end

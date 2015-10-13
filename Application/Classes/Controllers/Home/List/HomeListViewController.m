@@ -65,6 +65,23 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [kUserDefaults synchronize];
 }
 
+
+//- (void)_test {
+//    NSArray *inventory = @[@"Honda Civic",
+//                           @"Nissan Versa",
+//                           @"Ford F-150"];
+//    int selectedIndex = 3;
+//    @try {
+//        NSString *car = inventory[selectedIndex];
+//        NSLog(@"The selected car is: %@", car);
+//    } @catch(NSException *theException) {
+//        NSLog(@"An exception occurred: %@", theException.name);
+//        NSLog(@"Here are some details: %@", theException.reason);
+//    } @finally {
+//        NSLog(@"Executing finally block");
+//    }
+//}
+
 #pragma mark - Setup
 - (void)_setupUI {
     self.navigationItem.title = NSLocalizedString(@"COASSETS_TITLE", nil);

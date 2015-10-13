@@ -107,6 +107,7 @@
 
 - (NSString *)COInvestorPreferenceTitle;
 - (NSString *)COInvestorPreferenceContent;
+
 @end
 
 @protocol COInvestorAmount <NSObject>

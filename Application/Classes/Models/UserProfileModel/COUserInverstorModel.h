@@ -11,11 +11,14 @@
 @interface COUserInverstorModel : MTLModel<MTLJSONSerializing,COInvestorType, COInvestorAmount, COInvestorCountries, COInvestorDuration, COInvestorPreference, COInvestorTarget, COCureency, CODescriptions, COWebsite>
 
 @property (strong, nonatomic) NSString *investor;
+//@property (strong, nonatomic) NSDictionary *investor_list;
 @property (strong, nonatomic) NSString *project;
+//@property (strong, nonatomic) NSDictionary *project_list;
 @property (strong, nonatomic) NSString *currency;
-@property (strong, nonatomic) NSString *investment;
-@property (strong, nonatomic) NSString *duration;
-@property (strong, nonatomic) NSString *target;
+//@property (strong, nonatomic) NSDictionary *currency_list;
+@property (strong, nonatomic) NSNumber *investment;
+@property (strong, nonatomic) NSNumber *duration;
+@property (strong, nonatomic) NSNumber *target;
 @property (strong, nonatomic) NSString *countries;
 @property (strong, nonatomic) NSString *descriptions;
 @property (strong, nonatomic) NSString *website;

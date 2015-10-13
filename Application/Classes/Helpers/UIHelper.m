@@ -230,10 +230,69 @@
 }
 
 + (NSArray*)getInvestorType {
-    NSArray *array = @[@"Retail Investor",@"High Net Worth",@"Institutional Investor",@"Developer",@"Agent",@"Business",@"Financier",@"Media",@"Services",@"Educator",@"Others"];
+    NSArray *array = @[@"Agent",
+                       @"Business",
+                       @"Developer",
+                       @"Educator",
+                       @"Financier",
+                       @"High Net Worth",
+                       @"Institutional Investor",
+                       @"Media",
+                       @"Retail Investor",
+                       @"Others",
+                       @"Services"];
+    
     return array;
 }
 
++ (NSString *)getInvestorTypeWithKey:(NSString *)key {
+    NSDictionary *dic = @{
+                          @"AGY" : @"Agent",
+                          
+                          @"BSN" : @"Business",
+                          
+                          @"DEV" : @"Developer",
+                          
+                          @"EDU" : @"Educator",
+                          
+                          @"FIN" : @"Financier",
+                          
+                          @"HNW" : @"High Net Worth",
+                          
+                          @"INI" : @"Institutional Investor",
+                          
+                          @"MED" : @"Media",
+                          
+                          @"NRM" : @"Retail Investor",
+                          
+                          @"OTH" : @"Others",
+                          
+                          @"SER" : @"Services"
+                          };
+    return [dic objectForKeyNotNull:key];
+}
+
++ (NSArray *)arrayProjectType {
+    NSArray *array = @[
+                       @"Bulk Purchases",
+                       @"Pre-sales",
+                       @"Crowdfunding"
+                       ];
+    return array;
+}
+
++ (NSString *)getProjectTypeWithKey:(NSString*)key {
+    NSDictionary *dic = @{
+                          @"BKP" : @"Bulk Purchases",
+                          
+                          @"DEV" : @"Pre-sales",
+                          
+                          @"EQC" : @"Crowdfunding",
+                          
+                          @"FXR" : @"Crowdfunding"
+                          };
+    return [dic objectForKeyNotNull:key];
+}
 
 + (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font {
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];

@@ -73,13 +73,13 @@
     _websiteTextField.text = [_investorUserModel COWebsiteContent];
     NSString *currency = [_investorUserModel COCureencyContent];
     _indexActtionCureency = [self _getCurrencyForString:currency];
-    [_btnCurrency setTitle:currency forState:UIControlStateNormal];
+    [_btnCurrency setTitle:[UIHelper getStringCurrencyOfferWithKey:currency] forState:UIControlStateNormal];
     NSString *Invertor = [_investorUserModel COInvestorTypeContent];
     _indexActtionInvestor = [self _getInvertorForString:Invertor];
-    [_btnInvestor setTitle:Invertor forState:UIControlStateNormal];
+    [_btnInvestor setTitle:[UIHelper getInvestorTypeWithKey:Invertor] forState:UIControlStateNormal];
     NSString *project = [_investorUserModel COInvestorPreferenceContent];
     _indexActtionProject = [self _getProjectForString:project];
-    [_btnProject setTitle:project forState:UIControlStateNormal];
+    [_btnProject setTitle:[UIHelper getProjectTypeWithKey:project] forState:UIControlStateNormal];
 }
 
 - (NSArray *)arrayCurrency {
@@ -90,6 +90,7 @@
 }
 
 - (NSInteger)_getCurrencyForString:(NSString*)string{
+    string = [UIHelper getStringCurrencyOfferWithKey:string];
     NSInteger num = 0;
     for (int i = 0 ; i < self.arrayCurrency.count; i++) {
         if ([string isEqualToString:self.arrayCurrency[i]]) {
@@ -107,6 +108,7 @@
 }
 
 - (NSInteger)_getInvertorForString:(NSString*)string {
+    string = [UIHelper getInvestorTypeWithKey:string];
     NSInteger num = 0;
     for (int i = 0 ; i < self.arrayInvertor.count; i++) {
         if ([string isEqualToString:self.arrayInvertor[i]]) {
@@ -120,10 +122,11 @@
     if (_arrayProject) {
         return _arrayProject;
     }
-    return _arrayProject = @[@"Bulk Purchase",@"Crowdfunding",@"Pre-Sales"];
+    return _arrayProject = [UIHelper arrayProjectType];
 }
 
 - (NSInteger)_getProjectForString:(NSString*)string {
+    string = [UIHelper getProjectTypeWithKey:string];
     NSInteger num = 0;
     for (int i = 0 ; i < self.arrayProject.count; i++) {
         if ([string isEqualToString:self.arrayProject[i]]) {

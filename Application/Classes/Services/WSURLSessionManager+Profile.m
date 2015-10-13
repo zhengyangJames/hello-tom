@@ -13,6 +13,7 @@
 #import "WSGetProfileRequest.h"
 #import "WSUpdateProfileRequest.h"
 #import "WSGetAccountInvestment.h"
+#import "WSGetInvestorProfile.h"
 
 @implementation WSURLSessionManager (Profile)
 
@@ -98,6 +99,25 @@
     WSGetAccountInvestment *request = [[WSGetAccountInvestment alloc]init];
     [request setURL:[NSURL URLWithString:WS_METHOD_GET_ACCOUNT_INVESTER]];
     [request setHeaderWithToken:paramToken];
+    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            if (handler) {
+                handler(responseObject,response,nil);
+            }
+        } else {
+            if (handler) {
+                handler(nil,response,error);
+            }
+        }
+    }];
+}
+
+#pragma mark - WS Get Investor Profile
+
+- (void)wsGetInvestorProfile:(NSDictionary *)paramToken handler:(WSURLSessionHandler)handler {
+    WSGetInvestorProfile *request = [[WSGetInvestorProfile alloc] init];
+    [request setURL:[NSURL URLWithString:WS_METHOD_GET_PROFILE_INVESTER]];
+    [request setRequestWithToken:paramToken];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             if (handler) {

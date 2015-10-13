@@ -15,7 +15,8 @@
 @class COAccountInvestmentModel;
 
 typedef void(^ActionLoginManager)(id object, NSError *error);
-typedef void(^AcccountGetInvestor)(id object, NSError *error);
+typedef void(^AcccountGetInvestor)(id object, NSError *errorAcccountInvestor);
+typedef void(^ProfileGetInvestor)(id object, NSError *errorInvestor);
 
 @interface COLoginManager : NSObject
 

@@ -64,6 +64,8 @@
 #define WS_METHOD_POST_CHANGE_PASSWORD              [WS_ENDPOINT stringByAppendingString:@"/change-password/"]
 
 #define WS_METHOD_GET_ACCOUNT_INVESTER              [WS_ENDPOINT stringByAppendingString:@"/investment_dashboard/"]
+
+#define WS_METHOD_GET_PROFILE_INVESTER              [WS_ENDPOINT stringByAppendingString:@"/investment_profile/"]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////

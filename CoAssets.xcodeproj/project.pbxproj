@@ -63,6 +63,7 @@
 		1E5A6FC61BCCC49F00C4C5A5 /* NProfileNodataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB71BCCC49F00C4C5A5 /* NProfileNodataCell.xib */; settings = {ASSET_TAGS = (); }; };
 		1E5A6FC71BCCC49F00C4C5A5 /* NProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB91BCCC49F00C4C5A5 /* NProfileTextCell.m */; settings = {ASSET_TAGS = (); }; };
 		1E5A6FC81BCCC49F00C4C5A5 /* NProfileTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FBA1BCCC49F00C4C5A5 /* NProfileTextCell.xib */; settings = {ASSET_TAGS = (); }; };
+		1E5A6FCB1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FCA1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m */; settings = {ASSET_TAGS = (); }; };
 		1E67FAA11BBB773D008F433C /* ProfileList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAA01BBB773D008F433C /* ProfileList.plist */; };
 		1E67FAB41BBB8882008F433C /* COAwatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAB31BBB8882008F433C /* COAwatarView.m */; };
 		1E67FAC41BBB9149008F433C /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAC31BBB9149008F433C /* BaseLabel.m */; };
@@ -391,6 +392,8 @@
 		1E5A6FB81BCCC49F00C4C5A5 /* NProfileTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileTextCell.h; sourceTree = "<group>"; };
 		1E5A6FB91BCCC49F00C4C5A5 /* NProfileTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileTextCell.m; sourceTree = "<group>"; };
 		1E5A6FBA1BCCC49F00C4C5A5 /* NProfileTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileTextCell.xib; sourceTree = "<group>"; };
+		1E5A6FC91BCCE46E00C4C5A5 /* WSGetInvestorProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetInvestorProfile.h; sourceTree = "<group>"; };
+		1E5A6FCA1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetInvestorProfile.m; sourceTree = "<group>"; };
 		1E67FAA01BBB773D008F433C /* ProfileList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProfileList.plist; sourceTree = "<group>"; };
 		1E67FAB21BBB8882008F433C /* COAwatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COAwatarView.h; sourceTree = "<group>"; };
 		1E67FAB31BBB8882008F433C /* COAwatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COAwatarView.m; sourceTree = "<group>"; };
@@ -1874,6 +1877,8 @@
 				1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */,
 				1EA610D81BC51C2700BF3A47 /* WSUpdateInvestorProfile.h */,
 				1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */,
+				1E5A6FC91BCCE46E00C4C5A5 /* WSGetInvestorProfile.h */,
+				1E5A6FCA1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m */,
 				BBEB210B1B9525F6007221B4 /* WSRequest.h */,
 				BBEB210C1B9525F6007221B4 /* WSRequest.m */,
 				BB3A9F5C1B961692002EEB1C /* WSRegisterRequest.h */,
@@ -2302,6 +2307,7 @@
 				7F2C77461B4E07BA00C69365 /* COOfferInfoCell.m in Sources */,
 				7F325F7F1B40E50800116445 /* BaseViewController.m in Sources */,
 				1E6A5DCF1BC4BEC200D587BC /* COAccountInvestmentModel.m in Sources */,
+				1E5A6FCB1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m in Sources */,
 				0E8956821BBE2497007E36BF /* NProfileController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

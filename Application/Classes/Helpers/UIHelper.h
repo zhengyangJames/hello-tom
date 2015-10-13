@@ -50,4 +50,10 @@
 + (NSString*)getNumberInstring:(NSString*)value;
 
 + (NSString*)formartFoatValueWithPortfolio:(NSNumber*)value;
+
++ (NSString *)getInvestorTypeWithKey:(NSString *)key;
+
++ (NSArray *)arrayProjectType;
++ (NSString *)getProjectTypeWithKey:(NSString*)key;
+
 @end

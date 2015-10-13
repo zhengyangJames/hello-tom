@@ -12,15 +12,18 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"investor"  : @"iv_investor",
-        @"project"   : @"iv_project",
-        @"currency"   : @"iv_currency",
-        @"investment"  : @"iv_investment",
-        @"target"   : @"iv_target",
-        @"countries"   : @"iv_countries",
-        @"descriptions"   : @"iv_descriptions",
+        @"investor"  : @"investor_type",
+//        @"investor_list" : @"investor_type_list",
+        @"project"   : @"project_type",
+//        @"project_list" : @"project_type_list",
+        @"currency"   : @"currency_preference",
+//        @"currency_list" : @"currency_list",
+        @"investment"  : @"investment_budget",
+        @"target"   : @"target_annualize_return",
+        @"countries"   : @"country",
+        @"descriptions"   : @"description",
         @"website"   : @"iv_website",
-        @"duration"   : @"iv_duration",
+        @"duration"   : @"duration_preference_in_month",
     };
 }
 
@@ -31,6 +34,7 @@
     }
     return @"Singapore Dollars";
 }
+
 #pragma mark - Description
 - (NSString *)CODescriptionsContent {
     if (self.descriptions) {
@@ -75,7 +79,7 @@
 }
 - (NSString *)COInvestorAmountContent {
     if (self.investment) {
-        return self.investment;
+        return [self.investment stringValue];
     }
     return @"1000";
 }
@@ -87,7 +91,7 @@
 }
 - (NSString *)COInvestorTargetContent {
     if (self.target) {
-        return self.target;
+        return [self.target stringValue];
     }
     return @"Unknown";
 }
@@ -99,7 +103,7 @@
 }
 - (NSString *)COInvestorDurationContent {
     if (self.duration) {
-        return self.duration;
+        return [self.duration stringValue];
     }
     return @"Unknown";
 }

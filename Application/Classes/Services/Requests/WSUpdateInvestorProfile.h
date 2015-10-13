@@ -8,16 +8,19 @@
 
 #import "WSRequest.h"
 
-static NSString *kUpIVProfileInvestor       = @"iv_investor";
-static NSString *kUpIVProfileProject     = @"iv_project";
-static NSString *kUpIVProfileCurrency     = @"iv_currency";
-static NSString *kUpIVProfileInvestment     = @"iv_investment";
-static NSString *kUpIVProfileTarget         = @"iv_target";
-static NSString *kUpIVProfileCountries      = @"iv_countries";
-static NSString *kUpIVProfileDescriptions     = @"iv_descriptions";
-static NSString *kUpIVProfileWebsite     = @"iv_website";
-static NSString *kUpIVProfileDuration    = @"iv_duration";
+static NSString *kUpIVProfileInvestor       = @"investor_type";
+static NSString *kUpIVProfileInvestor_List       = @"investor_type_list";
+static NSString *kUpIVProfileProject        = @"project_type";
+static NSString *kUpIVProfileProject_List        = @"project_type_list";
+static NSString *kUpIVProfileCurrency       = @"currency_preference";
+static NSString *kUpIVProfileCurrency_List       = @"currency_list";
+static NSString *kUpIVProfileInvestment     = @"investment_budget";
+static NSString *kUpIVProfileTarget         = @"target_annualize_return";
+static NSString *kUpIVProfileDuration       = @"duration_preference_in_month";
+static NSString *kUpIVProfileCountries      = @"country";
+static NSString *kUpIVProfileDescriptions   = @"description";
+static NSString *kUpIVProfileWebsite        = @"iv_website";
 
 @interface WSUpdateInvestorProfile : WSRequest
-
+- (void)setRequestWithModel:(id)model;
 @end

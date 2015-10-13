@@ -70,10 +70,13 @@
     }
 }
 
+
+#pragma mark - Invertor Model
+
 - (void)setInvestorType:(id<COInvestorType>)investorType {
     _investorType = investorType;
     _lblName.text = investorType.COInvestorTypeTitle;
-    _lblDetail.text = investorType.COInvestorTypeContent;
+    _lblDetail.text = [UIHelper getInvestorTypeWithKey:investorType.COInvestorTypeContent];
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
@@ -81,14 +84,14 @@
 - (void)setInvestorPreference:(id<COInvestorPreference>)investorPreference {
     _investorPreference = investorPreference;
     _lblName.text = investorPreference.COInvestorPreferenceTitle;
-    _lblDetail.text = investorPreference.COInvestorPreferenceContent;
+    _lblDetail.text = [UIHelper getProjectTypeWithKey:investorPreference.COInvestorPreferenceContent];
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
 
 - (void)setInvestorAmount:(id<COInvestorAmount,COCureency>)investorAmount {
     _investorAmount = investorAmount;
-    NSString *str = [NSString stringWithFormat:@"%@ %@",[UIHelper getStringCurrencyOfferWithValue:[investorAmount COCureencyContent]],investorAmount.COInvestorAmountContent];
+    NSString *str = [NSString stringWithFormat:@"%@ %@",[investorAmount COCureencyContent],investorAmount.COInvestorAmountContent];
     _lblName.text = investorAmount.COInvestorAmountTitle;
     _lblDetail.text = str;
     
