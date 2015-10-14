@@ -135,34 +135,58 @@
     DBG(@"NM-WS-REQUEST-URL: %@",request.URL.absoluteString);
     DBG(@"NM-WS-REQUEST-METHOD: %@",request.HTTPMethod);
     DBG(@"NM-WS-REQUEST-BODY: %@",[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
-    // Initialize Session Configuration
+    NSString *errorMessage = @"Unknown Error";
+    NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
+                                         code:0
+                                     userInfo:@{@"message":errorMessage}];
+    @try {
+        [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+            if (handler) {
+                handler (responseObject,response,error);
+            }
+        }];
+    }
+    @catch (NSException *exception) {
+        NSString *errorUnknown = [exception name];
+        if ([errorUnknown isEqualToString:@"Try Again WS Unknown Error"]&& !_isCheckUnknownError) {
+            [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+                if (handler) {
+                    handler (responseObject,response,error);
+                }
+            }];
+            _isCheckUnknownError = YES;
+        } else {
+            if (handler) {
+                handler (nil,nil,error);
+            }
+        }
+    }
+}
+
+- (void)callSessionRequest:(NSMutableURLRequest *)request handler:(WSURLSessionHandler)handler {
     NSURLSessionConfiguration *urlSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    // Initialize Session Manager
     AFHTTPSessionManager *sm = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:urlSessionConfig];
-    // Configure Manager
     [sm setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    // Send Request
+    
     [[sm dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         //check if error is exist
-        if(httpResponse.statusCode >= 500) {
+        NSInteger statusCodeWS = httpResponse.statusCode;
+        DBG(@"Status_CodeWS %li",statusCodeWS);
+        if (statusCodeWS >= 300) {
             NSString *errorCode = @"Unknown Error";
             NSString *errorMessage = @"Unknown Error";
-            NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:0 userInfo:@{@"message":errorMessage, @"code":errorCode}];
-            if (!_isCheckUnknownError) {
-                _isCheckUnknownError = YES;
-                [self sendRequest:request handler:nil];
-            }
-            if(handler)
-            {
-                handler(responseObject,response,error);
-            }
-            return;
+            NSException *exception = [NSException exceptionWithName:@"Try Again WS Unknown Error"
+                                                             reason:@"Unknown Error"
+                                                           userInfo:@{@"message":errorMessage, @"code":errorCode}];
+            @throw exception;
         }
         if (responseObject && !([responseObject isKindOfClass:[NSDictionary class]] || [responseObject isKindOfClass:[NSArray class]])) {
             NSInteger errorCode = 500;
             NSString *errorMessage = @"The response is invalid.";
-            NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:errorCode userInfo:@{@"message":errorMessage}];
+            NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
+                                                 code:errorCode
+                                             userInfo:@{@"message":errorMessage}];
             if(handler) {
                 handler(nil,response,error);
             }
@@ -170,16 +194,16 @@
             if (error) {
                 NSString *errorCode = [NSString stringWithFormat:@"%tu",error.code];
                 NSString *errorMessage = error.localizedDescription;
-                NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:0 userInfo:@{@"message":errorMessage, @"code":errorCode}];
+                NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
+                                                     code:0
+                                                 userInfo:@{@"message":errorMessage, @"code":errorCode}];
                 if(handler) {
                     handler(nil,nil,error);
                 }
-                
             } else {
                 if(handler) {
                     handler(responseObject,response,nil);
                 }
-                _isCheckUnknownError = NO;
             }
         }
     }] resume];
