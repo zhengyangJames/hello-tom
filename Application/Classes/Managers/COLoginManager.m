@@ -94,6 +94,7 @@
 - (void)getProfileInvestor:(NSDictionary *)token actionBlock:(ProfileGetInvestor)actionBlock {
     [[WSURLSessionManager shared] wsGetInvestorProfile:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]] && !error) {
+            [self setInvestorModel:nil];
             NSDictionary *dicProfile = (NSDictionary*)responseObject;
             NSData *data = [NSJSONSerialization dataWithJSONObject:dicProfile options:0 error:nil];
             [kUserDefaults setObject:data forKey:UPDATE_INVESTOR_PROFILE_JSON];

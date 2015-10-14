@@ -91,7 +91,7 @@
 
 - (void)setInvestorAmount:(id<COInvestorAmount,COCureency>)investorAmount {
     _investorAmount = investorAmount;
-    NSString *str = [NSString stringWithFormat:@"%@ %@",[investorAmount COCureencyContent],investorAmount.COInvestorAmountContent];
+    NSString *str = [NSString stringWithFormat:@"%@ %@",[investorAmount COCureencyContent],[UIHelper formatStringUnknown:investorAmount.COInvestorAmountContent]];
     _lblName.text = investorAmount.COInvestorAmountTitle;
     _lblDetail.text = str;
     

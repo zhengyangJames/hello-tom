@@ -21,6 +21,16 @@ static NSString *kUpIVProfileCountries      = @"country";
 static NSString *kUpIVProfileDescriptions   = @"description";
 static NSString *kUpIVProfileWebsite        = @"iv_website";
 
+static NSString *kUpIVProfileCurrencyUpdate       = @"currency";
+static NSString *kUpIVProfileInvestorUpdate       = @"investor_type";
+static NSString *kUpIVProfileProjectUpdate        = @"project_type";
+static NSString *kUpIVProfileInvestmentUpdate     = @"budget";
+static NSString *kUpIVProfileTargetUpdate         = @"annualize_return";
+static NSString *kUpIVProfileDurationUpdate       = @"time_horizon";
+static NSString *kUpIVProfileCountriesUpdate      = @"country";
+static NSString *kUpIVProfileDescriptionsUpdate   = @"description";
+static NSString *kUpIVProfileWebsiteUpdate        = @"iv_website";
+
 @interface WSUpdateInvestorProfile : WSRequest
 - (void)setRequestWithTOken;
 @end

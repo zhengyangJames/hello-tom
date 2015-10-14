@@ -18,8 +18,9 @@
 
 @implementation WSURLSessionManager (Profile)
 
+#pragma mark - User Profile
+
 - (void)wsGetProfileWithUserToken:(NSDictionary*)paramToken handler:(WSURLSessionHandler)handler {
-    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     WSGetProfileRequest *request = [[WSGetProfileRequest alloc] init];
     [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_PROFILE]];
     [request setHTTPMethod:METHOD_GET];
@@ -149,15 +150,15 @@
 
 - (COUserInverstorModel*)_updateInvestorProfile:(NSDictionary*)obj {
     COUserInverstorModel *model = [[COLoginManager shared] investorModel];
-    [model setCOCureencyContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileCurrency]]];
-    [model setCODescriptionsContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileDescriptions]]];
-    [model setCOInvestorAmountContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileInvestment]]];
-    [model setCOInvestorCountriesContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileCountries]]];
-    [model setCOInvestorDurationContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileDuration]]];
-    [model setCOInvestorPreferenceContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileProject]]];
-    [model setCOInvestorTargetContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileTarget]]];
-    [model setCOInvestorTypeContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileInvestor]]];
-    [model setCOWebsiteContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileWebsite]]];
+    [model setCOCureencyContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileCurrencyUpdate]]];
+    [model setCOInvestorPreferenceContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileProjectUpdate]]];
+    [model setCOInvestorTypeContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileInvestorUpdate]]];
+    [model setCODescriptionsContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileDescriptionsUpdate]]];
+    [model setCOInvestorAmountContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileInvestmentUpdate]]];
+    [model setCOInvestorCountriesContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileCountriesUpdate]]];
+    [model setCOInvestorDurationContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileDurationUpdate]]];
+    [model setCOInvestorTargetContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileTargetUpdate]]];
+    [model setCOWebsiteContent:[self _setModelNullOrNotNull:[obj valueForKeyNotNull:kUpIVProfileWebsiteUpdate]]];
     return model;
 }
 

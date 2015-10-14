@@ -373,6 +373,7 @@
 }
 
 + (NSString*)formartStringDuration:(NSString*)string {
+    string = [self formatStringUnknown:string];
     if ([string isEqualToString:@"Unknown"] || [string isEqualToString:@"0"]) {
         return string;
     }
@@ -380,6 +381,7 @@
 }
 
 + (NSString*)formartStringTarget:(NSString*)string {
+    string = [self formatStringUnknown:string];
     if ([string isEqualToString:@"Unknown"] || [string isEqualToString:@"0"]) {
         return string;
     }

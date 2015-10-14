@@ -58,18 +58,23 @@
 - (void)setInvestorUserModel:(COUserInverstorModel *)investorUserModel {
     _investorUserModel = investorUserModel;
     NSString *stringDuration = [UIHelper formatStringUnknown:[_investorUserModel COInvestorDurationContent]];
-    if ([stringDuration isEqualToString:@"0"]){
+    if ([stringDuration isEqualToString:@"0"]||[stringDuration isEqualToString:@"Unknown"]){
         _durationTextField.placeholder = @"0";
     } else {
         _durationTextField.text = stringDuration;
     }
     NSString *stringTagert = [UIHelper formatStringUnknown:[_investorUserModel COInvestorTargetContent]];
-    if ([stringTagert isEqualToString:@"0"]) {
+    if ([stringTagert isEqualToString:@"0"]||[stringTagert isEqualToString:@"Unknown"]) {
         _targetTextField.placeholder = @"0";
     } else {
         _targetTextField.text = stringTagert;
     }
-    _investmentTextField.text = [_investorUserModel COInvestorAmountContent];
+    NSString *invester = [UIHelper formatStringUnknown:[_investorUserModel COInvestorAmountContent]];
+    if ([invester isEqualToString:@"0"]||[invester isEqualToString:@"Unknown"]) {
+        _investmentTextField.placeholder = @"0";
+    } else {
+        _investmentTextField.text = invester;
+    }
     _countriesTextField.text = [_investorUserModel COInvestorCountriesContent];
     _descriptionTextField.text = [_investorUserModel CODescriptionsContent];
     _websiteTextField.text = [_investorUserModel COWebsiteContent];
@@ -169,35 +174,14 @@
 
 #pragma mark - WS
 
-- (NSDictionary *)_creatUpdateInfoInvestor {
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    NSString *duration = [UIHelper getNumberInstring:[UIHelper formatStringUnknown:_durationTextField.text]];
-    [dic setValue:[self _setModelNilOrNotNil:duration] forKey:kUpIVProfileDuration];
-    NSString *target = [UIHelper getNumberInstring:[UIHelper formatStringUnknown:_targetTextField.text]];
-    [dic setValue:[self _setModelNilOrNotNil:target] forKey:kUpIVProfileTarget];
-    [dic setValue:[self _setModelNilOrNotNil:_investmentTextField.text] forKey:kUpIVProfileInvestment];
-    [dic setValue:[self _setModelNilOrNotNil:_countriesTextField.text] forKey:kUpIVProfileCountries];
-    [dic setValue:[self _setModelNilOrNotNil:_descriptionTextField.text] forKey:kUpIVProfileDescriptions];
-    [dic setValue:[self _setModelNilOrNotNil:_websiteTextField.text] forKey:kUpIVProfileWebsite];
-    [dic setValue:[self _setModelNilOrNotNil:_btnCurrency.titleLabel.text] forKey:kUpIVProfileCurrency];
-    [dic setValue:[self _setModelNilOrNotNil:_btnInvestor.titleLabel.text] forKey:kUpIVProfileInvestor];
-    [dic setValue:[self _setModelNilOrNotNil:_btnProject.titleLabel.text] forKey:kUpIVProfileProject];
-    return dic;
-}
-
-- (id)_setModelNilOrNotNil:(NSString*)string {
+- (id)_setModelNotNil:(NSString*)string {
     if ([string isEmpty]) {
-        return nil;
+        return @"0";
     } else {
         return string;
     }
 }
 
-- (void)_updateProfileUserModel:(NSDictionary*)obj {
-    NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
-    [kUserDefaults setObject:data forKey:UPDATE_INVESTOR_PROFILE_JSON];
-    [kUserDefaults synchronize];
-}
 
 - (void)_callWSUpdateInvertorProfile {
     [UIHelper showLoadingInView:self.view];
@@ -216,16 +200,14 @@
     [request setHTTPMethod:METHOD_POST];
     [request setRequestWithTOken];
     [request setBodyParam:[UIHelper getStringCurrencyOfferWithValue:_btnCurrency.titleLabel.text]  forKey:kUpIVProfileCurrency];
-    [request setBodyParam:[self _setModelNilOrNotNil:_descriptionTextField.text] forKey:kUpIVProfileDescriptions];
-    [request setBodyParam:[self _setModelNilOrNotNil:_investmentTextField.text] forKey:kUpIVProfileInvestment];
-    [request setBodyParam:[self _setModelNilOrNotNil:_countriesTextField.text] forKey:kUpIVProfileCountries];
-    NSString *duration = [UIHelper getNumberInstring:[UIHelper formatStringUnknown:_durationTextField.text]];
-    [request setBodyParam:[self _setModelNilOrNotNil:duration] forKey:kUpIVProfileDuration];
+    [request setBodyParam:_descriptionTextField.text forKey:kUpIVProfileDescriptions];
+    [request setBodyParam:[self _setModelNotNil:_investmentTextField.text] forKey:kUpIVProfileInvestment];
+    [request setBodyParam:_countriesTextField.text forKey:kUpIVProfileCountries];
+    [request setBodyParam:[self _setModelNotNil:_durationTextField.text] forKey:kUpIVProfileDuration];
     [request setBodyParam:[UIHelper getProjectTypeWithValue:_btnProject.titleLabel.text] forKey:kUpIVProfileProject];
-    NSString *target = [UIHelper getNumberInstring:[UIHelper formatStringUnknown:_targetTextField.text]];
-    [request setBodyParam:[self _setModelNilOrNotNil:target] forKey:kUpIVProfileTarget];
+    [request setBodyParam:[self _setModelNotNil:_targetTextField.text] forKey:kUpIVProfileTarget];
     [request setBodyParam:[UIHelper getInvestorTypeWithValue:_btnInvestor.titleLabel.text] forKey:kUpIVProfileInvestor];
-    [request setBodyParam:[self _setModelNilOrNotNil:_websiteTextField.text] forKey:kUpIVProfileWebsite];
+    [request setBodyParam:_websiteTextField.text forKey:kUpIVProfileWebsite];
     return request;
 }
 
@@ -234,7 +216,6 @@
 
 - (void)__actionDone:(id)sender {
     [self _callWSUpdateInvertorProfile];
-
 }
 
 
