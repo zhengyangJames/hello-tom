@@ -167,7 +167,7 @@
     NSURLSessionConfiguration *urlSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFHTTPSessionManager *sm = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:urlSessionConfig];
     [sm setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     [[sm dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         //check if error is exist
@@ -183,7 +183,7 @@
         }
         if (responseObject && !([responseObject isKindOfClass:[NSDictionary class]] || [responseObject isKindOfClass:[NSArray class]])) {
             NSInteger errorCode = 500;
-            NSString *errorMessage = @"The response is invalid.";
+            NSString *errorMessage = @"The Response is invalid.";
             NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
                                                  code:errorCode
                                              userInfo:@{@"message":errorMessage}];

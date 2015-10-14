@@ -55,7 +55,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application {}
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     currentInstallation.channels = @[ @"global" ];
@@ -64,13 +63,13 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
 //    [PFPush handlePush:userInfo];
-    if (userInfo != nil) {
-        NSDictionary *aps = userInfo[@"aps"];
-        if (aps != nil) {
-            NSString *alert = aps[@"alert"];
-            [[[UIAlertView alloc] initWithTitle:m_string(@"COASSETS_TITLE") message:NSLocalizedString(alert, nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK_TITLE", nil) otherButtonTitles:nil] show];
-        }
-    }
+//    if (userInfo != nil) {
+//        NSDictionary *aps = userInfo[@"aps"];
+//        if (aps != nil) {
+//            NSString *alert = aps[@"alert"];
+//            [[[UIAlertView alloc] initWithTitle:m_string(@"COASSETS_TITLE") message:NSLocalizedString(alert, nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK_TITLE", nil) otherButtonTitles:nil] show];
+//        }
+//    }
 }
 
 #pragma mark - Method

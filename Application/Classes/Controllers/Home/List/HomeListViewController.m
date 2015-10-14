@@ -42,6 +42,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     __weak IBOutlet UILabel *_noDataLabel;
     UIBarButtonItem *_leftButton;
     NSIndexPath *_indexPathForCell;
+    NSString *_selectedID;
 }
 @property (copy, nonatomic) ActionGetIndexPath actionGetIndexPath;
 @property (strong, nonatomic) NSArray *arrayData;
@@ -65,22 +66,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [kUserDefaults synchronize];
 }
 
-
-//- (void)_test {
-//    NSArray *inventory = @[@"Honda Civic",
-//                           @"Nissan Versa",
-//                           @"Ford F-150"];
-//    int selectedIndex = 3;
-//    @try {
-//        NSString *car = inventory[selectedIndex];
-//        NSLog(@"The selected car is: %@", car);
-//    } @catch(NSException *theException) {
-//        NSLog(@"An exception occurred: %@", theException.name);
-//        NSLog(@"Here are some details: %@", theException.reason);
-//    } @finally {
-//        NSLog(@"Executing finally block");
-//    }
-//}
 
 #pragma mark - Setup
 - (void)_setupUI {
@@ -167,7 +152,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     if (self.arrayData && self.arrayData.count > 0) {
         self.arrayData = nil;
         [_tableView reloadData];
-        
     } else {
         _noDataView.hidden = YES;
     }
@@ -179,11 +163,20 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             self.arrayData = (NSArray*)responseObject;
             if (self.arrayData.count>0) {
                 _noDataView.hidden = YES;
+                NSIndexPath *_indexPath = nil;
                 [_tableView beginUpdates];
                 for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
-                    [_tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                    if ([_selectedID isEqual:[[self.arrayData[i] numberOfOfferId] stringValue]]) {
+                        _indexPath = indexPath;
+                    }
+                    [_tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
                 }
                 [_tableView endUpdates];
+                if (_indexPath) {
+                    [_tableView scrollToRowAtIndexPath:_indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+                }
+                _selectedID = nil;
             } else {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     [self _showViewNoData:typeFilter];
@@ -281,9 +274,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         vcLogin.delegate = self;
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
         [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
-        _indexPathForCell = indexPath;
     }else {
-        [self _callWSGetDetailsWithModel:[[self.arrayData[indexPath.row] numberOfOfferId]stringValue]];
+        _selectedID = [[self.arrayData[indexPath.row] numberOfOfferId]stringValue];
+        [self _callWSGetDetailsWithModel:_selectedID];
     }
 }
 
@@ -309,10 +302,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         case PushLoginVC:
         {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
-                                                                    completion:^{
-                                                                        [self _callWSGetFundInfo];
-            }];
-            _indexPathForCell = nil;
+                                                                    completion:^{[self _callWSGetFundInfo];}];
+//            _indexPathForCell = nil;
         } break;
             
         default: break;
