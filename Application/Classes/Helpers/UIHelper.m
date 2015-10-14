@@ -303,7 +303,6 @@
                           @"BKP" : @"Bulk Purchases",
                           @"DEV" : @"Pre-sales",
                           @"EQC" : @"Crowdfunding",
-                          @"FXR" : @"Crowdfunding"
                           };
     return [dic objectForKeyNotNull:key];
 }
@@ -399,7 +398,7 @@
     [scanner scanCharactersFromSet:numbers intoString:&numberString];
     // Result.
     NSInteger integer = [numberString integerValue];
-    NSString *string = [NSString stringWithFormat:@"%li",integer];
+    NSString *string = [NSString stringWithFormat:@"%li",(long)integer];
     return string;
 }
 

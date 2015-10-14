@@ -62,6 +62,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
     [self _checkIsReloadListHome];
+    [self _loadDetailOfferWithNotification];
     [kUserDefaults setObject:@"0" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
 }
@@ -95,6 +96,17 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     if (![COLoginManager shared].isReloadListHome) {
         [self _callWSGetListOfferFilter:@""];
         [COLoginManager shared].isReloadListHome = YES;
+    }
+}
+
+- (void)_loadDetailOfferWithNotification {
+    NSString *offerId = [[COLoginManager shared].offerId stringValue];
+    if (offerId) {
+        [[COLoginManager shared] setOfferId:nil];
+        [[COLoginManager shared] setOfferType:nil];
+        [self _callWSGetDetailsWithModel:offerId];
+    } else {
+        DBG(@"Offer Id Not Invalid");
     }
 }
 
@@ -214,8 +226,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             }];
             [UIHelper showError:error];
         }
-
-        
     }];
 }
 

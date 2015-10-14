@@ -62,14 +62,19 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-//    [PFPush handlePush:userInfo];
-//    if (userInfo != nil) {
-//        NSDictionary *aps = userInfo[@"aps"];
-//        if (aps != nil) {
-//            NSString *alert = aps[@"alert"];
-//            [[[UIAlertView alloc] initWithTitle:m_string(@"COASSETS_TITLE") message:NSLocalizedString(alert, nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK_TITLE", nil) otherButtonTitles:nil] show];
-//        }
-//    }
+    NSInteger count = [userInfo allKeys].count;
+    for (int i = 0 ; i < count ; i++) {
+        if ([userInfo objectForKey:@"data"]) {
+            NSDictionary *data = [userInfo objectForKey:@"data"];
+            NSNumber *offerId = data[@"id"];
+            NSString *offerType = data[@"type"];
+            [COLoginManager shared].offerId = offerId;
+            [COLoginManager shared].offerType = offerType;
+            [[COLoginManager shared] setIsReloadListHome:YES];
+            [self.baseTabBarController setSelectedIndex:1];
+            [self.baseTabBarController setSelectedIndex:0];
+        }
+    }
 }
 
 #pragma mark - Method
