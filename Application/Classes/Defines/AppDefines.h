@@ -42,6 +42,9 @@
 #define WS_ACCESS_TOKEN                             @"dda346478c319db6faa474aace302858fe247e5c"
 #define COREDATA_STORE_NAME                         @"CoAssest"
 #define GRANT_TYPE                                  @"password"
+
+#define kParseSDKAppID                                  @"mFlCjlgcR6hQ0vZosYkkj4lPDffwKbOsnLqONSUt"
+#define kParseSDKClientID                               @"AbaaH9hpa5ABPPCBf5IJb6SBZuV1zcEKjrXwJQLe"
 ///////////////////////////////////////////////////////////////////
 #pragma mark - WSMAnager - METHOD SERVICES
 ///////////////////////////////////////////////////////////////////
@@ -144,8 +147,6 @@
 #define kNUMBERS_OF_ROW_OF_CHANGE_PASS              2
 ////////////////////////////////////////////////////////////////
 #pragma mark - WEB LINK
-
-#define WEB_SAFARI_LINK                             @"http://coassets.com/terms-of-use/"
 
 #define WEB_SAFARI_LINK                             @"http://coassets.com/terms-of-use/"
 #define LINK_NEW                                    @"http://coassets.com/news/apps/"

@@ -15,6 +15,8 @@
 #import "SettingViewController.h"
 #import "COLoginManager.h"
 #import "COUserProfileModel.h"
+#import <Parse/Parse.h>
+#import <ParseCrashReporting/ParseCrashReporting.h>
 
 @interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate>
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
@@ -31,6 +33,8 @@
     self.window.rootViewController = self.baseTabBarController;
     self.baseTabBarController.delegate = self;
     [self _setUp3rdSDKs];
+    [self _setupParse];
+    [self _setupNotifications:application];
     [self _checkVersionAndClearData];
     [self.window makeKeyAndVisible];
     return YES;
@@ -50,11 +54,56 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {}
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[ @"global" ];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+//    [PFPush handlePush:userInfo];
+    if (userInfo != nil) {
+        NSDictionary *aps = userInfo[@"aps"];
+        if (aps != nil) {
+            NSString *alert = aps[@"alert"];
+            [[[UIAlertView alloc] initWithTitle:m_string(@"COASSETS_TITLE") message:NSLocalizedString(alert, nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK_TITLE", nil) otherButtonTitles:nil] show];
+        }
+    }
+}
+
 #pragma mark - Method
 
 - (void)_setUp3rdSDKs {
     [Fabric with:@[CrashlyticsKit]];
 }
+
+- (void)_setupParse {
+    [ParseCrashReporting enable];
+    [Parse setApplicationId:kParseSDKAppID clientKey:kParseSDKClientID];
+}
+
+- (void)_setupNotifications:(UIApplication*)application {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                        UIUserNotificationTypeBadge |
+                                                        UIUserNotificationTypeSound);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                 categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    } else
+#endif
+    {
+        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                         UIRemoteNotificationTypeAlert |
+                                                         UIRemoteNotificationTypeSound)];
+    }
+}
+
+#pragma mark - Private
 
 - (BaseTabBarController*)baseTabBarController {
     if (!_baseTabBarController) {

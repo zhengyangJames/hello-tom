@@ -9,5 +9,7 @@ pod 'Fabric';
 pod 'MBProgressHUD';
 pod 'TPKeyboardAvoiding';
 pod 'Mantle', '~> 2.0'
+pod 'Parse'
+pod 'ParseCrashReporting'
 end
 
