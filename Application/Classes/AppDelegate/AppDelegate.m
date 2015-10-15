@@ -65,12 +65,12 @@
     if ([userInfo objectForKey:@"data"]) {
         NSDictionary *data = [userInfo objectForKey:@"data"];
         NSNumber *offerId = data[@"id"];
+        [[COLoginManager shared] setIsReloadListHome:YES];
         [self.baseTabBarController setSelectedIndex:0];
         NSArray *array = self.baseHomeNAV.viewControllers;
         if (array.count > 1) {
             [self.baseHomeNAV popToViewController:self.homeVC animated:NO];
         }
-        [[COLoginManager shared] setIsReloadListHome:YES];
         [self.homeVC checkIsShowLoginVCAndPushDetailOffer:nil offerId:[offerId stringValue]];
     }}
 
@@ -198,9 +198,9 @@
     [[COLoginManager shared] setInvestorModel:nil];
     [[COLoginManager shared] setAccountModel:nil];
     [kUserDefaults removeObjectForKey:kPROFILE_JSON];
-//    [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_INVESTOR_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_ACCOUNT_PROFILE_JSON];
+//    [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults synchronize];
 }
 

@@ -47,6 +47,7 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    [self _updateProfile];
 }
 
 #pragma mark - SetupUI
@@ -168,6 +169,24 @@
 - (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC {
     self.userModel = nil;
     [self _reloadTableview];
+}
+
+
+#pragma mark - WS Update Profile
+- (void)_updateProfile {
+    [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
+        if (object && [object isKindOfClass:[NSDictionary class]]) {
+            [[COLoginManager shared] setUserModel:nil];
+            [[COLoginManager shared] setInvestorModel:nil];
+            self.userModel = nil;
+            self.investorModel = nil;
+            NSDictionary *dic = object;
+            NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+            [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+            [kUserDefaults synchronize];
+            [self _reloadTableview];
+        }
+    }];
 }
 
 @end

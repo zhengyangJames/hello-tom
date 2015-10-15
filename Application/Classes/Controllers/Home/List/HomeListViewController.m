@@ -48,6 +48,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 @property (strong, nonatomic) NSArray *arrayData;
 @property (strong, nonatomic) NSArray *arrayListFilter;
 @property (nonatomic, strong) COOfferModel *offerModel;
+
 @end	
 @implementation HomeListViewController
 
@@ -146,13 +147,10 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     }];
 }
 
-#pragma mark - CalAPI
+#pragma mark - Call API
 
 - (void)_callWSGetListOfferFilter:(NSString*)typeFilter {
-    if (self.arrayData && self.arrayData.count > 0) {
-        self.arrayData = nil;
-        [_tableView reloadData];
-    } else {
+    if (!self.arrayData && !self.arrayData.count > 0) {
         _noDataView.hidden = YES;
     }
     _leftButton.enabled = NO;
@@ -160,6 +158,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [[WSURLSessionManager shared] wsGetListOffersWithRequest:[self _createGetListOfferRequestWithType:typeFilter] handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         [UIHelper hideLoadingFromView:self.view];
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
+            self.arrayData = nil;
+            [_tableView reloadData];
             self.arrayData = (NSArray*)responseObject;
             if (self.arrayData.count>0) {
                 _noDataView.hidden = YES;
@@ -175,8 +175,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                 [_tableView endUpdates];
                 if (_indexPath) {
                     [_tableView scrollToRowAtIndexPath:_indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+                    _selectedID = nil;
                 }
-                _selectedID = nil;
             } else {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     [self _showViewNoData:typeFilter];
@@ -185,9 +185,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         } else {
             [UIHelper showError:error];
         }
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            _leftButton.enabled = YES;
-        }];
+        _leftButton.enabled = YES;
     }];
 }
 
@@ -211,16 +209,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             [UIHelper showError:error];
         }
     }];
-}
-
-- (BOOL)_checkOfferIdInList:(NSString*)offerId {
-    for (NSInteger i = 0; i < self.arrayData.count; i++) {
-        NSString *offderIdInList = [[self.arrayData[i] numberOfOfferId]stringValue];
-        if ([offerId isEqualToString:offderIdInList]) {
-            return YES;
-        }
-    }
-    return NO;
 }
 
 - (WSGetOfferInfoWithRequest *)_createOfferInfoRequestWithOfferID:(NSString*)offerID {
@@ -287,27 +275,28 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 #pragma mark - Other Delegate
 - (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
     switch (loginWithStyle) {
-        case DismissLoginVC:
-        {
+        case DismissLoginVC: {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } break;
             
-        case PushLoginVC:
-        {
+        case PushLoginVC: {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:^{
                 [self _checkOfferAndPushDetailOfferWithID:_selectedID];
             }];
         } break;
+            
         default: break;
     }
 }
 
 #pragma mark - Check Login
+
 - (void)checkIsShowLoginVCAndPushDetailOffer:(NSString*)indexOfferIDForRow offerId:(NSString*)offerId {
     if (indexOfferIDForRow) {
         _selectedID = [[self.arrayData[[indexOfferIDForRow integerValue]] numberOfOfferId]stringValue];
     } else {
         _selectedID = offerId;
+        [[COLoginManager shared] setIsReloadListHome:YES];
     }
     if (![[COLoginManager shared] userModel]) {
         LoginViewController *vcLogin = [[LoginViewController alloc]init];
@@ -323,8 +312,18 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     if ([self _checkOfferIdInList:offerID]) {
         [self callWSGetDetailsWithModel:offerID];
     } else {
-        DBG(@"Offer ID Not Invaild");
+        DBG(@"***__Offer ID Not Invaild__***");
     }
+}
+
+- (BOOL)_checkOfferIdInList:(NSString*)offerId {
+    for (NSInteger i = 0; i < self.arrayData.count; i++) {
+        NSString *offderIdInList = [[self.arrayData[i] numberOfOfferId]stringValue];
+        if ([offerId isEqualToString:offderIdInList]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end
