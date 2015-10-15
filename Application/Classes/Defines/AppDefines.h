@@ -184,7 +184,7 @@
 #define KEY_TABBARSELECT                            @"KEY_TABBARSELECT"
 
 #define KEY_VERSION                                 @"KEY_VERSION_SANYI"
-
+#define KEY_BUILD_VERSION                                 @"KEY_BUILD_VERSION_SANYI"
 ////////////////////////////////////////////////////////////////
 #pragma mark - Notification
 ////////////////////////////////////////////////////////////////

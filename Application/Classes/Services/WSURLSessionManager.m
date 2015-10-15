@@ -135,20 +135,10 @@
     DBG(@"NM-WS-REQUEST-URL: %@",request.URL.absoluteString);
     DBG(@"NM-WS-REQUEST-METHOD: %@",request.HTTPMethod);
     DBG(@"NM-WS-REQUEST-BODY: %@",[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
-    NSString *errorMessage = @"Unknown Error";
-    NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
-                                         code:0
-                                     userInfo:@{@"message":errorMessage}];
-    @try {
-        [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-            if (handler) {
-                handler (responseObject,response,error);
-            }
-        }];
-    }
-    @catch (NSException *exception) {
-        NSString *errorUnknown = [exception name];
-        if ([errorUnknown isEqualToString:@"Try Again WS Unknown Error"]&& !_isCheckUnknownError) {
+
+    [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        NSString *errorUnknown = [error.userInfo objectForKey:@"message"];
+        if ([errorUnknown isEqualToString:@"Unknown Error"] && !_isCheckUnknownError) {
             [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
                 if (handler) {
                     handler (responseObject,response,error);
@@ -157,10 +147,11 @@
             _isCheckUnknownError = YES;
         } else {
             if (handler) {
-                handler (nil,nil,error);
+                handler (responseObject,response,error);
             }
         }
-    }
+    }];
+    
 }
 
 - (void)callSessionRequest:(NSMutableURLRequest *)request handler:(WSURLSessionHandler)handler {
@@ -172,14 +163,16 @@
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         //check if error is exist
         NSInteger statusCodeWS = httpResponse.statusCode;
-        DBG(@"Status_CodeWS %li",statusCodeWS);
+        DBG(@"Status_CodeWS %tu",statusCodeWS);
         if (statusCodeWS >= 300) {
-            NSString *errorCode = @"Unknown Error";
-            NSString *errorMessage = @"Unknown Error";
-            NSException *exception = [NSException exceptionWithName:@"Try Again WS Unknown Error"
-                                                             reason:@"Unknown Error"
-                                                           userInfo:@{@"message":errorMessage, @"code":errorCode}];
-            @throw exception;
+            NSInteger errorCode = statusCodeWS;
+            NSString *errorMessage = @"Unknown Error.";
+            NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
+                                                 code:errorCode
+                                             userInfo:@{@"message":errorMessage}];
+            if(handler) {
+                handler(nil,response,error);
+            }
         }
         if (responseObject && !([responseObject isKindOfClass:[NSDictionary class]] || [responseObject isKindOfClass:[NSArray class]])) {
             NSInteger errorCode = 500;

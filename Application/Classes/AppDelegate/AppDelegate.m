@@ -23,6 +23,7 @@
 @property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
 @property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
 
+@property (strong, nonatomic) HomeListViewController *homeVC;
 @end
 
 @implementation AppDelegate
@@ -48,8 +49,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    COLoginManager *manager = [COLoginManager shared];
-    manager.isReloadListHome = NO;
+    [[COLoginManager shared] setIsReloadListHome:NO];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {}
@@ -62,20 +62,17 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSInteger count = [userInfo allKeys].count;
-    for (int i = 0 ; i < count ; i++) {
-        if ([userInfo objectForKey:@"data"]) {
-            NSDictionary *data = [userInfo objectForKey:@"data"];
-            NSNumber *offerId = data[@"id"];
-            NSString *offerType = data[@"type"];
-            [COLoginManager shared].offerId = offerId;
-            [COLoginManager shared].offerType = offerType;
-            [[COLoginManager shared] setIsReloadListHome:YES];
-            [self.baseTabBarController setSelectedIndex:1];
-            [self.baseTabBarController setSelectedIndex:0];
+    if ([userInfo objectForKey:@"data"]) {
+        NSDictionary *data = [userInfo objectForKey:@"data"];
+        NSNumber *offerId = data[@"id"];
+        [self.baseTabBarController setSelectedIndex:0];
+        NSArray *array = self.baseHomeNAV.viewControllers;
+        if (array.count > 1) {
+            [self.baseHomeNAV popToViewController:self.homeVC animated:NO];
         }
-    }
-}
+        [[COLoginManager shared] setIsReloadListHome:YES];
+        [self.homeVC checkIsShowLoginVCAndPushDetailOffer:nil offerId:[offerId stringValue]];
+    }}
 
 #pragma mark - Method
 
@@ -122,8 +119,7 @@
 //Setup Home
 - (BaseNavigationController*)baseHomeNAV {
     if (!_baseHomeNAV) {
-        HomeListViewController *homeVC = [[HomeListViewController alloc] init];
-        BaseNavigationController *homeNAV = [[BaseNavigationController alloc] initWithRootViewController:homeVC];
+        BaseNavigationController *homeNAV = [[BaseNavigationController alloc] initWithRootViewController:self.homeVC];
         UITabBarItem *tabbarHome = [[UITabBarItem alloc]initWithTitle:m_string(@"Home")
                                                                 image:[UIImage imageNamed:@"ic_home"]
                                                         selectedImage:[UIImage imageNamed:@"ic_home_heightlight"]];
@@ -131,6 +127,13 @@
         _baseHomeNAV = homeNAV;
     }
     return _baseHomeNAV;
+}
+
+- (HomeListViewController*)homeVC {
+    if (_homeVC) {
+        return _homeVC;
+    }
+    return _homeVC = [[HomeListViewController alloc] init];
 }
 
 //Setup Profile
@@ -165,11 +168,25 @@
 
 - (void)_checkVersionAndClearData {
     NSString *version = [kUserDefaults objectForKey:KEY_VERSION];
+    NSString *buildVersion = [kUserDefaults objectForKey:KEY_BUILD_VERSION];
+    NSString *getBuildVersionApp = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     if (!version || [version isEmpty]) {
         NSString *bundleVS = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
         [kUserDefaults setObject:bundleVS forKey:KEY_VERSION];
         [kUserDefaults synchronize];
         [self clearData];
+    } else {
+        if (!buildVersion || [buildVersion isEmpty]) {
+            [kUserDefaults setObject:getBuildVersionApp forKey:KEY_BUILD_VERSION];
+            [kUserDefaults synchronize];
+            [self clearData];
+        } else {
+            if (![buildVersion isEqualToString:getBuildVersionApp]) {
+                [kUserDefaults setObject:getBuildVersionApp forKey:KEY_BUILD_VERSION];
+                [kUserDefaults synchronize];
+                [self clearData];
+            }
+        }
     }
 }
 
