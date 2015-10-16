@@ -30,6 +30,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSDictionary *notificationInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = self.baseTabBarController;
     self.baseTabBarController.delegate = self;
@@ -38,6 +39,7 @@
     [self _setupNotifications:application];
     [self _checkVersionAndClearData];
     [self.window makeKeyAndVisible];
+    [self performNotification:notificationInfo];
     return YES;
 }
 
@@ -62,17 +64,31 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [self performNotification:userInfo];
+}
+
+- (void)performNotification:(NSDictionary*)userInfo {
     if ([userInfo objectForKey:@"data"]) {
         NSDictionary *data = [userInfo objectForKey:@"data"];
         NSNumber *offerId = data[@"id"];
-        [[COLoginManager shared] setIsReloadListHome:YES];
+        [self _checkSelectedIndexTabbar];
         [self.baseTabBarController setSelectedIndex:0];
+        [self.baseTabBarController dismissViewControllerAnimated:YES completion:nil];
         NSArray *array = self.baseHomeNAV.viewControllers;
         if (array.count > 1) {
             [self.baseHomeNAV popToViewController:self.homeVC animated:NO];
         }
-        [self.homeVC checkIsShowLoginVCAndPushDetailOffer:nil offerId:[offerId stringValue]];
-    }}
+        [self.homeVC setNotificationOfferId:[offerId stringValue]];
+    }
+}
+
+- (void)_checkSelectedIndexTabbar {
+    NSUInteger indexSelected = self.baseTabBarController.selectedIndex;
+    if (indexSelected == 0) {
+        [[COLoginManager shared] setIsReloadListHome:NO];
+        [self.baseTabBarController setSelectedIndex:2];
+    }
+}
 
 #pragma mark - Method
 

@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface HomeListViewController : BaseViewController
-- (void)checkIsShowLoginVCAndPushDetailOffer:(NSString*)indexOfferIDForRow offerId:(NSString*)offerId;
+- (void)setNotificationOfferId:(NSString *)offerId;
 @end

@@ -43,6 +43,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     UIBarButtonItem *_leftButton;
     NSIndexPath *_indexPathForCell;
     NSString *_selectedID;
+    NSString *_offerId;
 }
 @property (copy, nonatomic) ActionGetIndexPath actionGetIndexPath;
 @property (strong, nonatomic) NSArray *arrayData;
@@ -160,10 +161,12 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = nil;
             [_tableView reloadData];
-            self.arrayData = (NSArray*)responseObject;
-            if (self.arrayData.count>0) {
+            self.arrayData = (NSArray *)responseObject;
+            if (self.arrayData.count > 0) {
                 _noDataView.hidden = YES;
                 NSIndexPath *_indexPath = nil;
+                
+                //update item offer after reload
                 [_tableView beginUpdates];
                 for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
@@ -173,14 +176,20 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                     [_tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
                 }
                 [_tableView endUpdates];
+                
+                //scroll come item offer after reload
                 if (_indexPath) {
                     [_tableView scrollToRowAtIndexPath:_indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
                     _selectedID = nil;
                 }
+                
+                //Check and show offer of notification
+                if ([[COLoginManager shared] userModel] && _offerId) {
+                    [self _checkOfferAndPushDetailOfferWithID:_offerId];
+                }
+                
             } else {
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    [self _showViewNoData:typeFilter];
-                }];
+                [self _showViewNoData:typeFilter];
             }
         } else {
             [UIHelper showError:error];
@@ -221,7 +230,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)_callWSGetFundInfo{
     _leftButton.enabled = NO;
-    [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetProjectFundInfoWithRequest:[self _createFundInfoRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             self.offerModel.offerProject.projectFundedAmount = responseObject;
@@ -257,8 +265,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSString *indexPathString = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
-    [self checkIsShowLoginVCAndPushDetailOffer:indexPathString offerId:nil];
+    _selectedID = [[self.arrayData[indexPath.row] numberOfOfferId]stringValue];
+    [self checkIsShowLoginVCAndPushDetailOffer:_selectedID];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -281,7 +289,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             
         case PushLoginVC: {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:^{
-                [self _checkOfferAndPushDetailOfferWithID:_selectedID];
+                [self _callWSGetListOfferFilter:@""];
             }];
         } break;
             
@@ -291,26 +299,22 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Check Login
 
-- (void)checkIsShowLoginVCAndPushDetailOffer:(NSString*)indexOfferIDForRow offerId:(NSString*)offerId {
-    if (indexOfferIDForRow) {
-        _selectedID = [[self.arrayData[[indexOfferIDForRow integerValue]] numberOfOfferId]stringValue];
-    } else {
-        _selectedID = offerId;
-        [[COLoginManager shared] setIsReloadListHome:YES];
-    }
+- (void)checkIsShowLoginVCAndPushDetailOffer:(NSString *)offerId {
     if (![[COLoginManager shared] userModel]) {
         LoginViewController *vcLogin = [[LoginViewController alloc]init];
         vcLogin.delegate = self;
         BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
         [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
+        [[COLoginManager shared] setIsReloadListHome:YES];
     } else {
-        [self _checkOfferAndPushDetailOfferWithID:_selectedID];
+        [self _checkOfferAndPushDetailOfferWithID:offerId];
     }
 }
 
-- (void)_checkOfferAndPushDetailOfferWithID:(NSString*)offerID{
+- (void)_checkOfferAndPushDetailOfferWithID:(NSString*)offerID {
     if ([self _checkOfferIdInList:offerID]) {
         [self callWSGetDetailsWithModel:offerID];
+        _offerId = nil;
     } else {
         DBG(@"***__Offer ID Not Invaild__***");
     }
@@ -325,5 +329,24 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     }
     return NO;
 }
+
+#pragma mark - Set offerId Notification
+
+- (void)setNotificationOfferId:(NSString *)offerId {
+    _offerId = offerId;
+    [self _checkInListData];
+}
+
+- (void)_checkInListData {
+    if ( !self.arrayData.count) {
+        [self checkIsShowLoginVCAndPushDetailOffer:_offerId];
+    } else {
+        if (![[COLoginManager shared] userModel]) {
+            [self checkIsShowLoginVCAndPushDetailOffer:_offerId];
+        }
+    }
+}
+
+
 
 @end
