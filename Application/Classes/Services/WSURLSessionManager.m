@@ -138,7 +138,7 @@
 
     [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         NSString *errorUnknown = [error.userInfo objectForKey:@"message"];
-        if ([errorUnknown isEqualToString:@"Unknown Error"] && !_isCheckUnknownError) {
+        if ([errorUnknown isEqualToString:@"Unknown Error."] && !_isCheckUnknownError) {
             [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
                 if (handler) {
                     handler (responseObject,response,error);
@@ -154,7 +154,7 @@
     
 }
 
-- (void)callSessionRequest:(NSMutableURLRequest *)request handler:(WSURLSessionHandler)handler {
+- (void)callSessionRequest:(NSMutableURLRequest *)request handler:(BlockSession)handler {
     NSURLSessionConfiguration *urlSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFHTTPSessionManager *sm = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:urlSessionConfig];
     [sm setResponseSerializer:[AFJSONResponseSerializer serializer]];
@@ -173,6 +173,7 @@
             if(handler) {
                 handler(nil,response,error);
             }
+            return ;
         }
         if (responseObject && !([responseObject isKindOfClass:[NSDictionary class]] || [responseObject isKindOfClass:[NSArray class]])) {
             NSInteger errorCode = 500;

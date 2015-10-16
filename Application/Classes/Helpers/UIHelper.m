@@ -407,10 +407,12 @@
 }
 
 + (NSString*)formartFoatValueWithPortfolio:(NSNumber*)value {
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    NSString *formattedNumberString = [numberFormatter stringFromNumber:value];
-    return formattedNumberString;
+    NSNumberFormatter * formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setMaximumFractionDigits:2]; // Set this if you need 2 digits
+    [formatter setMinimumFractionDigits:2];
+    NSString * newString =  [formatter stringFromNumber:[NSNumber numberWithFloat:[value floatValue]]];
+    return [NSString stringWithFormat:@"$%@",newString];
 }
 
 @end
