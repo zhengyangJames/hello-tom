@@ -312,7 +312,6 @@
                           @"BKP" : @"Bulk Purchases",
                           @"DEV" : @"Pre-sales",
                           @"EQC" : @"Crowdfunding",
-                          @"FXR" : @"Crowdfunding"
                           };
     NSString *key;
     for (int i = 0 ; i < [dic allKeys].count ; i ++ ) {

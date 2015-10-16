@@ -184,6 +184,7 @@
 
 
 - (void)_callWSUpdateInvertorProfile {
+    [self _updateInvestorProfileJson];
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsUpdateInvestorProfile:[self _setUpdateInvertorProfileRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         [UIHelper showLoadingInView:self.view];
@@ -209,6 +210,22 @@
     [request setBodyParam:[UIHelper getInvestorTypeWithValue:_btnInvestor.titleLabel.text] forKey:kUpIVProfileInvestor];
     [request setBodyParam:_websiteTextField.text forKey:kUpIVProfileWebsite];
     return request;
+}
+
+- (void)_updateInvestorProfileJson {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setValue:[UIHelper getStringCurrencyOfferWithValue:_btnCurrency.titleLabel.text]  forKey:kUpIVProfileCurrency];
+    [dic setValue:_descriptionTextField.text forKey:kUpIVProfileDescriptions];
+    [dic setValue:[self _setModelNotNil:_investmentTextField.text] forKey:kUpIVProfileInvestment];
+    [dic setValue:_countriesTextField.text forKey:kUpIVProfileCountries];
+    [dic setValue:[self _setModelNotNil:_durationTextField.text] forKey:kUpIVProfileDuration];
+    [dic setValue:[UIHelper getProjectTypeWithValue:_btnProject.titleLabel.text] forKey:kUpIVProfileProject];
+    [dic setValue:[self _setModelNotNil:_targetTextField.text] forKey:kUpIVProfileTarget];
+    [dic setValue:[UIHelper getInvestorTypeWithValue:_btnInvestor.titleLabel.text] forKey:kUpIVProfileInvestor];
+    [dic setValue:_websiteTextField.text forKey:kUpIVProfileWebsite];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+    [kUserDefaults setObject:data forKey:UPDATE_INVESTOR_PROFILE_JSON];
+    [kUserDefaults synchronize];
 }
 
 
