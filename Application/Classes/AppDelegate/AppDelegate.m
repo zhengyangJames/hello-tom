@@ -227,8 +227,8 @@
     NSString *version = [kUserDefaults objectForKey:KEY_VERSION];
     NSString *buildVersion = [kUserDefaults objectForKey:KEY_BUILD_VERSION];
     NSString *getBuildVersionApp = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSString *bundleVS = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     if (!version || [version isEmpty]) {
-        NSString *bundleVS = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
         [kUserDefaults setObject:bundleVS forKey:KEY_VERSION];
         [kUserDefaults setObject:getBuildVersionApp forKey:KEY_BUILD_VERSION];
         [kUserDefaults synchronize];

@@ -39,7 +39,6 @@
 }
 
 - (NSArray *)arrayOfItems {
-
     return self.items;
 }
 #pragma mark - doc detail protocol

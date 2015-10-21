@@ -45,10 +45,9 @@
     [_imageLogoApp.layer setCornerRadius:8];
     [_imageLogoApp setClipsToBounds:YES];
     [self addSubview:_imageLogoApp];
-    [_imageLogoApp constrainToWidth:40];
-    [_imageLogoApp constrainToHeight:40];
-    [_imageLogoApp pinAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeTop ofItem:self withConstant:22];
-    [_imageLogoApp pinAttribute:NSLayoutAttributeLeading toAttribute:NSLayoutAttributeLeading ofItem:self withConstant:8];
+    [_imageLogoApp constrainToSize:CGSizeMake(40, 40)];
+    [_imageLogoApp pinToSuperviewEdges:JRTViewPinTopEdge inset:22];
+    [_imageLogoApp pinToSuperviewEdges:JRTViewPinLeftEdge inset:8];
 }
 
 - (void)addTitleApp {
@@ -59,9 +58,9 @@
     _titleApp.textColor = [UIColor whiteColor];
     [self addSubview:_titleApp];
     [_titleApp constrainToHeight:18];
-    [_titleApp pinAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeTop ofItem:self withConstant:22];
+    [_titleApp pinToSuperviewEdges:JRTViewPinTopEdge inset:22];
+    [_titleApp pinToSuperviewEdges:JRTViewPinRightEdge inset:8];
     [_titleApp pinAttribute:NSLayoutAttributeLeading toAttribute:NSLayoutAttributeTrailing ofItem:_imageLogoApp withConstant:8];
-    [_titleApp pinAttribute:NSLayoutAttributeTrailing toAttribute:NSLayoutAttributeTrailing ofItem:self withConstant:8];
 }
 
 - (void)addmessageApp {

@@ -32,6 +32,8 @@
     _docDetailItem = docDetailItem;
     if (docDetailItem.itemTitle) {
         _detailsLabel.text = docDetailItem.itemTitle;
+    } else {
+        _detailsLabel.text  = NSLocalizedString(@"NoDocumentsUploaded", nil);
     }
 }
 

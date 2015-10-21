@@ -1844,11 +1844,11 @@
 		BB368EAF1B87DF380066C646 /* UserProfileModel */ = {
 			isa = PBXGroup;
 			children = (
+				BB368EB91B87F3D60066C646 /* COUserData.h */,
 				1ECEAE871BC760A0006FE0CA /* COProfileModel */,
 				1ECEAE841BC75FCF006FE0CA /* COAccountModel */,
 				1ECEAE861BC76056006FE0CA /* COInvestmentModel */,
 				1ECEAE7D1BC75DC9006FE0CA /* COPortfolioModel */,
-				BB368EB91B87F3D60066C646 /* COUserData.h */,
 			);
 			path = UserProfileModel;
 			sourceTree = "<group>";
