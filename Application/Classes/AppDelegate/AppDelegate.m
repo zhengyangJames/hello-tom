@@ -146,7 +146,6 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
-                                                        UIUserNotificationTypeBadge |
                                                         UIUserNotificationTypeSound);
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
                                                                                  categories:nil];
@@ -230,21 +229,20 @@
     if (!version || [version isEmpty]) {
         NSString *bundleVS = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
         [kUserDefaults setObject:bundleVS forKey:KEY_VERSION];
+        [kUserDefaults setObject:getBuildVersionApp forKey:KEY_BUILD_VERSION];
         [kUserDefaults synchronize];
         [self clearData];
     } else {
-        if (!buildVersion || [buildVersion isEmpty]) {
+        if (![buildVersion isEqualToString:getBuildVersionApp]) {
             [kUserDefaults setObject:getBuildVersionApp forKey:KEY_BUILD_VERSION];
             [kUserDefaults synchronize];
             [self clearData];
-        } else {
-            if (![buildVersion isEqualToString:getBuildVersionApp]) {
-                [kUserDefaults setObject:getBuildVersionApp forKey:KEY_BUILD_VERSION];
-                [kUserDefaults synchronize];
-                [self clearData];
-            }
         }
     }
+//    NSString *bundleVS = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+//    if ([bundleVS integerValue] < 1.2) {
+//        [self clearData];
+//    }
 }
 
 #pragma mark - ClearData

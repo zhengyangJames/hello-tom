@@ -49,7 +49,6 @@
 		0EED2E711B5E2B94006730E2 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
 		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
 		1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; settings = {ASSET_TAGS = (); }; };
-		1E51BADD1BD64F6500AFF707 /* CONotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E51BADC1BD64F6500AFF707 /* CONotificationManager.m */; settings = {ASSET_TAGS = (); }; };
 		1E5A6FBB1BCCC49F00C4C5A5 /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA71BCCC49F00C4C5A5 /* NProfileAdressCell.m */; settings = {ASSET_TAGS = (); }; };
 		1E5A6FBC1BCCC49F00C4C5A5 /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA81BCCC49F00C4C5A5 /* NProfileAdressCell.xib */; settings = {ASSET_TAGS = (); }; };
 		1E5A6FBD1BCCC49F00C4C5A5 /* NProfileButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAA1BCCC49F00C4C5A5 /* NProfileButtonCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -373,8 +372,6 @@
 		0EFEB4B01B2724B2001195B7 /* CoAssets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoAssets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E4B347A1BC62846006F2200 /* COBorderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COBorderTextView.h; sourceTree = "<group>"; };
 		1E4B347B1BC62846006F2200 /* COBorderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COBorderTextView.m; sourceTree = "<group>"; };
-		1E51BADB1BD64F6500AFF707 /* CONotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONotificationManager.h; sourceTree = "<group>"; };
-		1E51BADC1BD64F6500AFF707 /* CONotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONotificationManager.m; sourceTree = "<group>"; };
 		1E5A6FA61BCCC49F00C4C5A5 /* NProfileAdressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileAdressCell.h; sourceTree = "<group>"; };
 		1E5A6FA71BCCC49F00C4C5A5 /* NProfileAdressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileAdressCell.m; sourceTree = "<group>"; };
 		1E5A6FA81BCCC49F00C4C5A5 /* NProfileAdressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileAdressCell.xib; sourceTree = "<group>"; };
@@ -1623,8 +1620,6 @@
 				7FE6ED601B54EB1600FA481E /* WebViewManager.m */,
 				7FC6D5111B4526240098EC8D /* COLoginManager.h */,
 				7FC6D5121B4526240098EC8D /* COLoginManager.m */,
-				1E51BADB1BD64F6500AFF707 /* CONotificationManager.h */,
-				1E51BADC1BD64F6500AFF707 /* CONotificationManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -2319,7 +2314,6 @@
 				7F325F9B1B40E50800116445 /* HomeListViewCell.m in Sources */,
 				7F325FC61B40E50800116445 /* DropListObject.m in Sources */,
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
-				1E51BADD1BD64F6500AFF707 /* CONotificationManager.m in Sources */,
 				BB38EE291B99F74200D15D58 /* WSPostSubscribeRequest.m in Sources */,
 				0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */,
 				BB368EB21B87DF5C0066C646 /* COUserProfileModel.m in Sources */,

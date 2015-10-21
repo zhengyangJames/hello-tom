@@ -136,7 +136,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Action
 - (void)__actionFilter {
-
     [CODropListVC presentWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
                               data:self.arrayListFilter
                           parentVC:self
