@@ -17,13 +17,20 @@
 #import "COUserProfileModel.h"
 #import <Parse/Parse.h>
 #import <ParseCrashReporting/ParseCrashReporting.h>
+#import "CONotificationBannerView.h"
 
-@interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate>
+@interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate,CONotificationBannerViewDelegate>
+{
+    BOOL _keyShowNotificationBanner;
+    NSDictionary *_userInfo;
+}
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
 @property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
 @property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
 
 @property (strong, nonatomic) HomeListViewController *homeVC;
+@property (strong, nonatomic) CONotificationBannerView *viewNotification;
+
 @end
 
 @implementation AppDelegate
@@ -44,14 +51,21 @@
 }
 
 
-- (void)applicationWillResignActive:(UIApplication *)application {}
+- (void)applicationWillResignActive:(UIApplication *)application {
+    _keyShowNotificationBanner = NO;
+}
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {}
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+}
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {}
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    
+}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [[COLoginManager shared] setIsReloadListHome:NO];
+    _keyShowNotificationBanner = YES;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {}
@@ -64,11 +78,31 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [self performNotification:userInfo];
+    if (_keyShowNotificationBanner) {
+        if (userInfo) {
+            _userInfo = userInfo;
+            NSDictionary *dicMess = [userInfo objectForKey:@"aps"];
+            self.viewNotification.textMessage = [dicMess objectForKey:@"alert"];
+            self.viewNotification.delegate = self;
+            BOOL check = [[[kAppDelegate window] subviews] containsObject:self.viewNotification];
+            if (!check) {
+                [self.viewNotification show];
+            } else {
+                [self.viewNotification delayPerform];
+            }
+        }
+    } else {
+        [self performNotification:userInfo];
+    }
+}
+
+- (void)notificationBannerViewDissmis:(CONotificationBannerView *)notificationView {
+    [self performNotification:_userInfo];
+    _userInfo = nil;
 }
 
 - (void)performNotification:(NSDictionary*)userInfo {
-    if ([userInfo objectForKey:@"data"]) {
+    if (userInfo && [userInfo objectForKey:@"data"]) {
         NSDictionary *data = [userInfo objectForKey:@"data"];
         NSNumber *offerId = data[@"id"];
         [self _checkSelectedIndexTabbar];
@@ -88,6 +122,13 @@
         [[COLoginManager shared] setIsReloadListHome:NO];
         [self.baseTabBarController setSelectedIndex:2];
     }
+}
+
+- (CONotificationBannerView*)viewNotification {
+    if (_viewNotification) {
+        return _viewNotification;
+    }
+    return _viewNotification = [[CONotificationBannerView alloc] init];
 }
 
 #pragma mark - Method

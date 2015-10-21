@@ -136,6 +136,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Action
 - (void)__actionFilter {
+
     [CODropListVC presentWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
                               data:self.arrayListFilter
                           parentVC:self
@@ -160,22 +161,20 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         [UIHelper hideLoadingFromView:self.view];
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = nil;
-            [_tableView reloadData];
             self.arrayData = (NSArray *)responseObject;
             if (self.arrayData.count > 0) {
                 _noDataView.hidden = YES;
                 NSIndexPath *_indexPath = nil;
                 
                 //update item offer after reload
-                [_tableView beginUpdates];
                 for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
                     if ([_selectedID isEqual:[[self.arrayData[i] numberOfOfferId] stringValue]]) {
                         _indexPath = indexPath;
                     }
-                    [_tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//                    [_tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                 }
-                [_tableView endUpdates];
+                [_tableView reloadData];
                 
                 //scroll come item offer after reload
                 if (_indexPath) {
@@ -330,13 +329,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     return NO;
 }
 
-#pragma mark - Set offerId Notification
-
-- (void)setNotificationOfferId:(NSString *)offerId {
-    _offerId = offerId;
-    [self _checkInListData];
-}
-
 - (void)_checkInListData {
     if ( !self.arrayData.count) {
         [self checkIsShowLoginVCAndPushDetailOffer:_offerId];
@@ -347,6 +339,11 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     }
 }
 
+#pragma mark - Set offerId Notification
 
+- (void)setNotificationOfferId:(NSString *)offerId {
+    _offerId = offerId;
+    [self _checkInListData];
+}
 
 @end
