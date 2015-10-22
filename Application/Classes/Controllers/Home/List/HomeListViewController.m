@@ -42,8 +42,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     __weak IBOutlet UILabel *_noDataLabel;
     UIBarButtonItem *_leftButton;
     NSIndexPath *_indexPathForCell;
-    NSString *_selectedID;
-    NSString *_offerId;
+    NSString *_selectedOfferID;
+    NSString *_offerIdOfNotification;
 }
 @property (copy, nonatomic) ActionGetIndexPath actionGetIndexPath;
 @property (strong, nonatomic) NSArray *arrayData;
@@ -55,6 +55,10 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_reloadListHome)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
     [self _setupUI];
 }
 
@@ -63,7 +67,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
-    [self _checkIsReloadListHome];
     [kUserDefaults setObject:@"0" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
 }
@@ -93,11 +96,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Private
 
-- (void)_checkIsReloadListHome {
-    if (![COLoginManager shared].isReloadListHome) {
-        [self _callWSGetListOfferFilter:@""];
-        [COLoginManager shared].isReloadListHome = YES;
-    }
+- (void)_reloadListHome {
+    [self _callWSGetListOfferFilter:@""];
 }
 
 - (void)_pushDetailVcWithID:(COOfferModel *)model {
@@ -168,22 +168,21 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                 //update item offer after reload
                 for (NSInteger i = 0 ; i < [self.arrayData count] ; i++) {
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                    if ([_selectedID isEqual:[[self.arrayData[i] numberOfOfferId] stringValue]]) {
+                    if ([_selectedOfferID isEqual:[[self.arrayData[i] numberOfOfferId] stringValue]]) {
                         _indexPath = indexPath;
                     }
-//                    [_tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                 }
                 [_tableView reloadData];
                 
                 //scroll come item offer after reload
                 if (_indexPath) {
-                    [_tableView scrollToRowAtIndexPath:_indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
-                    _selectedID = nil;
+                    [_tableView scrollToRowAtIndexPath:_indexPath atScrollPosition:UITableViewScrollPositionNone animated:NO];
+                    _selectedOfferID = nil;
                 }
                 
                 //Check and show offer of notification
-                if ([[COLoginManager shared] userModel] && _offerId) {
-                    [self _checkOfferAndPushDetailOfferWithID:_offerId];
+                if (_offerIdOfNotification) {
+                    [self checkIsShowLoginVCAndPushDetailOffer:_offerIdOfNotification];
                 }
                 
             } else {
@@ -194,6 +193,13 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         }
         _leftButton.enabled = YES;
     }];
+}
+
+//Push Detail With Offer ID
+- (void)pushDetailOfferWithID {
+    if (_offerIdOfNotification) {
+        [self _checkOfferAndPushDetailOfferWithID:_offerIdOfNotification];
+    }
 }
 
 - (WSGetListOfferRequest *)_createGetListOfferRequestWithType:(NSString *)offerType {
@@ -263,8 +269,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    _selectedID = [[self.arrayData[indexPath.row] numberOfOfferId]stringValue];
-    [self checkIsShowLoginVCAndPushDetailOffer:_selectedID];
+    _selectedOfferID = [[self.arrayData[indexPath.row] numberOfOfferId]stringValue];
+    [self checkIsShowLoginVCAndPushDetailOffer:_selectedOfferID];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -287,7 +293,12 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             
         case PushLoginVC: {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:^{
-                [self _callWSGetListOfferFilter:@""];
+                if (_selectedOfferID) {
+                    [self _checkOfferAndPushDetailOfferWithID:_selectedOfferID];
+                }
+                if (_offerIdOfNotification) {
+                    [self _checkOfferAndPushDetailOfferWithID:_offerIdOfNotification];
+                }
             }];
         } break;
             
@@ -299,11 +310,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)checkIsShowLoginVCAndPushDetailOffer:(NSString *)offerId {
     if (![[COLoginManager shared] userModel]) {
-        LoginViewController *vcLogin = [[LoginViewController alloc]init];
-        vcLogin.delegate = self;
-        BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
-        [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
-        [[COLoginManager shared] setIsReloadListHome:YES];
+        [self showLoginView];
     } else {
         [self _checkOfferAndPushDetailOfferWithID:offerId];
     }
@@ -312,7 +319,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 - (void)_checkOfferAndPushDetailOfferWithID:(NSString*)offerID {
     if ([self _checkOfferIdInList:offerID]) {
         [self callWSGetDetailsWithModel:offerID];
-        _offerId = nil;
+        _offerIdOfNotification = nil;
     } else {
         DBG(@"***__Offer ID Not Invaild__***");
     }
@@ -328,21 +335,25 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     return NO;
 }
 
-- (void)_checkInListData {
-    if ( !self.arrayData.count) {
-        [self checkIsShowLoginVCAndPushDetailOffer:_offerId];
-    } else {
-        if (![[COLoginManager shared] userModel]) {
-            [self checkIsShowLoginVCAndPushDetailOffer:_offerId];
-        }
-    }
+- (void)showLoginView {
+    LoginViewController *vcLogin = [[LoginViewController alloc]init];
+    vcLogin.delegate = self;
+    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+    [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
+    [[COLoginManager shared] setIsReloadListHome:YES];
 }
 
 #pragma mark - Set offerId Notification
 
-- (void)setNotificationOfferId:(NSString *)offerId {
-    _offerId = offerId;
-    [self _checkInListData];
+- (void)setNotificationOfferId:(NSString *)offerId isCheckNotificationBanner:(BOOL)isCheck {
+    _offerIdOfNotification = offerId;
+    if (isCheck) {
+        [self _reloadListHome];
+    }
+}
+
+- (void)dealloc {
+    [kNotificationCenter removeObserver:self forKeyPath:UIApplicationDidBecomeActiveNotification];
 }
 
 @end

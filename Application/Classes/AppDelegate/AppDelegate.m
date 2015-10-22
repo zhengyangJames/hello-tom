@@ -46,7 +46,7 @@
     [self _setupNotifications:application];
     [self _checkVersionAndClearData];
     [self.window makeKeyAndVisible];
-    [self performNotification:notificationInfo];
+    [self performNotification:notificationInfo isCheckBannerNotfi:NO];
     return YES;
 }
 
@@ -64,7 +64,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [[COLoginManager shared] setIsReloadListHome:NO];
+//    [[COLoginManager shared] setIsReloadListHome:NO];
     _keyShowNotificationBanner = YES;
 }
 
@@ -76,6 +76,8 @@
     currentInstallation.channels = @[ @"global" ];
     [currentInstallation saveInBackground];
 }
+
+#pragma mark Remote Notification
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     if (_keyShowNotificationBanner) {
@@ -92,35 +94,46 @@
             }
         }
     } else {
-        [self performNotification:userInfo];
+        [self performNotification:userInfo isCheckBannerNotfi:NO];
+    }
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    if (_keyShowNotificationBanner) {
+        if (userInfo) {
+            _userInfo = userInfo;
+            NSDictionary *dicMess = [userInfo objectForKey:@"aps"];
+            self.viewNotification.textMessage = [dicMess objectForKey:@"alert"];
+            self.viewNotification.delegate = self;
+            BOOL check = [[[kAppDelegate window] subviews] containsObject:self.viewNotification];
+            if (!check) {
+                [self.viewNotification show];
+            } else {
+                [self.viewNotification delayPerform];
+            }
+        }
+    } else {
+        [self performNotification:userInfo isCheckBannerNotfi:NO];
     }
 }
 
 - (void)notificationBannerViewDissmis:(CONotificationBannerView *)notificationView {
-    [self performNotification:_userInfo];
+    [self performNotification:_userInfo isCheckBannerNotfi:YES];
     _userInfo = nil;
 }
 
-- (void)performNotification:(NSDictionary*)userInfo {
+- (void)performNotification:(NSDictionary*)userInfo isCheckBannerNotfi:(BOOL)isCheck {
     if (userInfo && [userInfo objectForKey:@"data"]) {
         NSDictionary *data = [userInfo objectForKey:@"data"];
         NSNumber *offerId = data[@"id"];
-        [self _checkSelectedIndexTabbar];
         [self.baseTabBarController setSelectedIndex:0];
         [self.baseTabBarController dismissViewControllerAnimated:YES completion:nil];
         NSArray *array = self.baseHomeNAV.viewControllers;
         if (array.count > 1) {
             [self.baseHomeNAV popToViewController:self.homeVC animated:NO];
         }
-        [self.homeVC setNotificationOfferId:[offerId stringValue]];
-    }
-}
-
-- (void)_checkSelectedIndexTabbar {
-    NSUInteger indexSelected = self.baseTabBarController.selectedIndex;
-    if (indexSelected == 0) {
-        [[COLoginManager shared] setIsReloadListHome:NO];
-        [self.baseTabBarController setSelectedIndex:2];
+        [self.homeVC setNotificationOfferId:[offerId stringValue] isCheckNotificationBanner:isCheck];
     }
 }
 
