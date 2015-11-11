@@ -13,7 +13,7 @@
 @class COUserProfileDetailModel;
 @class COUserAccountModel;
 
-@interface COUserProfileModel : MTLModel<MTLJSONSerializing,COUserFirstName,COUserLastName,COUserEmail,COUserPhone,COUserAboutProfile>
+@interface COUserProfileModel : MTLModel<MTLJSONSerializing,COUserFirstName,COUserLastName,COUserEmail,COUserPhone,COUserAboutProfile,COUserName>
 @property (nonatomic, strong) NSNumber                  *userId;
 @property (nonatomic, strong) NSString                  *userTokenType;
 @property (nonatomic, strong) COUserProfileDetailModel  *userProfile;

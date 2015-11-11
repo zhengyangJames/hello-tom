@@ -99,6 +99,25 @@
     return request;
 }
 
+- (void)updateProfileJsonDefaults {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setValue:self.userProfileModel.nameOfUserName forKey:kUpProfileUserName];
+    [dic setValue:self.userProfileModel.nameOfUserFirstName forKey:kUpProfileFirstName];
+    [dic setValue:self.userProfileModel.nameOfUserLastName forKey:kUpProfileLastName];
+    [dic setValue:emailNameTXT.text forKey:kUpProfileEmail];
+    NSString *phone = [self.arrayCountryCode[_indexActtionCountryCode] valueForKey:@"code"];
+    [dic setValue:phone forKey:kUpProfileNumCountry];
+    [dic setValue:phoneNameTXT.text forKey:kUpProfileCellPhone];
+    [dic setValue:addressNameTXT.text forKey:kUpProfileAddress1];
+    [dic setValue:address2TXT.text forKey:kUpProfileAddress2];
+    [dic setValue:cityTXT.text forKey:kUpProfileCity];
+    [dic setValue:countryTXT.text forKey:kUpProfileCountry];
+    [dic setValue:regionStateTXT.text forKey:kUpProfileState];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+    [kUserDefaults setObject:data forKey:kPROFILE_JSON];
+    [kUserDefaults synchronize];
+}
+
 - (NSString*)_getPhoneCode:(NSString*)phoneCode {
     NSString *str = @"";
     for (int i = 0 ; i < self.arrayCountryCode.count; i++) {
@@ -184,6 +203,7 @@
 
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
+    [self updateProfileJsonDefaults];
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsUpdateProfileWithRequest:[self _setUpdateProfileRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {

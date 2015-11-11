@@ -96,7 +96,7 @@
 "DAY_LEFT"                              = "%@";
 "GOAL"                                  = "%tu%% of goal";
 
-"ADDRESS"                               = "ADDRESS";
+"ADDRESSNAME"                           = "Address";
 "PROJECT"                               = "PROJECT";
 "OFFER"                                 = "OFFER";
 "DOCUMENTS"                             = "DOCUMENTS";
@@ -142,3 +142,17 @@
 "TITLE_BUTTON"                          = "Click Here To Get Started!";
 
 "VIEW_PASSWORD"                         = "Update Password";
+
+"USERNAME"                              = "User name";
+
+"PROFILE"                               = "Profile";
+
+"C_PROFILE"                             = "Company Profile";
+
+"I_PROFILE"                             = "Investment Profile";
+
+"NoCompanyAssociated"                   = "No company associated";
+
+"UPDATE_COMPANY_PROFILE"                = "Update profile copany";
+
+"NEW_OFFER"                             = "I want to invest new offer I want to invest new offer I want to invest new offer";

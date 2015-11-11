@@ -10,15 +10,29 @@
 
 @class COUserProfileModel;
 @class WSLoginRequest;
+@class COUserCompanyModel;
+@class COUserInverstorModel;
+@class COAccountInvestmentModel;
 
 typedef void(^ActionLoginManager)(id object, NSError *error);
+typedef void(^AcccountGetInvestor)(id object, NSError *errorAcccountInvestor);
+typedef void(^ProfileGetInvestor)(id object, NSError *errorInvestor);
 
 @interface COLoginManager : NSObject
 
-+ (id)shared;
++ (COLoginManager *)shared;
 
 @property (nonatomic, strong) COUserProfileModel *userModel;
+@property (nonatomic, strong) COUserCompanyModel *companyModel;
+@property (nonatomic, strong) COUserInverstorModel *investorModel;
+@property (nonatomic, strong) COAccountInvestmentModel *accountModel;
+
+@property (nonatomic, assign) BOOL isReloadListHome;
+@property (nonatomic, strong) NSNumber *offerId;
+@property (nonatomic, strong) NSString *offerType;
 
 - (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager;
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager;
+
+- (void)wsGetAccountInverstment:(AcccountGetInvestor)AcccountGetInvestor;
 @end

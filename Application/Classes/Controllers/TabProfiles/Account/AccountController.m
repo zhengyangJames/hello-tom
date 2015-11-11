@@ -9,13 +9,19 @@
 #import "AccountController.h"
 #import "AccountCell.h"
 #import "LoadFileManager.h"
+#import "WSURLSessionManager+Profile.h"
+#import "COLoginManager.h"
+
+
+#define NUMBER_OF_ROW       5
 
 @interface AccountController ()<UITableViewDelegate, UITableViewDataSource>
 {
     __weak IBOutlet UITableView *_tableView;
     
 }
-@property (strong, nonatomic) NSArray *arrayList;
+
+
 @end
 
 @implementation AccountController
@@ -23,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setUpUI];
+//    [self wsGetAccountInverstment];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -43,22 +50,36 @@
 }
 
 #pragma mark - Set Get
-- (NSArray*)arrayList {
-    if (!_arrayList) {
-        _arrayList = [LoadFileManager loadFilePlistWithName:@"AccountPlist"];
+
+- (COAccountInvestmentModel *)accountModel {
+    if (_accountModel) {
+        return _accountModel;
     }
-    return _arrayList;
+    return _accountModel = [[COLoginManager shared] accountModel];
 }
+
 
 #pragma mark - UITableView - Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arrayList.count;
+    if (self.accountModel) {
+        return NUMBER_OF_ROW;
+    } else {
+        return 0;
+    }
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    AccountCell *cell = [tableView dequeueReusableCellWithIdentifier:[AccountCell identifier] forIndexPath:indexPath];
-    cell.object = self.arrayList[indexPath.row];
+    AccountCell *cell = [tableView dequeueReusableCellWithIdentifier:[AccountCell identifier]
+                                                        forIndexPath:indexPath];
+    switch (indexPath.row) {
+        case COAccountOngoingStype: cell.accountOnGoing = self.accountModel; break;
+        case COAccountFundedStype: cell.accountFunded = self.accountModel; break;
+        case COAccountCompleteStype: cell.accountCompleted = self.accountModel; break;
+        case COAccountPotentialStype: cell.accountPotential = self.accountModel; break;
+        case COAccountRealsStype: cell.accountRealised = self.accountModel; break;
+        default:  break;
+    }
     return cell;
 }
 
@@ -71,4 +92,5 @@
     return DEFAULT_HEIGHT_CELL;
 }
 
+@synthesize accountModel = _accountModel;
 @end

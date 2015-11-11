@@ -10,8 +10,11 @@
 #import "ProtfolioController.h"
 #import "LoadFileManager.h"
 #import "PortFolioCell.h"
+#import "COLoginManager.h"
 
-#define heightCollectionViewCellSize 150
+#define NumberOfCellForWithAndHeight    175
+#define Top_Bottom_Tabar_Nav_Aligin     131
+#define Left_Reight_Aligin              18
 
 @interface ProtfolioController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
@@ -51,30 +54,42 @@
     return _arrayList;
 }
 
+- (COAccountInvestmentModel*)accountModel {
+    if (_accountModel) {
+        return _accountModel;
+    }
+    return _accountModel = [[COLoginManager shared] accountModel];
+}
+
 #pragma mark - UICollectionView Delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.arrayList.count;
+    return 4;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat width = ([UIScreen mainScreen].bounds.size.width - 18) / 2;
-    CGSize size = CGSizeMake(width, heightCollectionViewCellSize);
+    CGFloat height = ([UIScreen mainScreen].bounds.size.height - 131) / 2;
+    CGSize size = CGSizeMake(width, height);
     return size;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PortFolioCell *cell = [_collectionView dequeueReusableCellWithReuseIdentifier:[PortFolioCell identifier] forIndexPath:indexPath];
-    cell.object = [self.arrayList[indexPath.row] objectForKey:@"text"];
-    cell.imageName = [self.arrayList[indexPath.row] objectForKey:@"image"];
+    switch (indexPath.row) {
+        case COPortfolioOngoingStype:
+            cell.OngoingProjects = self.accountModel; break;
+        case COPortfolioInvesterStype:
+            cell.OngoingInvestment = self.accountModel; break;
+        case COPortfolioFundedStype:
+            cell.CompletedInvestment = self.accountModel; break;
+        case COPortfolioCompleteStype:
+            cell.CompletedProjects = self.accountModel; break;
+        default: break;
+    }
     return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
 }
 
 @end

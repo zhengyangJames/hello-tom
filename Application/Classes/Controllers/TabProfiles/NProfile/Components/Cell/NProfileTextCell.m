@@ -55,26 +55,28 @@
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
 
-- (void)setCompantName:(id<COCompanyName>)compantName {
-    _compantName = compantName;
-    _lblName.text = _compantName.companyNameTitle;
-    _lblDetail.text = _compantName.companyNameContent;
-    
-    [self _updateWidthOfLabelNameWithString:_lblName.text];
+- (void)setCompanytName:(id<COCompanyName>)companytName {
+    _companytName = companytName;
+    if ([_companytName.companyNameContent isEqualToString:m_string(@"NoCompanyAssociated")]) {
+        _lblName.text = nil;
+        _lblDetail.text = _companytName.companyNameContent;
+        [_lblDetail setTextAlignment:NSTextAlignmentCenter];
+        _widthOfLabelNameContraint.constant = 0;
+        [self setNeedsUpdateConstraints];
+    } else {
+        _lblName.text = _companytName.companyNameTitle;
+        _lblDetail.text = _companytName.companyNameContent;
+        [self _updateWidthOfLabelNameWithString:_lblName.text];
+    }
 }
 
-- (void)setCompanyAdress:(id<COCompanyAdress>)companyAdress {
-    _companyAdress = companyAdress;
-    _lblName.text = _companyAdress.companyAdressTitle;
-    _lblDetail.text = _companyAdress.companyAdressContent;
-    
-    [self _updateWidthOfLabelNameWithString:_lblName.text];
-}
+
+#pragma mark - Invertor Model
 
 - (void)setInvestorType:(id<COInvestorType>)investorType {
     _investorType = investorType;
     _lblName.text = investorType.COInvestorTypeTitle;
-    _lblDetail.text = investorType.COInvestorTypeContent;
+    _lblDetail.text = [UIHelper getInvestorTypeWithKey:investorType.COInvestorTypeContent];
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
@@ -82,15 +84,16 @@
 - (void)setInvestorPreference:(id<COInvestorPreference>)investorPreference {
     _investorPreference = investorPreference;
     _lblName.text = investorPreference.COInvestorPreferenceTitle;
-    _lblDetail.text = investorPreference.COInvestorPreferenceContent;
+    _lblDetail.text = [UIHelper getProjectTypeWithKey:investorPreference.COInvestorPreferenceContent];
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
 
-- (void)setInvestorAmount:(id<COInvestorAmount>)investorAmount {
+- (void)setInvestorAmount:(id<COInvestorAmount,COCureency>)investorAmount {
     _investorAmount = investorAmount;
+    NSString *str = [NSString stringWithFormat:@"%@ %@",[investorAmount COCureencyContent],[UIHelper formatStringUnknown:investorAmount.COInvestorAmountContent]];
     _lblName.text = investorAmount.COInvestorAmountTitle;
-    _lblDetail.text = investorAmount.COInvestorAmountContent;
+    _lblDetail.text = str;
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
@@ -98,7 +101,7 @@
 - (void)setInvestorTarget:(id<COInvestorTarget>)investorTarget {
     _investorTarget = investorTarget;
     _lblName.text = investorTarget.COInvestorTargetTitle;
-    _lblDetail.text = investorTarget.COInvestorTargetContent;
+    _lblDetail.text = [UIHelper formartStringTarget:investorTarget.COInvestorTargetContent];
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
@@ -106,7 +109,7 @@
 - (void)setInvestorDuration:(id<COInvestorDuration>)investorDuration {
     _investorDuration = investorDuration;
     _lblName.text = investorDuration.COInvestorDurationTitle;
-    _lblDetail.text = investorDuration.COInvestorDurationContent;
+    _lblDetail.text = [UIHelper formartStringDuration:investorDuration.COInvestorDurationContent];
     
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
@@ -119,13 +122,21 @@
     [self _updateWidthOfLabelNameWithString:_lblName.text];
 }
 
+- (void)setUserName:(id<COUserName>)userName {
+    _userName = userName;
+    _lblName.text = userName.userNameTitle;
+    _lblDetail.text = userName.userNameContent;
+    [self _updateWidthOfLabelNameWithString:_lblName.text];
+}
+
 - (void)_updateWidthOfLabelNameWithString:(NSString *)string {
     CGFloat width = [UIHelper widthOfString:string withFont:[UIFont systemFontOfSize:16]];
     if (width < 87) {
         width = 87;
     }
+    [_lblDetail setTextAlignment:NSTextAlignmentRight];
     _widthOfLabelNameContraint.constant = width;
+    [self setNeedsUpdateConstraints];
 }
-
 
 @end

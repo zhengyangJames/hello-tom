@@ -15,11 +15,11 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"userRefreshToken" :@"refresh_toke",
-        @"userScope"        :@"scope",
-        @"userTokenType"    :@"token_type",
-        @"userAccessToken"  :@"access_token",
-        @"userExpriesIn"    :@"expires_in",
+        @"userRefreshToken" : @"refresh_toke",
+        @"userScope"        : @"scope",
+        @"userTokenType"    : @"token_type",
+        @"userAccessToken"  : @"access_token",
+        @"userExpriesIn"    : @"expires_in",
         @"userAccount"      : @"account",
         @"userTokens"       : @"tokens",
         @"userId"           : @"id",
@@ -58,6 +58,16 @@
 - (NSString *)stringOfUserName {
     return self.userName;
 }
+
+#pragma mark - user name protocol
+- (NSString *)userNameTitle {
+    return m_string(@"USERNAME");
+}
+- (NSString *)userNameContent {
+    return  self.userName;
+}
+
+
 #pragma mark - user first name protocol
 
 - (NSString *)firstNameTitle {

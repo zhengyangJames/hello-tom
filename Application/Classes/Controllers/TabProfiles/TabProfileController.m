@@ -12,6 +12,7 @@
 #import "NProfileController.h"
 #import "ProtfolioController.h"
 #import "LoadFileManager.h"
+#import "COLoginManager.h"
 
 @interface TabProfileController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -82,6 +83,7 @@
     }
     return _arrayList;
 }
+
 
 #pragma mark - UITableView - Delegate
 

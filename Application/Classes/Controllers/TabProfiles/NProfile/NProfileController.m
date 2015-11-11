@@ -17,11 +17,13 @@
 #import "EditAboutProfileVC.h"
 #import "EditPasswordProfileVC.h"
 #import "EditCompanyVC.h"
+#import "EditInvestmentProfileVC.h"
 
 @interface NProfileController ()<NProfileHeaderViewDelegate,profileButtonCellDelegate,EditAboutProfileVCDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     __weak NProfileHeaderView *_headerView;
+    NSString *_stringTitle;
 }
 
 @property (nonatomic, strong) NProfileDataSource *profileDatasource;
@@ -45,11 +47,11 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+    [self _updateProfile];
 }
 
 #pragma mark - SetupUI
 - (void)_setupUI {
-    self.navigationItem.title = @"Profile";
     NProfileDataSource *datasource = [[NProfileDataSource alloc] initWithTableview:_tableView controller:self];
     NProfileDelegate *delegate = [[NProfileDelegate alloc] initWithTableView:_tableView];
     self.profileDatasource = datasource;
@@ -65,7 +67,7 @@
     _tableView.dataSource = self.profileDatasource;
     _tableView.tableHeaderView = [self _headerView];
     _tableView.tableFooterView = [UIView new];
-    
+    self.title = m_string(@"PROFILE");
     [self _reloadTableview];
 }
 
@@ -92,14 +94,14 @@
     if (_companyModel) {
         return _companyModel;
     }
-    return _companyModel = [[COUserCompanyModel alloc] init];
+    return _companyModel = [[COLoginManager shared] companyModel];
 }
 
 - (COUserInverstorModel *)investorModel {
     if (_investorModel) {
         return _investorModel;
     }
-    return _investorModel = [[COUserInverstorModel alloc] init];
+    return _investorModel = [[COLoginManager shared] investorModel];
 }
 
 #pragma mark - Private
@@ -121,14 +123,28 @@
 
 - (void)_setupEditPasswordVC {
     EditPasswordProfileVC *vc = [[EditPasswordProfileVC alloc]init];
-    
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
 
 - (void)_setupEditCompanyVC {
     EditCompanyVC *vc = [[EditCompanyVC alloc]init];
-    
+    vc.companyUserModel = self.companyModel;
+    vc.actionDone = ^(CGFloat updateForCellImage) {
+        self.companyModel = nil;
+        [self _reloadTableview];
+    };
+    BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
+}
+
+- (void)_setupEditInvestorVC {
+    EditInvestmentProfileVC *vc = [[EditInvestmentProfileVC alloc]init];
+    vc.investorUserModel = self.investorModel;
+    vc.actionDone = ^(){
+        self.investorModel = nil;
+        [self _reloadTableview];
+    };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
 }
@@ -139,19 +155,13 @@
     [self _reloadTableview];
 }
 
-- (void)acctionButtonProfileCell:(NprofileButtonCell *)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle {
+- (void)acctionButtonProfileCell:(NProfileButtonCell *)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle {
     switch (buttonStyle) {
-        case NProfileActionUpdateProfile:
-            [self _setupEditAboutProfileVC];
-            break;
-        case NProfileActionChangePassWord:
-            [self _setupEditPasswordVC];
-            break;
-        case NProfileActionUpdateCompany:
-            [self _setupEditCompanyVC];
-            break;
-        default:
-            break;
+        case NProfileActionUpdateProfile: [self _setupEditAboutProfileVC]; break;
+        case NProfileActionChangePassWord: [self _setupEditPasswordVC]; break;
+        case NProfileActionUpdateCompany: [self _setupEditCompanyVC]; break;
+        case NProfileActionUpdateInvestor: [self _setupEditInvestorVC]; break;
+        default: break;
     }
 }
 
@@ -159,6 +169,20 @@
 - (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC {
     self.userModel = nil;
     [self _reloadTableview];
+}
+
+
+#pragma mark - WS Update Profile
+- (void)_updateProfile {
+    [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
+        if (object && [object isKindOfClass:[NSDictionary class]]) {
+            [[COLoginManager shared] setUserModel:nil];
+            [[COLoginManager shared] setInvestorModel:nil];
+            self.userModel = nil;
+            self.investorModel = nil;
+            [self _reloadTableview];
+        }
+    }];
 }
 
 @end

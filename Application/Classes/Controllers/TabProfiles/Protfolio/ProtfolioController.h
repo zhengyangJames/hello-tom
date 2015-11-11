@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "COAccountInvestmentModel.h"
 
 @interface ProtfolioController : BaseViewController
+
+@property (readonly,nonatomic) COPortfolioProfile protfolioStyle;
+@property (strong, nonatomic) COAccountInvestmentModel *accountModel;
 
 @end

@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface HomeListViewController : BaseViewController
-
+- (void)setNotificationOfferId:(NSString *)offerId isCheckNotificationBanner:(BOOL)isCheck;
 @end

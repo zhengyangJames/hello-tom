@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef void (^WSURLSessionHandler)(id responseObject, NSURLResponse *response, NSError *error);
-
+typedef void (^BlockSession)(id responseObject, NSURLResponse *response, NSError *error);
 @interface WSURLSessionManager : NSObject
 
 + (WSURLSessionManager*)shared;

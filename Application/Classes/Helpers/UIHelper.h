@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "COUserProfileModel.h"
 
 @interface UIHelper : NSObject
 
@@ -33,5 +34,27 @@
 
 + (NSString *)getStringCurrencyOfferWithKey:(NSString*)keyCurrency;
 + (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font;
++ (NSString *)getLinkImageWithUrl:(NSURL*)urlImage;
+
++ (NSMutableDictionary*)getParamTokenWithModel:(COUserProfileModel *)model;
++ (NSString*)formartDoubleValueWithAccountInvest:(NSNumber*)value;
+
++ (NSString *)getStringCurrencyOfferWithValue:(NSString*)value;
+
++ (NSArray*)getArrayCurrency;
++ (NSArray*)getInvestorType;
+
++ (NSString *)formatStringUnknown:(NSString *)string;
++ (NSString*)formartStringDuration:(NSString*)string;
++ (NSString*)formartStringTarget:(NSString*)string;
++ (NSString*)getNumberInstring:(NSString*)value;
+
++ (NSString*)formartFoatValueWithPortfolio:(NSNumber*)value;
+
++ (NSString *)getInvestorTypeWithKey:(NSString *)key;
++ (NSString *)getInvestorTypeWithValue:(NSString *)value;
++ (NSArray *)arrayProjectType;
++ (NSString *)getProjectTypeWithKey:(NSString*)key;
++ (NSString *)getProjectTypeWithValue:(NSString*)value;
 
 @end

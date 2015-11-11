@@ -6,7 +6,7 @@
 		<key>image</key>
 		<string>ic_loadding</string>
 		<key>text</key>
-		<string>Ongoing Project</string>
+		<string>Ongoing Projects</string>
 	</dict>
 	<dict>
 		<key>image</key>
@@ -18,11 +18,11 @@
 		<key>image</key>
 		<string>ic_homes</string>
 		<key>text</key>
-		<string>Funded &amp;Completed Project</string>
+		<string>Funded &amp;Completed Projects</string>
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>ic_Check</string>
+		<string>ic_Check_red</string>
 		<key>text</key>
 		<string>Funded &amp;Completed Investment Amount</string>
 	</dict>

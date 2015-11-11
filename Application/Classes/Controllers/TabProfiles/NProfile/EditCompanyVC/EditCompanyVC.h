@@ -7,14 +7,14 @@
 //
 
 #import "BaseViewController.h"
+#import "COUserCompanyModel.h"
 
-typedef void(^ActionDone)(NSString *orgName,NSString* address,UIImage *imageCompany);
+typedef void(^ActionDone)(CGFloat updateForCellImage);
 
 @interface EditCompanyVC : BaseViewController
 
-@property (strong, nonatomic) NSString *orgName;
-@property (strong, nonatomic) NSString *address;
-@property (strong, nonatomic) UIImage *imageName;
 @property (copy, nonatomic) ActionDone actionDone;
+
+@property (strong, nonatomic) COUserCompanyModel *companyUserModel;
 
 @end

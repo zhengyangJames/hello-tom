@@ -7,6 +7,15 @@
 //
 
 #import "NProfileImageCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
+@interface NProfileImageCell ()
+{
+    __weak IBOutlet UIImageView *_imageCompany;
+}
+
+@end
+
 
 @implementation NProfileImageCell
 
@@ -17,6 +26,9 @@
 
 - (void)setCompanyImage:(id<COCompanyImage>)companyImage {
     _companyImage = companyImage;
+    [_imageCompany setContentMode:UIViewContentModeScaleAspectFill];
+    _imageCompany.translatesAutoresizingMaskIntoConstraints = NO;
+    [_imageCompany sd_setImageWithURL:[NSURL URLWithString:_companyImage.companyImageURL]];
 }
 
 @end

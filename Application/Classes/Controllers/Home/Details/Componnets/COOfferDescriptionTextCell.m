@@ -20,6 +20,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle     = UITableViewCellSelectionStyleNone;
+    [_detailsTextView setDataDetectorTypes:UIDataDetectorTypeAll] ;
+    [_detailsTextView setEditable:NO];
 }
 
 #pragma mark - Set Get
@@ -27,7 +29,8 @@
 - (void)setOfferDescription:(id<COOfferDescription>)offerDescription {
     _offerDescription       = offerDescription;
     _headerLabel.text       = self.offerDescription.offerDescriptionTitle;
-    _detailsTextView.text   = self.offerDescription.offerDescriptionContent;
+    NSString *string = [NSString stringWithFormat:@"%@",self.offerDescription.offerDescriptionContent];
+    _detailsTextView.text   = string;
 }
 
 - (void)setOfferDocumentInfo:(id<COOfferDocument>)offerDocumentInfo {

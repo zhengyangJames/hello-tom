@@ -10,7 +10,7 @@
 
 @protocol profileButtonCellDelegate;
 
-@interface NprofileButtonCell : UITableViewCell
+@interface NProfileButtonCell : UITableViewCell
 
 @property (nonatomic, assign) NSInteger actionStyle;
 @property (weak, nonatomic) id<profileButtonCellDelegate> delegate;
@@ -20,7 +20,7 @@
 @protocol profileButtonCellDelegate <NSObject> 
 
 @optional
-- (void)acctionButtonProfileCell:(NprofileButtonCell*)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle;
+- (void)acctionButtonProfileCell:(NProfileButtonCell*)profileButtonCell buttonStyle:(NProfileActionStyle)buttonStyle;
 
 @end
 

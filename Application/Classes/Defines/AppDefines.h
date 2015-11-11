@@ -42,6 +42,9 @@
 #define WS_ACCESS_TOKEN                             @"dda346478c319db6faa474aace302858fe247e5c"
 #define COREDATA_STORE_NAME                         @"CoAssest"
 #define GRANT_TYPE                                  @"password"
+
+#define kParseSDKAppID                                  @"mFlCjlgcR6hQ0vZosYkkj4lPDffwKbOsnLqONSUt"
+#define kParseSDKClientID                               @"AbaaH9hpa5ABPPCBf5IJb6SBZuV1zcEKjrXwJQLe"
 ///////////////////////////////////////////////////////////////////
 #pragma mark - WSMAnager - METHOD SERVICES
 ///////////////////////////////////////////////////////////////////
@@ -51,7 +54,7 @@
 
 #define WS_METHOD_POST_QUESTION                     [WS_ENDPOINT stringByAppendingString:@"/offers/tellmemore/%@/"]
 
-#define WS_METHOD_GET_LIST_OFFERS                   [WS_ENDPOINT stringByAppendingString:@"/offers/"]
+#define WS_METHOD_GET_LIST_OFFERS                   [WS_ENDPOINT stringByAppendingString:@"/offers"]
 
 #define WS_METHOD_GET_LIST_CONTACT                  [WS_ENDPOINT stringByAppendingString:@"/company_info"]
 
@@ -62,6 +65,10 @@
 #define WS_METHOD_POST_PORGOT_PASSWORD              [WS_ENDPOINT stringByAppendingString:@"/forget-password/"]
 
 #define WS_METHOD_POST_CHANGE_PASSWORD              [WS_ENDPOINT stringByAppendingString:@"/change-password/"]
+
+#define WS_METHOD_GET_ACCOUNT_INVESTER              [WS_ENDPOINT stringByAppendingString:@"/investment_dashboard/"]
+
+#define WS_METHOD_GET_PROFILE_INVESTER              [WS_ENDPOINT stringByAppendingString:@"/investment_profile/"]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////
@@ -106,6 +113,10 @@
 #define KSATE                                       @"region_state"
 #define KCOUNTRY                                    @"country"
 #define kPROFILE                                    @"profile"
+#define UPDATE_COMPANY_PROFILE_JSON                 @"Update profile copany"
+#define UPDATE_INVESTOR_PROFILE_JSON                @"Update profile investor"
+#define UPDATE_ACCOUNT_PROFILE_JSON                 @"Update profile account"
+#define kUPDATE_VERSION                             @"Update_version_2.0"
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY
 
@@ -125,6 +136,7 @@
 #define kHEIGHT_FOR_ROW_TEXT                        85
 #define kHEIGHT_FOR_ROW_DEFAULT                     44
 
+
 #define kFILTER_BP                                  @"/BP"
 #define kFILTER_CO                                  @"/CO"
 #define kFILTER_PS                                  @"/PS"
@@ -137,8 +149,6 @@
 #pragma mark - WEB LINK
 
 #define WEB_SAFARI_LINK                             @"http://coassets.com/terms-of-use/"
-
-#define WEB_SAFARI_LINK                             @"http://coassets.com/terms-of-use/"
 #define LINK_NEW                                    @"http://coassets.com/news/apps/"
 #define LINK_TERMS_OF_USE                           @"http://www.coassets.com/apps/terms-of-use/"
 #define LINK_CODE_OF_CONDUCT                        @"http://www.coassets.com/apps/code-of-conduct/"
@@ -146,6 +156,7 @@
 ////////////////////////////////////////////////////////////////
 #pragma mark - PROFILE DEFINE
 #define DEFAULT_HEIGHT_CELL                         40
+#define DEFAULT_HEIGHT_NO_DATA_CELL                 150
 #define AUTO_HEIGHT_CELL_ABOUT                      (self.view.bounds.size.height - (200+90))/4
 #define AUTO_HEIGHT_CELL_COMPANY                    (self.view.bounds.size.height - (200+90+44))
 #define DEFAULT_HEIGHT_CELL_COMPANY                 205
@@ -161,7 +172,7 @@
 #define ESTIMATE_HEIGHT_FOR_ROW_CONTACT              185
 
 #define HEIGHT_FOR_IMAGE_ROW                        220
-#define NUM_OF_ROW_ABOUT                            7
+#define NUM_OF_ROW_ABOUT                            8
 #define NUM_OF_ROW_COMPANY                          4
 #define NUM_OF_ROW_INVESTOR                         7
 
@@ -172,6 +183,8 @@
 
 #define KEY_TABBARSELECT                            @"KEY_TABBARSELECT"
 
+#define KEY_VERSION                                 @"KEY_VERSION_SANYI"
+#define KEY_BUILD_VERSION                                 @"KEY_BUILD_VERSION_SANYI"
 ////////////////////////////////////////////////////////////////
 #pragma mark - Notification
 ////////////////////////////////////////////////////////////////
@@ -185,6 +198,21 @@
 //////////////////////////////////////////////////////////////
 #pragma mark - enum
 /////////////////////////////////////////////////////////////////
+
+typedef NS_ENUM(NSInteger, COPortfolioProfile) {
+    COPortfolioOngoingStype,
+    COPortfolioInvesterStype,
+    COPortfolioCompleteStype,
+    COPortfolioFundedStype,
+};
+
+typedef NS_ENUM(NSInteger, COAccountInvestStype) {
+    COAccountOngoingStype,
+    COAccountFundedStype,
+    COAccountCompleteStype,
+    COAccountRealsStype,
+    COAccountPotentialStype
+};
 
 typedef NS_ENUM(NSInteger, CODealsStype) {
     CODealsStypeOngoing,
@@ -236,6 +264,7 @@ typedef NS_ENUM(NSInteger, COSegmentStyle) {
 };
 
 typedef NS_ENUM(NSInteger, COAboutProfileStyle) {
+    COAboutProfileStyleUserName = 0,
     COAboutProfileStyleFirstName,
     COAboutProfileStyleLastNameSurname,
     COAboutProfileStyleEmail,
@@ -244,7 +273,8 @@ typedef NS_ENUM(NSInteger, COAboutProfileStyle) {
 };
 
 typedef NS_ENUM(NSInteger, COCompanyProfileStyle) {
-    COCompanyProfileStyleName = 1,
+    COCompanyProfileStyleImage = 0,
+    COCompanyProfileStyleName,
     COCompanyProfileStyleAdress
 };
 

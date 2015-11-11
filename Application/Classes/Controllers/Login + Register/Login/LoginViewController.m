@@ -73,7 +73,6 @@
     [UIHelper showLoadingInView:self.view];
     [[COLoginManager shared] callAPILoginWithRequest:[self _setLoginRequest] actionLoginManager:^(id object, NSError *error) {
         if (object && !error ) {
-            [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
             if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];
             }

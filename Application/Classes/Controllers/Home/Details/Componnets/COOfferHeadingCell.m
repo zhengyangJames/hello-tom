@@ -9,7 +9,6 @@
 #import "COOfferHeadingCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NSString_stripHtml.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 
 #define kCORNER_RADIUS_IMAGE 6
 

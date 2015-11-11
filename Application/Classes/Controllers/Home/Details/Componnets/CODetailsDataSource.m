@@ -181,7 +181,7 @@
 - (CODocumentSectionCell*)tableView:(UITableView *)tableView cellDocumentSectionForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODocumentSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODocumentSectionCell identifier]];
     if (self.offerModel.arrayDocuments && self.offerModel.arrayDocuments.count > 0) {
-        CODocumentModel *document =[self.offerModel.arrayDocuments objectAtIndex:indexPath.section - (kINDEX_SECTION_DOCUMENT +1)];
+        CODocumentModel *document = [self.offerModel.arrayDocuments objectAtIndex:indexPath.section - (kINDEX_SECTION_DOCUMENT +1)];
         cell.docDetail = document;
     }
     return cell;
@@ -190,9 +190,11 @@
 - (CODocumentItemCell*)tableView:(UITableView *)tableView cellDocumentItemForRowAtIndexPath:(NSIndexPath *)indexPath {
     CODocumentItemCell *cell = [tableView dequeueReusableCellWithIdentifier:[CODocumentItemCell identifier]];
     if (self.offerModel.documents && self.offerModel.arrayDocuments.count > 0) {
-        CODocumentModel *document =[self.offerModel.arrayDocuments objectAtIndex:indexPath.section - (kINDEX_SECTION_DOCUMENT +1)];
+        CODocumentModel *document = [self.offerModel.arrayDocuments objectAtIndex:indexPath.section - (kINDEX_SECTION_DOCUMENT +1)];
         if (document && document.arrayOfItems.count > 0) {
             cell.docDetailItem = [document.arrayOfItems objectAtIndex:indexPath.row - kDEFAULT_COUNT_OF_ROW];
+        } else {
+            cell.docDetailItem = nil;
         }
     }
     cell.delegate =self;

@@ -10,15 +10,27 @@
 #import "CODropListView.h"
 #import "CoDropListButtom.h"
 #import "COBorderTextField.h"
+#import "COUserCompanyModel.h"
+#import "WSUpdateCompanyProfile.h"
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
     __weak IBOutlet CoDropListButtom *_btnOrgType;
     __weak IBOutlet COBorderTextField *orgNameTextField;
     __weak IBOutlet COBorderTextField *addressTextField;
+    __weak IBOutlet COBorderTextField *address2TextField;
+    __weak IBOutlet COBorderTextField *orgCityTextField;
+    __weak IBOutlet COBorderTextField *countryTextField;
     __weak IBOutlet UIImageView *_imageCompany;
+    __weak IBOutlet UIView *_contentView;
+    __weak IBOutlet NSLayoutConstraint *_heightTopView;
     NSInteger _indexActtionOrgType;
+    NSString *_orgType;
+    NSString *_urlImageProfile;
+    CGFloat _heightImage;
 }
+
+@property (nonatomic, strong) NSArray *arrayOrgType;
 
 @end
 
@@ -27,39 +39,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
-    self.orgName = self.orgName;
-    self.address = self.address;
-    self.imageName = self.imageName;
+    self.companyUserModel = self.companyUserModel;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
+
 }
 
 
 #pragma mark - Set Get
-- (void)setOrgName:(NSString *)orgName {
-    _orgName = orgName;
-    orgNameTextField.text = _orgName;
+- (void)setCompanyUserModel:(COUserCompanyModel *)companyUserModel {
+    _companyUserModel = companyUserModel;
+    NSString *name = _companyUserModel.companyNameContent;
+    if ([name isEqualToString:m_string(@"NoCompanyAssociated")]) {
+        [orgNameTextField setText:@""];
+    } else {
+        [orgNameTextField setText:_companyUserModel.companyNameContent];
+    }
+    
+    [addressTextField setText:_companyUserModel.companyAdressContent1];
+    [address2TextField setText:_companyUserModel.companyAdressContent2];
+    [orgCityTextField setText:_companyUserModel.companyCity];
+    [countryTextField setText:_companyUserModel.companyCountry];
 }
 
-- (void)setAddress:(NSString *)address {
-    _address = address;
-    addressTextField.text = _address;
-}
-
-- (void)setImageName:(UIImage *)imageName {
-    _imageName = imageName;
-    _imageCompany.image = _imageName;
+- (NSArray *)arrayOrgType {
+    if (_arrayOrgType) {
+        return _arrayOrgType;
+    }
+    _arrayOrgType = @[@"Developer",@"Agency",@"Reseller",@"Funds",@"Others ",@"Route Sale"];
+    return _arrayOrgType;
 }
 
 #pragma mark - Private
 
 - (void)_setupUI {
     
-    self.navigationItem.title = NSLocalizedString(@"BASIC_INFO", nil);
+    self.navigationItem.title = m_string(@"C_PROFILE");
     [self _setupBarButtonCancel];
     [self _setupBarButtonDone];
 }
@@ -89,64 +107,96 @@
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
+    [self _updateProfileUserModel:[self _creatUpdateInfoCompany]];
     if (self.actionDone) {
-        self.actionDone(orgNameTextField.text,addressTextField.text,_imageCompany.image);
+        self.actionDone(_heightImage);
     }
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)__actionDCancel:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)__actionPickImage:(id)sender {
+    [self.view endEditing:YES];
     [self _showActionSheet];
 }
 
 - (IBAction)__actionOrgType:(id)sender {
-    NSArray *array = @[@"Developer",@"Agency",@"Reseller",@"Funds",@"Others ",@"Route Sale"];
     [self.view endEditing:NO];
-    [CODropListView presentWithTitle:@"Org Type" data:array selectedIndex:_indexActtionOrgType didSelect:^(NSInteger index) {
-        [_btnOrgType setTitle:array[index] forState:UIControlStateNormal];
+    [CODropListView presentWithTitle:@"Org Type" data:self.arrayOrgType selectedIndex:_indexActtionOrgType didSelect:^(NSInteger index) {
+        NSString *type = self.arrayOrgType[index];
+        [_btnOrgType setTitle:type forState:UIControlStateNormal];
         _indexActtionOrgType = index;
+        _orgType = type;
     }];
 }
 
 - (void)_showActionSheet {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil
-                                                            delegate:self
-                                                   cancelButtonTitle:NSLocalizedString(@"CANCEL_TITLE", nil)
-                                              destructiveButtonTitle:nil
-                                                   otherButtonTitles:NSLocalizedString(@"TAKE_PHOTO_TITLE", nil),NSLocalizedString(@"CHOOSE_EXISTING_TITLE", nil), nil];
-    [actionSheet showInView:self.view];
+    [UIHelper showActionsheetWithTitle:nil cancelButtonTitle:m_string(@"CANCEL_TITLE") destructiveButtonTitle:nil otherButtonsTitle:@[m_string(@"TAKE_PHOTO_TITLE"), m_string(@"CHOOSE_EXISTING_TITLE")] delegate:self tag:100 showInView:self.view];
 }
 
+#pragma mark - WS update info
+
+- (NSDictionary *)_creatUpdateInfoCompany {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setValue:[self _setModelNilOrNotNil:orgCityTextField.text] forKey:kUpCPProfileCity];
+    [dic setValue:[self _setModelNilOrNotNil:addressTextField.text] forKey:kUpCPProfileAddress1];
+    [dic setValue:[self _setModelNilOrNotNil:address2TextField.text] forKey:kUpCPProfileAddress2];
+    [dic setValue:[self _setModelNilOrNotNil:orgNameTextField.text] forKey:kUpCPProfileOrgName];
+    [dic setValue:[self _setModelNilOrNotNil:countryTextField.text] forKey:kUpCPProfileCountry];
+    [dic setValue:[self _setModelNilOrNotNil:_urlImageProfile] forKey:kUpCPProfileImage];
+    NSString *height = [NSString stringWithFormat:@"%f",_heightImage];
+    [dic setValue:[self _setModelNilOrNotNil:height] forKey:kUpCPProfileImageHeight];
+    return dic;
+}
+
+- (id)_setModelNilOrNotNil:(NSString*)string {
+    if ([string isEmpty]) {
+        return nil;
+    } else {
+        return string;
+    }
+}
+
+- (void)_updateProfileUserModel:(NSDictionary*)obj {
+    NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
+    [kUserDefaults setObject:data forKey:UPDATE_COMPANY_PROFILE_JSON];
+    [kUserDefaults synchronize];
+}
 
 #pragma mark - Delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 0:
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:0];
-            break;
-        case 1:
-            [UIHelper showImagePickerAtController:self withDelegate:self andMode:1];
-            break;
-        default:
-            break;
+    if (actionSheet.tag == 100) {
+        if (actionSheet.cancelButtonIndex != buttonIndex) {
+            [UIHelper showImagePickerAtController:self withDelegate:self andMode:buttonIndex];
+        }
     }
 }
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
-    [_imageCompany setImage:image];
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+    [self _updateHeightViewTop:image];
+    if (image) {
+        [_imageCompany setImage:image];
+        _urlImageProfile = @"http://www.tapchidanong.org/product_images/h/616/chau-tu-na-3289%284%29__92564_zoom.jpg";
+    } else {
+        DBG(@"/********-No-Image-Choice-*********/");
+    }
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)_updateHeightViewTop:(UIImage *)image {
+    CGSize sizeImage = image.size;
+    CGFloat defaultHeight = ([UIScreen mainScreen].bounds.size.width);
+    CGFloat ratioImage = sizeImage.height/sizeImage.width;
+    _heightImage = ratioImage*defaultHeight;
+    _heightTopView.constant = _heightImage - 20;
+    //[_contentView setNeedsUpdateConstraints];
 }
 
 @end
