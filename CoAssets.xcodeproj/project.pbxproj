@@ -48,38 +48,38 @@
 		0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883C1B27CA7100B5656F /* NMUIHelper.m */; };
 		0EED2E711B5E2B94006730E2 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
 		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
-		1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FBB1BCCC49F00C4C5A5 /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA71BCCC49F00C4C5A5 /* NProfileAdressCell.m */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FBC1BCCC49F00C4C5A5 /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA81BCCC49F00C4C5A5 /* NProfileAdressCell.xib */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FBD1BCCC49F00C4C5A5 /* NProfileButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAA1BCCC49F00C4C5A5 /* NProfileButtonCell.m */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FBE1BCCC49F00C4C5A5 /* NProfileButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAB1BCCC49F00C4C5A5 /* NProfileButtonCell.xib */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FBF1BCCC49F00C4C5A5 /* NProfileCountrieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAD1BCCC49F00C4C5A5 /* NProfileCountrieCell.m */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FC01BCCC49F00C4C5A5 /* NProfileCountrieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAE1BCCC49F00C4C5A5 /* NProfileCountrieCell.xib */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FC11BCCC49F00C4C5A5 /* NProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB01BCCC49F00C4C5A5 /* NProfileHeaderView.m */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FC21BCCC49F00C4C5A5 /* NProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB11BCCC49F00C4C5A5 /* NProfileHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FC31BCCC49F00C4C5A5 /* NProfileImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB31BCCC49F00C4C5A5 /* NProfileImageCell.m */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FC41BCCC49F00C4C5A5 /* NProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB41BCCC49F00C4C5A5 /* NProfileImageCell.xib */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FC51BCCC49F00C4C5A5 /* NProfileNodataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB61BCCC49F00C4C5A5 /* NProfileNodataCell.m */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FC61BCCC49F00C4C5A5 /* NProfileNodataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB71BCCC49F00C4C5A5 /* NProfileNodataCell.xib */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FC71BCCC49F00C4C5A5 /* NProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB91BCCC49F00C4C5A5 /* NProfileTextCell.m */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FC81BCCC49F00C4C5A5 /* NProfileTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FBA1BCCC49F00C4C5A5 /* NProfileTextCell.xib */; settings = {ASSET_TAGS = (); }; };
-		1E5A6FCB1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FCA1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m */; settings = {ASSET_TAGS = (); }; };
+		1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; };
+		1E5A6FBB1BCCC49F00C4C5A5 /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA71BCCC49F00C4C5A5 /* NProfileAdressCell.m */; };
+		1E5A6FBC1BCCC49F00C4C5A5 /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA81BCCC49F00C4C5A5 /* NProfileAdressCell.xib */; };
+		1E5A6FBD1BCCC49F00C4C5A5 /* NProfileButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAA1BCCC49F00C4C5A5 /* NProfileButtonCell.m */; };
+		1E5A6FBE1BCCC49F00C4C5A5 /* NProfileButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAB1BCCC49F00C4C5A5 /* NProfileButtonCell.xib */; };
+		1E5A6FBF1BCCC49F00C4C5A5 /* NProfileCountrieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAD1BCCC49F00C4C5A5 /* NProfileCountrieCell.m */; };
+		1E5A6FC01BCCC49F00C4C5A5 /* NProfileCountrieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAE1BCCC49F00C4C5A5 /* NProfileCountrieCell.xib */; };
+		1E5A6FC11BCCC49F00C4C5A5 /* NProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB01BCCC49F00C4C5A5 /* NProfileHeaderView.m */; };
+		1E5A6FC21BCCC49F00C4C5A5 /* NProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB11BCCC49F00C4C5A5 /* NProfileHeaderView.xib */; };
+		1E5A6FC31BCCC49F00C4C5A5 /* NProfileImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB31BCCC49F00C4C5A5 /* NProfileImageCell.m */; };
+		1E5A6FC41BCCC49F00C4C5A5 /* NProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB41BCCC49F00C4C5A5 /* NProfileImageCell.xib */; };
+		1E5A6FC51BCCC49F00C4C5A5 /* NProfileNodataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB61BCCC49F00C4C5A5 /* NProfileNodataCell.m */; };
+		1E5A6FC61BCCC49F00C4C5A5 /* NProfileNodataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB71BCCC49F00C4C5A5 /* NProfileNodataCell.xib */; };
+		1E5A6FC71BCCC49F00C4C5A5 /* NProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB91BCCC49F00C4C5A5 /* NProfileTextCell.m */; };
+		1E5A6FC81BCCC49F00C4C5A5 /* NProfileTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FBA1BCCC49F00C4C5A5 /* NProfileTextCell.xib */; };
+		1E5A6FCB1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FCA1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m */; };
 		1E67FAA11BBB773D008F433C /* ProfileList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAA01BBB773D008F433C /* ProfileList.plist */; };
 		1E67FAB41BBB8882008F433C /* COAwatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAB31BBB8882008F433C /* COAwatarView.m */; };
 		1E67FAC41BBB9149008F433C /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAC31BBB9149008F433C /* BaseLabel.m */; };
 		1E67FAD11BBB9C12008F433C /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */; };
-		1E6A5DCC1BC4B84000D587BC /* WSGetAccountInvestment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */; settings = {ASSET_TAGS = (); }; };
-		1E6A5DCF1BC4BEC200D587BC /* COAccountInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */; settings = {ASSET_TAGS = (); }; };
+		1E6A5DCC1BC4B84000D587BC /* WSGetAccountInvestment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */; };
+		1E6A5DCF1BC4BEC200D587BC /* COAccountInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */; };
 		1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
 		1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
-		1E8ECA251BD61E39001DE271 /* CONotificationBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8ECA241BD61E39001DE271 /* CONotificationBannerView.m */; settings = {ASSET_TAGS = (); }; };
-		1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */; settings = {ASSET_TAGS = (); }; };
-		1EA610D61BC5071B00BF3A47 /* EditInvestmentProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D41BC5071B00BF3A47 /* EditInvestmentProfileVC.m */; settings = {ASSET_TAGS = (); }; };
-		1EA610D71BC5071B00BF3A47 /* EditInvestmentProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */; settings = {ASSET_TAGS = (); }; };
-		1EA610DA1BC51C2700BF3A47 /* WSUpdateInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */; settings = {ASSET_TAGS = (); }; };
-		1ECEAE6F1BC75A50006FE0CA /* COUserPortFolioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE6E1BC75A50006FE0CA /* COUserPortFolioModel.m */; settings = {ASSET_TAGS = (); }; };
-		1ECEAE781BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE771BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m */; settings = {ASSET_TAGS = (); }; };
-		1ECEAE7B1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE7A1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m */; settings = {ASSET_TAGS = (); }; };
+		1E8ECA251BD61E39001DE271 /* CONotificationBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8ECA241BD61E39001DE271 /* CONotificationBannerView.m */; };
+		1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */; };
+		1EA610D61BC5071B00BF3A47 /* EditInvestmentProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D41BC5071B00BF3A47 /* EditInvestmentProfileVC.m */; };
+		1EA610D71BC5071B00BF3A47 /* EditInvestmentProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */; };
+		1EA610DA1BC51C2700BF3A47 /* WSUpdateInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */; };
+		1ECEAE6F1BC75A50006FE0CA /* COUserPortFolioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE6E1BC75A50006FE0CA /* COUserPortFolioModel.m */; };
+		1ECEAE781BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE771BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m */; };
+		1ECEAE7B1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE7A1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m */; };
 		1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */; };
 		1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
 		1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
@@ -1935,6 +1935,7 @@
 				0EFEB4AE1B2724B2001195B7 /* Resources */,
 				7F2D8A851B310B0C000DE953 /* ShellScript */,
 				3C34D0B1319B4947059A75FE /* Copy Pods Resources */,
+				6C3E147C5A9C6EB8BE4DE69D /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2166,6 +2167,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C3E147C5A9C6EB8BE4DE69D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7F2D8A851B310B0C000DE953 /* ShellScript */ = {
