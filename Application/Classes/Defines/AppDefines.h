@@ -63,6 +63,11 @@
 
 #define CONTENT_TYPE_GET_DIC   @"content-type"
 #define  AUTHORIZATION_DIC     @"Authorization"
+
+//READ NOTIFICATION
+
+#define NOTIFICATION_STATUS_DICT    @"notification_status"
+#define NOTIFICATION_ID_DICT    @"notification_id"
 //////////////////////////////////////////////
 
 
@@ -145,6 +150,7 @@
 #define UPDATE_ACCOUNT_PROFILE_JSON                 @"Update profile account"
 #define kUPDATE_VERSION                             @"Update_version_2.0"
 #define KEY_DEVICE_TOKEN                            @"KEY_DEVICE_TOKEN"
+#define DEVICE_TOKEN_EXIST                          @"DEVICE_TOKEN_EXIST" 
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY
 

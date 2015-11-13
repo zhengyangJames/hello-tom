@@ -18,28 +18,37 @@
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             if (handler) {
+                [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
             }
         } else {
             if (handler) {
+                [self setError:responseObject];
             }
         }
     }];
 }
 
-
-
 - (void)wsGetNotificationListRequest:(NSDictionary *)listDic handler:(WSURLSessionHandler)handler {
     
     WSPostDeviceTokenRequest *request = [[WSPostDeviceTokenRequest alloc]init];
-    [request setHTTPMethod:METHOD_GET];
+    request = [request getNotificationList:listDic];
     
-    [request setValue:CONTENT_TYPE_GET forHTTPHeaderField:@"content-type"];
-    NSString *authValue = [NSString stringWithFormat:@"Bearer %@", WS_ACCESS_TOKEN];
-    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
-    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    NSString *paramenter = [NSString stringWithFormat:@"%@?%@&%@&%@",WS_METHOD_GET_NOTIFICATION_TOKEN_LIST,device_token,device_type,application_name];
-    [request setURL:[NSURL URLWithString:paramenter]];
+    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            if (handler) {
+                [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
+            }
+        } else {
+            if (handler) {
+                [self setError:responseObject];
+            }
+        }
+    }];
+}
 
+- (void)wsReadNotificationList:(NSDictionary *)bodyDic handler:(WSURLSessionHandler)handler{
+    WSPostDeviceTokenRequest *request = [[WSPostDeviceTokenRequest alloc]init];
+    request = [request readNotificationList:bodyDic];
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             if (handler) {
@@ -49,7 +58,12 @@
             }
         }
     }];
-    
+}
+
+- (void)setError:(id )responseObject {
+    if ([responseObject objectForKey:@"error"] == [kUserDefaults objectForKey:KEY_DEVICE_TOKEN]) {
+         [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
+    }
 }
 
 @end

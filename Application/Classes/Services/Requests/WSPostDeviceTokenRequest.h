@@ -10,5 +10,6 @@
 
 @interface WSPostDeviceTokenRequest : NSMutableURLRequest
 - (WSPostDeviceTokenRequest *)setBodyDeviceToken:(NSDictionary *)tokenDic;
-- (void)setNotificationList:(NSDictionary *)hederDic;
+- (WSPostDeviceTokenRequest *)getNotificationList:(NSDictionary *)paraDic;
+- (WSPostDeviceTokenRequest *)readNotificationList:(NSDictionary *)bodyDict;
 @end

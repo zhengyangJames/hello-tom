@@ -26,8 +26,7 @@
 #import "COListFilterObject.h"
 #import "COLoginManager.h"
 #import <Parse/Parse.h>
-#import "WSPostDeviceTokenRequest.h"
-#import "WSURLSessionManager+Notification.h"
+
 
 typedef NS_ENUM(NSInteger, FilterType) {
     FilterBullkType,
@@ -101,9 +100,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 #pragma mark - Private
 
 - (void)_reloadListHome {
-//    [self _callWSGetListOfferFilter:@""];
-//    [self _callPostDeviceToken];
-    [self _callGetNotificationList];
+    [self _callWSGetListOfferFilter:@""];
 }
 
 - (void)_pushDetailVcWithID:(COOfferModel *)model {
@@ -360,34 +357,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)dealloc {
     [kNotificationCenter removeObserver:self forKeyPath:UIApplicationDidBecomeActiveNotification];
-}
-
-#pragma mark - Web Service
-#pragma mark - POST Notification
-
-
-
-- (void)_callPostDeviceToken {
-
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    [dic setObject:device_token forKey:device_token_dic];
-    [dic setObject:device_type forKey:device_type_dic];
-    [dic setObject:application_name forKey:application_name_dic];
-    [dic setObject:client_key forKey:client_key_dic];
-    
-    [[WSURLSessionManager shared]wsPostDeviceTokenRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-    }];
-}
-
-- (void)_callGetNotificationList {
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    [dic setObject:CONTENT_TYPE_GET forKey:CONTENT_TYPE_GET_DIC];
-    [dic setObject:AUTHORIZATION forKey:AUTHORIZATION_DIC];
-    [[WSURLSessionManager shared] wsGetNotificationListRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-    }];
 }
 
 @end

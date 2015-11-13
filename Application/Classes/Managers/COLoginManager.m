@@ -63,6 +63,7 @@
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager {
     if (!token) {
         token = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
+        
     }
     [[WSURLSessionManager shared] wsGetProfileWithUserToken:token handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {

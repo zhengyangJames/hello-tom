@@ -137,6 +137,8 @@
     DBG(@"NM-WS-REQUEST-BODY: %@",[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
 
     [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        
+        
         NSString *errorUnknown = [error.userInfo objectForKey:@"message"];
         if ([errorUnknown isEqualToString:@"Unknown Error."] && !_isCheckUnknownError) {
             [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
@@ -171,7 +173,7 @@
                                                  code:errorCode
                                              userInfo:@{@"message":errorMessage}];
             if(handler) {
-                handler(nil,response,error);
+                handler(responseObject,response,error);
             }
             return ;
         }
@@ -182,7 +184,7 @@
                                                  code:errorCode
                                              userInfo:@{@"message":errorMessage}];
             if(handler) {
-                handler(nil,response,error);
+                handler(responseObject,response,error);
             }
         } else {
             if (error) {
@@ -192,7 +194,7 @@
                                                      code:0
                                                  userInfo:@{@"message":errorMessage, @"code":errorCode}];
                 if(handler) {
-                    handler(nil,nil,error);
+                    handler(responseObject,response,error);
                 }
             } else {
                 if(handler) {
