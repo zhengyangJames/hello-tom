@@ -45,6 +45,27 @@
 
 #define kParseSDKAppID                                  @"mFlCjlgcR6hQ0vZosYkkj4lPDffwKbOsnLqONSUt"
 #define kParseSDKClientID                               @"AbaaH9hpa5ABPPCBf5IJb6SBZuV1zcEKjrXwJQLe"
+
+/////////////////////////////////////////////
+#define CONTENT_TYPE                         @"application/x-www-form-urlencoded"
+#define device_type                          @"ios"
+#define application_name                     @"aapx"
+#define client_key                           @"aapx-ios-6789"
+
+#define device_token_dic       @"device_token"
+#define device_type_dic        @"device_type"
+#define application_name_dic   @"application_name"
+#define client_key_dic         @"client_key"
+
+// GET NNOTIFICATION
+#define  CONTENT_TYPE_GET      @"application/x-www-form-urlencoded"
+#define  AUTHORIZATION         @"Bearer <access token>"
+
+#define CONTENT_TYPE_GET_DIC   @"content-type"
+#define  AUTHORIZATION_DIC     @"Authorization"
+//////////////////////////////////////////////
+
+
 ///////////////////////////////////////////////////////////////////
 #pragma mark - WSMAnager - METHOD SERVICES
 ///////////////////////////////////////////////////////////////////
@@ -69,6 +90,12 @@
 #define WS_METHOD_GET_ACCOUNT_INVESTER              [WS_ENDPOINT stringByAppendingString:@"/investment_dashboard/"]
 
 #define WS_METHOD_GET_PROFILE_INVESTER              [WS_ENDPOINT stringByAppendingString:@"/investment_profile/"]
+
+
+//NotificationWS
+#define WS_METHOD_POST_NOTIFICATION_TOKEN           [WS_ENDPOINT stringByAppendingString:@"/create-notification-device/"]
+
+#define WS_METHOD_GET_NOTIFICATION_TOKEN_LIST           [WS_ENDPOINT stringByAppendingString:@"/get-notification-list"]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////
@@ -117,6 +144,7 @@
 #define UPDATE_INVESTOR_PROFILE_JSON                @"Update profile investor"
 #define UPDATE_ACCOUNT_PROFILE_JSON                 @"Update profile account"
 #define kUPDATE_VERSION                             @"Update_version_2.0"
+#define KEY_DEVICE_TOKEN                            @"KEY_DEVICE_TOKEN"
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY
 

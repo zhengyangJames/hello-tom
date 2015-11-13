@@ -50,6 +50,24 @@
     return YES;
 }
 
+- (void)setupNotifications:(UIApplication*)application
+{
+    // Register for Push Notitications, if running iOS 8
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                        UIUserNotificationTypeBadge |
+                                                        UIUserNotificationTypeSound);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                 categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    } else {
+        // Register for Push Notifications before iOS 8
+        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                         UIRemoteNotificationTypeAlert |
+                                                         UIRemoteNotificationTypeSound)];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     _keyShowNotificationBanner = NO;
@@ -68,13 +86,25 @@
     _keyShowNotificationBanner = YES;
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {}
+- (void)applicationWillTerminate:(UIApplication *)application {
+}
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     currentInstallation.channels = @[ @"global" ];
     [currentInstallation saveInBackground];
+    
+    
+    NSString *deviceTokenStr = [NSString stringWithFormat:@"%@",deviceToken];
+    NSString *stringWithoutSpaces = [deviceTokenStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *push_id = [stringWithoutSpaces stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    push_id = [push_id stringByReplacingOccurrencesOfString:@">" withString:@""];
+    if (([push_id class] != [NSNull class]) && (push_id != NULL)) {
+        [kUserDefaults setObject:push_id forKey:KEY_DEVICE_TOKEN];
+        [kUserDefaults synchronize];
+    }
+     application.applicationIconBadgeNumber = 0;
 }
 
 #pragma mark Remote Notification
@@ -317,5 +347,9 @@
         default: break;
     }
 }
+
+
+
+
 
 @end

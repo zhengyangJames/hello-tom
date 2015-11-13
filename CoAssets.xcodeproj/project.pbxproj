@@ -267,6 +267,8 @@
 		7FE6ED611B54EB1600FA481E /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6ED601B54EB1600FA481E /* WebViewManager.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
 		B6E0480B9D22B5D1A1440F77 /* libPods-CoAssets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D073E4F729C05E9C9A1DB5F5 /* libPods-CoAssets.a */; };
+		B94A4A4F1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */; settings = {ASSET_TAGS = (); }; };
+		B9DF964D1BF3476A00D3829A /* WSURLSessionManager+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */; settings = {ASSET_TAGS = (); }; };
 		BB25980E1B85526800D947AF /* COProjectFundedAmountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25980D1B85526800D947AF /* COProjectFundedAmountModel.m */; };
 		BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D61B8243F000BF6861 /* CODocumentModel.m */; };
 		BB3097DA1B824F0C00BF6861 /* CODocumentItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */; };
@@ -672,6 +674,10 @@
 		7FE6ED601B54EB1600FA481E /* WebViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewManager.m; sourceTree = "<group>"; };
 		7FF529F61B413E4A0072F6F4 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		B94A4A4D1BF42C090080D5E2 /* WSPostDeviceTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPostDeviceTokenRequest.h; sourceTree = "<group>"; };
+		B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPostDeviceTokenRequest.m; sourceTree = "<group>"; };
+		B9DF964B1BF3476A00D3829A /* WSURLSessionManager+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Notification.h"; sourceTree = "<group>"; };
+		B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Notification.m"; sourceTree = "<group>"; };
 		BB25980C1B85526800D947AF /* COProjectFundedAmountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProjectFundedAmountModel.h; sourceTree = "<group>"; };
 		BB25980D1B85526800D947AF /* COProjectFundedAmountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COProjectFundedAmountModel.m; sourceTree = "<group>"; };
 		BB3097D51B8243F000BF6861 /* CODocumentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODocumentModel.h; sourceTree = "<group>"; };
@@ -1329,8 +1335,8 @@
 		7F325DD41B40E50800116445 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				7F325DD51B40E50800116445 /* Details */,
 				7F325DF91B40E50800116445 /* List */,
+				7F325DD51B40E50800116445 /* Details */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1638,6 +1644,8 @@
 				7F325E8F1B40E50800116445 /* WSURLSessionManager+User.m */,
 				7F85290D1B438F5400CFAEB5 /* WSURLSessionManager+Profile.h */,
 				7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */,
+				B9DF964B1BF3476A00D3829A /* WSURLSessionManager+Notification.h */,
+				B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1918,6 +1926,8 @@
 				BB38EE371B9A147500D15D58 /* WSGetListContactsRequest.m */,
 				1E6A5DCA1BC4B84000D587BC /* WSGetAccountInvestment.h */,
 				1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */,
+				B94A4A4D1BF42C090080D5E2 /* WSPostDeviceTokenRequest.h */,
+				B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1935,7 +1945,6 @@
 				0EFEB4AE1B2724B2001195B7 /* Resources */,
 				7F2D8A851B310B0C000DE953 /* ShellScript */,
 				3C34D0B1319B4947059A75FE /* Copy Pods Resources */,
-				6C3E147C5A9C6EB8BE4DE69D /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2169,21 +2178,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6C3E147C5A9C6EB8BE4DE69D /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7F2D8A851B310B0C000DE953 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2205,6 +2199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB3A9F5E1B961692002EEB1C /* WSRegisterRequest.m in Sources */,
+				B94A4A4F1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m in Sources */,
 				0E39FA621BC4247000880834 /* NProfileDataSource.m in Sources */,
 				1E5A6FBB1BCCC49F00C4C5A5 /* NProfileAdressCell.m in Sources */,
 				7F325FC41B40E50800116445 /* DropListCell.m in Sources */,
@@ -2323,6 +2318,7 @@
 				012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */,
 				7F325F791B40E50800116445 /* AppDelegate.m in Sources */,
 				BB383E2F1B8BC1B000303E34 /* COUserAccountModel.m in Sources */,
+				B9DF964D1BF3476A00D3829A /* WSURLSessionManager+Notification.m in Sources */,
 				1E5A6FC51BCCC49F00C4C5A5 /* NProfileNodataCell.m in Sources */,
 				0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */,
 				7FA7E6B91B4E7C4D00059B13 /* COInterestedViewController.m in Sources */,
@@ -2449,8 +2445,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
@@ -2472,8 +2468,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";

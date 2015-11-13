@@ -24,7 +24,7 @@
 
 "FIRST_NAME"                            = "First Name";
 "LAST_NAME"                             = "Last Name";
-"EMAIL"                                 = "Email";
+"EMAIL"= "Email";
 "PHONE"                                 = "Phone";
 "CONTACT"                               = "Contact";
 "SETTINGS"                              = "Settings";
