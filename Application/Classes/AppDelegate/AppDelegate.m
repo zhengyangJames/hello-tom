@@ -12,6 +12,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import "TabProfileController.h"
 #import "HomeListViewController.h"
+#import "NotificationViewController.h"
 #import "SettingViewController.h"
 #import "COLoginManager.h"
 #import "COUserProfileModel.h"
@@ -29,6 +30,7 @@
 }
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
 @property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
+@property (strong, nonatomic) BaseNavigationController *baseNotificationNAV;
 @property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
 
 @property (strong, nonatomic) HomeListViewController *homeVC;
@@ -109,7 +111,6 @@
         [kUserDefaults synchronize];
     }
      application.applicationIconBadgeNumber = 0;
-    [self checkCreadDeviceToken];
 }
 
 #pragma mark Remote Notification
@@ -212,7 +213,7 @@
 - (BaseTabBarController*)baseTabBarController {
     if (!_baseTabBarController) {
         BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
-        NSArray *arrayNAV = @[self.baseHomeNAV,self.baseProfileNAV,self.baseSettingNAV];
+        NSArray *arrayNAV = @[self.baseHomeNAV,self.baseProfileNAV,self.baseNotificationNAV,self.baseSettingNAV];
         [tabBar setViewControllers:arrayNAV animated:YES];
         _baseTabBarController = tabBar;
     }
@@ -253,6 +254,18 @@
         _baseProfileNAV = profileNAV;
     }
     return _baseProfileNAV;
+}
+
+//Setup Notification
+- (BaseNavigationController*)baseNotificationNAV {
+    if (!_baseNotificationNAV) {
+        NotificationViewController *notificationVC = [[NotificationViewController alloc]init];
+        BaseNavigationController *notificationNAV = [[BaseNavigationController alloc]initWithRootViewController:notificationVC];
+        UITabBarItem *tabbarNotification = [[UITabBarItem alloc]initWithTitle:m_string(@"NOTIFICATION" ) image:[UIImage imageNamed:@"ic_home"] selectedImage:[UIImage imageNamed:@"ic_home_heightlight"]];
+        notificationNAV.tabBarItem = tabbarNotification;
+        _baseNotificationNAV = notificationNAV;
+    }
+    return _baseNotificationNAV;
 }
 
 //Setup Setting
@@ -353,66 +366,5 @@
     }
 }
 
-- (void)checkCreadDeviceToken {
- 
-    if ([kUserDefaults objectForKey:DEVICE_TOKEN_EXIST] != nil) {
-        self.deviceTokenExist = [kUserDefaults boolForKey:DEVICE_TOKEN_EXIST];
-    } else {
-        self.deviceTokenExist = NO;
-        [kUserDefaults setBool:self.deviceTokenExist forKey:DEVICE_TOKEN_EXIST];
-    }
-
-    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-    NSString *headerString = [NSString stringWithFormat:@"%@",userModel.stringOfTokenType];
-
-    NSString *deviceToken = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    if (self.deviceTokenExist == NO && deviceToken != nil && headerString.isEmpty == true) {
-        [self _callPostDeviceToken];
-        [self _callGetNotificationList];
-        [self _callReadNotification];
-    }
-}
-
-#pragma mark - Web Service
-#pragma mark - POST Notification
-
-- (void)_callPostDeviceToken {
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    [dic setObject:@"abcde1" forKey:device_token_dic];
-    [dic setObject:device_type forKey:device_type_dic];
-    [dic setObject:application_name forKey:application_name_dic];
-    [dic setObject:client_key forKey:client_key_dic];
-    
-    [[WSURLSessionManager shared]wsPostDeviceTokenRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-    }];
-}
-
-- (void)_callGetNotificationList {
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    [dic setObject:device_token forKey:device_token_dic];
-    [dic setObject:device_type forKey:device_type_dic];
-    [dic setObject:application_name forKey:application_name_dic];
-    
-    [[WSURLSessionManager shared] wsGetNotificationListRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-    }];
-}
-
-- (void)_callReadNotification {
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    [dic setObject:device_token forKey:device_token_dic];
-    [dic setObject:device_type forKey:device_type_dic];
-    [dic setObject:application_name forKey:application_name_dic];
-    [dic setObject:@"a" forKey:NOTIFICATION_STATUS_DICT];
-    [dic setObject:@"id" forKey:NOTIFICATION_ID_DICT];
-    
-    [[WSURLSessionManager shared] wsReadNotificationList:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-    }];
-}
 
 @end

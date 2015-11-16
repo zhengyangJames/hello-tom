@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="52" id="9Dl-aG-2ub" customClass="NotificationCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Dl-aG-2ub" id="bG7-fc-onJ">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbd-Ws-t8q">
+                        <rect key="frame" x="8" y="5" width="41" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="J6f-9t-RKI"/>
+                            <constraint firstAttribute="height" constant="21" id="o9W-0Q-HDR"/>
+                            <constraint firstAttribute="width" constant="50" id="tMh-cP-Qre"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="J6f-9t-RKI"/>
+                                <exclude reference="o9W-0Q-HDR"/>
+                                <exclude reference="tMh-cP-Qre"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Alert:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQm-fV-bzw">
+                        <rect key="frame" x="8" y="30" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kbd-Ws-t8q" firstAttribute="leading" secondItem="bG7-fc-onJ" secondAttribute="leading" id="C6Z-vj-zQj"/>
+                    <constraint firstAttribute="bottom" secondItem="UQm-fV-bzw" secondAttribute="bottom" id="G4U-YM-og6"/>
+                    <constraint firstItem="kbd-Ws-t8q" firstAttribute="leading" secondItem="bG7-fc-onJ" secondAttribute="leading" constant="8" id="KJG-Kw-LBn"/>
+                    <constraint firstItem="kbd-Ws-t8q" firstAttribute="top" secondItem="bG7-fc-onJ" secondAttribute="top" constant="5" id="NfV-JM-rjF"/>
+                    <constraint firstItem="UQm-fV-bzw" firstAttribute="leading" secondItem="bG7-fc-onJ" secondAttribute="leading" constant="8" id="QIz-iC-EaS"/>
+                    <constraint firstItem="UQm-fV-bzw" firstAttribute="top" secondItem="kbd-Ws-t8q" secondAttribute="bottom" constant="4" id="fEw-nb-jQ8"/>
+                    <constraint firstItem="kbd-Ws-t8q" firstAttribute="top" secondItem="bG7-fc-onJ" secondAttribute="top" constant="5" id="rzF-wQ-HL5"/>
+                    <constraint firstItem="UQm-fV-bzw" firstAttribute="leading" secondItem="bG7-fc-onJ" secondAttribute="leading" id="wNB-T6-jnm"/>
+                    <constraint firstItem="UQm-fV-bzw" firstAttribute="top" secondItem="kbd-Ws-t8q" secondAttribute="bottom" constant="4" id="zuN-s4-1aW"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="C6Z-vj-zQj"/>
+                        <exclude reference="NfV-JM-rjF"/>
+                        <exclude reference="G4U-YM-og6"/>
+                        <exclude reference="fEw-nb-jQ8"/>
+                        <exclude reference="wNB-T6-jnm"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="_lbAlert" destination="UQm-fV-bzw" id="eMN-Cp-KMF"/>
+                <outlet property="_lbDate" destination="kbd-Ws-t8q" id="WyN-vT-HI3"/>
+            </connections>
+            <point key="canvasLocation" x="1063" y="272"/>
+        </tableViewCell>
+    </objects>
+</document>

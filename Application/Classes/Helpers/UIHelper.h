@@ -57,4 +57,6 @@
 + (NSString *)getProjectTypeWithKey:(NSString*)key;
 + (NSString *)getProjectTypeWithValue:(NSString*)value;
 
++ (NSString *)formatStringToString:(NSString*)strDate;
+
 @end

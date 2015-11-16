@@ -33,10 +33,9 @@
 - (WSPostDeviceTokenRequest *)getNotificationList:(NSDictionary *)paraDic {
     WSPostDeviceTokenRequest *request = [[WSPostDeviceTokenRequest alloc]init];
     [request setHTTPMethod:METHOD_GET];
-    [request setValue:CONTENT_TYPE_GET forHTTPHeaderField:@"content-type"];
-    DBG(@"%@",[self _accessToken]);
-    [request setValue:[self _accessToken] forHTTPHeaderField:@"Authorization"];
-    NSString *paramenter = [NSString stringWithFormat:@"%@?%@&%@&%@",WS_METHOD_GET_NOTIFICATION_TOKEN_LIST,[paraDic objectForKey:device_token_dic],[paraDic objectForKey:device_type_dic],[paraDic objectForKey:application_name_dic]];
+    [request addValue:CONTENT_TYPE_GET forHTTPHeaderField:@"content-type"];
+    [request setValue:@"Bearer T17WdZ34VJ7eGegKN6fvC8r8CjPX66" forHTTPHeaderField:@"Authorization"];
+    NSString *paramenter = [NSString stringWithFormat:@"%@?device_token=%@&device_type=%@&application_name=%@",WS_METHOD_GET_NOTIFICATION_TOKEN_LIST,[paraDic objectForKey:device_token_dic],[paraDic objectForKey:device_type_dic],[paraDic objectForKey:application_name_dic]];
     [request setURL:[NSURL URLWithString:paramenter]];
     
     return request;
@@ -48,7 +47,7 @@
     [request setHTTPMethod:METHOD_POST];
     [request setURL: [NSURL URLWithString:@"https://www.coassets.com/api/read-notification/"]];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
-    [request setValue:[self _accessToken] forHTTPHeaderField:@"Authorization"];
+    [request addValue:[self _accessToken] forHTTPHeaderField:@"Authorization"];
     NSString *strBody = [NSString stringWithFormat:@"device_token=%@&device_type=%@&application_name=%@&client_key=%@&notification_status=%@&notification_id=%@",[bodyDict objectForKey:device_token_dic],[bodyDict objectForKey:device_type_dic],[bodyDict objectForKey:application_name_dic],[bodyDict objectForKey:client_key_dic], [bodyDict objectForKey:NOTIFICATION_STATUS_DICT],[bodyDict objectForKey:NOTIFICATION_ID_DICT]];
     NSData *dataStr = [strBody dataUsingEncoding:NSUTF8StringEncoding];
     [request setHTTPBody:dataStr];

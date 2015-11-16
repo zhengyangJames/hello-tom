@@ -415,4 +415,19 @@
     return [NSString stringWithFormat:@"$%@",newString];
 }
 
++ (NSString *)formatStringToString:(NSString*)strDate {
+    if (strDate != nil) {
+        NSDateFormatter *format = [[NSDateFormatter alloc]init];
+        [format setDateFormat:@"yyyy-MM-dd HH:mm:ssZ"];
+        NSDate *date = [format dateFromString:strDate];
+        [format setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [format setTimeZone:[NSTimeZone systemTimeZone]];
+        NSString *strdate = [format stringFromDate:date];
+        DBG(@"%@",strdate);
+    }
+    
+//    NSString *strDate = []
+    return @"11";
+}
+
 @end

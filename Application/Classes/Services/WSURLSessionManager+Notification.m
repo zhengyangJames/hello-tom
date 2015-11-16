@@ -7,6 +7,9 @@
 //
 
 #import "WSURLSessionManager+Notification.h"
+#import "NotificationViewController.h"
+#import "COContactsModel.h"
+#import "CONotificationModel.h"
 
 @implementation WSURLSessionManager (Notification)
 
@@ -34,13 +37,19 @@
     request = [request getNotificationList:listDic];
     
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+        if (!error && responseObject) {
+            NSMutableArray *arrayData = [[NSMutableArray alloc]init];
+            for (NSDictionary *data in responseObject) {
+                NSError *error;
+                CONotificationModel *notiModel = [MTLJSONAdapter modelOfClass:[CONotificationModel class] fromJSONDictionary:data error:&error];
+                [arrayData addObject:notiModel];
+            }
             if (handler) {
-                [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
+                handler(arrayData,response,nil);
             }
         } else {
             if (handler) {
-                [self setError:responseObject];
+                handler(nil,response,error);
             }
         }
     }];
@@ -65,5 +74,6 @@
          [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
     }
 }
+
 
 @end

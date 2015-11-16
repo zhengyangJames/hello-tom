@@ -100,7 +100,7 @@
 //NotificationWS
 #define WS_METHOD_POST_NOTIFICATION_TOKEN           [WS_ENDPOINT stringByAppendingString:@"/create-notification-device/"]
 
-#define WS_METHOD_GET_NOTIFICATION_TOKEN_LIST           [WS_ENDPOINT stringByAppendingString:@"/get-notification-list"]
+#define WS_METHOD_GET_NOTIFICATION_TOKEN_LIST           [WS_ENDPOINT stringByAppendingString:@"/get-notification-list/"]
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////

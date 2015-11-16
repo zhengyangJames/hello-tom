@@ -268,7 +268,13 @@
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
 		B6E0480B9D22B5D1A1440F77 /* libPods-CoAssets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D073E4F729C05E9C9A1DB5F5 /* libPods-CoAssets.a */; };
 		B94A4A4F1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */; settings = {ASSET_TAGS = (); }; };
+		B9D7723F1BF9E1B2005FA75C /* CONotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D7723E1BF9E1B2005FA75C /* CONotificationModel.m */; settings = {ASSET_TAGS = (); }; };
 		B9DF964D1BF3476A00D3829A /* WSURLSessionManager+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */; settings = {ASSET_TAGS = (); }; };
+		B9E09D981BF97B3900ACD58C /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09D961BF97B3900ACD58C /* NotificationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B9E09D991BF97B3900ACD58C /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E09D971BF97B3900ACD58C /* NotificationViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		B9E09D9D1BF97E8000ACD58C /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09D9C1BF97E8000ACD58C /* NotificationCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9E09D9F1BF97E8C00ACD58C /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E09D9E1BF97E8C00ACD58C /* NotificationCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B9E09DAD1BF9D50200ACD58C /* CONotificationDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09DAC1BF9D50200ACD58C /* CONotificationDataModel.m */; settings = {ASSET_TAGS = (); }; };
 		BB25980E1B85526800D947AF /* COProjectFundedAmountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25980D1B85526800D947AF /* COProjectFundedAmountModel.m */; };
 		BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D61B8243F000BF6861 /* CODocumentModel.m */; };
 		BB3097DA1B824F0C00BF6861 /* CODocumentItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */; };
@@ -676,8 +682,18 @@
 		7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		B94A4A4D1BF42C090080D5E2 /* WSPostDeviceTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPostDeviceTokenRequest.h; sourceTree = "<group>"; };
 		B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPostDeviceTokenRequest.m; sourceTree = "<group>"; };
+		B9D7723D1BF9E1B2005FA75C /* CONotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONotificationModel.h; sourceTree = "<group>"; };
+		B9D7723E1BF9E1B2005FA75C /* CONotificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONotificationModel.m; sourceTree = "<group>"; };
 		B9DF964B1BF3476A00D3829A /* WSURLSessionManager+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Notification.h"; sourceTree = "<group>"; };
 		B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Notification.m"; sourceTree = "<group>"; };
+		B9E09D951BF97B3900ACD58C /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		B9E09D961BF97B3900ACD58C /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		B9E09D971BF97B3900ACD58C /* NotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
+		B9E09D9B1BF97E8000ACD58C /* NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCell.h; sourceTree = "<group>"; };
+		B9E09D9C1BF97E8000ACD58C /* NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCell.m; sourceTree = "<group>"; };
+		B9E09D9E1BF97E8C00ACD58C /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
+		B9E09DAB1BF9D50200ACD58C /* CONotificationDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONotificationDataModel.h; sourceTree = "<group>"; };
+		B9E09DAC1BF9D50200ACD58C /* CONotificationDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONotificationDataModel.m; sourceTree = "<group>"; };
 		BB25980C1B85526800D947AF /* COProjectFundedAmountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProjectFundedAmountModel.h; sourceTree = "<group>"; };
 		BB25980D1B85526800D947AF /* COProjectFundedAmountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COProjectFundedAmountModel.m; sourceTree = "<group>"; };
 		BB3097D51B8243F000BF6861 /* CODocumentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODocumentModel.h; sourceTree = "<group>"; };
@@ -757,6 +773,7 @@
 		01D143791B7D1035003DF5F9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B9E09DA61BF9B6AB00ACD58C /* NotificationModel */,
 				BB3C84E11B9109D5004B8EF9 /* ContactsModel */,
 				BB368EAF1B87DF380066C646 /* UserProfileModel */,
 				1ECEAE881BC76175006FE0CA /* OfferModel */,
@@ -1324,6 +1341,7 @@
 		7F325DD31B40E50800116445 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B9E09D941BF97B1900ACD58C /* Notification */,
 				0E8955E81BBE1A78007E36BF /* TabProfiles */,
 				7F325E021B40E50800116445 /* Login + Register */,
 				7F325DD41B40E50800116445 /* Home */,
@@ -1849,6 +1867,46 @@
 			path = COPopUpView;
 			sourceTree = "<group>";
 		};
+		B9E09D941BF97B1900ACD58C /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B9E09D9A1BF97E6100ACD58C /* NotificationCell */,
+				B9E09D951BF97B3900ACD58C /* NotificationViewController.h */,
+				B9E09D961BF97B3900ACD58C /* NotificationViewController.m */,
+				B9E09D971BF97B3900ACD58C /* NotificationViewController.xib */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		B9E09D9A1BF97E6100ACD58C /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				B9E09D9B1BF97E8000ACD58C /* NotificationCell.h */,
+				B9E09D9C1BF97E8000ACD58C /* NotificationCell.m */,
+				B9E09D9E1BF97E8C00ACD58C /* NotificationCell.xib */,
+			);
+			path = NotificationCell;
+			sourceTree = "<group>";
+		};
+		B9E09DA61BF9B6AB00ACD58C /* NotificationModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9E09DAA1BF9D3E500ACD58C /* NotificationDataModel */,
+				B9D7723D1BF9E1B2005FA75C /* CONotificationModel.h */,
+				B9D7723E1BF9E1B2005FA75C /* CONotificationModel.m */,
+			);
+			path = NotificationModel;
+			sourceTree = "<group>";
+		};
+		B9E09DAA1BF9D3E500ACD58C /* NotificationDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9E09DAB1BF9D50200ACD58C /* CONotificationDataModel.h */,
+				B9E09DAC1BF9D50200ACD58C /* CONotificationDataModel.m */,
+			);
+			path = NotificationDataModel;
+			sourceTree = "<group>";
+		};
 		BB368EAF1B87DF380066C646 /* UserProfileModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2014,6 +2072,7 @@
 				7F32604C1B40E50800116445 /* ic_line_char@3x.png in Resources */,
 				7F2C77471B4E07BA00C69365 /* COOfferInfoCell.xib in Resources */,
 				7F3260311B40E50800116445 /* Ic_back@2x.png in Resources */,
+				B9E09D991BF97B3900ACD58C /* NotificationViewController.xib in Resources */,
 				7F325F981B40E50800116445 /* COOfferDescriptionTextCell.xib in Resources */,
 				7F3260391B40E50800116445 /* ic_Check@3x.png in Resources */,
 				7F3260721B40E50800116445 /* Images.xcassets in Resources */,
@@ -2091,6 +2150,7 @@
 				7FB9C06F1B4FDA0700FC1B47 /* ic_btn_left.png in Resources */,
 				7F3260401B40E50800116445 /* ic_droplist@3x.png in Resources */,
 				7F3260291B40E50800116445 /* Raleway-MediumItalic.ttf in Resources */,
+				B9E09D9F1BF97E8C00ACD58C /* NotificationCell.xib in Resources */,
 				7F933D371B5790D600B7EB9C /* company_edit.jpg in Resources */,
 				7F32602B1B40E50800116445 /* Raleway-SemiBold.ttf in Resources */,
 				7F32604D1B40E50800116445 /* ic_loadding.gif in Resources */,
@@ -2207,6 +2267,7 @@
 				7F325F8C1B40E50800116445 /* COOfferHeadingCell.m in Sources */,
 				7F325F7C1B40E50800116445 /* BaseTabBarController.m in Sources */,
 				BB3A9F6A1B9660DB002EEB1C /* WSUpdateProfileRequest.m in Sources */,
+				B9D7723F1BF9E1B2005FA75C /* CONotificationModel.m in Sources */,
 				7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */,
 				BB3A9F641B962BB8002EEB1C /* WSChangePassWordRequest.m in Sources */,
 				0ECA884A1B27CA7100B5656F /* NMImageHelper.m in Sources */,
@@ -2214,6 +2275,7 @@
 				7F325F9D1B40E50800116445 /* HomeListViewController.m in Sources */,
 				7F325FDC1B40E50800116445 /* WSURLSessionManager+ListHome.m in Sources */,
 				0E89562C1BBE1D9F007E36BF /* AccountCell.m in Sources */,
+				B9E09DAD1BF9D50200ACD58C /* CONotificationDataModel.m in Sources */,
 				7F325F7A1B40E50800116445 /* BaseCollectionViewCell.m in Sources */,
 				BB38EE261B99F2B200D15D58 /* WSPostQuestionRequest.m in Sources */,
 				7FA7E6C01B4E7CD500059B13 /* COOfferProgressCell.m in Sources */,
@@ -2227,6 +2289,7 @@
 				7FA7E6BB1B4E7C4D00059B13 /* COQuestionView.m in Sources */,
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
 				7F8E0BD81B5355A20045EFB0 /* COOfferWebViewCell.m in Sources */,
+				B9E09D9D1BF97E8000ACD58C /* NotificationCell.m in Sources */,
 				BB38EE351B9A0A8900D15D58 /* WSGetListOfferRequest.m in Sources */,
 				0E8956201BBE1C14007E36BF /* DealsController.m in Sources */,
 				BB38EE321B9A05F800D15D58 /* WSGetOfferInfoWithRequest.m in Sources */,
@@ -2305,6 +2368,7 @@
 				7F325F991B40E50800116445 /* OfferViewController.m in Sources */,
 				7F325FB91B40E50800116445 /* ContacViewController.m in Sources */,
 				7F325FBF1B40E50800116445 /* COBorderTextField.m in Sources */,
+				B9E09D981BF97B3900ACD58C /* NotificationViewController.m in Sources */,
 				1E5A6FC31BCCC49F00C4C5A5 /* NProfileImageCell.m in Sources */,
 				0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */,
 				BB38EE381B9A147500D15D58 /* WSGetListContactsRequest.m in Sources */,

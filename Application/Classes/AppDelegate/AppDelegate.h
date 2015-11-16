@@ -15,7 +15,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) BaseTabBarController *baseTabBarController;
 @property (assign, nonatomic) BOOL keyShowNotificationBanner;
-@property (assign, nonatomic) BOOL deviceTokenExist;
 
 - (void)clearData;
 - (void)setupNotifications:(UIApplication*)application;

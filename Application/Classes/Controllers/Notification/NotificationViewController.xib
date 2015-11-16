@@ -5,9 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewSetting">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationViewController">
             <connections>
-                <outlet property="_webView" destination="g5a-nr-vJq" id="FMq-Od-d2c"/>
+                <outlet property="_tableview" destination="Tix-7K-7Lr" id="fcB-aV-ltX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,20 +16,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5a-nr-vJq">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tix-7K-7Lr">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </webView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="g5a-nr-vJq" secondAttribute="trailing" id="9WF-NZ-dhG"/>
-                <constraint firstAttribute="bottom" secondItem="g5a-nr-vJq" secondAttribute="bottom" id="JMh-LV-bgV"/>
-                <constraint firstItem="g5a-nr-vJq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TGa-Ow-f0f"/>
-                <constraint firstItem="g5a-nr-vJq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bKg-sQ-QY2"/>
+                <constraint firstItem="Tix-7K-7Lr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5NA-57-sZP"/>
+                <constraint firstAttribute="bottom" secondItem="Tix-7K-7Lr" secondAttribute="bottom" id="TEm-uK-xa7"/>
+                <constraint firstItem="Tix-7K-7Lr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mZc-Lu-ueh"/>
+                <constraint firstAttribute="trailing" secondItem="Tix-7K-7Lr" secondAttribute="trailing" id="qyp-CT-fIn"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="170" y="311"/>
         </view>
     </objects>
 </document>
