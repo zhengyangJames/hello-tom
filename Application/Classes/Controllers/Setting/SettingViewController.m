@@ -35,7 +35,7 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
     _webViewSetting = nil;
-    [kUserDefaults setObject:@"2" forKey:KEY_TABBARSELECT];
+    [kUserDefaults setObject:@"3" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
     if (![[COLoginManager shared] userModel]) {
         [self _replaceArraySettingLogOut];

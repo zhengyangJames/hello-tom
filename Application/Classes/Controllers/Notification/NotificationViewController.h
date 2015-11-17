@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 
 @interface NotificationViewController : BaseViewController
-@property (assign, nonatomic) BOOL deviceTokenExist;
+
 
 
 @end

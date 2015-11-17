@@ -16,4 +16,7 @@
 @property (nonatomic, strong) NSNumber *notifiId;
 @property (nonatomic, strong) NSString *notifiUnique;
 
+- (NSString *)stringOfdata;
+- (NSNumber *)numberOfId;
+- (NSString *)stringOfUniqueId;
 @end

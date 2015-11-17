@@ -29,4 +29,8 @@
     return self.notifiId;
 }
 
+- (NSString *)stringOfUniqueId {
+    return self.notifiUnique;
+}
+
 @end

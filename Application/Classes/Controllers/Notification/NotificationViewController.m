@@ -15,14 +15,16 @@
 #import "LoginViewController.h"
 #import "HomeListViewController.h"
 #import "LoadFileManager.h"
+#import "WebViewSetting.h"
 
 
 @interface NotificationViewController ()<UITableViewDataSource, UITableViewDelegate, LoginViewControllerDelegate> {
     __weak IBOutlet UITableView *_tableview;
     NSString *_selectedOfferID;
-    
 }
+
 @property (strong, nonatomic) NSArray *arrayData;
+
 @end
 
 @implementation NotificationViewController
@@ -34,6 +36,7 @@
 }
 
 #pragma mark - SetupUI
+
 - (void)_setupUI {
     self.title = m_string(@"NOTIFICATION");
     _tableview.delegate = self;
@@ -51,11 +54,8 @@
     return _arrayData;
 }
 
-//- (void)_reloadListNotification {
-//    [self _checkCreadDeviceToken];
-//}
-
 #pragma mark - UITableviewDelegate
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.arrayData != nil) {
         return self.arrayData.count;
@@ -77,56 +77,44 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CONotificationModel *notifiModel = [[CONotificationModel alloc]init];
     notifiModel = [self.arrayData objectAtIndex:indexPath.row];
-    _selectedOfferID = [notifiModel.notifiData.notifiId stringValue];
-    [kUserDefaults setObject:_selectedOfferID forKey:NOTIFICATION_ID];
-    [kUserDefaults synchronize];
-    [kAppDelegate baseTabBarController].selectedIndex = 0;
+    if (notifiModel != nil) {
+        [self _loadDetailNotification:notifiModel];
+    }
+}
+
+- (void)_loadDetailNotification:(CONotificationModel *)notification {
+    [self _callReadNotification:notification];
+    if (notification.notifiData.notifiUrl != nil) {
+        WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
+        webViewSetting.webLink = [LINK stringByAppendingString:notification.notifiData.notifiUrl];
+        webViewSetting.titler = m_string(@"Notification");
+        [self.navigationController pushViewController:webViewSetting animated:YES];
+    } else {
+        _selectedOfferID = [notification.notifiData.notifiId stringValue];
+        [kUserDefaults setObject:_selectedOfferID forKey:NOTIFICATION_ID];
+        [kUserDefaults synchronize];
+        [kAppDelegate baseTabBarController].selectedIndex = 0;
+    }
 }
 
 - (void)_checkCreadDeviceToken {
-    
-    if ([kUserDefaults objectForKey:DEVICE_TOKEN_EXIST] != nil) {
-        self.deviceTokenExist = [kUserDefaults boolForKey:DEVICE_TOKEN_EXIST];
-    } else {
-        self.deviceTokenExist = NO;
-        [kUserDefaults setBool:self.deviceTokenExist forKey:DEVICE_TOKEN_EXIST];
-    }
-    
-    [self _callGetNotificationList];
     COUserProfileModel *userModel = [[COLoginManager shared] userModel];
     NSString *headerString = [NSString stringWithFormat:@"%@",userModel.stringOfTokenType];
-
     NSString *deviceToken = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    if (self.deviceTokenExist == YES && deviceToken != nil && headerString != NULL) {
-//        [self _callPostDeviceToken];
-//        [self _callGetNotificationList];
-        //        [self _callReadNotification];
+    if (deviceToken != nil && headerString != NULL) {
+        [self _callGetNotificationList];
     }
 }
 
 #pragma mark - Web Service
 #pragma mark - POST Notification
 
-- (void)_callPostDeviceToken {
+- (void)_callGetNotificationList {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
     [dic setObject:device_token forKey:device_token_dic];
     [dic setObject:device_type forKey:device_type_dic];
     [dic setObject:application_name forKey:application_name_dic];
-    [dic setObject:client_key forKey:client_key_dic];
-    
-    [[WSURLSessionManager shared]wsPostDeviceTokenRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-    }];
-}
-
-- (void)_callGetNotificationList {
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    [dic setObject:@"18a2950defe16fad7b3b218569a954506e208c8b292a3718f48996c499ebe325" forKey:device_token_dic];
-    [dic setObject:device_type forKey:device_type_dic];
-    [dic setObject:application_name forKey:application_name_dic];
-    
     [[WSURLSessionManager shared] wsGetNotificationListRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
@@ -141,19 +129,19 @@
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
-
+        
     }];
 }
 
-- (void)_callReadNotification {
+- (void)_callReadNotification:(CONotificationModel *)notification {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
     [dic setObject:device_token forKey:device_token_dic];
     [dic setObject:device_type forKey:device_type_dic];
     [dic setObject:application_name forKey:application_name_dic];
-    [dic setObject:@"a" forKey:NOTIFICATION_STATUS_DICT];
-    [dic setObject:@"id" forKey:NOTIFICATION_ID_DICT];
-    
+    [dic setObject:client_key forKey:client_key_dic];
+    [dic setObject:notification.notifiData.notifiStatus forKey:NOTIFICATION_STATUS_DICT];
+    [dic setObject:notification.notifiData.notifiUnique forKey:NOTIFICATION_ID_DICT];
     [[WSURLSessionManager shared] wsReadNotificationList:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         
     }];

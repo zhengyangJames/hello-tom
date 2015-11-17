@@ -111,6 +111,7 @@
         [kUserDefaults setObject:push_id forKey:KEY_DEVICE_TOKEN];
         [kUserDefaults synchronize];
     }
+    [self _checkCreadDeviceToken];
      application.applicationIconBadgeNumber = 0;
 }
 
@@ -378,5 +379,33 @@
     }
 }
 
+#pragma mark - Web Service By Vincent
+#pragma mark - POST Notification
+
+- (void)_checkCreadDeviceToken {
+    if ([kUserDefaults objectForKey:DEVICE_TOKEN_EXIST] != nil) {
+        self.deviceTokenExist = [kUserDefaults boolForKey:DEVICE_TOKEN_EXIST];
+    } else {
+        self.deviceTokenExist = NO;
+        [kUserDefaults setBool:self.deviceTokenExist forKey:DEVICE_TOKEN_EXIST];
+    }
+    NSString *deviceToken = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
+    if (self.deviceTokenExist == NO && deviceToken != nil) {
+        [self _callPostDeviceToken];
+    }
+}
+
+- (void)_callPostDeviceToken {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
+    [dic setObject:device_token forKey:device_token_dic];
+    [dic setObject:device_type forKey:device_type_dic];
+    [dic setObject:application_name forKey:application_name_dic];
+    [dic setObject:client_key forKey:client_key_dic];
+    
+    [[WSURLSessionManager shared]wsPostDeviceTokenRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        
+    }];
+}
 
 @end

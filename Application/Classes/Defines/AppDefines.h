@@ -187,6 +187,7 @@
 #define LINK_TERMS_OF_USE                           @"http://www.coassets.com/apps/terms-of-use/"
 #define LINK_CODE_OF_CONDUCT                        @"http://www.coassets.com/apps/code-of-conduct/"
 #define LINK_PRIVACY                                @"http://www.coassets.com/apps/privacy/"
+#define LINK                                        @"http://"
 ////////////////////////////////////////////////////////////////
 #pragma mark - PROFILE DEFINE
 #define DEFAULT_HEIGHT_CELL                         40
