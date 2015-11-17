@@ -31,6 +31,8 @@ typedef void(^ProfileGetInvestor)(id object, NSError *errorInvestor);
 @property (nonatomic, strong) NSNumber *offerId;
 @property (nonatomic, strong) NSString *offerType;
 
+@property (nonatomic, strong) NSString *notificationID;
+
 - (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager;
 - (void)tokenObject:(NSDictionary*)token callWSGetListProfile:(ActionLoginManager)actionLoginManager;
 

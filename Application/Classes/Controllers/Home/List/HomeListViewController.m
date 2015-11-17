@@ -62,6 +62,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
     [self _setupUI];
+    [self _callWSGetListOfferFilter:@""];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -72,6 +73,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [kUserDefaults setObject:@"0" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
     [kAppDelegate setupNotifications:[UIApplication sharedApplication]];
+    if ([kUserDefaults objectForKey:NOTIFICATION_ID] != nil) {
+        [self _loadDetailNotification:[kUserDefaults objectForKey:NOTIFICATION_ID]];
+    }
 }
 
 
@@ -359,4 +363,15 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     [kNotificationCenter removeObserver:self forKeyPath:UIApplicationDidBecomeActiveNotification];
 }
 
+#pragma mark - Load detail notification by vincent
+
+- (void)_loadDetailNotification:(NSString *)notifiID {
+    if ([self _checkOfferIdInList:notifiID]) {
+        [self callWSGetDetailsWithModel:notifiID];
+    } else {
+        DBG(@"***__Offer ID Not Invaild__***");
+    }
+    [kUserDefaults removeObjectForKey:NOTIFICATION_ID];
+    kUserDefaults.synchronize;
+}
 @end

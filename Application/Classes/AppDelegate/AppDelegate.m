@@ -26,6 +26,7 @@
 {
     BOOL _keyShowNotificationBanner;
     NSDictionary *_userInfo;
+    NSUInteger sellectdate;
 //    BOOL deviceTokenExist;
 }
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
@@ -326,6 +327,17 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 1) {
         if (![[COLoginManager shared] userModel]) {
+            sellectdate = 1;
+            [self _setUpLogginVC];
+            [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
+        } else {
+            [[COLoginManager shared] setInvestorModel:nil];
+            [[COLoginManager shared] wsGetAccountInverstment:^(id object, NSError *error) { }];
+        }
+    }
+    if (tabBarController.selectedIndex == 2) {
+        if (![[COLoginManager shared] userModel]) {
+            sellectdate = 2;
             [self _setUpLogginVC];
             [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
         } else {
@@ -353,7 +365,7 @@
         {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
                                                                     completion:nil];
-            [self.baseTabBarController setSelectedIndex:1];
+            [self.baseTabBarController setSelectedIndex:sellectdate];
         } break;
             
         case DismissLoginVC:

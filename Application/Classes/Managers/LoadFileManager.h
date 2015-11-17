@@ -17,4 +17,6 @@
 + (void)writeFilePlistWithName:(NSArray*)array fileName:(NSString*)fileName;
 
 + (NSArray*)loadFileFilterListWithName:(NSString*)fileName;
+
+@property (nonatomic, strong) NSString *notificationID;
 @end
