@@ -18,11 +18,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDD-F2-8sO" id="eIo-GX-xlU">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="36.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hF6-ID-7Et">
-                        <rect key="frame" x="5" y="24" width="305" height="12.5"/>
+                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hF6-ID-7Et">
+                        <rect key="frame" x="5" y="24" width="305" height="13"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="Rmv-P8-tfa"/>
@@ -33,7 +33,7 @@
                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countries Preference" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="90" translatesAutoresizingMaskIntoConstraints="NO" id="3co-vI-zX1">
-                        <rect key="frame" x="10" y="4" width="189" height="24.5"/>
+                        <rect key="frame" x="10" y="4" width="189" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24.5" id="n2W-14-4bw"/>
                         </constraints>

@@ -34,7 +34,7 @@
     WSPostDeviceTokenRequest *request = [[WSPostDeviceTokenRequest alloc]init];
     [request setHTTPMethod:METHOD_GET];
     [request addValue:CONTENT_TYPE_GET forHTTPHeaderField:@"content-type"];
-    [request setValue:@"Bearer T17WdZ34VJ7eGegKN6fvC8r8CjPX66" forHTTPHeaderField:@"Authorization"];
+    [request setValue:@"Bearer jjMSqa8Q9f66HWvEJmIBYkxbzIao4Z" forHTTPHeaderField:@"Authorization"];
     NSString *paramenter = [NSString stringWithFormat:@"%@?device_token=%@&device_type=%@&application_name=%@",WS_METHOD_GET_NOTIFICATION_TOKEN_LIST,[paraDic objectForKey:device_token_dic],[paraDic objectForKey:device_type_dic],[paraDic objectForKey:application_name_dic]];
     [request setURL:[NSURL URLWithString:paramenter]];
     

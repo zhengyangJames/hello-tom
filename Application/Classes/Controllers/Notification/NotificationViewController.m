@@ -11,13 +11,32 @@
 #import "WSPostDeviceTokenRequest.h"
 #import "WSURLSessionManager+Notification.h"
 #import "COLoginManager.h"
+#import "LoadFileManager.h"
+#import "LoginViewController.h"
+#import "WSURLSessionManager.h"
+
+#import "WSURLSessionManager+ListHome.h"
+#import "COOfferModel.h"
+#import "COProjectModel.h"
+#import "COProjectFundedAmountModel.h"
+#import "COFilterListModel.h"
+#import "COLoginManager.h"
+#import "WSProjectFundInfoRequest.h"
+#import "WSGetOfferInfoWithRequest.h"
+#import "WSGetListOfferRequest.h"
+#import "COListFilterObject.h"
+#import "COLoginManager.h"
+#import <Parse/Parse.h>
+#import "OfferViewController.h"
 
 
-@interface NotificationViewController ()<UITableViewDataSource, UITableViewDelegate> {
+@interface NotificationViewController ()<UITableViewDataSource, UITableViewDelegate, LoginViewControllerDelegate> {
     __weak IBOutlet UITableView *_tableview;
+    NSString *_selectedOfferID;
+    
 }
 @property (strong, nonatomic) NSArray *arrayData;
-
+@property (strong, nonatomic) COOfferModel *offerModel;
 @end
 
 @implementation NotificationViewController
@@ -33,6 +52,7 @@
     self.title = m_string(@"NOTIFICATION");
     _tableview.delegate = self;
     _tableview.dataSource = self;
+    _tableview.tableFooterView = [UIView new];
     [_tableview registerNib:[UINib nibWithNibName:[NotificationCell identifier] bundle:nil] forCellReuseIdentifier:[NotificationCell identifier]];
 }
 
@@ -64,7 +84,15 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 52;
+    return 50;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    CONotificationModel *notifiModel = [[CONotificationModel alloc]init];
+    notifiModel = [self.arrayData objectAtIndex:indexPath.row];
+    _selectedOfferID = [notifiModel.notifiData.notifiId stringValue];
+    [self checkIsShowLoginVCAndPushDetailOffer:_selectedOfferID];
 }
 
 - (void)_checkCreadDeviceToken {
@@ -83,7 +111,7 @@
     NSString *deviceToken = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
     if (self.deviceTokenExist == YES && deviceToken != nil && headerString != NULL) {
 //        [self _callPostDeviceToken];
-        [self _callGetNotificationList];
+//        [self _callGetNotificationList];
         //        [self _callReadNotification];
     }
 }
@@ -143,4 +171,89 @@
     }];
 }
 
+#pragma mark - Check Login
+
+- (void)checkIsShowLoginVCAndPushDetailOffer:(NSString *)offerId {
+    if (![[COLoginManager shared] userModel]) {
+        [self showLoginView];
+    } else {
+        [self _checkOfferAndPushDetailOfferWithID:offerId];
+    }
+}
+
+- (void)_checkOfferAndPushDetailOfferWithID:(NSString*)offerID {
+    if ([self _checkOfferIdInList:offerID]) {
+        [self callWSGetDetailsWithModel:offerID];
+//        _offerIdOfNotification = nil;
+    } else {
+        DBG(@"***__Offer ID Not Invaild__***");
+    }
+}
+
+- (BOOL)_checkOfferIdInList:(NSString*)offerId {
+    for (NSInteger i = 0; i < self.arrayData.count; i++) {
+        NSString *offderIdInList = [[self.arrayData[i] notifiId]stringValue];
+        if ([offerId isEqualToString:offderIdInList]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (void)showLoginView {
+    LoginViewController *vcLogin = [[LoginViewController alloc]init];
+    vcLogin.delegate = self;
+    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+    [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
+    [[COLoginManager shared] setIsReloadListHome:YES];
+}
+
+- (void)callWSGetDetailsWithModel:(NSString*)offerID {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsGetOfferInforWithRequest:[self _createOfferInfoRequestWithOfferID:offerID] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            self.offerModel = responseObject;
+            [self _callWSGetFundInfo];
+        } else {
+            [UIHelper hideLoadingFromView:self.view];
+
+            [UIHelper showError:error];
+        }
+    }];
+}
+
+- (WSGetOfferInfoWithRequest *)_createOfferInfoRequestWithOfferID:(NSString*)offerID {
+    WSGetOfferInfoWithRequest *request = [[WSGetOfferInfoWithRequest alloc] init];
+    [request setHTTPMethod:METHOD_GET];
+    [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_OFFERS]];
+    request.offerID = offerID;
+    return request;
+}
+
+- (void)_callWSGetFundInfo{
+    [[WSURLSessionManager shared] wsGetProjectFundInfoWithRequest:[self _createFundInfoRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            self.offerModel.offerProject.projectFundedAmount = responseObject;
+            [self _pushDetailVcWithID:self.offerModel];
+        } else {
+            [UIHelper showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+}
+
+- (WSProjectFundInfoRequest *)_createFundInfoRequest {
+    WSProjectFundInfoRequest *request = [[WSProjectFundInfoRequest alloc] init];
+    [request setURL:[NSURL URLWithString:WS_METHOD_POST_PROGRESSBAR]];
+    [request setHTTPMethod:METHOD_POST];
+    NSString *offerID = [self.offerModel.numberOfOfferId stringValue];
+    [request setBodyParam:offerID forKey:kFundOfferID];
+    [request setValueWithModel:[[COLoginManager shared] userModel]];
+    return request;
+}
+- (void)_pushDetailVcWithID:(COOfferModel *)model {
+    OfferViewController *vc = [[OfferViewController alloc]init];
+    vc.offerModel = model;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

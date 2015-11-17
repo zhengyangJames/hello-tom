@@ -25,4 +25,8 @@
     return self.notifiDateTime;
 }
 
+- (NSNumber *)numberOfId {
+    return self.notifiId;
+}
+
 @end
