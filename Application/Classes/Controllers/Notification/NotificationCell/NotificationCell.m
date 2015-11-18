@@ -17,6 +17,11 @@
 - (void)setNotifiModel:(CONotificationModel *)notifiModel {
     _notifiModel = notifiModel;
     if (_notifiModel != nil) {
+        if ([notifiModel.notifiData.notifiStatus isEqual: NOTIFI_UNREAD]) {
+            self.backgroundColor = KBACKGROUND_COLOR;
+        } else {
+            self.backgroundColor = [UIColor whiteColor];
+        }
         _lbAlert.text = _notifiModel.notifiAlert;
         _lbDate.text = [UIHelper formatStringDateToString:_notifiModel.notifiData.notifiDateTime];
     }

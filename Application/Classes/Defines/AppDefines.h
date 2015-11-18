@@ -330,4 +330,11 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
     CODetailsProjectActionInterested,
     CODetailsProjectActionQuestions
 };
+
+////////////////////////
+//by vicent
+///////////////////////
+#define NOTIFI_READ    @"READ"
+#define NOTIFI_UNREAD  @"UNREAD"
+
 #endif
