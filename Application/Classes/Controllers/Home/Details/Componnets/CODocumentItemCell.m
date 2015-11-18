@@ -33,7 +33,12 @@
     if (docDetailItem.itemTitle) {
         _detailsLabel.text = docDetailItem.itemTitle;
     } else {
-        _detailsLabel.text  = NSLocalizedString(@"NoDocumentsUploaded", nil);
+        NSString *url = [docDetailItem itemUrl];
+        if (url && [url isEqualToString:@"N/A"]) {
+            _detailsLabel.text = NSLocalizedString(@"TITLE_PRIVATE", nil);
+        } else {
+            _detailsLabel.text  = NSLocalizedString(@"NoDocumentsUploaded", nil);
+        }
     }
 }
 

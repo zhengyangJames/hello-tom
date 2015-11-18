@@ -271,6 +271,12 @@
 		B94211011BFC2C9E00C86FE8 /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FE1BFC2C9E00C86FE8 /* event.png */; settings = {ASSET_TAGS = (); }; };
 		B94211021BFC2C9E00C86FE8 /* general.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FF1BFC2C9E00C86FE8 /* general.png */; settings = {ASSET_TAGS = (); }; };
 		B94211031BFC2C9E00C86FE8 /* landingpg.png in Resources */ = {isa = PBXBuildFile; fileRef = B94211001BFC2C9E00C86FE8 /* landingpg.png */; settings = {ASSET_TAGS = (); }; };
+		B9449ABF1BFC846600E4C4A4 /* WSGetDealProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */; settings = {ASSET_TAGS = (); }; };
+		B9449AC21BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */; settings = {ASSET_TAGS = (); }; };
+		B9449ACC1BFC8B4A00E4C4A4 /* CODealCompleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ACB1BFC8B4A00E4C4A4 /* CODealCompleteModel.m */; settings = {ASSET_TAGS = (); }; };
+		B9449ACF1BFC8B7100E4C4A4 /* CODealFundedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */; settings = {ASSET_TAGS = (); }; };
+		B9449AD21BFC8B8900E4C4A4 /* CODealOngoingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD11BFC8B8900E4C4A4 /* CODealOngoingModel.m */; settings = {ASSET_TAGS = (); }; };
+		B9449AD51BFC8C5B00E4C4A4 /* CODealProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD41BFC8C5B00E4C4A4 /* CODealProfileModel.m */; settings = {ASSET_TAGS = (); }; };
 		B94A4A4F1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */; settings = {ASSET_TAGS = (); }; };
 		B9D7723F1BF9E1B2005FA75C /* CONotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D7723E1BF9E1B2005FA75C /* CONotificationModel.m */; settings = {ASSET_TAGS = (); }; };
 		B9DF964D1BF3476A00D3829A /* WSURLSessionManager+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */; settings = {ASSET_TAGS = (); }; };
@@ -688,6 +694,18 @@
 		B94210FE1BFC2C9E00C86FE8 /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event.png; sourceTree = "<group>"; };
 		B94210FF1BFC2C9E00C86FE8 /* general.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = general.png; sourceTree = "<group>"; };
 		B94211001BFC2C9E00C86FE8 /* landingpg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landingpg.png; sourceTree = "<group>"; };
+		B9449ABD1BFC846600E4C4A4 /* WSGetDealProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetDealProfileRequest.h; sourceTree = "<group>"; };
+		B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetDealProfileRequest.m; sourceTree = "<group>"; };
+		B9449AC01BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+DealProfile.h"; sourceTree = "<group>"; };
+		B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+DealProfile.m"; sourceTree = "<group>"; };
+		B9449ACA1BFC8B4A00E4C4A4 /* CODealCompleteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealCompleteModel.h; sourceTree = "<group>"; };
+		B9449ACB1BFC8B4A00E4C4A4 /* CODealCompleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealCompleteModel.m; sourceTree = "<group>"; };
+		B9449ACD1BFC8B7100E4C4A4 /* CODealFundedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealFundedModel.h; sourceTree = "<group>"; };
+		B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealFundedModel.m; sourceTree = "<group>"; };
+		B9449AD01BFC8B8900E4C4A4 /* CODealOngoingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealOngoingModel.h; sourceTree = "<group>"; };
+		B9449AD11BFC8B8900E4C4A4 /* CODealOngoingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealOngoingModel.m; sourceTree = "<group>"; };
+		B9449AD31BFC8C5B00E4C4A4 /* CODealProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealProfileModel.h; sourceTree = "<group>"; };
+		B9449AD41BFC8C5B00E4C4A4 /* CODealProfileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealProfileModel.m; sourceTree = "<group>"; };
 		B94A4A4D1BF42C090080D5E2 /* WSPostDeviceTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPostDeviceTokenRequest.h; sourceTree = "<group>"; };
 		B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPostDeviceTokenRequest.m; sourceTree = "<group>"; };
 		B9D7723D1BF9E1B2005FA75C /* CONotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONotificationModel.h; sourceTree = "<group>"; };
@@ -781,6 +799,7 @@
 		01D143791B7D1035003DF5F9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B9449AC31BFC89C300E4C4A4 /* ProfileDealModel */,
 				B9E09DA61BF9B6AB00ACD58C /* NotificationModel */,
 				BB3C84E11B9109D5004B8EF9 /* ContactsModel */,
 				BB368EAF1B87DF380066C646 /* UserProfileModel */,
@@ -1672,6 +1691,8 @@
 				7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */,
 				B9DF964B1BF3476A00D3829A /* WSURLSessionManager+Notification.h */,
 				B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */,
+				B9449AC01BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.h */,
+				B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1895,6 +1916,45 @@
 			path = iconsNotification;
 			sourceTree = "<group>";
 		};
+		B9449AC31BFC89C300E4C4A4 /* ProfileDealModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9449AC41BFC8A2800E4C4A4 /* DealCompleteModel */,
+				B9449AC51BFC8A2800E4C4A4 /* DealFundedModel */,
+				B9449AC61BFC8A2800E4C4A4 /* DealOngoingModel */,
+				B9449AD31BFC8C5B00E4C4A4 /* CODealProfileModel.h */,
+				B9449AD41BFC8C5B00E4C4A4 /* CODealProfileModel.m */,
+			);
+			path = ProfileDealModel;
+			sourceTree = "<group>";
+		};
+		B9449AC41BFC8A2800E4C4A4 /* DealCompleteModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9449ACA1BFC8B4A00E4C4A4 /* CODealCompleteModel.h */,
+				B9449ACB1BFC8B4A00E4C4A4 /* CODealCompleteModel.m */,
+			);
+			path = DealCompleteModel;
+			sourceTree = "<group>";
+		};
+		B9449AC51BFC8A2800E4C4A4 /* DealFundedModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9449ACD1BFC8B7100E4C4A4 /* CODealFundedModel.h */,
+				B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */,
+			);
+			path = DealFundedModel;
+			sourceTree = "<group>";
+		};
+		B9449AC61BFC8A2800E4C4A4 /* DealOngoingModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9449AD01BFC8B8900E4C4A4 /* CODealOngoingModel.h */,
+				B9449AD11BFC8B8900E4C4A4 /* CODealOngoingModel.m */,
+			);
+			path = DealOngoingModel;
+			sourceTree = "<group>";
+		};
 		B9E09D941BF97B1900ACD58C /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -2014,6 +2074,8 @@
 				1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */,
 				B94A4A4D1BF42C090080D5E2 /* WSPostDeviceTokenRequest.h */,
 				B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */,
+				B9449ABD1BFC846600E4C4A4 /* WSGetDealProfileRequest.h */,
+				B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -2338,7 +2400,9 @@
 				0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */,
 				7FB802BB1B4CE25700173A58 /* NSMutableString+FontSize.m in Sources */,
 				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,
+				B9449AD21BFC8B8900E4C4A4 /* CODealOngoingModel.m in Sources */,
 				7F325FA41B40E50800116445 /* RegisterViewController.m in Sources */,
+				B9449ACF1BFC8B7100E4C4A4 /* CODealFundedModel.m in Sources */,
 				1E5A6FBF1BCCC49F00C4C5A5 /* NProfileCountrieCell.m in Sources */,
 				7F325F7B1B40E50800116445 /* BaseNavigationController.m in Sources */,
 				0ECA88401B27CA7100B5656F /* NMTableViewCell.m in Sources */,
@@ -2362,6 +2426,7 @@
 				7F32601B1B40E50800116445 /* main.m in Sources */,
 				7F85290F1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m in Sources */,
 				7F325FC01B40E50800116445 /* COCheckBoxButton.m in Sources */,
+				B9449AC21BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m in Sources */,
 				7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */,
 				BB25980E1B85526800D947AF /* COProjectFundedAmountModel.m in Sources */,
 				7F325FBB1B40E50800116445 /* SettingViewController.m in Sources */,
@@ -2390,6 +2455,7 @@
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
 				7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */,
 				1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */,
+				B9449AD51BFC8C5B00E4C4A4 /* CODealProfileModel.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
 				7FE6ED611B54EB1600FA481E /* WebViewManager.m in Sources */,
 				0E8956141BBE1AC9007E36BF /* TabProfileController.m in Sources */,
@@ -2416,10 +2482,12 @@
 				BB383E2F1B8BC1B000303E34 /* COUserAccountModel.m in Sources */,
 				B9DF964D1BF3476A00D3829A /* WSURLSessionManager+Notification.m in Sources */,
 				1E5A6FC51BCCC49F00C4C5A5 /* NProfileNodataCell.m in Sources */,
+				B9449ABF1BFC846600E4C4A4 /* WSGetDealProfileRequest.m in Sources */,
 				0ECA883E1B27CA7100B5656F /* NMCollectionViewCell.m in Sources */,
 				7FA7E6B91B4E7C4D00059B13 /* COInterestedViewController.m in Sources */,
 				1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */,
 				7F325F9B1B40E50800116445 /* HomeListViewCell.m in Sources */,
+				B9449ACC1BFC8B4A00E4C4A4 /* CODealCompleteModel.m in Sources */,
 				7F325FC61B40E50800116445 /* DropListObject.m in Sources */,
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
 				BB38EE291B99F74200D15D58 /* WSPostSubscribeRequest.m in Sources */,

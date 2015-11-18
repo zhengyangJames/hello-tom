@@ -41,6 +41,8 @@
     return request;
 }
 
+
+
 - (WSPostDeviceTokenRequest *)readNotificationList:(NSDictionary *)bodyDict {
     WSPostDeviceTokenRequest *request = [[WSPostDeviceTokenRequest alloc]init];
     [request setHTTPMethod:METHOD_POST];

@@ -9,6 +9,8 @@
 #import "DealsController.h"
 #import "COPositive&NagitiveButton.h"
 #import "HomeListViewController.h"
+#import "WSGetDealProfileRequest.h"
+#import "WSURLSessionManager+DealProfile.h"
 
 @interface DealsController ()
 {
@@ -26,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _callGetDealList];
     [self _setUpUI];
 }
 
@@ -83,5 +86,19 @@
     BaseTabBarController *base = [kAppDelegate baseTabBarController];
     [base setSelectedIndex:0];
 }
+
+- (void)_callGetDealList {
+    [UIHelper showLoadingInView:self.view];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
+    [dic setObject:device_token forKey:device_token_dic];
+    [dic setObject:device_type forKey:device_type_dic];
+    [dic setObject:application_name forKey:application_name_dic];
+    [[WSURLSessionManager shared] wsGetDealRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        
+    }];
+}
+
+
 
 @end

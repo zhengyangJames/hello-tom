@@ -12,4 +12,5 @@
 - (WSPostDeviceTokenRequest *)setBodyDeviceToken:(NSDictionary *)tokenDic;
 - (WSPostDeviceTokenRequest *)getNotificationList:(NSDictionary *)paraDic;
 - (WSPostDeviceTokenRequest *)readNotificationList:(NSDictionary *)bodyDict;
+
 @end

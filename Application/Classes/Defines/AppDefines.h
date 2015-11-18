@@ -100,7 +100,10 @@
 //NotificationWS
 #define WS_METHOD_POST_NOTIFICATION_TOKEN           [WS_ENDPOINT stringByAppendingString:@"/create-notification-device/"]
 
-#define WS_METHOD_GET_NOTIFICATION_TOKEN_LIST           [WS_ENDPOINT stringByAppendingString:@"/get-notification-list/"]
+#define WS_METHOD_GET_NOTIFICATION_TOKEN_LIST       [WS_ENDPOINT stringByAppendingString:@"/get-notification-list/"]
+
+#define WS_METHOD_GET_DEAL_LIST                     [WS_ENDPOINT stringByAppendingString:@"/investor_deal_list/"]
+
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////
@@ -163,7 +166,12 @@
 #define kCOUNT_ROW_FULL_INFO                        3
 #define kCOUNT_ROW_NO_PROGRESS                      2
 #define kDEFAULT_COUNT_OF_ROW                       1
-#define kDEFAULT_NUMBER_ROW_DOC_DETAIL              2
+
+//Comment by Vincent
+//#define kDEFAULT_NUMBER_ROW_DOC_DETAIL              2
+#define kDEFAULT_NUMBER_ROW_DOC_DETAIL              0
+//Vincent End
+
 #define kHEIGHT_FOR_ROW_DEFAULT_INFO                379
 #define kHEIGHT_FOR_ROW_PROGRESS_INFO               64
 #define kHEIGHT_FOR_ROW_ACTION_INFO                 115
