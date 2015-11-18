@@ -71,10 +71,10 @@
             _introductionLabel.text = m_string(@"FUNDED");
             [self _setHiddenLabelAndButton:NO];
             break;
-        case CODealsStypeSuggest:
-            _introductionLabel.text = m_string(@"SUGEST");
-            [self _setHiddenLabelAndButton:YES];
-            break;
+//        case CODealsStypeSuggest:
+//            _introductionLabel.text = m_string(@"SUGEST");
+//            [self _setHiddenLabelAndButton:YES];
+//            break;
         default:  break;
     }
 }

@@ -35,7 +35,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxS-5y-ZmR" customClass="COPositive_NagitiveButton">
-                            <rect key="frame" x="45" y="175.5" width="231" height="45"/>
+                            <rect key="frame" x="45" y="175" width="231" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="WaR-qh-cec"/>
                             </constraints>
@@ -47,7 +47,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="5cN-x6-GIM">
-                            <rect key="frame" x="45" y="139.5" width="231" height="21"/>
+                            <rect key="frame" x="45" y="139" width="231" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="4ek-2j-Zlo"/>
                             </constraints>
@@ -83,7 +83,6 @@
                                 <segment title="Ongoing"/>
                                 <segment title="Funded"/>
                                 <segment title="Completed"/>
-                                <segment title="Suggest"/>
                             </segments>
                             <color key="tintColor" red="0.22745098039215686" green="0.25098039215686274" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -102,19 +101,11 @@
                         <constraint firstItem="QIj-IM-4zb" firstAttribute="leading" secondItem="czh-LV-xXi" secondAttribute="leading" constant="8" id="52a-bU-si3"/>
                         <constraint firstAttribute="trailing" secondItem="QIj-IM-4zb" secondAttribute="trailing" constant="8" id="8ZP-RG-1n3"/>
                         <constraint firstAttribute="bottom" secondItem="bEr-ye-3Cw" secondAttribute="bottom" id="Efz-VO-gZK"/>
-                        <constraint firstItem="QIj-IM-4zb" firstAttribute="top" secondItem="czh-LV-xXi" secondAttribute="top" constant="23" id="Kfp-PZ-eqM"/>
                         <constraint firstItem="bEr-ye-3Cw" firstAttribute="top" secondItem="QIj-IM-4zb" secondAttribute="bottom" constant="5.5" id="S8q-Pi-zAO"/>
                         <constraint firstAttribute="height" constant="85" id="UQN-TB-jv0"/>
                         <constraint firstAttribute="centerY" secondItem="QIj-IM-4zb" secondAttribute="centerY" constant="16" id="eZz-5N-lDc"/>
                         <constraint firstItem="bEr-ye-3Cw" firstAttribute="leading" secondItem="QIj-IM-4zb" secondAttribute="leading" id="sKk-np-oeG"/>
-                        <constraint firstAttribute="centerX" secondItem="QIj-IM-4zb" secondAttribute="centerX" id="xaC-aq-9x5"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Kfp-PZ-eqM"/>
-                            <exclude reference="xaC-aq-9x5"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

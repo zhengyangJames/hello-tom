@@ -21,14 +21,13 @@
 #import "CONotificationBannerView.h"
 #import "WSPostDeviceTokenRequest.h"
 #import "WSURLSessionManager+Notification.h"
+#import "CONotificationModel.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate,CONotificationBannerViewDelegate>
 {
     BOOL _keyShowNotificationBanner;
     NSDictionary *_userInfo;
     NSUInteger sellectdate;
-    NSArray *dataNotifiArr;
-//    BOOL deviceTokenExist;
 }
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
 @property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
@@ -418,17 +417,12 @@
     [dic setObject:device_type forKey:device_type_dic];
     [dic setObject:application_name forKey:application_name_dic];
     [[WSURLSessionManager shared] wsGetNotificationListRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
-            dataNotifiArr = nil;
-            dataNotifiArr = (NSArray*)responseObject;
-            NSString *inStr = [NSString stringWithFormat: @"%ld", (unsigned long)dataNotifiArr.count];
-            [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:inStr ];
+            [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[UIHelper setBadgeValueNotification:responseObject] ];
         } else {
         }
         
     }];
 }
-
 
 @end

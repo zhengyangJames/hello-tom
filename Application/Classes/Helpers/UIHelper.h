@@ -57,6 +57,8 @@
 + (NSString *)getProjectTypeWithKey:(NSString*)key;
 + (NSString *)getProjectTypeWithValue:(NSString*)value;
 
+// by vincent
 + (NSString *)formatStringDateToString:(NSString*)strDate;
++ (NSString *)setBadgeValueNotification:(id )responseObject;
 
 @end

@@ -71,7 +71,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
+    return 75;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,6 +111,7 @@
 #pragma mark - POST Notification
 
 - (void)_callGetNotificationList {
+    [UIHelper showLoadingInView:self.view];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
     [dic setObject:device_token forKey:device_token_dic];
@@ -121,8 +122,7 @@
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = nil;
             self.arrayData = (NSArray*)responseObject;
-            NSString *inStr = [NSString stringWithFormat: @"%lu", (unsigned long)self.arrayData.count];
-            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:inStr ];
+            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[UIHelper setBadgeValueNotification:responseObject]];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [_tableview reloadData];
             }];
