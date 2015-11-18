@@ -17,16 +17,17 @@
 - (void)wsPostDeviceTokenRequest:(NSDictionary *)pagaBody handler:(WSURLSessionHandler)handler {
     
     WSPostDeviceTokenRequest *request = [[WSPostDeviceTokenRequest alloc]init];
-    [request setBodyDeviceToken:pagaBody];
+    request = [request setBodyDeviceToken:pagaBody];
+    
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
+            [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
             if (handler) {
                 handler(responseObject,response,error);
-                [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
             }
         } else {
+            [self setError:responseObject];
             if (handler) {
-                [self setError:responseObject];
                 handler(responseObject,response,error);
             }
         }
