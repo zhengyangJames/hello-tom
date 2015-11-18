@@ -267,6 +267,10 @@
 		7FE6ED611B54EB1600FA481E /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6ED601B54EB1600FA481E /* WebViewManager.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
 		B6E0480B9D22B5D1A1440F77 /* libPods-CoAssets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D073E4F729C05E9C9A1DB5F5 /* libPods-CoAssets.a */; };
+		B94210FD1BFC2C7400C86FE8 /* offer.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210F91BFC2C7400C86FE8 /* offer.png */; settings = {ASSET_TAGS = (); }; };
+		B94211011BFC2C9E00C86FE8 /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FE1BFC2C9E00C86FE8 /* event.png */; settings = {ASSET_TAGS = (); }; };
+		B94211021BFC2C9E00C86FE8 /* general.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FF1BFC2C9E00C86FE8 /* general.png */; settings = {ASSET_TAGS = (); }; };
+		B94211031BFC2C9E00C86FE8 /* landingpg.png in Resources */ = {isa = PBXBuildFile; fileRef = B94211001BFC2C9E00C86FE8 /* landingpg.png */; settings = {ASSET_TAGS = (); }; };
 		B94A4A4F1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */; settings = {ASSET_TAGS = (); }; };
 		B9D7723F1BF9E1B2005FA75C /* CONotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D7723E1BF9E1B2005FA75C /* CONotificationModel.m */; settings = {ASSET_TAGS = (); }; };
 		B9DF964D1BF3476A00D3829A /* WSURLSessionManager+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */; settings = {ASSET_TAGS = (); }; };
@@ -680,6 +684,10 @@
 		7FE6ED601B54EB1600FA481E /* WebViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewManager.m; sourceTree = "<group>"; };
 		7FF529F61B413E4A0072F6F4 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		B94210F91BFC2C7400C86FE8 /* offer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offer.png; sourceTree = "<group>"; };
+		B94210FE1BFC2C9E00C86FE8 /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event.png; sourceTree = "<group>"; };
+		B94210FF1BFC2C9E00C86FE8 /* general.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = general.png; sourceTree = "<group>"; };
+		B94211001BFC2C9E00C86FE8 /* landingpg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landingpg.png; sourceTree = "<group>"; };
 		B94A4A4D1BF42C090080D5E2 /* WSPostDeviceTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPostDeviceTokenRequest.h; sourceTree = "<group>"; };
 		B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPostDeviceTokenRequest.m; sourceTree = "<group>"; };
 		B9D7723D1BF9E1B2005FA75C /* CONotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONotificationModel.h; sourceTree = "<group>"; };
@@ -1682,6 +1690,7 @@
 		7F325F161B40E50800116445 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B94210F41BFC2C7400C86FE8 /* Icons */,
 				BB5B9A441B790E4D002D37AF /* Languages */,
 				7F325F181B40E50800116445 /* Font */,
 				7F325F2B1B40E50800116445 /* Images */,
@@ -1865,6 +1874,25 @@
 				7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */,
 			);
 			path = COPopUpView;
+			sourceTree = "<group>";
+		};
+		B94210F41BFC2C7400C86FE8 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B94210F51BFC2C7400C86FE8 /* iconsNotification */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		B94210F51BFC2C7400C86FE8 /* iconsNotification */ = {
+			isa = PBXGroup;
+			children = (
+				B94210FE1BFC2C9E00C86FE8 /* event.png */,
+				B94210FF1BFC2C9E00C86FE8 /* general.png */,
+				B94211001BFC2C9E00C86FE8 /* landingpg.png */,
+				B94210F91BFC2C7400C86FE8 /* offer.png */,
+			);
+			path = iconsNotification;
 			sourceTree = "<group>";
 		};
 		B9E09D941BF97B1900ACD58C /* Notification */ = {
@@ -2070,6 +2098,8 @@
 				7F3260571B40E50800116445 /* ic_setting@3x.png in Resources */,
 				7F32604B1B40E50800116445 /* ic_line_char@2x.png in Resources */,
 				7F32604C1B40E50800116445 /* ic_line_char@3x.png in Resources */,
+				B94211031BFC2C9E00C86FE8 /* landingpg.png in Resources */,
+				B94211011BFC2C9E00C86FE8 /* event.png in Resources */,
 				7F2C77471B4E07BA00C69365 /* COOfferInfoCell.xib in Resources */,
 				7F3260311B40E50800116445 /* Ic_back@2x.png in Resources */,
 				B9E09D991BF97B3900ACD58C /* NotificationViewController.xib in Resources */,
@@ -2083,6 +2113,7 @@
 				7F325F8D1B40E50800116445 /* COOfferHeadingCell.xib in Resources */,
 				7F325FBA1B40E50800116445 /* ContacViewController.xib in Resources */,
 				7F3260421B40E50800116445 /* ic_Earth@3x.png in Resources */,
+				B94210FD1BFC2C7400C86FE8 /* offer.png in Resources */,
 				7F325F9A1B40E50800116445 /* OfferViewController.xib in Resources */,
 				0E89561B1BBE1BB2007E36BF /* AccountController.xib in Resources */,
 				7F32603D1B40E50800116445 /* ic_contac_2_heightlight@3x.png in Resources */,
@@ -2159,6 +2190,7 @@
 				7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */,
 				1E5A6FC01BCCC49F00C4C5A5 /* NProfileCountrieCell.xib in Resources */,
 				7F3260551B40E50800116445 /* ic_peropel@3x.png in Resources */,
+				B94211021BFC2C9E00C86FE8 /* general.png in Resources */,
 				BBBD82031B8BE0720061FFF0 /* ForgotPasswordViewController.xib in Resources */,
 				7F3260771B40E50800116445 /* SettingPlist.plist in Resources */,
 				7F32605C1B40E50800116445 /* ic_setting_heightline@2x.png in Resources */,

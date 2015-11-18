@@ -43,6 +43,7 @@
     _tableview.dataSource = self;
     _tableview.tableFooterView = [UIView new];
     [_tableview registerNib:[UINib nibWithNibName:[NotificationCell identifier] bundle:nil] forCellReuseIdentifier:[NotificationCell identifier]];
+    
 }
 
 #pragma mark - setData
@@ -120,7 +121,8 @@
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = nil;
             self.arrayData = (NSArray*)responseObject;
-            DBG(@"%lu",(unsigned long)self.arrayData.count);
+            NSString *inStr = [NSString stringWithFormat: @"%lu", (unsigned long)self.arrayData.count];
+            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:inStr ];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [_tableview reloadData];
             }];

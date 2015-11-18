@@ -27,6 +27,7 @@
     BOOL _keyShowNotificationBanner;
     NSDictionary *_userInfo;
     NSUInteger sellectdate;
+    NSArray *dataNotifiArr;
 //    BOOL deviceTokenExist;
 }
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
@@ -383,6 +384,7 @@
 #pragma mark - POST Notification
 
 - (void)_checkCreadDeviceToken {
+    
     if ([kUserDefaults objectForKey:DEVICE_TOKEN_EXIST] != nil) {
         self.deviceTokenExist = [kUserDefaults boolForKey:DEVICE_TOKEN_EXIST];
     } else {
@@ -393,6 +395,7 @@
     if (self.deviceTokenExist == NO && deviceToken != nil) {
         [self _callPostDeviceToken];
     }
+    [self _callGetNotificationList];
 }
 
 - (void)_callPostDeviceToken {
@@ -407,5 +410,25 @@
         
     }];
 }
+
+- (void)_callGetNotificationList {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
+    [dic setObject:device_token forKey:device_token_dic];
+    [dic setObject:device_type forKey:device_type_dic];
+    [dic setObject:application_name forKey:application_name_dic];
+    [[WSURLSessionManager shared] wsGetNotificationListRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        
+        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
+            dataNotifiArr = nil;
+            dataNotifiArr = (NSArray*)responseObject;
+            NSString *inStr = [NSString stringWithFormat: @"%ld", (unsigned long)dataNotifiArr.count];
+            [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:inStr ];
+        } else {
+        }
+        
+    }];
+}
+
 
 @end

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
@@ -20,8 +21,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="287" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aCy-8c-yIm">
+                        <rect key="frame" x="16" y="5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="QZR-eo-diO"/>
+                            <constraint firstAttribute="height" constant="40" id="a86-GM-VvD"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbd-Ws-t8q">
-                        <rect key="frame" x="16" y="5" width="36" height="18"/>
+                        <rect key="frame" x="64" y="6" width="207" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="J6f-9t-RKI"/>
                             <constraint firstAttribute="height" constant="21" id="o9W-0Q-HDR"/>
@@ -41,7 +49,7 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Alert:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQm-fV-bzw">
-                        <rect key="frame" x="16" y="27" width="37" height="18"/>
+                        <rect key="frame" x="64" y="24" width="207" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="42" id="fLf-4p-tzZ"/>
                         </constraints>
@@ -61,22 +69,35 @@
                     <constraint firstItem="kbd-Ws-t8q" firstAttribute="leading" secondItem="bG7-fc-onJ" secondAttribute="leading" constant="16" id="KJG-Kw-LBn"/>
                     <constraint firstItem="kbd-Ws-t8q" firstAttribute="top" secondItem="bG7-fc-onJ" secondAttribute="top" constant="5" id="NfV-JM-rjF"/>
                     <constraint firstItem="UQm-fV-bzw" firstAttribute="leading" secondItem="bG7-fc-onJ" secondAttribute="leading" constant="16" id="QIz-iC-EaS"/>
+                    <constraint firstItem="aCy-8c-yIm" firstAttribute="centerY" secondItem="bG7-fc-onJ" secondAttribute="centerY" id="Qgb-T7-XGS"/>
+                    <constraint firstItem="aCy-8c-yIm" firstAttribute="leading" secondItem="bG7-fc-onJ" secondAttribute="leading" constant="16" id="RHA-Au-jeO"/>
+                    <constraint firstItem="kbd-Ws-t8q" firstAttribute="centerY" secondItem="aCy-8c-yIm" secondAttribute="centerY" constant="-10" id="Sj4-qI-ed6"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="UQm-fV-bzw" secondAttribute="trailing" constant="8" id="W9k-57-BeY"/>
+                    <constraint firstItem="UQm-fV-bzw" firstAttribute="leading" secondItem="aCy-8c-yIm" secondAttribute="trailing" constant="8" id="aPZ-7c-b9c"/>
+                    <constraint firstItem="kbd-Ws-t8q" firstAttribute="leading" secondItem="aCy-8c-yIm" secondAttribute="trailing" constant="8" id="aYD-EX-RQ3"/>
                     <constraint firstItem="UQm-fV-bzw" firstAttribute="top" secondItem="kbd-Ws-t8q" secondAttribute="bottom" constant="4" id="fEw-nb-jQ8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kbd-Ws-t8q" secondAttribute="trailing" constant="8" id="mkC-r4-cyq"/>
                     <constraint firstItem="kbd-Ws-t8q" firstAttribute="top" secondItem="bG7-fc-onJ" secondAttribute="top" constant="5" id="rzF-wQ-HL5"/>
                     <constraint firstItem="UQm-fV-bzw" firstAttribute="leading" secondItem="bG7-fc-onJ" secondAttribute="leading" id="wNB-T6-jnm"/>
+                    <constraint firstItem="UQm-fV-bzw" firstAttribute="centerY" secondItem="aCy-8c-yIm" secondAttribute="centerY" constant="8" id="x2b-ne-nvr"/>
                     <constraint firstItem="UQm-fV-bzw" firstAttribute="top" secondItem="kbd-Ws-t8q" secondAttribute="bottom" constant="4" id="zuN-s4-1aW"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="C6Z-vj-zQj"/>
+                        <exclude reference="KJG-Kw-LBn"/>
                         <exclude reference="NfV-JM-rjF"/>
+                        <exclude reference="rzF-wQ-HL5"/>
                         <exclude reference="G4U-YM-og6"/>
+                        <exclude reference="QIz-iC-EaS"/>
                         <exclude reference="fEw-nb-jQ8"/>
                         <exclude reference="wNB-T6-jnm"/>
+                        <exclude reference="zuN-s4-1aW"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="_iconNotifi" destination="aCy-8c-yIm" id="5hj-RX-mvP"/>
                 <outlet property="_lbAlert" destination="UQm-fV-bzw" id="eMN-Cp-KMF"/>
                 <outlet property="_lbDate" destination="kbd-Ws-t8q" id="WyN-vT-HI3"/>
             </connections>
