@@ -10,4 +10,14 @@
 
 @implementation CODealFundedModel
 
++(NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @ {
+        @"dealOngoingModel"          : @"ongoing",
+        @"dealFundedModel"           : @"funded",
+        @"dealCompleteModel"         : @"completed",
+        @"signContractInstruction"   : @"sign_contract_instruction",
+        @"paymentInstruction"        : @"payment_instruction",
+    };
+}
+
 @end

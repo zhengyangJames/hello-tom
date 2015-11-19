@@ -14,4 +14,13 @@
 
 @interface CODealProfileModel : MTLModel<MTLJSONSerializing>
 
+@property (nonatomic, strong) CODealOngoingModel  *dealOngoingModel;
+@property (nonatomic, strong) CODealFundedModel   *dealFundedModel;
+@property (nonatomic, strong) CODealCompleteModel *dealCompleteModel;
+@property (nonatomic, strong) NSString *signContractInstruction;
+@property (nonatomic, strong) NSString *paymentInstruction;
+
+- (NSString *)stringOfSignContractInstruction;
+- (NSString *)stringOfPaymentInstruction;
+
 @end

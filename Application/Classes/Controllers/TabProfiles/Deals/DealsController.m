@@ -90,8 +90,8 @@
 - (void)_callGetDealList {
     [UIHelper showLoadingInView:self.view];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    [dic setObject:device_token forKey:device_token_dic];
+//    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
+    [dic setObject:@"70624671f057fd5f573726f668bc8809848bc9a185f2a2c5982f16f165a2eab9" forKey:device_token_dic];
     [dic setObject:device_type forKey:device_type_dic];
     [dic setObject:application_name forKey:application_name_dic];
     [[WSURLSessionManager shared] wsGetDealRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {

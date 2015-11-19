@@ -10,6 +10,8 @@
 		012BDB9F1BA535F700252D12 /* COListFilterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDB8F1BA535F700252D12 /* COListFilterObject.m */; };
 		012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FA93C1B7A13A600A80D3F /* LoadFileManager.m */; };
 		01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1437B1B7D1053003DF5F9 /* COOfferModel.m */; };
+		0E2DFF931BFCC64C00C46815 /* CODealCompleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DFF911BFCC64C00C46815 /* CODealCompleteModel.m */; };
+		0E2DFF981BFCC6ED00C46815 /* COFundStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DFF971BFCC6ED00C46815 /* COFundStatusModel.m */; };
 		0E39FA621BC4247000880834 /* NProfileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4C1BC4247000880834 /* NProfileDataSource.m */; };
 		0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4E1BC4247000880834 /* NProfileDelegate.m */; };
 		0E8956141BBE1AC9007E36BF /* TabProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956121BBE1AC9007E36BF /* TabProfileController.m */; };
@@ -267,24 +269,23 @@
 		7FE6ED611B54EB1600FA481E /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6ED601B54EB1600FA481E /* WebViewManager.m */; };
 		7FF529F81B413E4A0072F6F4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
 		B6E0480B9D22B5D1A1440F77 /* libPods-CoAssets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D073E4F729C05E9C9A1DB5F5 /* libPods-CoAssets.a */; };
-		B94210FD1BFC2C7400C86FE8 /* offer.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210F91BFC2C7400C86FE8 /* offer.png */; settings = {ASSET_TAGS = (); }; };
-		B94211011BFC2C9E00C86FE8 /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FE1BFC2C9E00C86FE8 /* event.png */; settings = {ASSET_TAGS = (); }; };
-		B94211021BFC2C9E00C86FE8 /* general.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FF1BFC2C9E00C86FE8 /* general.png */; settings = {ASSET_TAGS = (); }; };
-		B94211031BFC2C9E00C86FE8 /* landingpg.png in Resources */ = {isa = PBXBuildFile; fileRef = B94211001BFC2C9E00C86FE8 /* landingpg.png */; settings = {ASSET_TAGS = (); }; };
-		B9449ABF1BFC846600E4C4A4 /* WSGetDealProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */; settings = {ASSET_TAGS = (); }; };
-		B9449AC21BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */; settings = {ASSET_TAGS = (); }; };
-		B9449ACC1BFC8B4A00E4C4A4 /* CODealCompleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ACB1BFC8B4A00E4C4A4 /* CODealCompleteModel.m */; settings = {ASSET_TAGS = (); }; };
-		B9449ACF1BFC8B7100E4C4A4 /* CODealFundedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */; settings = {ASSET_TAGS = (); }; };
-		B9449AD21BFC8B8900E4C4A4 /* CODealOngoingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD11BFC8B8900E4C4A4 /* CODealOngoingModel.m */; settings = {ASSET_TAGS = (); }; };
-		B9449AD51BFC8C5B00E4C4A4 /* CODealProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD41BFC8C5B00E4C4A4 /* CODealProfileModel.m */; settings = {ASSET_TAGS = (); }; };
-		B94A4A4F1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */; settings = {ASSET_TAGS = (); }; };
-		B9D7723F1BF9E1B2005FA75C /* CONotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D7723E1BF9E1B2005FA75C /* CONotificationModel.m */; settings = {ASSET_TAGS = (); }; };
-		B9DF964D1BF3476A00D3829A /* WSURLSessionManager+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */; settings = {ASSET_TAGS = (); }; };
-		B9E09D981BF97B3900ACD58C /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09D961BF97B3900ACD58C /* NotificationViewController.m */; settings = {ASSET_TAGS = (); }; };
-		B9E09D991BF97B3900ACD58C /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E09D971BF97B3900ACD58C /* NotificationViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		B9E09D9D1BF97E8000ACD58C /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09D9C1BF97E8000ACD58C /* NotificationCell.m */; settings = {ASSET_TAGS = (); }; };
-		B9E09D9F1BF97E8C00ACD58C /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E09D9E1BF97E8C00ACD58C /* NotificationCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B9E09DAD1BF9D50200ACD58C /* CONotificationDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09DAC1BF9D50200ACD58C /* CONotificationDataModel.m */; settings = {ASSET_TAGS = (); }; };
+		B94210FD1BFC2C7400C86FE8 /* offer.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210F91BFC2C7400C86FE8 /* offer.png */; };
+		B94211011BFC2C9E00C86FE8 /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FE1BFC2C9E00C86FE8 /* event.png */; };
+		B94211021BFC2C9E00C86FE8 /* general.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FF1BFC2C9E00C86FE8 /* general.png */; };
+		B94211031BFC2C9E00C86FE8 /* landingpg.png in Resources */ = {isa = PBXBuildFile; fileRef = B94211001BFC2C9E00C86FE8 /* landingpg.png */; };
+		B9449ABF1BFC846600E4C4A4 /* WSGetDealProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */; };
+		B9449AC21BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */; };
+		B9449ACF1BFC8B7100E4C4A4 /* CODealFundedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */; };
+		B9449AD21BFC8B8900E4C4A4 /* CODealOngoingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD11BFC8B8900E4C4A4 /* CODealOngoingModel.m */; };
+		B9449AD51BFC8C5B00E4C4A4 /* CODealProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD41BFC8C5B00E4C4A4 /* CODealProfileModel.m */; };
+		B94A4A4F1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */; };
+		B9D7723F1BF9E1B2005FA75C /* CONotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D7723E1BF9E1B2005FA75C /* CONotificationModel.m */; };
+		B9DF964D1BF3476A00D3829A /* WSURLSessionManager+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */; };
+		B9E09D981BF97B3900ACD58C /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09D961BF97B3900ACD58C /* NotificationViewController.m */; };
+		B9E09D991BF97B3900ACD58C /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E09D971BF97B3900ACD58C /* NotificationViewController.xib */; };
+		B9E09D9D1BF97E8000ACD58C /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09D9C1BF97E8000ACD58C /* NotificationCell.m */; };
+		B9E09D9F1BF97E8C00ACD58C /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E09D9E1BF97E8C00ACD58C /* NotificationCell.xib */; };
+		B9E09DAD1BF9D50200ACD58C /* CONotificationDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09DAC1BF9D50200ACD58C /* CONotificationDataModel.m */; };
 		BB25980E1B85526800D947AF /* COProjectFundedAmountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25980D1B85526800D947AF /* COProjectFundedAmountModel.m */; };
 		BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D61B8243F000BF6861 /* CODocumentModel.m */; };
 		BB3097DA1B824F0C00BF6861 /* CODocumentItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */; };
@@ -320,6 +321,10 @@
 		012FA93D1B7A13A600A80D3F /* LoadFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadFileManager.h; sourceTree = "<group>"; };
 		01D1437A1B7D1053003DF5F9 /* COOfferModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOfferModel.h; sourceTree = "<group>"; };
 		01D1437B1B7D1053003DF5F9 /* COOfferModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOfferModel.m; sourceTree = "<group>"; };
+		0E2DFF901BFCC64C00C46815 /* CODealCompleteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealCompleteModel.h; sourceTree = "<group>"; };
+		0E2DFF911BFCC64C00C46815 /* CODealCompleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealCompleteModel.m; sourceTree = "<group>"; };
+		0E2DFF961BFCC6ED00C46815 /* COFundStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFundStatusModel.h; sourceTree = "<group>"; };
+		0E2DFF971BFCC6ED00C46815 /* COFundStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFundStatusModel.m; sourceTree = "<group>"; };
 		0E39FA4B1BC4247000880834 /* NProfileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDataSource.h; sourceTree = "<group>"; };
 		0E39FA4C1BC4247000880834 /* NProfileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileDataSource.m; sourceTree = "<group>"; };
 		0E39FA4D1BC4247000880834 /* NProfileDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDelegate.h; sourceTree = "<group>"; };
@@ -698,8 +703,6 @@
 		B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetDealProfileRequest.m; sourceTree = "<group>"; };
 		B9449AC01BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+DealProfile.h"; sourceTree = "<group>"; };
 		B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+DealProfile.m"; sourceTree = "<group>"; };
-		B9449ACA1BFC8B4A00E4C4A4 /* CODealCompleteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealCompleteModel.h; sourceTree = "<group>"; };
-		B9449ACB1BFC8B4A00E4C4A4 /* CODealCompleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealCompleteModel.m; sourceTree = "<group>"; };
 		B9449ACD1BFC8B7100E4C4A4 /* CODealFundedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealFundedModel.h; sourceTree = "<group>"; };
 		B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealFundedModel.m; sourceTree = "<group>"; };
 		B9449AD01BFC8B8900E4C4A4 /* CODealOngoingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealOngoingModel.h; sourceTree = "<group>"; };
@@ -806,6 +809,39 @@
 				1ECEAE881BC76175006FE0CA /* OfferModel */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0E2DFF8D1BFCC5F500C46815 /* FundStatusModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E2DFF961BFCC6ED00C46815 /* COFundStatusModel.h */,
+				0E2DFF971BFCC6ED00C46815 /* COFundStatusModel.m */,
+			);
+			path = FundStatusModel;
+			sourceTree = "<group>";
+		};
+		0E2DFF8E1BFCC5FB00C46815 /* OngoingStatusModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OngoingStatusModel;
+			sourceTree = "<group>";
+		};
+		0E2DFF8F1BFCC64C00C46815 /* DealCompleteModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E2DFF921BFCC64C00C46815 /* CompleteStatusModel */,
+				0E2DFF901BFCC64C00C46815 /* CODealCompleteModel.h */,
+				0E2DFF911BFCC64C00C46815 /* CODealCompleteModel.m */,
+			);
+			path = DealCompleteModel;
+			sourceTree = "<group>";
+		};
+		0E2DFF921BFCC64C00C46815 /* CompleteStatusModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CompleteStatusModel;
 			sourceTree = "<group>";
 		};
 		0E39FA491BC4247000880834 /* Components */ = {
@@ -1919,7 +1955,7 @@
 		B9449AC31BFC89C300E4C4A4 /* ProfileDealModel */ = {
 			isa = PBXGroup;
 			children = (
-				B9449AC41BFC8A2800E4C4A4 /* DealCompleteModel */,
+				0E2DFF8F1BFCC64C00C46815 /* DealCompleteModel */,
 				B9449AC51BFC8A2800E4C4A4 /* DealFundedModel */,
 				B9449AC61BFC8A2800E4C4A4 /* DealOngoingModel */,
 				B9449AD31BFC8C5B00E4C4A4 /* CODealProfileModel.h */,
@@ -1928,18 +1964,10 @@
 			path = ProfileDealModel;
 			sourceTree = "<group>";
 		};
-		B9449AC41BFC8A2800E4C4A4 /* DealCompleteModel */ = {
-			isa = PBXGroup;
-			children = (
-				B9449ACA1BFC8B4A00E4C4A4 /* CODealCompleteModel.h */,
-				B9449ACB1BFC8B4A00E4C4A4 /* CODealCompleteModel.m */,
-			);
-			path = DealCompleteModel;
-			sourceTree = "<group>";
-		};
 		B9449AC51BFC8A2800E4C4A4 /* DealFundedModel */ = {
 			isa = PBXGroup;
 			children = (
+				0E2DFF8D1BFCC5F500C46815 /* FundStatusModel */,
 				B9449ACD1BFC8B7100E4C4A4 /* CODealFundedModel.h */,
 				B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */,
 			);
@@ -1949,6 +1977,7 @@
 		B9449AC61BFC8A2800E4C4A4 /* DealOngoingModel */ = {
 			isa = PBXGroup;
 			children = (
+				0E2DFF8E1BFCC5FB00C46815 /* OngoingStatusModel */,
 				B9449AD01BFC8B8900E4C4A4 /* CODealOngoingModel.h */,
 				B9449AD11BFC8B8900E4C4A4 /* CODealOngoingModel.m */,
 			);
@@ -2109,6 +2138,7 @@
 		0EFEB4A81B2724B2001195B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Sanyi;
 				TargetAttributes = {
@@ -2362,6 +2392,7 @@
 				7F325F7C1B40E50800116445 /* BaseTabBarController.m in Sources */,
 				BB3A9F6A1B9660DB002EEB1C /* WSUpdateProfileRequest.m in Sources */,
 				B9D7723F1BF9E1B2005FA75C /* CONotificationModel.m in Sources */,
+				0E2DFF981BFCC6ED00C46815 /* COFundStatusModel.m in Sources */,
 				7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */,
 				BB3A9F641B962BB8002EEB1C /* WSChangePassWordRequest.m in Sources */,
 				0ECA884A1B27CA7100B5656F /* NMImageHelper.m in Sources */,
@@ -2454,6 +2485,7 @@
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
 				7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */,
+				0E2DFF931BFCC64C00C46815 /* CODealCompleteModel.m in Sources */,
 				1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */,
 				B9449AD51BFC8C5B00E4C4A4 /* CODealProfileModel.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
@@ -2487,7 +2519,6 @@
 				7FA7E6B91B4E7C4D00059B13 /* COInterestedViewController.m in Sources */,
 				1EF23C1A1BBE6BAF006020C2 /* EditPasswordProfileVC.m in Sources */,
 				7F325F9B1B40E50800116445 /* HomeListViewCell.m in Sources */,
-				B9449ACC1BFC8B4A00E4C4A4 /* CODealCompleteModel.m in Sources */,
 				7F325FC61B40E50800116445 /* DropListObject.m in Sources */,
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
 				BB38EE291B99F74200D15D58 /* WSPostSubscribeRequest.m in Sources */,
