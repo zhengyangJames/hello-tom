@@ -173,6 +173,11 @@
                 if (strError && [strError isEqualToString:ERROR_AUTH_NOT_PROVIDED]) {
                     errorMessage = ERROR_AUTH_NOT_PROVIDED;
                 }
+                
+                strError = [responseObject objectForKeyNotNull:@"error"];
+                if (strError) {
+                    errorMessage = strError;
+                }
             }
             
             NSInteger errorCode = statusCodeWS;

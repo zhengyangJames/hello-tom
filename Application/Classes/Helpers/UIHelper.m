@@ -306,6 +306,7 @@
 }
 
 + (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font {
+    if (string == nil) string = @"";
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];
     return [[[NSAttributedString alloc] initWithString:string attributes:attributes] size].width;
 }
