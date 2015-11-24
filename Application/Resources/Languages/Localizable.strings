@@ -158,3 +158,5 @@
 
 "NEW_OFFER"                             = "I want to invest new offer I want to invest new offer I want to invest new offer";
 "TITLE_PRIVATE"         = "PRIVATE";
+
+"MINIMUM_MESSAGE"       = "Minimum investment amount is %@";

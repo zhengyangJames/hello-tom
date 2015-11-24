@@ -74,7 +74,9 @@
 - (void)__actionDone {
     [self.view endEditing:YES];
     if ([self _checkEmailAmount]) {
-        [self _callWSInteredted];
+        if ([self _checkMinimumInvestmentAmount]) {
+            [self _callWSInteredted];
+        }
     }
 }
 
@@ -122,6 +124,16 @@
     NSString *string = [NSString stringWithFormat:NSLocalizedString(@"Interested_Popup", nil),self.coInterested.stringOfOfferTitle];
     
     return string;
+}
+
+- (BOOL)_checkMinimumInvestmentAmount {
+    NSInteger current = _amountTextField.text.integerValue;
+    NSInteger minimum = _coInterested.numberOfOfferAmount.integerValue;
+    if (current && minimum && current > minimum) {
+        return YES;
+    }
+    [UIHelper showAlertViewErrorWithMessage:[NSString stringWithFormat:NSLocalizedString(@"MINIMUM_MESSAGE", nil),_coInterested.numberOfOfferAmount.stringValue] delegate:nil tag:0];
+    return NO;
 }
 
 - (BOOL)_checkEmailAmount {
