@@ -134,8 +134,10 @@
     EditCompanyVC *vc = [[EditCompanyVC alloc]init];
     vc.companyUserModel = self.companyModel;
     vc.actionDone = ^(CGFloat updateForCellImage) {
-        self.companyModel = nil;
-        [self _reloadTableview];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.companyModel = nil;
+            [self _reloadTableview];
+        }];
     };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];

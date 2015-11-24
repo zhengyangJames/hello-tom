@@ -36,6 +36,21 @@
     request = [request getCompanyProfile];
     
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        
+        ///*
+         //////DEBUG
+         NSString *errorMessage = ERROR_AUTH_NOT_PROVIDED;
+         NSInteger errorCode = 11;
+         NSError *error___ = [NSError errorWithDomain:WS_ERROR_DOMAIN
+         code:errorCode
+         userInfo:@{@"message":errorMessage}];
+         if (handler) {
+         handler(nil,response,error___);
+         }
+         /////END
+         //*/
+        
+        /*
         if (!error && responseObject) {
             NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil];
             [kUserDefaults setObject:data forKey:UPDATE_COMPANY_PROFILE_JSON];
@@ -50,6 +65,7 @@
                 handler(responseObject,response,error);
             }
         }
+         */
     }];
 }
 

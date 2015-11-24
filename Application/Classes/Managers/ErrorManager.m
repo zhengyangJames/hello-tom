@@ -36,7 +36,7 @@
             message = error.localizedDescription;
         }
         if ([message isEqualToString:ERROR_AUTH_NOT_PROVIDED]) {
-            [[ErrorManager shared] showLogin];
+            [kAppDelegate clearData];
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:m_string(@"CoAssets")
                                                                 message:message
@@ -67,8 +67,6 @@
 }
 
 - (void)showLogin {
-    // clear all
-    [kAppDelegate clearData];
     UIViewController *vc = [self getCurrentViewController];
     if (vc && [vc isKindOfClass:[LoginViewController class]]) {
         return;

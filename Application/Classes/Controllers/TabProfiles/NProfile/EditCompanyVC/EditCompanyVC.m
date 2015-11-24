@@ -31,6 +31,8 @@
     NSString *_orgType;
     NSString *_urlImageProfile;
     CGFloat _heightImage;
+    
+    BOOL _isChooseImage;
 }
 
 @property (nonatomic, strong) NSMutableArray *arrayOrgType;
@@ -184,11 +186,9 @@
 }
 
 - (void)_updateProfileUserModel:(NSDictionary*)obj {
-   
     NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
     [kUserDefaults setObject:data forKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults synchronize];
-    [self _postCampanyProfile:obj];
 }
 
 #pragma mark - Delegate
@@ -206,6 +206,7 @@
     UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
     [self _updateHeightViewTop:image];
     if (image) {
+        _isChooseImage = YES;
         [_imageCompany setImage:image];
     } else {
         DBG(@"/********-No-Image-Choice-*********/");
@@ -224,14 +225,14 @@
 
 - (void)_postCampanyProfile:(NSDictionary *)dic {
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsPostDeviceTokenRequest:dic imageView:_imageCompany Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    UIImageView *logo = _isChooseImage == YES?_imageCompany:nil;
+    [[WSURLSessionManager shared] wsPostDeviceTokenRequest:dic imageView:logo Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
 //            [self _updateProfileUserModel:dic];
             if (self.actionDone) {
                 self.actionDone(_heightImage);
             }
             [self dismissViewControllerAnimated:YES completion:^{}];
-
         } else {
             [UIHelper showLoadingInView:self.view];
             [ErrorManager showError:error];
