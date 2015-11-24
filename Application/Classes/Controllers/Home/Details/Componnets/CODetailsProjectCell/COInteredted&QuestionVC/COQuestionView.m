@@ -76,7 +76,7 @@
             [kNotificationCenter postNotificationName:kNOTIFICATION_QUESTION object:nil];
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"REQUEST_SEND", nil) delegate:self tag:0];
         } else {
-            [UIHelper showError:error];
+            [ErrorManager showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

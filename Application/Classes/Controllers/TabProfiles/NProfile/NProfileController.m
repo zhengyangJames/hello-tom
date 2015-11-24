@@ -175,12 +175,14 @@
 #pragma mark - WS Update Profile
 - (void)_updateProfile {
     [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
-        if (object && [object isKindOfClass:[NSDictionary class]]) {
+        if (object && [object isKindOfClass:[NSDictionary class]] && !error) {
             [[COLoginManager shared] setUserModel:nil];
             [[COLoginManager shared] setInvestorModel:nil];
             self.userModel = nil;
             self.investorModel = nil;
             [self _reloadTableview];
+        } else {
+            [ErrorManager showError:error];
         }
     }];
 }

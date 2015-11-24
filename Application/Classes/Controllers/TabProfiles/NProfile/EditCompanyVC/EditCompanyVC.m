@@ -12,6 +12,7 @@
 #import "COBorderTextField.h"
 #import "COUserCompanyModel.h"
 #import "WSUpdateCompanyProfile.h"
+#import "LoginViewController.h"
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
@@ -115,7 +116,6 @@
 }
 
 - (void)__actionDCancel:(id)sender {
-    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

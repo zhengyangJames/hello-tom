@@ -17,6 +17,20 @@
     request = [request getDealList:dealList];
     
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        
+        /*
+        //////DEBUG
+        NSString *errorMessage = ERROR_AUTH_NOT_PROVIDED;
+        NSInteger errorCode = 11;
+        NSError *error___ = [NSError errorWithDomain:WS_ERROR_DOMAIN
+                                                code:errorCode
+                                            userInfo:@{@"message":errorMessage}];
+        if (handler) {
+            handler(nil,response,error___);
+        }
+        /////END
+        */
+        
         if (!error && responseObject) {
             NSDictionary *responseObj = (NSDictionary *)responseObject;
             NSError *error;

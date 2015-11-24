@@ -13,10 +13,9 @@
 #import "WSURLSessionManager+DealProfile.h"
 #import "DealTableViewCell.h"
 #import "CODealProfileModel.h"
-#import "LoginViewController.h"
 #import "COLoginManager.h"
 
-@interface DealsController ()<UITableViewDelegate, UITableViewDataSource, LoginViewControllerDelegate>
+@interface DealsController ()<UITableViewDelegate, UITableViewDataSource>
 {
     __weak IBOutlet UISegmentedControl *_segment;
     __weak IBOutlet UILabel *_introductionLabel;
@@ -121,6 +120,9 @@
     [UIHelper showLoadingInView:self.view];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
+    if (device_token == nil) {
+        device_token = @"debug_Simulator";
+    }
     [dic setObject:device_token forKey:device_token_dic];
     [dic setObject:device_type forKey:device_type_dic];
     [dic setObject:application_name forKey:application_name_dic];
@@ -135,13 +137,7 @@
                 [_tableView reloadData];
             }];
         } else {
-            [UIHelper hideLoadingFromView:self.view];
-                NSString *strError = [responseObject objectForKey:@"detail"];
-                if ([strError isEqualToString:ERROR]) {
-                    [self showLoginView];
-                } else {
-                    [UIHelper showError:error];
-                }
+            [ErrorManager showError:error];
         }
     }];
 }
@@ -165,33 +161,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 170;
-}
-
-- (void)showLoginView {
-    LoginViewController *vcLogin = [[LoginViewController alloc]init];
-    vcLogin.delegate = self;
-    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
-    [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
-    [[COLoginManager shared] setIsReloadListHome:YES];
-}
-
-- (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
-    switch (loginWithStyle) {
-        case PushLoginVC:
-        {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
-                                                                    completion:nil];
-            [kAppDelegate baseTabBarController].selectedIndex = 1;
-        } break;
-            
-        case DismissLoginVC:
-        {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
-                                                                    completion:nil];
-        } break;
-            
-        default: break;
-    }
 }
 
 @end

@@ -196,7 +196,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                 [self _showViewNoData:typeFilter];
             }
         } else {
-            [UIHelper showError:error];
+            [ErrorManager showError:error];
         }
         _leftButton.enabled = YES;
     }];
@@ -224,14 +224,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             self.offerModel = responseObject;
             [self _callWSGetFundInfo];
         } else {
-            [UIHelper hideLoadingFromView:self.view];
-            NSString *strError = [responseObject objectForKey:@"detail"];
-            if ([strError isEqualToString:ERROR]) {
-                [self showLoginView];
-            } else {
-                _leftButton.enabled = YES;
-                [UIHelper showError:error];
-            }
+            _leftButton.enabled = YES;
+            [ErrorManager showError:error];
         }
     }];
 }
@@ -251,11 +245,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             self.offerModel.offerProject.projectFundedAmount = responseObject;
             [self _pushDetailVcWithID:self.offerModel];
         } else {
-            NSString *strError = [responseObject objectForKey:@"detail"];
-            if ([strError isEqualToString:ERROR]) {
-                [self showLoginView];
-            }
-            [UIHelper showError:error];
+            [ErrorManager showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
         _leftButton.enabled = YES;

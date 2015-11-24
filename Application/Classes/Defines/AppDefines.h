@@ -12,6 +12,7 @@
 #import "BaseNavigationController.h"
 #import "BaseTabBarController.h"
 #import "NSString+Validation.h"
+#import "ErrorManager.h"
 
 ///////////////////////////////////////////////////////////////////
 #pragma mark - AppDefine
@@ -350,5 +351,5 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 #define NOTIFI_ICON_EVENT        @"event"
 #define NOTIFI_ICON_LANDINGPG    @"event"
 #define NOTIFI_ICON_GENERAL      @"landingpg"
-#define ERROR  @"Authentication credentials were not provided."
+#define ERROR_AUTH_NOT_PROVIDED  @"Authentication credentials were not provided."
 #endif

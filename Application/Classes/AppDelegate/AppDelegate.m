@@ -29,10 +29,6 @@
     NSDictionary *_userInfo;
     NSUInteger sellectdate;
 }
-@property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
-@property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
-@property (strong, nonatomic) BaseNavigationController *baseNotificationNAV;
-@property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
 
 @property (strong, nonatomic) HomeListViewController *homeVC;
 @property (strong, nonatomic) CONotificationBannerView *viewNotification;
@@ -329,26 +325,34 @@
     if (tabBarController.selectedIndex == 1) {
         if (![[COLoginManager shared] userModel]) {
             sellectdate = 1;
-            [self _setUpLogginVC];
+            [self showLogginVC];
             [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
         } else {
             [[COLoginManager shared] setInvestorModel:nil];
-            [[COLoginManager shared] wsGetAccountInverstment:^(id object, NSError *error) { }];
+            [[COLoginManager shared] wsGetAccountInverstment:^(id object, NSError *error) {
+                if (error) {
+                    [ErrorManager showError:error];
+                }
+            }];
         }
     }
     if (tabBarController.selectedIndex == 2) {
         if (![[COLoginManager shared] userModel]) {
             sellectdate = 2;
-            [self _setUpLogginVC];
+            [self showLogginVC];
             [tabBarController setSelectedIndex:[[kUserDefaults objectForKey:KEY_TABBARSELECT] integerValue]];
         } else {
             [[COLoginManager shared] setInvestorModel:nil];
-            [[COLoginManager shared] wsGetAccountInverstment:^(id object, NSError *error) { }];
+            [[COLoginManager shared] wsGetAccountInverstment:^(id object, NSError *error) {
+                if (error) {
+                    [ErrorManager showError:error];
+                }
+            }];
         }
     }
 }
 
-- (void)_setUpLogginVC {
+- (void)showLogginVC {
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
     vcLogin.delegate = self;
     CATransition* transition = [CATransition animation];
@@ -406,7 +410,9 @@
     [dic setObject:client_key forKey:client_key_dic];
     
     [[WSURLSessionManager shared]wsPostDeviceTokenRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
+        if (error) {
+            [ErrorManager showError:error];
+        }
     }];
 }
 
@@ -420,7 +426,7 @@
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[UIHelper setBadgeValueNotification:responseObject] ];
         } else {
-//            [self _setUpLogginVC];
+            [ErrorManager showError:error];
         }
         
     }];

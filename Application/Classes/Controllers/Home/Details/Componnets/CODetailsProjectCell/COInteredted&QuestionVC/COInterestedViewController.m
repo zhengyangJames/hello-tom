@@ -102,7 +102,7 @@
             [kNotificationCenter postNotificationName:kNOTIFICATION_INTERESTED object:nil];
             [self _creatPopupView];
         }else {
-            [UIHelper showError:error];
+            [ErrorManager showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

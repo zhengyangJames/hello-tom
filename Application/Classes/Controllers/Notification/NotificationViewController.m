@@ -18,7 +18,7 @@
 #import "WebViewSetting.h"
 
 
-@interface NotificationViewController ()<UITableViewDataSource, UITableViewDelegate, LoginViewControllerDelegate> {
+@interface NotificationViewController ()<UITableViewDataSource, UITableViewDelegate> {
     __weak IBOutlet UITableView *_tableview;
     NSString *_selectedOfferID;
 }
@@ -127,13 +127,7 @@
                 [_tableview reloadData];
             }];
         } else {
-            [UIHelper hideLoadingFromView:self.view];
-            NSString *strError = [responseObject objectForKey:@"detail"];
-            if ([strError isEqualToString:ERROR]) {
-                [self showLoginView];
-            } else {
-                [UIHelper showError:error];
-            }
+            [ErrorManager showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
         
@@ -150,35 +144,10 @@
     [dic setObject:notification.notifiData.notifiStatus forKey:NOTIFICATION_STATUS_DICT];
     [dic setObject:notification.notifiData.notifiUnique forKey:NOTIFICATION_ID_DICT];
     [[WSURLSessionManager shared] wsReadNotificationList:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
+        if (error) {
+            [ErrorManager showError:error];
+        }
     }];
-}
-
-- (void)showLoginView {
-    LoginViewController *vcLogin = [[LoginViewController alloc]init];
-    vcLogin.delegate = self;
-    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
-    [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
-    [[COLoginManager shared] setIsReloadListHome:YES];
-}
-
-- (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
-    switch (loginWithStyle) {
-        case PushLoginVC:
-        {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
-                                                                    completion:nil];
-            [kAppDelegate baseTabBarController].selectedIndex = 2;
-        } break;
-            
-        case DismissLoginVC:
-        {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
-                                                                    completion:nil];
-        } break;
-            
-        default: break;
-    }
 }
 
 @end

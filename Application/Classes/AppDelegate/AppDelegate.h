@@ -14,8 +14,15 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) BaseTabBarController *baseTabBarController;
+@property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
+@property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
+@property (strong, nonatomic) BaseNavigationController *baseNotificationNAV;
+@property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
+
 @property (assign, nonatomic) BOOL keyShowNotificationBanner;
 @property (assign, nonatomic) BOOL deviceTokenExist;
+
+- (void)showLogginVC;
 - (void)clearData;
 - (void)setupNotifications:(UIApplication*)application;
 

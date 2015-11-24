@@ -77,7 +77,7 @@
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];
             }
         } else {
-            [UIHelper showError:error];
+            [ErrorManager showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

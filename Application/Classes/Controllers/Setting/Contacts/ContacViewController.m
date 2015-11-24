@@ -107,8 +107,7 @@
                 [_tableView reloadData];
             }];
         } else {
-            [UIHelper hideLoadingFromView:self.view];
-            [UIHelper showError:error];
+            [ErrorManager showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

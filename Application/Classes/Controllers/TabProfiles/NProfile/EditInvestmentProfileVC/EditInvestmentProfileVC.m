@@ -191,7 +191,13 @@
         if (self.actionDone) {
             self.actionDone();
         }
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if (error) {
+            [ErrorManager showError:error];
+        } else {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+        }
     }];
 }
 

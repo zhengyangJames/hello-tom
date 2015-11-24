@@ -167,8 +167,15 @@
         NSInteger statusCodeWS = httpResponse.statusCode;
         DBG(@"Status_CodeWS %tu",statusCodeWS);
         if (statusCodeWS >= 300) {
-            NSInteger errorCode = statusCodeWS;
             NSString *errorMessage = @"Unknown Error.";
+            if (responseObject) {
+                NSString *strError = [responseObject objectForKeyNotNull:@"detail"];
+                if (strError && [strError isEqualToString:ERROR_AUTH_NOT_PROVIDED]) {
+                    errorMessage = ERROR_AUTH_NOT_PROVIDED;
+                }
+            }
+            
+            NSInteger errorCode = statusCodeWS;
             NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
                                                  code:errorCode
                                              userInfo:@{@"message":errorMessage}];
