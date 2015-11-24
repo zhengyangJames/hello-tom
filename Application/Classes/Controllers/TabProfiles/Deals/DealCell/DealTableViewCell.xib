@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Raleway-Bold.ttf">
+            <string>Raleway-Bold</string>
+            <string>Raleway-Bold</string>
+            <string>Raleway-Bold</string>
+        </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
-            <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
@@ -29,14 +33,14 @@
                         <rect key="frame" x="8" y="8" width="304" height="18"/>
                         <animations/>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSS-Kb-zYl">
                         <rect key="frame" x="153" y="32" width="151" height="16"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potential Returns:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGV-jp-ZXz">
@@ -52,8 +56,8 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ac8-jf-vLl">
                         <rect key="frame" x="138" y="55" width="166" height="16"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Payout Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSy-GK-Upq">
@@ -64,13 +68,6 @@
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSg-hd-oaz">
-                        <rect key="frame" x="138" y="75" width="174" height="16"/>
-                        <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Investment Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkO-Nt-dwn">
@@ -109,18 +106,25 @@
                             <action selector="__actionSignContract:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UzB-QQ-fFb"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Jqc-NA-r5V">
-                        <rect key="frame" x="162.5" y="96" width="149.5" height="40"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jqc-NA-r5V">
+                        <rect key="frame" x="162" y="96" width="149.5" height="40"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.23529411764705882" green="0.27450980392156865" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="ilw-rX-ozX"/>
                             <constraint firstAttribute="height" constant="36" id="q4r-9f-e3p"/>
                             <constraint firstAttribute="width" constant="124" id="sFT-Fd-daJ"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
-                        <state key="normal" title="How To Make Payment">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <state key="normal">
+                            <attributedString key="attributedTitle">
+                                <fragment content="How To Make Payment">
+                                    <attributes>
+                                        <color key="NSColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                         </state>
                         <variation key="default">
                             <mask key="constraints">
@@ -133,6 +137,13 @@
                             <action selector="__actionMakePayment:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LR2-aQ-AaE"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSg-hd-oaz">
+                        <rect key="frame" x="138" y="75" width="174" height="16"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <animations/>
                 <constraints>

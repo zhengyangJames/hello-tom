@@ -9,6 +9,6 @@
 #import "WSURLSessionManager.h"
 
 @interface WSURLSessionManager (CompanyProfile)
-- (void)wsPostDeviceTokenRequest:(NSDictionary *)dic imageView:(UIImageView *)imageView Handler:(WSURLSessionHandler)handler;
-- (void)wsGetDealRequestHandler:(WSURLSessionHandler)handler;
+- (void)wsPostDeviceCompanyProfileTokenRequest:(NSDictionary *)dic imageView:(UIImageView *)imageView Handler:(WSURLSessionHandler)handler;
+- (void)wsGetDealCompanyProfileRequestHandler:(WSURLSessionHandler)handler;
 @end

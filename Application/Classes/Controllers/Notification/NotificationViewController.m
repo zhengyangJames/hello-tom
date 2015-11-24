@@ -94,7 +94,10 @@
 
 - (void)_loadDetailNotification:(CONotificationModel *)notification {
     
-    [self _callReadNotification:notification];
+    if ([notification.notifiData.notifiStatus isEqualToString:UNREAD]) {
+         [self _callReadNotification:notification];
+    }
+   
     if (notification.notifiData.notifiUrl != nil) {
         WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
         webViewSetting.webLink = [LINK stringByAppendingString:notification.notifiData.notifiUrl];

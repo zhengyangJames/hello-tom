@@ -58,3 +58,4 @@
 // By Vincent
 ///////////////////////////////////////////////////////////////////
 #define NOTIFICATION_ID                       @"NotificationID"
+#define UNREAD                                @"UNREAD"
