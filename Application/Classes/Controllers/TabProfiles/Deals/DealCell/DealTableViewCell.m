@@ -44,10 +44,11 @@
     _model = model;
     CODealOngoingModel *deal = (CODealOngoingModel *)model;
     NSString *sgd = deal.dealOngoingCurrency;
-    NSString *persent = [NSString stringWithFormat:@"(%@) %@",[deal.dealOngoingPotentialReturnPercent stringValue], sgd];
+    NSString *percent = @"%";
+    NSString *persent = [NSString stringWithFormat:@"(%@ %@) %@",[deal.dealOngoingPotentialReturnPercent stringValue],percent, sgd];
     _lbProjectName.text = deal.dealOngoingProjectName;
-    _lbInvestmentAmountData.text = [NSString stringWithFormat:@"%@ %@",sgd, [deal.dealOngoingInvestAmount stringValue]];
-    _lbPotentialReturnsData.text = [NSString stringWithFormat:@"%@ %@",persent, [deal.dealOngoingPotentialReturnAmount stringValue]];
+    _lbInvestmentAmountData.text = [NSString stringWithFormat:@"%@ %@",sgd, [UIHelper formartFoatValueWithPortfolio:deal.dealOngoingInvestAmount]];
+    _lbPotentialReturnsData.text = [NSString stringWithFormat:@"%@ %@",persent, [UIHelper formartFoatValueWithPortfolio:deal.dealOngoingPotentialReturnAmount]];
     _lbNextPayoutDateData.text = [NSString stringWithFormat:@"%@ %@",deal.dealOngoingNextPayoutDate, persent];
 }
 
