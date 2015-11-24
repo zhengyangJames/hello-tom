@@ -24,8 +24,8 @@
 
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellAccessoryNone;
-    [_btnSigContract.layer setCornerRadius:CORNERRADIUS];
-    [_btnSigMake.layer setCornerRadius:CORNERRADIUS];
+    _btnSigMake.layer.borderWidth = 2;
+    _btnSigMake.layer.borderColor = [UIColor redColor].CGColor;
 }
 
 - (IBAction)__actionSignContract:(id)sender {
@@ -48,7 +48,8 @@
     NSString *persent = [NSString stringWithFormat:@"(%@%@) %@",[deal.dealOngoingPotentialReturnPercent stringValue],percent, sgd];
     _lbProjectName.text = deal.dealOngoingProjectName;
     _lbInvestmentAmountData.text = [NSString stringWithFormat:@"%@ %@",sgd, [UIHelper formartFoatValueWithDeal:deal.dealOngoingInvestAmount]];
-    _lbPotentialReturnsData.text = [NSString stringWithFormat:@"%@ %@",persent, deal.dealOngoingPotentialReturnAmount.stringValue];
+    
+    _lbPotentialReturnsData.text = [NSString stringWithFormat:@"%@ %@",persent, [UIHelper formartFoatValueWithDeal:deal.dealOngoingPotentialReturnAmount]];
     _lbNextPayoutDateData.text = [NSString stringWithFormat:@"%@\n(%@ %@)",deal.dealOngoingNextPayoutDate,sgd, [UIHelper formartFoatValueWithDeal:deal.dealOngoingNextPayoutAmount]];
 }
 
