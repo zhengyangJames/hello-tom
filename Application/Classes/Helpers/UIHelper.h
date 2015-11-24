@@ -59,5 +59,6 @@
 // by vincent
 + (NSString *)formatStringDateToString:(NSString*)strDate;
 + (NSString *)setBadgeValueNotification:(id )responseObject;
++ (NSString*)formartFoatValueWithDeal:(NSNumber*)value;
 
 @end

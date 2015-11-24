@@ -47,8 +47,8 @@
     NSString *percent = @"%";
     NSString *persent = [NSString stringWithFormat:@"(%@ %@) %@",[deal.dealOngoingPotentialReturnPercent stringValue],percent, sgd];
     _lbProjectName.text = deal.dealOngoingProjectName;
-    _lbInvestmentAmountData.text = [NSString stringWithFormat:@"%@ %@",sgd, [UIHelper formartFoatValueWithPortfolio:deal.dealOngoingInvestAmount]];
-    _lbPotentialReturnsData.text = [NSString stringWithFormat:@"%@ %@",persent, [UIHelper formartFoatValueWithPortfolio:deal.dealOngoingPotentialReturnAmount]];
+    _lbInvestmentAmountData.text = [NSString stringWithFormat:@"%@ %@",sgd, [UIHelper formartFoatValueWithDeal:deal.dealOngoingInvestAmount]];
+    _lbPotentialReturnsData.text = [NSString stringWithFormat:@"%@ %@",persent, deal.dealOngoingPotentialReturnAmount.stringValue];
     _lbNextPayoutDateData.text = [NSString stringWithFormat:@"%@ %@",deal.dealOngoingNextPayoutDate, persent];
 }
 

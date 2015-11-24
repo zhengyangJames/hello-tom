@@ -394,6 +394,15 @@
     return [NSString stringWithFormat:@"$%@",newString];
 }
 
++ (NSString*)formartFoatValueWithDeal:(NSNumber*)value {
+    NSNumberFormatter * formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setMaximumFractionDigits:2]; // Set this if you need 2 digits
+    [formatter setMinimumFractionDigits:2];
+    NSString * newString =  [formatter stringFromNumber:[NSNumber numberWithFloat:[value floatValue]]];
+    return [NSString stringWithFormat:@"%@",newString];
+}
+
 + (NSString *)formatStringDateToString:(NSString*)strDate {
     if (strDate != nil) {
         NSDateFormatter *format = [[NSDateFormatter alloc]init];
