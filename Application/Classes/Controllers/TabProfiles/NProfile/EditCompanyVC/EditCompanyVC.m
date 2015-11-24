@@ -13,6 +13,8 @@
 #import "COUserCompanyModel.h"
 #import "WSUpdateCompanyProfile.h"
 #import "LoginViewController.h"
+#import "WSURLSessionManager+CompanyProfile.h"
+#import "LoadFileManager.h"
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
@@ -232,7 +234,7 @@
 
         } else {
             [UIHelper showLoadingInView:self.view];
-            [UIHelper showError:error];
+            [ErrorManager showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];

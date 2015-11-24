@@ -49,9 +49,30 @@
     }];
 }
 
+
+- (UIViewController *)getCurrentViewController {
+    UIViewController *viewController;
+    if ([kAppDelegate baseProfileNAV].presentedViewController) {
+        viewController = [kAppDelegate baseProfileNAV].presentedViewController;
+        while ([viewController isKindOfClass:[UINavigationController class]] || [viewController isKindOfClass:[UITabBarController class]]) {
+            if ([viewController isKindOfClass:[UINavigationController class]]) {
+                viewController = ((UINavigationController *)viewController).topViewController;
+            }
+            if ([viewController isKindOfClass:[UITabBarController class]]) {
+                viewController = ((UITabBarController *)viewController).viewControllers[((UITabBarController *)viewController).selectedIndex];
+            }
+        }
+    }
+    return viewController;
+}
+
 - (void)showLogin {
     // clear all
     [kAppDelegate clearData];
+    UIViewController *vc = [self getCurrentViewController];
+    if (vc && [vc isKindOfClass:[LoginViewController class]]) {
+        return;
+    }
     [[kAppDelegate baseProfileNAV] dismissViewControllerAnimated:NO completion:nil];
     LoginViewController *vcLogin = [[LoginViewController alloc]init];
     vcLogin.delegate = self;
