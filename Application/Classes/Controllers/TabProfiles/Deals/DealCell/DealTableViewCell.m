@@ -47,10 +47,12 @@
     NSString *percent = @"%";
     NSString *persent = [NSString stringWithFormat:@"(%@%@) %@",[deal.dealOngoingPotentialReturnPercent stringValue],percent, sgd];
     _lbProjectName.text = deal.dealOngoingProjectName;
-    _lbInvestmentAmountData.text = [NSString stringWithFormat:@"%@ %@",sgd, [UIHelper formartFoatValueWithDeal:deal.dealOngoingInvestAmount]];
+    _lbInvestmentAmountData.text = [NSString stringWithFormat:@"%@ %@",sgd, [UIHelper formartFoatValueWithDeal:deal.dealOngoingInvestAmount MinimumFractionDigits:2]];
     
-    _lbPotentialReturnsData.text = [NSString stringWithFormat:@"%@ %@",persent, [UIHelper formartFoatValueWithDeal:deal.dealOngoingPotentialReturnAmount]];
-    _lbNextPayoutDateData.text = [NSString stringWithFormat:@"%@\n(%@ %@)",deal.dealOngoingNextPayoutDate,sgd, [UIHelper formartFoatValueWithDeal:deal.dealOngoingNextPayoutAmount]];
+    _lbPotentialReturnsData.text = [NSString stringWithFormat:@"%@ %@",persent, [UIHelper formartFoatValueWithDeal:deal.dealOngoingPotentialReturnAmount MinimumFractionDigits:0]];
+    
+    
+    _lbNextPayoutDateData.text = [NSString stringWithFormat:@"%@\n(%@ %@)",deal.dealOngoingNextPayoutDate,sgd, [UIHelper formartFoatValueWithDeal:deal.dealOngoingNextPayoutAmount MinimumFractionDigits:2]];
 }
 
 - (void)_showAlertView:(NSString *)title message:(NSString *)message delegate:(UIViewController *)delegate tag:(NSInteger )tag {

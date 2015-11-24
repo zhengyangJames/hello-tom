@@ -395,11 +395,11 @@
     return [NSString stringWithFormat:@"$%@",newString];
 }
 
-+ (NSString*)formartFoatValueWithDeal:(NSNumber*)value {
++ (NSString*)formartFoatValueWithDeal:(NSNumber*)value MinimumFractionDigits:(NSInteger)min {
     NSNumberFormatter * formatter = [NSNumberFormatter new];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [formatter setMaximumFractionDigits:2]; // Set this if you need 2 digits
-    [formatter setMinimumFractionDigits:2];
+    [formatter setMinimumFractionDigits:min];
     NSString * newString =  [formatter stringFromNumber:[NSNumber numberWithFloat:[value floatValue]]];
     return [NSString stringWithFormat:@"%@",newString];
 }
