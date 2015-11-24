@@ -198,7 +198,7 @@
 - (void)_getCompanyProfile {
     [UIHelper showLoadingInView:self.view];
     
-    [[WSURLSessionManager shared] wsGetDealRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsGetDealCompanyProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         
         if (!error && responseObject != nil) {
             self.companyModel = responseObject;

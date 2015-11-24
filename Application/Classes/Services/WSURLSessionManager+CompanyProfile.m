@@ -13,7 +13,7 @@
 @implementation WSURLSessionManager (CompanyProfile)
 
 
-- (void)wsPostDeviceTokenRequest:(NSDictionary *)dic imageView:(UIImageView *)imageView Handler:(WSURLSessionHandler)handler  {
+- (void)wsPostDeviceCompanyProfileTokenRequest:(NSDictionary *)dic imageView:(UIImageView *)imageView Handler:(WSURLSessionHandler)handler  {
     
     WSCompanyProfileRequest *request = [[WSCompanyProfileRequest alloc]init];
     request = [request postCompanyProfile:dic imageView:imageView];
@@ -31,7 +31,7 @@
     }];
 }
 
-- (void)wsGetDealRequestHandler:(WSURLSessionHandler)handler {
+- (void)wsGetDealCompanyProfileRequestHandler:(WSURLSessionHandler)handler {
     WSCompanyProfileRequest *request = [[WSCompanyProfileRequest alloc]init];
     request = [request getCompanyProfile];
     

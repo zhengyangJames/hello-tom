@@ -226,9 +226,9 @@
 - (void)_postCampanyProfile:(NSDictionary *)dic {
     [UIHelper showLoadingInView:self.view];
     UIImageView *logo = _isChooseImage == YES?_imageCompany:nil;
-    [[WSURLSessionManager shared] wsPostDeviceTokenRequest:dic imageView:logo Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest:dic imageView:logo Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
-//            [self _updateProfileUserModel:dic];
+            [self _updateProfileUserModel:dic];
             if (self.actionDone) {
                 self.actionDone(_heightImage);
             }
