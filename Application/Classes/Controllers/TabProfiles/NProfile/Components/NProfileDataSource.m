@@ -85,6 +85,7 @@
 }
 
 - (UITableViewCell *)tableview:(UITableView *)tableView companyCellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (indexPath.row == [self.company indexOfImageCell]) {
          return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
     } else if (indexPath.row == [self.company indexOfNoDataCell]) {
@@ -107,6 +108,7 @@
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_INVESTOR - 2) {
         return [self tableview:tableView noContrieCellForRowAtIndexpath:indexPath];
+        return nil;
     }
     return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
 }

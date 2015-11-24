@@ -18,6 +18,7 @@
 #import "EditPasswordProfileVC.h"
 #import "EditCompanyVC.h"
 #import "EditInvestmentProfileVC.h"
+#import "WSURLSessionManager+CompanyProfile.h"
 
 @interface NProfileController ()<NProfileHeaderViewDelegate,profileButtonCellDelegate,EditAboutProfileVCDelegate>
 {
@@ -40,6 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _getCompanyProfile];
     [self _setupUI];
 }
 
@@ -48,6 +50,7 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
     [self _updateProfile];
+     [self _getCompanyProfile];
 }
 
 #pragma mark - SetupUI
@@ -187,4 +190,23 @@
     }];
 }
 
+#pragma mark - API
+
+
+- (void)_getCompanyProfile {
+    [UIHelper showLoadingInView:self.view];
+    
+    [[WSURLSessionManager shared] wsGetDealRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        
+        if (!error && responseObject != nil) {
+            self.companyModel = responseObject;
+            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                [self _reloadTableview];
+            }];
+        } else {
+             [UIHelper showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+}
 @end

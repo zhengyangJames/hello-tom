@@ -420,6 +420,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"notifiData.notifiStatus == %@", @"UNREAD"];
     NSArray *filtered  = [dataArray filteredArrayUsingPredicate:predicate];
     NSString *inStr = [NSString stringWithFormat: @"%lu", (unsigned long)filtered.count];
+
     if (inStr != nil) {
         return inStr;
     }

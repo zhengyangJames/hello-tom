@@ -20,9 +20,9 @@
     [self _loadIconNotification:notifiModel];
     if (_notifiModel != nil) {
         if ([notifiModel.notifiData.notifiStatus isEqual: NOTIFI_UNREAD]) {
-            self.backgroundColor = KBACKGROUND_COLOR;
+            [_lbAlert setFont:[UIFont fontWithName:@"Raleway-Bold" size:15]];
         } else {
-            self.backgroundColor = [UIColor whiteColor];
+            [_lbAlert setFont:[UIFont fontWithName:@"Raleway-Regular" size:15]];
         }
         _lbAlert.text = _notifiModel.notifiAlert;
         _lbDate.text = [UIHelper formatStringDateToString:_notifiModel.notifiData.notifiDateTime];

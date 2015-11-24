@@ -84,7 +84,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-//    [[COLoginManager shared] setIsReloadListHome:NO];
+    //    [[COLoginManager shared] setIsReloadListHome:NO];
     _keyShowNotificationBanner = YES;
 }
 
@@ -108,7 +108,7 @@
         [kUserDefaults synchronize];
     }
     [self _checkCreadDeviceToken];
-     application.applicationIconBadgeNumber = 0;
+    application.applicationIconBadgeNumber = 0;
 }
 
 #pragma mark Remote Notification
@@ -259,7 +259,7 @@
     if (!_baseNotificationNAV) {
         NotificationViewController *notificationVC = [[NotificationViewController alloc]init];
         BaseNavigationController *notificationNAV = [[BaseNavigationController alloc]initWithRootViewController:notificationVC];
-        UITabBarItem *tabbarNotification = [[UITabBarItem alloc]initWithTitle:m_string(@"NOTIFICATION" ) image:[UIImage imageNamed:@"ic_home"] selectedImage:[UIImage imageNamed:@"ic_home_heightlight"]];
+        UITabBarItem *tabbarNotification = [[UITabBarItem alloc]initWithTitle:m_string(@"NOTIFICATION" ) image:[UIImage imageNamed:@"ic_notification"] selectedImage:[UIImage imageNamed:@"ic_notification_selected"]];
         notificationNAV.tabBarItem = tabbarNotification;
         _baseNotificationNAV = notificationNAV;
     }
@@ -299,10 +299,10 @@
             [self clearData];
         }
     }
-//    NSString *bundleVS = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-//    if ([bundleVS integerValue] < 1.2) {
-//        [self clearData];
-//    }
+    //    NSString *bundleVS = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    //    if ([bundleVS integerValue] < 1.2) {
+    //        [self clearData];
+    //    }
 }
 
 #pragma mark - ClearData
@@ -315,7 +315,7 @@
     [kUserDefaults removeObjectForKey:kPROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_INVESTOR_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_ACCOUNT_PROFILE_JSON];
-//    [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
+    //    [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults synchronize];
 }
 
@@ -424,7 +424,12 @@
     [dic setObject:application_name forKey:application_name_dic];
     [[WSURLSessionManager shared] wsGetNotificationListRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
-            [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[UIHelper setBadgeValueNotification:responseObject] ];
+            if ([[UIHelper setBadgeValueNotification:responseObject] isEqualToString:@"0"]) {
+                [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:nil];
+            } else {
+                [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[UIHelper setBadgeValueNotification:responseObject]];
+            }
+            
         } else {
             [ErrorManager showError:error];
         }

@@ -43,6 +43,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self _callGetDealList];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
 }
@@ -117,6 +118,7 @@
 }
 
 - (void)_callGetDealList {
+    
     [UIHelper showLoadingInView:self.view];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];

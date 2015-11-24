@@ -12,13 +12,23 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"imageUrl"  : @"image_profile",
-        @"imageHeight"  : @"height_image_profile",
+
         @"orgName"   : @"org_name",
-        @"address"   : @"cp_address_1",
-        @"address2"  : @"cp_address_2",
-        @"orgCity"   : @"cp_city",
-        @"country"   : @"cp_country",
+        
+        
+        @"imageHeight"  : @"height_image_profile",
+       
+//        @"address"   : @"cp_address_1",
+//        @"address2"  : @"cp_address_2",
+//        @"imageUrl"  : @"image_profile",
+//        @"orgCity"   : @"cp_city",
+        
+        //by vincent
+        @"country"   : @"country",
+        @"address"   : @"address_1",
+        @"address2"  : @"address_2",
+        @"imageUrl"  : @"logo",
+        @"orgCity"   : @"city",
     };
 }
 

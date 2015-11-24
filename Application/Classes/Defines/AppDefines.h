@@ -60,7 +60,6 @@
 
 // GET NNOTIFICATION
 #define  CONTENT_TYPE_GET      @"application/x-www-form-urlencoded"
-#define  AUTHORIZATION         @"Bearer <access token>"
 
 #define CONTENT_TYPE_GET_DIC   @"content-type"
 #define  AUTHORIZATION_DIC     @"Authorization"
@@ -104,6 +103,8 @@
 #define WS_METHOD_GET_NOTIFICATION_TOKEN_LIST       [WS_ENDPOINT stringByAppendingString:@"/get-notification-list/"]
 
 #define WS_METHOD_GET_DEAL_LIST                     [WS_ENDPOINT stringByAppendingString:@"/investor_deal_list/"]
+
+#define WS_METHOD_COMPANY_PROFILE                   [WS_ENDPOINT stringByAppendingString:@"/profile_organization/"]
 
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
@@ -219,6 +220,7 @@
 #define NUM_OF_ROW_ABOUT                            8
 #define NUM_OF_ROW_COMPANY                          4
 #define NUM_OF_ROW_INVESTOR                         7
+#define NUM_OF_ROW_Company                          8
 
 #define UPDATE_ABOUT_PROFILE                        @"Update profile"
 #define UPDATE_COMNPANY_PROFILE                     @"Update company profile"
