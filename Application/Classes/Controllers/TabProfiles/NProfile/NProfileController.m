@@ -41,16 +41,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self _getCompanyProfile];
     [self _setupUI];
+    [self _getCompanyProfile];
+    [self _updateProfile];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
-    [self _updateProfile];
-     [self _getCompanyProfile];
 }
 
 #pragma mark - SetupUI
@@ -133,11 +132,12 @@
 - (void)_setupEditCompanyVC {
     EditCompanyVC *vc = [[EditCompanyVC alloc]init];
     vc.companyUserModel = self.companyModel;
-    vc.actionDone = ^(CGFloat updateForCellImage) {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.companyModel = nil;
-            [self _reloadTableview];
-        }];
+    vc.actionDone = ^(CGFloat updateForCellImage, UIImage *logo) {
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            self.companyModel = nil;
+//            [self _reloadTableview];
+//        }];
+        [self _getCompanyProfile];
     };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];

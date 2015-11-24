@@ -37,7 +37,7 @@
     
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         
-        ///*
+        /*
          //////DEBUG
          NSString *errorMessage = ERROR_AUTH_NOT_PROVIDED;
          NSInteger errorCode = 11;
@@ -48,9 +48,9 @@
          handler(nil,response,error___);
          }
          /////END
-         //*/
+         */
         
-        /*
+        ///*
         if (!error && responseObject) {
             NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil];
             [kUserDefaults setObject:data forKey:UPDATE_COMPANY_PROFILE_JSON];
@@ -65,7 +65,7 @@
                 handler(responseObject,response,error);
             }
         }
-         */
+         //*/
     }];
 }
 

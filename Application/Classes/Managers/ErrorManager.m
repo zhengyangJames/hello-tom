@@ -37,6 +37,7 @@
         }
         if ([message isEqualToString:ERROR_AUTH_NOT_PROVIDED]) {
             [kAppDelegate clearData];
+            [ErrorManager shared].isExpiredAuth = YES;
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:m_string(@"CoAssets")
                                                                 message:message
@@ -82,14 +83,13 @@
     switch (loginWithStyle) {
         case PushLoginVC:
         {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
-                                                                    completion:nil];
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
+            self.isExpiredAuth = NO;
         } break;
             
         case DismissLoginVC:
         {
-            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
-                                                                    completion:nil];
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
             [kAppDelegate baseTabBarController].selectedIndex = 0;
         } break;
             

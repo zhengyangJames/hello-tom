@@ -135,6 +135,7 @@
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
+    [self.view endEditing:YES];
     [self _postCampanyProfile:[self _creatUpdateInfoCompany]];
 }
 
@@ -228,9 +229,10 @@
     UIImageView *logo = _isChooseImage == YES?_imageCompany:nil;
     [[WSURLSessionManager shared] wsPostDeviceTokenRequest:dic imageView:logo Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
-//            [self _updateProfileUserModel:dic];
+            [self _updateProfileUserModel:dic];
+            UIImage *image = logo == nil?nil:logo.image;
             if (self.actionDone) {
-                self.actionDone(_heightImage);
+                self.actionDone(_heightImage, image);
             }
             [self dismissViewControllerAnimated:YES completion:^{}];
         } else {

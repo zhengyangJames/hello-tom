@@ -10,6 +10,8 @@
 
 @interface ErrorManager : NSObject
 
+@property (nonatomic, assign) BOOL isExpiredAuth;
+
 + (ErrorManager *)shared;
 + (void)showError:(NSError *)error;
 

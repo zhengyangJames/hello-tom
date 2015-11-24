@@ -13,7 +13,7 @@
 - (WSCompanyProfileRequest *)postCompanyProfile:(NSDictionary *)companyDic imageView:(UIImageView *)imageView  {
     WSCompanyProfileRequest *request = [[WSCompanyProfileRequest alloc]init];
     NSString *boundary = @"0xKhTmLbOuNdArY";
-    NSData *httpBody = [self createBodyWithBoundary:boundary parameters:companyDic image:imageView fileName:@"logo.png"];
+    NSData *httpBody = [self createBodyWithBoundary:boundary parameters:companyDic image:imageView fileName:[NSString stringWithFormat:@"%@_logo.png",[[NSUUID UUID] UUIDString]]];
     [request setHTTPBody:httpBody];
 
     NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];

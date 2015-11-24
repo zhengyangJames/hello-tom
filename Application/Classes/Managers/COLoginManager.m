@@ -29,6 +29,9 @@
 - (void)callAPILoginWithRequest:(WSLoginRequest*)loginRequest actionLoginManager:(ActionLoginManager)actionLoginManager {
     [[WSURLSessionManager shared] wsLoginWithRequest:loginRequest handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]&& [responseObject valueForKey:kACCESS_TOKEN]) {
+            NSString *acc = [responseObject valueForKey:kACCESS_TOKEN];
+            [kUserDefaults setObject:[NSString stringWithFormat:@"%@ %@", @"Bearer",acc] forKey:KEY_ACCESS_TOKEN];
+            [kUserDefaults synchronize];
             [self tokenObject:responseObject callWSGetListProfile:^(id object, NSError *error){
                 if ([object isKindOfClass:[NSDictionary class]] && !error) {
                     NSDictionary *dicProfile = (NSDictionary*)object;
