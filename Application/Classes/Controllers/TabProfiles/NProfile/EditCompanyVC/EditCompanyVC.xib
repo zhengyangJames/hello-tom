@@ -59,16 +59,6 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Org name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8g3-u0-Njx" userLabel="First name Text Field" customClass="COBorderTextField">
-                                            <rect key="frame" x="20" y="39" width="280" height="40"/>
-                                            <animations/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="glN-LP-jwL"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="namePhonePad"/>
-                                        </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Org type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHq-Mx-swR">
                                             <rect key="frame" x="20" y="92" width="210" height="21"/>
                                             <animations/>
@@ -178,6 +168,16 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                             <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Org name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8g3-u0-Njx" userLabel="First name Text Field" customClass="COBorderTextField">
+                                            <rect key="frame" x="20" y="39" width="280" height="40"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="glN-LP-jwL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="namePhonePad"/>
                                         </textField>
                                     </subviews>
                                     <animations/>

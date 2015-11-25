@@ -160,3 +160,4 @@
 "TITLE_PRIVATE"         = "PRIVATE";
 
 "MINIMUM_MESSAGE"       = "Minimum investment amount is %@";
+"ORG_NAME_REQUIRED"      = "Org name is required";

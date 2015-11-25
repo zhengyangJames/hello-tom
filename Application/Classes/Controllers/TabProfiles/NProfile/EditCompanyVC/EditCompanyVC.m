@@ -127,13 +127,24 @@
     self.navigationItem.leftBarButtonItem = btCancel;
 }
 
+#pragma mark - Check
+- (BOOL)_checkORGName {
+    if ([[orgNameTextField.text trim] isEmpty]) {
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"ORG_NAME_REQUIRED", nil) delegate:nil tag:0];
+        return NO;
+    }
+    return YES;
+}
+
 
 
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
     [self.view endEditing:YES];
-    [self _postCampanyProfile:[self _creatUpdateInfoCompany]];
+    if ([self _checkORGName]) {
+        [self _postCampanyProfile:[self _creatUpdateInfoCompany]];
+    }
 }
 
 - (void)__actionDCancel:(id)sender {
