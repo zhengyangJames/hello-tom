@@ -94,11 +94,11 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsPostSubscribeWithRequest:[self _createPostSubsRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject && !error) {
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                _amountTextField.text = nil;
-                _emailTextField.text = nil;
-                _checkBoxButton.isCheck = NO;
-            }];
+//            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//                _amountTextField.text = nil;
+//                _emailTextField.text = nil;
+//                _checkBoxButton.isCheck = NO;
+//            }];
             [kNotificationCenter postNotificationName:kNOTIFICATION_INTERESTED object:nil];
             [self _creatPopupView];
         }else {

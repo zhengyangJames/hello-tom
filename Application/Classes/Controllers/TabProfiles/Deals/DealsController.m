@@ -37,15 +37,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self _callGetDealList];
     [self _setUpUI];
+    [self _callGetDealList];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self _callGetDealList];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
+}
+
+#pragma mark - Getter
+
+- (NSArray *)dataArray {
+    if (_dataArray) {
+        return _dataArray;
+    }
+    _dataArray = [[NSArray alloc] init];
+    switch (_segment.selectedSegmentIndex) {
+        case CODealsStypeOngoing:
+            _introductionLabel.text = m_string(@"ON_GOING");
+            _dataArray = self.dealModel.dealOngoingModel;
+            break;
+        case CODealsStypeCompleted:
+            _introductionLabel.text = m_string(@"COMPLETED");
+            _dataArray = self.dealModel.dealCompleteModel;
+            break;
+        case CODealsStypeFunded:
+            _introductionLabel.text = m_string(@"FUNDED");
+            _dataArray = self.dealModel.dealFundedModel;
+            break;
+    }
+    return _dataArray;
 }
 
 #pragma mark - Private
@@ -77,24 +100,17 @@
     _greatLabel.hidden = !hidden;
 }
 
+- (void)_reloadData {
+    self.dataArray = nil;
+    [_tableView reloadData];
+    BOOL hiden = self.dataArray.count >0;
+    [self _setTilerLabelAndButton:!hiden];
+}
+
 #pragma mark - Action
 - (IBAction)__actionSegment:(id)sender {
     _segment = (UISegmentedControl*)sender;
-    switch (_segment.selectedSegmentIndex) {
-        case CODealsStypeOngoing:
-            _introductionLabel.text = m_string(@"ON_GOING");
-            [self reloadData:_segment.selectedSegmentIndex];
-            break;
-        case CODealsStypeCompleted:
-            _introductionLabel.text = m_string(@"COMPLETED");
-            [self reloadData:_segment.selectedSegmentIndex];
-            break;
-        case CODealsStypeFunded:
-            _introductionLabel.text = m_string(@"FUNDED");
-            [self reloadData:_segment.selectedSegmentIndex];
-            break;
-        default:  break;
-    }
+    [self _reloadData];
 }
 
 - (IBAction)__actionButtonGetStart:(id)sender {
@@ -102,23 +118,7 @@
     [base setSelectedIndex:0];
 }
 
-- (void)reloadData:(NSInteger )index {
-    [self _setTilerLabelAndButton:NO];
-    self.dataArray = nil;
-    if (index == 0) {
-        self.dataArray = self.dealModel.dealOngoingModel;
-    } else if (index == 1) {
-        self.dataArray = self.dealModel.dealFundedModel;
-    } else {
-        self.dataArray = self.dealModel.dealCompleteModel;
-    }
-    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-        [_tableView reloadData];
-    }];
-}
-
 - (void)_callGetDealList {
-    
     [UIHelper showLoadingInView:self.view];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
@@ -128,14 +128,15 @@
     [dic setObject:device_token forKey:device_token_dic];
     [dic setObject:device_type forKey:device_type_dic];
     [dic setObject:application_name forKey:application_name_dic];
+    
     [[WSURLSessionManager shared] wsGetDealRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
             self.dealModel = (CODealProfileModel *)responseObject;
-            self.dataArray = self.dealModel.dealOngoingModel;
             strSignContract = self.dealModel.signContractInstruction;
             strPaymentInstruction =self.dealModel.paymentInstruction;
+            self.dataArray = nil;
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-                [_tableView reloadData];
+                [self _reloadData];
             }];
         } else {
             [ErrorManager showError:error];
@@ -145,11 +146,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.dataArray != nil && self.dataArray.count >0) {
-        [self _setTilerLabelAndButton:NO];
-    } else {
-        [self _setTilerLabelAndButton:YES];
-    }
     return self.dataArray.count;
 }
 
