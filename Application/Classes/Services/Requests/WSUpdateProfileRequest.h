@@ -21,6 +21,7 @@ static NSString *kUpProfileCountry      = @"country";
 static NSString *kUpProfileAddress2     = @"address_2";
 static NSString *kUpProfileState        = @"region_state";
 static NSString *kUpProfileKeyProfile   = @"profile";
+static NSString *kUpProfilePostCode     = @"postal_code";
 
 @interface WSUpdateProfileRequest : WSRequest
 

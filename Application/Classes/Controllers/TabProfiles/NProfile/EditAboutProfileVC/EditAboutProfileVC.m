@@ -61,6 +61,7 @@
         emailNameTXT.text   = _userProfileModel.nameOfUserEmail;
         cityTXT.text        = _userProfileModel.nameOfUserCity;
         regionStateTXT.text = _userProfileModel.nameOfUserRegion;
+        postCodeTXT.text    = _userProfileModel.nameOfUserPostCode;
         NSString *phone     = [self _getPhoneCode:_userProfileModel.nameOfUserCountryCode];
         _indexActtionCountryCode = [self _getPhoneCodeForString:phone];
         [dropListCountryCode setTitle:phone forState:UIControlStateNormal];
@@ -87,15 +88,16 @@
     [request setBodyParam:self.userProfileModel.nameOfUserName forKey:kUpProfileUserName];
     [request setBodyParam:self.userProfileModel.nameOfUserFirstName forKey:kUpProfileFirstName];
     [request setBodyParam:self.userProfileModel.nameOfUserLastName forKey:kUpProfileLastName];
-    [request setBodyParam:emailNameTXT.text forKey:kUpProfileEmail];
+    [request setBodyParam:[emailNameTXT.text trim] forKey:kUpProfileEmail];
     NSString *phone = [self.arrayCountryCode[_indexActtionCountryCode] valueForKey:@"code"];
-    [request setBodyParam:phone forKey:kUpProfileNumCountry];
-    [request setBodyParam:phoneNameTXT.text forKey:kUpProfileCellPhone];
-    [request setBodyParam:addressNameTXT.text forKey:kUpProfileAddress1];
-    [request setBodyParam:address2TXT.text forKey:kUpProfileAddress2];
-    [request setBodyParam:cityTXT.text forKey:kUpProfileCity];
-    [request setBodyParam:countryTXT.text forKey:kUpProfileCountry];
-    [request setBodyParam:regionStateTXT.text forKey:kUpProfileState];
+    [request setBodyParam:[phone trim] forKey:kUpProfileNumCountry];
+    [request setBodyParam:[phoneNameTXT.text trim] forKey:kUpProfileCellPhone];
+    [request setBodyParam:[addressNameTXT.text trim] forKey:kUpProfileAddress1];
+    [request setBodyParam:[address2TXT.text trim] forKey:kUpProfileAddress2];
+    [request setBodyParam:[cityTXT.text trim] forKey:kUpProfileCity];
+    [request setBodyParam:[countryTXT.text trim] forKey:kUpProfileCountry];
+    [request setBodyParam:[regionStateTXT.text trim] forKey:kUpProfileState];
+    [request setBodyParam:[postCodeTXT.text trim] forKey:kUpProfilePostCode];
     return request;
 }
 
@@ -203,7 +205,7 @@
 
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
-    [self updateProfileJsonDefaults];
+    //[self updateProfileJsonDefaults];
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsUpdateProfileWithRequest:[self _setUpdateProfileRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {

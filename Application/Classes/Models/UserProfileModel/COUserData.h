@@ -212,6 +212,7 @@
 - (NSString *)nameOfUserCity;
 - (NSString *)nameOfUserCountry;
 - (NSString *)nameOfUserCountryCode;
+- (NSString *)nameOfUserPostCode;
 
 - (void)setNameOfUserName:(NSString*)string;
 - (void)setNameOfUserFirstName:(NSString*)string;

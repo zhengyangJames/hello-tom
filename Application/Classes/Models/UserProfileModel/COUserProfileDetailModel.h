@@ -18,4 +18,5 @@
 @property (nonatomic, strong) NSString *profileCountry;
 @property (nonatomic, strong) NSString *profileAddress2;
 @property (nonatomic, strong) NSString *profileRegionState;
+@property (nonatomic, strong) NSString *userPostalcode;
 @end

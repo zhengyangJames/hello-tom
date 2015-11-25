@@ -169,30 +169,30 @@
 
 #pragma mark - Delegate EditProfile
 - (void)editAboutProfile:(EditAboutProfileVC *)editAboutProfileVC {
-    self.userModel = nil;
-    [self _reloadTableview];
+    [self _getListProfile];
 }
 
 
 #pragma mark - API
 - (void)_getListProfile {
+    [UIHelper showLoadingInView:self.view];
     [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
         if (object && [object isKindOfClass:[NSDictionary class]] && !error) {
-            [[COLoginManager shared] setUserModel:nil];
-            [[COLoginManager shared] setInvestorModel:nil];
-            self.userModel = nil;
-            self.investorModel = nil;
-            [self _reloadTableview];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [COLoginManager shared].userModel = nil;
+                self.userModel = nil;
+                [self _reloadTableview];
+            }];
         } else {
             [ErrorManager showError:error];
         }
+        [UIHelper hideLoadingFromView:self.view];
     }];
 }
 
 - (void)_getCompanyProfile {
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetDealCompanyProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
         if (!error && responseObject != nil) {
             self.companyModel = responseObject;
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
@@ -214,6 +214,7 @@
                 NSData *data = [NSJSONSerialization dataWithJSONObject:dicProfile options:0 error:nil];
                 [kUserDefaults setObject:data forKey:UPDATE_INVESTOR_PROFILE_JSON];
                 [kUserDefaults synchronize];
+                [COLoginManager shared].investorModel = nil;
                 self.investorModel = nil;
                 [self _reloadTableview];
             }];

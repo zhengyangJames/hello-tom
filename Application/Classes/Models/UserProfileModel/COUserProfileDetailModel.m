@@ -20,6 +20,7 @@
         @"profileCountry"       : @"country",
         @"profileAddress2"      : @"address_2",
         @"profileRegionState"   : @"region_state",
+        @"userPostalcode"       : @"postal_code",
     };
 }
 

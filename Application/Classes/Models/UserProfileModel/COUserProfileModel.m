@@ -147,6 +147,11 @@
     return proModel.profileRegionState;
 }
 
+- (NSString *)nameOfUserPostCode {
+    COUserProfileDetailModel *proModel = self.userProfile;
+    return proModel.userPostalcode;
+}
+
 - (NSString *)nameOfUserAddress2 {
     COUserProfileDetailModel *proModel = self.userProfile;
     return proModel.profileAddress2;
