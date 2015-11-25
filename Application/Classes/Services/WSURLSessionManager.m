@@ -126,19 +126,30 @@
     
     NSString *finalURL = [self buildURL:url byParams:params];
     NSMutableURLRequest *request = [self createAuthRequest:finalURL body:body httpMethod:method];
-    [self sendRequest:request handler:handler];
+    [self sendRequest:request requiredLogin:YES handler:handler];
     
 }
 
+
+- (void)sendRequest:(NSMutableURLRequest *)request requiredLogin:(BOOL)requiredLogin handler:(WSURLSessionHandler)handler {
+    if (requiredLogin) {
+        [[ErrorManager shared] requitedLogin:^(BOOL completed) {
+            if (completed) {
+                NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+                [request setValue:acc forHTTPHeaderField:@"Authorization"];
+                [self sendRequest:request handler:handler];
+            }
+        }];
+    } else {
+        [self sendRequest:request handler:handler];
+    }
+}
 
 - (void)sendRequest:(NSMutableURLRequest *)request handler:(WSURLSessionHandler)handler {
     DBG(@"NM-WS-REQUEST-URL: %@",request.URL.absoluteString);
     DBG(@"NM-WS-REQUEST-METHOD: %@",request.HTTPMethod);
     DBG(@"NM-WS-REQUEST-BODY: %@",[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
-
     [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-        
         NSString *errorUnknown = [error.userInfo objectForKey:@"message"];
         if ([errorUnknown isEqualToString:@"Unknown Error."] && !_isCheckUnknownError) {
             [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
@@ -153,7 +164,6 @@
             }
         }
     }];
-    
 }
 
 - (void)callSessionRequest:(NSMutableURLRequest *)request handler:(BlockSession)handler {

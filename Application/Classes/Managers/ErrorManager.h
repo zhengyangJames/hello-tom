@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ErrorManager : NSObject
+typedef void (^requitedLoginCompleted)(BOOL);
 
-@property (nonatomic, assign) BOOL isExpiredAuth;
+@interface ErrorManager : NSObject
 
 + (ErrorManager *)shared;
 + (void)showError:(NSError *)error;
+
+- (void)requitedLogin:(requitedLoginCompleted)completed;
 
 @end

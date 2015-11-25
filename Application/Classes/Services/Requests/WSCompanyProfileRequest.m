@@ -21,14 +21,20 @@
     
     [request setHTTPMethod:METHOD_POST];
     [request setURL:[NSURL URLWithString:WS_METHOD_COMPANY_PROFILE]];
-    [request setValue:[kUserDefaults objectForKey:KEY_ACCESS_TOKEN] forHTTPHeaderField:@"Authorization"];
+    NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+    if (acc) {
+        [request setValue:acc forHTTPHeaderField:@"Authorization"];
+    }
     return request;
 }
 
 - (WSCompanyProfileRequest *)getCompanyProfile {
     WSCompanyProfileRequest *request = [[WSCompanyProfileRequest alloc]init];
     [request setHTTPMethod:METHOD_GET];
-    [request setValue:[kUserDefaults objectForKey:KEY_ACCESS_TOKEN] forHTTPHeaderField:@"Authorization"];
+    NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+    if (acc) {
+        [request setValue:acc forHTTPHeaderField:@"Authorization"];
+    }
     [request setURL:[NSURL URLWithString:@"https://www.coassets.com/api/profile_organization/"]];
     return request;
 }

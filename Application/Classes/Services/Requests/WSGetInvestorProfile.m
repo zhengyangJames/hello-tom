@@ -11,9 +11,10 @@
 @implementation WSGetInvestorProfile
 - (void)setRequestWithToken:(NSDictionary*)tokenData {
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
-    //NSString *headerString = [NSString stringWithFormat:@"%@ %@",[tokenData objectForKeyNotNull:kTOKEN_TYPE], [tokenData objectForKeyNotNull:kACCESS_TOKEN]];
-    NSDictionary *headers = @{ @"Authorization": [kUserDefaults objectForKey:KEY_ACCESS_TOKEN] };
+    NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+    if (acc) {
+        [self setValue:acc forHTTPHeaderField:@"Authorization"];
+    }
     [self setHTTPMethod:METHOD_GET];
-    [self setAllHTTPHeaderFields:headers];
 }
 @end

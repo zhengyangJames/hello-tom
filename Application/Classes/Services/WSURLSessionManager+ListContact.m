@@ -13,7 +13,7 @@
 @implementation WSURLSessionManager (ListContact)
 
 - (void)wsGetListContactWithRequest:(WSGetListContactsRequest *)request handler:(WSURLSessionHandler)handler {
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             NSMutableArray *arrayData = [[NSMutableArray alloc]init];
             for (NSDictionary *data in responseObject) {

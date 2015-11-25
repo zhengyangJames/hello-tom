@@ -25,7 +25,7 @@
     [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_PROFILE]];
     [request setHTTPMethod:METHOD_GET];
     [request setValueWithTokenData:paramToken];
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSMutableDictionary *mutaDic = [NSMutableDictionary dictionary];
             [mutaDic addEntriesFromDictionary:paramToken];
@@ -42,7 +42,7 @@
 }
 
 - (void)wsUpdateProfileWithRequest:(WSUpdateProfileRequest *)request handler:(WSURLSessionHandler)handler  {
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             COUserProfileModel *userModel = [self _updateProfileUserModel:responseObject];
             if (handler) {
@@ -101,7 +101,7 @@
     WSGetAccountInvestment *request = [[WSGetAccountInvestment alloc]init];
     [request setURL:[NSURL URLWithString:WS_METHOD_GET_ACCOUNT_INVESTER]];
     [request setHeaderWithToken:paramToken];
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             if (handler) {
                 handler(responseObject,response,nil);
@@ -120,7 +120,7 @@
     WSGetInvestorProfile *request = [[WSGetInvestorProfile alloc] init];
     [request setURL:[NSURL URLWithString:WS_METHOD_GET_PROFILE_INVESTER]];
     [request setRequestWithToken:paramToken];
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             if (handler) {
                 handler(responseObject,response,nil);
@@ -134,7 +134,7 @@
 }
 
 - (void)wsUpdateInvestorProfile:(WSUpdateInvestorProfile*)request handler:(WSURLSessionHandler)handler {
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             COUserInverstorModel *model = [self _updateInvestorProfile:(NSDictionary*)responseObject];
             if (handler) {

@@ -13,8 +13,9 @@
 @implementation WSPostQuestionRequest
 
 - (void)setValueWithModel:(id)model {
-    COUserProfileModel *userModel = model;
-    NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
-    [self setValue:value forHTTPHeaderField:@"Authorization"];
+    NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+    if (acc) {
+        [self setValue:acc forHTTPHeaderField:@"Authorization"];
+    }
 }
 @end

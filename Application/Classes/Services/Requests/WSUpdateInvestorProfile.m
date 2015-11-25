@@ -13,9 +13,10 @@
 @implementation WSUpdateInvestorProfile
 
 - (void)setRequestWithTOken {
-    COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-    NSString *value = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
-    [self setValue:value forHTTPHeaderField:@"Authorization"];
+    NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+    if (acc) {
+        [self setValue:acc forHTTPHeaderField:@"Authorization"];
+    }
     [self setURL:[NSURL URLWithString:WS_METHOD_GET_PROFILE_INVESTER]];
 }
 

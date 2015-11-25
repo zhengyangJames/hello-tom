@@ -11,10 +11,11 @@
 @implementation WSGetAccountInvestment
 
 - (void)setHeaderWithToken:(NSDictionary *)tokenDic {
-    NSString *headerString = [NSString stringWithFormat:@"%@ %@",[tokenDic objectForKeyNotNull:kTOKEN_TYPE], [tokenDic objectForKeyNotNull:kACCESS_TOKEN]];
-    NSDictionary *headers = @{ @"Authorization": headerString };
+    NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+    if (acc) {
+        [self setValue:acc forHTTPHeaderField:@"Authorization"];
+    }
     [self setHTTPMethod:METHOD_GET];
-    [self setAllHTTPHeaderFields:headers];
 }
 
 @end

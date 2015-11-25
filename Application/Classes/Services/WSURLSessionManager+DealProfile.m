@@ -16,7 +16,7 @@
     WSGetDealProfileRequest *request = [[WSGetDealProfileRequest alloc]init];
     request = [request getDealList:dealList];
     
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         
         /*
         //////DEBUG
@@ -31,6 +31,7 @@
         /////END
         */
         
+        ///*
         if (!error && responseObject) {
             NSDictionary *responseObj = (NSDictionary *)responseObject;
             NSError *error;
@@ -44,6 +45,7 @@
                 handler(responseObject,response,error);
             }
         }
+        // */
     }];
 }
 

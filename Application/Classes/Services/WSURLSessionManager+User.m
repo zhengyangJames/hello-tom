@@ -17,7 +17,7 @@
 @implementation WSURLSessionManager (User)
 
 - (void)wsLoginWithRequest:(WSLoginRequest *)request handler:(WSURLSessionHandler)handler {
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
                 handler(responseObject,response,nil);
@@ -31,7 +31,7 @@
 }
 
 - (void)wsRegisterWithRequest:(WSRegisterRequest *)request handler:(WSURLSessionHandler)handler;{
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
                 handler(responseObject,response,nil);
@@ -45,7 +45,7 @@
 }
 
 - (void)wsForgotPasswordWithRequest:(WSForgotPassWordRequest *)request handler:(WSURLSessionHandler)handler {
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
                 handler(responseObject,response,nil);
@@ -59,7 +59,7 @@
 }
 
 - (void)wsChangePasswordWithRequest:(WSChangePassWordRequest *)request handler:(WSURLSessionHandler)handler {
-    [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
                 handler(responseObject,response,nil);

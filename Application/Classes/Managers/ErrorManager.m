@@ -11,6 +11,8 @@
 
 @interface ErrorManager() <LoginViewControllerDelegate>
 
+@property (nonatomic, strong) requitedLoginCompleted _completed;
+
 @end
 
 @implementation ErrorManager
@@ -37,7 +39,6 @@
         }
         if ([message isEqualToString:ERROR_AUTH_NOT_PROVIDED]) {
             [kAppDelegate clearData];
-            [ErrorManager shared].isExpiredAuth = YES;
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:m_string(@"CoAssets")
                                                                 message:message
@@ -67,16 +68,23 @@
     return viewController;
 }
 
-- (void)showLogin {
-    UIViewController *vc = [self getCurrentViewController];
-    if (vc && [vc isKindOfClass:[LoginViewController class]]) {
-        return;
+- (void)requitedLogin:(requitedLoginCompleted)completed {
+    NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+    if (!acc) {
+        self._completed = completed;
+        UIViewController *vc = [self getCurrentViewController];
+        if (vc && [vc isKindOfClass:[LoginViewController class]]) {
+            return;
+        }
+        [[kAppDelegate baseProfileNAV] dismissViewControllerAnimated:NO completion:nil];
+        LoginViewController *vcLogin = [[LoginViewController alloc]init];
+        vcLogin.delegate = self;
+        BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+        [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
+    } else {
+        if (completed)
+            completed(YES);
     }
-    [[kAppDelegate baseProfileNAV] dismissViewControllerAnimated:NO completion:nil];
-    LoginViewController *vcLogin = [[LoginViewController alloc]init];
-    vcLogin.delegate = self;
-    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
-    [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
 }
 
 - (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
@@ -84,13 +92,18 @@
         case PushLoginVC:
         {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
-            self.isExpiredAuth = NO;
+            if (self._completed) {
+                self._completed(YES);
+            }
         } break;
             
         case DismissLoginVC:
         {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
             [kAppDelegate baseTabBarController].selectedIndex = 0;
+            if (self._completed) {
+                self._completed(NO);
+            }
         } break;
             
         default: break;

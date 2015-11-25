@@ -15,11 +15,10 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        COUserProfileModel *userModel = [[COLoginManager shared] userModel];
-        
-        NSString *headerString = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
-        NSDictionary *headers = @{ @"Authorization": headerString };
-        [self setAllHTTPHeaderFields:headers];
+        NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+        if (acc) {
+            [self setValue:acc forHTTPHeaderField:@"Authorization"];
+        }
 
     }
     return self;

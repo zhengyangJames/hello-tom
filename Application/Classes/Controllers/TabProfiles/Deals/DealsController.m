@@ -130,7 +130,6 @@
     [dic setObject:application_name forKey:application_name_dic];
     [[WSURLSessionManager shared] wsGetDealRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
-            [UIHelper hideLoadingFromView:self.view];
             self.dealModel = (CODealProfileModel *)responseObject;
             self.dataArray = self.dealModel.dealOngoingModel;
             strSignContract = self.dealModel.signContractInstruction;
@@ -141,6 +140,7 @@
         } else {
             [ErrorManager showError:error];
         }
+        [UIHelper hideLoadingFromView:self.view];
     }];
 }
 
