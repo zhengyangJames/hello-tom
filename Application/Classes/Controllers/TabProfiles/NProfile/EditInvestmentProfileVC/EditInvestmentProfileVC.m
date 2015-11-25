@@ -184,7 +184,6 @@
 
 
 - (void)_callWSUpdateInvertorProfile {
-    [self _updateInvestorProfileJson];
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsUpdateInvestorProfile:[self _setUpdateInvertorProfileRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         [UIHelper showLoadingInView:self.view];
@@ -238,6 +237,7 @@
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
+    [self.view endEditing:YES];
     [self _callWSUpdateInvertorProfile];
 }
 

@@ -22,7 +22,7 @@
         @"target"   : @"target_annualize_return",
         @"countries"   : @"country",
         @"descriptions"   : @"description",
-        @"website"   : @"iv_website",
+        @"website"   : @"website",
         @"duration"   : @"duration_preference_in_month",
     };
 }

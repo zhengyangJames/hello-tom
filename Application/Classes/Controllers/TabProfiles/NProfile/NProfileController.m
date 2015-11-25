@@ -19,6 +19,7 @@
 #import "EditCompanyVC.h"
 #import "EditInvestmentProfileVC.h"
 #import "WSURLSessionManager+CompanyProfile.h"
+#import "WSURLSessionManager+Profile.h"
 
 @interface NProfileController ()<NProfileHeaderViewDelegate,profileButtonCellDelegate,EditAboutProfileVCDelegate>
 {
@@ -43,7 +44,8 @@
     [super viewDidLoad];
     [self _setupUI];
     [self _getCompanyProfile];
-    [self _updateProfile];
+    [self _getListProfile];
+    [self _getInvestmentProfile];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -143,8 +145,7 @@
     EditInvestmentProfileVC *vc = [[EditInvestmentProfileVC alloc]init];
     vc.investorUserModel = self.investorModel;
     vc.actionDone = ^(){
-        self.investorModel = nil;
-        [self _reloadTableview];
+        [self _getInvestmentProfile];
     };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self.navigationController presentViewController:baseNAV animated:YES completion:nil];
@@ -174,7 +175,7 @@
 
 
 #pragma mark - API
-- (void)_updateProfile {
+- (void)_getListProfile {
     [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
         if (object && [object isKindOfClass:[NSDictionary class]] && !error) {
             [[COLoginManager shared] setUserModel:nil];
@@ -203,4 +204,24 @@
         [UIHelper hideLoadingFromView:self.view];
     }];
 }
+
+- (void)_getInvestmentProfile {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsGetInvestorProfile:nil handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if ([responseObject isKindOfClass:[NSDictionary class]] && !error) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                NSDictionary *dicProfile = (NSDictionary*)responseObject;
+                NSData *data = [NSJSONSerialization dataWithJSONObject:dicProfile options:0 error:nil];
+                [kUserDefaults setObject:data forKey:UPDATE_INVESTOR_PROFILE_JSON];
+                [kUserDefaults synchronize];
+                self.investorModel = nil;
+                [self _reloadTableview];
+            }];
+        } else {
+            [ErrorManager showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
+}
+
 @end

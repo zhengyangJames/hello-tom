@@ -29,7 +29,7 @@ static NSString *kUpIVProfileTargetUpdate         = @"annualize_return";
 static NSString *kUpIVProfileDurationUpdate       = @"time_horizon";
 static NSString *kUpIVProfileCountriesUpdate      = @"country";
 static NSString *kUpIVProfileDescriptionsUpdate   = @"description";
-static NSString *kUpIVProfileWebsiteUpdate        = @"iv_website";
+static NSString *kUpIVProfileWebsiteUpdate        = @"website";
 
 @interface WSUpdateInvestorProfile : WSRequest
 - (void)setRequestWithTOken;
