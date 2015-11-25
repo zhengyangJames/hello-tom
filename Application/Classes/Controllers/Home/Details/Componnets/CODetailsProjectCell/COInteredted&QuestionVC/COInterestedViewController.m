@@ -74,9 +74,7 @@
 - (void)__actionDone {
     [self.view endEditing:YES];
     if ([self _checkEmailAmount]) {
-        if ([self _checkMinimumInvestmentAmount]) {
-            [self _callWSInteredted];
-        }
+        [self _callWSInteredted];
     }
 }
 
@@ -129,10 +127,9 @@
 - (BOOL)_checkMinimumInvestmentAmount {
     NSInteger current = _amountTextField.text.integerValue;
     NSInteger minimum = _coInterested.numberOfOfferAmount.integerValue;
-    if (current && minimum && current > minimum) {
+    if (current && minimum && current >= minimum) {
         return YES;
     }
-    [UIHelper showAlertViewErrorWithMessage:[NSString stringWithFormat:NSLocalizedString(@"MINIMUM_MESSAGE", nil),_coInterested.numberOfOfferAmount.stringValue] delegate:nil tag:0];
     return NO;
 }
 
@@ -148,6 +145,9 @@
     } else if ([_amountTextField.text isEmpty]) {
         _textField = _amountTextField;
         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"AMOUNT_REQUIRED", nil) delegate:self tag:0];
+        return NO;
+    } else if (![self _checkMinimumInvestmentAmount]) {
+        [UIHelper showAlertViewErrorWithMessage:[NSString stringWithFormat:NSLocalizedString(@"MINIMUM_MESSAGE", nil),_coInterested.numberOfOfferAmount.stringValue] delegate:nil tag:0];
         return NO;
     } else if (!_isCheck) {
         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"MESSAGE_CHECK_EMAIL", nil) delegate:self tag:0];
