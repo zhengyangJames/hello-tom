@@ -70,7 +70,8 @@
     [address2TextField setText:_companyUserModel.companyAdressContent2];
     [orgCityTextField setText:_companyUserModel.companyCity];
     [countryTextField setText:_companyUserModel.companyCountry];
-    [_btnOrgType setTitle:[self.arrayOrgType objectAtIndex:[self _getOrgType:_companyUserModel.orgType]] forState:UIControlStateNormal];
+    _indexActtionOrgType = [self _getOrgType:_companyUserModel.orgType];
+    [_btnOrgType setTitle:[self.arrayOrgType objectAtIndex:_indexActtionOrgType] forState:UIControlStateNormal];
     NSString *path = _companyUserModel.imageUrl;
     if (path) {
         [_imageCompany sd_setImageWithURL:[NSURL URLWithString:path]];
