@@ -173,7 +173,10 @@
                 if (strError && [strError isEqualToString:ERROR_AUTH_NOT_PROVIDED]) {
                     errorMessage = ERROR_AUTH_NOT_PROVIDED;
                 }
-                
+                strError = [responseObject objectForKeyNotNull:@"message"];
+                if (strError) {
+                    errorMessage = strError;
+                }
                 strError = [responseObject objectForKeyNotNull:@"error"];
                 if (strError) {
                     errorMessage = strError;
