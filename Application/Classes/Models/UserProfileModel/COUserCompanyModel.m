@@ -163,6 +163,20 @@
 
 #pragma mark - image protocol
 
+- (NSString *)imageUrl {
+    NSString *http = [_imageUrl substringToIndex:8];
+    NSArray *arrComponent = [[_imageUrl substringFromIndex:8] componentsSeparatedByString:@"/"];
+    for (NSInteger i = 0; i < arrComponent.count; i++) {
+        NSString *component = [arrComponent objectAtIndex:i];
+        if (i == 0) {
+            http = [http stringByAppendingString:[component urlEncode]];
+        } else {
+            http = [[http stringByAppendingString:@"/"] stringByAppendingString:[component urlEncode]];
+        }
+    }
+    return http;
+}
+
 - (NSString *)companyImageURL {
     if (self.imageUrl) {
         return self.imageUrl;
