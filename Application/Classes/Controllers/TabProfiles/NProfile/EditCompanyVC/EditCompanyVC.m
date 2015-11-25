@@ -70,7 +70,7 @@
     [address2TextField setText:_companyUserModel.companyAdressContent2];
     [orgCityTextField setText:_companyUserModel.companyCity];
     [countryTextField setText:_companyUserModel.companyCountry];
-    
+    [_btnOrgType setTitle:[self.arrayOrgType objectAtIndex:[self _getOrgType:_companyUserModel.orgType]] forState:UIControlStateNormal];
     NSString *path = _companyUserModel.imageUrl;
     if (path) {
         [_imageCompany sd_setImageWithURL:[NSURL URLWithString:path]];
@@ -99,6 +99,17 @@
 }
 
 #pragma mark - Private
+
+- (NSInteger)_getOrgType:(NSString *)type {
+    for (NSInteger i = 0; i < self.arrayType.count; i++) {
+        NSDictionary *dict = [self.arrayType objectAtIndex:i];
+        NSString *type_ = [dict objectForKeyNotNull:@"key"];
+        if ([type_ isEqualToString:type]) {
+            return i;
+        }
+    }
+    return 0;
+}
 
 - (void)_setupUI {
     

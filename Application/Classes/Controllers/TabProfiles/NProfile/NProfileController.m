@@ -194,8 +194,9 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetDealCompanyProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
-            self.companyModel = responseObject;
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                [COLoginManager shared].companyModel = nil;
+                self.companyModel = nil;
                 [self _reloadTableview];
             }];
         } else {
