@@ -178,7 +178,15 @@
 }
 
 - (BOOL)_isValidation {
-    if ([emailNameTXT.text isEmpty]) {
+    if ([_txtFirstName.text isEmpty]) {
+        _currentField = _txtFirstName;
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FIRSTNAME_REQUIRED", nil) delegate:self tag:0];
+        return NO;
+    } else if ([_txtLastName.text isEmpty]) {
+        _currentField = _txtLastName;
+        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"LASTNAME_REQUIRED", nil) delegate:self tag:0];
+        return NO;
+    } else if ([emailNameTXT.text isEmpty]) {
         _currentField = emailNameTXT;
         [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
         return NO;
