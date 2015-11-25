@@ -10,6 +10,7 @@
 #import "CODealProfileModel.h"
 #import "CODealOngoingModel.h"
 #import "COPositive&NagitiveButton.h"
+#import "COOngoingStatusModel.h"
 
 @implementation DealTableViewCell {
     __weak IBOutlet UILabel *_lbProjectName;
@@ -19,6 +20,9 @@
     __weak NSString *strMakePayment;
     __weak IBOutlet UIButton *_btnSigContract;
     __weak IBOutlet UIButton *_btnSigMake;
+    
+    __weak IBOutlet UILabel *_lblSigContract;
+    __weak IBOutlet UILabel *_lblSigMake;
 }
 
 
@@ -53,6 +57,11 @@
     
     
     _lbNextPayoutDateData.text = [NSString stringWithFormat:@"%@\n(%@ %@)",deal.dealOngoingNextPayoutDate,sgd, [UIHelper formartFoatValueWithDeal:deal.dealOngoingNextPayoutAmount MinimumFractionDigits:2]];
+    
+    _btnSigContract.hidden = deal.dealOngoingStatus.dealOngoingStatusIsSigned;
+    _lblSigContract.hidden = !deal.dealOngoingStatus.dealOngoingStatusIsSigned;
+    _btnSigMake.hidden = deal.dealOngoingStatus.dealOngoingStatusIsPaid;
+    _lblSigMake.hidden = !deal.dealOngoingStatus.dealOngoingStatusIsSigned;
 }
 
 - (void)_showAlertView:(NSString *)title message:(NSString *)message delegate:(UIViewController *)delegate tag:(NSInteger )tag {
