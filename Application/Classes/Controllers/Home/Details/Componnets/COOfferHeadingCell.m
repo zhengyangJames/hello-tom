@@ -44,7 +44,8 @@
 
 - (void)setOfferLogo:(id<COOfferLogo>)offerLogo {
     _offerLogo = offerLogo;
-    _detailsTextView.text = _offerLogo.offerLogoTitle;
+    NSString *text = _offerLogo.offerLogoTitle;
+    _detailsTextView.text = text;
     if (_offerLogo.offerLogoImage && ![_offerLogo.offerLogoImage rangeOfString:@"public_media/company.png"].length != 0) {
         NSURL *url = [NSURL URLWithString:_offerLogo.offerLogoImage];
         [_image sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"company_edit.jpg"]];
