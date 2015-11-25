@@ -15,6 +15,7 @@
 #import "LoginViewController.h"
 #import "WSURLSessionManager+CompanyProfile.h"
 #import "LoadFileManager.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
@@ -69,17 +70,13 @@
     [address2TextField setText:_companyUserModel.companyAdressContent2];
     [orgCityTextField setText:_companyUserModel.companyCity];
     [countryTextField setText:_companyUserModel.companyCountry];
+    
+    NSString *path = _companyUserModel.imageUrl;
+    if (path) {
+        [_imageCompany sd_setImageWithURL:[NSURL URLWithString:path]];
+        _heightTopView.constant = [_companyUserModel.heightForImage floatValue] - 20;
+    }
 }
-
-//- (NSArray *)arrayOrgType {
-//    if (_arrayOrgType) {
-//        return _arrayOrgType;
-//    }
-//    _arrayOrgType = @[@"Developer",@"Agency",@"Reseller",@"Funds",@"Others ",@"Route Sale"];
-//    return _arrayOrgType;
-//}
-
-
 
 - (NSArray*)arrayType {
     if (!_arrayType) {
