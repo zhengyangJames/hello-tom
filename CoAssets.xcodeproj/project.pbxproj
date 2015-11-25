@@ -2663,7 +2663,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "cdda8e1b-a781-43de-8240-2ccbe1a37e19";
+				PROVISIONING_PROFILE = "94069af6-cd6e-4724-8835-ae2f6b17fe05";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2686,7 +2686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "cdda8e1b-a781-43de-8240-2ccbe1a37e19";
+				PROVISIONING_PROFILE = "94069af6-cd6e-4724-8835-ae2f6b17fe05";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
