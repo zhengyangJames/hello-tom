@@ -29,6 +29,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
+    //test
+    _userName.text = @"mrkyawkyawlinn";
+    _passWord.text = @"kklinn";
+    
+    //
 }
 
 #pragma mark - Setup

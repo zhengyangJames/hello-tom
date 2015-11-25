@@ -28,6 +28,9 @@
     __weak IBOutlet COBorderTextField *postCodeTXT;
     __weak IBOutlet COBorderTextField *regionStateTXT;
     __weak IBOutlet COBorderTextField *countryTXT;
+    
+    __weak IBOutlet COBorderTextField *_txtFirstName;
+    __weak IBOutlet COBorderTextField *_txtLastName;
 
     __weak COBorderTextField *_currentField;
     NSInteger _indexActtionCountryCode;
@@ -65,6 +68,9 @@
         NSString *phone     = [self _getPhoneCode:_userProfileModel.nameOfUserCountryCode];
         _indexActtionCountryCode = [self _getPhoneCodeForString:phone];
         [dropListCountryCode setTitle:phone forState:UIControlStateNormal];
+        
+        _txtFirstName.text = _userProfileModel.nameOfUserFirstName;
+        _txtLastName.text = _userProfileModel.nameOfUserLastName;
     }
 }
 #pragma mark - Set Get
@@ -98,6 +104,8 @@
     [request setBodyParam:[countryTXT.text trim] forKey:kUpProfileCountry];
     [request setBodyParam:[regionStateTXT.text trim] forKey:kUpProfileState];
     [request setBodyParam:[postCodeTXT.text trim] forKey:kUpProfilePostCode];
+    [request setBodyParam:[_txtFirstName.text trim] forKey:kUpProfileFirstName];
+    [request setBodyParam:[_txtLastName.text trim] forKey:kUpProfileLastName];
     return request;
 }
 
