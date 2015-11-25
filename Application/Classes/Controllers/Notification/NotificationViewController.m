@@ -81,9 +81,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
-    [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: [NSString stringWithFormat:@"%d",count1 - 1]];
-    
     CONotificationModel *notifiModel = [[CONotificationModel alloc]init];
     notifiModel = [self.arrayData objectAtIndex:indexPath.row];
     if (notifiModel != nil) {
@@ -95,12 +92,13 @@
 - (void)_loadDetailNotification:(CONotificationModel *)notification {
     
     if ([notification.notifiData.notifiStatus isEqualToString:UNREAD]) {
+        [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: [NSString stringWithFormat:@"%ld",count1 - 1]];
          [self _callReadNotification:notification];
     }
    
     if (notification.notifiData.notifiUrl != nil) {
         WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
-        webViewSetting.webLink = [LINK stringByAppendingString:notification.notifiData.notifiUrl];
+        webViewSetting.webLink = notification.notifiData.notifiUrl;
         webViewSetting.titler = m_string(@"Notification");
         [self.navigationController pushViewController:webViewSetting animated:YES];
     } else {
