@@ -133,10 +133,6 @@
     EditCompanyVC *vc = [[EditCompanyVC alloc]init];
     vc.companyUserModel = self.companyModel;
     vc.actionDone = ^(CGFloat updateForCellImage, UIImage *logo) {
-//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//            self.companyModel = nil;
-//            [self _reloadTableview];
-//        }];
         [self _getCompanyProfile];
     };
     BaseNavigationController *baseNAV = [[BaseNavigationController alloc]initWithRootViewController:vc];
@@ -177,7 +173,7 @@
 }
 
 
-#pragma mark - WS Update Profile
+#pragma mark - API
 - (void)_updateProfile {
     [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
         if (object && [object isKindOfClass:[NSDictionary class]] && !error) {
@@ -192,12 +188,8 @@
     }];
 }
 
-#pragma mark - API
-
-
 - (void)_getCompanyProfile {
     [UIHelper showLoadingInView:self.view];
-    
     [[WSURLSessionManager shared] wsGetDealCompanyProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         
         if (!error && responseObject != nil) {

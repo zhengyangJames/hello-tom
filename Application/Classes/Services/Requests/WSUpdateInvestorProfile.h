@@ -19,7 +19,7 @@ static NSString *kUpIVProfileTarget         = @"target_annualize_return";
 static NSString *kUpIVProfileDuration       = @"duration_preference_in_month";
 static NSString *kUpIVProfileCountries      = @"country";
 static NSString *kUpIVProfileDescriptions   = @"description";
-static NSString *kUpIVProfileWebsite        = @"iv_website";
+static NSString *kUpIVProfileWebsite        = @"website";
 
 static NSString *kUpIVProfileCurrencyUpdate       = @"currency";
 static NSString *kUpIVProfileInvestorUpdate       = @"investor_type";

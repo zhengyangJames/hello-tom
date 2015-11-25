@@ -48,7 +48,7 @@
     if (country && ![country isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }
-    _txtDetail.text = link;
+    _txtDetail.text = [self trimEnterFromString:link];
     _txtName.text = m_string(@"ADDRESSNAME");
     [_txtDetail setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
@@ -73,10 +73,21 @@
     if (country && ![country isEmpty]) {
         link = [[link stringByAppendingString:@"\n"] stringByAppendingString:country];
     }
-    _txtDetail.text = link;
+    _txtDetail.text = [self trimEnterFromString:link];
     _txtName.text = m_string(@"ADDRESSNAME");
     [_txtDetail setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
+}
+
+#pragma mark - Other
+- (NSString *)trimEnterFromString:(NSString *)string {
+    if (string.length > 2) {
+        NSString *aa = [string substringToIndex:1];
+        if ([aa isEqualToString:@"\n"]) {
+            return [string substringFromIndex:1];
+        }
+    }
+    return string;
 }
 
 @end

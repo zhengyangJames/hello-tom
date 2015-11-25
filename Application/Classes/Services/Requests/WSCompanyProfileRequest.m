@@ -35,19 +35,12 @@
 
 - (NSData *)createBodyWithBoundary:(NSString *)boundary parameters:(NSDictionary *)parameters image:(UIImageView *)image fileName:(NSString *)fileName {
     NSMutableData *httpBody = [NSMutableData data];
-    
     // add params (all params are strings)
-    
     [parameters enumerateKeysAndObjectsUsingBlock:^(NSString *parameterKey, NSString *parameterValue, BOOL *stop) {
-        
         [httpBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        
         [httpBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=%@\r\n\r\n", parameterKey] dataUsingEncoding:NSUTF8StringEncoding]];
-        
         [httpBody appendData:[[NSString stringWithFormat:@"%@\r\n", parameterValue] dataUsingEncoding:NSUTF8StringEncoding]];
-
         }];
-    
     // add image data
     if (image) {
         NSData *imageData = UIImagePNGRepresentation(image.image);
