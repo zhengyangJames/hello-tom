@@ -34,10 +34,10 @@
         _iconNotifi.image = [UIImage imageNamed:@"offer"];
     } else if ([notifi.notifiData.notifiType isEqual:NOTIFI_ICON_LANDINGPG]) {
         _iconNotifi.image = [UIImage imageNamed:@"landingpg"];
-    } else if ([notifi.notifiData.notifiType isEqual:NOTIFI_ICON_GENERAL]) {
-         _iconNotifi.image = [UIImage imageNamed:@"general"];
     } else if ([notifi.notifiData.notifiType isEqual:NOTIFI_ICON_EVENT]) {
-        _iconNotifi.image = [UIImage imageNamed:@"event"];
+         _iconNotifi.image = [UIImage imageNamed:@"event"];
+    } else {
+        _iconNotifi.image = [UIImage imageNamed:@"general"];
     }
 }
 

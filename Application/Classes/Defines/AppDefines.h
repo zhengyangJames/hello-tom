@@ -351,8 +351,8 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 
 #define NOTIFI_ICON_OFFER        @"offer"
 #define NOTIFI_ICON_EVENT        @"event"
-#define NOTIFI_ICON_LANDINGPG    @"event"
-#define NOTIFI_ICON_GENERAL      @"landingpg"
+#define NOTIFI_ICON_LANDINGPG    @"landingpg"
+#define NOTIFI_ICON_GENERAL      @"general"
 #define ERROR_AUTH_NOT_PROVIDED                    @"Authentication credentials were not provided."
 #define KEY_ACCESS_TOKEN         @"accesstoken"
 
