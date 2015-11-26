@@ -40,7 +40,11 @@
     NSURL *url = [NSURL URLWithString:_homeOffer.homeOfferCompanyPhoto];
     [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
     NSString *strImage = [_homeOffer.homeOfferCountry isEqualToString:@"Cambodia"] ? @"Globe" : _homeOffer.homeOfferCountry;
-    [_imageLogo     setImage:[UIImage imageNamed:strImage]];
+    UIImage *image = [UIImage imageNamed:strImage];
+    if (image == nil) {
+        image = [UIImage imageNamed:@"Globe"];
+    }
+    [_imageLogo     setImage:image];
     [_lblTitle      setText:_homeOffer.homeOfferTitle];
     [_lblCountry    setText:_homeOffer.homeOfferCountry];
     [self setNeedsUpdateConstraints];
