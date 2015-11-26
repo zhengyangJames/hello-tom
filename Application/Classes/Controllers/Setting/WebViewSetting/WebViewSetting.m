@@ -57,14 +57,14 @@
 }
 
 - (void)setWebLink:(NSString *)webLink {
-    NSString *http = @"https://";
-    if (webLink.length > 8) {
-        NSString *temp = [webLink substringToIndex:8];
-        if (![temp isEqualToString:http]) {
-            webLink = [http stringByAppendingString:webLink];
+    
+    NSURL *url = [NSURL URLWithString:webLink];
+    if (url) {
+        NSString *scheme = url.scheme;
+        if (!scheme) {
+            NSString *https = @"https://";
+             webLink = [https stringByAppendingString:webLink];
         }
-    } else {
-        webLink = [http stringByAppendingString:webLink];
     }
     _webLink = webLink;
 }
