@@ -22,6 +22,7 @@
 #import "WSPostDeviceTokenRequest.h"
 #import "WSURLSessionManager+Notification.h"
 #import "CONotificationModel.h"
+#import "WebViewSetting.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate,CONotificationBannerViewDelegate>
 {
@@ -160,14 +161,25 @@
 - (void)performNotification:(NSDictionary*)userInfo isCheckBannerNotfi:(BOOL)isCheck {
     if (userInfo && [userInfo objectForKey:@"data"]) {
         NSDictionary *data = [userInfo objectForKey:@"data"];
-        NSNumber *offerId = data[@"id"];
-        [self.baseTabBarController setSelectedIndex:0];
-        [self.baseTabBarController dismissViewControllerAnimated:YES completion:nil];
-        NSArray *array = self.baseHomeNAV.viewControllers;
-        if (array.count > 1) {
-            [self.baseHomeNAV popToViewController:self.homeVC animated:NO];
+        NSString *urlString = [data objectForKeyNotNull:@"url"];
+        NSString *type = [data objectForKeyNotNull:@"type"];
+        if (urlString && ![urlString isEmpty]) {
+            WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
+            webViewSetting.webLink = urlString;
+            webViewSetting.titler = m_string(@"Notification");
+            webViewSetting.isPresion = YES;
+            BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:webViewSetting];
+            [self.baseTabBarController presentViewController:nav animated:YES completion:nil];
+        } else if (type && [type isEqualToString:@"offer"]){
+            NSNumber *offerId = [data objectForKeyNotNull:@"id"];
+            [self.baseTabBarController setSelectedIndex:0];
+            [self.baseTabBarController dismissViewControllerAnimated:YES completion:nil];
+            NSArray *array = self.baseHomeNAV.viewControllers;
+            if (array.count > 1) {
+                [self.baseHomeNAV popToViewController:self.homeVC animated:NO];
+            }
+            [self.homeVC setNotificationOfferId:[offerId stringValue] isCheckNotificationBanner:isCheck];
         }
-        [self.homeVC setNotificationOfferId:[offerId stringValue] isCheckNotificationBanner:isCheck];
     }
 }
 

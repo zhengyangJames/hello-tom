@@ -56,6 +56,19 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
+- (void)setWebLink:(NSString *)webLink {
+    NSString *http = @"https://";
+    if (webLink.length > 8) {
+        NSString *temp = [webLink substringToIndex:8];
+        if (![temp isEqualToString:http]) {
+            webLink = [http stringByAppendingString:webLink];
+        }
+    } else {
+        webLink = [http stringByAppendingString:webLink];
+    }
+    _webLink = webLink;
+}
+
 #pragma mark - Setup
 - (void)_setupUI {
     [self.navigationController setNavigationBarHidden:NO animated:YES];

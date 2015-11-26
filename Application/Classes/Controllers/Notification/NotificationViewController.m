@@ -92,7 +92,7 @@
 - (void)_loadDetailNotification:(CONotificationModel *)notification {
     
     if ([notification.notifiData.notifiStatus isEqualToString:UNREAD]) {
-        [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: [NSString stringWithFormat:@"%ld",count1 - 1]];
+        [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: [NSString stringWithFormat:@"%tu",count1 - 1]];
          [self _callReadNotification:notification];
     }
    
@@ -101,7 +101,7 @@
         webViewSetting.webLink = notification.notifiData.notifiUrl;
         webViewSetting.titler = m_string(@"Notification");
         [self.navigationController pushViewController:webViewSetting animated:YES];
-    } else {
+    } else if([notification.notifiData.notifiType isEqualToString:@"offer"]) {
         _selectedOfferID = [notification.notifiData.notifiId stringValue];
         [kUserDefaults setObject:_selectedOfferID forKey:NOTIFICATION_ID];
         [kUserDefaults synchronize];
