@@ -12,6 +12,7 @@
 @interface WebViewSetting () <UIWebViewDelegate>
 {
     __weak IBOutlet UIWebView *_webView;
+    __weak UILabel *_lblTitle;
     UIRefreshControl *_refreshControl;
 }
 
@@ -34,16 +35,7 @@
 
 - (void)_setupRightBarButton {
     UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(__actionLoadSF:)];
-    [btDone setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
-                          forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = btDone;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -54,6 +46,12 @@
     }
     _webView.delegate = nil;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self _setupTitle:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self _setupTitle:self.titler];
 }
 
 - (void)setWebLink:(NSString *)webLink {
@@ -71,12 +69,28 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.navigationItem.title = self.titler;
+    //self.title = self.titler;
     [_webView.scrollView setScrollEnabled:YES];
     [_webView.scrollView setUserInteractionEnabled:YES];
     [self loadWebView];
     [self _setupRightBarButton];
+}
+
+- (void)_setupTitle:(NSString *)title {
+    if (title) {
+        CGRect rect = CGRectMake(30, 10, CGRectGetWidth([UIScreen mainScreen].bounds) - 60, 24);
+        UILabel *lblTitle = [[UILabel alloc] initWithFrame:rect];
+        lblTitle.text = title;
+        lblTitle.textAlignment = NSTextAlignmentCenter;
+        [lblTitle setFont:[UIFont fontWithName:@"Raleway-Regular" size:22]];
+        lblTitle.textColor = self.navigationController.navigationBar.tintColor;
+        [self.navigationController.navigationBar addSubview:lblTitle];
+        _lblTitle = lblTitle;
+    } else {
+        if (_lblTitle) {
+            [_lblTitle removeFromSuperview];
+        }
+    }
 }
 
 - (void)loadWebView {
