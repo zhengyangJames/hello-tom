@@ -158,18 +158,47 @@
     _userInfo = nil;
 }
 
+- (UIViewController *)_getCurrentViewController {
+    UIViewController *viewController;
+    if (self.baseTabBarController.presentedViewController) {
+        viewController = self.baseTabBarController.presentedViewController;
+        while ([viewController isKindOfClass:[UINavigationController class]] || [viewController isKindOfClass:[UITabBarController class]]) {
+            if ([viewController isKindOfClass:[UINavigationController class]]) {
+                viewController = ((UINavigationController *)viewController).topViewController;
+            }
+            if ([viewController isKindOfClass:[UITabBarController class]]) {
+                viewController = ((UITabBarController *)viewController).viewControllers[((UITabBarController *)viewController).selectedIndex];
+            }
+        }
+    }
+    return viewController;
+}
+
 - (void)performNotification:(NSDictionary*)userInfo isCheckBannerNotfi:(BOOL)isCheck {
     if (userInfo && [userInfo objectForKey:@"data"]) {
         NSDictionary *data = [userInfo objectForKey:@"data"];
         NSString *urlString = [data objectForKeyNotNull:@"url"];
         NSString *type = [data objectForKeyNotNull:@"type"];
         if (urlString && ![urlString isEmpty]) {
-            WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
-            webViewSetting.webLink = urlString;
-            webViewSetting.titler = m_string(@"Notification");
-            webViewSetting.isPresion = YES;
-            BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:webViewSetting];
-            [self.baseTabBarController presentViewController:nav animated:YES completion:nil];
+//            if ([self.baseNotificationNAV.topViewController isKindOfClass:[WebViewSetting class]]) {
+//                WebViewSetting *webViewSetting = (WebViewSetting *)self.baseNotificationNAV.topViewController;
+//                webViewSetting.webLink = urlString;
+//                [webViewSetting loadWebView];
+//                [self.baseTabBarController setSelectedIndex:2];
+//            } else
+            if ([[self _getCurrentViewController] isKindOfClass:[WebViewSetting class]]) {
+                WebViewSetting *webViewSetting = (WebViewSetting *)[self _getCurrentViewController];
+                webViewSetting.webLink = urlString;
+                [webViewSetting loadWebView];
+            } else {
+                WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
+                webViewSetting.webLink = urlString;
+                webViewSetting.titler = m_string(@"Notification");
+                webViewSetting.isPresion = YES;
+                BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:webViewSetting];
+                [self.baseTabBarController presentViewController:nav animated:YES completion:nil];
+            }
+            
         } else if (type && [type isEqualToString:@"offer"]){
             NSNumber *offerId = [data objectForKeyNotNull:@"id"];
             [self.baseTabBarController setSelectedIndex:0];

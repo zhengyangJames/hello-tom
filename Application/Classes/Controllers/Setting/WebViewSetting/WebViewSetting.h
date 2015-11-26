@@ -13,5 +13,6 @@
 @property (strong ,nonatomic) NSString *titler;
 @property (strong ,nonatomic) NSString *webLink;
 @property (nonatomic, assign) BOOL isPresion;
+- (void)loadWebView;
 
 @end

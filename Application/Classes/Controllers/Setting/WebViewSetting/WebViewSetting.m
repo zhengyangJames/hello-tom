@@ -75,11 +75,11 @@
     self.navigationItem.title = self.titler;
     [_webView.scrollView setScrollEnabled:YES];
     [_webView.scrollView setUserInteractionEnabled:YES];
-    [self _setupWebView];
+    [self loadWebView];
     [self _setupRightBarButton];
 }
 
-- (void)_setupWebView {
+- (void)loadWebView {
     NSURL *url = [NSURL URLWithString:self.webLink];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     _webView.delegate = self;
