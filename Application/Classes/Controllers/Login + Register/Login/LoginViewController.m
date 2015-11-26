@@ -30,8 +30,8 @@
     [super viewDidLoad];
     [self _setupUI];
     //test
-    //_userName.text = @"mrkyawkyawlinn";
-    //_passWord.text = @"kklinn";
+    _userName.text = @"mrkyawkyawlinn";
+    _passWord.text = @"kklinn";
     
     //
 }

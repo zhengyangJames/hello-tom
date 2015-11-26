@@ -110,6 +110,11 @@
         _selectedOfferID = [notification.notifiData.notifiId stringValue];
         [kUserDefaults setObject:_selectedOfferID forKey:NOTIFICATION_ID];
         [kUserDefaults synchronize];
+        
+        if (![[kAppDelegate baseHomeNAV].topViewController isKindOfClass:[HomeListViewController class]]) {
+            [[kAppDelegate baseHomeNAV] popToRootViewControllerAnimated:NO];
+        }
+        
         [kAppDelegate baseTabBarController].selectedIndex = 0;
     }
 }

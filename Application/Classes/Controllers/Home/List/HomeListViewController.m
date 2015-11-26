@@ -368,7 +368,8 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     if ([self _checkOfferIdInList:notifiID]) {
         [self callWSGetDetailsWithModel:notifiID];
     } else {
-        DBG(@"***__Offer ID Not Invaild__***");
+        [UIHelper showAlertViewErrorWithMessage:@"Offer ID Invaild" delegate:nil tag:0];
+        DBG(@"***__Offer ID Invaild__***");
     }
     [kUserDefaults removeObjectForKey:NOTIFICATION_ID];
     kUserDefaults.synchronize;
