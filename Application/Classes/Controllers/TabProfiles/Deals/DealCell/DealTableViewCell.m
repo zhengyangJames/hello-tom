@@ -55,13 +55,23 @@
     
     _lbPotentialReturnsData.text = [NSString stringWithFormat:@"%@ %@",persent, [UIHelper formartFoatValueWithDeal:deal.dealOngoingPotentialReturnAmount MinimumFractionDigits:0]];
     
-    
     _lbNextPayoutDateData.text = [NSString stringWithFormat:@"%@\n(%@ %@)",deal.dealOngoingNextPayoutDate,sgd, [UIHelper formartFoatValueWithDeal:deal.dealOngoingNextPayoutAmount MinimumFractionDigits:2]];
     
-    _btnSigContract.hidden = deal.dealOngoingStatus.dealOngoingStatusIsSigned;
-    _lblSigContract.hidden = !deal.dealOngoingStatus.dealOngoingStatusIsSigned;
-    _btnSigMake.hidden = deal.dealOngoingStatus.dealOngoingStatusIsPaid;
-    _lblSigMake.hidden = !deal.dealOngoingStatus.dealOngoingStatusIsSigned;
+    if (deal.dealOngoingStatus.dealOngoingStatusIsSigned) {
+        _btnSigContract.hidden = YES;
+        _lblSigContract.hidden = NO;
+    } else {
+        _btnSigContract.hidden = NO;
+        _lblSigContract.hidden = YES;
+    }
+    
+    if (deal.dealOngoingStatus.dealOngoingStatusIsPaid) {
+        _btnSigMake.hidden = YES;
+        _lblSigMake.hidden = NO;
+    } else {
+        _btnSigMake.hidden = NO;
+        _lblSigMake.hidden = YES;
+    }
 }
 
 - (void)_showAlertView:(NSString *)title message:(NSString *)message delegate:(UIViewController *)delegate tag:(NSInteger )tag {
