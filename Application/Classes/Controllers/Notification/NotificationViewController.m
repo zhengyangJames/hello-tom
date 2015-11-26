@@ -92,7 +92,12 @@
 - (void)_loadDetailNotification:(CONotificationModel *)notification {
     
     if ([notification.notifiData.notifiStatus isEqualToString:UNREAD]) {
-        [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: [NSString stringWithFormat:@"%tu",count1 - 1]];
+        NSString *badge = [NSString stringWithFormat:@"%tu",count1 - 1];
+        if (![badge isEqualToString:@"0"]) {
+            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:badge];
+        } else {
+            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: nil];
+        }
          [self _callReadNotification:notification];
     }
    
