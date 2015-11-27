@@ -33,10 +33,10 @@
 }
 
 - (NSString *)stringOfdealCOOngoingStatusModelNextPayoutDate {
-    return self.dealOngoingNextPayoutDate;
+    return [self.dealOngoingNextPayoutDate trim];
 }
 - (NSString *)stringOfdealCOOngoingStatusModelCurrency {
-    return self.dealOngoingCurrency;
+    return [self.dealOngoingCurrency trim];
 }
 - (NSNumber *)numberOfdealCOOngoingStatusModelInvestAmount {
     return self.dealOngoingInvestAmount;
@@ -51,6 +51,6 @@
     return self.dealOngoingPotentialReturnPercent;
 }
 - (NSString *)stringOfdealCOOngoingStatusModelProjectName {
-    return self.dealOngoingProjectName;
+    return [self.dealOngoingProjectName trim];
 }
 @end

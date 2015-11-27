@@ -22,7 +22,7 @@
 }
 
 - (NSString *)stringOfdata {
-    return self.notifiDateTime;
+    return [self.notifiDateTime trim];
 }
 
 - (NSNumber *)numberOfId {
@@ -30,7 +30,7 @@
 }
 
 - (NSString *)stringOfUniqueId {
-    return self.notifiUnique;
+    return [self.notifiUnique trim];
 }
 
 @end

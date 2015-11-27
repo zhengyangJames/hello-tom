@@ -55,10 +55,10 @@
 }
 
 - (NSString *)stringOfSignContractInstruction {
-    return self.signContractInstruction;
+    return [self.signContractInstruction trim];
 }
 
 - (NSString *)stringOfPaymentInstruction {
-    return self.paymentInstruction;
+    return [self.paymentInstruction trim];
 }
 @end

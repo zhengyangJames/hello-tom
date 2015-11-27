@@ -24,7 +24,7 @@
 }
 
 - (NSString *)stringOfAlert {
-    return self.notifiAlert;
+    return [self.notifiAlert trim];
 }
 
 @end

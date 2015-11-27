@@ -24,34 +24,34 @@
 }
 #pragma mark - get
 - (NSString *)stringOfContactRegNo {
-    return self.contactRegNo;
+    return [self.contactRegNo trim];
 }
 
 - (NSString *)stringOfContactCity {
-    return self.contactCity;
+    return [self.contactCity trim];
 }
 
 - (NSString *)stringOfContactPostalCode {
-    return self.contactPostalCode;
+    return [self.contactPostalCode trim];
 }
 
 - (NSString *)stringOfContactCountry {
-    return self.contactCountry;
+    return [self.contactCountry trim];
 }
 
 - (NSString *)stringOfContactAddress2 {
-    return self.contactAddress2;
+    return [self.contactAddress2 trim];
 }
 
 - (NSString *)stringOfContactPhoneNumber {
-    return self.contactPhoneNumber;
+    return [self.contactPhoneNumber trim];
 }
 
 - (NSString *)stringOfContactAddress1 {
-    return self.contactAddress1;
+    return [self.contactAddress1 trim];
 }
 
 - (NSString *)stringOfContactName {
-    return self.contactName;
+    return [self.contactName trim];
 }
 @end

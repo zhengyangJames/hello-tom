@@ -31,7 +31,7 @@
 }
 - (NSString *)companyNameContent {
     if ( self.orgName) {
-        return self.orgName;
+        return [self.orgName trim];
     }
     return m_string(@"NoCompanyAssociated");
 }
@@ -48,35 +48,35 @@
 
 - (NSString *)companyAdressContent1 {
     if (self.address) {
-        return self.address;
+        return [self.address trim];
     }
     return nil;
 }
 
 - (NSString *)companyAdressContent2 {
     if (self.address2) {
-        return self.address2;
+        return [self.address2 trim];
     }
     return nil;
 }
 
 - (NSString *)companyOrgtype {
     if (self.orgType) {
-        return self.orgType;
+        return [self.orgType trim];
     }
     return nil;
 }
 
 - (NSString *)companyCity {
     if (self.orgCity) {
-        return self.orgCity;
+        return [self.orgCity trim];
     }
     return nil;
 }
 
 - (NSString *)companyCountry {
     if (self.country) {
-        return self.country;
+        return [self.country trim];
     }
     return nil;
 }
