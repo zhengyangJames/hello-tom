@@ -17,7 +17,7 @@
     [request setHTTPBody:httpBody];
 
     NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-    [request setValue:contentType forHTTPHeaderField: @"Content-Type"];
+    [request setValue:contentType forHTTPHeaderField: @"content-type"];
     
     [request setHTTPMethod:METHOD_POST];
     [request setURL:[NSURL URLWithString:WS_METHOD_COMPANY_PROFILE]];
@@ -35,7 +35,7 @@
     if (acc) {
         [request setValue:acc forHTTPHeaderField:@"Authorization"];
     }
-    [request setURL:[NSURL URLWithString:@"https://www.coassets.com/api/profile_organization/"]];
+    [request setURL:[NSURL URLWithString:WS_METHOD_COMPANY_PROFILE]];
     return request;
 }
 

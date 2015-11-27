@@ -150,18 +150,8 @@
     DBG(@"NM-WS-REQUEST-METHOD: %@",request.HTTPMethod);
     DBG(@"NM-WS-REQUEST-BODY: %@",[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
     [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        NSString *errorUnknown = [error.userInfo objectForKey:@"message"];
-        if ([errorUnknown isEqualToString:@"Unknown Error."] && !_isCheckUnknownError) {
-            [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-                if (handler) {
-                    handler (responseObject,response,error);
-                }
-            }];
-            _isCheckUnknownError = YES;
-        } else {
-            if (handler) {
-                handler (responseObject,response,error);
-            }
+        if (handler) {
+            handler (responseObject,response,error);
         }
     }];
 }

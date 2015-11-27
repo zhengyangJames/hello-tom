@@ -248,6 +248,7 @@
     [UIHelper showLoadingInView:[kAppDelegate window]];
     UIImageView *logo = _isChooseImage == YES?_imageCompany:nil;
     [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest:dic imageView:logo Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
         if (!error && responseObject != nil) {
             [self _updateProfileUserModel:dic];
             UIImage *image = logo == nil?nil:logo.image;
@@ -258,7 +259,6 @@
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 
