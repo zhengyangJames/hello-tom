@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class CODealProfileModel;
+@class CODealOngoingModel;
 
 @interface DealTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) CODealProfileModel *model;
-@property (nonatomic, strong) NSString *strSig;
-@property (nonatomic, strong) NSString *strPayMent;
+@property (nonatomic, strong) CODealOngoingModel *deal;
 @end

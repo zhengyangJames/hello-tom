@@ -33,20 +33,19 @@
 }
 
 - (IBAction)__actionSignContract:(id)sender {
-    if (self.strSig != nil) {
-         [self _showAlertView:NSLocalizedString(@"COASSETS_TITLE", nil) message:self.strSig delegate:nil tag:1];
+    if (self.deal != nil) {
+         [self _showAlertView:NSLocalizedString(@"COASSETS_TITLE", nil) message:self.deal.dealOngoingContractInstruction delegate:nil tag:1];
     }
 }
 
 - (IBAction)__actionMakePayment:(id)sender {
-    if (self.strPayMent != nil) {
-        [self _showAlertView:NSLocalizedString(@"COASSETS_TITLE", nil) message:self.strPayMent delegate:nil tag:1];
+    if (self.deal != nil) {
+        [self _showAlertView:NSLocalizedString(@"COASSETS_TITLE", nil) message:self.deal.dealOngoingPaymentInstruction delegate:nil tag:1];
     }
 }
 
-- (void)setModel:(CODealProfileModel *)model {
-    _model = model;
-    CODealOngoingModel *deal = (CODealOngoingModel *)model;
+- (void)setDeal:(CODealOngoingModel *)deal {
+    _deal = deal;
     NSString *sgd = deal.dealOngoingCurrency;
     NSString *percent = @"%";
     NSString *persent = [NSString stringWithFormat:@"(%@%@) %@",[deal.dealOngoingPotentialReturnPercent stringValue],percent, sgd];

@@ -24,8 +24,6 @@
     __weak IBOutlet UILabel *_greatLabel;
     __weak IBOutlet COPositive_NagitiveButton *__greatButton;
     __weak IBOutlet UIButton *_actionsegment;
-    __weak NSString *strSignContract;
-    __weak NSString *strPaymentInstruction;
 }
 
 @property (nonatomic, strong) NSArray *dataArray;
@@ -132,8 +130,6 @@
     [[WSURLSessionManager shared] wsGetDealRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
             self.dealModel = (CODealProfileModel *)responseObject;
-            strSignContract = self.dealModel.signContractInstruction;
-            strPaymentInstruction =self.dealModel.paymentInstruction;
             self.dataArray = nil;
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
                 [self _reloadData];
@@ -151,9 +147,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DealTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DealTableViewCell" forIndexPath:indexPath];
-    cell.strSig = strSignContract;
-    cell.strPayMent = strPaymentInstruction;
-    cell.model = [self.dataArray objectAtIndex:indexPath.row];
+    cell.deal = [self.dataArray objectAtIndex:indexPath.row];
     return cell;
 }
 

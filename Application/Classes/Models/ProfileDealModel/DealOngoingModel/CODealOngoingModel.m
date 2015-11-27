@@ -21,6 +21,8 @@
         @"dealOngoingPotentialReturnPercent"    : @"potential_return_percent",
         @"dealOngoingProjectName"               : @"project_name",
         @"dealOngoingStatus"                    : @"status",
+        @"dealOngoingPaymentInstruction"        : @"payment_instruction",
+        @"dealOngoingContractInstruction"       : @"sign_contract_instruction",
         
     };
 }
