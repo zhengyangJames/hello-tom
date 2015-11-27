@@ -175,7 +175,7 @@
 
 #pragma mark - API
 - (void)_getListProfile {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[COLoginManager shared] tokenObject:nil callWSGetListProfile:^(id object, NSError *error) {
         if (object && [object isKindOfClass:[NSDictionary class]] && !error) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -186,12 +186,12 @@
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 
 - (void)_getCompanyProfile {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsGetDealCompanyProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
@@ -202,12 +202,12 @@
         } else {
              //[ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 
 - (void)_getInvestmentProfile {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsGetInvestorProfile:nil handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]] && !error) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -222,7 +222,7 @@
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 

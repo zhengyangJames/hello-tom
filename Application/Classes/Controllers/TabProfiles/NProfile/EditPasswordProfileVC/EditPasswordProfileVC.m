@@ -107,7 +107,7 @@
 
 #pragma mark - WS
 - (void)_callWSUpdatePassword:(NSString *)newPass{
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared]wsChangePasswordWithRequest:[self _setChangePassWordRequestWithPass:newPass] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_CHANGE_SUCCESSFULLY", nil) delegate:self tag:1];
@@ -117,7 +117,7 @@
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.view endEditing:YES];
         }];
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
     
 }

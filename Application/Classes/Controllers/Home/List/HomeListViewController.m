@@ -162,9 +162,9 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         _noDataView.hidden = YES;
     }
     _leftButton.enabled = NO;
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsGetListOffersWithRequest:[self _createGetListOfferRequestWithType:typeFilter] handle:^(id responseObject, NSURLResponse *response, NSError *error) {
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = nil;
             self.arrayData = (NSArray *)responseObject;
@@ -218,7 +218,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 }
 
 - (void)callWSGetDetailsWithModel:(NSString*)offerID {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsGetOfferInforWithRequest:[self _createOfferInfoRequestWithOfferID:offerID] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             self.offerModel = responseObject;
@@ -226,6 +226,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         } else {
             _leftButton.enabled = YES;
             [ErrorManager showError:error];
+            [UIHelper hideLoadingFromView:[kAppDelegate window]];
         }
     }];
 }
@@ -247,7 +248,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
         _leftButton.enabled = YES;
     }];
 }

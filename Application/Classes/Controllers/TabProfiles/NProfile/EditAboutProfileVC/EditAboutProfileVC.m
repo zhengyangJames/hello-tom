@@ -222,7 +222,7 @@
 #pragma mark - Web Service
 - (void)_callWSUpdateProfile {
     //[self updateProfileJsonDefaults];
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsUpdateProfileWithRequest:[self _setUpdateProfileRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -234,7 +234,7 @@
         }else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 #pragma mark - Action

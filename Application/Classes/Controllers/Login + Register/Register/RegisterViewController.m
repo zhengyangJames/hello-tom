@@ -151,7 +151,7 @@
 
 #pragma mark - Web Service
 - (void)_callWSRegister {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsRegisterWithRequest:[self _setRegisterRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if([[responseObject valueForKey:@"success"] isEqualToString:@"user created"]) {
@@ -159,11 +159,11 @@
                 [self _callWSLogin];
             }else {
                 [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];
-                [UIHelper hideLoadingFromView:self.view];
+                [UIHelper hideLoadingFromView:[kAppDelegate window]];
             }
         } else {
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];
-            [UIHelper hideLoadingFromView:self.view];
+            [UIHelper hideLoadingFromView:[kAppDelegate window]];
         }
     }];
 }
@@ -175,7 +175,7 @@
         } else {
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"INVALID_GRANT", nil) delegate:self tag:100];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 

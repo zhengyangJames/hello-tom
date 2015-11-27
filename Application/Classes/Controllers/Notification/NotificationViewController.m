@@ -132,7 +132,7 @@
 #pragma mark - POST Notification
 
 - (void)_callGetNotificationList {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
     [dic setObject:device_token forKey:device_token_dic];
@@ -156,7 +156,7 @@
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
         
     }];
 }

@@ -75,7 +75,7 @@
 
 #pragma mark - CallAPI
 - (void)_callWSLogin {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[COLoginManager shared] callAPILoginWithRequest:[self _setLoginRequest] actionLoginManager:^(id object, NSError *error) {
         if (object && !error ) {
             if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
@@ -84,7 +84,7 @@
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 

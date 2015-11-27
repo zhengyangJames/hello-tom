@@ -245,7 +245,7 @@
 }
 
 - (void)_postCampanyProfile:(NSDictionary *)dic {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     UIImageView *logo = _isChooseImage == YES?_imageCompany:nil;
     [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest:dic imageView:logo Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
@@ -256,10 +256,9 @@
             }
             [self dismissViewControllerAnimated:YES completion:^{}];
         } else {
-            [UIHelper showLoadingInView:self.view];
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 

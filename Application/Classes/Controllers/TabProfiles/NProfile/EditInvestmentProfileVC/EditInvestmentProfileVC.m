@@ -184,9 +184,9 @@
 
 
 - (void)_callWSUpdateInvertorProfile {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsUpdateInvestorProfile:[self _setUpdateInvertorProfileRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        [UIHelper showLoadingInView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
         if (self.actionDone) {
             self.actionDone();
         }

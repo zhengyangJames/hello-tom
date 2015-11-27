@@ -91,7 +91,7 @@
 }
 
 - (void)_callWSInteredted {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsPostSubscribeWithRequest:[self _createPostSubsRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject && !error) {
 //            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -104,7 +104,7 @@
         }else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 

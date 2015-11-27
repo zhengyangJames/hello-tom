@@ -70,7 +70,7 @@
 
 #pragma mark - Web Service
 - (void)wsCallQuestion {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsPostQuestionWithRequest:[self _createPostQuestionRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [kNotificationCenter postNotificationName:kNOTIFICATION_QUESTION object:nil];
@@ -78,7 +78,7 @@
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 

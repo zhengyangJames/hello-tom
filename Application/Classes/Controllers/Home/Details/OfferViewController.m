@@ -82,12 +82,12 @@
 }
 
 - (void)_getHeightWebview {
-    [UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WebViewManager shared] getHeightWebViewWithStringHtml:self.offerModel.offerProjectDescription heightForWebView:^(CGFloat height, UIWebView *web) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.detailsDataSource.heightWebview = height;
             [self.tableView reloadData];
-            [UIHelper hideLoadingFromView:self.view];
+            [UIHelper hideLoadingFromView:[kAppDelegate window]];
         }];
     }];
 }
