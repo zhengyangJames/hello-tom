@@ -177,7 +177,7 @@
         NSInteger statusCodeWS = httpResponse.statusCode;
         DBG(@"Status_CodeWS %tu",statusCodeWS);
         if (statusCodeWS >= 300) {
-            NSString *errorMessage = @"Unknown Error.";
+            NSString *errorMessage = error.localizedDescription;
             if (responseObject) {
                 NSString *strError = [responseObject objectForKeyNotNull:@"detail"];
                 if (strError && [strError isEqualToString:ERROR_AUTH_NOT_PROVIDED]) {
