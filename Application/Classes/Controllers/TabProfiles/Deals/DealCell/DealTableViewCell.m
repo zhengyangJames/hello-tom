@@ -25,7 +25,6 @@
     __weak IBOutlet UILabel *_lblSigMake;
 }
 
-
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellAccessoryNone;
     _btnSigMake.layer.borderWidth = 2;
