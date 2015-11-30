@@ -8,6 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
+@class COOngoingStatusModel;
+
 @interface CODealOngoingModel : MTLModel<MTLJSONSerializing>
+
+@property (nonatomic, strong) NSString *dealOngoingNextPayoutDate;
+@property (nonatomic, strong) NSString *dealOngoingCurrency;
+@property (nonatomic, strong) NSNumber *dealOngoingInvestAmount;
+@property (nonatomic, strong) NSNumber *dealOngoingNextPayoutAmount;
+@property (nonatomic, strong) NSNumber *dealOngoingPotentialReturnAmount;
+@property (nonatomic, strong) NSString *dealOngoingPotentialReturnPercent;
+@property (nonatomic, strong) NSString *dealOngoingProjectName;
+@property (nonatomic, strong) COOngoingStatusModel *dealOngoingStatus;
+
+- (NSString *)stringOfdealCOOngoingStatusModelNextPayoutDate;
+- (NSString *)stringOfdealCOOngoingStatusModelCurrency;
+- (NSNumber *)numberOfdealCOOngoingStatusModelInvestAmount;
+- (NSNumber *)numberOfdealCOOngoingStatusModelNextPayoutAmount;
+- (NSNumber *)numberOfdealCOOngoingStatusModelPotentialReturnAmount;
+- (NSString *)stringOfdealCOOngoingStatusModelPotentialReturnPercent;
+- (NSString *)stringOfdealCOOngoingStatusModelProjectName;
 
 @end

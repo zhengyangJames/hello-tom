@@ -10,10 +10,10 @@
 		012BDB9F1BA535F700252D12 /* COListFilterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDB8F1BA535F700252D12 /* COListFilterObject.m */; };
 		012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FA93C1B7A13A600A80D3F /* LoadFileManager.m */; };
 		01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1437B1B7D1053003DF5F9 /* COOfferModel.m */; };
-		0E2DFF931BFCC64C00C46815 /* CODealCompleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DFF911BFCC64C00C46815 /* CODealCompleteModel.m */; };
-		0E2DFF981BFCC6ED00C46815 /* COFundStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DFF971BFCC6ED00C46815 /* COFundStatusModel.m */; };
 		0E39FA621BC4247000880834 /* NProfileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4C1BC4247000880834 /* NProfileDataSource.m */; };
 		0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4E1BC4247000880834 /* NProfileDelegate.m */; };
+		0E3B132E1C0C449100AAAFD9 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B132C1C0C449100AAAFD9 /* DealTableViewCell.m */; };
+		0E3B132F1C0C449100AAAFD9 /* DealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */; };
 		0E8956141BBE1AC9007E36BF /* TabProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956121BBE1AC9007E36BF /* TabProfileController.m */; };
 		0E8956151BBE1AC9007E36BF /* TabProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956131BBE1AC9007E36BF /* TabProfileController.xib */; };
 		0E89561A1BBE1BB2007E36BF /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956181BBE1BB2007E36BF /* AccountController.m */; };
@@ -50,6 +50,7 @@
 		0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883C1B27CA7100B5656F /* NMUIHelper.m */; };
 		0EED2E711B5E2B94006730E2 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
 		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
+		0EF3EBA71BFD6EF3000CA9C9 /* COOngoingStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */; };
 		1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; };
 		1E5A6FBB1BCCC49F00C4C5A5 /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA71BCCC49F00C4C5A5 /* NProfileAdressCell.m */; };
 		1E5A6FBC1BCCC49F00C4C5A5 /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA81BCCC49F00C4C5A5 /* NProfileAdressCell.xib */; };
@@ -275,7 +276,6 @@
 		B94211031BFC2C9E00C86FE8 /* landingpg.png in Resources */ = {isa = PBXBuildFile; fileRef = B94211001BFC2C9E00C86FE8 /* landingpg.png */; };
 		B9449ABF1BFC846600E4C4A4 /* WSGetDealProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */; };
 		B9449AC21BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */; };
-		B9449ACF1BFC8B7100E4C4A4 /* CODealFundedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */; };
 		B9449AD21BFC8B8900E4C4A4 /* CODealOngoingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD11BFC8B8900E4C4A4 /* CODealOngoingModel.m */; };
 		B9449AD51BFC8C5B00E4C4A4 /* CODealProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD41BFC8C5B00E4C4A4 /* CODealProfileModel.m */; };
 		B94A4A4F1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */; };
@@ -321,14 +321,13 @@
 		012FA93D1B7A13A600A80D3F /* LoadFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadFileManager.h; sourceTree = "<group>"; };
 		01D1437A1B7D1053003DF5F9 /* COOfferModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOfferModel.h; sourceTree = "<group>"; };
 		01D1437B1B7D1053003DF5F9 /* COOfferModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOfferModel.m; sourceTree = "<group>"; };
-		0E2DFF901BFCC64C00C46815 /* CODealCompleteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealCompleteModel.h; sourceTree = "<group>"; };
-		0E2DFF911BFCC64C00C46815 /* CODealCompleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealCompleteModel.m; sourceTree = "<group>"; };
-		0E2DFF961BFCC6ED00C46815 /* COFundStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFundStatusModel.h; sourceTree = "<group>"; };
-		0E2DFF971BFCC6ED00C46815 /* COFundStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFundStatusModel.m; sourceTree = "<group>"; };
 		0E39FA4B1BC4247000880834 /* NProfileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDataSource.h; sourceTree = "<group>"; };
 		0E39FA4C1BC4247000880834 /* NProfileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileDataSource.m; sourceTree = "<group>"; };
 		0E39FA4D1BC4247000880834 /* NProfileDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDelegate.h; sourceTree = "<group>"; };
 		0E39FA4E1BC4247000880834 /* NProfileDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileDelegate.m; sourceTree = "<group>"; };
+		0E3B132B1C0C449100AAAFD9 /* DealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealTableViewCell.h; sourceTree = "<group>"; };
+		0E3B132C1C0C449100AAAFD9 /* DealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTableViewCell.m; sourceTree = "<group>"; };
+		0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealTableViewCell.xib; sourceTree = "<group>"; };
 		0E8956111BBE1AC9007E36BF /* TabProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabProfileController.h; sourceTree = "<group>"; };
 		0E8956121BBE1AC9007E36BF /* TabProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabProfileController.m; sourceTree = "<group>"; };
 		0E8956131BBE1AC9007E36BF /* TabProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabProfileController.xib; sourceTree = "<group>"; };
@@ -392,6 +391,8 @@
 		0ECA883C1B27CA7100B5656F /* NMUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMUIHelper.m; sourceTree = "<group>"; };
 		0EED2E701B5E2B94006730E2 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		0EED2E731B5E2E08006730E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0EF3EBA51BFD6EF3000CA9C9 /* COOngoingStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOngoingStatusModel.h; sourceTree = "<group>"; };
+		0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOngoingStatusModel.m; sourceTree = "<group>"; };
 		0EFEB4B01B2724B2001195B7 /* CoAssets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoAssets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E4B347A1BC62846006F2200 /* COBorderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COBorderTextView.h; sourceTree = "<group>"; };
 		1E4B347B1BC62846006F2200 /* COBorderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COBorderTextView.m; sourceTree = "<group>"; };
@@ -703,8 +704,6 @@
 		B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetDealProfileRequest.m; sourceTree = "<group>"; };
 		B9449AC01BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+DealProfile.h"; sourceTree = "<group>"; };
 		B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+DealProfile.m"; sourceTree = "<group>"; };
-		B9449ACD1BFC8B7100E4C4A4 /* CODealFundedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealFundedModel.h; sourceTree = "<group>"; };
-		B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealFundedModel.m; sourceTree = "<group>"; };
 		B9449AD01BFC8B8900E4C4A4 /* CODealOngoingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealOngoingModel.h; sourceTree = "<group>"; };
 		B9449AD11BFC8B8900E4C4A4 /* CODealOngoingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODealOngoingModel.m; sourceTree = "<group>"; };
 		B9449AD31BFC8C5B00E4C4A4 /* CODealProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODealProfileModel.h; sourceTree = "<group>"; };
@@ -811,37 +810,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0E2DFF8D1BFCC5F500C46815 /* FundStatusModel */ = {
-			isa = PBXGroup;
-			children = (
-				0E2DFF961BFCC6ED00C46815 /* COFundStatusModel.h */,
-				0E2DFF971BFCC6ED00C46815 /* COFundStatusModel.m */,
-			);
-			path = FundStatusModel;
-			sourceTree = "<group>";
-		};
 		0E2DFF8E1BFCC5FB00C46815 /* OngoingStatusModel */ = {
 			isa = PBXGroup;
 			children = (
+				0EF3EBA51BFD6EF3000CA9C9 /* COOngoingStatusModel.h */,
+				0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */,
 			);
 			path = OngoingStatusModel;
-			sourceTree = "<group>";
-		};
-		0E2DFF8F1BFCC64C00C46815 /* DealCompleteModel */ = {
-			isa = PBXGroup;
-			children = (
-				0E2DFF921BFCC64C00C46815 /* CompleteStatusModel */,
-				0E2DFF901BFCC64C00C46815 /* CODealCompleteModel.h */,
-				0E2DFF911BFCC64C00C46815 /* CODealCompleteModel.m */,
-			);
-			path = DealCompleteModel;
-			sourceTree = "<group>";
-		};
-		0E2DFF921BFCC64C00C46815 /* CompleteStatusModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CompleteStatusModel;
 			sourceTree = "<group>";
 		};
 		0E39FA491BC4247000880834 /* Components */ = {
@@ -854,6 +829,16 @@
 				0E39FA4E1BC4247000880834 /* NProfileDelegate.m */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		0E3B132A1C0C447200AAAFD9 /* DealCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E3B132B1C0C449100AAAFD9 /* DealTableViewCell.h */,
+				0E3B132C1C0C449100AAAFD9 /* DealTableViewCell.m */,
+				0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */,
+			);
+			path = DealCell;
 			sourceTree = "<group>";
 		};
 		0E8955E81BBE1A78007E36BF /* TabProfiles */ = {
@@ -884,6 +869,7 @@
 		0E89561C1BBE1BFF007E36BF /* Deals */ = {
 			isa = PBXGroup;
 			children = (
+				0E3B132A1C0C447200AAAFD9 /* DealCell */,
 				0E89561D1BBE1C14007E36BF /* DealsController.h */,
 				0E89561E1BBE1C14007E36BF /* DealsController.m */,
 				0E89561F1BBE1C14007E36BF /* DealsController.xib */,
@@ -1955,23 +1941,11 @@
 		B9449AC31BFC89C300E4C4A4 /* ProfileDealModel */ = {
 			isa = PBXGroup;
 			children = (
-				0E2DFF8F1BFCC64C00C46815 /* DealCompleteModel */,
-				B9449AC51BFC8A2800E4C4A4 /* DealFundedModel */,
 				B9449AC61BFC8A2800E4C4A4 /* DealOngoingModel */,
 				B9449AD31BFC8C5B00E4C4A4 /* CODealProfileModel.h */,
 				B9449AD41BFC8C5B00E4C4A4 /* CODealProfileModel.m */,
 			);
 			path = ProfileDealModel;
-			sourceTree = "<group>";
-		};
-		B9449AC51BFC8A2800E4C4A4 /* DealFundedModel */ = {
-			isa = PBXGroup;
-			children = (
-				0E2DFF8D1BFCC5F500C46815 /* FundStatusModel */,
-				B9449ACD1BFC8B7100E4C4A4 /* CODealFundedModel.h */,
-				B9449ACE1BFC8B7100E4C4A4 /* CODealFundedModel.m */,
-			);
-			path = DealFundedModel;
 			sourceTree = "<group>";
 		};
 		B9449AC61BFC8A2800E4C4A4 /* DealOngoingModel */ = {
@@ -2257,6 +2231,7 @@
 				7F3260361B40E50800116445 /* ic_calendar@3x.png in Resources */,
 				1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */,
 				7F325FB81B40E50800116445 /* ContactTableViewCell.xib in Resources */,
+				0E3B132F1C0C449100AAAFD9 /* DealTableViewCell.xib in Resources */,
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
 				1EF23C291BBE85C9006020C2 /* ic_loadding@3x.png in Resources */,
 				7FA7E6BC1B4E7C4D00059B13 /* COQuestionView.xib in Resources */,
@@ -2392,7 +2367,6 @@
 				7F325F7C1B40E50800116445 /* BaseTabBarController.m in Sources */,
 				BB3A9F6A1B9660DB002EEB1C /* WSUpdateProfileRequest.m in Sources */,
 				B9D7723F1BF9E1B2005FA75C /* CONotificationModel.m in Sources */,
-				0E2DFF981BFCC6ED00C46815 /* COFundStatusModel.m in Sources */,
 				7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */,
 				BB3A9F641B962BB8002EEB1C /* WSChangePassWordRequest.m in Sources */,
 				0ECA884A1B27CA7100B5656F /* NMImageHelper.m in Sources */,
@@ -2405,11 +2379,13 @@
 				BB38EE261B99F2B200D15D58 /* WSPostQuestionRequest.m in Sources */,
 				7FA7E6C01B4E7CD500059B13 /* COOfferProgressCell.m in Sources */,
 				7FC6D5131B4526240098EC8D /* COLoginManager.m in Sources */,
+				0E3B132E1C0C449100AAAFD9 /* DealTableViewCell.m in Sources */,
 				BB3097DA1B824F0C00BF6861 /* CODocumentItemModel.m in Sources */,
 				0E93F8CE1BBD8AB90079D5AE /* COUserInverstorModel.m in Sources */,
 				0ECA88491B27CA7100B5656F /* NMDeviceHelper.m in Sources */,
 				0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */,
 				BB368EB81B87E1F30066C646 /* COUserProfileDetailModel.m in Sources */,
+				0EF3EBA71BFD6EF3000CA9C9 /* COOngoingStatusModel.m in Sources */,
 				7F325FB71B40E50800116445 /* ContactTableViewCell.m in Sources */,
 				7FA7E6BB1B4E7C4D00059B13 /* COQuestionView.m in Sources */,
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
@@ -2433,7 +2409,6 @@
 				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,
 				B9449AD21BFC8B8900E4C4A4 /* CODealOngoingModel.m in Sources */,
 				7F325FA41B40E50800116445 /* RegisterViewController.m in Sources */,
-				B9449ACF1BFC8B7100E4C4A4 /* CODealFundedModel.m in Sources */,
 				1E5A6FBF1BCCC49F00C4C5A5 /* NProfileCountrieCell.m in Sources */,
 				7F325F7B1B40E50800116445 /* BaseNavigationController.m in Sources */,
 				0ECA88401B27CA7100B5656F /* NMTableViewCell.m in Sources */,
@@ -2485,7 +2460,6 @@
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
 				7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */,
-				0E2DFF931BFCC64C00C46815 /* CODealCompleteModel.m in Sources */,
 				1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */,
 				B9449AD51BFC8C5B00E4C4A4 /* CODealProfileModel.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,
@@ -2650,7 +2624,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "0136cf56-b856-4f00-92e6-71f81aa147b8";
+				PROVISIONING_PROFILE = "cdda8e1b-a781-43de-8240-2ccbe1a37e19";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2673,7 +2647,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "0136cf56-b856-4f00-92e6-71f81aa147b8";
+				PROVISIONING_PROFILE = "cdda8e1b-a781-43de-8240-2ccbe1a37e19";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

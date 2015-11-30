@@ -11,8 +11,10 @@
 #import "HomeListViewController.h"
 #import "WSGetDealProfileRequest.h"
 #import "WSURLSessionManager+DealProfile.h"
+#import "DealTableViewCell.h"
+#import "CODealProfileModel.h"
 
-@interface DealsController ()
+@interface DealsController ()<UITableViewDelegate, UITableViewDataSource>
 {
     __weak IBOutlet UISegmentedControl *_segment;
     __weak IBOutlet UILabel *_introductionLabel;
@@ -20,7 +22,11 @@
     __weak IBOutlet UITableView *_tableView;
     __weak IBOutlet UILabel *_greatLabel;
     __weak IBOutlet COPositive_NagitiveButton *__greatButton;
+    __weak IBOutlet UIButton *_actionsegment;
 }
+
+@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) CODealProfileModel *dealModel;
 
 @end
 
@@ -44,8 +50,16 @@
     self.navigationItem.title = NSLocalizedString(@"Deals", nil);
     [_segment setSelectedSegmentIndex:0];
     [_segment setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:15]} forState:UIControlStateNormal];
-    [_tableView setHidden:YES];
+    [self _setupTableView];
     [self _setTilerLabelAndButton];
+    
+}
+
+- (void)_setupTableView {
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.tableFooterView = [UIView new];
+    [_tableView registerNib:[UINib nibWithNibName:@"DealTableViewCell" bundle:nil] forCellReuseIdentifier:@"DealTableViewCell"];
 }
 
 - (void)_setTilerLabelAndButton {
@@ -53,9 +67,10 @@
     [__greatButton setTitle:m_string(@"TITLE_BUTTON") forState:UIControlStateNormal];
 }
 
-- (void)_setHiddenLabelAndButton:(BOOL)value {
-    [__greatButton setHidden:value];
-    [_greatLabel setHidden:value];
+- (void)_setTilerLabelAndButton:(BOOL)hidden {
+    [_tableView setHidden:!hidden];
+    _actionsegment.hidden = hidden;
+    _greatLabel.hidden = hidden;
 }
 
 #pragma mark - Action
@@ -64,20 +79,16 @@
     switch (_segment.selectedSegmentIndex) {
         case CODealsStypeOngoing:
             _introductionLabel.text = m_string(@"ON_GOING");
-            [self _setHiddenLabelAndButton:NO];
+            [self reloadData:_segment.selectedSegmentIndex];
             break;
         case CODealsStypeCompleted:
             _introductionLabel.text = m_string(@"COMPLETED");
-            [self _setHiddenLabelAndButton:NO];
+            [self reloadData:_segment.selectedSegmentIndex];
             break;
         case CODealsStypeFunded:
             _introductionLabel.text = m_string(@"FUNDED");
-            [self _setHiddenLabelAndButton:NO];
+            [self reloadData:_segment.selectedSegmentIndex];
             break;
-//        case CODealsStypeSuggest:
-//            _introductionLabel.text = m_string(@"SUGEST");
-//            [self _setHiddenLabelAndButton:YES];
-//            break;
         default:  break;
     }
 }
@@ -87,18 +98,56 @@
     [base setSelectedIndex:0];
 }
 
-- (void)_callGetDealList {
-    [UIHelper showLoadingInView:self.view];
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-//    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    [dic setObject:@"70624671f057fd5f573726f668bc8809848bc9a185f2a2c5982f16f165a2eab9" forKey:device_token_dic];
-    [dic setObject:device_type forKey:device_type_dic];
-    [dic setObject:application_name forKey:application_name_dic];
-    [[WSURLSessionManager shared] wsGetDealRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
+- (void)reloadData:(NSInteger )index {
+    [self _setTilerLabelAndButton:NO];
+    self.dataArray = nil;
+    if (index == 0) {
+        self.dataArray = self.dealModel.dealOngoingModel;
+    } else if (index == 1) {
+        self.dataArray = self.dealModel.dealCompleteModel;
+    } else {
+        self.dataArray = self.dealModel.dealFundedModel;
+    }
+    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+        [_tableView reloadData];
     }];
 }
 
+- (void)_callGetDealList {
+    [UIHelper showLoadingInView:self.view];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
+    [dic setObject:device_token forKey:device_token_dic];
+    [dic setObject:device_type forKey:device_type_dic];
+    [dic setObject:application_name forKey:application_name_dic];
+    [[WSURLSessionManager shared] wsGetDealRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        [UIHelper hideLoadingFromView:self.view];
+        self.dealModel = (CODealProfileModel *)responseObject;
+        self.dataArray = self.dealModel.dealOngoingModel;
+    }];
+}
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.dealModel.dealOngoingModel == nil ) {
+        [self _setTilerLabelAndButton:YES];
+    } else if (self.dealModel.dealFundedModel == nil) {
+        [self _setTilerLabelAndButton:YES];
+    } else if (self.dealModel.dealCompleteModel == nil) {
+        [self _setTilerLabelAndButton:YES];
+    } else {
+        [self _setTilerLabelAndButton:NO];
+    }
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DealTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DealTableViewCell" forIndexPath:indexPath];
+    cell.model = [self.dataArray objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 111;
+}
 
 @end

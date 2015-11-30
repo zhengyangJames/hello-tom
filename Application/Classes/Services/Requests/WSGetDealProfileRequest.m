@@ -22,7 +22,7 @@
     WSGetDealProfileRequest *request = [[WSGetDealProfileRequest alloc]init];
     [request setHTTPMethod:METHOD_GET];
     [request addValue:CONTENT_TYPE_GET forHTTPHeaderField:@"content-type"];
-    [request setValue:@"Bearer Vv5pQi9gjWm5SFwaMfFFTEz22Z1rma" forHTTPHeaderField:@"Authorization"];
+    [request setValue:[self _accessToken] forHTTPHeaderField:@"Authorization"];
     NSString *paramenter = [NSString stringWithFormat:@"%@?device_token=%@&device_type=%@&application_name=%@",WS_METHOD_GET_DEAL_LIST,[dealDic objectForKey:device_token_dic],[dealDic objectForKey:device_type_dic],[dealDic objectForKey:application_name_dic]];
     [request setURL:[NSURL URLWithString:paramenter]];
     

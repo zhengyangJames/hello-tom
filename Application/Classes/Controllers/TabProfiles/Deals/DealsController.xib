@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DealsController">
             <connections>
                 <outlet property="__greatButton" destination="DxS-5y-ZmR" id="Cye-qe-gJM"/>
+                <outlet property="_actionsegment" destination="DxS-5y-ZmR" id="yh7-y7-SpT"/>
                 <outlet property="_contentView" destination="7EQ-mc-hFO" id="PKZ-dm-I4E"/>
                 <outlet property="_greatLabel" destination="5cN-x6-GIM" id="qHF-Uh-avE"/>
                 <outlet property="_introductionLabel" destination="bEr-ye-3Cw" id="fBW-wQ-O2X"/>
@@ -35,7 +36,7 @@
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxS-5y-ZmR" customClass="COPositive_NagitiveButton">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxS-5y-ZmR" customClass="COPositive_NagitiveButton">
                             <rect key="frame" x="45" y="175" width="231" height="45"/>
                             <animations/>
                             <constraints>
@@ -48,7 +49,7 @@
                                 <action selector="__actionButtonGetStart:" destination="-1" eventType="touchUpInside" id="DEa-NU-B6c"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="5cN-x6-GIM">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="5cN-x6-GIM">
                             <rect key="frame" x="45" y="139" width="231" height="21"/>
                             <animations/>
                             <constraints>

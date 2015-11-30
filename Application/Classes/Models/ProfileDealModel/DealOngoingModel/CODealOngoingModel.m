@@ -7,17 +7,48 @@
 //
 
 #import "CODealOngoingModel.h"
+#import "COOngoingStatusModel.h"
 
 @implementation CODealOngoingModel
 
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"dealOngoingModel"          : @"ongoing",
-        @"dealFundedModel"           : @"funded",
-        @"dealCompleteModel"         : @"completed",
-        @"signContractInstruction"   : @"sign_contract_instruction",
-        @"paymentInstruction"        : @"payment_instruction",
+        @"dealOngoingNextPayoutDate"            : @"next_payout_date",
+        @"dealOngoingCurrency"                  : @"currency",
+        @"dealOngoingInvestAmount"              : @"invest_amount",
+        @"dealOngoingNextPayoutAmount"          : @"next_payout_amount",
+        @"dealOngoingPotentialReturnAmount"     : @"potential_return_amount",
+        @"dealOngoingPotentialReturnPercent"    : @"potential_return_percent",
+        @"dealOngoingProjectName"               : @"project_name",
+        @"dealOngoingStatus"                    : @"status",
+        
     };
 }
 
+
++ (NSValueTransformer *)dealOngoingStatusJSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:COOngoingStatusModel.class];
+}
+
+- (NSString *)stringOfdealCOOngoingStatusModelNextPayoutDate {
+    return self.dealOngoingNextPayoutDate;
+}
+- (NSString *)stringOfdealCOOngoingStatusModelCurrency {
+    return self.dealOngoingCurrency;
+}
+- (NSNumber *)numberOfdealCOOngoingStatusModelInvestAmount {
+    return self.dealOngoingInvestAmount;
+}
+- (NSNumber *)numberOfdealCOOngoingStatusModelNextPayoutAmount {
+    return self.dealOngoingNextPayoutAmount;
+}
+- (NSNumber *)numberOfdealCOOngoingStatusModelPotentialReturnAmount {
+    return self.dealOngoingPotentialReturnAmount;
+}
+- (NSString *)stringOfdealCOOngoingStatusModelPotentialReturnPercent {
+    return self.dealOngoingPotentialReturnPercent;
+}
+- (NSString *)stringOfdealCOOngoingStatusModelProjectName {
+    return self.dealOngoingProjectName;
+}
 @end

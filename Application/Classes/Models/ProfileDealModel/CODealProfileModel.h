@@ -6,21 +6,19 @@
 //  Copyright © 2015 Sanyi. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "MTLModel.h"
 
 @class CODealOngoingModel;
-@class CODealFundedModel;
-@class CODealCompleteModel;
 
 @interface CODealProfileModel : MTLModel<MTLJSONSerializing>
 
-@property (nonatomic, strong) CODealOngoingModel  *dealOngoingModel;
-@property (nonatomic, strong) CODealFundedModel   *dealFundedModel;
-@property (nonatomic, strong) CODealCompleteModel *dealCompleteModel;
+@property (nonatomic, strong) NSArray   *dealOngoingModel;
+@property (nonatomic, strong) NSArray   *dealFundedModel;
+@property (nonatomic, strong) NSArray   *dealCompleteModel;
 @property (nonatomic, strong) NSString *signContractInstruction;
 @property (nonatomic, strong) NSString *paymentInstruction;
 
-- (NSString *)stringOfSignContractInstruction;
-- (NSString *)stringOfPaymentInstruction;
+//- (NSString *)stringOfSignContractInstruction;
+//- (NSString *)stringOfPaymentInstruction;
 
 @end

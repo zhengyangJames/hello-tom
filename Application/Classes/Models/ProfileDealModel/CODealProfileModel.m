@@ -7,13 +7,11 @@
 //
 
 #import "CODealProfileModel.h"
-#import "CODealCompleteModel.h"
-#import "CODealFundedModel.h"
 #import "CODealOngoingModel.h"
 
 @implementation CODealProfileModel
 
-+(NSDictionary *)JSONKeyPathsByPropertyKey {
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
         @"dealOngoingModel"          : @"ongoing",
         @"dealFundedModel"           : @"funded",
@@ -24,23 +22,37 @@
 }
 
 + (NSValueTransformer *)dealOngoingModelJSONTransformer {
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:CODealCompleteModel.class];
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        NSArray *array;
+        if (value && [value isKindOfClass:[NSArray class]]) {
+            array = (NSArray*)value;
+        }
+        *success = YES;
+        return [MTLJSONAdapter modelsOfClass:[CODealOngoingModel class] fromJSONArray:array error:error];
+    }];
 }
 
 + (NSValueTransformer *)dealFundedModelJSONTransformer {
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:CODealFundedModel.class];
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        NSArray *array;
+        if (value && [value isKindOfClass:[NSArray class]]) {
+            array = (NSArray*)value;
+        }
+        *success = YES;
+        return [MTLJSONAdapter modelsOfClass:[CODealOngoingModel class] fromJSONArray:array error:error];
+    }];
 }
 
 + (NSValueTransformer *)dealCompleteModelJSONTransformer {
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:CODealOngoingModel.class];
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        NSArray *array;
+        if (value && [value isKindOfClass:[NSArray class]]) {
+            array = (NSArray*)value;
+        }
+        *success = YES;
+        return [MTLJSONAdapter modelsOfClass:[CODealOngoingModel class] fromJSONArray:array error:error];
+    }];
 }
 
-- (NSString *)stringOfSignContractInstruction {
-    return self.signContractInstruction;
-}
-
-- (NSString *)stringOfPaymentInstruction {
-    return self.paymentInstruction;
-}
 
 @end

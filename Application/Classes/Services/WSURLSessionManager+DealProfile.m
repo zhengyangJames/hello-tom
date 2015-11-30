@@ -7,6 +7,7 @@
 //
 
 #import "WSURLSessionManager+DealProfile.h"
+#import "CODealProfileModel.h"
 
 @implementation WSURLSessionManager (DealProfile)
 
@@ -17,15 +18,12 @@
     
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
-            NSMutableArray *arrayData = [[NSMutableArray alloc]init];
+            NSDictionary *responseObj = (NSDictionary *)responseObject;
+            NSError *error;
+            CODealProfileModel *dealModel = [MTLJSONAdapter modelOfClass:[CODealProfileModel class] fromJSONDictionary:responseObj error:&error];
             
-            for (NSDictionary *data in responseObject) {
-                NSError *error;
-//                CONotificationModel *notiModel = [MTLJSONAdapter modelOfClass:[CONotificationModel class] fromJSONDictionary:data error:&error];
-//                [arrayData addObject:notiModel];
-            }
             if (handler) {
-                handler(arrayData,response,nil);
+                handler(dealModel,response,nil);
             }
         } else {
             if (handler) {

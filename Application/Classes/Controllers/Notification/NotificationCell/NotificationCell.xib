@@ -90,7 +90,7 @@
                 <outlet property="_lbAlert" destination="UQm-fV-bzw" id="eMN-Cp-KMF"/>
                 <outlet property="_lbDate" destination="kbd-Ws-t8q" id="WyN-vT-HI3"/>
             </connections>
-            <point key="canvasLocation" x="1063" y="272"/>
+            <point key="canvasLocation" x="1063" y="271.5"/>
         </tableViewCell>
     </objects>
 </document>
