@@ -49,13 +49,6 @@
     self.companyUserModel = self.companyUserModel;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-
-}
-
-
 #pragma mark - Set Get
 - (void)setCompanyUserModel:(COUserCompanyModel *)companyUserModel {
     _companyUserModel = companyUserModel;

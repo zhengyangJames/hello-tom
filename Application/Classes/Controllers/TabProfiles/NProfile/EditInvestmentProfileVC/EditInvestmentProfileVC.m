@@ -47,12 +47,6 @@
     self.investorUserModel = self.investorUserModel;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-}
-
 #pragma mark - Set Get
 
 - (void)setInvestorUserModel:(COUserInverstorModel *)investorUserModel {

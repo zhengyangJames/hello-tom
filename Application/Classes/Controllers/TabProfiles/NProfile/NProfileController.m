@@ -48,12 +48,6 @@
     [self _getInvestmentProfile];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
-}
-
 #pragma mark - SetupUI
 - (void)_setupUI {
     NProfileDataSource *datasource = [[NProfileDataSource alloc] initWithTableview:_tableView controller:self];

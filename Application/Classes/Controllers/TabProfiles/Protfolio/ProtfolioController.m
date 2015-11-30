@@ -31,12 +31,6 @@
     [self _setUpUI];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
-}
-
 #pragma mark - Private
 
 - (void)_setUpUI {

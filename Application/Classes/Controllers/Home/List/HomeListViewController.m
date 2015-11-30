@@ -68,8 +68,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
     [kUserDefaults setObject:@"0" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
     [kAppDelegate setupNotifications:[UIApplication sharedApplication]];

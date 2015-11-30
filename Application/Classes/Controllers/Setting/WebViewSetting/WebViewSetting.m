@@ -72,7 +72,6 @@
     //self.title = self.titler;
     [_webView.scrollView setScrollEnabled:YES];
     [_webView.scrollView setUserInteractionEnabled:YES];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self loadWebView];
     [self _setupRightBarButton];
 }

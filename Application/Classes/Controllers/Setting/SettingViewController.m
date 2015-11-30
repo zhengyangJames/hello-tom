@@ -32,8 +32,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
     _webViewSetting = nil;
     [kUserDefaults setObject:@"3" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
