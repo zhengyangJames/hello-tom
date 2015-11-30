@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
+@class COOfferModel;
 
-@interface OfferDetailsDocumentController : UIViewController
+@interface OfferDetailsDocumentController : BaseViewController
+
+@property (strong, nonatomic) COOfferModel *offerModel;
 
 @end

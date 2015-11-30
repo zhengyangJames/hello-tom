@@ -22,6 +22,7 @@
 #import "COOfferActionCell.h"
 #import "CODocumentItemCell.h"
 #import "OfferDetailsController.h"
+#import "OfferDetailsDocumentController.h"
 
 @interface OfferViewController ()<UIGestureRecognizerDelegate,DetailsDataSourceViewDelegate,CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 {
@@ -168,15 +169,21 @@
 
 - (void)detailsViewController:(CODetailsDelegate *)detailViewController didSelectedAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section > 1) {
-        OfferDetailsController *vc = [[OfferDetailsController alloc] initWithNibName:@"OfferDetailsController" bundle:nil];
-        if(indexPath.section == 2) {
-            vc.offerDescription = self.offerModel;
-        } else if (indexPath.section == 3) {
-            vc.offerProject = self.offerModel;
-        } else if (indexPath.section == 5) {
-            vc.offerAddress = self.offerModel.offerProject;
+        if (indexPath.section == 4) {
+            OfferDetailsDocumentController *vc = [[OfferDetailsDocumentController alloc] initWithNibName:@"OfferDetailsDocumentController" bundle:nil];
+            vc.offerModel = self.offerModel;
+            [self.navigationController pushViewController:vc animated:YES];
+        } else {
+            OfferDetailsController *vc = [[OfferDetailsController alloc] initWithNibName:@"OfferDetailsController" bundle:nil];
+            if(indexPath.section == 2) {
+                vc.offerDescription = self.offerModel;
+            } else if (indexPath.section == 3) {
+                vc.offerProject = self.offerModel;
+            } else if (indexPath.section == 5) {
+                vc.offerAddress = self.offerModel.offerProject;
+            }
+            [self.navigationController pushViewController:vc animated:YES];
         }
-        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

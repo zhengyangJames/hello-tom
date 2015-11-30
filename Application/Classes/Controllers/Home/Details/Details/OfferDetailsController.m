@@ -17,12 +17,8 @@
 
 @implementation OfferDetailsController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     [super viewWillAppear:animated];
     if (self.offerDescription) {
         self.offerDescription = self.offerDescription;
