@@ -25,6 +25,7 @@
 - (void)showLogginVC;
 - (void)clearData;
 - (void)setupNotifications:(UIApplication*)application;
+- (void)checkGetNotificationCount;
 
 @end
 

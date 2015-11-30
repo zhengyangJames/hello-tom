@@ -32,7 +32,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self _checkCreadDeviceToken];
     [self _setupUI];
 }
 
@@ -81,41 +80,40 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    CONotificationModel *notifiModel = [[CONotificationModel alloc]init];
-    notifiModel = [self.arrayData objectAtIndex:indexPath.row];
-    if (notifiModel != nil) {
-        [self _loadDetailNotification:notifiModel];
-        [self _checkCreadDeviceToken];
-    }
+    [self _loadDetailNotification:indexPath];
 }
 
-- (void)_loadDetailNotification:(CONotificationModel *)notification {
-    
-    if ([notification.notifiData.notifiStatus isEqualToString:UNREAD]) {
-        NSString *badge = [NSString stringWithFormat:@"%tu",count1 - 1];
-        if (![badge isEqualToString:@"0"]) {
-            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:badge];
-        } else {
-            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: nil];
-        }
-         [self _callReadNotification:notification];
-    }
-   
-    if (notification.notifiData.notifiUrl != nil) {
-        WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
-        webViewSetting.webLink = notification.notifiData.notifiUrl;
-        webViewSetting.titler = m_string(@"Notification");
-        [self.navigationController pushViewController:webViewSetting animated:YES];
-    } else if([notification.notifiData.notifiType isEqualToString:@"offer"]) {
-        _selectedOfferID = [notification.notifiData.notifiId stringValue];
-        [kUserDefaults setObject:_selectedOfferID forKey:NOTIFICATION_ID];
-        [kUserDefaults synchronize];
-        
-        if (![[kAppDelegate baseHomeNAV].topViewController isKindOfClass:[HomeListViewController class]]) {
-            [[kAppDelegate baseHomeNAV] popToRootViewControllerAnimated:NO];
+- (void)_loadDetailNotification:(NSIndexPath *)indexPath {
+    CONotificationModel *notification = [self.arrayData objectAtIndex:indexPath.row];
+    if (notification != nil) {
+        if ([notification.notifiData.notifiStatus isEqualToString:UNREAD]) {
+            NSString *badge = [NSString stringWithFormat:@"%tu",count1 - 1];
+            if (![badge isEqualToString:@"0"]) {
+                [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:badge];
+            } else {
+                [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: nil];
+            }
+            [self _callReadNotification:notification];
+            notification.notifiData.notifiStatus = READ;
+            [_tableview reloadData];
         }
         
-        [kAppDelegate baseTabBarController].selectedIndex = 0;
+        if (notification.notifiData.notifiUrl != nil) {
+            WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
+            webViewSetting.webLink = notification.notifiData.notifiUrl;
+            webViewSetting.titler = m_string(@"Notification");
+            [self.navigationController pushViewController:webViewSetting animated:YES];
+        } else if([notification.notifiData.notifiType isEqualToString:@"offer"]) {
+            _selectedOfferID = [notification.notifiData.notifiId stringValue];
+            [kUserDefaults setObject:_selectedOfferID forKey:NOTIFICATION_ID];
+            [kUserDefaults synchronize];
+            
+            if (![[kAppDelegate baseHomeNAV].topViewController isKindOfClass:[HomeListViewController class]]) {
+                [[kAppDelegate baseHomeNAV] popToRootViewControllerAnimated:NO];
+            }
+            
+            [kAppDelegate baseTabBarController].selectedIndex = 0;
+        }
     }
 }
 
@@ -157,7 +155,6 @@
             [ErrorManager showError:error];
         }
         [UIHelper hideLoadingFromView:[kAppDelegate window]];
-        
     }];
 }
 

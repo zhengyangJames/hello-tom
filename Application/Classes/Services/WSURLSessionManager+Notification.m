@@ -19,7 +19,7 @@
     WSPostDeviceTokenRequest *request = [[WSPostDeviceTokenRequest alloc]init];
     request = [request setBodyDeviceToken:pagaBody];
     
-    [self sendRequest:request requiredLogin:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:NO clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
             if (handler) {
@@ -39,7 +39,7 @@
     WSPostDeviceTokenRequest *request = [[WSPostDeviceTokenRequest alloc]init];
     request = [request getNotificationList:listDic];
     
-    [self sendRequest:request requiredLogin:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:NO clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             NSMutableArray *arrayData = [[NSMutableArray alloc]init];
             
@@ -62,7 +62,7 @@
 - (void)wsReadNotificationList:(NSDictionary *)bodyDic handler:(WSURLSessionHandler)handler{
     WSPostDeviceTokenRequest *request = [[WSPostDeviceTokenRequest alloc]init];
     request = [request readNotificationList:bodyDic];
-    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             if (handler) {
                 handler(responseObject,response,error);

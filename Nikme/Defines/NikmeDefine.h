@@ -59,3 +59,4 @@
 ///////////////////////////////////////////////////////////////////
 #define NOTIFICATION_ID                       @"NotificationID"
 #define UNREAD                                @"UNREAD"
+#define READ                                @"READ"

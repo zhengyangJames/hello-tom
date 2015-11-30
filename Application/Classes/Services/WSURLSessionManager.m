@@ -126,41 +126,43 @@
     
     NSString *finalURL = [self buildURL:url byParams:params];
     NSMutableURLRequest *request = [self createAuthRequest:finalURL body:body httpMethod:method];
-    [self sendRequest:request requiredLogin:YES handler:handler];
+    [self sendRequest:request requiredLogin:YES clearCache:YES handler:handler];
     
 }
 
 
-- (void)sendRequest:(NSMutableURLRequest *)request requiredLogin:(BOOL)requiredLogin handler:(WSURLSessionHandler)handler {
+- (void)sendRequest:(NSMutableURLRequest *)request requiredLogin:(BOOL)requiredLogin clearCache:(BOOL)clearCache handler:(WSURLSessionHandler)handler {
     if (requiredLogin) {
         [[ErrorManager shared] requitedLogin:^(BOOL completed) {
             if (completed) {
                 NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
                 [request setValue:acc forHTTPHeaderField:@"Authorization"];
-                [self sendRequest:request handler:handler];
+                [self sendRequest:request clearCache:clearCache handler:handler];
             }
         }];
     } else {
-        [self sendRequest:request handler:handler];
+        [self sendRequest:request clearCache:clearCache handler:handler];
     }
 }
 
-- (void)sendRequest:(NSMutableURLRequest *)request handler:(WSURLSessionHandler)handler {
+- (void)sendRequest:(NSMutableURLRequest *)request clearCache:(BOOL)clearCache handler:(WSURLSessionHandler)handler {
     DBG(@"NM-WS-REQUEST-URL: %@",request.URL.absoluteString);
     DBG(@"NM-WS-REQUEST-METHOD: %@",request.HTTPMethod);
     DBG(@"NM-WS-REQUEST-BODY: %@",[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
-    [self callSessionRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self callSessionRequest:request clearCache:clearCache handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (handler) {
             handler (responseObject,response,error);
         }
     }];
 }
 
-- (void)callSessionRequest:(NSMutableURLRequest *)request handler:(BlockSession)handler {
+- (void)callSessionRequest:(NSMutableURLRequest *)request clearCache:(BOOL)clearCache handler:(BlockSession)handler {
     NSURLSessionConfiguration *urlSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFHTTPSessionManager *sm = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:urlSessionConfig];
     [sm setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    //[[NSURLCache sharedURLCache] removeAllCachedResponses];
+    if (clearCache) {
+        [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    }
     [[sm dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         //check if error is exist

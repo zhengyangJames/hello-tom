@@ -20,7 +20,7 @@
 @implementation WSURLSessionManager (ListHome)
 
 - (void)wsGetListOffersWithRequest:(WSGetListOfferRequest *)request handle:(WSURLSessionHandler)handler {
-    [self sendRequest:request requiredLogin:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:NO clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             NSArray *arrayData = (NSArray*)responseObject;
             NSMutableArray *array = [[NSMutableArray alloc]init];
@@ -40,7 +40,7 @@
 }
 
 - (void)wsGetOfferInforWithRequest:(WSGetOfferInfoWithRequest *)request handler:(WSURLSessionHandler)handler {
-    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSError *error = nil;
             COOfferModel *offer = [MTLJSONAdapter modelOfClass:[COOfferModel class] fromJSONDictionary:responseObject error:&error];
@@ -56,7 +56,7 @@
 }
 
 - (void)wsPostQuestionWithRequest:(WSPostQuestionRequest*) request handler:(WSURLSessionHandler)handler {
-    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             if (handler) {
                 handler(responseObject, response, nil);
@@ -70,7 +70,7 @@
 }
 
 - (void)wsPostSubscribeWithRequest:(WSPostSubscribeRequest *)request handler:(WSURLSessionHandler)handler {
-    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             if (handler) {
                 handler(responseObject, response, nil);
@@ -84,7 +84,7 @@
 }
 
 - (void)wsGetProjectFundInfoWithRequest:(WSProjectFundInfoRequest *)request handler:(WSURLSessionHandler)handler {
-    [self sendRequest:request requiredLogin:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSError *error = nil;
             COProjectFundedAmountModel *amountModel = [MTLJSONAdapter modelOfClass:[COProjectFundedAmountModel class] fromJSONDictionary:responseObject error:&error];

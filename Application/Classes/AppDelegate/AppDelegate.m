@@ -48,6 +48,7 @@
     [self _setupParse];
     [self _setupNotifications:application];
     [self _checkVersionAndClearData];
+    [self checkGetNotificationCount];
     [self.window makeKeyAndVisible];
     [self performNotification:notificationInfo isCheckBannerNotfi:NO];
     return YES;
@@ -259,6 +260,12 @@
     return _baseTabBarController;
 }
 
+- (void)checkGetNotificationCount {
+    if ([kUserDefaults objectForKey:KEY_ACCESS_TOKEN]) {
+        [self _callGetNotificationList];
+    }
+}
+
 #pragma mark - Private
 
 //Setup Home
@@ -359,6 +366,7 @@
     [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:KEY_ACCESS_TOKEN];
     [kUserDefaults synchronize];
+    [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue: nil];
 }
 
 #pragma mark - Tabbar Delegate
@@ -440,7 +448,6 @@
     if (self.deviceTokenExist == NO && deviceToken != nil) {
         [self _callPostDeviceToken];
     }
-    [self _callGetNotificationList];
 }
 
 - (void)_callPostDeviceToken {
