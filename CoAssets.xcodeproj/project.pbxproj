@@ -58,7 +58,11 @@
 		0EED2E711B5E2B94006730E2 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
 		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
 		0EF3EBA71BFD6EF3000CA9C9 /* COOngoingStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */; };
+		161E785F1C0C0CB500EB6A04 /* OfferDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161E785D1C0C0CB500EB6A04 /* OfferDetailsController.m */; };
+		161E78601C0C0CB500EB6A04 /* OfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161E785E1C0C0CB500EB6A04 /* OfferDetailsController.xib */; };
 		166792A71C040AC400CABD42 /* ErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166792A61C040AC400CABD42 /* ErrorManager.m */; };
+		16D2A99A1C0C054F00DAFBA6 /* COTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2A9981C0C054F00DAFBA6 /* COTextCell.m */; };
+		16D2A99B1C0C054F00DAFBA6 /* COTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */; };
 		1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; };
 		1E5A6FBB1BCCC49F00C4C5A5 /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA71BCCC49F00C4C5A5 /* NProfileAdressCell.m */; };
 		1E5A6FBC1BCCC49F00C4C5A5 /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA81BCCC49F00C4C5A5 /* NProfileAdressCell.xib */; };
@@ -411,8 +415,14 @@
 		0EF3EBA51BFD6EF3000CA9C9 /* COOngoingStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOngoingStatusModel.h; sourceTree = "<group>"; };
 		0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOngoingStatusModel.m; sourceTree = "<group>"; };
 		0EFEB4B01B2724B2001195B7 /* CoAssets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoAssets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		161E785C1C0C0CB500EB6A04 /* OfferDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferDetailsController.h; sourceTree = "<group>"; };
+		161E785D1C0C0CB500EB6A04 /* OfferDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailsController.m; sourceTree = "<group>"; };
+		161E785E1C0C0CB500EB6A04 /* OfferDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfferDetailsController.xib; sourceTree = "<group>"; };
 		166792A51C040AC400CABD42 /* ErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorManager.h; sourceTree = "<group>"; };
 		166792A61C040AC400CABD42 /* ErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorManager.m; sourceTree = "<group>"; };
+		16D2A9971C0C054F00DAFBA6 /* COTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTextCell.h; sourceTree = "<group>"; };
+		16D2A9981C0C054F00DAFBA6 /* COTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTextCell.m; sourceTree = "<group>"; };
+		16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COTextCell.xib; sourceTree = "<group>"; };
 		1E4B347A1BC62846006F2200 /* COBorderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COBorderTextView.h; sourceTree = "<group>"; };
 		1E4B347B1BC62846006F2200 /* COBorderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COBorderTextView.m; sourceTree = "<group>"; };
 		1E5A6FA61BCCC49F00C4C5A5 /* NProfileAdressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileAdressCell.h; sourceTree = "<group>"; };
@@ -1053,6 +1063,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		161E785B1C0C0C8900EB6A04 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				161E785C1C0C0CB500EB6A04 /* OfferDetailsController.h */,
+				161E785D1C0C0CB500EB6A04 /* OfferDetailsController.m */,
+				161E785E1C0C0CB500EB6A04 /* OfferDetailsController.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		1E4B34791BC62823006F2200 /* COTextViewBorder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1431,6 +1451,7 @@
 		7F325DD51B40E50800116445 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				161E785B1C0C0C8900EB6A04 /* Details */,
 				7F325DD61B40E50800116445 /* Componnets */,
 				7F325DF61B40E50800116445 /* OfferViewController.h */,
 				7F325DF71B40E50800116445 /* OfferViewController.m */,
@@ -1458,6 +1479,9 @@
 				7F325DF31B40E50800116445 /* COOfferDescriptionTextCell.h */,
 				7F325DF41B40E50800116445 /* COOfferDescriptionTextCell.m */,
 				7F325DF51B40E50800116445 /* COOfferDescriptionTextCell.xib */,
+				16D2A9971C0C054F00DAFBA6 /* COTextCell.h */,
+				16D2A9981C0C054F00DAFBA6 /* COTextCell.m */,
+				16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */,
 				7F325DDA1B40E50800116445 /* CODetailsDataSource.h */,
 				7F325DDB1B40E50800116445 /* CODetailsDataSource.m */,
 				7F325DDC1B40E50800116445 /* CODetailsDelegate.h */,
@@ -2318,6 +2342,7 @@
 				1E5A6FC21BCCC49F00C4C5A5 /* NProfileHeaderView.xib in Resources */,
 				7F32601E1B40E50800116445 /* Raleway-BlackItalic.ttf in Resources */,
 				7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */,
+				161E78601C0C0CB500EB6A04 /* OfferDetailsController.xib in Resources */,
 				7F3260451B40E50800116445 /* ic_home_heightlight@2x.png in Resources */,
 				7F32602E1B40E50800116445 /* Raleway-ThinItalic.ttf in Resources */,
 				7F8529241B43935B00CFAEB5 /* China.png in Resources */,
@@ -2331,6 +2356,7 @@
 				7F32605B1B40E50800116445 /* ic_setting_2_heighlight@3x.png in Resources */,
 				1EF23C2F1BBE8691006020C2 /* ic_homes@3x.png in Resources */,
 				7F325FCB1B40E50800116445 /* COSlidingCell.xib in Resources */,
+				16D2A99B1C0C054F00DAFBA6 /* COTextCell.xib in Resources */,
 				7F3260281B40E50800116445 /* Raleway-Medium.ttf in Resources */,
 				7F3260201B40E50800116445 /* Raleway-BoldItalic.ttf in Resources */,
 				7F325FC51B40E50800116445 /* DropListCell.xib in Resources */,
@@ -2456,6 +2482,7 @@
 				0ECA88451B27CA7100B5656F /* NSString+Helpers.m in Sources */,
 				7F325F7E1B40E50800116445 /* BaseView.m in Sources */,
 				7F325F801B40E50800116445 /* NSArray+Sort.m in Sources */,
+				161E785F1C0C0CB500EB6A04 /* OfferDetailsController.m in Sources */,
 				7F325FDE1B40E50800116445 /* WSURLSessionManager.m in Sources */,
 				7F325F871B40E50800116445 /* CODetailsDataSource.m in Sources */,
 				1ECEAE7B1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m in Sources */,
@@ -2477,6 +2504,7 @@
 				0ECA88431B27CA7100B5656F /* NSDictionary+NotNULL.m in Sources */,
 				7F325F7D1B40E50800116445 /* BaseTableViewCell.m in Sources */,
 				BB368EB51B87E0E00066C646 /* COUserTokensModel.m in Sources */,
+				16D2A99A1C0C054F00DAFBA6 /* COTextCell.m in Sources */,
 				BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */,
 				7F325F951B40E50800116445 /* CODocumentSectionCell.m in Sources */,
 				1E5A6FBD1BCCC49F00C4C5A5 /* NProfileButtonCell.m in Sources */,

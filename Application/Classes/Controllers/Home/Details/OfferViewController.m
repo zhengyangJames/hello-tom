@@ -21,6 +21,7 @@
 #import "COLoginManager.h"
 #import "COOfferActionCell.h"
 #import "CODocumentItemCell.h"
+#import "OfferDetailsController.h"
 
 @interface OfferViewController ()<UIGestureRecognizerDelegate,DetailsDataSourceViewDelegate,CODetailsAccessoryCellDelegate,CODetailsTableViewDelegate,CODetailsProjectBottomTVCellDelegate>
 {
@@ -69,7 +70,7 @@
     self.detailsDataSource.delegate = self;
     self.detailsDataSource.heightWebview = 0;
     [self _reloadData];
-    [self _getHeightWebview];
+    //[self _getHeightWebview];
 }
 
 - (void)_reloadData {
@@ -163,6 +164,20 @@
     vc.webLink = url;
     vc.isPresion = NO;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)detailsViewController:(CODetailsDelegate *)detailViewController didSelectedAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section > 1) {
+        OfferDetailsController *vc = [[OfferDetailsController alloc] initWithNibName:@"OfferDetailsController" bundle:nil];
+        if(indexPath.section == 2) {
+            vc.offerDescription = self.offerModel;
+        } else if (indexPath.section == 3) {
+            vc.offerProject = self.offerModel;
+        } else if (indexPath.section == 5) {
+            vc.offerAddress = self.offerModel.offerProject;
+        }
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 @end

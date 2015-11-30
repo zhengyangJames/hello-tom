@@ -160,7 +160,7 @@
     NSURLSessionConfiguration *urlSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFHTTPSessionManager *sm = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:urlSessionConfig];
     [sm setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    //[[NSURLCache sharedURLCache] removeAllCachedResponses];
     [[sm dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         //check if error is exist

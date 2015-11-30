@@ -20,6 +20,7 @@
 #import "COOfferProgressCell.h"
 #import "COOfferActionCell.h"
 #import "COOfferWebViewCell.h"
+#import "COTextCell.h"
 
 @interface CODetailsDataSource ()<CODetailsAccessoryCellDelegate>
 
@@ -57,6 +58,9 @@
         
         [tableView registerNib:[UINib nibWithNibName:[COOfferWebViewCell identifier] bundle:nil]
         forCellReuseIdentifier:[COOfferWebViewCell identifier]];
+        
+        [tableView registerNib:[UINib nibWithNibName:[COTextCell identifier] bundle:nil]
+        forCellReuseIdentifier:[COTextCell identifier]];
     }
     return self;
 }
@@ -71,9 +75,6 @@
 #pragma mark - TableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (self.offerModel.arrayDocuments) {
-        return kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.arrayDocuments.count;
-    }
     return kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL;
 }
 
@@ -84,19 +85,9 @@
         } else {
             return kCOUNT_ROW_NO_PROGRESS;
         }
-    } else if ( section > kINDEX_SECTION_DOCUMENT) {
-        if (self.offerModel.arrayDocuments && self.offerModel.arrayDocuments.count > 0) {
-            if (section <= kINDEX_SECTION_DOCUMENT + self.offerModel.arrayDocuments.count) {
-                CODocumentModel *document = [self.offerModel.arrayDocuments objectAtIndex:section - (kINDEX_SECTION_DOCUMENT+1)];
-                if (document.arrayOfItems && document.arrayOfItems.count > 0) {
-                    return document.arrayOfItems.count + kDEFAULT_COUNT_OF_ROW;
-                } else {
-                    return kDEFAULT_NUMBER_ROW_DOC_DETAIL;
-                }
-            }
-        }
+    } else {
+        return kDEFAULT_COUNT_OF_ROW;
     }
-    return kDEFAULT_COUNT_OF_ROW;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -118,20 +109,27 @@
                 return [self tableView:tableView cellOfferActionForRowAtIndexPath:indexPath];
             }
         }
-    }else if (indexPath.section == kINDEX_SECTION_OFFER_DESCRIPTION || indexPath.section == kINDEX_SECTION_DOCUMENT || indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.arrayDocuments.count - 1) {
-        return [self tableView:tableView cellOfferTextForRowAtIndexPath:indexPath];
-    } else if ( indexPath.section == kINDEX_SECTION_PROJECT_DESCRIPTION) {
-        return [self tableView:tableView cellOfferWebViewRowWithIndexPath:indexPath];
     } else {
-        if (indexPath.row == 0) {
-            return [self tableView:tableView cellDocumentSectionForRowAtIndexPath:indexPath];
-        }
-        return [self tableView:tableView cellDocumentItemForRowAtIndexPath:indexPath];
+        return [self tableView:tableView cellTextForRowAtIndexPath:indexPath];
     }
     return nil;
 }
 
 #pragma mark - Cells
+
+- (COTextCell *)tableView:(UITableView *)tableView cellTextForRowAtIndexPath:(NSIndexPath *)indexPath {
+    COTextCell *cell = [tableView dequeueReusableCellWithIdentifier:[COTextCell identifier]];
+    if(indexPath.section == 2) {
+        cell.offerDescription = self.offerModel;
+    } else if (indexPath.section == 3) {
+        cell.offerProject = self.offerModel;
+    } else if (indexPath.section == 4) {
+        cell.offerDocumentInfo = self.offerModel;
+    } else {
+        cell.offerAddress = self.offerModel.offerProject;
+    }
+    return cell;
+}
 
 - (COOfferHeadingCell*)tableView:(UITableView *)tableView cellOfferHeadingForRowAtIndexPath:(NSIndexPath *)indexPath{
     COOfferHeadingCell *cell = [tableView dequeueReusableCellWithIdentifier:[COOfferHeadingCell identifier]];
@@ -164,9 +162,9 @@
     if(indexPath.section == kINDEX_SECTION_OFFER_DESCRIPTION) {
         cell.offerDescription = self.offerModel;
     } else if (indexPath.section == kINDEX_SECTION_DOCUMENT) {
-        cell.offerDocumentInfo = self.offerModel;
+        //cell.offerDocumentInfo = self.offerModel;
     } else if (indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.arrayDocuments.count - 1 && self.offerModel.arrayDocuments && self.offerModel.arrayDocuments.count > 0) {
-        cell.offerAddress = self.offerModel.offerProject;
+        //cell.offerAddress = self.offerModel.offerProject;
     }
     return cell;
 }

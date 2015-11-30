@@ -76,7 +76,11 @@
                 return height = kHEIGHT_FOR_ROW_ACTION_INFO;
             }
         }
-    }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 11) {
+    } else {
+        return kHEIGHT_FOR_ROW_DEFAULT;
+    }
+    /*
+    else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 11) {
         if(IS_IOS8_OR_ABOVE) {
             return UITableViewAutomaticDimension;
         } else {
@@ -97,6 +101,7 @@
             }
         }
     }
+     */
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
