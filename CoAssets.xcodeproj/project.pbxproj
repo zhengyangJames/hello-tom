@@ -61,6 +61,8 @@
 		161E785F1C0C0CB500EB6A04 /* OfferDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161E785D1C0C0CB500EB6A04 /* OfferDetailsController.m */; };
 		161E78601C0C0CB500EB6A04 /* OfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161E785E1C0C0CB500EB6A04 /* OfferDetailsController.xib */; };
 		166792A71C040AC400CABD42 /* ErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166792A61C040AC400CABD42 /* ErrorManager.m */; };
+		16A494391C0C350A00547CFC /* OfferDetailsDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A494371C0C350A00547CFC /* OfferDetailsDocumentController.m */; };
+		16A4943A1C0C350A00547CFC /* OfferDetailsDocumentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A494381C0C350A00547CFC /* OfferDetailsDocumentController.xib */; };
 		16D2A99A1C0C054F00DAFBA6 /* COTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2A9981C0C054F00DAFBA6 /* COTextCell.m */; };
 		16D2A99B1C0C054F00DAFBA6 /* COTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */; };
 		1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; };
@@ -420,6 +422,9 @@
 		161E785E1C0C0CB500EB6A04 /* OfferDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfferDetailsController.xib; sourceTree = "<group>"; };
 		166792A51C040AC400CABD42 /* ErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorManager.h; sourceTree = "<group>"; };
 		166792A61C040AC400CABD42 /* ErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorManager.m; sourceTree = "<group>"; };
+		16A494361C0C350A00547CFC /* OfferDetailsDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferDetailsDocumentController.h; sourceTree = "<group>"; };
+		16A494371C0C350A00547CFC /* OfferDetailsDocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailsDocumentController.m; sourceTree = "<group>"; };
+		16A494381C0C350A00547CFC /* OfferDetailsDocumentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfferDetailsDocumentController.xib; sourceTree = "<group>"; };
 		16D2A9971C0C054F00DAFBA6 /* COTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTextCell.h; sourceTree = "<group>"; };
 		16D2A9981C0C054F00DAFBA6 /* COTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTextCell.m; sourceTree = "<group>"; };
 		16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COTextCell.xib; sourceTree = "<group>"; };
@@ -1069,6 +1074,9 @@
 				161E785C1C0C0CB500EB6A04 /* OfferDetailsController.h */,
 				161E785D1C0C0CB500EB6A04 /* OfferDetailsController.m */,
 				161E785E1C0C0CB500EB6A04 /* OfferDetailsController.xib */,
+				16A494361C0C350A00547CFC /* OfferDetailsDocumentController.h */,
+				16A494371C0C350A00547CFC /* OfferDetailsDocumentController.m */,
+				16A494381C0C350A00547CFC /* OfferDetailsDocumentController.xib */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -2336,6 +2344,7 @@
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
 				0E84EE9A1C116AF600CDA27C /* ic_notification@2x.png in Resources */,
 				7F85292F1B43935B00CFAEB5 /* United States.png in Resources */,
+				16A4943A1C0C350A00547CFC /* OfferDetailsDocumentController.xib in Resources */,
 				1E5A6FC81BCCC49F00C4C5A5 /* NProfileTextCell.xib in Resources */,
 				1E5A6FBE1BCCC49F00C4C5A5 /* NProfileButtonCell.xib in Resources */,
 				1EF23C251BBE85C9006020C2 /* ic_Check_red@3x.png in Resources */,
@@ -2535,6 +2544,7 @@
 				0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */,
 				166792A71C040AC400CABD42 /* ErrorManager.m in Sources */,
 				BBBD82021B8BE0720061FFF0 /* ForgotPasswordViewController.m in Sources */,
+				16A494391C0C350A00547CFC /* OfferDetailsDocumentController.m in Sources */,
 				7FA7E6C51B4E7EAA00059B13 /* COOfferActionCell.m in Sources */,
 				7F325F991B40E50800116445 /* OfferViewController.m in Sources */,
 				7F325FB91B40E50800116445 /* ContacViewController.m in Sources */,

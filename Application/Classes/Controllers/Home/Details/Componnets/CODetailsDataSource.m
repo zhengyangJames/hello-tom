@@ -162,9 +162,9 @@
     if(indexPath.section == kINDEX_SECTION_OFFER_DESCRIPTION) {
         cell.offerDescription = self.offerModel;
     } else if (indexPath.section == kINDEX_SECTION_DOCUMENT) {
-        //cell.offerDocumentInfo = self.offerModel;
+        cell.offerDocumentInfo = self.offerModel;
     } else if (indexPath.section == kDEFAULT_COUNT_OF_SECTION_OFFER_MODEL + self.offerModel.arrayDocuments.count - 1 && self.offerModel.arrayDocuments && self.offerModel.arrayDocuments.count > 0) {
-        //cell.offerAddress = self.offerModel.offerProject;
+        cell.offerAddress = self.offerModel.offerProject;
     }
     return cell;
 }

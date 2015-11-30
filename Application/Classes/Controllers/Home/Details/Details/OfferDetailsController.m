@@ -11,6 +11,7 @@
 @interface OfferDetailsController ()
 {
     __weak IBOutlet UIWebView *_webView;
+    __weak IBOutlet UITextView  *_detailsTextView;
 }
 @end
 
@@ -23,25 +24,34 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.offerDescription = self.offerDescription;
-    self.offerAddress = self.offerAddress;
-    self.offerProject = self.offerProject;
+    if (self.offerDescription) {
+        self.offerDescription = self.offerDescription;
+    }
+    if (self.offerAddress) {
+        self.offerAddress = self.offerAddress;
+    }
+    if (self.offerProject) {
+        self.offerProject = self.offerProject;
+    }
 }
 
 #pragma mark - Set Get
 - (void)setOfferDescription:(id<COOfferDescription>)offerDescription {
-    _offerDescription       = offerDescription;
-    self.title       = self.offerDescription.offerDescriptionTitle;
+    _offerDescription = offerDescription;
+    self.title = offerDescription.offerDescriptionTitle;
     NSString *string = [NSString stringWithFormat:@"%@",offerDescription.offerDescriptionContent];
-    NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,string];
-    [_webView loadHTMLString:formartHTML baseURL:nil];
+    _detailsTextView.text = string;
+    _webView.hidden = YES;
+    _detailsTextView.hidden = NO;
 }
 
 - (void)setOfferAddress:(id<COOfferAddress>)offerAddress {
-    _offerAddress           = offerAddress;
-    self.title       = self.offerAddress.offerAddressTitle;
-     NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,offerAddress.offerAddressContent];
-    [_webView loadHTMLString:formartHTML baseURL:nil];
+    _offerAddress = offerAddress;
+    self.title = offerAddress.offerAddressTitle;
+    NSString *string = [NSString stringWithFormat:@"%@", offerAddress.offerAddressContent];
+    _detailsTextView.text = string;
+    _webView.hidden = YES;
+    _detailsTextView.hidden = NO;
 }
 
 - (void)setOfferProject:(id<COOfferProject>)offerProject {
@@ -49,6 +59,8 @@
     self.title = offerProject.offerProjectTitle;
     NSString *formartHTML = [NSString stringWithFormat:DEFINE_HTML_FRAME,offerProject.offerProjectContent];
     [_webView loadHTMLString:formartHTML baseURL:nil];
+    _webView.hidden = NO;
+    _detailsTextView.hidden = YES;
 }
 
 @end
