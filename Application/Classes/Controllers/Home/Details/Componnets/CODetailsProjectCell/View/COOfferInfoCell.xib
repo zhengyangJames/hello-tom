@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Bold.ttf">
@@ -30,7 +30,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="379"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="378.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2w7-fg-DzT">
@@ -41,6 +41,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_peropel@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="XNs-yf-fnk">
                                         <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="W2r-ff-FjK"/>
                                             <constraint firstAttribute="width" constant="24" id="k5q-y5-N6s"/>
@@ -48,12 +49,14 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="9gN-aC-dQN">
                                         <rect key="frame" x="50" y="8" width="254" height="18"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interested in project" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="cc8-sP-koB">
                                         <rect key="frame" x="50" y="28" width="254" height="22"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="jX4-C6-RZK"/>
                                         </constraints>
@@ -62,6 +65,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="9gN-aC-dQN" firstAttribute="leading" secondItem="XNs-yf-fnk" secondAttribute="trailing" constant="10" id="5sZ-dc-til"/>
@@ -81,6 +85,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bank@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="WUg-hQ-J7h">
                                         <rect key="frame" x="16" y="2" width="24" height="24"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="3Ef-cs-1fU"/>
                                             <constraint firstAttribute="height" constant="24" id="WL8-kk-6h1"/>
@@ -88,12 +93,14 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="yCJ-k0-brf">
                                         <rect key="frame" x="50" y="0.0" width="254" height="19"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIN. INVESTMENT" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="PNE-8V-w8P">
                                         <rect key="frame" x="50" y="21" width="254" height="18"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="IaB-r1-tdW"/>
                                         </constraints>
@@ -103,6 +110,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Singapore Dollars)" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-vm-CJK">
                                         <rect key="frame" x="50" y="36" width="254" height="18"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="ca8-LC-xF3"/>
                                         </constraints>
@@ -111,6 +119,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="1Rd-vm-CJK" firstAttribute="trailing" secondItem="PNE-8V-w8P" secondAttribute="trailing" id="8ho-7L-npr"/>
@@ -133,6 +142,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line_char@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="7KP-yX-sZv">
                                         <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="1FB-uc-fPf"/>
                                             <constraint firstAttribute="width" constant="24" id="J9M-Gk-Ooh"/>
@@ -140,12 +150,14 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="8SH-95-SCo">
                                         <rect key="frame" x="50" y="8" width="254" height="18"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INVESTMENT HORIZON" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="ohr-nE-AxK">
                                         <rect key="frame" x="50" y="28" width="254" height="22"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="z81-Pf-h02"/>
                                         </constraints>
@@ -154,6 +166,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="8SH-95-SCo" firstAttribute="leading" secondItem="ohr-nE-AxK" secondAttribute="leading" id="90g-jL-qQo"/>
@@ -173,6 +186,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_meoney@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hfn-Ax-8rg">
                                         <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="JhN-az-gc3"/>
                                             <constraint firstAttribute="height" constant="24" id="bTV-Yn-veC"/>
@@ -180,6 +194,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YIELD (ANNUALIZED)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="13B-J0-V7w">
                                         <rect key="frame" x="50" y="28" width="254" height="22"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="tXm-Z0-y6b"/>
                                         </constraints>
@@ -189,11 +204,13 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="dAt-rO-1Go">
                                         <rect key="frame" x="50" y="8" width="254" height="18"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Hfn-Ax-8rg" firstAttribute="top" secondItem="8AT-rx-f0v" secondAttribute="top" constant="8" id="253-lJ-kYa"/>
@@ -213,6 +230,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_calendar@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="y5h-44-TL5">
                                         <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Pnf-O7-D4r"/>
                                             <constraint firstAttribute="width" constant="24" id="nHE-oL-RgZ"/>
@@ -220,12 +238,14 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="hnt-9H-r33">
                                         <rect key="frame" x="50" y="8" width="254" height="18"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days to go" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="8en-jK-ehI">
                                         <rect key="frame" x="50" y="28" width="254" height="22"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="EmU-dR-q87"/>
                                         </constraints>
@@ -234,6 +254,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="8en-jK-ehI" secondAttribute="bottom" constant="4" id="0dF-Wm-I3w"/>
@@ -253,6 +274,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_info@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="ROK-1e-6qK">
                                         <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="eqz-hu-GAf"/>
                                             <constraint firstAttribute="height" constant="24" id="mz0-XS-fNT"/>
@@ -260,12 +282,14 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="K1z-Vt-JJy">
                                         <rect key="frame" x="50" y="8" width="254" height="18"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="sSL-LK-KrO">
                                         <rect key="frame" x="50" y="28" width="254" height="22"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="hZJ-H6-LAZ"/>
                                         </constraints>
@@ -274,6 +298,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ROK-1e-6qK" firstAttribute="top" secondItem="K1z-Vt-JJy" secondAttribute="top" id="456-rm-G1a"/>
@@ -289,6 +314,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uvR-Ej-54g" secondAttribute="trailing" id="Kg3-vN-ytK"/>
@@ -312,6 +338,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="2w7-fg-DzT" secondAttribute="bottom" constant="-2" id="5jp-bw-0aZ"/>
                     <constraint firstAttribute="trailing" secondItem="2w7-fg-DzT" secondAttribute="trailing" constant="8" id="Gfs-ri-edO"/>
@@ -319,6 +346,7 @@
                     <constraint firstItem="2w7-fg-DzT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="dok-iz-oXv"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="_contentView" destination="2w7-fg-DzT" id="G7t-U6-01u"/>
                 <outlet property="_lblOfferCurrency" destination="1Rd-vm-CJK" id="sdx-kH-Qel"/>

@@ -9,6 +9,7 @@
 #import "DealTableViewCell.h"
 #import "CODealProfileModel.h"
 #import "CODealOngoingModel.h"
+#import "COPositive&NagitiveButton.h"
 
 @implementation DealTableViewCell {
     __weak IBOutlet UILabel *_lbProjectName;
@@ -16,11 +17,15 @@
     __weak IBOutlet UILabel *_lbPotentialReturnsData;
     __weak IBOutlet UILabel *_lbNextPayoutDateData;
     __weak NSString *strMakePayment;
+    __weak IBOutlet UIButton *_btnSigContract;
+    __weak IBOutlet UIButton *_btnSigMake;
 }
 
 
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellAccessoryNone;
+    [_btnSigContract.layer setCornerRadius:CORNERRADIUS];
+    [_btnSigMake.layer setCornerRadius:CORNERRADIUS];
 }
 
 - (IBAction)__actionSignContract:(id)sender {
