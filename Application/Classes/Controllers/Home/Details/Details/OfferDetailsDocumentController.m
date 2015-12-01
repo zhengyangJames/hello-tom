@@ -92,6 +92,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return;
+    }
     CODocumentModel *document = [self.offerModel.arrayDocuments objectAtIndex:indexPath.section];
      id<CODocumentItem> docDetailItem = [document.arrayOfItems objectAtIndex:indexPath.row - 1];
     WebViewSetting *vc = [[WebViewSetting alloc]init];

@@ -55,10 +55,10 @@
 "CONFIRM_PASSWORD_REQUIRED"             = "Confirm password is required.";
 "CONFIRM_PASSWORD_MESSAGE"              = "Confirm password does not match";
 
-"FILTER_BULLK_NULL"                     = "Bulk Purchase are comming soon";
-"FILTER_CROWD_NULL"                     = "Crowdfunding are comming soon";
-"FILTER_SALE_NULL"                      = "Pre-Sales are comming soon";
-"FILTER_ALL_NULL"                       = "CoAssets is comming soon";
+"FILTER_BULLK_NULL"                     = "Bulk Purchase are coming";
+"FILTER_CROWD_NULL"                     = "Crowdfunding are coming";
+"FILTER_SALE_NULL"                      = "Pre-Sales are coming";
+"FILTER_ALL_NULL"                       = "CoAssets is coming";
 
 "EMAIL_INVALID"                         = "Email is invalid.";
 "PASSWORD_INVALID"                      = "Password is invalid.";

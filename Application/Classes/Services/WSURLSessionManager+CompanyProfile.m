@@ -35,7 +35,7 @@
     WSCompanyProfileRequest *request = [[WSCompanyProfileRequest alloc]init];
     request = [request getCompanyProfile];
     
-    [self sendRequest:request requiredLogin:YES clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         
         if (!error && responseObject) {
             NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil];

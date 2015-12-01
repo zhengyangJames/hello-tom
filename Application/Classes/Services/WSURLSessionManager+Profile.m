@@ -25,7 +25,7 @@
     [request setURL:[NSURL URLWithString:WS_METHOD_GET_LIST_PROFILE]];
     [request setHTTPMethod:METHOD_GET];
     [request setValueWithTokenData:paramToken];
-    [self sendRequest:request requiredLogin:YES clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSMutableDictionary *mutaDic = [NSMutableDictionary dictionary];
             [mutaDic addEntriesFromDictionary:paramToken];

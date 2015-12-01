@@ -468,7 +468,9 @@
 - (void)_callGetNotificationList {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    [dic setObject:device_token forKey:device_token_dic];
+    if (device_token) {
+         [dic setObject:device_token forKey:device_token_dic];
+    }
     [dic setObject:device_type forKey:device_type_dic];
     [dic setObject:application_name forKey:application_name_dic];
     [[WSURLSessionManager shared] wsGetNotificationListRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
