@@ -22,11 +22,11 @@
     [self sendRequest:request requiredLogin:NO clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
             [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
+            [kUserDefaults synchronize];
             if (handler) {
                 handler(responseObject,response,error);
             }
         } else {
-            [self setError:responseObject];
             if (handler) {
                 handler(responseObject,response,error);
             }
@@ -74,12 +74,5 @@
         }
     }];
 }
-
-- (void)setError:(id )responseObject {
-    if ([responseObject objectForKey:@"error"] != [kUserDefaults objectForKey:KEY_DEVICE_TOKEN]) {
-        [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
-    }
-}
-
 
 @end

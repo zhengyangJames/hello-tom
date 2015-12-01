@@ -33,6 +33,7 @@
             [kUserDefaults setObject:[NSString stringWithFormat:@"%@ %@", @"Bearer",acc] forKey:KEY_ACCESS_TOKEN];
             [kUserDefaults synchronize];
             [kAppDelegate checkGetNotificationCount];
+            [kAppDelegate checkAndCreadDeviceToken];
             [self tokenObject:responseObject callWSGetListProfile:^(id object, NSError *error){
                 if ([object isKindOfClass:[NSDictionary class]] && !error) {
                     NSDictionary *dicProfile = (NSDictionary*)object;

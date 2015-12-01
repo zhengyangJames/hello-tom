@@ -109,7 +109,7 @@
         [kUserDefaults setObject:push_id forKey:KEY_DEVICE_TOKEN];
         [kUserDefaults synchronize];
     }
-    [self _checkCreadDeviceToken];
+    [self checkAndCreadDeviceToken];
     application.applicationIconBadgeNumber = 0;
 }
 
@@ -436,16 +436,10 @@
 #pragma mark - Web Service By Vincent
 #pragma mark - POST Notification
 
-- (void)_checkCreadDeviceToken {
-    
-    if ([kUserDefaults objectForKey:DEVICE_TOKEN_EXIST] != nil) {
-        self.deviceTokenExist = [kUserDefaults boolForKey:DEVICE_TOKEN_EXIST];
-    } else {
-        self.deviceTokenExist = NO;
-        [kUserDefaults setBool:self.deviceTokenExist forKey:DEVICE_TOKEN_EXIST];
-    }
+- (void)checkAndCreadDeviceToken {
+    BOOL isExitDeviceToken = [kUserDefaults boolForKey:DEVICE_TOKEN_EXIST];
     NSString *deviceToken = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    if (self.deviceTokenExist == NO && deviceToken != nil) {
+    if (!isExitDeviceToken && deviceToken) {
         [self _callPostDeviceToken];
     }
 }
@@ -460,6 +454,11 @@
     
     [[WSURLSessionManager shared]wsPostDeviceTokenRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (error) {
+            NSString *message = [error.userInfo objectForKeyNotNull:@"message"];
+            if (message && [message isEqualToString:MESSAGE_DEVICE_TOKEN_EXITS]) {
+                [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
+                [kUserDefaults synchronize];
+            }
             [ErrorManager showError:error];
         }
     }];

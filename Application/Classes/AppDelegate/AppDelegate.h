@@ -20,12 +20,12 @@
 @property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
 
 @property (assign, nonatomic) BOOL keyShowNotificationBanner;
-@property (assign, nonatomic) BOOL deviceTokenExist;
 
 - (void)showLogginVC;
 - (void)clearData;
 - (void)setupNotifications:(UIApplication*)application;
 - (void)checkGetNotificationCount;
+- (void)checkAndCreadDeviceToken;
 
 @end
 
