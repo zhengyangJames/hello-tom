@@ -98,18 +98,14 @@
 "DAY_LEFT"                              = "%@";
 "GOAL"                                  = "%tu%% of goal";
 
-"ADDRESSNAME"                           = "Address";
-"PROJECT"                               = "PROJECT";
-"OFFER"                                 = "OFFER";
-"DOCUMENTS"                             = "DOCUMENTS";
 "NoDocumentsUploaded"                   = "No Documents Uploaded";
 "DETAIL_DOCUMENT"                       = "The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";
 
 
-"OFFER"                                 = "OFFER";
-"PROJECT"                               = "PROJECT";
-"DOCUMENT"                              = "DOCUMENTS";
-"ADDRESS"                               = "ADDRESS";
+"OFFER"                                 = "Offer";
+"PROJECT"                               = "Project";
+"DOCUMENT"                              = "Documents";
+"ADDRESSNAME"                           = "Address";
 
 "Contact"                               = "Contact";
 "News"                                  = "News";

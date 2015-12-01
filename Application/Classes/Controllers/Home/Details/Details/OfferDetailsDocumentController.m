@@ -104,4 +104,11 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 30;
+    }
+    return 44;
+}
+
 @end
