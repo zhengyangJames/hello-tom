@@ -54,5 +54,11 @@
     }];
 }
 
+- (NSString *)stringOfSignContractInstruction {
+    return self.signContractInstruction;
+}
 
+- (NSString *)stringOfPaymentInstruction {
+    return self.paymentInstruction;
+}
 @end

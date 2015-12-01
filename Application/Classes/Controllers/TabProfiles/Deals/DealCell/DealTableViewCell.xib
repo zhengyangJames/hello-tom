@@ -10,22 +10,25 @@
             <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="DealTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="KGk-i7-Jjw" customClass="DealTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="186.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-hW-6if">
                         <rect key="frame" x="8" y="8" width="304" height="18"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -43,7 +46,7 @@
                             <constraint firstAttribute="width" constant="130" id="MTa-5i-e1I"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ac8-jf-vLl">
@@ -60,7 +63,7 @@
                             <constraint firstAttribute="width" constant="130" id="a7W-xB-Ohu"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSg-hd-oaz">
@@ -77,13 +80,45 @@
                             <constraint firstAttribute="width" constant="145" id="3EO-GT-1a2"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3b-Rk-1SH" customClass="COPositive_NagitiveButton">
+                        <rect key="frame" x="57" y="98" width="206" height="36"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.29411764705882354" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="Ugu-Uf-Hz6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                        <state key="normal" title="Sign Your Contract">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="__actionSignContract:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UzB-QQ-fFb"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqc-NA-r5V" customClass="COPositive_NagitiveButton">
+                        <rect key="frame" x="57" y="139" width="206" height="36"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.23529411764705882" green="0.27450980392156865" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="ilw-rX-ozX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                        <state key="normal" title="How To Make Payment">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="__actionMakePayment:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LR2-aQ-AaE"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
                 <constraints>
                     <constraint firstItem="XkO-Nt-dwn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2PN-4v-XLD"/>
+                    <constraint firstItem="S3b-Rk-1SH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="57" id="8fw-3Z-vWe"/>
+                    <constraint firstItem="Jqc-NA-r5V" firstAttribute="top" secondItem="S3b-Rk-1SH" secondAttribute="bottom" constant="5" id="9d2-hp-FjA"/>
                     <constraint firstItem="Ac8-jf-vLl" firstAttribute="centerY" secondItem="qGV-jp-ZXz" secondAttribute="centerY" id="CA9-eM-ljn"/>
                     <constraint firstItem="DSS-Kb-zYl" firstAttribute="leading" secondItem="XkO-Nt-dwn" secondAttribute="trailing" id="CXd-BY-AVN"/>
                     <constraint firstItem="qGV-jp-ZXz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Cbq-3p-RlP"/>
@@ -91,7 +126,9 @@
                     <constraint firstAttribute="trailingMargin" secondItem="DSS-Kb-zYl" secondAttribute="trailing" constant="8" id="Ihm-17-3jz"/>
                     <constraint firstAttribute="trailingMargin" secondItem="gSg-hd-oaz" secondAttribute="trailing" id="Im1-Dq-G5s"/>
                     <constraint firstItem="rSy-GK-Upq" firstAttribute="top" secondItem="qGV-jp-ZXz" secondAttribute="bottom" constant="5" id="LQp-Ks-5gw"/>
+                    <constraint firstAttribute="trailing" secondItem="S3b-Rk-1SH" secondAttribute="trailing" constant="57" id="Mbn-WB-gCz"/>
                     <constraint firstItem="gSg-hd-oaz" firstAttribute="leading" secondItem="rSy-GK-Upq" secondAttribute="trailing" id="OcT-tQ-wEb"/>
+                    <constraint firstItem="Jqc-NA-r5V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="57" id="Ppq-Lm-nSt"/>
                     <constraint firstItem="rSy-GK-Upq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Upa-lM-oJx"/>
                     <constraint firstItem="9rf-hW-6if" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Y7E-sO-jDJ"/>
                     <constraint firstItem="XkO-Nt-dwn" firstAttribute="top" secondItem="9rf-hW-6if" secondAttribute="bottom" constant="5" id="aCj-OT-2ca"/>
@@ -100,17 +137,20 @@
                     <constraint firstItem="DSS-Kb-zYl" firstAttribute="centerY" secondItem="XkO-Nt-dwn" secondAttribute="centerY" id="fcU-QZ-QHM"/>
                     <constraint firstItem="Ac8-jf-vLl" firstAttribute="leading" secondItem="qGV-jp-ZXz" secondAttribute="trailing" id="lUg-Vj-ZQt"/>
                     <constraint firstAttribute="trailingMargin" secondItem="9rf-hW-6if" secondAttribute="trailing" id="qSp-zV-sBp"/>
+                    <constraint firstItem="S3b-Rk-1SH" firstAttribute="top" secondItem="rSy-GK-Upq" secondAttribute="bottom" constant="5" id="wx4-Cs-f0l"/>
+                    <constraint firstAttribute="trailing" secondItem="Jqc-NA-r5V" secondAttribute="trailing" constant="57" id="xjC-7X-xSM"/>
                     <constraint firstItem="9rf-hW-6if" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yet-qm-l4P"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="_lbInvestmentAmountData" destination="DSS-Kb-zYl" id="ATh-yn-TcX"/>
                 <outlet property="_lbNextPayoutDateData" destination="gSg-hd-oaz" id="VbG-LF-EES"/>
                 <outlet property="_lbPotentialReturnsData" destination="Ac8-jf-vLl" id="eMj-Hl-QDI"/>
                 <outlet property="_lbProjectName" destination="9rf-hW-6if" id="xju-a3-1Ga"/>
             </connections>
-            <point key="canvasLocation" x="173" y="257.5"/>
+            <point key="canvasLocation" x="173" y="290.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -12,4 +12,6 @@
 @interface DealTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) CODealProfileModel *model;
+@property (nonatomic, strong) NSString *strSig;
+@property (nonatomic, strong) NSString *strPayMent;
 @end

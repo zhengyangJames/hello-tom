@@ -25,6 +25,8 @@
     __weak IBOutlet UILabel *_greatLabel;
     __weak IBOutlet COPositive_NagitiveButton *__greatButton;
     __weak IBOutlet UIButton *_actionsegment;
+    __weak NSString *strSignContract;
+    __weak NSString *strPaymentInstruction;
 }
 
 @property (nonatomic, strong) NSArray *dataArray;
@@ -127,6 +129,8 @@
             [UIHelper hideLoadingFromView:self.view];
             self.dealModel = (CODealProfileModel *)responseObject;
             self.dataArray = self.dealModel.dealOngoingModel;
+            strSignContract = self.dealModel.signContractInstruction;
+            strPaymentInstruction =self.dealModel.paymentInstruction;
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
                 [_tableView reloadData];
             }];
@@ -153,12 +157,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DealTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DealTableViewCell" forIndexPath:indexPath];
+    cell.strSig = strSignContract;
+    cell.strPayMent = strPaymentInstruction;
     cell.model = [self.dataArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120;
+    return 200;
 }
 
 - (void)showLoginView {
