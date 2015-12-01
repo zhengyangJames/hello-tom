@@ -76,7 +76,6 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
     }
 }
 
-
 #pragma mark - Setup
 - (void)_setupUI {
     self.navigationItem.title = NSLocalizedString(@"COASSETS_TITLE", nil);
