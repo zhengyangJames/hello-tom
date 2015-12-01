@@ -32,8 +32,28 @@
             NSString *acc = [responseObject valueForKey:kACCESS_TOKEN];
             [kUserDefaults setObject:[NSString stringWithFormat:@"%@ %@", @"Bearer",acc] forKey:KEY_ACCESS_TOKEN];
             [kUserDefaults synchronize];
-            [kAppDelegate checkGetNotificationCount];
-            [kAppDelegate checkAndCreadDeviceToken];
+            [kAppDelegate checkAndCreadDeviceTokenHandler:nil];
+            [kAppDelegate checkGetNotificationCountHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+                if (response && error) {
+                    NSString *message = [error.userInfo objectForKey:@"message"];
+                    if (message && [message isEqualToString:MESSAGE_DEVICE_TOKEN_INVALID]) {
+                        [kUserDefaults setBool:NO forKey:DEVICE_TOKEN_EXIST];
+                        [kUserDefaults synchronize];
+                        [kAppDelegate checkAndCreadDeviceTokenHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+                            if (response && !error) {
+                                [kAppDelegate callGetNotificationListHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+                                    if (response && error) {
+                                        [ErrorManager showError:error];
+                                    }
+                                }];
+                            }
+                        }];
+                    } else {
+                        [ErrorManager showError:error];
+                        
+                    }
+                }
+            }];
             [self tokenObject:responseObject callWSGetListProfile:^(id object, NSError *error){
                 if ([object isKindOfClass:[NSDictionary class]] && !error) {
                     NSDictionary *dicProfile = (NSDictionary*)object;

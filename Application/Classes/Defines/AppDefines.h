@@ -354,8 +354,8 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 #define NOTIFI_ICON_LANDINGPG    @"landingpg"
 #define NOTIFI_ICON_GENERAL      @"general"
 #define ERROR_AUTH_NOT_PROVIDED                    @"Authentication credentials were not provided."
-#define  MESSAGE_DEVICE_TOKEN_EXITS  @"device already exist."
-#define KEY_ACCESS_TOKEN             @"accesstoken"
-
+#define  MESSAGE_DEVICE_TOKEN_EXITS    @"device already exist."
+#define  MESSAGE_DEVICE_TOKEN_INVALID  @"Invalid device token."
+#define KEY_ACCESS_TOKEN               @"accesstoken"
 
 #endif

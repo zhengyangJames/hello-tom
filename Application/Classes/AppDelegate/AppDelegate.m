@@ -48,7 +48,27 @@
     [self _setupParse];
     [self _setupNotifications:application];
     [self _checkVersionAndClearData];
-    [self checkGetNotificationCount];
+    [self checkGetNotificationCountHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (response && error) {
+            NSString *message = [error.userInfo objectForKey:@"message"];
+            if (message && [message isEqualToString:MESSAGE_DEVICE_TOKEN_INVALID]) {
+                [kUserDefaults setBool:NO forKey:DEVICE_TOKEN_EXIST];
+                [kUserDefaults synchronize];
+                [self checkAndCreadDeviceTokenHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+                    if (response && !error) {
+                        [self callGetNotificationListHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+                            if (response && error) {
+                                [ErrorManager showError:error];
+                            }
+                        }];
+                    }
+                }];
+            } else {
+                [ErrorManager showError:error];
+                
+            }
+        }
+    }];
     [self.window makeKeyAndVisible];
     [self performNotification:notificationInfo isCheckBannerNotfi:NO];
     return YES;
@@ -109,7 +129,7 @@
         [kUserDefaults setObject:push_id forKey:KEY_DEVICE_TOKEN];
         [kUserDefaults synchronize];
     }
-    [self checkAndCreadDeviceToken];
+    [self checkAndCreadDeviceTokenHandler:nil];
     application.applicationIconBadgeNumber = 0;
 }
 
@@ -260,9 +280,17 @@
     return _baseTabBarController;
 }
 
-- (void)checkGetNotificationCount {
+- (void)checkGetNotificationCountHandler:(WSURLSessionHandler)handler {
     if ([kUserDefaults objectForKey:KEY_ACCESS_TOKEN]) {
-        [self _callGetNotificationList];
+        [self callGetNotificationListHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+            if (handler) {
+                handler(responseObject, response, error);
+            }
+        }];
+    } else {
+        if (handler) {
+            handler(nil, nil, nil);
+        }
     }
 }
 
@@ -436,15 +464,23 @@
 #pragma mark - Web Service By Vincent
 #pragma mark - POST Notification
 
-- (void)checkAndCreadDeviceToken {
+- (void)checkAndCreadDeviceTokenHandler:(WSURLSessionHandler)handler {
     BOOL isExitDeviceToken = [kUserDefaults boolForKey:DEVICE_TOKEN_EXIST];
     NSString *deviceToken = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
     if (!isExitDeviceToken && deviceToken) {
-        [self _callPostDeviceToken];
+        [self _callPostDeviceTokenHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+            if (handler) {
+                handler(responseObject, response, error);
+            }
+        }];
+    } else {
+        if (handler) {
+            handler(nil, nil, nil);
+        }
     }
 }
 
-- (void)_callPostDeviceToken {
+- (void)_callPostDeviceTokenHandler:(WSURLSessionHandler)handler {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
     [dic setObject:device_token forKey:device_token_dic];
@@ -460,11 +496,18 @@
                 [kUserDefaults synchronize];
             }
             [ErrorManager showError:error];
+            if (handler) {
+                handler(nil, response, error);
+            }
+        } else {
+            if (handler) {
+                handler(responseObject, response, nil);
+            }
         }
     }];
 }
 
-- (void)_callGetNotificationList {
+- (void)callGetNotificationListHandler:(WSURLSessionHandler)handler {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
     if (device_token) {
@@ -479,11 +522,14 @@
             } else {
                 [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[UIHelper setBadgeValueNotification:responseObject]];
             }
-            
+            if (handler) {
+                handler(responseObject,response,nil);
+            }
         } else {
-            [ErrorManager showError:error];
+            if (handler) {
+                handler(nil,response,error);
+            }
         }
-        
     }];
 }
 

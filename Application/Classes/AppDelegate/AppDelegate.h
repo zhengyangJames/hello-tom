@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseNavigationController.h"
 #import "BaseTabBarController.h"
+#import "WSURLSessionManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -24,8 +25,9 @@
 - (void)showLogginVC;
 - (void)clearData;
 - (void)setupNotifications:(UIApplication*)application;
-- (void)checkGetNotificationCount;
-- (void)checkAndCreadDeviceToken;
+- (void)checkGetNotificationCountHandler:(WSURLSessionHandler)handler;
+- (void)checkAndCreadDeviceTokenHandler:(WSURLSessionHandler)handler;
+- (void)callGetNotificationListHandler:(WSURLSessionHandler)handler;
 
 @end
 

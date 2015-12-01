@@ -131,22 +131,11 @@
 
 - (void)_callGetNotificationList {
     [UIHelper showLoadingInView:[kAppDelegate window]];
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
-    [dic setObject:device_token forKey:device_token_dic];
-    [dic setObject:device_type forKey:device_type_dic];
-    [dic setObject:application_name forKey:application_name_dic];
-    [[WSURLSessionManager shared] wsGetNotificationListRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
+    [kAppDelegate checkGetNotificationCountHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = nil;
             self.arrayData = (NSArray*)responseObject;
             NSString *str = [UIHelper setBadgeValueNotification:responseObject];
-            if ([str isEqualToString:@"0"]) {
-                 [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: nil];
-            } else {
-                [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: str];
-            }
             count1 = [str integerValue];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [_tableview reloadData];
