@@ -16,8 +16,9 @@
 #import "COLoginManager.h"
 #import "COUserProfileModel.h"
 #import "WSUpdateProfileRequest.h"
+#import "LoginViewController.h"
 
-@interface EditAboutProfileVC () <UIAlertViewDelegate>
+@interface EditAboutProfileVC () <UIAlertViewDelegate, LoginViewControllerDelegate>
 {
     __weak IBOutlet COBorderTextField *emailNameTXT;
     __weak IBOutlet CoDropListButtom  *dropListCountryCode;
@@ -214,6 +215,10 @@
                 [self dismissViewControllerAnimated:YES completion:nil];
             }];
         }else {
+            NSString *strError = [responseObject objectForKey:@"detail"];
+            if ([strError isEqualToString:ERROR]) {
+                [self showLoginView];
+            }
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];
@@ -248,5 +253,15 @@
     [_currentField becomeFirstResponder];
    _currentField = nil;
 }
+
+- (void)showLoginView {
+    LoginViewController *vcLogin = [[LoginViewController alloc]init];
+    vcLogin.delegate = self;
+    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+    [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
+    [[COLoginManager shared] setIsReloadListHome:YES];
+}
+
+
 @synthesize aboutUserModel = _aboutUserModel;
 @end

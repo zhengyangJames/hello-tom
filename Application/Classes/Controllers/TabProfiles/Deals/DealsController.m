@@ -13,8 +13,10 @@
 #import "WSURLSessionManager+DealProfile.h"
 #import "DealTableViewCell.h"
 #import "CODealProfileModel.h"
+#import "LoginViewController.h"
+#import "COLoginManager.h"
 
-@interface DealsController ()<UITableViewDelegate, UITableViewDataSource>
+@interface DealsController ()<UITableViewDelegate, UITableViewDataSource, LoginViewControllerDelegate>
 {
     __weak IBOutlet UISegmentedControl *_segment;
     __weak IBOutlet UILabel *_introductionLabel;
@@ -68,9 +70,9 @@
 }
 
 - (void)_setTilerLabelAndButton:(BOOL)hidden {
-    [_tableView setHidden:!hidden];
-    _actionsegment.hidden = hidden;
-    _greatLabel.hidden = hidden;
+    [_tableView setHidden:hidden];
+    _actionsegment.hidden = !hidden;
+    _greatLabel.hidden = !hidden;
 }
 
 #pragma mark - Action
@@ -104,9 +106,9 @@
     if (index == 0) {
         self.dataArray = self.dealModel.dealOngoingModel;
     } else if (index == 1) {
-        self.dataArray = self.dealModel.dealCompleteModel;
-    } else {
         self.dataArray = self.dealModel.dealFundedModel;
+    } else {
+        self.dataArray = self.dealModel.dealCompleteModel;
     }
     [[NSOperationQueue mainQueue]addOperationWithBlock:^{
         [_tableView reloadData];
@@ -121,21 +123,30 @@
     [dic setObject:device_type forKey:device_type_dic];
     [dic setObject:application_name forKey:application_name_dic];
     [[WSURLSessionManager shared] wsGetDealRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        [UIHelper hideLoadingFromView:self.view];
-        self.dealModel = (CODealProfileModel *)responseObject;
-        self.dataArray = self.dealModel.dealOngoingModel;
+        if (!error && responseObject != nil) {
+            [UIHelper hideLoadingFromView:self.view];
+            self.dealModel = (CODealProfileModel *)responseObject;
+            self.dataArray = self.dealModel.dealOngoingModel;
+            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                [_tableView reloadData];
+            }];
+        } else {
+            [UIHelper hideLoadingFromView:self.view];
+                NSString *strError = [responseObject objectForKey:@"detail"];
+                if ([strError isEqualToString:@"Authentication credentials were not provided."]) {
+                    [self showLoginView];
+                } else {
+                    [UIHelper showError:error];
+                }
+        }
     }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.dealModel.dealOngoingModel == nil ) {
-        [self _setTilerLabelAndButton:YES];
-    } else if (self.dealModel.dealFundedModel == nil) {
-        [self _setTilerLabelAndButton:YES];
-    } else if (self.dealModel.dealCompleteModel == nil) {
-        [self _setTilerLabelAndButton:YES];
-    } else {
+    if (self.dataArray != nil && self.dataArray.count >0) {
         [self _setTilerLabelAndButton:NO];
+    } else {
+        [self _setTilerLabelAndButton:YES];
     }
     return self.dataArray.count;
 }
@@ -147,7 +158,15 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 111;
+    return 120;
+}
+
+- (void)showLoginView {
+    LoginViewController *vcLogin = [[LoginViewController alloc]init];
+    vcLogin.delegate = self;
+    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+    [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
+    [[COLoginManager shared] setIsReloadListHome:YES];
 }
 
 @end

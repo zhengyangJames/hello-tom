@@ -45,7 +45,7 @@
 - (NSNumber *)numberOfdealCOOngoingStatusModelPotentialReturnAmount {
     return self.dealOngoingPotentialReturnAmount;
 }
-- (NSString *)stringOfdealCOOngoingStatusModelPotentialReturnPercent {
+- (NSNumber *)numberOfdealCOOngoingStatusModelPotentialReturnPercent {
     return self.dealOngoingPotentialReturnPercent;
 }
 - (NSString *)stringOfdealCOOngoingStatusModelProjectName {

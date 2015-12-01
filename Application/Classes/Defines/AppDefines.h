@@ -350,5 +350,5 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 #define NOTIFI_ICON_EVENT        @"event"
 #define NOTIFI_ICON_LANDINGPG    @"event"
 #define NOTIFI_ICON_GENERAL      @"landingpg"
-
+#define ERROR  @"Authentication credentials were not provided."
 #endif

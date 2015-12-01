@@ -128,7 +128,12 @@
             }];
         } else {
             [UIHelper hideLoadingFromView:self.view];
-            [UIHelper showError:error];
+            NSString *strError = [responseObject objectForKey:@"detail"];
+            if ([strError isEqualToString:ERROR]) {
+                [self showLoginView];
+            } else {
+                [UIHelper showError:error];
+            }
         }
         [UIHelper hideLoadingFromView:self.view];
         
@@ -147,6 +152,14 @@
     [[WSURLSessionManager shared] wsReadNotificationList:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         
     }];
+}
+
+- (void)showLoginView {
+    LoginViewController *vcLogin = [[LoginViewController alloc]init];
+    vcLogin.delegate = self;
+    BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
+    [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
+    [[COLoginManager shared] setIsReloadListHome:YES];
 }
 
 @end

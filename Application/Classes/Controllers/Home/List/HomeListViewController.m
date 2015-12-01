@@ -246,6 +246,10 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             self.offerModel.offerProject.projectFundedAmount = responseObject;
             [self _pushDetailVcWithID:self.offerModel];
         } else {
+            NSString *strError = [responseObject objectForKey:@"detail"];
+            if ([strError isEqualToString:ERROR]) {
+                [self showLoginView];
+            }
             [UIHelper showError:error];
         }
         [UIHelper hideLoadingFromView:self.view];

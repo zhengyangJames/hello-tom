@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSNumber *dealOngoingInvestAmount;
 @property (nonatomic, strong) NSNumber *dealOngoingNextPayoutAmount;
 @property (nonatomic, strong) NSNumber *dealOngoingPotentialReturnAmount;
-@property (nonatomic, strong) NSString *dealOngoingPotentialReturnPercent;
+@property (nonatomic, strong) NSNumber *dealOngoingPotentialReturnPercent;
 @property (nonatomic, strong) NSString *dealOngoingProjectName;
 @property (nonatomic, strong) COOngoingStatusModel *dealOngoingStatus;
 
@@ -26,7 +26,7 @@
 - (NSNumber *)numberOfdealCOOngoingStatusModelInvestAmount;
 - (NSNumber *)numberOfdealCOOngoingStatusModelNextPayoutAmount;
 - (NSNumber *)numberOfdealCOOngoingStatusModelPotentialReturnAmount;
-- (NSString *)stringOfdealCOOngoingStatusModelPotentialReturnPercent;
+- (NSNumber *)numberOfdealCOOngoingStatusModelPotentialReturnPercent;
 - (NSString *)stringOfdealCOOngoingStatusModelProjectName;
 
 @end
