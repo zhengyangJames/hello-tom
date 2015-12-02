@@ -37,7 +37,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxS-5y-ZmR" customClass="COPositive_NagitiveButton">
-                            <rect key="frame" x="45" y="175" width="231" height="45"/>
+                            <rect key="frame" x="45" y="175" width="230" height="45"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="WaR-qh-cec"/>
@@ -50,7 +50,7 @@
                             </connections>
                         </button>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="5cN-x6-GIM">
-                            <rect key="frame" x="45" y="139" width="231" height="21"/>
+                            <rect key="frame" x="45" y="139" width="230" height="21"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="4ek-2j-Zlo"/>
@@ -66,7 +66,7 @@
                         <constraint firstAttribute="trailing" secondItem="vOU-NI-lL1" secondAttribute="trailing" id="67G-Q6-9vF"/>
                         <constraint firstItem="5cN-x6-GIM" firstAttribute="leading" secondItem="DxS-5y-ZmR" secondAttribute="leading" id="76L-LA-SB9"/>
                         <constraint firstItem="DxS-5y-ZmR" firstAttribute="top" secondItem="5cN-x6-GIM" secondAttribute="bottom" constant="15" id="ApQ-Dz-989"/>
-                        <constraint firstAttribute="trailing" secondItem="DxS-5y-ZmR" secondAttribute="trailing" constant="44" id="I21-61-6bP"/>
+                        <constraint firstAttribute="trailing" secondItem="DxS-5y-ZmR" secondAttribute="trailing" constant="45" id="I21-61-6bP"/>
                         <constraint firstItem="5cN-x6-GIM" firstAttribute="trailing" secondItem="DxS-5y-ZmR" secondAttribute="trailing" id="K5r-0E-Q6P"/>
                         <constraint firstItem="DxS-5y-ZmR" firstAttribute="leading" secondItem="7EQ-mc-hFO" secondAttribute="leading" constant="45" id="Qd7-7a-dvv"/>
                         <constraint firstAttribute="bottom" secondItem="vOU-NI-lL1" secondAttribute="bottom" id="YiI-lj-scL"/>
@@ -75,6 +75,11 @@
                         <constraint firstAttribute="centerX" secondItem="DxS-5y-ZmR" secondAttribute="centerX" id="xoy-Sp-Kcf"/>
                         <constraint firstAttribute="centerY" secondItem="DxS-5y-ZmR" secondAttribute="centerY" id="yFG-VL-IRe"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="xoy-Sp-Kcf"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czh-LV-xXi" userLabel="TopView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
