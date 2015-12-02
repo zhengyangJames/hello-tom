@@ -2176,7 +2176,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Sanyi;
 				TargetAttributes = {
 					0EFEB4AF1B2724B2001195B7 = {
@@ -2419,7 +2419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/Fabric/Fabric.framework/run 9d7e393b03f9dbda18ba23c707390e03d8cd3d93 b1e6bc41c1bd7e80198e7fa583cfb6b162eb2c33880179f7ada005f23ba5a3c7";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9d7e393b03f9dbda18ba23c707390e03d8cd3d93 b1e6bc41c1bd7e80198e7fa583cfb6b162eb2c33880179f7ada005f23ba5a3c7";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2620,6 +2620,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2701,8 +2702,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coassets;
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "79ec15db-009c-4bf5-b10e-c06057a4c50e";
+				PROVISIONING_PROFILE = "400cb912-c631-4419-a75a-0b77828bdfed";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2725,8 +2727,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coassets;
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "79ec15db-009c-4bf5-b10e-c06057a4c50e";
+				PROVISIONING_PROFILE = "400cb912-c631-4419-a75a-0b77828bdfed";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
