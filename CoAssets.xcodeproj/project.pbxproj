@@ -2691,8 +2691,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
@@ -2701,7 +2702,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "94069af6-cd6e-4724-8835-ae2f6b17fe05";
+				PROVISIONING_PROFILE = "400cb912-c631-4419-a75a-0b77828bdfed";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2714,8 +2715,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
@@ -2724,7 +2726,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "94069af6-cd6e-4724-8835-ae2f6b17fe05";
+				PROVISIONING_PROFILE = "400cb912-c631-4419-a75a-0b77828bdfed";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
