@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NProfileHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="195"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retail Investor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmi-Kr-SeM">
+                    <rect key="frame" x="10" y="126" width="300" height="20"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QfO-D1-7dt">
+                    <rect key="frame" x="10" y="154" width="300" height="34"/>
+                    <animations/>
+                    <segments>
+                        <segment title="About"/>
+                        <segment title="Company"/>
+                        <segment title="Investor"/>
+                    </segments>
+                    <color key="tintColor" red="0.2274509804" green="0.25098039220000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="__actionChangeValueSegment:" destination="iN0-l3-epB" eventType="valueChanged" id="cV5-4w-fAZ"/>
+                    </connections>
+                </segmentedControl>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait_ph.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dZG-3t-W5u" customClass="COAwatarView">
+                    <rect key="frame" x="105" y="8" width="110" height="110"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dZG-3t-W5u" secondAttribute="height" multiplier="1:1" id="LW0-5N-teA"/>
+                        <constraint firstAttribute="width" constant="110" id="kn9-8i-6yn"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIe-1H-nq7">
+                    <rect key="frame" x="105" y="8" width="110" height="110"/>
+                    <animations/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="mmi-Kr-SeM" firstAttribute="top" secondItem="dZG-3t-W5u" secondAttribute="bottom" constant="8" id="1u7-Ts-fqg"/>
+                <constraint firstItem="rIe-1H-nq7" firstAttribute="width" secondItem="dZG-3t-W5u" secondAttribute="width" id="6ry-RH-a3t"/>
+                <constraint firstItem="mmi-Kr-SeM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="CMg-bD-Ace"/>
+                <constraint firstAttribute="trailing" secondItem="mmi-Kr-SeM" secondAttribute="trailing" constant="10" id="CMv-Tl-iyY"/>
+                <constraint firstItem="QfO-D1-7dt" firstAttribute="top" secondItem="mmi-Kr-SeM" secondAttribute="bottom" constant="8" id="Gms-aG-8qF"/>
+                <constraint firstAttribute="bottom" secondItem="QfO-D1-7dt" secondAttribute="bottom" constant="8" id="OiZ-mX-6E2"/>
+                <constraint firstItem="rIe-1H-nq7" firstAttribute="centerX" secondItem="dZG-3t-W5u" secondAttribute="centerX" id="P3p-yN-kj5"/>
+                <constraint firstAttribute="centerX" secondItem="dZG-3t-W5u" secondAttribute="centerX" id="XiQ-v1-Ocr"/>
+                <constraint firstItem="rIe-1H-nq7" firstAttribute="centerY" secondItem="dZG-3t-W5u" secondAttribute="centerY" id="YQm-33-iiK"/>
+                <constraint firstAttribute="trailing" secondItem="QfO-D1-7dt" secondAttribute="trailing" constant="10" id="crq-yQ-dlT"/>
+                <constraint firstItem="dZG-3t-W5u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="jbZ-0n-EO5"/>
+                <constraint firstItem="QfO-D1-7dt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="mv1-SH-mhy"/>
+                <constraint firstItem="rIe-1H-nq7" firstAttribute="height" secondItem="dZG-3t-W5u" secondAttribute="height" id="nxf-gJ-Ftg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="_segmentControl" destination="QfO-D1-7dt" id="qH2-Jk-6ui"/>
+            </connections>
+            <point key="canvasLocation" x="247" y="134.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="portrait_ph.jpg" width="635" height="845"/>
+    </resources>
+</document>

@@ -11,7 +11,7 @@
 #import "ContacViewController.h"
 #import "WebViewSetting.h"
 #import "LoginViewController.h"
-
+#import "COLoginManager.h"
 @interface SettingViewController () <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,LoginViewControllerDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
@@ -32,12 +32,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
     _webViewSetting = nil;
-    [kUserDefaults setObject:@"2" forKey:KEY_TABBARSELECT];
+    [kUserDefaults setObject:@"3" forKey:KEY_TABBARSELECT];
     [kUserDefaults synchronize];
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+    if (![[COLoginManager shared] userModel]) {
         [self _replaceArraySettingLogOut];
     } else {
         [self _replaceArraySettingLogin];
@@ -82,7 +80,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
     }
     cell.accessoryType = UITableViewCellSeparatorStyleSingleLine;
-    cell.textLabel.text = self.arraySetting[indexPath.row];
+    cell.textLabel.text = NSLocalizedString(self.arraySetting[indexPath.row],nil);
     cell.textLabel.textColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Raleway-Regular" size:17];
     return cell;
@@ -100,8 +98,6 @@
         case COSettingsStypeContact: return [self _pushContacViewController];
             
         case COSettingsStypeNew: return [self _pushWebViewSetting:LINK_NEW titler:NSLocalizedString(@"NEWS", nil)];
-            
-        case COSettingsStypeCommentaries: return [self _pushWebViewSetting:LINK_COMMENTARIES titler:NSLocalizedString(@"COMMENTARIES", nil)];
             
         case COSettingsStypeTermOfUse: return [self _pushWebViewSetting:LINK_TERMS_OF_USE titler:NSLocalizedString(@"TERM_OF_USE", nil)];
             
@@ -127,10 +123,10 @@
 }
 
 - (void)_setupLoginAndLogout {
-    if (![kUserDefaults boolForKey:KDEFAULT_LOGIN]) {
+    if (![[COLoginManager shared] userModel]) {
         [self _logginApllication];
     } else {
-        [UIHelper showAleartViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil) message:NSLocalizedString(@"MESSAGE_LOGOUT", nil) cancelButton:NSLocalizedString(@"CANCEL_TITLE", nil) delegate:self tag:0 arrayTitleButton:@[NSLocalizedString(@"OK_TITLE", nil)]];
+        [UIHelper showAlertViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil) message:NSLocalizedString(@"MESSAGE_LOGOUT", nil) cancelButton:NSLocalizedString(@"CANCEL_TITLE", nil) delegate:self tag:0 arrayTitleButton:@[NSLocalizedString(@"OK_TITLE", nil)]];
     }
 }
 
@@ -145,9 +141,9 @@
 
 - (void)_replaceArraySettingLogin {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
-    for (int i = 0 ; i < arr.count ; i ++) {
-        if ([arr[i] isEqualToString:NSLocalizedString(@"LOG_IN", nil)]) {
-            [arr replaceObjectAtIndex:i withObject:NSLocalizedString(@"LOG_OUT", nil)];
+    if (arr) {
+        if ([arr[COSettingsStypeLogout] isEqualToString:NSLocalizedString(@"LOG_IN", nil)]) {
+            [arr replaceObjectAtIndex:COSettingsStypeLogout withObject:NSLocalizedString(@"LOG_OUT", nil)];
         }
     }
     self.arraySetting = arr;
@@ -156,18 +152,14 @@
 
 - (void)_replaceArraySettingLogOut {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
-    for (int i = 0 ; i < arr.count ; i ++) {
-        if ([arr[i] isEqualToString:NSLocalizedString(@"LOG_OUT", nil)]) {
-            [arr replaceObjectAtIndex:i withObject:NSLocalizedString(@"LOG_IN", nil)];
+    if (arr) {
+        if ([arr[COSettingsStypeLogout] isEqualToString:NSLocalizedString(@"LOG_OUT", nil)]) {
+            [arr replaceObjectAtIndex:COSettingsStypeLogout withObject:NSLocalizedString(@"LOG_IN", nil)];
         }
     }
     self.arraySetting = arr;
     [_tableView reloadData];
-    [kUserDefaults removeObjectForKey:KDEFAULT_LOGIN];
-    [kUserDefaults removeObjectForKey:kACCESS_TOKEN];
-    [kUserDefaults removeObjectForKey:kTOKEN_TYPE];
-    [kUserDefaults removeObjectForKey:kPROFILE_OBJECT];
-    [kUserDefaults synchronize];
+    [kAppDelegate clearData];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

@@ -8,11 +8,17 @@
 
 #import "WSURLSessionManager.h"
 
+@class COUserProfileModel;
+@class WSLoginRequest;
+@class WSRegisterRequest;
+@class WSForgotPassWordRequest;
+@class WSChangePassWordRequest;
+
 @interface WSURLSessionManager (User)
 
-- (void)wsLoginWithUser:(NSDictionary*)param handler:(WSURLSessionHandler)handler;
-- (void)wsRegisterWithInfo:(NSDictionary*)param handler:(WSURLSessionHandler)handler;
-- (void)wsForgotPassword:(NSDictionary*)param handler:(WSURLSessionHandler)handler;
-- (void)wsChangePassword:(NSDictionary*)paramToken body:(NSDictionary*)body handler:(WSURLSessionHandler)handler;
+- (void)wsLoginWithRequest:(WSLoginRequest *)request handler:(WSURLSessionHandler)handler;
+- (void)wsRegisterWithRequest:(WSRegisterRequest *)request handler:(WSURLSessionHandler)handler;
+- (void)wsForgotPasswordWithRequest:(WSForgotPassWordRequest *)request handler:(WSURLSessionHandler)handler;
+- (void)wsChangePasswordWithRequest:(WSChangePassWordRequest *)request handler:(WSURLSessionHandler)handler;
 
 @end

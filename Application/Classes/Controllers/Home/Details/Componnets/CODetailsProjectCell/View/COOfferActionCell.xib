@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="COOfferActionCell" rowHeight="116" id="CGP-sd-fjX" customClass="COOfferActionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CGP-sd-fjX" id="gGp-lE-HWD">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXe-hQ-bKF">
+                        <rect key="frame" x="8" y="0.0" width="304" height="106"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU9-ZL-aYu" customClass="COPositive_NagitiveButton">
+                                <rect key="frame" x="57" y="5" width="190" height="36"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.29411764709999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="SHQ-Gn-CaA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                <state key="normal" title="I'm interested">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="__actionInterested:" destination="CGP-sd-fjX" eventType="touchUpInside" id="AhP-IJ-Y5N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szA-tN-LfO" customClass="COPositive_NagitiveButton">
+                                <rect key="frame" x="57" y="51" width="190" height="36"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                <state key="normal" title="I've Questions">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="questions" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="__actionQuestions:" destination="CGP-sd-fjX" eventType="touchUpInside" id="FTr-32-LxO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.23529411759999999" green="0.27450980390000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="szA-tN-LfO" firstAttribute="leading" secondItem="NXe-hQ-bKF" secondAttribute="leading" constant="57" id="3sU-NV-zhx"/>
+                            <constraint firstAttribute="centerX" secondItem="FU9-ZL-aYu" secondAttribute="centerX" id="Jrs-k8-CWL"/>
+                            <constraint firstAttribute="trailing" secondItem="FU9-ZL-aYu" secondAttribute="trailing" constant="57" id="Sgp-5B-Heh"/>
+                            <constraint firstAttribute="trailing" secondItem="szA-tN-LfO" secondAttribute="trailing" constant="57" id="c6s-gl-ikr"/>
+                            <constraint firstItem="szA-tN-LfO" firstAttribute="top" secondItem="FU9-ZL-aYu" secondAttribute="bottom" constant="10" id="hYw-z0-Ws7"/>
+                            <constraint firstItem="szA-tN-LfO" firstAttribute="width" secondItem="FU9-ZL-aYu" secondAttribute="width" id="lCj-NF-XNU"/>
+                            <constraint firstItem="FU9-ZL-aYu" firstAttribute="leading" secondItem="NXe-hQ-bKF" secondAttribute="leading" constant="57" id="vai-EQ-eZj"/>
+                            <constraint firstItem="FU9-ZL-aYu" firstAttribute="top" secondItem="NXe-hQ-bKF" secondAttribute="top" constant="5" id="xGC-BH-SSC"/>
+                            <constraint firstItem="szA-tN-LfO" firstAttribute="height" secondItem="FU9-ZL-aYu" secondAttribute="height" id="z8u-RX-k1Z"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="NXe-hQ-bKF" secondAttribute="bottom" id="6Ei-XK-J4k"/>
+                    <constraint firstItem="NXe-hQ-bKF" firstAttribute="top" secondItem="gGp-lE-HWD" secondAttribute="topMargin" constant="-8" id="cDq-9u-uBa"/>
+                    <constraint firstItem="NXe-hQ-bKF" firstAttribute="trailing" secondItem="gGp-lE-HWD" secondAttribute="trailing" constant="-8" id="fms-Ju-GAD"/>
+                    <constraint firstItem="NXe-hQ-bKF" firstAttribute="leading" secondItem="gGp-lE-HWD" secondAttribute="leading" constant="8" id="yx0-5F-68W"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="_contentView" destination="NXe-hQ-bKF" id="UHt-Lg-9I3"/>
+                <outlet property="_interedtedBTN" destination="FU9-ZL-aYu" id="ev5-MQ-BVB"/>
+                <outlet property="_questionBTN" destination="szA-tN-LfO" id="XVI-eV-TXd"/>
+            </connections>
+            <point key="canvasLocation" x="42" y="308.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -24,10 +24,12 @@
 
 "FIRST_NAME"                            = "First Name";
 "LAST_NAME"                             = "Last Name";
-"EMAIL"                                 = "Email";
+"EMAIL"= "Email";
 "PHONE"                                 = "Phone";
 "CONTACT"                               = "Contact";
 "SETTINGS"                              = "Settings";
+"NOTIFICATION"                          = "Notifications";
+"Notification"                          = "Notification";
 
 "NEWS"                                  = "News";
 
@@ -35,12 +37,12 @@
 "BUTTON_INTERESTED"                     = "I want to invest again!";
 "BUTTON_QUESTION"                       = "Request sent.";
 
-"SECTION_DECLARATION_FORM"              = "DECLARATION FORM";
-"SECTION_LEGAL_APPOINTMENT"             = "LEGAL APPOINTMENT";
-"SECTION_PROOF_OF_LICENSES"             = "PROOF OF LICENSES";
-"SECTION_OTHER_DOCUMENTS"               = "OTHER DOCUMENTS";
-"SECTION_PROOF_OF_OWNERSHIP"            = "PROOF OF OWNERSHIP";
-"SECTION_COMPANY_REGISTRATION"          = "COMPANY REGISTRATION";
+"declaration_form_list"                 = "DECLARATION FORM";
+"legal_appointment"                     = "LEGAL APPOINTMENT";
+"licenses"                              = "PROOF OF LICENSES";
+"others"                                = "OTHER DOCUMENTS";
+"ownership"                             = "PROOF OF OWNERSHIP";
+"registration_form_list"                = "COMPANY REGISTRATION";
 
 "EMAIL_REQUIRED"                        = "Email is required.";
 "USERNAME_REQUIRED"                     = "Username is required.";
@@ -53,12 +55,17 @@
 "CONFIRM_PASSWORD_REQUIRED"             = "Confirm password is required.";
 "CONFIRM_PASSWORD_MESSAGE"              = "Confirm password does not match";
 
-"FILTER_BULLK_NULL"                     = "Bulk Purchase are comming soon";
-"FILTER_CROWD_NULL"                     = "Crowdfunding are comming soon";
-"FILTER_SALE_NULL"                      = "Pre-Sales are comming soon";
-"FILTER_ALL_NULL"                       = "CoAssets is comming soon";
+"FILTER_BULLK_NULL"                     = "Bulk Purchase are coming";
+"FILTER_CROWD_NULL"                     = "Crowdfunding are coming";
+"FILTER_SALE_NULL"                      = "Pre-Sales are coming";
+"FILTER_ALL_NULL"                       = "CoAssets is coming";
 
 "EMAIL_INVALID"                         = "Email is invalid.";
+"PASSWORD_INVALID"                      = "Password is invalid.";
+"USERNAME_INVALID"                      = "Username is invalid.";
+"PASSWORD_ERROR"                      = "Password should consist of alphanumeric and @.+-_ only.";
+"USERNAME_ERROR"                      = "Username should consist of alphanumeric and @.+-_ only.";
+
 "MESSEAGE_RESET_PASSWORD"               = "Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly";
 "YOUR_EMAIL_INVALID"                    = "Your email is invalid.";
 "INVALID_GRANT"                         = "Invalid Grant";
@@ -91,9 +98,63 @@
 "DAY_LEFT"                              = "%@";
 "GOAL"                                  = "%tu%% of goal";
 
-"ADDRESS"                               = "ADDRESS";
-"PROJECT"                               = "PROJECT";
-"OFFER"                                 = "OFFER";
-"DOCUMENTS"                             = "DOCUMENTS";
 "NoDocumentsUploaded"                   = "No Documents Uploaded";
 "DETAIL_DOCUMENT"                       = "The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";
+
+
+"OFFER"                                 = "Offer";
+"PROJECT"                               = "Project";
+"DOCUMENT"                              = "Documents";
+"ADDRESSNAME"                           = "Address";
+
+"Contact"                               = "Contact";
+"News"                                  = "News";
+"Commentaries"                          = "Commentaries";
+"Terms of Use"                          = "Terms of Use";
+"Code of Conduct"                       = "Code of Conduct";
+"Privacy"                               = "Privacy";
+"Log Out"                               = "Log Out";
+
+"Interested_Popup"                      = "Thank you for crowdfunding, \n%@. \n\nPlease e-sign the contract sent to your email & proceed to make fund transfer within 5 working days. \n\nIf you have any queries, please feel free to call 65327008 or email admin@coassets.com. \nThank you & happy crowdfunding.";
+
+"KEY_ACTION_UPDATEPROFILE"              = "Update profile";
+"KEY_ACTION_UPDATECOMPANY"              = "Update company profile";
+"KEY_ACTION_UPDATEINVESTOR"             = "Update investor profile";
+"KEY_ACTION_UPDATECHANGEPASSWORD"       = "Change password";
+
+"COMPANY_NAME"                          = "Org name";
+"COMPANY_ADRESS"                        = "Address";
+
+"INVESTOR_TYPE"                         = "Investor Type";
+"INVESTOR_PREFERENCE"                   = "Project Preference";
+"INVESTOR_AMOUNT"                       = "Investment Amount";
+"INVESTOR_TARGET"                       = "Target Returns (Annualized)";
+"INVESTOR_DURATION"                     = "Duration Preference";
+"INVESTOR_COUNTRIES"                    = "Countries Preference";
+
+"ON_GOING"                              = "Deals that you have supported and are still ongoing.";
+"FUNDED"                                = "Deals that you have supported that are funded successfully.";
+"COMPLETED"                             = "Deals that you have supported that have been completed payout.";
+"SUGEST"                                = "Deals you might be interested in";
+"TITLE_LABEL"                           = "You currently have no deals.";
+"TITLE_BUTTON"                          = "Click Here To Get Started!";
+
+"VIEW_PASSWORD"                         = "Update Password";
+
+"USERNAME"                              = "User name";
+
+"PROFILE"                               = "Profile";
+
+"C_PROFILE"                             = "Company Profile";
+
+"I_PROFILE"                             = "Investment Profile";
+
+"NoCompanyAssociated"                   = "No company associated";
+
+"UPDATE_COMPANY_PROFILE"                = "Update profile copany";
+
+"NEW_OFFER"                             = "I want to invest new offer I want to invest new offer I want to invest new offer";
+"TITLE_PRIVATE"         = "PRIVATE";
+
+"MINIMUM_MESSAGE"       = "Minimum investment amount is %@";
+"ORG_NAME_REQUIRED"      = "Org name is required";

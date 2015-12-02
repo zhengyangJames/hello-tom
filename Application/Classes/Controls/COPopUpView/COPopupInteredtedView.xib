@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
@@ -19,26 +19,30 @@
             <subviews>
                 <view clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eog-Vb-yaP" userLabel="BlureView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-JX-zn4">
-                    <rect key="frame" x="16" y="75" width="288" height="418"/>
+                    <rect key="frame" x="16" y="71" width="288" height="426"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="274" translatesAutoresizingMaskIntoConstraints="NO" id="2iV-ca-RfI">
-                            <rect key="frame" x="10" y="8" width="268" height="340"/>
-                            <string key="text">Thank you for crowdfunding The very FIRST Singapore Real Estate Crowdfunding Property: Mountbatten Lights Cluster Bungalow .
-
-Please e-sign the contract sent to your email &amp; proceed to make fund transfer within 5 working days.
-
-If you have any queries, please feel free to call 65327008 or email admin@coassets.com.
-
-Thank you &amp; happy crowdfunding.</string>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1m-8X-eFl">
+                            <rect key="frame" x="10" y="8" width="268" height="348"/>
+                            <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="A9c-G7-tCu"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="A9c-G7-tCu"/>
+                                </mask>
+                            </variation>
+                        </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdC-NC-NED" customClass="COPositive_NagitiveButton">
-                            <rect key="frame" x="40" y="358" width="208" height="40"/>
+                            <rect key="frame" x="40" y="366" width="208" height="40"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="c7q-6V-SKk"/>
                             </constraints>
@@ -55,19 +59,28 @@ Thank you &amp; happy crowdfunding.</string>
                             </connections>
                         </button>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="2iV-ca-RfI" firstAttribute="leading" secondItem="dMN-JX-zn4" secondAttribute="leading" constant="10" id="A6R-Fj-2vk"/>
+                        <constraint firstAttribute="height" priority="750" constant="428" id="4JE-Si-j5c"/>
+                        <constraint firstItem="bdC-NC-NED" firstAttribute="top" secondItem="U1m-8X-eFl" secondAttribute="bottom" constant="10" id="SSN-2v-NL2"/>
                         <constraint firstAttribute="trailing" secondItem="bdC-NC-NED" secondAttribute="trailing" constant="40" id="Ulw-f1-4Zd"/>
                         <constraint firstAttribute="bottom" secondItem="bdC-NC-NED" secondAttribute="bottom" constant="20" id="Uyg-YK-Rf7"/>
-                        <constraint firstItem="2iV-ca-RfI" firstAttribute="top" secondItem="dMN-JX-zn4" secondAttribute="top" constant="8" id="We4-fs-Ogd"/>
+                        <constraint firstAttribute="trailing" secondItem="U1m-8X-eFl" secondAttribute="trailing" constant="10" id="ZWa-uq-glY"/>
                         <constraint firstItem="bdC-NC-NED" firstAttribute="leading" secondItem="dMN-JX-zn4" secondAttribute="leading" constant="40" id="a9c-ab-ud6"/>
-                        <constraint firstItem="bdC-NC-NED" firstAttribute="top" secondItem="2iV-ca-RfI" secondAttribute="bottom" constant="10" id="m4M-FJ-08K"/>
                         <constraint firstAttribute="centerX" secondItem="bdC-NC-NED" secondAttribute="centerX" id="ma9-gd-2e2"/>
-                        <constraint firstAttribute="trailing" secondItem="2iV-ca-RfI" secondAttribute="trailing" constant="10" id="u5r-7r-axR"/>
+                        <constraint firstAttribute="height" constant="426" id="oLy-L3-36r"/>
+                        <constraint firstItem="U1m-8X-eFl" firstAttribute="top" secondItem="dMN-JX-zn4" secondAttribute="top" constant="8" id="uVT-Gu-1U0"/>
+                        <constraint firstItem="U1m-8X-eFl" firstAttribute="leading" secondItem="dMN-JX-zn4" secondAttribute="leading" constant="10" id="xCA-zq-prg"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="4JE-Si-j5c"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Eog-Vb-yaP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5tN-oG-7EO"/>
@@ -76,15 +89,16 @@ Thank you &amp; happy crowdfunding.</string>
                 <constraint firstItem="Eog-Vb-yaP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="T8H-4g-GHp"/>
                 <constraint firstItem="dMN-JX-zn4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Wgs-Su-SAy"/>
                 <constraint firstAttribute="bottom" secondItem="Eog-Vb-yaP" secondAttribute="bottom" id="bml-Zb-24m"/>
-                <constraint firstAttribute="bottom" secondItem="dMN-JX-zn4" secondAttribute="bottom" constant="75" id="tKd-wH-rok"/>
-                <constraint firstItem="dMN-JX-zn4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="75" id="uop-yL-a8R"/>
+                <constraint firstItem="dMN-JX-zn4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="qyS-9D-3Uv"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dMN-JX-zn4" secondAttribute="bottom" priority="750" constant="20" id="tKd-wH-rok"/>
+                <constraint firstItem="dMN-JX-zn4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" priority="750" constant="20" id="uop-yL-a8R"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <outlet property="_lblOfferTitle" destination="2iV-ca-RfI" id="gAk-nI-6De"/>
+                <outlet property="_tvOfferTitle" destination="U1m-8X-eFl" id="HvW-Rh-N51"/>
                 <outlet property="contentView" destination="dMN-JX-zn4" id="HN8-dr-dnq"/>
             </connections>
-            <point key="canvasLocation" x="-92" y="172"/>
+            <point key="canvasLocation" x="-82" y="153"/>
         </view>
     </objects>
 </document>

@@ -9,16 +9,13 @@
 #import "ForgotPasswordViewController.h"
 #import "COBorderTextField.h"
 #import "WSURLSessionManager+User.h"
-
-#define MESSEAGE_RESET_PASSWORD @"Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly"
+#import "WSForgotPassWordRequest.h"
 
 @interface ForgotPasswordViewController () <UIAlertViewDelegate>
 {
     __weak IBOutlet COBorderTextField *emailTextField;
 
 }
-
-
 @end
 
 @implementation ForgotPasswordViewController
@@ -32,8 +29,6 @@
     [super viewDidAppear:animated];
     [emailTextField becomeFirstResponder];
 }
-
-
 #pragma mark - Private
 
 - (BOOL)_isValidation {
@@ -46,8 +41,6 @@
     }
     return YES;
 }
-
-
 #pragma mark - Action
 - (IBAction)__actionCancel:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -62,11 +55,18 @@
     }
 }
 
+- (WSForgotPassWordRequest *)_setForgotPassRequest {
+    WSForgotPassWordRequest *request = [[WSForgotPassWordRequest alloc] init];
+    [request setHTTPMethod:METHOD_POST];
+    [request setURL:[NSURL URLWithString:WS_METHOD_POST_PORGOT_PASSWORD]];
+    [request setBodyParam:emailTextField.text forKey:kForgotPassEmail];
+    return request;
+}
+
 #pragma mark - Web Service
 - (void)_callWSProgotPassoword {
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:emailTextField.text,@"email", nil];
     [UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsForgotPassword:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsForgotPasswordWithRequest:[self _setForgotPassRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {;
             [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"MESSEAGE_RESET_PASSWORD", nil) delegate:self tag:10];
         } else {

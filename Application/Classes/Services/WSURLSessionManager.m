@@ -11,7 +11,7 @@
 
 @interface WSURLSessionManager ()
 {
-    
+    BOOL _isCheckUnknownError;
 }
 @property (nonatomic, strong) NSOperationQueue *serviceQueue;
 @property (nonatomic, strong) NSURLSession *urlSession;
@@ -26,7 +26,6 @@
     dispatch_once(&oneToken,^{
         instance = [[self alloc]init];
     });
-
     return instance;
 }
 
@@ -48,7 +47,23 @@
     if(!params) return s;
     NSString *prefix = @"";
     for (NSString *key in [params allKeys]) {
-        s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[[params objectForKey:key] urlEncode]];
+        if ([key isEqualToString:kPROFILE]) {
+            NSDictionary *profile = [params objectForKey:kPROFILE];
+            for(NSString *key in [profile allKeys]) {
+                NSString *object = [profile objectForKey:key];
+                if ([object isEqualToString:@""]) {
+                    object = @" ";
+                }
+                s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[object urlEncode]];
+                prefix = @"&";
+            }
+            break;
+        }
+        NSString *object = [params objectForKey:key];
+        if ([object isEqualToString:@""]) {
+            object = @" ";
+        }
+        s = [s stringByAppendingFormat:@"%@%@=%@",prefix,key,[object urlEncode]];
         prefix = @"&";
     }
     return s;
@@ -93,10 +108,6 @@
                                       body:(NSData*)bodyData
                                 httpMethod:(NSString*)method {
     
-    NSString *bodyString = @"";
-    if(bodyData != nil) {
-        bodyString = [[NSString alloc] initWithData:bodyData encoding:NSUTF8StringEncoding];
-    }
     // create request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:WS_TIME_OUT];
     [request setHTTPMethod:[method uppercaseString]];
@@ -115,58 +126,100 @@
     
     NSString *finalURL = [self buildURL:url byParams:params];
     NSMutableURLRequest *request = [self createAuthRequest:finalURL body:body httpMethod:method];
-    [self sendRequest:request handler:handler];
+    [self sendRequest:request requiredLogin:YES clearCache:YES handler:handler];
     
 }
 
-- (void)sendRequest:(NSMutableURLRequest *)request handler:(WSURLSessionHandler)handler {
+
+- (void)sendRequest:(NSMutableURLRequest *)request requiredLogin:(BOOL)requiredLogin clearCache:(BOOL)clearCache handler:(WSURLSessionHandler)handler {
+    if (requiredLogin) {
+        [[ErrorManager shared] requitedLogin:^(BOOL completed) {
+            if (completed) {
+                NSString *acc = [kUserDefaults objectForKey:KEY_ACCESS_TOKEN];
+                [request setValue:acc forHTTPHeaderField:@"Authorization"];
+                [self sendRequest:request clearCache:clearCache handler:handler];
+            }
+        }];
+    } else {
+        [self sendRequest:request clearCache:clearCache handler:handler];
+    }
+}
+
+- (void)sendRequest:(NSMutableURLRequest *)request clearCache:(BOOL)clearCache handler:(WSURLSessionHandler)handler {
     DBG(@"NM-WS-REQUEST-URL: %@",request.URL.absoluteString);
     DBG(@"NM-WS-REQUEST-METHOD: %@",request.HTTPMethod);
     DBG(@"NM-WS-REQUEST-BODY: %@",[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
-    
-    // Initialize Session Configuration
+    [self callSessionRequest:request clearCache:clearCache handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (handler) {
+            handler (responseObject,response,error);
+        }
+    }];
+}
+
+- (void)callSessionRequest:(NSMutableURLRequest *)request clearCache:(BOOL)clearCache handler:(BlockSession)handler {
     NSURLSessionConfiguration *urlSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    // Initialize Session Manager
     AFHTTPSessionManager *sm = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:urlSessionConfig];
-    // Configure Manager
     [sm setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    // Send Request
+    if (clearCache) {
+        [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    }
     [[sm dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         //check if error is exist
-        if(httpResponse.statusCode >= 500) {
-            NSDictionary *headerDict = httpResponse.allHeaderFields;
-            NSString *errorCode = @"Unknown Error";
-            NSString *errorMessage = @"Unknown Error";
-            if([headerDict objectForKeyNotNull:@"Nm-Code"] && [headerDict objectForKeyNotNull:@"Nm-Message"]) {
-                errorCode = [headerDict objectForKey:@"Nm-Code"];
-                errorMessage = [headerDict objectForKey:@"Nm-Message"];
+        NSInteger statusCodeWS = httpResponse.statusCode;
+        DBG(@"Status_CodeWS %tu",statusCodeWS);
+        if (statusCodeWS >= 300) {
+            NSString *errorMessage = error.localizedDescription;
+            if (responseObject) {
+                NSString *strError = [responseObject objectForKeyNotNull:@"detail"];
+                if (strError && [strError isEqualToString:ERROR_AUTH_NOT_PROVIDED]) {
+                    errorMessage = ERROR_AUTH_NOT_PROVIDED;
+                }
+                strError = [responseObject objectForKeyNotNull:@"message"];
+                if (strError) {
+                    errorMessage = strError;
+                }
+                strError = [responseObject objectForKeyNotNull:@"error"];
+                if (strError) {
+                    errorMessage = strError;
+                }
             }
-            NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:0 userInfo:@{@"message":errorMessage, @"code":errorCode}];
-            if(handler)
-            {
-                handler(nil,response,error);
+            
+            NSInteger errorCode = statusCodeWS;
+            NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
+                                                 code:errorCode
+                                             userInfo:@{@"message":errorMessage}];
+            if(handler) {
+                handler(responseObject,response,error);
             }
-            return;
+            return ;
         }
         if (responseObject && !([responseObject isKindOfClass:[NSDictionary class]] || [responseObject isKindOfClass:[NSArray class]])) {
             NSInteger errorCode = 500;
-            NSString *errorMessage = @"The response is invalid.";
-            NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:errorCode userInfo:@{@"message":errorMessage}];
-            if(handler)
-            {
-                handler(nil,response,error);
+            NSString *errorMessage = @"The Response is invalid.";
+            NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
+                                                 code:errorCode
+                                             userInfo:@{@"message":errorMessage}];
+            if(handler) {
+                handler(responseObject,response,error);
             }
-        }
-        else
-        {
-            if(handler)
-            {
-                handler(responseObject,response,nil);
+        } else {
+            if (error) {
+                NSString *errorCode = [NSString stringWithFormat:@"%tu",error.code];
+                NSString *errorMessage = error.localizedDescription;
+                NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN
+                                                     code:0
+                                                 userInfo:@{@"message":errorMessage, @"code":errorCode}];
+                if(handler) {
+                    handler(responseObject,response,error);
+                }
+            } else {
+                if(handler) {
+                    handler(responseObject,response,nil);
+                }
             }
         }
     }] resume];
 }
-
 
 @end

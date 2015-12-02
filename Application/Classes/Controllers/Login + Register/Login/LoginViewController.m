@@ -10,20 +10,18 @@
 #import "RegisterViewController.h"
 #import "ForgotPasswordViewController.h"
 #import "COBorderTextField.h"
-#import "DetailsViewController.h"
+#import "OfferViewController.h"
 #import "WSURLSessionManager+User.h"
 #import "NSString+MD5.h"
 #import "WSURLSessionManager+Profile.h"
-#import "COListProfileObject.h"
 #import "COLoginManager.h"
+#import "WSLoginRequest.h"
 
-@interface LoginViewController ()<UIAlertViewDelegate>
+@interface LoginViewController ()
 {
     __weak IBOutlet COBorderTextField *_userName;
     __weak IBOutlet COBorderTextField *_passWord;
 }
-@property (strong, nonatomic) COListProfileObject *profileObject;
-
 @end
 
 @implementation LoginViewController
@@ -31,6 +29,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _setupUI];
+    //test
+//    _userName.text = @"mrkyawkyawlinn";
+//    _passWord.text = @"kklinn";
+    
+    //
 }
 
 #pragma mark - Setup
@@ -42,16 +45,17 @@
 #pragma mark - Private
 - (void)_login {
     [self _callWSLogin];
+    
 }
 
-- (NSMutableDictionary*)_creatUserInfo {
-    NSMutableDictionary *param = [NSMutableDictionary new];
-    param[kCLIENT_ID] = CLIENT_ID;
-    param[kCLIENT_SECRECT] = CLIENT_SECRECT;
-    param[kGRANT_TYPE] = GRANT_TYPE;
-    param[kUSER] = _userName.text;
-    param[kPASSWORD] = _passWord.text;
-    return param;
+- (WSLoginRequest*)_setLoginRequest {
+    WSLoginRequest *request = [[WSLoginRequest alloc] init];
+    [request setHTTPMethod:METHOD_POST];
+    [request setURL:[NSURL URLWithString:WS_METHOD_POST_LOGIN]];
+    [request setBodyParam:_userName.text forKey:kUserName];
+    [request setBodyParam:_passWord.text forKey:kPassWord];
+
+    return request;
 }
 
 - (BOOL)_isValid {
@@ -71,16 +75,16 @@
 
 #pragma mark - CallAPI
 - (void)_callWSLogin {
-    [UIHelper showLoadingInView:self.view];
-    [[COLoginManager shared] callAPILogin:[self _creatUserInfo] actionLoginManager:^(id object, BOOL sucess) {
-        if (object && sucess) {
+    [UIHelper showLoadingInView:[kAppDelegate window]];
+    [[COLoginManager shared] callAPILoginWithRequest:[self _setLoginRequest] actionLoginManager:^(id object, NSError *error) {
+        if (object && !error ) {
             if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
                 [self.delegate loginViewController:self loginWithStyle:PushLoginVC];
             }
         } else {
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"INVAlID_USERNAME_OR_PASSWORD", nil) delegate:self tag:100];
+            [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingFromView:self.view];
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
 }
 
@@ -110,12 +114,6 @@
     if ([self.delegate respondsToSelector:@selector(loginViewController:loginWithStyle:)]) {
         [self.delegate loginViewController:self loginWithStyle:DismissLoginVC];
     }
-}
-
-#pragma mark - UIAlertView delegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-
 }
 
 @end

@@ -18,7 +18,7 @@
 
 - (void)_initUI
 {
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 - (void)dealloc {

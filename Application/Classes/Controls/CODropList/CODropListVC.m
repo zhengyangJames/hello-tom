@@ -8,6 +8,7 @@
 
 #import "CODropListVC.h"
 #import "BaseNavigationController.h"
+#import "COListFilterObject.h"
 
 @interface CODropListVC()<UITableViewDataSource, UITableViewDelegate>
 
@@ -76,7 +77,10 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count;
+    if (self.dataArray) {
+        return self.dataArray.count;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,7 +89,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    if (self.dataArray && self.dataArray.count > 0) {
+        COListFilterObject *obj = self.dataArray[indexPath.row];
+        cell.textLabel.text = obj.key;
+    }
     if (self.selectedIndex == indexPath.row) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
@@ -110,14 +117,26 @@
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     if(selectedCell) {
         selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        for (int i = 0; i < self.dataArray.count; i++) {
+            COListFilterObject *filterObj = self.dataArray[i];
+            filterObj.indexSelected = (i!=indexPath.row)?-1:i;
+        }
         self.selectedIndex = indexPath.row;
     }
 }
 
-+ (void)presentWithTitle:(NSString*)title data:(NSArray*)data selectedIndex:(NSInteger)index parentVC:(UIViewController*)parentVC didSelect:(void (^)(NSInteger))didSelect {
++ (void)presentWithTitle:(NSString*)title data:(NSArray*)data parentVC:(UIViewController*)parentVC didSelect:(void (^)(NSInteger))didSelect {
     CODropListVC *dropList = [[CODropListVC alloc] init];
+    int i = 0;
+    dropList.selectedIndex = 0;
+    for (; i< data.count;i++) {
+        COListFilterObject *obj = data[i];
+        if (obj.indexSelected>=0) {
+            dropList.selectedIndex = i;
+            break;
+        }
+    }
     dropList.dataArray = data;
-    dropList.selectedIndex = index;
     dropList.navigationItem.title = title;
     dropList.didSelect = [didSelect copy];
     BaseNavigationController *navController = [[BaseNavigationController alloc] initWithRootViewController:dropList];

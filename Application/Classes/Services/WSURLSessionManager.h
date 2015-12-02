@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 typedef void (^WSURLSessionHandler)(id responseObject, NSURLResponse *response, NSError *error);
-
+typedef void (^BlockSession)(id responseObject, NSURLResponse *response, NSError *error);
 @interface WSURLSessionManager : NSObject
 
 + (WSURLSessionManager*)shared;
 - (void)sendURL:(NSString*)url params:(NSDictionary*)params body:(NSData*)body
          method:(NSString*)method handler:(WSURLSessionHandler)handler;
-- (void)sendRequest:(NSMutableURLRequest*)request handler:(WSURLSessionHandler)handler;
+- (void)sendRequest:(NSMutableURLRequest *)request requiredLogin:(BOOL)requiredLogin clearCache:(BOOL)clearCache handler:(WSURLSessionHandler)handler;
 - (NSString*)paramsToString:(NSDictionary*)params;
 - (NSMutableURLRequest*)createAuthRequest:(NSString*)url
                                       body:(NSData*)bodyData

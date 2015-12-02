@@ -54,3 +54,9 @@
 #define m_string(str)                           (NSLocalizedString(str, nil))
 
 #endif
+///////////////////////////////////////////////////////////////////
+// By Vincent
+///////////////////////////////////////////////////////////////////
+#define NOTIFICATION_ID                       @"NotificationID"
+#define UNREAD                                @"UNREAD"
+#define READ                                @"READ"

@@ -12,6 +12,7 @@
 @interface WebViewSetting () <UIWebViewDelegate>
 {
     __weak IBOutlet UIWebView *_webView;
+    __weak UILabel *_lblTitle;
     UIRefreshControl *_refreshControl;
 }
 
@@ -32,32 +33,67 @@
     self.navigationItem.leftBarButtonItem = backButtonItem;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setNeedsStatusBarAppearanceUpdate];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+- (void)_setupRightBarButton {
+    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(__actionLoadSF:)];
+    self.navigationItem.rightBarButtonItem = btDone;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     if ( [_webView isLoading] ) {
         [_webView stopLoading];
     }
     _webView.delegate = nil;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self _setupTitle:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self _setupTitle:self.titler];
+}
+
+- (void)setWebLink:(NSString *)webLink {
+    
+    NSURL *url = [NSURL URLWithString:webLink];
+    if (url) {
+        NSString *scheme = url.scheme;
+        if (!scheme) {
+            NSString *https = @"https://";
+             webLink = [https stringByAppendingString:webLink];
+        }
+    }
+    _webLink = webLink;
 }
 
 #pragma mark - Setup
 - (void)_setupUI {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.navigationItem.title = self.titler;
+    //self.title = self.titler;
     [_webView.scrollView setScrollEnabled:YES];
     [_webView.scrollView setUserInteractionEnabled:YES];
-    [self _setupWebView];
+    [self loadWebView];
+    [self _setupRightBarButton];
 }
 
-- (void)_setupWebView {
+- (void)_setupTitle:(NSString *)title {
+    if (title) {
+        CGRect rect = CGRectMake(30, 10, CGRectGetWidth([UIScreen mainScreen].bounds) - 60, 24);
+        UILabel *lblTitle = [[UILabel alloc] initWithFrame:rect];
+        lblTitle.text = title;
+        lblTitle.textAlignment = NSTextAlignmentCenter;
+        [lblTitle setFont:[UIFont fontWithName:@"Raleway-Regular" size:22]];
+        lblTitle.textColor = self.navigationController.navigationBar.tintColor;
+        [self.navigationController.navigationBar addSubview:lblTitle];
+        _lblTitle = lblTitle;
+    } else {
+        if (_lblTitle) {
+            [_lblTitle removeFromSuperview];
+        }
+    }
+}
+
+- (void)loadWebView {
     NSURL *url = [NSURL URLWithString:self.webLink];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     _webView.delegate = self;
@@ -79,6 +115,11 @@
     } else {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
+}
+
+- (void)__actionLoadSF:(id)sender {
+    NSURL *url = [NSURL URLWithString:self.webLink];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 

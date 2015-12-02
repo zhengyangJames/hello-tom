@@ -7,6 +7,7 @@
 //
 
 #import "LoadFileManager.h"
+#import "COListFilterObject.h"
 
 @implementation LoadFileManager
 
@@ -39,4 +40,20 @@
     return documentsDirectory;
 }
 
++ (NSArray *)loadFileFilterListWithName:(NSString *)fileName {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    NSArray *array = [NSArray arrayWithContentsOfFile:filePath];
+    NSMutableArray *arrayAdd = [[NSMutableArray alloc]init];
+    for (NSDictionary *dic in array) {
+        COListFilterObject *filterObj = [[COListFilterObject alloc] init];
+        if ([dic objectForKey:@"key"]) {
+            filterObj.key = [dic objectForKey:@"key"];
+        }
+        if ([dic objectForKey:@"value"]) {
+            filterObj.value = [dic objectForKey:@"value"];
+        }
+        [arrayAdd addObject:filterObj];
+    }
+    return arrayAdd;
+}
 @end

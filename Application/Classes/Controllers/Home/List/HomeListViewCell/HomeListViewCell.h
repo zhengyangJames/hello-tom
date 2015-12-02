@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTableViewCell.h"
-#import "COListOffersObject.h"
+#import "COOfferData.h"
 
 @interface HomeListViewCell : BaseTableViewCell
 
-@property (strong, nonatomic) COListOffersObject *object;
-
+@property (strong, nonatomic) id<COHomeOffer> homeOffer;
 @end

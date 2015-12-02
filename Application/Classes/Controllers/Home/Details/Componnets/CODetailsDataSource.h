@@ -7,31 +7,35 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CODetailsAccessoryCell.h"
-#import "CODetailsPhotoCell.h"
-#import "CODetailsProjectCell.h"
-#import "CODetailsTextCell.h"
-#import "CODetailsSectionCell.h"
-#import "CODetailsProgressViewCell.h"
-#import "CODetailsProjectBottomTVCell.h"
-#import "COProgressbarObj.h"
-#import "CODetailsWebViewCell.h"
+
 
 @protocol CODetailsAccessoryCellDelegate;
 @protocol CODetailsProjectBottomTVCellDelegate;
 @protocol CODetailsWebViewCellDelegate;
+@protocol DetailsDataSourceViewDelegate;
+@class COOfferModel;
+@class COOfferHeadingCell;
+@class COOfferDescriptionTextCell;
+@class CODocumentItemCell;
+@class COOfferWebViewCell;
 
 @interface CODetailsDataSource : NSObject <UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *arrObject;
-@property (strong, nonatomic) COProgressbarObj *progressBarObj;
+@property (strong, nonatomic) COOfferModel *offerModel;
 @property (assign, nonatomic) CGFloat heightWebview;
 
 - (instancetype)initWithController:(id<CODetailsAccessoryCellDelegate,CODetailsProjectBottomTVCellDelegate>)controller
                          tableView:(UITableView*)tableView ;
 
-- (CODetailsPhotoCell*)tableView:(UITableView *)tableView cellDetailsPhotoForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (CODetailsTextCell*)tableView:(UITableView *)tableView cellDetailsTextForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (CODetailsAccessoryCell*)tableView:(UITableView *)tableView cellDetailsAccessoryForRowAtIndexPath:(NSIndexPath *)indexPath ;
-- (CODetailsWebViewCell*)tableView:(UITableView*)tableView cellDetailsWebViewRowWithIndexPath:(NSIndexPath*)indexPath;
+- (COOfferHeadingCell*)tableView:(UITableView *)tableView cellOfferHeadingForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (COOfferDescriptionTextCell*)tableView:(UITableView *)tableView cellOfferTextForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (CODocumentItemCell*)tableView:(UITableView *)tableView cellDocumentItemForRowAtIndexPath:(NSIndexPath *)indexPath ;
+- (COOfferWebViewCell*)tableView:(UITableView*)tableView cellOfferWebViewRowWithIndexPath:(NSIndexPath*)indexPath;
+@property (nonatomic, strong) id<DetailsDataSourceViewDelegate>delegate;
+@end
+
+@protocol DetailsDataSourceViewDelegate <NSObject>
+
+- (void)showWebSiteAtDetailVCWithTitle:(NSString *)title andURl:(NSString *)url;
+
 @end

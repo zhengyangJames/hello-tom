@@ -7,10 +7,12 @@
 //
 
 #import "CODetailsDelegate.h"
-#import "CODetailsSectionCell.h"
+#import "CODocumentSectionCell.h"
 #import "CODetailsDataSource.h"
-#import "CODetailsWebViewCell.h"
-
+#import "COOfferWebViewCell.h"
+#import "COOfferModel.h"
+#import "COProjectModel.h"
+#import "COProjectFundedAmountModel.h"
 @interface CODetailsDelegate ()
 {
     
@@ -54,47 +56,52 @@
         if(IS_IOS8_OR_ABOVE) {
             return UITableViewAutomaticDimension;
         } else {
-            id cell = [dataSource tableView:tableView cellDetailsPhotoForRowAtIndexPath:indexPath];
+            id cell = [dataSource tableView:tableView cellOfferHeadingForRowAtIndexPath:indexPath];
             height = [self _heightForTableView:tableView contentCell:cell atIndexPath:indexPath];
             return height;
         }
     } else if (indexPath.section == 1) {
-        if ([[dataSource.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+        if (self.offerModel.offerProject.projectFundedAmount.showProgressBar) {
             if (indexPath.row == 0) {
-                return height = 379;
+                return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else if (indexPath.row == 1) {
-                return height = 64;
+                return height = kHEIGHT_FOR_ROW_PROGRESS_INFO;
             } else {
-                return height = 115;
+                return height = kHEIGHT_FOR_ROW_ACTION_INFO;
             }
         } else {
             if (indexPath.row == 0) {
-                return height = 379;
+                return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else {
-                return height = 115;
+                return height = kHEIGHT_FOR_ROW_ACTION_INFO;
             }
         }
-    }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 11) {
+    } else {
+        return kHEIGHT_FOR_ROW_DEFAULT;
+    }
+    /*
+    else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 11) {
         if(IS_IOS8_OR_ABOVE) {
             return UITableViewAutomaticDimension;
         } else {
-            id Cell = [dataSource tableView:tableView cellDetailsTextForRowAtIndexPath:indexPath];
+            id Cell = [dataSource tableView:tableView cellOfferTextForRowAtIndexPath:indexPath];
             return height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
         }
     }else if (indexPath.section == 3){
         return dataSource.heightWebview;
     } else {
         if (indexPath.row == 0) {
-            return 44;
+            return DEFAULT_ADDRESS_CELL;
         } else {
             if(IS_IOS8_OR_ABOVE) {
                 return UITableViewAutomaticDimension;
             } else {
-                id Cell = [dataSource tableView:tableView cellDetailsAccessoryForRowAtIndexPath:indexPath];
+                id Cell = [dataSource tableView:tableView cellDocumentItemForRowAtIndexPath:indexPath];
                 return height = [self _heightForTableView:tableView contentCell:Cell atIndexPath:indexPath];
             }
         }
     }
+     */
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,27 +110,27 @@
     if (indexPath.section == 0) {
         return height = 67;
     } else if (indexPath.section == 1) {
-        if ([[dataSource.progressBarObj valueForKey:@"current_funded_amount"] isKindOfClass:[NSNumber class]]) {
+        if (self.offerModel.offerProject.projectFundedAmount.showProgressBar) {
             if (indexPath.row == 0) {
-                return height = 379;
+                return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else if (indexPath.row == 1) {
-                return height = 64;
+                return height = kHEIGHT_FOR_ROW_PROGRESS_INFO;
             } else {
-                return height = 115;
+                return height = kHEIGHT_FOR_ROW_ACTION_INFO;
             }
         } else {
             if (indexPath.row == 0) {
-                return height = 379;
+                return height = kHEIGHT_FOR_ROW_DEFAULT_INFO;
             } else {
-                return height = 115;
+                return height = kHEIGHT_FOR_ROW_ACTION_INFO;
             }
         }
     }else if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 5) {
-        return height = 85;
+        return height = kHEIGHT_FOR_ROW_TEXT;
     }else if (indexPath.section == 3) {
         return dataSource.heightWebview;
     } else {
-        return height = 44;
+        return height = kHEIGHT_FOR_ROW_DEFAULT;
     }
 }
 

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6B1CE470DF1002AE5D61FD22D1F65DDA21FA22D1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6B1CE470DF1002AE5D61FD22D1F65DDA21FA22D1" : 0,
+    "EDEEC319F3E9801CC2214D81EDB425804CCFB5FF" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "34006C42-51AD-4A81-B8A8-07D6BAF3CAD6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6B1CE470DF1002AE5D61FD22D1F65DDA21FA22D1" : "hellokitty\/",
+    "EDEEC319F3E9801CC2214D81EDB425804CCFB5FF" : "coassets-ios"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CoAssets",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CoAssets.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/coassets\/hellokitty.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6B1CE470DF1002AE5D61FD22D1F65DDA21FA22D1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nikmesoftltd\/coassets-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EDEEC319F3E9801CC2214D81EDB425804CCFB5FF"
+    }
+  ]
+}

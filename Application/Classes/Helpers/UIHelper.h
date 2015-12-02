@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "COUserProfileModel.h"
 
 @interface UIHelper : NSObject
 
@@ -20,9 +21,8 @@
 + (void)hideLoadingIndicator;
 
 + (void)showAlertViewErrorWithMessage:(NSString *)message delegate:(id)delegate tag:(NSInteger)tag;
-+ (void)showAleartViewWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton delegate:(id)delegate tag:(NSInteger)tag arrayTitleButton:(NSArray *)arrayTitel;
++ (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton delegate:(id)delegate tag:(NSInteger)tag arrayTitleButton:(NSArray *)arrayTitel;
 + (void)showActionsheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButton destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonsTitle:(NSArray *)arrayTitle delegate:(id)delegate tag:(NSInteger)tag showInView:(UIView *)view;
-+ (void)showError:(NSError *)error;
 
 + (UIImagePickerController *)showImagePickerAtController:(UIViewController *)controller withDelegate:(id)delegate andMode:(NSInteger)mode;
 
@@ -30,4 +30,35 @@
 + (NSString *)stringDecimalFormatFromNumberDouble:(NSNumber*)number;
 
 + (NSAttributedString *)_getStringFromHtml:(NSString *)stringHtml;
+
++ (NSString *)getStringCurrencyOfferWithKey:(NSString*)keyCurrency;
++ (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font;
++ (NSString *)getLinkImageWithUrl:(NSURL*)urlImage;
+
++ (NSMutableDictionary*)getParamTokenWithModel:(COUserProfileModel *)model;
++ (NSString*)formartDoubleValueWithAccountInvest:(NSNumber*)value;
+
++ (NSString *)getStringCurrencyOfferWithValue:(NSString*)value;
+
++ (NSArray*)getArrayCurrency;
++ (NSArray*)getInvestorType;
+
++ (NSString *)formatStringUnknown:(NSString *)string;
++ (NSString*)formartStringDuration:(NSString*)string;
++ (NSString*)formartStringTarget:(NSString*)string;
++ (NSString*)getNumberInstring:(NSString*)value;
+
++ (NSString*)formartFoatValueWithPortfolio:(NSNumber*)value;
+
++ (NSString *)getInvestorTypeWithKey:(NSString *)key;
++ (NSString *)getInvestorTypeWithValue:(NSString *)value;
++ (NSArray *)arrayProjectType;
++ (NSString *)getProjectTypeWithKey:(NSString*)key;
++ (NSString *)getProjectTypeWithValue:(NSString*)value;
+
+// by vincent
++ (NSString *)formatStringDateToString:(NSString*)strDate;
++ (NSString *)setBadgeValueNotification:(id )responseObject;
++ (NSString*)formartFoatValueWithDeal:(NSNumber*)value MinimumFractionDigits:(NSInteger)min;
+
 @end

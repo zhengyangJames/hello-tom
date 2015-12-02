@@ -7,7 +7,7 @@
 //
 
 #import "ContactTableViewCell.h"
-
+#import "COContactsModel.h"
 
 @interface ContactTableViewCell ()
 {
@@ -40,30 +40,27 @@
     [super layoutSubviews];;
 }
 
-- (void)setContactObj:(COListContactObject *)contactObj {
-    _contactObj = contactObj;
-    if ([_contactObj.name isEmpty]||[_contactObj.regNo isEmpty]||[_contactObj.address_1 isEmpty]||[_contactObj.address_2 isEmpty]||[_contactObj.phone isEmpty]||[_contactObj.postCode isEmpty]||[_contactObj.country isEmpty]||[_contactObj.city isEmpty] ) {
-        [_lblTell setNeedsUpdateConstraints];
-        [_lblReg setNeedsUpdateConstraints];
-        [_lblAdress setNeedsUpdateConstraints];
-        [_lblAdress2 setNeedsUpdateConstraints];
-        [_lblPostCode setNeedsUpdateConstraints];
-        [_lblCountry setNeedsUpdateConstraints];
-        [_lblCity setNeedsUpdateConstraints];
-        [_lblTell setNeedsUpdateConstraints];
+- (void)setContactModel:(COContactsModel *)contactModel {
+    _contactModel = contactModel;
+    if ([_contactModel.stringOfContactName isEmpty]||[_contactModel.stringOfContactRegNo isEmpty]||[_contactModel.stringOfContactAddress1 isEmpty]||[_contactModel.stringOfContactAddress2 isEmpty]||[_contactModel.stringOfContactPhoneNumber isEmpty]||[_contactModel.stringOfContactPostalCode isEmpty]||[_contactModel.stringOfContactCountry isEmpty]||[_contactModel.stringOfContactCity isEmpty] ) {
+        [_lblTell       setNeedsUpdateConstraints];
+        [_lblReg        setNeedsUpdateConstraints];
+        [_lblAdress     setNeedsUpdateConstraints];
+        [_lblAdress2    setNeedsUpdateConstraints];
+        [_lblPostCode   setNeedsUpdateConstraints];
+        [_lblCountry    setNeedsUpdateConstraints];
+        [_lblCity       setNeedsUpdateConstraints];
+        [_lblTell       setNeedsUpdateConstraints];
     }
-    _lblCoAssets.text = _contactObj.name;
-    _lblCity.text = _contactObj.city;
-    _lblReg.text = _contactObj.regNo;
-    _lblAdress.text = _contactObj.address_1;
-    _lblAdress2.text = _contactObj.address_2;
-    _lblTell.text = _contactObj.phone;
-    _lblPostCode.text = _contactObj.postCode;
-    _lblCountry.text = _contactObj.country;
+    _lblCoAssets.text   =   _contactModel.stringOfContactName;
+    _lblCity.text       =   _contactModel.stringOfContactCity;
+    _lblReg.text        =   _contactModel.stringOfContactRegNo;
+    _lblAdress.text     =   _contactModel.stringOfContactAddress1;
+    _lblAdress2.text    =   _contactModel.stringOfContactAddress2;
+    _lblTell.text       =   _contactModel.stringOfContactPhoneNumber;
+    _lblPostCode.text   =   _contactModel.stringOfContactPostalCode;
+    _lblCountry.text    =   _contactModel.stringOfContactCountry;
     [self updateConstraintsIfNeeded];
 }
-
-
-
 @end
 

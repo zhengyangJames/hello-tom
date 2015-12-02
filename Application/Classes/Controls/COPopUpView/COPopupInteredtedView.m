@@ -10,7 +10,7 @@
 
 @interface COPopupInteredtedView()
 {
-    __weak IBOutlet UILabel *_lblOfferTitle;
+    __weak IBOutlet UITextView *_tvOfferTitle;
     
 }
 @property (nonatomic, weak) IBOutlet UIView *contentView;
@@ -55,7 +55,7 @@
 
 - (void)setOfferTitle:(NSString *)offerTitle {
     _offerTitle = offerTitle;
-    _lblOfferTitle.text = offerTitle;
+    _tvOfferTitle.text = offerTitle;
 }
 
 - (IBAction)_actionCancel:(id)sender {

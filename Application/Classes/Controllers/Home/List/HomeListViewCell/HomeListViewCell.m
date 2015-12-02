@@ -8,25 +8,26 @@
 
 #import "HomeListViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "COOfferModel.h"
+#import "COProjectModel.h"
 
 @implementation HomeListViewCell
 {
     __weak IBOutlet UIImageView *_imageBig;
     __weak IBOutlet UIImageView *_imageLogo;
-    __weak IBOutlet UILabel *_lblDetail;
-    __weak IBOutlet UILabel *_lblSate;
+    __weak IBOutlet UILabel *_lblTitle;
+    __weak IBOutlet UILabel *_lblCountry;
     __weak IBOutlet UIView *_viewImage;
     __weak IBOutlet UIView *_viewImageLogo;
 }
 
 - (void)viewDidLoad {
-    [_imageBig setImage:[UIImage imageNamed:@"ic_placeholder"]];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];;
-    _lblDetail.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
-    _lblSate.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
+    _lblTitle.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
+    _lblCountry.preferredMaxLayoutWidth = CGRectGetWidth(self.frame);
     [_viewImageLogo.layer setCornerRadius:_viewImageLogo.bounds.size.width/2];
     [_viewImageLogo.layer setBorderWidth:0.8];
     [_viewImageLogo.layer setBorderColor:[UIColor grayColor].CGColor];
@@ -34,15 +35,18 @@
 }
 
 #pragma mark - Set Get
-
-- (void)setObject:(COListOffersObject *)object {
-    _object = object;
-    NSURL *url = [NSURL URLWithString:_object.offerPhoto];
+- (void)setHomeOffer:(id<COHomeOffer>)homeOffer {
+    _homeOffer = homeOffer;
+    NSURL *url = [NSURL URLWithString:_homeOffer.homeOfferCompanyPhoto];
     [_imageBig sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_placeholder"]];
-    NSString *strImage = [_object.offerCountry isEqualToString:@"Cambodia"] ? @"Globe" : _object.offerCountry;
-    [_imageLogo setImage:[UIImage imageNamed:strImage]];
-    [_lblDetail setText:_object.offerTitle];
-    [_lblSate setText:_object.offerCountry];
+    NSString *strImage = [_homeOffer.homeOfferCountry isEqualToString:@"Cambodia"] ? @"Globe" : _homeOffer.homeOfferCountry;
+    UIImage *image = [UIImage imageNamed:strImage];
+    if (image == nil) {
+        image = [UIImage imageNamed:@"Globe"];
+    }
+    [_imageLogo     setImage:image];
+    [_lblTitle      setText:_homeOffer.homeOfferTitle];
+    [_lblCountry    setText:_homeOffer.homeOfferCountry];
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
