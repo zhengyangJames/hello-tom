@@ -395,6 +395,7 @@
     [kUserDefaults removeObjectForKey:KEY_ACCESS_TOKEN];
     [kUserDefaults synchronize];
     [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue: nil];
+    [self.baseProfileNAV popToRootViewControllerAnimated:NO];
 }
 
 #pragma mark - Tabbar Delegate
