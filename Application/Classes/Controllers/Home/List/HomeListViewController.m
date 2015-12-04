@@ -52,7 +52,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 @property (strong, nonatomic) NSArray *arrayListFilter;
 @property (nonatomic, strong) COOfferModel *offerModel;
 
-@end	
+@end
 @implementation HomeListViewController
 
 - (void)viewDidLoad {
@@ -92,11 +92,11 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 - (void)_setupLeftBarButton {
     _leftButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
-                                                                  style:UIBarButtonItemStyleDone
-                                                                 target:self
-                                                                 action:@selector(__actionFilter)];
+                                                  style:UIBarButtonItemStyleDone
+                                                 target:self
+                                                 action:@selector(__actionFilter)];
     [_leftButton setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:17]}
-                              forState:UIControlStateNormal];
+                               forState:UIControlStateNormal];
     
     [self.navigationItem setLeftBarButtonItem:_leftButton];
 }
@@ -129,7 +129,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 #pragma mark - Setter Getter
 - (NSArray*)arrayData {
     if (!_arrayData) {
-       return _arrayData = [[NSArray alloc] init];
+        return _arrayData = [[NSArray alloc] init];
     }
     return _arrayData;
 }
@@ -147,12 +147,12 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
                               data:self.arrayListFilter
                           parentVC:self
                          didSelect:^(NSInteger index) {
-         if (self.arrayListFilter && self.arrayListFilter.count > 0) {
-             COListFilterObject *filterObject = self.arrayListFilter[index];
-             [self _callWSGetListOfferFilter:filterObject.value];
-        }
-         
-    }];
+                             if (self.arrayListFilter && self.arrayListFilter.count > 0) {
+                                 COListFilterObject *filterObject = self.arrayListFilter[index];
+                                 [self _callWSGetListOfferFilter:filterObject.value];
+                             }
+                             
+                         }];
 }
 
 #pragma mark - Call API
@@ -225,8 +225,13 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
             [self _callWSGetFundInfo];
         } else {
             [UIHelper hideLoadingFromView:self.view];
-            _leftButton.enabled = YES;
-            [UIHelper showError:error];
+            NSString *strError = [responseObject objectForKey:@"detail"];
+            if ([strError isEqualToString:ERROR]) {
+                [self showLoginView];
+            } else {
+                _leftButton.enabled = YES;
+                [UIHelper showError:error];
+            }
         }
     }];
 }

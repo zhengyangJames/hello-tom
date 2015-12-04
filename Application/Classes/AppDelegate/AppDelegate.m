@@ -420,7 +420,7 @@
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[UIHelper setBadgeValueNotification:responseObject] ];
         } else {
-            [self _setUpLogginVC];
+//            [self _setUpLogginVC];
         }
         
     }];

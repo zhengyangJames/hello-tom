@@ -18,11 +18,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="KGk-i7-Jjw" customClass="DealTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="KGk-i7-Jjw" customClass="DealTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="186.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="143.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-hW-6if">
@@ -84,31 +84,51 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3b-Rk-1SH">
-                        <rect key="frame" x="57" y="98" width="206" height="36"/>
+                        <rect key="frame" x="8" y="98" width="149.5" height="37.5"/>
                         <animations/>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.29411764705882354" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="36" id="3uU-ff-efF"/>
+                            <constraint firstAttribute="width" constant="113" id="4OZ-me-KI8"/>
+                            <constraint firstAttribute="width" constant="113" id="DgN-aM-hRH"/>
                             <constraint firstAttribute="height" constant="36" id="Ugu-Uf-Hz6"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                         <state key="normal" title="Sign Your Contract">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3uU-ff-efF"/>
+                                <exclude reference="4OZ-me-KI8"/>
+                                <exclude reference="DgN-aM-hRH"/>
+                                <exclude reference="Ugu-Uf-Hz6"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <action selector="__actionSignContract:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UzB-QQ-fFb"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqc-NA-r5V">
-                        <rect key="frame" x="57" y="139" width="206" height="36"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Jqc-NA-r5V">
+                        <rect key="frame" x="162.5" y="98.5" width="149.5" height="37.5"/>
                         <animations/>
                         <color key="backgroundColor" red="0.23529411764705882" green="0.27450980392156865" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="ilw-rX-ozX"/>
+                            <constraint firstAttribute="height" constant="36" id="q4r-9f-e3p"/>
+                            <constraint firstAttribute="width" constant="124" id="sFT-Fd-daJ"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                         <state key="normal" title="How To Make Payment">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ilw-rX-ozX"/>
+                                <exclude reference="q4r-9f-e3p"/>
+                                <exclude reference="sFT-Fd-daJ"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <action selector="__actionMakePayment:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LR2-aQ-AaE"/>
                         </connections>
@@ -117,18 +137,19 @@
                 <animations/>
                 <constraints>
                     <constraint firstItem="XkO-Nt-dwn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2PN-4v-XLD"/>
-                    <constraint firstItem="S3b-Rk-1SH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="57" id="8fw-3Z-vWe"/>
-                    <constraint firstItem="Jqc-NA-r5V" firstAttribute="top" secondItem="S3b-Rk-1SH" secondAttribute="bottom" constant="5" id="9d2-hp-FjA"/>
+                    <constraint firstAttribute="trailing" secondItem="Jqc-NA-r5V" secondAttribute="trailing" constant="8" id="4po-K8-oXt"/>
                     <constraint firstItem="Ac8-jf-vLl" firstAttribute="centerY" secondItem="qGV-jp-ZXz" secondAttribute="centerY" id="CA9-eM-ljn"/>
                     <constraint firstItem="DSS-Kb-zYl" firstAttribute="leading" secondItem="XkO-Nt-dwn" secondAttribute="trailing" id="CXd-BY-AVN"/>
                     <constraint firstItem="qGV-jp-ZXz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Cbq-3p-RlP"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Ac8-jf-vLl" secondAttribute="trailing" constant="8" id="EWm-41-W7M"/>
+                    <constraint firstItem="Jqc-NA-r5V" firstAttribute="centerY" secondItem="S3b-Rk-1SH" secondAttribute="centerY" id="Em3-b0-lfc"/>
                     <constraint firstAttribute="trailingMargin" secondItem="DSS-Kb-zYl" secondAttribute="trailing" constant="8" id="Ihm-17-3jz"/>
                     <constraint firstAttribute="trailingMargin" secondItem="gSg-hd-oaz" secondAttribute="trailing" id="Im1-Dq-G5s"/>
+                    <constraint firstItem="Jqc-NA-r5V" firstAttribute="leading" secondItem="S3b-Rk-1SH" secondAttribute="trailing" constant="5" id="LBm-zJ-dAc"/>
                     <constraint firstItem="rSy-GK-Upq" firstAttribute="top" secondItem="qGV-jp-ZXz" secondAttribute="bottom" constant="5" id="LQp-Ks-5gw"/>
-                    <constraint firstAttribute="trailing" secondItem="S3b-Rk-1SH" secondAttribute="trailing" constant="57" id="Mbn-WB-gCz"/>
+                    <constraint firstItem="Jqc-NA-r5V" firstAttribute="height" secondItem="S3b-Rk-1SH" secondAttribute="height" id="OOR-6K-Xt5"/>
                     <constraint firstItem="gSg-hd-oaz" firstAttribute="leading" secondItem="rSy-GK-Upq" secondAttribute="trailing" id="OcT-tQ-wEb"/>
-                    <constraint firstItem="Jqc-NA-r5V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="57" id="Ppq-Lm-nSt"/>
+                    <constraint firstItem="Jqc-NA-r5V" firstAttribute="width" secondItem="S3b-Rk-1SH" secondAttribute="width" id="Q1f-7y-Q9p"/>
                     <constraint firstItem="rSy-GK-Upq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Upa-lM-oJx"/>
                     <constraint firstItem="9rf-hW-6if" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Y7E-sO-jDJ"/>
                     <constraint firstItem="XkO-Nt-dwn" firstAttribute="top" secondItem="9rf-hW-6if" secondAttribute="bottom" constant="5" id="aCj-OT-2ca"/>
@@ -136,9 +157,10 @@
                     <constraint firstItem="qGV-jp-ZXz" firstAttribute="top" secondItem="XkO-Nt-dwn" secondAttribute="bottom" constant="5" id="dlO-f2-xYB"/>
                     <constraint firstItem="DSS-Kb-zYl" firstAttribute="centerY" secondItem="XkO-Nt-dwn" secondAttribute="centerY" id="fcU-QZ-QHM"/>
                     <constraint firstItem="Ac8-jf-vLl" firstAttribute="leading" secondItem="qGV-jp-ZXz" secondAttribute="trailing" id="lUg-Vj-ZQt"/>
+                    <constraint firstItem="S3b-Rk-1SH" firstAttribute="top" secondItem="rSy-GK-Upq" secondAttribute="bottom" constant="5" id="lvp-iF-LEW"/>
                     <constraint firstAttribute="trailingMargin" secondItem="9rf-hW-6if" secondAttribute="trailing" id="qSp-zV-sBp"/>
-                    <constraint firstItem="S3b-Rk-1SH" firstAttribute="top" secondItem="rSy-GK-Upq" secondAttribute="bottom" constant="5" id="wx4-Cs-f0l"/>
-                    <constraint firstAttribute="trailing" secondItem="Jqc-NA-r5V" secondAttribute="trailing" constant="57" id="xjC-7X-xSM"/>
+                    <constraint firstAttribute="bottom" secondItem="S3b-Rk-1SH" secondAttribute="bottom" constant="8" id="thD-8Z-d6M"/>
+                    <constraint firstItem="S3b-Rk-1SH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vfV-yW-t4G"/>
                     <constraint firstItem="9rf-hW-6if" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yet-qm-l4P"/>
                 </constraints>
             </tableViewCellContentView>
@@ -152,7 +174,7 @@
                 <outlet property="_lbPotentialReturnsData" destination="Ac8-jf-vLl" id="eMj-Hl-QDI"/>
                 <outlet property="_lbProjectName" destination="9rf-hW-6if" id="xju-a3-1Ga"/>
             </connections>
-            <point key="canvasLocation" x="173" y="290.5"/>
+            <point key="canvasLocation" x="173" y="269"/>
         </tableViewCell>
     </objects>
 </document>

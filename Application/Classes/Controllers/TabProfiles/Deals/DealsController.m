@@ -137,7 +137,7 @@
         } else {
             [UIHelper hideLoadingFromView:self.view];
                 NSString *strError = [responseObject objectForKey:@"detail"];
-                if ([strError isEqualToString:@"Authentication credentials were not provided."]) {
+                if ([strError isEqualToString:ERROR]) {
                     [self showLoginView];
                 } else {
                     [UIHelper showError:error];
@@ -164,7 +164,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 200;
+    return 170;
 }
 
 - (void)showLoginView {
@@ -173,6 +173,25 @@
     BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
     [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
     [[COLoginManager shared] setIsReloadListHome:YES];
+}
+
+- (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
+    switch (loginWithStyle) {
+        case PushLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
+                                                                    completion:nil];
+            [kAppDelegate baseTabBarController].selectedIndex = 1;
+        } break;
+            
+        case DismissLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
+                                                                    completion:nil];
+        } break;
+            
+        default: break;
+    }
 }
 
 @end

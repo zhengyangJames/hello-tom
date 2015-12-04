@@ -162,4 +162,23 @@
     [[COLoginManager shared] setIsReloadListHome:YES];
 }
 
+- (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {
+    switch (loginWithStyle) {
+        case PushLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
+                                                                    completion:nil];
+            [kAppDelegate baseTabBarController].selectedIndex = 2;
+        } break;
+            
+        case DismissLoginVC:
+        {
+            [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES
+                                                                    completion:nil];
+        } break;
+            
+        default: break;
+    }
+}
+
 @end
