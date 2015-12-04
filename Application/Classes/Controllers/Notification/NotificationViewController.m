@@ -36,6 +36,10 @@
     [self _setupUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [self _checkCreadDeviceToken];
+}
 #pragma mark - SetupUI
 
 - (void)_setupUI {
@@ -77,6 +81,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: [NSString stringWithFormat:@"%ld",count1 - 1]];
+    
     CONotificationModel *notifiModel = [[CONotificationModel alloc]init];
     notifiModel = [self.arrayData objectAtIndex:indexPath.row];
     if (notifiModel != nil) {
@@ -126,8 +133,10 @@
             self.arrayData = nil;
             self.arrayData = (NSArray*)responseObject;
             NSString *str = [UIHelper setBadgeValueNotification:responseObject];
-            if (![str isEqualToString:@"0"]) {
-                 [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: str];
+            if ([str isEqualToString:@"0"]) {
+                 [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: nil];
+            } else {
+                [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: str];
             }
             count1 = [str integerValue];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{

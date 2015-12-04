@@ -23,6 +23,5 @@
     [request setValue:[kUserDefaults objectForKey:KEY_ACCESS_TOKEN] forHTTPHeaderField:@"Authorization"];
     [request setURL:[NSURL URLWithString:WS_METHOD_COMPANY_PROFILE]];
     return request;
-
 }
 @end

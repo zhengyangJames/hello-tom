@@ -219,6 +219,7 @@
 #define NUM_OF_ROW_ABOUT                            8
 #define NUM_OF_ROW_COMPANY                          4
 #define NUM_OF_ROW_INVESTOR                         7
+#define NUM_OF_ROW_Company                          8
 
 #define UPDATE_ABOUT_PROFILE                        @"Update profile"
 #define UPDATE_COMNPANY_PROFILE                     @"Update company profile"

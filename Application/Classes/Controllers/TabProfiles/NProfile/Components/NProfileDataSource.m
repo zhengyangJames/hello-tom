@@ -85,19 +85,33 @@
 }
 
 - (UITableViewCell *)tableview:(UITableView *)tableView companyCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == [self.company indexOfImageCell]) {
-         return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
-    } else if (indexPath.row == [self.company indexOfNoDataCell]) {
-        return [self tableview:tableView noDataCellForRowAtIndexpath:indexPath];
-    } else if (indexPath.row == [self.company indexOfNameCell]) {
-        return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
-    } else if (indexPath.row == [self.company indexOfAddressCell]) {
-        return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
-    } else {
+    
+    if (indexPath.row == 0) {
+        return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
+    } else if (indexPath.row == NUM_OF_ROW_COMPANY - 1) {
         NProfileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
         cell.actionStyle = NProfileActionUpdateCompany;
         return cell;
+    } else if (indexPath.row == 1) {
+        return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
+    } else {
+        return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
     }
+    
+   
+//    if (indexPath.row == [self.company indexOfImageCell]) {
+//         return [self tableview:tableView imageCellForRowAtIndexpath:indexPath];
+//    } else if (indexPath.row == [self.company indexOfNoDataCell]) {
+//        return [self tableview:tableView noDataCellForRowAtIndexpath:indexPath];
+//    } else if (indexPath.row == [self.company indexOfNameCell]) {
+//        return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
+//    } else if (indexPath.row == [self.company indexOfAddressCell]) {
+//        return [self tableview:tableView adressCellForRowAtIndexpath:indexPath];
+//    } else {
+//        NProfileButtonCell *cell = [self tableview:tableView buttonCellForRowAtIndexpath:indexPath];
+//        cell.actionStyle = NProfileActionUpdateCompany;
+//        return cell;
+//    }
 }
 
 - (UITableViewCell *)tableview:(UITableView *)tableView investorProfileCellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,6 +121,7 @@
         return cell;
     } else if (indexPath.row == NUM_OF_ROW_INVESTOR - 2) {
         return [self tableview:tableView noContrieCellForRowAtIndexpath:indexPath];
+        return nil;
     }
     return [self tableview:tableView textCellForRowAtIndexpath:indexPath];
 }
@@ -199,7 +214,11 @@
     switch (self.profileStyle) {
             
         case NProfileStyleAbout: return NUM_OF_ROW_ABOUT;
-        case NProfileStyleCompany: return [self.company numOfItemInTableview];
+//        case NProfileStyleCompany: return [self.company numOfItemInTableview];
+            //by vincent
+        case NProfileStyleCompany: return NUM_OF_ROW_COMPANY;
+
+            
         case NProfileStyleInvestorProfile: return NUM_OF_ROW_INVESTOR;
     }
     return 0;

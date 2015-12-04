@@ -418,7 +418,9 @@
     [dic setObject:application_name forKey:application_name_dic];
     [[WSURLSessionManager shared] wsGetNotificationListRequest:dic handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
-            if (![[UIHelper setBadgeValueNotification:responseObject] isEqualToString:@"0"]) {
+            if ([[UIHelper setBadgeValueNotification:responseObject] isEqualToString:@"0"]) {
+                [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:nil];
+            } else {
                 [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[UIHelper setBadgeValueNotification:responseObject]];
             }
             

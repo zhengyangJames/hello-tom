@@ -12,7 +12,7 @@
 @implementation WSURLSessionManager (CompanyProfile)
 
 
-- (void)wsPostDeviceTokenRequest:(NSDictionary *)pagaBody handler:(WSURLSessionHandler)handler {
+- (void)wsPostDeviceTokenRequestHandler:(WSURLSessionHandler)handler {
     
     WSCompanyProfileRequest *request = [[WSCompanyProfileRequest alloc]init];
     [request postCompanyProfile];
@@ -30,7 +30,7 @@
     }];
 }
 
-- (void)wsGetDealRequest:(NSDictionary *)dealList handler:(WSURLSessionHandler)handler {
+- (void)wsGetDealRequestHandler:(WSURLSessionHandler)handler {
     WSCompanyProfileRequest *request = [[WSCompanyProfileRequest alloc]init];
     request = [request getCompanyProfile];
     

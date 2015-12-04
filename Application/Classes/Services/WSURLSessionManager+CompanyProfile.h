@@ -9,5 +9,6 @@
 #import "WSURLSessionManager.h"
 
 @interface WSURLSessionManager (CompanyProfile)
-
+- (void)wsPostDeviceTokenRequestHandler:(WSURLSessionHandler)handler;
+- (void)wsGetDealRequestHandler:(WSURLSessionHandler)handler;
 @end

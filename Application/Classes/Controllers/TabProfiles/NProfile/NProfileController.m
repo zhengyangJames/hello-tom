@@ -18,6 +18,7 @@
 #import "EditPasswordProfileVC.h"
 #import "EditCompanyVC.h"
 #import "EditInvestmentProfileVC.h"
+#import "WSURLSessionManager+CompanyProfile.h"
 
 @interface NProfileController ()<NProfileHeaderViewDelegate,profileButtonCellDelegate,EditAboutProfileVCDelegate>
 {
@@ -40,6 +41,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _postCampanyProfile];
+    [self _getCompanyProfile];
     [self _setupUI];
 }
 
@@ -185,4 +188,29 @@
     }];
 }
 
+#pragma mark - API
+
+- (void)_postCampanyProfile {
+    //[UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsPostDeviceTokenRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
+            
+        } else {
+            //[UIHelper showLoadingInView:self.view];
+        }
+
+    }];
+}
+
+
+- (void)_getCompanyProfile {
+    //[UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsGetDealRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
+            
+        } else {
+           // [UIHelper showLoadingInView:self.view];
+        }
+    }];
+}
 @end
