@@ -16,6 +16,8 @@
     
     COUserProfileModel *userModel = [[COLoginManager shared] userModel];
     NSString *headerString = [NSString stringWithFormat:@"%@ %@",userModel.stringOfTokenType,userModel.stringOfAccessToken];
+    [kUserDefaults setObject:headerString forKey:KEY_ACCESS_TOKEN];
+    [kUserDefaults synchronize];
     return headerString;
 }
 
@@ -48,7 +50,7 @@
     [request setHTTPMethod:METHOD_POST];
     [request setURL: [NSURL URLWithString:@"https://www.coassets.com/api/read-notification/"]];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
-    [request addValue:@"Bearer LrB2pwvbfkKZ69wXI6FVBCjyktK58w" forHTTPHeaderField:@"Authorization"];
+    [request addValue:[self _accessToken] forHTTPHeaderField:@"Authorization"];
     
     NSString *strBody = [NSString stringWithFormat:@"device_token=%@&device_type=%@&application_name=%@&client_key=%@&notification_status=%@&notification_id=%@",[bodyDict objectForKey:device_token_dic],[bodyDict objectForKey:device_type_dic],[bodyDict objectForKey:application_name_dic],[bodyDict objectForKey:client_key_dic],[bodyDict objectForKey:NOTIFICATION_STATUS_DICT],[bodyDict objectForKey:NOTIFICATION_ID_DICT]];
 

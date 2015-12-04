@@ -21,6 +21,7 @@
 @interface NotificationViewController ()<UITableViewDataSource, UITableViewDelegate, LoginViewControllerDelegate> {
     __weak IBOutlet UITableView *_tableview;
     NSString *_selectedOfferID;
+    NSInteger count1 ;
 }
 
 @property (strong, nonatomic) NSArray *arrayData;
@@ -80,10 +81,12 @@
     notifiModel = [self.arrayData objectAtIndex:indexPath.row];
     if (notifiModel != nil) {
         [self _loadDetailNotification:notifiModel];
+        [self _checkCreadDeviceToken];
     }
 }
 
 - (void)_loadDetailNotification:(CONotificationModel *)notification {
+    
     [self _callReadNotification:notification];
     if (notification.notifiData.notifiUrl != nil) {
         WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
@@ -122,7 +125,11 @@
         if (!error && [responseObject isKindOfClass:[NSArray class]]) {
             self.arrayData = nil;
             self.arrayData = (NSArray*)responseObject;
-            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[UIHelper setBadgeValueNotification:responseObject]];
+            NSString *str = [UIHelper setBadgeValueNotification:responseObject];
+            if (![str isEqualToString:@"0"]) {
+                 [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: str];
+            }
+            count1 = [str integerValue];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [_tableview reloadData];
             }];

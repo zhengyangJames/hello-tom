@@ -14,6 +14,12 @@
 		0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4E1BC4247000880834 /* NProfileDelegate.m */; };
 		0E3B132E1C0C449100AAAFD9 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B132C1C0C449100AAAFD9 /* DealTableViewCell.m */; };
 		0E3B132F1C0C449100AAAFD9 /* DealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */; };
+		0E4A17F11C113A5400839BDC /* WSCompanyProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */; };
+		0E4A17F41C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */; };
+		0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */; };
+		0E84EE991C116AF600CDA27C /* ic_notification_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */; };
+		0E84EE9A1C116AF600CDA27C /* ic_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE961C116AF600CDA27C /* ic_notification@2x.png */; };
+		0E84EE9B1C116AF600CDA27C /* ic_notification@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE971C116AF600CDA27C /* ic_notification@3x.png */; };
 		0E8956141BBE1AC9007E36BF /* TabProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956121BBE1AC9007E36BF /* TabProfileController.m */; };
 		0E8956151BBE1AC9007E36BF /* TabProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956131BBE1AC9007E36BF /* TabProfileController.xib */; };
 		0E89561A1BBE1BB2007E36BF /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956181BBE1BB2007E36BF /* AccountController.m */; };
@@ -328,6 +334,14 @@
 		0E3B132B1C0C449100AAAFD9 /* DealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealTableViewCell.h; sourceTree = "<group>"; };
 		0E3B132C1C0C449100AAAFD9 /* DealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTableViewCell.m; sourceTree = "<group>"; };
 		0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealTableViewCell.xib; sourceTree = "<group>"; };
+		0E4A17EF1C113A5400839BDC /* WSCompanyProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCompanyProfileRequest.h; sourceTree = "<group>"; };
+		0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCompanyProfileRequest.m; sourceTree = "<group>"; };
+		0E4A17F21C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+CompanyProfile.h"; sourceTree = "<group>"; };
+		0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+CompanyProfile.m"; sourceTree = "<group>"; };
+		0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@2x.png"; sourceTree = "<group>"; };
+		0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@3x.png"; sourceTree = "<group>"; };
+		0E84EE961C116AF600CDA27C /* ic_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification@2x.png"; sourceTree = "<group>"; };
+		0E84EE971C116AF600CDA27C /* ic_notification@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification@3x.png"; sourceTree = "<group>"; };
 		0E8956111BBE1AC9007E36BF /* TabProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabProfileController.h; sourceTree = "<group>"; };
 		0E8956121BBE1AC9007E36BF /* TabProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabProfileController.m; sourceTree = "<group>"; };
 		0E8956131BBE1AC9007E36BF /* TabProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabProfileController.xib; sourceTree = "<group>"; };
@@ -1715,6 +1729,8 @@
 				B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */,
 				B9449AC01BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.h */,
 				B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */,
+				0E4A17F21C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.h */,
+				0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1831,6 +1847,10 @@
 		7F325F5E1B40E50800116445 /* Images Other */ = {
 			isa = PBXGroup;
 			children = (
+				0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */,
+				0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */,
+				0E84EE961C116AF600CDA27C /* ic_notification@2x.png */,
+				0E84EE971C116AF600CDA27C /* ic_notification@3x.png */,
 				1EF23C2C1BBE8691006020C2 /* ic_homes@2x.png */,
 				1EF23C2D1BBE8691006020C2 /* ic_homes@3x.png */,
 				1EF23C1C1BBE85C9006020C2 /* ic_Check_red@2x.png */,
@@ -2079,6 +2099,8 @@
 				B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */,
 				B9449ABD1BFC846600E4C4A4 /* WSGetDealProfileRequest.h */,
 				B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */,
+				0E4A17EF1C113A5400839BDC /* WSCompanyProfileRequest.h */,
+				0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -2181,6 +2203,7 @@
 				7F3260421B40E50800116445 /* ic_Earth@3x.png in Resources */,
 				B94210FD1BFC2C7400C86FE8 /* offer.png in Resources */,
 				7F325F9A1B40E50800116445 /* OfferViewController.xib in Resources */,
+				0E84EE991C116AF600CDA27C /* ic_notification_selected@3x.png in Resources */,
 				0E89561B1BBE1BB2007E36BF /* AccountController.xib in Resources */,
 				7F32603D1B40E50800116445 /* ic_contac_2_heightlight@3x.png in Resources */,
 				7F8529271B43935B00CFAEB5 /* Indonesia.png in Resources */,
@@ -2198,6 +2221,7 @@
 				7F3260521B40E50800116445 /* ic_people_heightline@2x.png in Resources */,
 				7F3260491B40E50800116445 /* ic_Left@2x.png in Resources */,
 				0E8956151BBE1AC9007E36BF /* TabProfileController.xib in Resources */,
+				0E84EE9B1C116AF600CDA27C /* ic_notification@3x.png in Resources */,
 				7F325F861B40E50800116445 /* CODocumentItemCell.xib in Resources */,
 				1EF23C281BBE85C9006020C2 /* ic_loadding@2x.png in Resources */,
 				7F3260601B40E50800116445 /* ic_uncheck@3x.png in Resources */,
@@ -2272,9 +2296,11 @@
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
 				7F3260761B40E50800116445 /* FilterList.plist in Resources */,
 				7F32603C1B40E50800116445 /* ic_contac_2_heightlight@2x.png in Resources */,
+				0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */,
 				7FA7E6C11B4E7CD500059B13 /* COOfferProgressCell.xib in Resources */,
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
+				0E84EE9A1C116AF600CDA27C /* ic_notification@2x.png in Resources */,
 				7F85292F1B43935B00CFAEB5 /* United States.png in Resources */,
 				1E5A6FC81BCCC49F00C4C5A5 /* NProfileTextCell.xib in Resources */,
 				1E5A6FBE1BCCC49F00C4C5A5 /* NProfileButtonCell.xib in Resources */,
@@ -2403,6 +2429,7 @@
 				7F325F971B40E50800116445 /* COOfferDescriptionTextCell.m in Sources */,
 				1E8ECA251BD61E39001DE271 /* CONotificationBannerView.m in Sources */,
 				0E8956321BBE1F8B007E36BF /* PortFolioCell.m in Sources */,
+				0E4A17F41C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m in Sources */,
 				1EF1DD8C1BC3896300CD3C78 /* WSUpdateCompanyProfile.m in Sources */,
 				0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */,
 				7FB802BB1B4CE25700173A58 /* NSMutableString+FontSize.m in Sources */,
@@ -2428,6 +2455,7 @@
 				7F325F851B40E50800116445 /* CODocumentItemCell.m in Sources */,
 				1ECEAE781BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m in Sources */,
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
+				0E4A17F11C113A5400839BDC /* WSCompanyProfileRequest.m in Sources */,
 				7F325FC91B40E50800116445 /* COPositive&NagitiveButton.m in Sources */,
 				7F32601B1B40E50800116445 /* main.m in Sources */,
 				7F85290F1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m in Sources */,

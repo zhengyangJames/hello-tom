@@ -59,7 +59,6 @@
 
 // GET NNOTIFICATION
 #define  CONTENT_TYPE_GET      @"application/x-www-form-urlencoded"
-#define  AUTHORIZATION         @"Bearer <access token>"
 
 #define CONTENT_TYPE_GET_DIC   @"content-type"
 #define  AUTHORIZATION_DIC     @"Authorization"
@@ -103,6 +102,8 @@
 #define WS_METHOD_GET_NOTIFICATION_TOKEN_LIST       [WS_ENDPOINT stringByAppendingString:@"/get-notification-list/"]
 
 #define WS_METHOD_GET_DEAL_LIST                     [WS_ENDPOINT stringByAppendingString:@"/investor_deal_list/"]
+
+#define WS_METHOD_COMPANY_PROFILE                   [WS_ENDPOINT stringByAppendingString:@"/profile_organization/"]
 
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
@@ -350,5 +351,8 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 #define NOTIFI_ICON_EVENT        @"event"
 #define NOTIFI_ICON_LANDINGPG    @"event"
 #define NOTIFI_ICON_GENERAL      @"landingpg"
-#define ERROR  @"Authentication credentials were not provided."
+#define ERROR                    @"Authentication credentials were not provided."
+#define KEY_ACCESS_TOKEN         @"accesstoken"
+
+
 #endif
