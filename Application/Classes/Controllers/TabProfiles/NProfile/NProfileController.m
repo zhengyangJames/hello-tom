@@ -206,10 +206,13 @@
 - (void)_getCompanyProfile {
     //[UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetDealRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
-            
+        if (!error && responseObject != nil) {
+            self.companyModel = responseObject;
+            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                [self _reloadTableview];
+            }];
         } else {
-           // [UIHelper showLoadingInView:self.view];
+            // [UIHelper showLoadingInView:self.view];
         }
     }];
 }

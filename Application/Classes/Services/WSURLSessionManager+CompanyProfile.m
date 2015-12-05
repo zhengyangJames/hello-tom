@@ -8,6 +8,7 @@
 
 #import "WSURLSessionManager+CompanyProfile.h"
 #import "WSCompanyProfileRequest.h"
+#import "COUserCompanyModel.h"
 
 @implementation WSURLSessionManager (CompanyProfile)
 
@@ -36,8 +37,9 @@
     
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
+            COUserCompanyModel *model = [MTLJSONAdapter modelOfClass:[COUserCompanyModel class] fromJSONDictionary:responseObject error:&error];
             if (handler) {
-                handler(responseObject,response,nil);
+                handler(model,response,nil);
             }
         } else {
             if (handler) {

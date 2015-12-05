@@ -176,6 +176,7 @@
     BaseNavigationController *base = [[BaseNavigationController alloc] initWithRootViewController:vcLogin];
     [[kAppDelegate baseTabBarController] presentViewController:base animated:YES completion:nil];
     [[COLoginManager shared] setIsReloadListHome:YES];
+    [self _checkCreadDeviceToken];
 }
 
 - (void)loginViewController:(LoginViewController *)loginViewController loginWithStyle:(LoginWithStyle)loginWithStyle {

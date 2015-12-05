@@ -17,8 +17,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jr3-ZB-rCX">
                         <rect key="frame" x="10" y="10" width="300" height="151"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="q3B-Ms-ly8">
-                                <rect key="frame" x="10" y="0.0" width="280" height="150"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="q3B-Ms-ly8">
+                                <rect key="frame" x="10" y="0.0" width="280" height="151"/>
                                 <animations/>
                             </imageView>
                         </subviews>
