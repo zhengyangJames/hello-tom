@@ -82,7 +82,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: [NSString stringWithFormat:@"%ld",count1 - 1]];
+    [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue: [NSString stringWithFormat:@"%d",count1 - 1]];
     
     CONotificationModel *notifiModel = [[CONotificationModel alloc]init];
     notifiModel = [self.arrayData objectAtIndex:indexPath.row];

@@ -12,6 +12,8 @@
 #import "COBorderTextField.h"
 #import "COUserCompanyModel.h"
 #import "WSUpdateCompanyProfile.h"
+#import "WSURLSessionManager+CompanyProfile.h"
+#import "LoadFileManager.h"
 
 @interface EditCompanyVC () <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
@@ -30,7 +32,8 @@
     CGFloat _heightImage;
 }
 
-@property (nonatomic, strong) NSArray *arrayOrgType;
+@property (nonatomic, strong) NSMutableArray *arrayOrgType;
+@property (nonatomic, strong) NSArray *arrayType;
 
 @end
 
@@ -65,11 +68,33 @@
     [countryTextField setText:_companyUserModel.companyCountry];
 }
 
-- (NSArray *)arrayOrgType {
-    if (_arrayOrgType) {
+//- (NSArray *)arrayOrgType {
+//    if (_arrayOrgType) {
+//        return _arrayOrgType;
+//    }
+//    _arrayOrgType = @[@"Developer",@"Agency",@"Reseller",@"Funds",@"Others ",@"Route Sale"];
+//    return _arrayOrgType;
+//}
+
+
+
+- (NSArray*)arrayType {
+    if (!_arrayType) {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CompanyOrgType" ofType:@"plist"];
+        NSArray *array = [NSArray arrayWithContentsOfFile:filePath];
+        return array;
+    }
+    return _arrayType;
+}
+
+- (NSMutableArray*)arrayOrgType {
+    if (_arrayOrgType != nil) {
         return _arrayOrgType;
     }
-    _arrayOrgType = @[@"Developer",@"Agency",@"Reseller",@"Funds",@"Others ",@"Route Sale"];
+    _arrayOrgType = [[NSMutableArray alloc]init];
+    for (NSDictionary *dic in self.arrayType) {
+        [_arrayOrgType addObject:[dic objectForKey:@"value"]];
+    }
     return _arrayOrgType;
 }
 
@@ -107,11 +132,7 @@
 #pragma mark - Action
 
 - (void)__actionDone:(id)sender {
-    [self _updateProfileUserModel:[self _creatUpdateInfoCompany]];
-    if (self.actionDone) {
-        self.actionDone(_heightImage);
-    }
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self _postCampanyProfile:[self _creatUpdateInfoCompany]];
 }
 
 - (void)__actionDCancel:(id)sender {
@@ -148,6 +169,7 @@
     [dic setValue:[self _setModelNilOrNotNil:orgNameTextField.text] forKey:kUpCPProfileOrgName];
     [dic setValue:[self _setModelNilOrNotNil:countryTextField.text] forKey:kUpCPProfileCountry];
     [dic setValue:[self _setModelNilOrNotNil:_urlImageProfile] forKey:kUpCPProfileImage];
+    [dic setValue:[self _setModelNilOrNotNil:[[self.arrayType objectAtIndex:_indexActtionOrgType] objectForKey:@"key"]] forKey:kUpCPProfileOrgType];
     NSString *height = [NSString stringWithFormat:@"%f",_heightImage];
     [dic setValue:[self _setModelNilOrNotNil:height] forKey:kUpCPProfileImageHeight];
     return dic;
@@ -162,9 +184,11 @@
 }
 
 - (void)_updateProfileUserModel:(NSDictionary*)obj {
+   
     NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
     [kUserDefaults setObject:data forKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults synchronize];
+    [self _postCampanyProfile:obj];
 }
 
 #pragma mark - Delegate
@@ -183,7 +207,6 @@
     [self _updateHeightViewTop:image];
     if (image) {
         [_imageCompany setImage:image];
-        _urlImageProfile = @"http://www.tapchidanong.org/product_images/h/616/chau-tu-na-3289%284%29__92564_zoom.jpg";
     } else {
         DBG(@"/********-No-Image-Choice-*********/");
     }
@@ -197,6 +220,24 @@
     _heightImage = ratioImage*defaultHeight;
     _heightTopView.constant = _heightImage - 20;
     //[_contentView setNeedsUpdateConstraints];
+}
+
+- (void)_postCampanyProfile:(NSDictionary *)dic {
+    [UIHelper showLoadingInView:self.view];
+    [[WSURLSessionManager shared] wsPostDeviceTokenRequest:dic imageView:_imageCompany Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject != nil) {
+//            [self _updateProfileUserModel:dic];
+            if (self.actionDone) {
+                self.actionDone(_heightImage);
+            }
+            [self dismissViewControllerAnimated:YES completion:^{}];
+
+        } else {
+            [UIHelper showLoadingInView:self.view];
+            [UIHelper showError:error];
+        }
+        [UIHelper hideLoadingFromView:self.view];
+    }];
 }
 
 @end

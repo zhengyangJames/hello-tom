@@ -10,7 +10,7 @@
 
 @interface WSCompanyProfileRequest : NSMutableURLRequest
 
-- (void)postCompanyProfile;
+- (WSCompanyProfileRequest *)postCompanyProfile:(NSDictionary *)companyDic imageView:(UIImageView *)imageView;
 - (WSCompanyProfileRequest *)getCompanyProfile;
 
 @end

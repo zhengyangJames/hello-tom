@@ -41,7 +41,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self _postCampanyProfile];
     [self _getCompanyProfile];
     [self _setupUI];
 }
@@ -51,6 +50,7 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
     [self _updateProfile];
+     [self _getCompanyProfile];
 }
 
 #pragma mark - SetupUI
@@ -190,30 +190,21 @@
 
 #pragma mark - API
 
-- (void)_postCampanyProfile {
-    //[UIHelper showLoadingInView:self.view];
-    [[WSURLSessionManager shared] wsPostDeviceTokenRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && [responseObject isKindOfClass:[NSArray class]]) {
-            
-        } else {
-            //[UIHelper showLoadingInView:self.view];
-        }
-
-    }];
-}
-
 
 - (void)_getCompanyProfile {
-    //[UIHelper showLoadingInView:self.view];
+    [UIHelper showLoadingInView:self.view];
+    
     [[WSURLSessionManager shared] wsGetDealRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        
         if (!error && responseObject != nil) {
             self.companyModel = responseObject;
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
                 [self _reloadTableview];
             }];
         } else {
-            // [UIHelper showLoadingInView:self.view];
+             [UIHelper showError:error];
         }
+        [UIHelper hideLoadingFromView:self.view];
     }];
 }
 @end

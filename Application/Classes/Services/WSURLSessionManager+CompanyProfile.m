@@ -13,10 +13,10 @@
 @implementation WSURLSessionManager (CompanyProfile)
 
 
-- (void)wsPostDeviceTokenRequestHandler:(WSURLSessionHandler)handler {
+- (void)wsPostDeviceTokenRequest:(NSDictionary *)dic imageView:(UIImageView *)imageView Handler:(WSURLSessionHandler)handler  {
     
     WSCompanyProfileRequest *request = [[WSCompanyProfileRequest alloc]init];
-    [request postCompanyProfile];
+    request = [request postCompanyProfile:dic imageView:imageView];
     
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {
@@ -37,6 +37,10 @@
     
     [self sendRequest:request handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
+            NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil];
+            [kUserDefaults setObject:data forKey:UPDATE_COMPANY_PROFILE_JSON];
+            [kUserDefaults synchronize];
+
             COUserCompanyModel *model = [MTLJSONAdapter modelOfClass:[COUserCompanyModel class] fromJSONDictionary:responseObject error:&error];
             if (handler) {
                 handler(model,response,nil);

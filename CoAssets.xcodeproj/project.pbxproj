@@ -10,6 +10,7 @@
 		012BDB9F1BA535F700252D12 /* COListFilterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDB8F1BA535F700252D12 /* COListFilterObject.m */; };
 		012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FA93C1B7A13A600A80D3F /* LoadFileManager.m */; };
 		01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1437B1B7D1053003DF5F9 /* COOfferModel.m */; };
+		0E3217DE1C12C91E00061AAB /* CompanyOrgType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E3217DD1C12C91E00061AAB /* CompanyOrgType.plist */; };
 		0E39FA621BC4247000880834 /* NProfileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4C1BC4247000880834 /* NProfileDataSource.m */; };
 		0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4E1BC4247000880834 /* NProfileDelegate.m */; };
 		0E3B132E1C0C449100AAAFD9 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B132C1C0C449100AAAFD9 /* DealTableViewCell.m */; };
@@ -327,6 +328,7 @@
 		012FA93D1B7A13A600A80D3F /* LoadFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadFileManager.h; sourceTree = "<group>"; };
 		01D1437A1B7D1053003DF5F9 /* COOfferModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOfferModel.h; sourceTree = "<group>"; };
 		01D1437B1B7D1053003DF5F9 /* COOfferModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOfferModel.m; sourceTree = "<group>"; };
+		0E3217DD1C12C91E00061AAB /* CompanyOrgType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CompanyOrgType.plist; sourceTree = "<group>"; };
 		0E39FA4B1BC4247000880834 /* NProfileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDataSource.h; sourceTree = "<group>"; };
 		0E39FA4C1BC4247000880834 /* NProfileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileDataSource.m; sourceTree = "<group>"; };
 		0E39FA4D1BC4247000880834 /* NProfileDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDelegate.h; sourceTree = "<group>"; };
@@ -809,7 +811,8 @@
 				012BDB8E1BA535F700252D12 /* COListFilterObject.h */,
 				012BDB8F1BA535F700252D12 /* COListFilterObject.m */,
 			);
-			path = Objects;
+			name = Objects;
+			path = ../../Objects;
 			sourceTree = "<group>";
 		};
 		01D143791B7D1035003DF5F9 /* Models */ = {
@@ -1135,6 +1138,7 @@
 		1ECEAE7D1BC75DC9006FE0CA /* COPortfolioModel */ = {
 			isa = PBXGroup;
 			children = (
+				012BDB7F1BA535F700252D12 /* Objects */,
 				1ECEAE6D1BC75A50006FE0CA /* COUserPortFolioModel.h */,
 				1ECEAE6E1BC75A50006FE0CA /* COUserPortFolioModel.m */,
 				1ECEAE761BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.h */,
@@ -1346,7 +1350,6 @@
 				7F325E6E1B40E50800116445 /* Helpers */,
 				7F325E751B40E50800116445 /* Managers */,
 				01D143791B7D1035003DF5F9 /* Models */,
-				012BDB7F1BA535F700252D12 /* Objects */,
 				7F325E871B40E50800116445 /* Services */,
 			);
 			path = Classes;
@@ -1884,6 +1887,7 @@
 				7F325F781B40E50800116445 /* SettingPlist.plist */,
 				1E67FAA01BBB773D008F433C /* ProfileList.plist */,
 				1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */,
+				0E3217DD1C12C91E00061AAB /* CompanyOrgType.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -2295,6 +2299,7 @@
 				7F8529281B43935B00CFAEB5 /* Japan.png in Resources */,
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
 				7F3260761B40E50800116445 /* FilterList.plist in Resources */,
+				0E3217DE1C12C91E00061AAB /* CompanyOrgType.plist in Resources */,
 				7F32603C1B40E50800116445 /* ic_contac_2_heightlight@2x.png in Resources */,
 				0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */,
 				7FA7E6C11B4E7CD500059B13 /* COOfferProgressCell.xib in Resources */,
