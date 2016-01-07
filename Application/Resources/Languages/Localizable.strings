@@ -31,6 +31,9 @@
 "NOTIFICATION"                          = "Notifications";
 "Notification"                          = "Notification";
 
+"EVENT"                                 = "Events";
+"Event"                                 = "Event";
+
 "NEWS"                                  = "News";
 
 

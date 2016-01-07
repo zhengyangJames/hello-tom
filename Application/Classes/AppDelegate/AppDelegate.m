@@ -23,6 +23,7 @@
 #import "WSURLSessionManager+Notification.h"
 #import "CONotificationModel.h"
 #import "WebViewSetting.h"
+#import "EventViewController.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate,CONotificationBannerViewDelegate>
 {
@@ -273,7 +274,7 @@
 - (BaseTabBarController*)baseTabBarController {
     if (!_baseTabBarController) {
         BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
-        NSArray *arrayNAV = @[self.baseHomeNAV,self.baseProfileNAV,self.baseNotificationNAV,self.baseSettingNAV];
+        NSArray *arrayNAV = @[self.baseHomeNAV,self.baseProfileNAV,self.baseNotificationNAV,self.baseEventsNAV,self.baseSettingNAV];
         [tabBar setViewControllers:arrayNAV animated:YES];
         _baseTabBarController = tabBar;
     }
@@ -341,6 +342,19 @@
     }
     return _baseNotificationNAV;
 }
+
+//Setup Eventsı
+- (BaseNavigationController*)baseEventsNAV {
+    if (!_baseEventNAV) {
+        EventViewController *notificationVC = [[EventViewController alloc]init];
+        BaseNavigationController *eventNAV = [[BaseNavigationController alloc]initWithRootViewController:notificationVC];
+        UITabBarItem *tabbarNotification = [[UITabBarItem alloc]initWithTitle:m_string(@"EVENT" ) image:[UIImage imageNamed:@"ic_notification"] selectedImage:[UIImage imageNamed:@"ic_notification_selected"]];
+        eventNAV.tabBarItem = tabbarNotification;
+        _baseEventNAV = eventNAV;
+    }
+    return _baseEventNAV;
+}
+
 
 //Setup Setting
 - (BaseNavigationController*)baseSettingNAV {

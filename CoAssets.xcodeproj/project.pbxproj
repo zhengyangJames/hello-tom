@@ -37,6 +37,10 @@
 		0E8956831BBE2497007E36BF /* NProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956751BBE2497007E36BF /* NProfileController.xib */; };
 		0E8956891BBE88E4007E36BF /* EditCompanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956871BBE88E4007E36BF /* EditCompanyVC.m */; };
 		0E89568A1BBE88E4007E36BF /* EditCompanyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956881BBE88E4007E36BF /* EditCompanyVC.xib */; };
+		0E8F35601C3DFE4E00CCCE04 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F355E1C3DFE4E00CCCE04 /* EventViewController.m */; };
+		0E8F35611C3DFE4E00CCCE04 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8F355F1C3DFE4E00CCCE04 /* EventViewController.xib */; };
+		0E8F35661C3DFED200CCCE04 /* EventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F35641C3DFED200CCCE04 /* EventCollectionViewCell.m */; };
+		0E8F35671C3DFED200CCCE04 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8F35651C3DFED200CCCE04 /* EventCollectionViewCell.xib */; };
 		0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */; };
 		0E93F8CE1BBD8AB90079D5AE /* COUserInverstorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93F8CD1BBD8AB90079D5AE /* COUserInverstorModel.m */; };
 		0ECA883D1B27CA7100B5656F /* NMCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881A1B27CA7100B5656F /* NMCollectionView.m */; };
@@ -375,6 +379,12 @@
 		0E8956861BBE88E4007E36BF /* EditCompanyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCompanyVC.h; sourceTree = "<group>"; };
 		0E8956871BBE88E4007E36BF /* EditCompanyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCompanyVC.m; sourceTree = "<group>"; };
 		0E8956881BBE88E4007E36BF /* EditCompanyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditCompanyVC.xib; sourceTree = "<group>"; };
+		0E8F355D1C3DFE4E00CCCE04 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		0E8F355E1C3DFE4E00CCCE04 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		0E8F355F1C3DFE4E00CCCE04 /* EventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
+		0E8F35631C3DFED200CCCE04 /* EventCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCollectionViewCell.h; sourceTree = "<group>"; };
+		0E8F35641C3DFED200CCCE04 /* EventCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCollectionViewCell.m; sourceTree = "<group>"; };
+		0E8F35651C3DFED200CCCE04 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E93F8C61BBD6FFC0079D5AE /* COUserCompanyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserCompanyModel.h; sourceTree = "<group>"; };
 		0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COUserCompanyModel.m; sourceTree = "<group>"; };
 		0E93F8CC1BBD8AB90079D5AE /* COUserInverstorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUserInverstorModel.h; sourceTree = "<group>"; };
@@ -968,6 +978,27 @@
 			path = EditCompanyVC;
 			sourceTree = "<group>";
 		};
+		0E8F35571C3DFDF000CCCE04 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				0E8F35621C3DFE6200CCCE04 /* EventCell */,
+				0E8F355D1C3DFE4E00CCCE04 /* EventViewController.h */,
+				0E8F355E1C3DFE4E00CCCE04 /* EventViewController.m */,
+				0E8F355F1C3DFE4E00CCCE04 /* EventViewController.xib */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		0E8F35621C3DFE6200CCCE04 /* EventCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E8F35631C3DFED200CCCE04 /* EventCollectionViewCell.h */,
+				0E8F35641C3DFED200CCCE04 /* EventCollectionViewCell.m */,
+				0E8F35651C3DFED200CCCE04 /* EventCollectionViewCell.xib */,
+			);
+			path = EventCell;
+			sourceTree = "<group>";
+		};
 		0ECA88181B27CA7100B5656F /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1438,6 +1469,7 @@
 		7F325DD31B40E50800116445 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0E8F35571C3DFDF000CCCE04 /* Events */,
 				B9E09D941BF97B1900ACD58C /* Notification */,
 				0E8955E81BBE1A78007E36BF /* TabProfiles */,
 				7F325E021B40E50800116445 /* Login + Register */,
@@ -2159,6 +2191,7 @@
 				0EFEB4AE1B2724B2001195B7 /* Resources */,
 				7F2D8A851B310B0C000DE953 /* ShellScript */,
 				3C34D0B1319B4947059A75FE /* Copy Pods Resources */,
+				175F2443963C1E5889A487EC /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2208,6 +2241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3260351B40E50800116445 /* ic_calendar@2x.png in Resources */,
+				0E8F35611C3DFE4E00CCCE04 /* EventViewController.xib in Resources */,
 				7F325FBE1B40E50800116445 /* WebViewSetting.xib in Resources */,
 				7F3260461B40E50800116445 /* ic_home_heightlight@3x.png in Resources */,
 				7F3260381B40E50800116445 /* ic_Check@2x.png in Resources */,
@@ -2326,6 +2360,7 @@
 				BBBD82031B8BE0720061FFF0 /* ForgotPasswordViewController.xib in Resources */,
 				7F3260771B40E50800116445 /* SettingPlist.plist in Resources */,
 				7F32605C1B40E50800116445 /* ic_setting_heightline@2x.png in Resources */,
+				0E8F35671C3DFED200CCCE04 /* EventCollectionViewCell.xib in Resources */,
 				7F3260261B40E50800116445 /* Raleway-Light.ttf in Resources */,
 				7F3260301B40E50800116445 /* Close_Circle_Line@3x.png in Resources */,
 				7F3260531B40E50800116445 /* ic_people_heightline@3x.png in Resources */,
@@ -2391,6 +2426,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		175F2443963C1E5889A487EC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3C34D0B1319B4947059A75FE /* Copy Pods Resources */ = {
@@ -2515,6 +2565,7 @@
 				BB368EB51B87E0E00066C646 /* COUserTokensModel.m in Sources */,
 				16D2A99A1C0C054F00DAFBA6 /* COTextCell.m in Sources */,
 				BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */,
+				0E8F35601C3DFE4E00CCCE04 /* EventViewController.m in Sources */,
 				7F325F951B40E50800116445 /* CODocumentSectionCell.m in Sources */,
 				1E5A6FBD1BCCC49F00C4C5A5 /* NProfileButtonCell.m in Sources */,
 				1E67FAC41BBB9149008F433C /* BaseLabel.m in Sources */,
@@ -2557,6 +2608,7 @@
 				0E89561A1BBE1BB2007E36BF /* AccountController.m in Sources */,
 				7F325FC81B40E50800116445 /* COLineBottomView.m in Sources */,
 				1ECEAE6F1BC75A50006FE0CA /* COUserPortFolioModel.m in Sources */,
+				0E8F35661C3DFED200CCCE04 /* EventCollectionViewCell.m in Sources */,
 				1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */,
 				1EA610DA1BC51C2700BF3A47 /* WSUpdateInvestorProfile.m in Sources */,
 				0ECA88441B27CA7100B5656F /* NSFileManager+Directories.m in Sources */,
