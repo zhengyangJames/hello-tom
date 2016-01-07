@@ -65,7 +65,21 @@
 "PHONE_REQUIRED"                        = "Phone is required.";
 "ADDRESS_REQUIRED"                      = "Address is required.";
 "CONFIRM_PASSWORD_REQUIRED"             = "Confirm password is required.";
-"CONFIRM_PASSWORD_MESSAGE"              = "Confirm password does not match";
+"CONFIRM_PASSWORD_MESSAGE"              = "Confirm password does not match.";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 "FILTER_BULLK_NULL"                     = "Bulk Purchase are coming";
 "FILTER_CROWD_NULL"                     = "Crowdfunding are coming";

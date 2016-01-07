@@ -17,6 +17,332 @@
 		0E3B132F1C0C449100AAAFD9 /* DealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */; };
 		0E4A17F11C113A5400839BDC /* WSCompanyProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */; };
 		0E4A17F41C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */; };
+		0E4F49B71C3E471200CFC23B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F49B41C3E471200CFC23B /* Localizable.strings */; };
+		0E4F49BB1C3E479500CFC23B /* Info-English.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F49BA1C3E479500CFC23B /* Info-English.plist */; };
+		0E4F49BF1C3E480200CFC23B /* WSRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F5D1B961692002EEB1C /* WSRegisterRequest.m */; };
+		0E4F49C01C3E480200CFC23B /* WSPostDeviceTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */; };
+		0E4F49C11C3E480200CFC23B /* NProfileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4C1BC4247000880834 /* NProfileDataSource.m */; };
+		0E4F49C21C3E480200CFC23B /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA71BCCC49F00C4C5A5 /* NProfileAdressCell.m */; };
+		0E4F49C31C3E480200CFC23B /* DropListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E541B40E50800116445 /* DropListCell.m */; };
+		0E4F49C41C3E480200CFC23B /* COSlidingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E671B40E50800116445 /* COSlidingView.m */; };
+		0E4F49C51C3E480200CFC23B /* COOfferHeadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DE31B40E50800116445 /* COOfferHeadingCell.m */; };
+		0E4F49C61C3E480200CFC23B /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DC11B40E50800116445 /* BaseTabBarController.m */; };
+		0E4F49C71C3E480200CFC23B /* WSUpdateProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F691B9660DB002EEB1C /* WSUpdateProfileRequest.m */; };
+		0E4F49C81C3E480200CFC23B /* CONotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D7723E1BF9E1B2005FA75C /* CONotificationModel.m */; };
+		0E4F49C91C3E480200CFC23B /* COPopupInteredtedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18B31B4BBBD0000B81A2 /* COPopupInteredtedView.m */; };
+		0E4F49CA1C3E480200CFC23B /* WSChangePassWordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F631B962BB8002EEB1C /* WSChangePassWordRequest.m */; };
+		0E4F49CB1C3E480200CFC23B /* NMImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88381B27CA7100B5656F /* NMImageHelper.m */; };
+		0E4F49CC1C3E480200CFC23B /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
+		0E4F49CD1C3E480200CFC23B /* HomeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DFF1B40E50800116445 /* HomeListViewController.m */; };
+		0E4F49CE1C3E480200CFC23B /* WSURLSessionManager+ListHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E8D1B40E50800116445 /* WSURLSessionManager+ListHome.m */; };
+		0E4F49CF1C3E480200CFC23B /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E89562A1BBE1D9F007E36BF /* AccountCell.m */; };
+		0E4F49D01C3E480200CFC23B /* CONotificationDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09DAC1BF9D50200ACD58C /* CONotificationDataModel.m */; };
+		0E4F49D11C3E480200CFC23B /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DBD1B40E50800116445 /* BaseCollectionViewCell.m */; };
+		0E4F49D21C3E480200CFC23B /* WSPostQuestionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE251B99F2B200D15D58 /* WSPostQuestionRequest.m */; };
+		0E4F49D31C3E480200CFC23B /* COOfferProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7E6BE1B4E7CD500059B13 /* COOfferProgressCell.m */; };
+		0E4F49D41C3E480200CFC23B /* COLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6D5121B4526240098EC8D /* COLoginManager.m */; };
+		0E4F49D51C3E480200CFC23B /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B132C1C0C449100AAAFD9 /* DealTableViewCell.m */; };
+		0E4F49D61C3E480200CFC23B /* CODocumentItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D91B824F0C00BF6861 /* CODocumentItemModel.m */; };
+		0E4F49D71C3E480200CFC23B /* COUserInverstorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93F8CD1BBD8AB90079D5AE /* COUserInverstorModel.m */; };
+		0E4F49D81C3E480200CFC23B /* NMDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88361B27CA7100B5656F /* NMDeviceHelper.m */; };
+		0E4F49D91C3E480200CFC23B /* NMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881E1B27CA7100B5656F /* NMTableView.m */; };
+		0E4F49DA1C3E480200CFC23B /* COUserProfileDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB71B87E1F30066C646 /* COUserProfileDetailModel.m */; };
+		0E4F49DB1C3E480200CFC23B /* COOngoingStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */; };
+		0E4F49DC1C3E480200CFC23B /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E391B40E50800116445 /* ContactTableViewCell.m */; };
+		0E4F49DD1C3E480200CFC23B /* COQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7E6B71B4E7C4D00059B13 /* COQuestionView.m */; };
+		0E4F49DE1C3E480200CFC23B /* CoDropListButtom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E5B1B40E50800116445 /* CoDropListButtom.m */; };
+		0E4F49DF1C3E480200CFC23B /* COOfferWebViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E0BD61B5355A20045EFB0 /* COOfferWebViewCell.m */; };
+		0E4F49E01C3E480200CFC23B /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09D9C1BF97E8000ACD58C /* NotificationCell.m */; };
+		0E4F49E11C3E480200CFC23B /* WSGetListOfferRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE341B9A0A8900D15D58 /* WSGetListOfferRequest.m */; };
+		0E4F49E21C3E480200CFC23B /* DealsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E89561E1BBE1C14007E36BF /* DealsController.m */; };
+		0E4F49E31C3E480200CFC23B /* WSGetOfferInfoWithRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE311B9A05F800D15D58 /* WSGetOfferInfoWithRequest.m */; };
+		0E4F49E41C3E480200CFC23B /* WSProjectFundInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE2E1B99FAD300D15D58 /* WSProjectFundInfoRequest.m */; };
+		0E4F49E51C3E480200CFC23B /* NMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88221B27CA7100B5656F /* NMView.m */; };
+		0E4F49E61C3E480200CFC23B /* WSGetProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F661B9659EC002EEB1C /* WSGetProfileRequest.m */; };
+		0E4F49E71C3E480200CFC23B /* WSLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB21091B94CB36007221B4 /* WSLoginRequest.m */; };
+		0E4F49E81C3E480200CFC23B /* NMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88241B27CA7100B5656F /* NMViewController.m */; };
+		0E4F49E91C3E480200CFC23B /* COFilterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB48F19F1B86763E006F1921 /* COFilterListModel.m */; };
+		0E4F49EA1C3E480200CFC23B /* COOfferDescriptionTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DF41B40E50800116445 /* COOfferDescriptionTextCell.m */; };
+		0E4F49EB1C3E480200CFC23B /* CONotificationBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8ECA241BD61E39001DE271 /* CONotificationBannerView.m */; };
+		0E4F49EC1C3E480200CFC23B /* PortFolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956301BBE1F8B007E36BF /* PortFolioCell.m */; };
+		0E4F49ED1C3E480200CFC23B /* WSURLSessionManager+CompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */; };
+		0E4F49EE1C3E480200CFC23B /* WSUpdateCompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1DD8B1BC3896300CD3C78 /* WSUpdateCompanyProfile.m */; };
+		0E4F49EF1C3E480200CFC23B /* COUserCompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93F8C71BBD6FFC0079D5AE /* COUserCompanyModel.m */; };
+		0E4F49F01C3E480200CFC23B /* NSMutableString+FontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB802BA1B4CE25700173A58 /* NSMutableString+FontSize.m */; };
+		0E4F49F11C3E480200CFC23B /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EE69D1B4A6ACF00F92852 /* NSString_stripHtml.m */; };
+		0E4F49F21C3E480200CFC23B /* CODealOngoingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD11BFC8B8900E4C4A4 /* CODealOngoingModel.m */; };
+		0E4F49F31C3E480200CFC23B /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E0D1B40E50800116445 /* RegisterViewController.m */; };
+		0E4F49F41C3E480200CFC23B /* NProfileCountrieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAD1BCCC49F00C4C5A5 /* NProfileCountrieCell.m */; };
+		0E4F49F51C3E480200CFC23B /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DBF1B40E50800116445 /* BaseNavigationController.m */; };
+		0E4F49F61C3E480200CFC23B /* NMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88201B27CA7100B5656F /* NMTableViewCell.m */; };
+		0E4F49F71C3E480200CFC23B /* COOfferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1437B1B7D1053003DF5F9 /* COOfferModel.m */; };
+		0E4F49F81C3E480200CFC23B /* UIView+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88311B27CA7100B5656F /* UIView+Identifier.m */; };
+		0E4F49F91C3E480200CFC23B /* WSURLSessionManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E8F1B40E50800116445 /* WSURLSessionManager+User.m */; };
+		0E4F49FA1C3E480200CFC23B /* WebViewSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E431B40E50800116445 /* WebViewSetting.m */; };
+		0E4F49FB1C3E480200CFC23B /* NSString+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA882B1B27CA7100B5656F /* NSString+Helpers.m */; };
+		0E4F49FC1C3E480200CFC23B /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DC51B40E50800116445 /* BaseView.m */; };
+		0E4F49FD1C3E480200CFC23B /* NSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DCA1B40E50800116445 /* NSArray+Sort.m */; };
+		0E4F49FE1C3E480200CFC23B /* OfferDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161E785D1C0C0CB500EB6A04 /* OfferDetailsController.m */; };
+		0E4F49FF1C3E480200CFC23B /* WSURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E911B40E50800116445 /* WSURLSessionManager.m */; };
+		0E4F4A001C3E480200CFC23B /* CODetailsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DDB1B40E50800116445 /* CODetailsDataSource.m */; };
+		0E4F4A011C3E480200CFC23B /* COUserPortfolioCompleteInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE7A1BC75DAD006FE0CA /* COUserPortfolioCompleteInvestmentModel.m */; };
+		0E4F4A021C3E480200CFC23B /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF529F71B413E4A0072F6F4 /* NSString+MD5.m */; };
+		0E4F4A031C3E480200CFC23B /* EditCompanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956871BBE88E4007E36BF /* EditCompanyVC.m */; };
+		0E4F4A041C3E480200CFC23B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E091B40E50800116445 /* LoginViewController.m */; };
+		0E4F4A051C3E480200CFC23B /* CODocumentItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DD81B40E50800116445 /* CODocumentItemCell.m */; };
+		0E4F4A061C3E480200CFC23B /* COUserPortfolioOnGoingInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE771BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m */; };
+		0E4F4A071C3E480200CFC23B /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E741B40E50800116445 /* UIHelper.m */; };
+		0E4F4A081C3E480200CFC23B /* WSCompanyProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */; };
+		0E4F4A091C3E480200CFC23B /* COPositive&NagitiveButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E611B40E50800116445 /* COPositive&NagitiveButton.m */; };
+		0E4F4A0A1C3E480200CFC23B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325F151B40E50800116445 /* main.m */; };
+		0E4F4A0B1C3E480200CFC23B /* WSURLSessionManager+Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */; };
+		0E4F4A0C1C3E480200CFC23B /* COCheckBoxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E4B1B40E50800116445 /* COCheckBoxButton.m */; };
+		0E4F4A0D1C3E480200CFC23B /* WSURLSessionManager+DealProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */; };
+		0E4F4A0E1C3E480200CFC23B /* CODetailsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DDD1B40E50800116445 /* CODetailsDelegate.m */; };
+		0E4F4A0F1C3E480200CFC23B /* COProjectFundedAmountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25980D1B85526800D947AF /* COProjectFundedAmountModel.m */; };
+		0E4F4A101C3E480200CFC23B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E3F1B40E50800116445 /* SettingViewController.m */; };
+		0E4F4A111C3E480200CFC23B /* NSDictionary+NotNULL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88271B27CA7100B5656F /* NSDictionary+NotNULL.m */; };
+		0E4F4A121C3E480200CFC23B /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DC31B40E50800116445 /* BaseTableViewCell.m */; };
+		0E4F4A131C3E480200CFC23B /* COUserTokensModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB41B87E0E00066C646 /* COUserTokensModel.m */; };
+		0E4F4A141C3E480200CFC23B /* COTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2A9981C0C054F00DAFBA6 /* COTextCell.m */; };
+		0E4F4A151C3E480200CFC23B /* CODocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3097D61B8243F000BF6861 /* CODocumentModel.m */; };
+		0E4F4A161C3E480200CFC23B /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F355E1C3DFE4E00CCCE04 /* EventViewController.m */; };
+		0E4F4A171C3E480200CFC23B /* CODocumentSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DF11B40E50800116445 /* CODocumentSectionCell.m */; };
+		0E4F4A181C3E480200CFC23B /* NProfileButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAA1BCCC49F00C4C5A5 /* NProfileButtonCell.m */; };
+		0E4F4A191C3E480200CFC23B /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAC31BBB9149008F433C /* BaseLabel.m */; };
+		0E4F4A1A1C3E480200CFC23B /* COAwatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAB31BBB8882008F433C /* COAwatarView.m */; };
+		0E4F4A1B1C3E480200CFC23B /* EditInvestmentProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D41BC5071B00BF3A47 /* EditInvestmentProfileVC.m */; };
+		0E4F4A1C1C3E480200CFC23B /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DCC1B40E50800116445 /* NSString+Validation.m */; };
+		0E4F4A1D1C3E480200CFC23B /* COSlidingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E641B40E50800116445 /* COSlidingCell.m */; };
+		0E4F4A1E1C3E480200CFC23B /* WSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB210C1B9525F6007221B4 /* WSRequest.m */; };
+		0E4F4A1F1C3E480200CFC23B /* WSGetAccountInvestment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */; };
+		0E4F4A201C3E480200CFC23B /* NProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB91BCCC49F00C4C5A5 /* NProfileTextCell.m */; };
+		0E4F4A211C3E480200CFC23B /* ProtfolioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956241BBE1C82007E36BF /* ProtfolioController.m */; };
+		0E4F4A221C3E480200CFC23B /* UIImage+Scaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DD01B40E50800116445 /* UIImage+Scaling.m */; };
+		0E4F4A231C3E480200CFC23B /* COContactsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3C84E31B910C85004B8EF9 /* COContactsModel.m */; };
+		0E4F4A241C3E480200CFC23B /* NProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB01BCCC49F00C4C5A5 /* NProfileHeaderView.m */; };
+		0E4F4A251C3E480200CFC23B /* COProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF4CC4B1B7EA08500F9A5FA /* COProjectModel.m */; };
+		0E4F4A261C3E480200CFC23B /* WSURLSessionManager+ListContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E8B1B40E50800116445 /* WSURLSessionManager+ListContact.m */; };
+		0E4F4A271C3E480200CFC23B /* WSForgotPassWordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F601B9624F9002EEB1C /* WSForgotPassWordRequest.m */; };
+		0E4F4A281C3E480200CFC23B /* NMSecurityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883A1B27CA7100B5656F /* NMSecurityHelper.m */; };
+		0E4F4A291C3E480200CFC23B /* CODropListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E501B40E50800116445 /* CODropListView.m */; };
+		0E4F4A2A1C3E480200CFC23B /* COPopupQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA59D921B4CB5C700AF8E41 /* COPopupQuestionView.m */; };
+		0E4F4A2B1C3E480200CFC23B /* COLabelTextAligin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F8A111BC4FA92004CEF26 /* COLabelTextAligin.m */; };
+		0E4F4A2C1C3E480200CFC23B /* CODealProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449AD41BFC8C5B00E4C4A4 /* CODealProfileModel.m */; };
+		0E4F4A2D1C3E480200CFC23B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA882F1B27CA7100B5656F /* UIView+AutoLayout.m */; };
+		0E4F4A2E1C3E480200CFC23B /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6ED601B54EB1600FA481E /* WebViewManager.m */; };
+		0E4F4A2F1C3E480200CFC23B /* TabProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956121BBE1AC9007E36BF /* TabProfileController.m */; };
+		0E4F4A301C3E480200CFC23B /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD18AB1B4BB060000B81A2 /* KLCPopup.m */; };
+		0E4F4A311C3E480200CFC23B /* NMCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881A1B27CA7100B5656F /* NMCollectionView.m */; };
+		0E4F4A321C3E480200CFC23B /* ErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166792A61C040AC400CABD42 /* ErrorManager.m */; };
+		0E4F4A331C3E480200CFC23B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD82001B8BE0720061FFF0 /* ForgotPasswordViewController.m */; };
+		0E4F4A341C3E480200CFC23B /* OfferDetailsDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A494371C0C350A00547CFC /* OfferDetailsDocumentController.m */; };
+		0E4F4A351C3E480200CFC23B /* COOfferActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7E6C31B4E7EAA00059B13 /* COOfferActionCell.m */; };
+		0E4F4A361C3E480200CFC23B /* OfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DF71B40E50800116445 /* OfferViewController.m */; };
+		0E4F4A371C3E480200CFC23B /* ContacViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E3C1B40E50800116445 /* ContacViewController.m */; };
+		0E4F4A381C3E480200CFC23B /* COBorderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E481B40E50800116445 /* COBorderTextField.m */; };
+		0E4F4A391C3E480200CFC23B /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E09D961BF97B3900ACD58C /* NotificationViewController.m */; };
+		0E4F4A3A1C3E480200CFC23B /* NProfileImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB31BCCC49F00C4C5A5 /* NProfileImageCell.m */; };
+		0E4F4A3B1C3E480200CFC23B /* NMUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883C1B27CA7100B5656F /* NMUIHelper.m */; };
+		0E4F4A3C1C3E480200CFC23B /* WSGetListContactsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE371B9A147500D15D58 /* WSGetListContactsRequest.m */; };
+		0E4F4A3D1C3E480200CFC23B /* COListFilterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDB8F1BA535F700252D12 /* COListFilterObject.m */; };
+		0E4F4A3E1C3E480200CFC23B /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956181BBE1BB2007E36BF /* AccountController.m */; };
+		0E4F4A3F1C3E480200CFC23B /* COLineBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E5E1B40E50800116445 /* COLineBottomView.m */; };
+		0E4F4A401C3E480200CFC23B /* COUserPortFolioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEAE6E1BC75A50006FE0CA /* COUserPortFolioModel.m */; };
+		0E4F4A411C3E480200CFC23B /* EventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F35641C3DFED200CCCE04 /* EventCollectionViewCell.m */; };
+		0E4F4A421C3E480200CFC23B /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; };
+		0E4F4A431C3E480200CFC23B /* WSUpdateInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA610D91BC51C2700BF3A47 /* WSUpdateInvestorProfile.m */; };
+		0E4F4A441C3E480200CFC23B /* NSFileManager+Directories.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88291B27CA7100B5656F /* NSFileManager+Directories.m */; };
+		0E4F4A451C3E480200CFC23B /* LoadFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FA93C1B7A13A600A80D3F /* LoadFileManager.m */; };
+		0E4F4A461C3E480200CFC23B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DBA1B40E50800116445 /* AppDelegate.m */; };
+		0E4F4A471C3E480200CFC23B /* COUserAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB383E2E1B8BC1B000303E34 /* COUserAccountModel.m */; };
+		0E4F4A481C3E480200CFC23B /* WSURLSessionManager+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF964C1BF3476A00D3829A /* WSURLSessionManager+Notification.m */; };
+		0E4F4A491C3E480200CFC23B /* NProfileNodataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB61BCCC49F00C4C5A5 /* NProfileNodataCell.m */; };
+		0E4F4A4A1C3E480200CFC23B /* WSGetDealProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */; };
+		0E4F4A4B1C3E480200CFC23B /* NMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA881C1B27CA7100B5656F /* NMCollectionViewCell.m */; };
+		0E4F4A4C1C3E480200CFC23B /* COInterestedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7E6B41B4E7C4D00059B13 /* COInterestedViewController.m */; };
+		0E4F4A4D1C3E480200CFC23B /* EditPasswordProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C181BBE6BAF006020C2 /* EditPasswordProfileVC.m */; };
+		0E4F4A4E1C3E480200CFC23B /* HomeListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DFC1B40E50800116445 /* HomeListViewCell.m */; };
+		0E4F4A4F1C3E480200CFC23B /* DropListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E581B40E50800116445 /* DropListObject.m */; };
+		0E4F4A501C3E480200CFC23B /* CODropListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325E4E1B40E50800116445 /* CODropListVC.m */; };
+		0E4F4A511C3E480200CFC23B /* WSPostSubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE281B99F74200D15D58 /* WSPostSubscribeRequest.m */; };
+		0E4F4A521C3E480200CFC23B /* NProfileDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4E1BC4247000880834 /* NProfileDelegate.m */; };
+		0E4F4A531C3E480200CFC23B /* COUserProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB368EB11B87DF5C0066C646 /* COUserProfileModel.m */; };
+		0E4F4A541C3E480200CFC23B /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA882D1B27CA7100B5656F /* UIDevice-Hardware.m */; };
+		0E4F4A551C3E480200CFC23B /* COOfferInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C77441B4E07BA00C69365 /* COOfferInfoCell.m */; };
+		0E4F4A561C3E480200CFC23B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F325DC71B40E50800116445 /* BaseViewController.m */; };
+		0E4F4A571C3E480200CFC23B /* COAccountInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */; };
+		0E4F4A581C3E480200CFC23B /* WSGetInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FCA1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m */; };
+		0E4F4A591C3E480200CFC23B /* NProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956741BBE2497007E36BF /* NProfileController.m */; };
+		0E4F4A5B1C3E480200CFC23B /* libPods-CoAssets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D073E4F729C05E9C9A1DB5F5 /* libPods-CoAssets.a */; };
+		0E4F4A5D1C3E480200CFC23B /* ic_calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F321B40E50800116445 /* ic_calendar@2x.png */; };
+		0E4F4A5E1C3E480200CFC23B /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8F355F1C3DFE4E00CCCE04 /* EventViewController.xib */; };
+		0E4F4A5F1C3E480200CFC23B /* WebViewSetting.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E441B40E50800116445 /* WebViewSetting.xib */; };
+		0E4F4A601C3E480200CFC23B /* ic_home_heightlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F431B40E50800116445 /* ic_home_heightlight@3x.png */; };
+		0E4F4A611C3E480200CFC23B /* ic_Check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F351B40E50800116445 /* ic_Check@2x.png */; };
+		0E4F4A621C3E480200CFC23B /* Thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291D1B43935B00CFAEB5 /* Thailand.png */; };
+		0E4F4A631C3E480200CFC23B /* CODropListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E511B40E50800116445 /* CODropListView.xib */; };
+		0E4F4A641C3E480200CFC23B /* COInterestedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7E6B51B4E7C4D00059B13 /* COInterestedViewController.xib */; };
+		0E4F4A651C3E480200CFC23B /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F1F1B40E50800116445 /* Raleway-ExtraLight.ttf */; };
+		0E4F4A661C3E480200CFC23B /* ProtfolioController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956251BBE1C82007E36BF /* ProtfolioController.xib */; };
+		0E4F4A671C3E480200CFC23B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
+		0E4F4A681C3E480200CFC23B /* JsonCountry.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F731B40E50800116445 /* JsonCountry.json */; };
+		0E4F4A691C3E480200CFC23B /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F261B40E50800116445 /* Raleway-Regular.ttf */; };
+		0E4F4A6A1C3E480200CFC23B /* ic_droplist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F3C1B40E50800116445 /* ic_droplist@2x.png */; };
+		0E4F4A6B1C3E480200CFC23B /* ic_uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F5B1B40E50800116445 /* ic_uncheck.png */; };
+		0E4F4A6C1C3E480200CFC23B /* Globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529161B43935B00CFAEB5 /* Globe.png */; };
+		0E4F4A6D1C3E480200CFC23B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E0A1B40E50800116445 /* LoginViewController.xib */; };
+		0E4F4A6E1C3E480200CFC23B /* ic_setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F541B40E50800116445 /* ic_setting@3x.png */; };
+		0E4F4A6F1C3E480200CFC23B /* ic_line_char@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F481B40E50800116445 /* ic_line_char@2x.png */; };
+		0E4F4A701C3E480200CFC23B /* ic_line_char@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F491B40E50800116445 /* ic_line_char@3x.png */; };
+		0E4F4A711C3E480200CFC23B /* landingpg.png in Resources */ = {isa = PBXBuildFile; fileRef = B94211001BFC2C9E00C86FE8 /* landingpg.png */; };
+		0E4F4A721C3E480200CFC23B /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FE1BFC2C9E00C86FE8 /* event.png */; };
+		0E4F4A731C3E480200CFC23B /* COOfferInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2C77451B4E07BA00C69365 /* COOfferInfoCell.xib */; };
+		0E4F4A741C3E480200CFC23B /* Ic_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F2E1B40E50800116445 /* Ic_back@2x.png */; };
+		0E4F4A751C3E480200CFC23B /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E09D971BF97B3900ACD58C /* NotificationViewController.xib */; };
+		0E4F4A761C3E480200CFC23B /* COOfferDescriptionTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DF51B40E50800116445 /* COOfferDescriptionTextCell.xib */; };
+		0E4F4A771C3E480200CFC23B /* ic_Check@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F361B40E50800116445 /* ic_Check@3x.png */; };
+		0E4F4A781C3E480200CFC23B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F711B40E50800116445 /* Images.xcassets */; };
+		0E4F4A791C3E480200CFC23B /* CODocumentSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DF21B40E50800116445 /* CODocumentSectionCell.xib */; };
+		0E4F4A7A1C3E480200CFC23B /* Raleway-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F281B40E50800116445 /* Raleway-SemiBoldItalic.ttf */; };
+		0E4F4A7B1C3E480200CFC23B /* COOfferActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7E6C41B4E7EAA00059B13 /* COOfferActionCell.xib */; };
+		0E4F4A7C1C3E480200CFC23B /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E401B40E50800116445 /* SettingViewController.xib */; };
+		0E4F4A7D1C3E480200CFC23B /* COOfferHeadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DE41B40E50800116445 /* COOfferHeadingCell.xib */; };
+		0E4F4A7E1C3E480200CFC23B /* ContacViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E3D1B40E50800116445 /* ContacViewController.xib */; };
+		0E4F4A7F1C3E480200CFC23B /* ic_Earth@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F3F1B40E50800116445 /* ic_Earth@3x.png */; };
+		0E4F4A801C3E480200CFC23B /* offer.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210F91BFC2C7400C86FE8 /* offer.png */; };
+		0E4F4A811C3E480200CFC23B /* OfferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DF81B40E50800116445 /* OfferViewController.xib */; };
+		0E4F4A821C3E480200CFC23B /* ic_notification_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */; };
+		0E4F4A831C3E480200CFC23B /* AccountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956191BBE1BB2007E36BF /* AccountController.xib */; };
+		0E4F4A841C3E480200CFC23B /* ic_contac_2_heightlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F3A1B40E50800116445 /* ic_contac_2_heightlight@3x.png */; };
+		0E4F4A851C3E480200CFC23B /* Indonesia.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529171B43935B00CFAEB5 /* Indonesia.png */; };
+		0E4F4A861C3E480200CFC23B /* portrait_ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB4E461B467FB80012E6D0 /* portrait_ph.jpg */; };
+		0E4F4A871C3E480200CFC23B /* ic_homes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C2C1BBE8691006020C2 /* ic_homes@2x.png */; };
+		0E4F4A881C3E480200CFC23B /* DealsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E89561F1BBE1C14007E36BF /* DealsController.xib */; };
+		0E4F4A891C3E480200CFC23B /* ic_peopel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F4E1B40E50800116445 /* ic_peopel@3x.png */; };
+		0E4F4A8A1C3E480200CFC23B /* NProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956751BBE2497007E36BF /* NProfileController.xib */; };
+		0E4F4A8B1C3E480200CFC23B /* ic_droplist.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F3B1B40E50800116445 /* ic_droplist.png */; };
+		0E4F4A8C1C3E480200CFC23B /* ic_Earth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F3E1B40E50800116445 /* ic_Earth@2x.png */; };
+		0E4F4A8D1C3E480200CFC23B /* ic_meoney@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F4C1B40E50800116445 /* ic_meoney@3x.png */; };
+		0E4F4A8E1C3E480200CFC23B /* NProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB41BCCC49F00C4C5A5 /* NProfileImageCell.xib */; };
+		0E4F4A8F1C3E480200CFC23B /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F211B40E50800116445 /* Raleway-Italic.ttf */; };
+		0E4F4A901C3E480200CFC23B /* Brazil.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529121B43935B00CFAEB5 /* Brazil.png */; };
+		0E4F4A911C3E480200CFC23B /* ic_people_heightline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F4F1B40E50800116445 /* ic_people_heightline@2x.png */; };
+		0E4F4A921C3E480200CFC23B /* ic_Left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F461B40E50800116445 /* ic_Left@2x.png */; };
+		0E4F4A931C3E480200CFC23B /* TabProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956131BBE1AC9007E36BF /* TabProfileController.xib */; };
+		0E4F4A941C3E480200CFC23B /* ic_notification@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE971C116AF600CDA27C /* ic_notification@3x.png */; };
+		0E4F4A951C3E480200CFC23B /* CODocumentItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DD91B40E50800116445 /* CODocumentItemCell.xib */; };
+		0E4F4A961C3E480200CFC23B /* ic_loadding@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C201BBE85C9006020C2 /* ic_loadding@2x.png */; };
+		0E4F4A971C3E480200CFC23B /* ic_uncheck@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F5D1B40E50800116445 /* ic_uncheck@3x.png */; };
+		0E4F4A981C3E480200CFC23B /* ic_Check_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C1C1BBE85C9006020C2 /* ic_Check_red@2x.png */; };
+		0E4F4A991C3E480200CFC23B /* ic_money@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C231BBE85C9006020C2 /* ic_money@3x.png */; };
+		0E4F4A9A1C3E480200CFC23B /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F1B1B40E50800116445 /* Raleway-Bold.ttf */; };
+		0E4F4A9B1C3E480200CFC23B /* ic_setting_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F561B40E50800116445 /* ic_setting_2@3x.png */; };
+		0E4F4A9C1C3E480200CFC23B /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA81BCCC49F00C4C5A5 /* NProfileAdressCell.xib */; };
+		0E4F4A9D1C3E480200CFC23B /* Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291C1B43935B00CFAEB5 /* Singapore.png */; };
+		0E4F4A9E1C3E480200CFC23B /* ic_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F701B40E50800116445 /* ic_placeholder.png */; };
+		0E4F4A9F1C3E480200CFC23B /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
+		0E4F4AA01C3E480200CFC23B /* AccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E89562B1BBE1D9F007E36BF /* AccountCell.xib */; };
+		0E4F4AA11C3E480200CFC23B /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */; };
+		0E4F4AA21C3E480200CFC23B /* ic_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F441B40E50800116445 /* ic_info@2x.png */; };
+		0E4F4AA31C3E480200CFC23B /* ic_contac_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F371B40E50800116445 /* ic_contac_2@2x.png */; };
+		0E4F4AA41C3E480200CFC23B /* ic_Left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F471B40E50800116445 /* ic_Left@3x.png */; };
+		0E4F4AA51C3E480200CFC23B /* ic_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F401B40E50800116445 /* ic_home@2x.png */; };
+		0E4F4AA61C3E480200CFC23B /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F1D1B40E50800116445 /* Raleway-ExtraBold.ttf */; };
+		0E4F4AA71C3E480200CFC23B /* ic_setting_heightline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F5A1B40E50800116445 /* ic_setting_heightline@3x.png */; };
+		0E4F4AA81C3E480200CFC23B /* ic_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F301B40E50800116445 /* ic_bank@2x.png */; };
+		0E4F4AA91C3E480200CFC23B /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
+		0E4F4AAA1C3E480200CFC23B /* ic_setting_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F551B40E50800116445 /* ic_setting_2@2x.png */; };
+		0E4F4AAB1C3E480200CFC23B /* EditCompanyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956881BBE88E4007E36BF /* EditCompanyVC.xib */; };
+		0E4F4AAC1C3E480200CFC23B /* ic_Check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F341B40E50800116445 /* ic_Check.png */; };
+		0E4F4AAD1C3E480200CFC23B /* JsonPhoneCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F741B40E50800116445 /* JsonPhoneCode.json */; };
+		0E4F4AAE1C3E480200CFC23B /* COSlidingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E681B40E50800116445 /* COSlidingView.xib */; };
+		0E4F4AAF1C3E480200CFC23B /* Close_Circle_Line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F2C1B40E50800116445 /* Close_Circle_Line@2x.png */; };
+		0E4F4AB11C3E480200CFC23B /* PortFolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956311BBE1F8B007E36BF /* PortFolioCell.xib */; };
+		0E4F4AB21C3E480200CFC23B /* COPopupInteredtedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCD18B51B4BBBF4000B81A2 /* COPopupInteredtedView.xib */; };
+		0E4F4AB31C3E480200CFC23B /* ic_money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C221BBE85C9006020C2 /* ic_money@2x.png */; };
+		0E4F4AB41C3E480200CFC23B /* ic_calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F331B40E50800116445 /* ic_calendar@3x.png */; };
+		0E4F4AB51C3E480200CFC23B /* EditAboutProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E87908A1BBE4667003B2CED /* EditAboutProfileVC.xib */; };
+		0E4F4AB61C3E480200CFC23B /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E3A1B40E50800116445 /* ContactTableViewCell.xib */; };
+		0E4F4AB81C3E480200CFC23B /* DealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */; };
+		0E4F4AB91C3E480200CFC23B /* ic_peropel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F511B40E50800116445 /* ic_peropel@2x.png */; };
+		0E4F4ABA1C3E480200CFC23B /* ic_loadding@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C211BBE85C9006020C2 /* ic_loadding@3x.png */; };
+		0E4F4ABB1C3E480200CFC23B /* COQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7E6B81B4E7C4D00059B13 /* COQuestionView.xib */; };
+		0E4F4ABC1C3E480200CFC23B /* ic_contac_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F381B40E50800116445 /* ic_contac_2@3x.png */; };
+		0E4F4ABD1C3E480200CFC23B /* HomeListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325DFD1B40E50800116445 /* HomeListViewCell.xib */; };
+		0E4F4ABE1C3E480200CFC23B /* ic_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F531B40E50800116445 /* ic_setting@2x.png */; };
+		0E4F4ABF1C3E480200CFC23B /* New Zealand.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291A1B43935B00CFAEB5 /* New Zealand.png */; };
+		0E4F4AC01C3E480200CFC23B /* ic_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F311B40E50800116445 /* ic_bank@3x.png */; };
+		0E4F4AC11C3E480200CFC23B /* COOfferWebViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8E0BD71B5355A20045EFB0 /* COOfferWebViewCell.xib */; };
+		0E4F4AC21C3E480200CFC23B /* Philippines.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291B1B43935B00CFAEB5 /* Philippines.png */; };
+		0E4F4AC31C3E480200CFC23B /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F191B40E50800116445 /* Raleway-Black.ttf */; };
+		0E4F4AC41C3E480200CFC23B /* Germany.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529151B43935B00CFAEB5 /* Germany.png */; };
+		0E4F4AC51C3E480200CFC23B /* ic_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F451B40E50800116445 /* ic_info@3x.png */; };
+		0E4F4AC61C3E480200CFC23B /* ic_btn_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB9C06E1B4FDA0700FC1B47 /* ic_btn_left.png */; };
+		0E4F4AC71C3E480200CFC23B /* ic_droplist@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F3D1B40E50800116445 /* ic_droplist@3x.png */; };
+		0E4F4AC81C3E480200CFC23B /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F251B40E50800116445 /* Raleway-MediumItalic.ttf */; };
+		0E4F4AC91C3E480200CFC23B /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E09D9E1BF97E8C00ACD58C /* NotificationCell.xib */; };
+		0E4F4ACA1C3E480200CFC23B /* company_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F933D361B5790D600B7EB9C /* company_edit.jpg */; };
+		0E4F4ACB1C3E480200CFC23B /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F271B40E50800116445 /* Raleway-SemiBold.ttf */; };
+		0E4F4ACC1C3E480200CFC23B /* ic_loadding.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F4A1B40E50800116445 /* ic_loadding.gif */; };
+		0E4F4ACD1C3E480200CFC23B /* ic_setting_2_heighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F571B40E50800116445 /* ic_setting_2_heighlight@2x.png */; };
+		0E4F4ACE1C3E480200CFC23B /* NProfileNodataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB71BCCC49F00C4C5A5 /* NProfileNodataCell.xib */; };
+		0E4F4ACF1C3E480200CFC23B /* COPopupQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA59D941B4CB5DC00AF8E41 /* COPopupQuestionView.xib */; };
+		0E4F4AD01C3E480200CFC23B /* NProfileCountrieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAE1BCCC49F00C4C5A5 /* NProfileCountrieCell.xib */; };
+		0E4F4AD11C3E480200CFC23B /* ic_peropel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F521B40E50800116445 /* ic_peropel@3x.png */; };
+		0E4F4AD21C3E480200CFC23B /* general.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FF1BFC2C9E00C86FE8 /* general.png */; };
+		0E4F4AD31C3E480200CFC23B /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBD82011B8BE0720061FFF0 /* ForgotPasswordViewController.xib */; };
+		0E4F4AD41C3E480200CFC23B /* SettingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F781B40E50800116445 /* SettingPlist.plist */; };
+		0E4F4AD51C3E480200CFC23B /* ic_setting_heightline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F591B40E50800116445 /* ic_setting_heightline@2x.png */; };
+		0E4F4AD61C3E480200CFC23B /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8F35651C3DFED200CCCE04 /* EventCollectionViewCell.xib */; };
+		0E4F4AD71C3E480200CFC23B /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F221B40E50800116445 /* Raleway-Light.ttf */; };
+		0E4F4AD81C3E480200CFC23B /* Close_Circle_Line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F2D1B40E50800116445 /* Close_Circle_Line@3x.png */; };
+		0E4F4AD91C3E480200CFC23B /* ic_people_heightline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F501B40E50800116445 /* ic_people_heightline@3x.png */; };
+		0E4F4ADA1C3E480200CFC23B /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F291B40E50800116445 /* Raleway-Thin.ttf */; };
+		0E4F4ADB1C3E480200CFC23B /* Raleway-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F201B40E50800116445 /* Raleway-ExtraLightItalic.ttf */; };
+		0E4F4ADC1C3E480200CFC23B /* HomeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E001B40E50800116445 /* HomeListViewController.xib */; };
+		0E4F4ADD1C3E480200CFC23B /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
+		0E4F4ADE1C3E480200CFC23B /* Japan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529181B43935B00CFAEB5 /* Japan.png */; };
+		0E4F4ADF1C3E480200CFC23B /* ic_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F411B40E50800116445 /* ic_home@3x.png */; };
+		0E4F4AE01C3E480200CFC23B /* FilterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F771B40E50800116445 /* FilterList.plist */; };
+		0E4F4AE11C3E480200CFC23B /* CompanyOrgType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E3217DD1C12C91E00061AAB /* CompanyOrgType.plist */; };
+		0E4F4AE21C3E480200CFC23B /* ic_contac_2_heightlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F391B40E50800116445 /* ic_contac_2_heightlight@2x.png */; };
+		0E4F4AE31C3E480200CFC23B /* ic_notification_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */; };
+		0E4F4AE41C3E480200CFC23B /* COOfferProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7E6BF1B4E7CD500059B13 /* COOfferProgressCell.xib */; };
+		0E4F4AE51C3E480200CFC23B /* ic_uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F5C1B40E50800116445 /* ic_uncheck@2x.png */; };
+		0E4F4AE61C3E480200CFC23B /* ic_peopel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F4D1B40E50800116445 /* ic_peopel@2x.png */; };
+		0E4F4AE71C3E480200CFC23B /* ic_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE961C116AF600CDA27C /* ic_notification@2x.png */; };
+		0E4F4AE81C3E480200CFC23B /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F85291F1B43935B00CFAEB5 /* United States.png */; };
+		0E4F4AE91C3E480200CFC23B /* OfferDetailsDocumentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A494381C0C350A00547CFC /* OfferDetailsDocumentController.xib */; };
+		0E4F4AEA1C3E480200CFC23B /* NProfileTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FBA1BCCC49F00C4C5A5 /* NProfileTextCell.xib */; };
+		0E4F4AEB1C3E480200CFC23B /* NProfileButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FAB1BCCC49F00C4C5A5 /* NProfileButtonCell.xib */; };
+		0E4F4AEC1C3E480200CFC23B /* ic_Check_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C1D1BBE85C9006020C2 /* ic_Check_red@3x.png */; };
+		0E4F4AED1C3E480200CFC23B /* NProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB11BCCC49F00C4C5A5 /* NProfileHeaderView.xib */; };
+		0E4F4AEE1C3E480200CFC23B /* Raleway-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F1A1B40E50800116445 /* Raleway-BlackItalic.ttf */; };
+		0E4F4AEF1C3E480200CFC23B /* Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529201B43935B00CFAEB5 /* Vietnam.png */; };
+		0E4F4AF01C3E480200CFC23B /* OfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161E785E1C0C0CB500EB6A04 /* OfferDetailsController.xib */; };
+		0E4F4AF11C3E480200CFC23B /* ic_home_heightlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F421B40E50800116445 /* ic_home_heightlight@2x.png */; };
+		0E4F4AF21C3E480200CFC23B /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F2A1B40E50800116445 /* Raleway-ThinItalic.ttf */; };
+		0E4F4AF31C3E480200CFC23B /* China.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529141B43935B00CFAEB5 /* China.png */; };
+		0E4F4AF41C3E480200CFC23B /* ProfileList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAA01BBB773D008F433C /* ProfileList.plist */; };
+		0E4F4AF51C3E480200CFC23B /* Raleway-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F1E1B40E50800116445 /* Raleway-ExtraBoldItalic.ttf */; };
+		0E4F4AF61C3E480200CFC23B /* Raleway-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F231B40E50800116445 /* Raleway-LightItalic.ttf */; };
+		0E4F4AF71C3E480200CFC23B /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E0E1B40E50800116445 /* RegisterViewController.xib */; };
+		0E4F4AF81C3E480200CFC23B /* Canada.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529131B43935B00CFAEB5 /* Canada.png */; };
+		0E4F4AF91C3E480200CFC23B /* Malaysia.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529191B43935B00CFAEB5 /* Malaysia.png */; };
+		0E4F4AFA1C3E480200CFC23B /* Ic_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F2F1B40E50800116445 /* Ic_back@3x.png */; };
+		0E4F4AFB1C3E480200CFC23B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F49AE1C3E471200CFC23B /* Localizable.strings */; };
+		0E4F4AFC1C3E480200CFC23B /* ic_setting_2_heighlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F581B40E50800116445 /* ic_setting_2_heighlight@3x.png */; };
+		0E4F4AFD1C3E480200CFC23B /* ic_homes@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C2D1BBE8691006020C2 /* ic_homes@3x.png */; };
+		0E4F4AFE1C3E480200CFC23B /* COSlidingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E651B40E50800116445 /* COSlidingCell.xib */; };
+		0E4F4AFF1C3E480200CFC23B /* COTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */; };
+		0E4F4B001C3E480200CFC23B /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F241B40E50800116445 /* Raleway-Medium.ttf */; };
+		0E4F4B011C3E480200CFC23B /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F1C1B40E50800116445 /* Raleway-BoldItalic.ttf */; };
+		0E4F4B021C3E480200CFC23B /* DropListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E551B40E50800116445 /* DropListCell.xib */; };
+		0E4F4B031C3E480200CFC23B /* ic_meoney@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F4B1B40E50800116445 /* ic_meoney@2x.png */; };
+		0E4F4B041C3E480200CFC23B /* EditInvestmentProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */; };
+		0E4F4B051C3E480200CFC23B /* Australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529111B43935B00CFAEB5 /* Australia.png */; };
+		0E4F4B101C3E48BE00CFC23B /* Info-China.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F4B0E1C3E484700CFC23B /* Info-China.plist */; };
 		0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */; };
 		0E84EE991C116AF600CDA27C /* ic_notification_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */; };
 		0E84EE9A1C116AF600CDA27C /* ic_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE961C116AF600CDA27C /* ic_notification@2x.png */; };
@@ -324,7 +650,6 @@
 		BB3A9F6A1B9660DB002EEB1C /* WSUpdateProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F691B9660DB002EEB1C /* WSUpdateProfileRequest.m */; };
 		BB3C84E41B910C85004B8EF9 /* COContactsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3C84E31B910C85004B8EF9 /* COContactsModel.m */; };
 		BB48F1A01B86763E006F1921 /* COFilterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB48F19F1B86763E006F1921 /* COFilterListModel.m */; };
-		BB5B9A461B790F15002D37AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB5B9A451B790F15002D37AF /* Localizable.strings */; };
 		BBBD82021B8BE0720061FFF0 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD82001B8BE0720061FFF0 /* ForgotPasswordViewController.m */; };
 		BBBD82031B8BE0720061FFF0 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBD82011B8BE0720061FFF0 /* ForgotPasswordViewController.xib */; };
 		BBEB210A1B94CB36007221B4 /* WSLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB21091B94CB36007221B4 /* WSLoginRequest.m */; };
@@ -351,6 +676,11 @@
 		0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCompanyProfileRequest.m; sourceTree = "<group>"; };
 		0E4A17F21C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+CompanyProfile.h"; sourceTree = "<group>"; };
 		0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+CompanyProfile.m"; sourceTree = "<group>"; };
+		0E4F49AE1C3E471200CFC23B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		0E4F49B41C3E471200CFC23B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		0E4F49BA1C3E479500CFC23B /* Info-English.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-English.plist"; sourceTree = "<group>"; };
+		0E4F4B0C1C3E480200CFC23B /* CoAssets-China.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoAssets-China.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E4F4B0E1C3E484700CFC23B /* Info-China.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-China.plist"; sourceTree = "<group>"; };
 		0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@2x.png"; sourceTree = "<group>"; };
 		0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@3x.png"; sourceTree = "<group>"; };
 		0E84EE961C116AF600CDA27C /* ic_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification@2x.png"; sourceTree = "<group>"; };
@@ -610,7 +940,6 @@
 		7F325E901B40E50800116445 /* WSURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSURLSessionManager.h; sourceTree = "<group>"; };
 		7F325E911B40E50800116445 /* WSURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSURLSessionManager.m; sourceTree = "<group>"; };
 		7F325F131B40E50800116445 /* CoAssest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoAssest-Prefix.pch"; sourceTree = "<group>"; };
-		7F325F141B40E50800116445 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F325F151B40E50800116445 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7F325F191B40E50800116445 /* Raleway-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Black.ttf"; sourceTree = "<group>"; };
 		7F325F1A1B40E50800116445 /* Raleway-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -808,7 +1137,6 @@
 		BB3C84E31B910C85004B8EF9 /* COContactsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COContactsModel.m; sourceTree = "<group>"; };
 		BB48F19E1B86763E006F1921 /* COFilterListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COFilterListModel.h; sourceTree = "<group>"; };
 		BB48F19F1B86763E006F1921 /* COFilterListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COFilterListModel.m; sourceTree = "<group>"; };
-		BB5B9A451B790F15002D37AF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BBBD81FF1B8BE0720061FFF0 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		BBBD82001B8BE0720061FFF0 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		BBBD82011B8BE0720061FFF0 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
@@ -822,6 +1150,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E4F4A5A1C3E480200CFC23B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E4F4A5B1C3E480200CFC23B /* libPods-CoAssets.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EFEB4AD1B2724B2001195B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -884,6 +1220,82 @@
 				0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */,
 			);
 			path = DealCell;
+			sourceTree = "<group>";
+		};
+		0E4F49A91C3E471200CFC23B /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				0E4F49AA1C3E471200CFC23B /* CoAssets-China */,
+				0E4F49AF1C3E471200CFC23B /* CoAssets-English */,
+			);
+			name = Targets;
+			path = Application/Targets;
+			sourceTree = "<group>";
+		};
+		0E4F49AA1C3E471200CFC23B /* CoAssets-China */ = {
+			isa = PBXGroup;
+			children = (
+				0E4F49AB1C3E471200CFC23B /* Main */,
+				0E4F49AC1C3E471200CFC23B /* Resources */,
+			);
+			path = "CoAssets-China";
+			sourceTree = "<group>";
+		};
+		0E4F49AB1C3E471200CFC23B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0E4F4B0E1C3E484700CFC23B /* Info-China.plist */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0E4F49AC1C3E471200CFC23B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E4F49AD1C3E471200CFC23B /* Languages */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0E4F49AD1C3E471200CFC23B /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				0E4F49AE1C3E471200CFC23B /* Localizable.strings */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
+		0E4F49AF1C3E471200CFC23B /* CoAssets-English */ = {
+			isa = PBXGroup;
+			children = (
+				0E4F49B91C3E479500CFC23B /* Main */,
+				0E4F49B21C3E471200CFC23B /* Resources */,
+			);
+			path = "CoAssets-English";
+			sourceTree = "<group>";
+		};
+		0E4F49B21C3E471200CFC23B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E4F49B31C3E471200CFC23B /* Languages */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0E4F49B31C3E471200CFC23B /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				0E4F49B41C3E471200CFC23B /* Localizable.strings */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
+		0E4F49B91C3E479500CFC23B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0E4F49BA1C3E479500CFC23B /* Info-English.plist */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		0E8955E81BBE1A78007E36BF /* TabProfiles */ = {
@@ -1068,6 +1480,7 @@
 				0EFEB4B11B2724B2001195B7 /* Products */,
 				1041483990224ACD3FF0FF14 /* Pods */,
 				2F86D2DA4B843EE46980FB79 /* Frameworks */,
+				0E4F49A91C3E471200CFC23B /* Targets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1075,6 +1488,7 @@
 			isa = PBXGroup;
 			children = (
 				0EFEB4B01B2724B2001195B7 /* CoAssets.app */,
+				0E4F4B0C1C3E480200CFC23B /* CoAssets-China.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1812,7 +2226,6 @@
 			children = (
 				0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */,
 				7F325F131B40E50800116445 /* CoAssest-Prefix.pch */,
-				7F325F141B40E50800116445 /* Info.plist */,
 				7F325F151B40E50800116445 /* main.m */,
 			);
 			path = Main;
@@ -1822,7 +2235,6 @@
 			isa = PBXGroup;
 			children = (
 				B94210F41BFC2C7400C86FE8 /* Icons */,
-				BB5B9A441B790E4D002D37AF /* Languages */,
 				7F325F181B40E50800116445 /* Font */,
 				7F325F2B1B40E50800116445 /* Images */,
 				7F325F5E1B40E50800116445 /* Images Other */,
@@ -2112,14 +2524,6 @@
 			path = ContactsModel;
 			sourceTree = "<group>";
 		};
-		BB5B9A441B790E4D002D37AF /* Languages */ = {
-			isa = PBXGroup;
-			children = (
-				BB5B9A451B790F15002D37AF /* Localizable.strings */,
-			);
-			path = Languages;
-			sourceTree = "<group>";
-		};
 		BBBD81FE1B8BE0720061FFF0 /* Forgotpassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -2181,6 +2585,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E4F49BC1C3E480200CFC23B /* CoAssets-China */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E4F4B091C3E480200CFC23B /* Build configuration list for PBXNativeTarget "CoAssets-China" */;
+			buildPhases = (
+				0E4F49BD1C3E480200CFC23B /* Check Pods Manifest.lock */,
+				0E4F49BE1C3E480200CFC23B /* Sources */,
+				0E4F4A5A1C3E480200CFC23B /* Frameworks */,
+				0E4F4A5C1C3E480200CFC23B /* Resources */,
+				0E4F4B061C3E480200CFC23B /* ShellScript */,
+				0E4F4B071C3E480200CFC23B /* Copy Pods Resources */,
+				0E4F4B081C3E480200CFC23B /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoAssets-China";
+			productName = CoAssest;
+			productReference = 0E4F4B0C1C3E480200CFC23B /* CoAssets-China.app */;
+			productType = "com.apple.product-type.application";
+		};
 		0EFEB4AF1B2724B2001195B7 /* CoAssets */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EFEB4D61B2724B2001195B7 /* Build configuration list for PBXNativeTarget "CoAssets" */;
@@ -2231,11 +2656,187 @@
 			projectRoot = "";
 			targets = (
 				0EFEB4AF1B2724B2001195B7 /* CoAssets */,
+				0E4F49BC1C3E480200CFC23B /* CoAssets-China */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E4F4A5C1C3E480200CFC23B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E4F4A5D1C3E480200CFC23B /* ic_calendar@2x.png in Resources */,
+				0E4F4A5E1C3E480200CFC23B /* EventViewController.xib in Resources */,
+				0E4F4A5F1C3E480200CFC23B /* WebViewSetting.xib in Resources */,
+				0E4F4A601C3E480200CFC23B /* ic_home_heightlight@3x.png in Resources */,
+				0E4F4A611C3E480200CFC23B /* ic_Check@2x.png in Resources */,
+				0E4F4A621C3E480200CFC23B /* Thailand.png in Resources */,
+				0E4F4A631C3E480200CFC23B /* CODropListView.xib in Resources */,
+				0E4F4A641C3E480200CFC23B /* COInterestedViewController.xib in Resources */,
+				0E4F4A651C3E480200CFC23B /* Raleway-ExtraLight.ttf in Resources */,
+				0E4F4A661C3E480200CFC23B /* ProtfolioController.xib in Resources */,
+				0E4F4A671C3E480200CFC23B /* LaunchScreen.xib in Resources */,
+				0E4F4A681C3E480200CFC23B /* JsonCountry.json in Resources */,
+				0E4F4A691C3E480200CFC23B /* Raleway-Regular.ttf in Resources */,
+				0E4F4A6A1C3E480200CFC23B /* ic_droplist@2x.png in Resources */,
+				0E4F4A6B1C3E480200CFC23B /* ic_uncheck.png in Resources */,
+				0E4F4A6C1C3E480200CFC23B /* Globe.png in Resources */,
+				0E4F4A6D1C3E480200CFC23B /* LoginViewController.xib in Resources */,
+				0E4F4A6E1C3E480200CFC23B /* ic_setting@3x.png in Resources */,
+				0E4F4A6F1C3E480200CFC23B /* ic_line_char@2x.png in Resources */,
+				0E4F4A701C3E480200CFC23B /* ic_line_char@3x.png in Resources */,
+				0E4F4A711C3E480200CFC23B /* landingpg.png in Resources */,
+				0E4F4A721C3E480200CFC23B /* event.png in Resources */,
+				0E4F4A731C3E480200CFC23B /* COOfferInfoCell.xib in Resources */,
+				0E4F4A741C3E480200CFC23B /* Ic_back@2x.png in Resources */,
+				0E4F4A751C3E480200CFC23B /* NotificationViewController.xib in Resources */,
+				0E4F4A761C3E480200CFC23B /* COOfferDescriptionTextCell.xib in Resources */,
+				0E4F4A771C3E480200CFC23B /* ic_Check@3x.png in Resources */,
+				0E4F4A781C3E480200CFC23B /* Images.xcassets in Resources */,
+				0E4F4A791C3E480200CFC23B /* CODocumentSectionCell.xib in Resources */,
+				0E4F4A7A1C3E480200CFC23B /* Raleway-SemiBoldItalic.ttf in Resources */,
+				0E4F4A7B1C3E480200CFC23B /* COOfferActionCell.xib in Resources */,
+				0E4F4A7C1C3E480200CFC23B /* SettingViewController.xib in Resources */,
+				0E4F4A7D1C3E480200CFC23B /* COOfferHeadingCell.xib in Resources */,
+				0E4F4A7E1C3E480200CFC23B /* ContacViewController.xib in Resources */,
+				0E4F4A7F1C3E480200CFC23B /* ic_Earth@3x.png in Resources */,
+				0E4F4A801C3E480200CFC23B /* offer.png in Resources */,
+				0E4F4A811C3E480200CFC23B /* OfferViewController.xib in Resources */,
+				0E4F4A821C3E480200CFC23B /* ic_notification_selected@3x.png in Resources */,
+				0E4F4A831C3E480200CFC23B /* AccountController.xib in Resources */,
+				0E4F4A841C3E480200CFC23B /* ic_contac_2_heightlight@3x.png in Resources */,
+				0E4F4A851C3E480200CFC23B /* Indonesia.png in Resources */,
+				0E4F4A861C3E480200CFC23B /* portrait_ph.jpg in Resources */,
+				0E4F4A871C3E480200CFC23B /* ic_homes@2x.png in Resources */,
+				0E4F4A881C3E480200CFC23B /* DealsController.xib in Resources */,
+				0E4F4A891C3E480200CFC23B /* ic_peopel@3x.png in Resources */,
+				0E4F4A8A1C3E480200CFC23B /* NProfileController.xib in Resources */,
+				0E4F4A8B1C3E480200CFC23B /* ic_droplist.png in Resources */,
+				0E4F4A8C1C3E480200CFC23B /* ic_Earth@2x.png in Resources */,
+				0E4F4A8D1C3E480200CFC23B /* ic_meoney@3x.png in Resources */,
+				0E4F4A8E1C3E480200CFC23B /* NProfileImageCell.xib in Resources */,
+				0E4F4A8F1C3E480200CFC23B /* Raleway-Italic.ttf in Resources */,
+				0E4F4A901C3E480200CFC23B /* Brazil.png in Resources */,
+				0E4F4A911C3E480200CFC23B /* ic_people_heightline@2x.png in Resources */,
+				0E4F4A921C3E480200CFC23B /* ic_Left@2x.png in Resources */,
+				0E4F4A931C3E480200CFC23B /* TabProfileController.xib in Resources */,
+				0E4F4A941C3E480200CFC23B /* ic_notification@3x.png in Resources */,
+				0E4F4A951C3E480200CFC23B /* CODocumentItemCell.xib in Resources */,
+				0E4F4A961C3E480200CFC23B /* ic_loadding@2x.png in Resources */,
+				0E4F4A971C3E480200CFC23B /* ic_uncheck@3x.png in Resources */,
+				0E4F4A981C3E480200CFC23B /* ic_Check_red@2x.png in Resources */,
+				0E4F4A991C3E480200CFC23B /* ic_money@3x.png in Resources */,
+				0E4F4A9A1C3E480200CFC23B /* Raleway-Bold.ttf in Resources */,
+				0E4F4A9B1C3E480200CFC23B /* ic_setting_2@3x.png in Resources */,
+				0E4F4A9C1C3E480200CFC23B /* NProfileAdressCell.xib in Resources */,
+				0E4F4A9D1C3E480200CFC23B /* Singapore.png in Resources */,
+				0E4F4A9E1C3E480200CFC23B /* ic_placeholder.png in Resources */,
+				0E4F4A9F1C3E480200CFC23B /* United Kingdom.png in Resources */,
+				0E4F4AA01C3E480200CFC23B /* AccountCell.xib in Resources */,
+				0E4F4AA11C3E480200CFC23B /* FortFolioPlist.plist in Resources */,
+				0E4F4AA21C3E480200CFC23B /* ic_info@2x.png in Resources */,
+				0E4F4AA31C3E480200CFC23B /* ic_contac_2@2x.png in Resources */,
+				0E4F4AA41C3E480200CFC23B /* ic_Left@3x.png in Resources */,
+				0E4F4AA51C3E480200CFC23B /* ic_home@2x.png in Resources */,
+				0E4F4AA61C3E480200CFC23B /* Raleway-ExtraBold.ttf in Resources */,
+				0E4F4AA71C3E480200CFC23B /* ic_setting_heightline@3x.png in Resources */,
+				0E4F4AA81C3E480200CFC23B /* ic_bank@2x.png in Resources */,
+				0E4F4AA91C3E480200CFC23B /* appicon.png in Resources */,
+				0E4F4AAA1C3E480200CFC23B /* ic_setting_2@2x.png in Resources */,
+				0E4F4AAB1C3E480200CFC23B /* EditCompanyVC.xib in Resources */,
+				0E4F4AAC1C3E480200CFC23B /* ic_Check.png in Resources */,
+				0E4F4B101C3E48BE00CFC23B /* Info-China.plist in Resources */,
+				0E4F4AAD1C3E480200CFC23B /* JsonPhoneCode.json in Resources */,
+				0E4F4AAE1C3E480200CFC23B /* COSlidingView.xib in Resources */,
+				0E4F4AAF1C3E480200CFC23B /* Close_Circle_Line@2x.png in Resources */,
+				0E4F4AB11C3E480200CFC23B /* PortFolioCell.xib in Resources */,
+				0E4F4AB21C3E480200CFC23B /* COPopupInteredtedView.xib in Resources */,
+				0E4F4AB31C3E480200CFC23B /* ic_money@2x.png in Resources */,
+				0E4F4AB41C3E480200CFC23B /* ic_calendar@3x.png in Resources */,
+				0E4F4AB51C3E480200CFC23B /* EditAboutProfileVC.xib in Resources */,
+				0E4F4AB61C3E480200CFC23B /* ContactTableViewCell.xib in Resources */,
+				0E4F4AB81C3E480200CFC23B /* DealTableViewCell.xib in Resources */,
+				0E4F4AB91C3E480200CFC23B /* ic_peropel@2x.png in Resources */,
+				0E4F4ABA1C3E480200CFC23B /* ic_loadding@3x.png in Resources */,
+				0E4F4ABB1C3E480200CFC23B /* COQuestionView.xib in Resources */,
+				0E4F4ABC1C3E480200CFC23B /* ic_contac_2@3x.png in Resources */,
+				0E4F4ABD1C3E480200CFC23B /* HomeListViewCell.xib in Resources */,
+				0E4F4ABE1C3E480200CFC23B /* ic_setting@2x.png in Resources */,
+				0E4F4ABF1C3E480200CFC23B /* New Zealand.png in Resources */,
+				0E4F4AC01C3E480200CFC23B /* ic_bank@3x.png in Resources */,
+				0E4F4AC11C3E480200CFC23B /* COOfferWebViewCell.xib in Resources */,
+				0E4F4AC21C3E480200CFC23B /* Philippines.png in Resources */,
+				0E4F4AC31C3E480200CFC23B /* Raleway-Black.ttf in Resources */,
+				0E4F4AC41C3E480200CFC23B /* Germany.png in Resources */,
+				0E4F4AC51C3E480200CFC23B /* ic_info@3x.png in Resources */,
+				0E4F4AC61C3E480200CFC23B /* ic_btn_left.png in Resources */,
+				0E4F4AC71C3E480200CFC23B /* ic_droplist@3x.png in Resources */,
+				0E4F4AC81C3E480200CFC23B /* Raleway-MediumItalic.ttf in Resources */,
+				0E4F4AC91C3E480200CFC23B /* NotificationCell.xib in Resources */,
+				0E4F4ACA1C3E480200CFC23B /* company_edit.jpg in Resources */,
+				0E4F4ACB1C3E480200CFC23B /* Raleway-SemiBold.ttf in Resources */,
+				0E4F4ACC1C3E480200CFC23B /* ic_loadding.gif in Resources */,
+				0E4F4ACD1C3E480200CFC23B /* ic_setting_2_heighlight@2x.png in Resources */,
+				0E4F4ACE1C3E480200CFC23B /* NProfileNodataCell.xib in Resources */,
+				0E4F4ACF1C3E480200CFC23B /* COPopupQuestionView.xib in Resources */,
+				0E4F4AD01C3E480200CFC23B /* NProfileCountrieCell.xib in Resources */,
+				0E4F4AD11C3E480200CFC23B /* ic_peropel@3x.png in Resources */,
+				0E4F4AD21C3E480200CFC23B /* general.png in Resources */,
+				0E4F4AD31C3E480200CFC23B /* ForgotPasswordViewController.xib in Resources */,
+				0E4F4AD41C3E480200CFC23B /* SettingPlist.plist in Resources */,
+				0E4F4AD51C3E480200CFC23B /* ic_setting_heightline@2x.png in Resources */,
+				0E4F4AD61C3E480200CFC23B /* EventCollectionViewCell.xib in Resources */,
+				0E4F4AD71C3E480200CFC23B /* Raleway-Light.ttf in Resources */,
+				0E4F4AD81C3E480200CFC23B /* Close_Circle_Line@3x.png in Resources */,
+				0E4F4AD91C3E480200CFC23B /* ic_people_heightline@3x.png in Resources */,
+				0E4F4ADA1C3E480200CFC23B /* Raleway-Thin.ttf in Resources */,
+				0E4F4ADB1C3E480200CFC23B /* Raleway-ExtraLightItalic.ttf in Resources */,
+				0E4F4ADC1C3E480200CFC23B /* HomeListViewController.xib in Resources */,
+				0E4F4ADD1C3E480200CFC23B /* EditPasswordProfileVC.xib in Resources */,
+				0E4F4ADE1C3E480200CFC23B /* Japan.png in Resources */,
+				0E4F4ADF1C3E480200CFC23B /* ic_home@3x.png in Resources */,
+				0E4F4AE01C3E480200CFC23B /* FilterList.plist in Resources */,
+				0E4F4AE11C3E480200CFC23B /* CompanyOrgType.plist in Resources */,
+				0E4F4AE21C3E480200CFC23B /* ic_contac_2_heightlight@2x.png in Resources */,
+				0E4F4AE31C3E480200CFC23B /* ic_notification_selected@2x.png in Resources */,
+				0E4F4AE41C3E480200CFC23B /* COOfferProgressCell.xib in Resources */,
+				0E4F4AE51C3E480200CFC23B /* ic_uncheck@2x.png in Resources */,
+				0E4F4AE61C3E480200CFC23B /* ic_peopel@2x.png in Resources */,
+				0E4F4AE71C3E480200CFC23B /* ic_notification@2x.png in Resources */,
+				0E4F4AE81C3E480200CFC23B /* United States.png in Resources */,
+				0E4F4AE91C3E480200CFC23B /* OfferDetailsDocumentController.xib in Resources */,
+				0E4F4AEA1C3E480200CFC23B /* NProfileTextCell.xib in Resources */,
+				0E4F4AEB1C3E480200CFC23B /* NProfileButtonCell.xib in Resources */,
+				0E4F4AEC1C3E480200CFC23B /* ic_Check_red@3x.png in Resources */,
+				0E4F4AED1C3E480200CFC23B /* NProfileHeaderView.xib in Resources */,
+				0E4F4AEE1C3E480200CFC23B /* Raleway-BlackItalic.ttf in Resources */,
+				0E4F4AEF1C3E480200CFC23B /* Vietnam.png in Resources */,
+				0E4F4AF01C3E480200CFC23B /* OfferDetailsController.xib in Resources */,
+				0E4F4AF11C3E480200CFC23B /* ic_home_heightlight@2x.png in Resources */,
+				0E4F4AF21C3E480200CFC23B /* Raleway-ThinItalic.ttf in Resources */,
+				0E4F4AF31C3E480200CFC23B /* China.png in Resources */,
+				0E4F4AF41C3E480200CFC23B /* ProfileList.plist in Resources */,
+				0E4F4AF51C3E480200CFC23B /* Raleway-ExtraBoldItalic.ttf in Resources */,
+				0E4F4AF61C3E480200CFC23B /* Raleway-LightItalic.ttf in Resources */,
+				0E4F4AF71C3E480200CFC23B /* RegisterViewController.xib in Resources */,
+				0E4F4AF81C3E480200CFC23B /* Canada.png in Resources */,
+				0E4F4AF91C3E480200CFC23B /* Malaysia.png in Resources */,
+				0E4F4AFA1C3E480200CFC23B /* Ic_back@3x.png in Resources */,
+				0E4F4AFB1C3E480200CFC23B /* Localizable.strings in Resources */,
+				0E4F4AFC1C3E480200CFC23B /* ic_setting_2_heighlight@3x.png in Resources */,
+				0E4F4AFD1C3E480200CFC23B /* ic_homes@3x.png in Resources */,
+				0E4F4AFE1C3E480200CFC23B /* COSlidingCell.xib in Resources */,
+				0E4F4AFF1C3E480200CFC23B /* COTextCell.xib in Resources */,
+				0E4F4B001C3E480200CFC23B /* Raleway-Medium.ttf in Resources */,
+				0E4F4B011C3E480200CFC23B /* Raleway-BoldItalic.ttf in Resources */,
+				0E4F4B021C3E480200CFC23B /* DropListCell.xib in Resources */,
+				0E4F4B031C3E480200CFC23B /* ic_meoney@2x.png in Resources */,
+				0E4F4B041C3E480200CFC23B /* EditInvestmentProfileVC.xib in Resources */,
+				0E4F4B051C3E480200CFC23B /* Australia.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EFEB4AE1B2724B2001195B7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2253,7 +2854,6 @@
 				0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */,
 				7F3260731B40E50800116445 /* JsonCountry.json in Resources */,
 				7F32602A1B40E50800116445 /* Raleway-Regular.ttf in Resources */,
-				BB5B9A461B790F15002D37AF /* Localizable.strings in Resources */,
 				7F32603F1B40E50800116445 /* ic_droplist@2x.png in Resources */,
 				7F32605E1B40E50800116445 /* ic_uncheck.png in Resources */,
 				7F8529261B43935B00CFAEB5 /* Globe.png in Resources */,
@@ -2324,12 +2924,14 @@
 				7F3260741B40E50800116445 /* JsonPhoneCode.json in Resources */,
 				7F325FCD1B40E50800116445 /* COSlidingView.xib in Resources */,
 				7F32602F1B40E50800116445 /* Close_Circle_Line@2x.png in Resources */,
+				0E4F49B71C3E471200CFC23B /* Localizable.strings in Resources */,
 				0E8956331BBE1F8B007E36BF /* PortFolioCell.xib in Resources */,
 				7FCD18B61B4BBBF4000B81A2 /* COPopupInteredtedView.xib in Resources */,
 				1EF23C2A1BBE85C9006020C2 /* ic_money@2x.png in Resources */,
 				7F3260361B40E50800116445 /* ic_calendar@3x.png in Resources */,
 				1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */,
 				7F325FB81B40E50800116445 /* ContactTableViewCell.xib in Resources */,
+				0E4F49BB1C3E479500CFC23B /* Info-English.plist in Resources */,
 				0E3B132F1C0C449100AAAFD9 /* DealTableViewCell.xib in Resources */,
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
 				1EF23C291BBE85C9006020C2 /* ic_loadding@3x.png in Resources */,
@@ -2428,6 +3030,64 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		0E4F49BD1C3E480200CFC23B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0E4F4B061C3E480200CFC23B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9d7e393b03f9dbda18ba23c707390e03d8cd3d93 b1e6bc41c1bd7e80198e7fa583cfb6b162eb2c33880179f7ada005f23ba5a3c7";
+		};
+		0E4F4B071C3E480200CFC23B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E4F4B081C3E480200CFC23B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		175F2443963C1E5889A487EC /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2474,6 +3134,168 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E4F49BE1C3E480200CFC23B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E4F49BF1C3E480200CFC23B /* WSRegisterRequest.m in Sources */,
+				0E4F49C01C3E480200CFC23B /* WSPostDeviceTokenRequest.m in Sources */,
+				0E4F49C11C3E480200CFC23B /* NProfileDataSource.m in Sources */,
+				0E4F49C21C3E480200CFC23B /* NProfileAdressCell.m in Sources */,
+				0E4F49C31C3E480200CFC23B /* DropListCell.m in Sources */,
+				0E4F49C41C3E480200CFC23B /* COSlidingView.m in Sources */,
+				0E4F49C51C3E480200CFC23B /* COOfferHeadingCell.m in Sources */,
+				0E4F49C61C3E480200CFC23B /* BaseTabBarController.m in Sources */,
+				0E4F49C71C3E480200CFC23B /* WSUpdateProfileRequest.m in Sources */,
+				0E4F49C81C3E480200CFC23B /* CONotificationModel.m in Sources */,
+				0E4F49C91C3E480200CFC23B /* COPopupInteredtedView.m in Sources */,
+				0E4F49CA1C3E480200CFC23B /* WSChangePassWordRequest.m in Sources */,
+				0E4F49CB1C3E480200CFC23B /* NMImageHelper.m in Sources */,
+				0E4F49CC1C3E480200CFC23B /* EditAboutProfileVC.m in Sources */,
+				0E4F49CD1C3E480200CFC23B /* HomeListViewController.m in Sources */,
+				0E4F49CE1C3E480200CFC23B /* WSURLSessionManager+ListHome.m in Sources */,
+				0E4F49CF1C3E480200CFC23B /* AccountCell.m in Sources */,
+				0E4F49D01C3E480200CFC23B /* CONotificationDataModel.m in Sources */,
+				0E4F49D11C3E480200CFC23B /* BaseCollectionViewCell.m in Sources */,
+				0E4F49D21C3E480200CFC23B /* WSPostQuestionRequest.m in Sources */,
+				0E4F49D31C3E480200CFC23B /* COOfferProgressCell.m in Sources */,
+				0E4F49D41C3E480200CFC23B /* COLoginManager.m in Sources */,
+				0E4F49D51C3E480200CFC23B /* DealTableViewCell.m in Sources */,
+				0E4F49D61C3E480200CFC23B /* CODocumentItemModel.m in Sources */,
+				0E4F49D71C3E480200CFC23B /* COUserInverstorModel.m in Sources */,
+				0E4F49D81C3E480200CFC23B /* NMDeviceHelper.m in Sources */,
+				0E4F49D91C3E480200CFC23B /* NMTableView.m in Sources */,
+				0E4F49DA1C3E480200CFC23B /* COUserProfileDetailModel.m in Sources */,
+				0E4F49DB1C3E480200CFC23B /* COOngoingStatusModel.m in Sources */,
+				0E4F49DC1C3E480200CFC23B /* ContactTableViewCell.m in Sources */,
+				0E4F49DD1C3E480200CFC23B /* COQuestionView.m in Sources */,
+				0E4F49DE1C3E480200CFC23B /* CoDropListButtom.m in Sources */,
+				0E4F49DF1C3E480200CFC23B /* COOfferWebViewCell.m in Sources */,
+				0E4F49E01C3E480200CFC23B /* NotificationCell.m in Sources */,
+				0E4F49E11C3E480200CFC23B /* WSGetListOfferRequest.m in Sources */,
+				0E4F49E21C3E480200CFC23B /* DealsController.m in Sources */,
+				0E4F49E31C3E480200CFC23B /* WSGetOfferInfoWithRequest.m in Sources */,
+				0E4F49E41C3E480200CFC23B /* WSProjectFundInfoRequest.m in Sources */,
+				0E4F49E51C3E480200CFC23B /* NMView.m in Sources */,
+				0E4F49E61C3E480200CFC23B /* WSGetProfileRequest.m in Sources */,
+				0E4F49E71C3E480200CFC23B /* WSLoginRequest.m in Sources */,
+				0E4F49E81C3E480200CFC23B /* NMViewController.m in Sources */,
+				0E4F49E91C3E480200CFC23B /* COFilterListModel.m in Sources */,
+				0E4F49EA1C3E480200CFC23B /* COOfferDescriptionTextCell.m in Sources */,
+				0E4F49EB1C3E480200CFC23B /* CONotificationBannerView.m in Sources */,
+				0E4F49EC1C3E480200CFC23B /* PortFolioCell.m in Sources */,
+				0E4F49ED1C3E480200CFC23B /* WSURLSessionManager+CompanyProfile.m in Sources */,
+				0E4F49EE1C3E480200CFC23B /* WSUpdateCompanyProfile.m in Sources */,
+				0E4F49EF1C3E480200CFC23B /* COUserCompanyModel.m in Sources */,
+				0E4F49F01C3E480200CFC23B /* NSMutableString+FontSize.m in Sources */,
+				0E4F49F11C3E480200CFC23B /* NSString_stripHtml.m in Sources */,
+				0E4F49F21C3E480200CFC23B /* CODealOngoingModel.m in Sources */,
+				0E4F49F31C3E480200CFC23B /* RegisterViewController.m in Sources */,
+				0E4F49F41C3E480200CFC23B /* NProfileCountrieCell.m in Sources */,
+				0E4F49F51C3E480200CFC23B /* BaseNavigationController.m in Sources */,
+				0E4F49F61C3E480200CFC23B /* NMTableViewCell.m in Sources */,
+				0E4F49F71C3E480200CFC23B /* COOfferModel.m in Sources */,
+				0E4F49F81C3E480200CFC23B /* UIView+Identifier.m in Sources */,
+				0E4F49F91C3E480200CFC23B /* WSURLSessionManager+User.m in Sources */,
+				0E4F49FA1C3E480200CFC23B /* WebViewSetting.m in Sources */,
+				0E4F49FB1C3E480200CFC23B /* NSString+Helpers.m in Sources */,
+				0E4F49FC1C3E480200CFC23B /* BaseView.m in Sources */,
+				0E4F49FD1C3E480200CFC23B /* NSArray+Sort.m in Sources */,
+				0E4F49FE1C3E480200CFC23B /* OfferDetailsController.m in Sources */,
+				0E4F49FF1C3E480200CFC23B /* WSURLSessionManager.m in Sources */,
+				0E4F4A001C3E480200CFC23B /* CODetailsDataSource.m in Sources */,
+				0E4F4A011C3E480200CFC23B /* COUserPortfolioCompleteInvestmentModel.m in Sources */,
+				0E4F4A021C3E480200CFC23B /* NSString+MD5.m in Sources */,
+				0E4F4A031C3E480200CFC23B /* EditCompanyVC.m in Sources */,
+				0E4F4A041C3E480200CFC23B /* LoginViewController.m in Sources */,
+				0E4F4A051C3E480200CFC23B /* CODocumentItemCell.m in Sources */,
+				0E4F4A061C3E480200CFC23B /* COUserPortfolioOnGoingInvestmentModel.m in Sources */,
+				0E4F4A071C3E480200CFC23B /* UIHelper.m in Sources */,
+				0E4F4A081C3E480200CFC23B /* WSCompanyProfileRequest.m in Sources */,
+				0E4F4A091C3E480200CFC23B /* COPositive&NagitiveButton.m in Sources */,
+				0E4F4A0A1C3E480200CFC23B /* main.m in Sources */,
+				0E4F4A0B1C3E480200CFC23B /* WSURLSessionManager+Profile.m in Sources */,
+				0E4F4A0C1C3E480200CFC23B /* COCheckBoxButton.m in Sources */,
+				0E4F4A0D1C3E480200CFC23B /* WSURLSessionManager+DealProfile.m in Sources */,
+				0E4F4A0E1C3E480200CFC23B /* CODetailsDelegate.m in Sources */,
+				0E4F4A0F1C3E480200CFC23B /* COProjectFundedAmountModel.m in Sources */,
+				0E4F4A101C3E480200CFC23B /* SettingViewController.m in Sources */,
+				0E4F4A111C3E480200CFC23B /* NSDictionary+NotNULL.m in Sources */,
+				0E4F4A121C3E480200CFC23B /* BaseTableViewCell.m in Sources */,
+				0E4F4A131C3E480200CFC23B /* COUserTokensModel.m in Sources */,
+				0E4F4A141C3E480200CFC23B /* COTextCell.m in Sources */,
+				0E4F4A151C3E480200CFC23B /* CODocumentModel.m in Sources */,
+				0E4F4A161C3E480200CFC23B /* EventViewController.m in Sources */,
+				0E4F4A171C3E480200CFC23B /* CODocumentSectionCell.m in Sources */,
+				0E4F4A181C3E480200CFC23B /* NProfileButtonCell.m in Sources */,
+				0E4F4A191C3E480200CFC23B /* BaseLabel.m in Sources */,
+				0E4F4A1A1C3E480200CFC23B /* COAwatarView.m in Sources */,
+				0E4F4A1B1C3E480200CFC23B /* EditInvestmentProfileVC.m in Sources */,
+				0E4F4A1C1C3E480200CFC23B /* NSString+Validation.m in Sources */,
+				0E4F4A1D1C3E480200CFC23B /* COSlidingCell.m in Sources */,
+				0E4F4A1E1C3E480200CFC23B /* WSRequest.m in Sources */,
+				0E4F4A1F1C3E480200CFC23B /* WSGetAccountInvestment.m in Sources */,
+				0E4F4A201C3E480200CFC23B /* NProfileTextCell.m in Sources */,
+				0E4F4A211C3E480200CFC23B /* ProtfolioController.m in Sources */,
+				0E4F4A221C3E480200CFC23B /* UIImage+Scaling.m in Sources */,
+				0E4F4A231C3E480200CFC23B /* COContactsModel.m in Sources */,
+				0E4F4A241C3E480200CFC23B /* NProfileHeaderView.m in Sources */,
+				0E4F4A251C3E480200CFC23B /* COProjectModel.m in Sources */,
+				0E4F4A261C3E480200CFC23B /* WSURLSessionManager+ListContact.m in Sources */,
+				0E4F4A271C3E480200CFC23B /* WSForgotPassWordRequest.m in Sources */,
+				0E4F4A281C3E480200CFC23B /* NMSecurityHelper.m in Sources */,
+				0E4F4A291C3E480200CFC23B /* CODropListView.m in Sources */,
+				0E4F4A2A1C3E480200CFC23B /* COPopupQuestionView.m in Sources */,
+				0E4F4A2B1C3E480200CFC23B /* COLabelTextAligin.m in Sources */,
+				0E4F4A2C1C3E480200CFC23B /* CODealProfileModel.m in Sources */,
+				0E4F4A2D1C3E480200CFC23B /* UIView+AutoLayout.m in Sources */,
+				0E4F4A2E1C3E480200CFC23B /* WebViewManager.m in Sources */,
+				0E4F4A2F1C3E480200CFC23B /* TabProfileController.m in Sources */,
+				0E4F4A301C3E480200CFC23B /* KLCPopup.m in Sources */,
+				0E4F4A311C3E480200CFC23B /* NMCollectionView.m in Sources */,
+				0E4F4A321C3E480200CFC23B /* ErrorManager.m in Sources */,
+				0E4F4A331C3E480200CFC23B /* ForgotPasswordViewController.m in Sources */,
+				0E4F4A341C3E480200CFC23B /* OfferDetailsDocumentController.m in Sources */,
+				0E4F4A351C3E480200CFC23B /* COOfferActionCell.m in Sources */,
+				0E4F4A361C3E480200CFC23B /* OfferViewController.m in Sources */,
+				0E4F4A371C3E480200CFC23B /* ContacViewController.m in Sources */,
+				0E4F4A381C3E480200CFC23B /* COBorderTextField.m in Sources */,
+				0E4F4A391C3E480200CFC23B /* NotificationViewController.m in Sources */,
+				0E4F4A3A1C3E480200CFC23B /* NProfileImageCell.m in Sources */,
+				0E4F4A3B1C3E480200CFC23B /* NMUIHelper.m in Sources */,
+				0E4F4A3C1C3E480200CFC23B /* WSGetListContactsRequest.m in Sources */,
+				0E4F4A3D1C3E480200CFC23B /* COListFilterObject.m in Sources */,
+				0E4F4A3E1C3E480200CFC23B /* AccountController.m in Sources */,
+				0E4F4A3F1C3E480200CFC23B /* COLineBottomView.m in Sources */,
+				0E4F4A401C3E480200CFC23B /* COUserPortFolioModel.m in Sources */,
+				0E4F4A411C3E480200CFC23B /* EventCollectionViewCell.m in Sources */,
+				0E4F4A421C3E480200CFC23B /* COBorderTextView.m in Sources */,
+				0E4F4A431C3E480200CFC23B /* WSUpdateInvestorProfile.m in Sources */,
+				0E4F4A441C3E480200CFC23B /* NSFileManager+Directories.m in Sources */,
+				0E4F4A451C3E480200CFC23B /* LoadFileManager.m in Sources */,
+				0E4F4A461C3E480200CFC23B /* AppDelegate.m in Sources */,
+				0E4F4A471C3E480200CFC23B /* COUserAccountModel.m in Sources */,
+				0E4F4A481C3E480200CFC23B /* WSURLSessionManager+Notification.m in Sources */,
+				0E4F4A491C3E480200CFC23B /* NProfileNodataCell.m in Sources */,
+				0E4F4A4A1C3E480200CFC23B /* WSGetDealProfileRequest.m in Sources */,
+				0E4F4A4B1C3E480200CFC23B /* NMCollectionViewCell.m in Sources */,
+				0E4F4A4C1C3E480200CFC23B /* COInterestedViewController.m in Sources */,
+				0E4F4A4D1C3E480200CFC23B /* EditPasswordProfileVC.m in Sources */,
+				0E4F4A4E1C3E480200CFC23B /* HomeListViewCell.m in Sources */,
+				0E4F4A4F1C3E480200CFC23B /* DropListObject.m in Sources */,
+				0E4F4A501C3E480200CFC23B /* CODropListVC.m in Sources */,
+				0E4F4A511C3E480200CFC23B /* WSPostSubscribeRequest.m in Sources */,
+				0E4F4A521C3E480200CFC23B /* NProfileDelegate.m in Sources */,
+				0E4F4A531C3E480200CFC23B /* COUserProfileModel.m in Sources */,
+				0E4F4A541C3E480200CFC23B /* UIDevice-Hardware.m in Sources */,
+				0E4F4A551C3E480200CFC23B /* COOfferInfoCell.m in Sources */,
+				0E4F4A561C3E480200CFC23B /* BaseViewController.m in Sources */,
+				0E4F4A571C3E480200CFC23B /* COAccountInvestmentModel.m in Sources */,
+				0E4F4A581C3E480200CFC23B /* WSGetInvestorProfile.m in Sources */,
+				0E4F4A591C3E480200CFC23B /* NProfileController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EFEB4AC1B2724B2001195B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2650,6 +3472,55 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E4F4B0A1C3E480200CFC23B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33762D818FFC66A8E09B06FB /* Pods-CoAssets.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Application/Targets/CoAssets-China/Main/Info-China.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				New_Setting = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coassets.china;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "400cb912-c631-4419-a75a-0b77828bdfed";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0E4F4B0B1C3E480200CFC23B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ECA63A1BFE20EC1EB40B842 /* Pods-CoAssets.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Application/Targets/CoAssets-China/Main/Info-China.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				New_Setting = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coassets.china;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "400cb912-c631-4419-a75a-0b77828bdfed";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		0EFEB4D41B2724B2001195B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2750,7 +3621,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Application/Targets/CoAssets-English/Main/Info-English.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
@@ -2775,7 +3646,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Application/Main/CoAssest-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Application/Main/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Application/Targets/CoAssets-English/Main/Info-English.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
@@ -2789,6 +3660,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E4F4B091C3E480200CFC23B /* Build configuration list for PBXNativeTarget "CoAssets-China" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E4F4B0A1C3E480200CFC23B /* Debug */,
+				0E4F4B0B1C3E480200CFC23B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0EFEB4AB1B2724B2001195B7 /* Build configuration list for PBXProject "CoAssets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
