@@ -24,7 +24,7 @@
 }
 
 - (void)setupUI {
-    self.title = m_string(@"Event");
+    self.title = m_string(@"EVENT");
     _collectionview.dataSource = self;
     _collectionview.delegate   = self;
     [_collectionview registerNib:[UINib nibWithNibName:[EventCollectionViewCell identifier] bundle:nil] forCellWithReuseIdentifier:[EventCollectionViewCell identifier]];

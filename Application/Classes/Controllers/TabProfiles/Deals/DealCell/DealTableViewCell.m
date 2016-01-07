@@ -33,13 +33,13 @@
 
 - (IBAction)__actionSignContract:(id)sender {
     if (self.deal != nil) {
-         [self _showAlertView:NSLocalizedString(@"COASSETS_TITLE", nil) message:self.deal.dealOngoingContractInstruction delegate:nil tag:1];
+         [self _showAlertView:m_string(@"COASSETS_TITLE") message:self.deal.dealOngoingContractInstruction delegate:nil tag:1];
     }
 }
 
 - (IBAction)__actionMakePayment:(id)sender {
     if (self.deal != nil) {
-        [self _showAlertView:NSLocalizedString(@"COASSETS_TITLE", nil) message:self.deal.dealOngoingPaymentInstruction delegate:nil tag:1];
+        [self _showAlertView:m_string(@"COASSETS_TITLE") message:self.deal.dealOngoingPaymentInstruction delegate:nil tag:1];
     }
 }
 

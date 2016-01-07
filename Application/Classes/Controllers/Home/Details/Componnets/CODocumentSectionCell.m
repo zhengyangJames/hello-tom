@@ -30,7 +30,7 @@
 #pragma mark - Set Get
 - (void)setDocDetail:(id<COOfferDocumentDetail>)docDetail {
     _docDetail          = docDetail;
-    NSString *title     = NSLocalizedString(_docDetail.offerDocumentDetailTitle, nil);
+    NSString *title     = m_string(_docDetail.offerDocumentDetailTitle);
     _lblSection.text    = title;
 }
 	

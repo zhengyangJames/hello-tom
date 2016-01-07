@@ -44,7 +44,7 @@
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = NSLocalizedString(@"SETTINGS", nil);
+    self.navigationItem.title = m_string(@"SETTINGS");
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.tableFooterView = [UIView new];
@@ -80,7 +80,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[UITableViewCell identifier]];
     }
     cell.accessoryType = UITableViewCellSeparatorStyleSingleLine;
-    cell.textLabel.text = NSLocalizedString(self.arraySetting[indexPath.row],nil);
+    cell.textLabel.text = m_string(self.arraySetting[indexPath.row]);
     cell.textLabel.textColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"Raleway-Regular" size:17];
     return cell;
@@ -97,13 +97,13 @@
     switch (index) {
         case COSettingsStypeContact: return [self _pushContacViewController];
             
-        case COSettingsStypeNew: return [self _pushWebViewSetting:LINK_NEW titler:NSLocalizedString(@"NEWS", nil)];
+        case COSettingsStypeNew: return [self _pushWebViewSetting:LINK_NEW titler:m_string(@"NEWS")];
             
-        case COSettingsStypeTermOfUse: return [self _pushWebViewSetting:LINK_TERMS_OF_USE titler:NSLocalizedString(@"TERM_OF_USE", nil)];
+        case COSettingsStypeTermOfUse: return [self _pushWebViewSetting:LINK_TERMS_OF_USE titler:m_string(@"TERM_OF_USE")];
             
-        case COSettingsStypeCodeOfConduct: return [self _pushWebViewSetting:LINK_CODE_OF_CONDUCT titler:NSLocalizedString(@"CODE_OF_CONDUCT", nil)];
+        case COSettingsStypeCodeOfConduct: return [self _pushWebViewSetting:LINK_CODE_OF_CONDUCT titler:m_string(@"CODE_OF_CONDUCT")];
 
-        case COSettingsStypePrivacy: return [self _pushWebViewSetting:LINK_PRIVACY titler:NSLocalizedString(@"PRIVACY", nil)];
+        case COSettingsStypePrivacy: return [self _pushWebViewSetting:LINK_PRIVACY titler:m_string(@"PRIVACY")];
 
         case COSettingsStypeLogout: return [self _setupLoginAndLogout];
     }
@@ -126,7 +126,7 @@
     if (![[COLoginManager shared] userModel]) {
         [self _logginApllication];
     } else {
-        [UIHelper showAlertViewWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil) message:NSLocalizedString(@"MESSAGE_LOGOUT", nil) cancelButton:NSLocalizedString(@"CANCEL_TITLE", nil) delegate:self tag:0 arrayTitleButton:@[NSLocalizedString(@"OK_TITLE", nil)]];
+        [UIHelper showAlertViewWithTitle:m_string(@"COASSETS_TITLE") message:m_string(@"MESSAGE_LOGOUT") cancelButton:m_string(@"CANCEL_TITLE") delegate:self tag:0 arrayTitleButton:@[m_string(@"OK_TITLE")]];
     }
 }
 
@@ -142,8 +142,8 @@
 - (void)_replaceArraySettingLogin {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
     if (arr) {
-        if ([arr[COSettingsStypeLogout] isEqualToString:NSLocalizedString(@"LOG_IN", nil)]) {
-            [arr replaceObjectAtIndex:COSettingsStypeLogout withObject:NSLocalizedString(@"LOG_OUT", nil)];
+        if ([arr[COSettingsStypeLogout] isEqualToString:m_string(@"LOG_IN")]) {
+            [arr replaceObjectAtIndex:COSettingsStypeLogout withObject:m_string(@"LOG_OUT")];
         }
     }
     self.arraySetting = arr;
@@ -153,8 +153,8 @@
 - (void)_replaceArraySettingLogOut {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.arraySetting];
     if (arr) {
-        if ([arr[COSettingsStypeLogout] isEqualToString:NSLocalizedString(@"LOG_OUT", nil)]) {
-            [arr replaceObjectAtIndex:COSettingsStypeLogout withObject:NSLocalizedString(@"LOG_IN", nil)];
+        if ([arr[COSettingsStypeLogout] isEqualToString:m_string(@"LOG_OUT")]) {
+            [arr replaceObjectAtIndex:COSettingsStypeLogout withObject:m_string(@"LOG_IN")];
         }
     }
     self.arraySetting = arr;

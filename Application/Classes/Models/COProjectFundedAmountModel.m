@@ -41,10 +41,10 @@
     if (self.goal) {
         double value = ([self.goal doubleValue]);
         int intConvert = (int)round(value);
-        NSString *returnString = [NSString stringWithFormat:NSLocalizedString(@"GOAL", nil),intConvert];
+        NSString *returnString = [NSString stringWithFormat:m_string(@"GOAL"),intConvert];
         return returnString;
     } else {
-        return NSLocalizedString(@"N/A", nil);
+        return m_string(@"N/A");
     }
 }
 
@@ -55,7 +55,7 @@
         NSString *returnString = [UIHelper stringCurrencyFormatFromNumberDouble:numberDouble];
         return returnString;
     } else {
-        return NSLocalizedString(@"N/A", nil);
+        return m_string(@"N/A");
     }
 }
 

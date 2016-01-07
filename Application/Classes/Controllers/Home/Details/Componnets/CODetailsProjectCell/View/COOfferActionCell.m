@@ -56,11 +56,11 @@
 }
 
 - (void)__actionUpdateButton {
-    [_interedtedBTN setTitle:NSLocalizedString(@"BUTTON_INTERESTED", nil) forState:UIControlStateNormal];
+    [_interedtedBTN setTitle:m_string(@"BUTTON_INTERESTED") forState:UIControlStateNormal];
 }
 
 - (void)__actionUpdateButtonQuestion {
-    [_questionBTN setTitle:NSLocalizedString(@"BUTTON_QUESTION", Nil) forState:UIControlStateNormal];
+    [_questionBTN setTitle:m_string(@"BUTTON_QUESTION") forState:UIControlStateNormal];
 }
 
 

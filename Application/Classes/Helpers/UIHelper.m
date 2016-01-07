@@ -55,10 +55,10 @@
 
 + (void)showAlertViewErrorWithMessage:(NSString *)message delegate:(id)delegate tag:(NSInteger)tag {
    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-       UIAlertView *alert = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"COASSETS_TITLE", nil)
+       UIAlertView *alert = [[UIAlertView alloc]initWithTitle:m_string(@"COASSETS_TITLE")
                                                       message: message
                                                      delegate: delegate
-                                            cancelButtonTitle:NSLocalizedString(@"OK_TITLE", nil)
+                                            cancelButtonTitle:m_string(@"OK_TITLE")
                                             otherButtonTitles: nil];
        alert.tag = tag;
        [alert show];

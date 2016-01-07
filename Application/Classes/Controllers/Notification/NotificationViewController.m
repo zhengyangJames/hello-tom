@@ -42,7 +42,7 @@
 #pragma mark - SetupUI
 
 - (void)_setupUI {
-    self.title = m_string(@"NOTIFICATION");
+    self.title = m_string(@"NOTIFICATIONS");
     _tableview.delegate = self;
     _tableview.dataSource = self;
     _tableview.tableFooterView = [UIView new];
@@ -101,7 +101,7 @@
         if (notification.notifiData.notifiUrl != nil) {
             WebViewSetting *webViewSetting = [[WebViewSetting alloc]init];
             webViewSetting.webLink = notification.notifiData.notifiUrl;
-            webViewSetting.titler = m_string(@"Notification");
+            webViewSetting.titler = m_string(@"NOTIFICATION");
             [self.navigationController pushViewController:webViewSetting animated:YES];
         } else if([notification.notifiData.notifiType isEqualToString:@"offer"]) {
             _selectedOfferID = [notification.notifiData.notifiId stringValue];

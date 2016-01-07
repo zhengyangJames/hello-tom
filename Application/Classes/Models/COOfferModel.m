@@ -128,7 +128,7 @@
 #pragma mark - offer description protocol
 
 - (NSString *)offerDescriptionTitle {
-    return NSLocalizedString(@"OFFER", nil);
+    return m_string(@"OFFER");
 }
 
 - (NSString *)offerDescriptionContent {
@@ -138,7 +138,7 @@
 #pragma mark - offer project protocol
 
 - (NSString *)offerProjectTitle {
-    return NSLocalizedString(@"PROJECT", nil);
+    return m_string(@"PROJECT");
 }
 - (NSString *)offerProjectContent {
     return self.offerProjectDescription;
@@ -146,11 +146,11 @@
 #pragma mark - offer document protocol
 
 - (NSString *)offerDocumentTitle {
-    return NSLocalizedString(@"DOCUMENT", nil);
+    return m_string(@"DOCUMENT");
 }
 
 - (NSString *)offerDocumentContent {
-    return NSLocalizedString(@"DETAIL_DOCUMENT", nil);
+    return m_string(@"DETAIL_DOCUMENT");
 }
 #pragma mark - offer info protocol
 
@@ -167,19 +167,19 @@
 
 - (NSString *)offerInfoStatus {
     if (self.offerStatus) {
-        NSString *status = [NSString stringWithFormat:NSLocalizedString(@"STATUS", nil),self.offerStatus];
+        NSString *status = [NSString stringWithFormat:m_string(@"STATUS"),self.offerStatus];
         return status;
     } else {
-        return NSLocalizedString(@"N/A", nil);
+        return m_string(@"N/A");
     }
 }
 
 - (NSString *)offerInfoInvestor {
     if (self.offerInvestorCount) {
-        NSString *investor = [NSString stringWithFormat:NSLocalizedString(@"INVESTORS", nil),self.offerInvestorCount];
+        NSString *investor = [NSString stringWithFormat:m_string(@"INVESTORS"),self.offerInvestorCount];
         return investor;
     } else {
-        return NSLocalizedString(@"N/A", nil);
+        return m_string(@"N/A");
     }
 }
 
@@ -190,33 +190,33 @@
         NSString *returnString = [UIHelper stringDecimalFormatFromNumberDouble:numberDouble];
         return returnString;
     } else {
-        return NSLocalizedString(@"N/A", nil);
+        return m_string(@"N/A");
     }
 }
 
 - (NSString *)offerInfoTimeHorizon {
     if (self.offerTimeHorizon) {
-        NSString *time_horizon = [NSString stringWithFormat:NSLocalizedString(@"MONTHS", nil),self.offerTimeHorizon];        return time_horizon;
+        NSString *time_horizon = [NSString stringWithFormat:m_string(@"MONTHS"),self.offerTimeHorizon];        return time_horizon;
     } else {
-        return NSLocalizedString(@"N/A", nil);
+        return m_string(@"N/A");
     }
 }
 
 - (NSString *)offerInfoYield {
     if (self.offerAnnualizedReturn) {
-        NSString *annualized = [NSString stringWithFormat:NSLocalizedString(@"MIN_ANNUAL_RETURN", nil),self.offerAnnualizedReturn,self.offerAnnualizedReturn];
+        NSString *annualized = [NSString stringWithFormat:m_string(@"MIN_ANNUAL_RETURN"),self.offerAnnualizedReturn,self.offerAnnualizedReturn];
         return annualized;
     } else {
-        return NSLocalizedString(@"N/A", nil);
+        return m_string(@"N/A");
     }
 }
 
 - (NSString *)offerInfoDayLeft {
     if (self.offerDayLeft) {
-        NSString *day_left = [NSString stringWithFormat:NSLocalizedString(@"DAY_LEFT", nil),self.offerDayLeft];
+        NSString *day_left = [NSString stringWithFormat:m_string(@"DAY_LEFT"),self.offerDayLeft];
         return day_left;
     } else {
-        return NSLocalizedString(@"N/A", nil);
+        return m_string(@"N/A");
     }
 }
 @end

@@ -60,10 +60,10 @@
 
 - (BOOL)_isValid {
     if ([_userName.text isEmpty]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"USERNAME_REQUIRED") delegate:self tag:0];
          return NO;
     }else if ([_passWord.text isEmpty]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_REQUIRED") delegate:self tag:0];
 
         return NO;
     }

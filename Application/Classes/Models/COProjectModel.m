@@ -28,7 +28,7 @@
 #pragma mark - address protocol
 
 - (NSString *)offerAddressTitle {
-    return NSLocalizedString(@"ADDRESSNAME", nil);
+    return m_string(@"ADDRESSNAME");
 }
 
 - (NSString *)offerAddressContent {

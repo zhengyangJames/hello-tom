@@ -45,7 +45,7 @@
 
 #pragma mark SetUp UI 
 - (void)_setupUI {
-    self.title = NSLocalizedString(@"INTERESTED_TITLE", nil);
+    self.title = m_string(@"INTERESTED_TITLE");
     _checkBoxButton.delegate = self;
 }
 
@@ -55,7 +55,7 @@
 }
 
 - (void)_setupRightNavigationButton {
-    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
+    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:m_string(@"DONE_TITLE")
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone)];
@@ -117,7 +117,7 @@
 }
 
 - (NSString*)_setupTitlePopup {
-    NSString *string = [NSString stringWithFormat:NSLocalizedString(@"Interested_Popup", nil),self.coInterested.stringOfOfferTitle];
+    NSString *string = [NSString stringWithFormat:m_string(@"Interested_Popup"),self.coInterested.stringOfOfferTitle];
     
     return string;
 }
@@ -134,21 +134,21 @@
 - (BOOL)_checkEmailAmount {
     if([_emailTextField.text isEmpty]) {
         _textField = _emailTextField;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"EMAIL_REQUIRED") delegate:self tag:0];
         return NO;
     } else if (![_emailTextField.text isValidEmail]) {
         _textField = _emailTextField;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"EMAIL_INVALID") delegate:self tag:0];
         return NO;
     } else if ([_amountTextField.text isEmpty]) {
         _textField = _amountTextField;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"AMOUNT_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"AMOUNT_REQUIRED") delegate:self tag:0];
         return NO;
     } else if (![self _checkMinimumInvestmentAmount]) {
-        [UIHelper showAlertViewErrorWithMessage:[NSString stringWithFormat:NSLocalizedString(@"MINIMUM_MESSAGE", nil),_coInterested.numberOfOfferAmount.stringValue] delegate:nil tag:0];
+        [UIHelper showAlertViewErrorWithMessage:[NSString stringWithFormat:m_string(@"MINIMUM_MESSAGE"),_coInterested.numberOfOfferAmount.stringValue] delegate:nil tag:0];
         return NO;
     } else if (!_isCheck) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"MESSAGE_CHECK_EMAIL", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"MESSAGE_CHECK_EMAIL") delegate:self tag:0];
         return NO;
     }
     return YES;

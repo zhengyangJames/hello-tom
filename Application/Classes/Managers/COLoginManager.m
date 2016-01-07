@@ -76,7 +76,7 @@
             }];
         } else {
             NSString *errorCode = [NSString stringWithFormat:@"%tu",error.code];
-            NSString *errorMessage = NSLocalizedString(@"INVAlID_USERNAME_OR_PASSWORD", nil);
+            NSString *errorMessage = m_string(@"INVAlID_USERNAME_OR_PASSWORD");
             NSError *error = [NSError errorWithDomain:WS_ERROR_DOMAIN code:0 userInfo:@{@"message":errorMessage, @"code":errorCode}];
             if (actionLoginManager) {
                 actionLoginManager(nil,error);

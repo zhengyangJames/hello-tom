@@ -32,7 +32,7 @@
 
 #pragma mark - Private
 - (void)_setUpUI {
-    self.navigationItem.title = m_string(@"Profile");
+    self.navigationItem.title = m_string(@"PROFILE");
     UIView *view = [[UIView alloc]init];
     _tableView.tableFooterView = view;
     _tableView.dataSource = self;

@@ -8,7 +8,25 @@
 
 
 "APP_NAME"                              = "COASSETS";
+
+//titleViewController
 "COASSETS_TITLE"                        = "CoAssets";
+"PROFILE"                               = "Profile";
+"NOTIFICATION"                          = "Notification";
+"Event"                                 = "Event";
+"SETTINGS"                              = "Settings";
+
+"ACCOUNT"                               = "Account";
+"DEALS"                                 = "Deals";
+
+//TitleTabbar
+"HOME"                                  = "Home";
+"EVENT"                                 = "Events";
+"NOTIFICATIONS"                         = "Notifications";
+"PORTFOLIO"                             = "Portfolio";
+
+//TiTleButton
+"Notification"                          = "Notification";
 "FILTER_TITLE"                          = "Filter";
 "OK_TITLE"                              = "OK";
 "CANCEL_TITLE"                          = "Cancel";
@@ -27,16 +45,7 @@
 "EMAIL"= "Email";
 "PHONE"                                 = "Phone";
 "CONTACT"                               = "Contact";
-"SETTINGS"                              = "Settings";
-"NOTIFICATION"                          = "Notifications";
-"Notification"                          = "Notification";
-
-"EVENT"                                 = "Events";
-"Event"                                 = "Event";
-
 "NEWS"                                  = "News";
-
-
 "BUTTON_INTERESTED"                     = "I want to invest again!";
 "BUTTON_QUESTION"                       = "Request sent.";
 
@@ -66,8 +75,8 @@
 "EMAIL_INVALID"                         = "Email is invalid.";
 "PASSWORD_INVALID"                      = "Password is invalid.";
 "USERNAME_INVALID"                      = "Username is invalid.";
-"PASSWORD_ERROR"                      = "Password should consist of alphanumeric and @.+-_ only.";
-"USERNAME_ERROR"                      = "Username should consist of alphanumeric and @.+-_ only.";
+"PASSWORD_ERROR"                        = "Password should consist of alphanumeric and @.+-_ only.";
+"USERNAME_ERROR"                        = "Username should consist of alphanumeric and @.+-_ only.";
 
 "MESSEAGE_RESET_PASSWORD"               = "Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly";
 "YOUR_EMAIL_INVALID"                    = "Your email is invalid.";
@@ -146,7 +155,7 @@
 
 "USERNAME"                              = "User name";
 
-"PROFILE"                               = "Profile";
+
 
 "C_PROFILE"                             = "Company Profile";
 

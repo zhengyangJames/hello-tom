@@ -113,7 +113,7 @@
 }
 
 - (void)_setupBarButtonDone {
-    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
+    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"DONE_TITLE")
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone:)];
@@ -123,7 +123,7 @@
 }
 
 - (void)_setupBarButtonCancel {
-    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"CANCEL_TITLE", nil)
+    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:m_string(@"CANCEL_TITLE")
                                                                 style:UIBarButtonItemStyleDone
                                                                target:self
                                                                action:@selector(__actionDCancel:)];
@@ -135,7 +135,7 @@
 #pragma mark - Check
 - (BOOL)_checkORGName {
     if ([[orgNameTextField.text trim] isEmpty]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"ORG_NAME_REQUIRED", nil) delegate:nil tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"ORG_NAME_REQUIRED") delegate:nil tag:0];
         return NO;
     }
     return YES;
