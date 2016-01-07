@@ -10,7 +10,18 @@
 		012BDB9F1BA535F700252D12 /* COListFilterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDB8F1BA535F700252D12 /* COListFilterObject.m */; };
 		012FA93E1B7A13A600A80D3F /* LoadFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FA93C1B7A13A600A80D3F /* LoadFileManager.m */; };
 		01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1437B1B7D1053003DF5F9 /* COOfferModel.m */; };
-		0E3217DE1C12C91E00061AAB /* CompanyOrgType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E3217DD1C12C91E00061AAB /* CompanyOrgType.plist */; };
+		0E0291FB1C3E4D99000D9320 /* CompanyOrgType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0291F61C3E4D99000D9320 /* CompanyOrgType.plist */; };
+		0E0291FC1C3E4D99000D9320 /* FilterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0291F71C3E4D99000D9320 /* FilterList.plist */; };
+		0E0291FD1C3E4D99000D9320 /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0291F81C3E4D99000D9320 /* FortFolioPlist.plist */; };
+		0E0291FE1C3E4D99000D9320 /* ProfileList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0291F91C3E4D99000D9320 /* ProfileList.plist */; };
+		0E0291FF1C3E4D99000D9320 /* SettingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0291FA1C3E4D99000D9320 /* SettingPlist.plist */; };
+		0E0292061C3E4DA9000D9320 /* CompanyOrgType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0292011C3E4DA9000D9320 /* CompanyOrgType.plist */; };
+		0E0292071C3E4DA9000D9320 /* FilterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0292021C3E4DA9000D9320 /* FilterList.plist */; };
+		0E0292081C3E4DA9000D9320 /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0292031C3E4DA9000D9320 /* FortFolioPlist.plist */; };
+		0E0292091C3E4DA9000D9320 /* ProfileList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0292041C3E4DA9000D9320 /* ProfileList.plist */; };
+		0E02920A1C3E4DA9000D9320 /* SettingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0292051C3E4DA9000D9320 /* SettingPlist.plist */; };
+		0E02920E1C3E5B76000D9320 /* COLabelLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E02920D1C3E5B76000D9320 /* COLabelLanguage.m */; };
+		0E02920F1C3E5B76000D9320 /* COLabelLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E02920D1C3E5B76000D9320 /* COLabelLanguage.m */; };
 		0E39FA621BC4247000880834 /* NProfileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4C1BC4247000880834 /* NProfileDataSource.m */; };
 		0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4E1BC4247000880834 /* NProfileDelegate.m */; };
 		0E3B132E1C0C449100AAAFD9 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B132C1C0C449100AAAFD9 /* DealTableViewCell.m */; };
@@ -243,7 +254,6 @@
 		0E4F4A9E1C3E480200CFC23B /* ic_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F701B40E50800116445 /* ic_placeholder.png */; };
 		0E4F4A9F1C3E480200CFC23B /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC6D50F1B44D4090098EC8D /* United Kingdom.png */; };
 		0E4F4AA01C3E480200CFC23B /* AccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E89562B1BBE1D9F007E36BF /* AccountCell.xib */; };
-		0E4F4AA11C3E480200CFC23B /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */; };
 		0E4F4AA21C3E480200CFC23B /* ic_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F441B40E50800116445 /* ic_info@2x.png */; };
 		0E4F4AA31C3E480200CFC23B /* ic_contac_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F371B40E50800116445 /* ic_contac_2@2x.png */; };
 		0E4F4AA41C3E480200CFC23B /* ic_Left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F471B40E50800116445 /* ic_Left@3x.png */; };
@@ -292,7 +302,6 @@
 		0E4F4AD11C3E480200CFC23B /* ic_peropel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F521B40E50800116445 /* ic_peropel@3x.png */; };
 		0E4F4AD21C3E480200CFC23B /* general.png in Resources */ = {isa = PBXBuildFile; fileRef = B94210FF1BFC2C9E00C86FE8 /* general.png */; };
 		0E4F4AD31C3E480200CFC23B /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBD82011B8BE0720061FFF0 /* ForgotPasswordViewController.xib */; };
-		0E4F4AD41C3E480200CFC23B /* SettingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F781B40E50800116445 /* SettingPlist.plist */; };
 		0E4F4AD51C3E480200CFC23B /* ic_setting_heightline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F591B40E50800116445 /* ic_setting_heightline@2x.png */; };
 		0E4F4AD61C3E480200CFC23B /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8F35651C3DFED200CCCE04 /* EventCollectionViewCell.xib */; };
 		0E4F4AD71C3E480200CFC23B /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F221B40E50800116445 /* Raleway-Light.ttf */; };
@@ -304,8 +313,6 @@
 		0E4F4ADD1C3E480200CFC23B /* EditPasswordProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23C191BBE6BAF006020C2 /* EditPasswordProfileVC.xib */; };
 		0E4F4ADE1C3E480200CFC23B /* Japan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529181B43935B00CFAEB5 /* Japan.png */; };
 		0E4F4ADF1C3E480200CFC23B /* ic_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F411B40E50800116445 /* ic_home@3x.png */; };
-		0E4F4AE01C3E480200CFC23B /* FilterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F771B40E50800116445 /* FilterList.plist */; };
-		0E4F4AE11C3E480200CFC23B /* CompanyOrgType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E3217DD1C12C91E00061AAB /* CompanyOrgType.plist */; };
 		0E4F4AE21C3E480200CFC23B /* ic_contac_2_heightlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F391B40E50800116445 /* ic_contac_2_heightlight@2x.png */; };
 		0E4F4AE31C3E480200CFC23B /* ic_notification_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */; };
 		0E4F4AE41C3E480200CFC23B /* COOfferProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7E6BF1B4E7CD500059B13 /* COOfferProgressCell.xib */; };
@@ -324,7 +331,6 @@
 		0E4F4AF11C3E480200CFC23B /* ic_home_heightlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F421B40E50800116445 /* ic_home_heightlight@2x.png */; };
 		0E4F4AF21C3E480200CFC23B /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F2A1B40E50800116445 /* Raleway-ThinItalic.ttf */; };
 		0E4F4AF31C3E480200CFC23B /* China.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529141B43935B00CFAEB5 /* China.png */; };
-		0E4F4AF41C3E480200CFC23B /* ProfileList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAA01BBB773D008F433C /* ProfileList.plist */; };
 		0E4F4AF51C3E480200CFC23B /* Raleway-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F1E1B40E50800116445 /* Raleway-ExtraBoldItalic.ttf */; };
 		0E4F4AF61C3E480200CFC23B /* Raleway-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F231B40E50800116445 /* Raleway-LightItalic.ttf */; };
 		0E4F4AF71C3E480200CFC23B /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F325E0E1B40E50800116445 /* RegisterViewController.xib */; };
@@ -411,10 +417,8 @@
 		1E5A6FC71BCCC49F00C4C5A5 /* NProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FB91BCCC49F00C4C5A5 /* NProfileTextCell.m */; };
 		1E5A6FC81BCCC49F00C4C5A5 /* NProfileTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FBA1BCCC49F00C4C5A5 /* NProfileTextCell.xib */; };
 		1E5A6FCB1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FCA1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m */; };
-		1E67FAA11BBB773D008F433C /* ProfileList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAA01BBB773D008F433C /* ProfileList.plist */; };
 		1E67FAB41BBB8882008F433C /* COAwatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAB31BBB8882008F433C /* COAwatarView.m */; };
 		1E67FAC41BBB9149008F433C /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E67FAC31BBB9149008F433C /* BaseLabel.m */; };
-		1E67FAD11BBB9C12008F433C /* FortFolioPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */; };
 		1E6A5DCC1BC4B84000D587BC /* WSGetAccountInvestment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */; };
 		1E6A5DCF1BC4BEC200D587BC /* COAccountInvestmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A5DCE1BC4BEC200D587BC /* COAccountInvestmentModel.m */; };
 		1E87908B1BBE4667003B2CED /* EditAboutProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8790891BBE4667003B2CED /* EditAboutProfileVC.m */; };
@@ -571,8 +575,6 @@
 		7F3260721B40E50800116445 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F711B40E50800116445 /* Images.xcassets */; };
 		7F3260731B40E50800116445 /* JsonCountry.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F731B40E50800116445 /* JsonCountry.json */; };
 		7F3260741B40E50800116445 /* JsonPhoneCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F741B40E50800116445 /* JsonPhoneCode.json */; };
-		7F3260761B40E50800116445 /* FilterList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F771B40E50800116445 /* FilterList.plist */; };
-		7F3260771B40E50800116445 /* SettingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F781B40E50800116445 /* SettingPlist.plist */; };
 		7F85290F1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */; };
 		7F8529211B43935B00CFAEB5 /* Australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529111B43935B00CFAEB5 /* Australia.png */; };
 		7F8529221B43935B00CFAEB5 /* Brazil.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529121B43935B00CFAEB5 /* Brazil.png */; };
@@ -664,7 +666,18 @@
 		012FA93D1B7A13A600A80D3F /* LoadFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadFileManager.h; sourceTree = "<group>"; };
 		01D1437A1B7D1053003DF5F9 /* COOfferModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOfferModel.h; sourceTree = "<group>"; };
 		01D1437B1B7D1053003DF5F9 /* COOfferModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOfferModel.m; sourceTree = "<group>"; };
-		0E3217DD1C12C91E00061AAB /* CompanyOrgType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CompanyOrgType.plist; sourceTree = "<group>"; };
+		0E0291F61C3E4D99000D9320 /* CompanyOrgType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CompanyOrgType.plist; sourceTree = "<group>"; };
+		0E0291F71C3E4D99000D9320 /* FilterList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterList.plist; sourceTree = "<group>"; };
+		0E0291F81C3E4D99000D9320 /* FortFolioPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FortFolioPlist.plist; sourceTree = "<group>"; };
+		0E0291F91C3E4D99000D9320 /* ProfileList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProfileList.plist; sourceTree = "<group>"; };
+		0E0291FA1C3E4D99000D9320 /* SettingPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingPlist.plist; sourceTree = "<group>"; };
+		0E0292011C3E4DA9000D9320 /* CompanyOrgType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CompanyOrgType.plist; sourceTree = "<group>"; };
+		0E0292021C3E4DA9000D9320 /* FilterList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterList.plist; sourceTree = "<group>"; };
+		0E0292031C3E4DA9000D9320 /* FortFolioPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FortFolioPlist.plist; sourceTree = "<group>"; };
+		0E0292041C3E4DA9000D9320 /* ProfileList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProfileList.plist; sourceTree = "<group>"; };
+		0E0292051C3E4DA9000D9320 /* SettingPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingPlist.plist; sourceTree = "<group>"; };
+		0E02920C1C3E5B76000D9320 /* COLabelLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLabelLanguage.h; sourceTree = "<group>"; };
+		0E02920D1C3E5B76000D9320 /* COLabelLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLabelLanguage.m; sourceTree = "<group>"; };
 		0E39FA4B1BC4247000880834 /* NProfileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDataSource.h; sourceTree = "<group>"; };
 		0E39FA4C1BC4247000880834 /* NProfileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProfileDataSource.m; sourceTree = "<group>"; };
 		0E39FA4D1BC4247000880834 /* NProfileDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileDelegate.h; sourceTree = "<group>"; };
@@ -793,12 +806,10 @@
 		1E5A6FBA1BCCC49F00C4C5A5 /* NProfileTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NProfileTextCell.xib; sourceTree = "<group>"; };
 		1E5A6FC91BCCE46E00C4C5A5 /* WSGetInvestorProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetInvestorProfile.h; sourceTree = "<group>"; };
 		1E5A6FCA1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetInvestorProfile.m; sourceTree = "<group>"; };
-		1E67FAA01BBB773D008F433C /* ProfileList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProfileList.plist; sourceTree = "<group>"; };
 		1E67FAB21BBB8882008F433C /* COAwatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COAwatarView.h; sourceTree = "<group>"; };
 		1E67FAB31BBB8882008F433C /* COAwatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COAwatarView.m; sourceTree = "<group>"; };
 		1E67FAC21BBB9149008F433C /* BaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLabel.h; sourceTree = "<group>"; };
 		1E67FAC31BBB9149008F433C /* BaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLabel.m; sourceTree = "<group>"; };
-		1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FortFolioPlist.plist; sourceTree = "<group>"; };
 		1E6A5DCA1BC4B84000D587BC /* WSGetAccountInvestment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetAccountInvestment.h; sourceTree = "<group>"; };
 		1E6A5DCB1BC4B84000D587BC /* WSGetAccountInvestment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetAccountInvestment.m; sourceTree = "<group>"; };
 		1E6A5DCD1BC4BEC200D587BC /* COAccountInvestmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COAccountInvestmentModel.h; sourceTree = "<group>"; };
@@ -1013,8 +1024,6 @@
 		7F325F711B40E50800116445 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7F325F731B40E50800116445 /* JsonCountry.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JsonCountry.json; sourceTree = "<group>"; };
 		7F325F741B40E50800116445 /* JsonPhoneCode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JsonPhoneCode.json; sourceTree = "<group>"; };
-		7F325F771B40E50800116445 /* FilterList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterList.plist; sourceTree = "<group>"; };
-		7F325F781B40E50800116445 /* SettingPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingPlist.plist; sourceTree = "<group>"; };
 		7F85290D1B438F5400CFAEB5 /* WSURLSessionManager+Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Profile.h"; sourceTree = "<group>"; };
 		7F85290E1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Profile.m"; sourceTree = "<group>"; };
 		7F8529111B43935B00CFAEB5 /* Australia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Australia.png; sourceTree = "<group>"; };
@@ -1191,6 +1200,39 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0E0291F51C3E4D99000D9320 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				0E0291F61C3E4D99000D9320 /* CompanyOrgType.plist */,
+				0E0291F71C3E4D99000D9320 /* FilterList.plist */,
+				0E0291F81C3E4D99000D9320 /* FortFolioPlist.plist */,
+				0E0291F91C3E4D99000D9320 /* ProfileList.plist */,
+				0E0291FA1C3E4D99000D9320 /* SettingPlist.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		0E0292001C3E4DA9000D9320 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				0E0292011C3E4DA9000D9320 /* CompanyOrgType.plist */,
+				0E0292021C3E4DA9000D9320 /* FilterList.plist */,
+				0E0292031C3E4DA9000D9320 /* FortFolioPlist.plist */,
+				0E0292041C3E4DA9000D9320 /* ProfileList.plist */,
+				0E0292051C3E4DA9000D9320 /* SettingPlist.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		0E02920B1C3E5B63000D9320 /* COLabelLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				0E02920C1C3E5B76000D9320 /* COLabelLanguage.h */,
+				0E02920D1C3E5B76000D9320 /* COLabelLanguage.m */,
+			);
+			path = COLabelLanguage;
+			sourceTree = "<group>";
+		};
 		0E2DFF8E1BFCC5FB00C46815 /* OngoingStatusModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1252,6 +1294,7 @@
 		0E4F49AC1C3E471200CFC23B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0E0291F51C3E4D99000D9320 /* Plist */,
 				0E4F49AD1C3E471200CFC23B /* Languages */,
 			);
 			path = Resources;
@@ -1277,6 +1320,7 @@
 		0E4F49B21C3E471200CFC23B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0E0292001C3E4DA9000D9320 /* Plist */,
 				0E4F49B31C3E471200CFC23B /* Languages */,
 			);
 			path = Resources;
@@ -2050,6 +2094,7 @@
 		7F325E451B40E50800116445 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				0E02920B1C3E5B63000D9320 /* COLabelLanguage */,
 				1E8ECA221BD61DEA001DE271 /* CONotificationBannerView */,
 				1E4B34791BC62823006F2200 /* COTextViewBorder */,
 				1E8F8A0F1BC4FA6F004CEF26 /* COLabelTopAligin */,
@@ -2240,7 +2285,6 @@
 				7F325F5E1B40E50800116445 /* Images Other */,
 				7F325F711B40E50800116445 /* Images.xcassets */,
 				7F325F721B40E50800116445 /* Json */,
-				7F325F751B40E50800116445 /* Plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2359,18 +2403,6 @@
 				7F325F741B40E50800116445 /* JsonPhoneCode.json */,
 			);
 			path = Json;
-			sourceTree = "<group>";
-		};
-		7F325F751B40E50800116445 /* Plist */ = {
-			isa = PBXGroup;
-			children = (
-				7F325F771B40E50800116445 /* FilterList.plist */,
-				7F325F781B40E50800116445 /* SettingPlist.plist */,
-				1E67FAA01BBB773D008F433C /* ProfileList.plist */,
-				1E67FAD01BBB9C12008F433C /* FortFolioPlist.plist */,
-				0E3217DD1C12C91E00061AAB /* CompanyOrgType.plist */,
-			);
-			path = Plist;
 			sourceTree = "<group>";
 		};
 		7F8529101B43935B00CFAEB5 /* countries */ = {
@@ -2666,11 +2698,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E0291FD1C3E4D99000D9320 /* FortFolioPlist.plist in Resources */,
 				0E4F4A5D1C3E480200CFC23B /* ic_calendar@2x.png in Resources */,
 				0E4F4A5E1C3E480200CFC23B /* EventViewController.xib in Resources */,
 				0E4F4A5F1C3E480200CFC23B /* WebViewSetting.xib in Resources */,
 				0E4F4A601C3E480200CFC23B /* ic_home_heightlight@3x.png in Resources */,
 				0E4F4A611C3E480200CFC23B /* ic_Check@2x.png in Resources */,
+				0E0291FE1C3E4D99000D9320 /* ProfileList.plist in Resources */,
 				0E4F4A621C3E480200CFC23B /* Thailand.png in Resources */,
 				0E4F4A631C3E480200CFC23B /* CODropListView.xib in Resources */,
 				0E4F4A641C3E480200CFC23B /* COInterestedViewController.xib in Resources */,
@@ -2710,6 +2744,7 @@
 				0E4F4A861C3E480200CFC23B /* portrait_ph.jpg in Resources */,
 				0E4F4A871C3E480200CFC23B /* ic_homes@2x.png in Resources */,
 				0E4F4A881C3E480200CFC23B /* DealsController.xib in Resources */,
+				0E0291FF1C3E4D99000D9320 /* SettingPlist.plist in Resources */,
 				0E4F4A891C3E480200CFC23B /* ic_peopel@3x.png in Resources */,
 				0E4F4A8A1C3E480200CFC23B /* NProfileController.xib in Resources */,
 				0E4F4A8B1C3E480200CFC23B /* ic_droplist.png in Resources */,
@@ -2734,7 +2769,6 @@
 				0E4F4A9E1C3E480200CFC23B /* ic_placeholder.png in Resources */,
 				0E4F4A9F1C3E480200CFC23B /* United Kingdom.png in Resources */,
 				0E4F4AA01C3E480200CFC23B /* AccountCell.xib in Resources */,
-				0E4F4AA11C3E480200CFC23B /* FortFolioPlist.plist in Resources */,
 				0E4F4AA21C3E480200CFC23B /* ic_info@2x.png in Resources */,
 				0E4F4AA31C3E480200CFC23B /* ic_contac_2@2x.png in Resources */,
 				0E4F4AA41C3E480200CFC23B /* ic_Left@3x.png in Resources */,
@@ -2779,12 +2813,12 @@
 				0E4F4ACC1C3E480200CFC23B /* ic_loadding.gif in Resources */,
 				0E4F4ACD1C3E480200CFC23B /* ic_setting_2_heighlight@2x.png in Resources */,
 				0E4F4ACE1C3E480200CFC23B /* NProfileNodataCell.xib in Resources */,
+				0E0291FC1C3E4D99000D9320 /* FilterList.plist in Resources */,
 				0E4F4ACF1C3E480200CFC23B /* COPopupQuestionView.xib in Resources */,
 				0E4F4AD01C3E480200CFC23B /* NProfileCountrieCell.xib in Resources */,
 				0E4F4AD11C3E480200CFC23B /* ic_peropel@3x.png in Resources */,
 				0E4F4AD21C3E480200CFC23B /* general.png in Resources */,
 				0E4F4AD31C3E480200CFC23B /* ForgotPasswordViewController.xib in Resources */,
-				0E4F4AD41C3E480200CFC23B /* SettingPlist.plist in Resources */,
 				0E4F4AD51C3E480200CFC23B /* ic_setting_heightline@2x.png in Resources */,
 				0E4F4AD61C3E480200CFC23B /* EventCollectionViewCell.xib in Resources */,
 				0E4F4AD71C3E480200CFC23B /* Raleway-Light.ttf in Resources */,
@@ -2796,8 +2830,6 @@
 				0E4F4ADD1C3E480200CFC23B /* EditPasswordProfileVC.xib in Resources */,
 				0E4F4ADE1C3E480200CFC23B /* Japan.png in Resources */,
 				0E4F4ADF1C3E480200CFC23B /* ic_home@3x.png in Resources */,
-				0E4F4AE01C3E480200CFC23B /* FilterList.plist in Resources */,
-				0E4F4AE11C3E480200CFC23B /* CompanyOrgType.plist in Resources */,
 				0E4F4AE21C3E480200CFC23B /* ic_contac_2_heightlight@2x.png in Resources */,
 				0E4F4AE31C3E480200CFC23B /* ic_notification_selected@2x.png in Resources */,
 				0E4F4AE41C3E480200CFC23B /* COOfferProgressCell.xib in Resources */,
@@ -2816,7 +2848,6 @@
 				0E4F4AF11C3E480200CFC23B /* ic_home_heightlight@2x.png in Resources */,
 				0E4F4AF21C3E480200CFC23B /* Raleway-ThinItalic.ttf in Resources */,
 				0E4F4AF31C3E480200CFC23B /* China.png in Resources */,
-				0E4F4AF41C3E480200CFC23B /* ProfileList.plist in Resources */,
 				0E4F4AF51C3E480200CFC23B /* Raleway-ExtraBoldItalic.ttf in Resources */,
 				0E4F4AF61C3E480200CFC23B /* Raleway-LightItalic.ttf in Resources */,
 				0E4F4AF71C3E480200CFC23B /* RegisterViewController.xib in Resources */,
@@ -2834,6 +2865,7 @@
 				0E4F4B031C3E480200CFC23B /* ic_meoney@2x.png in Resources */,
 				0E4F4B041C3E480200CFC23B /* EditInvestmentProfileVC.xib in Resources */,
 				0E4F4B051C3E480200CFC23B /* Australia.png in Resources */,
+				0E0291FB1C3E4D99000D9320 /* CompanyOrgType.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2841,11 +2873,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E0292081C3E4DA9000D9320 /* FortFolioPlist.plist in Resources */,
 				7F3260351B40E50800116445 /* ic_calendar@2x.png in Resources */,
 				0E8F35611C3DFE4E00CCCE04 /* EventViewController.xib in Resources */,
 				7F325FBE1B40E50800116445 /* WebViewSetting.xib in Resources */,
 				7F3260461B40E50800116445 /* ic_home_heightlight@3x.png in Resources */,
 				7F3260381B40E50800116445 /* ic_Check@2x.png in Resources */,
+				0E0292091C3E4DA9000D9320 /* ProfileList.plist in Resources */,
 				7F85292D1B43935B00CFAEB5 /* Thailand.png in Resources */,
 				7F325FC31B40E50800116445 /* CODropListView.xib in Resources */,
 				7FA7E6BA1B4E7C4D00059B13 /* COInterestedViewController.xib in Resources */,
@@ -2885,6 +2919,7 @@
 				7FAB4E471B467FB80012E6D0 /* portrait_ph.jpg in Resources */,
 				1EF23C2E1BBE8691006020C2 /* ic_homes@2x.png in Resources */,
 				0E8956211BBE1C14007E36BF /* DealsController.xib in Resources */,
+				0E02920A1C3E4DA9000D9320 /* SettingPlist.plist in Resources */,
 				7F3260511B40E50800116445 /* ic_peopel@3x.png in Resources */,
 				0E8956831BBE2497007E36BF /* NProfileController.xib in Resources */,
 				7F32603E1B40E50800116445 /* ic_droplist.png in Resources */,
@@ -2909,7 +2944,6 @@
 				7F3260711B40E50800116445 /* ic_placeholder.png in Resources */,
 				7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */,
 				0E89562D1BBE1D9F007E36BF /* AccountCell.xib in Resources */,
-				1E67FAD11BBB9C12008F433C /* FortFolioPlist.plist in Resources */,
 				7F3260471B40E50800116445 /* ic_info@2x.png in Resources */,
 				7F32603A1B40E50800116445 /* ic_contac_2@2x.png in Resources */,
 				7F32604A1B40E50800116445 /* ic_Left@3x.png in Resources */,
@@ -2954,13 +2988,13 @@
 				7F32602B1B40E50800116445 /* Raleway-SemiBold.ttf in Resources */,
 				7F32604D1B40E50800116445 /* ic_loadding.gif in Resources */,
 				7F32605A1B40E50800116445 /* ic_setting_2_heighlight@2x.png in Resources */,
+				0E0292071C3E4DA9000D9320 /* FilterList.plist in Resources */,
 				1E5A6FC61BCCC49F00C4C5A5 /* NProfileNodataCell.xib in Resources */,
 				7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */,
 				1E5A6FC01BCCC49F00C4C5A5 /* NProfileCountrieCell.xib in Resources */,
 				7F3260551B40E50800116445 /* ic_peropel@3x.png in Resources */,
 				B94211021BFC2C9E00C86FE8 /* general.png in Resources */,
 				BBBD82031B8BE0720061FFF0 /* ForgotPasswordViewController.xib in Resources */,
-				7F3260771B40E50800116445 /* SettingPlist.plist in Resources */,
 				7F32605C1B40E50800116445 /* ic_setting_heightline@2x.png in Resources */,
 				0E8F35671C3DFED200CCCE04 /* EventCollectionViewCell.xib in Resources */,
 				7F3260261B40E50800116445 /* Raleway-Light.ttf in Resources */,
@@ -2972,8 +3006,6 @@
 				1EF23C1B1BBE6BAF006020C2 /* EditPasswordProfileVC.xib in Resources */,
 				7F8529281B43935B00CFAEB5 /* Japan.png in Resources */,
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
-				7F3260761B40E50800116445 /* FilterList.plist in Resources */,
-				0E3217DE1C12C91E00061AAB /* CompanyOrgType.plist in Resources */,
 				7F32603C1B40E50800116445 /* ic_contac_2_heightlight@2x.png in Resources */,
 				0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */,
 				7FA7E6C11B4E7CD500059B13 /* COOfferProgressCell.xib in Resources */,
@@ -2992,7 +3024,6 @@
 				7F3260451B40E50800116445 /* ic_home_heightlight@2x.png in Resources */,
 				7F32602E1B40E50800116445 /* Raleway-ThinItalic.ttf in Resources */,
 				7F8529241B43935B00CFAEB5 /* China.png in Resources */,
-				1E67FAA11BBB773D008F433C /* ProfileList.plist in Resources */,
 				7F3260221B40E50800116445 /* Raleway-ExtraBoldItalic.ttf in Resources */,
 				7F3260271B40E50800116445 /* Raleway-LightItalic.ttf in Resources */,
 				7F325FA51B40E50800116445 /* RegisterViewController.xib in Resources */,
@@ -3009,6 +3040,7 @@
 				7F32604E1B40E50800116445 /* ic_meoney@2x.png in Resources */,
 				1EA610D71BC5071B00BF3A47 /* EditInvestmentProfileVC.xib in Resources */,
 				7F8529211B43935B00CFAEB5 /* Australia.png in Resources */,
+				0E0292061C3E4DA9000D9320 /* CompanyOrgType.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3196,6 +3228,7 @@
 				0E4F49F61C3E480200CFC23B /* NMTableViewCell.m in Sources */,
 				0E4F49F71C3E480200CFC23B /* COOfferModel.m in Sources */,
 				0E4F49F81C3E480200CFC23B /* UIView+Identifier.m in Sources */,
+				0E02920F1C3E5B76000D9320 /* COLabelLanguage.m in Sources */,
 				0E4F49F91C3E480200CFC23B /* WSURLSessionManager+User.m in Sources */,
 				0E4F49FA1C3E480200CFC23B /* WebViewSetting.m in Sources */,
 				0E4F49FB1C3E480200CFC23B /* NSString+Helpers.m in Sources */,
@@ -3358,6 +3391,7 @@
 				0ECA88401B27CA7100B5656F /* NMTableViewCell.m in Sources */,
 				01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */,
 				0ECA88481B27CA7100B5656F /* UIView+Identifier.m in Sources */,
+				0E02920E1C3E5B76000D9320 /* COLabelLanguage.m in Sources */,
 				7F325FDD1B40E50800116445 /* WSURLSessionManager+User.m in Sources */,
 				7F325FBD1B40E50800116445 /* WebViewSetting.m in Sources */,
 				0ECA88451B27CA7100B5656F /* NSString+Helpers.m in Sources */,

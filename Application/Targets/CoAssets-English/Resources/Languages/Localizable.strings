@@ -184,3 +184,5 @@
 
 "MINIMUM_MESSAGE"       = "Minimum investment amount is %@";
 "ORG_NAME_REQUIRED"      = "Org name is required";
+
+"Investor type:"    = "Investor type:";

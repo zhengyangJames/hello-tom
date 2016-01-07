@@ -24,6 +24,8 @@
 #pragma mark - Action
 
 - (void)viewDidLoad {
+    [_interedtedBTN setTitle:m_string(@"BUTTON_INTERESTED") forState:UIControlStateNormal];
+    [_questionBTN setTitle:m_string(@"BUTTON_QUESTION") forState:UIControlStateNormal];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButton) name:kNOTIFICATION_INTERESTED object:nil];
     [kNotificationCenter addObserver:self selector:@selector(__actionUpdateButtonQuestion) name:kNOTIFICATION_QUESTION object:nil];
@@ -56,7 +58,7 @@
 }
 
 - (void)__actionUpdateButton {
-    [_interedtedBTN setTitle:m_string(@"BUTTON_INTERESTED") forState:UIControlStateNormal];
+    [_interedtedBTN setTitle:m_string(@"123") forState:UIControlStateNormal];
 }
 
 - (void)__actionUpdateButtonQuestion {

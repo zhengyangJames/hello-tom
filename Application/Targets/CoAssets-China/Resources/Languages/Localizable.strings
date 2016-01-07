@@ -10,177 +10,198 @@
 "APP_NAME"                              = "COASSETS";
 
 //titleViewController
-"COASSETS_TITLE"                        = "CoAssets";
-"PROFILE"                               = "Profile";
-"NOTIFICATION"                          = "Notification";
+"COASSETS_TITLE"                        = "CoAssetsCNN";
+"PROFILE"                               = "ProfileCNN";
+"NOTIFICATION"                          = "NotificationCNN";
 "Event"                                 = "Event";
-"SETTINGS"                              = "Settings";
+"SETTINGS"                              = "SettingsCNN";
 
-"ACCOUNT"                               = "Account";
-"DEALS"                                 = "Deals";
+"ACCOUNT"                               = "AccountCNN";
+"DEALS"                                 = "DealsCNN";
 
 //TitleTabbar
-"HOME"                                  = "Home";
-"EVENT"                                 = "Events";
-"NOTIFICATIONS"                         = "Notifications";
-"PORTFOLIO"                             = "Portfolio";
+"HOME"                                  = "HomeCNN";
+"EVENT"                                 = "EventsCNN";
+"NOTIFICATIONS"                         = "NotificationsCNN";
+"PORTFOLIO"                             = "PortfolioCNN";
 
 //TiTleButton
-"Notification"                          = "Notification";
-"FILTER_TITLE"                          = "Filter";
-"OK_TITLE"                              = "OK";
-"CANCEL_TITLE"                          = "Cancel";
-"BACK_TITLE"                            = "Back";
-"QUESTION_TITLE"                        = "Questions";
-"REQUEST_SEND_TITLE"                    = "Request sent";
-"INTERESTED_TITLE"                      = "Interested";
-"DONE_TITLE"                            = "Done";
-"SALUTATION_TITLE"                      = "Salutation";
-"PHONE_CODE_TITLE"                      = "Phone Codes";
-"TAKE_PHOTO_TITLE"                      = "Take a photo";
-"CHOOSE_EXISTING_TITLE"                 = "Choose existing";
+"Notification"                          = "NotificationCNN";
+"FILTER_TITLE"                          = "FilterCNN";
+"OK_TITLE"                              = "OKCNN";
+"CANCEL_TITLE"                          = "CancelCNN";
+"BACK_TITLE"                            = "BackCNN";
+"QUESTION_TITLE"                        = "QuestionsCNN";
+"REQUEST_SEND_TITLE"                    = "Request sentCNN";
+"INTERESTED_TITLE"                      = "InterestedCNN";
+"DONE_TITLE"                            = "DoneCNN";
+"SALUTATION_TITLE"                      = "SalutationCNN";
+"PHONE_CODE_TITLE"                      = "Phone CodesCNN";
+"TAKE_PHOTO_TITLE"                      = "Take a photoCNN";
+"CHOOSE_EXISTING_TITLE"                 = "Choose existingCNN";
 
-"FIRST_NAME"                            = "First Name";
-"LAST_NAME"                             = "Last Name";
-"EMAIL"= "Email";
-"PHONE"                                 = "Phone";
-"CONTACT"                               = "Contact";
-"NEWS"                                  = "News";
-"BUTTON_INTERESTED"                     = "I want to invest again!";
-"BUTTON_QUESTION"                       = "Request sent.";
+"FIRST_NAME"                            = "First NameCNN";
+"LAST_NAME"                             = "Last NameCNN";
+"EMAIL"                                 = "EmailCNN";
+"PHONE"                                 = "PhoneCNN";
+"CONTACT"                               = "ContactCNN";
+"NEWS"                                  = "NewsCNN";
+"BUTTON_INTERESTED"                     = "I want to invest again!CNN";
+"BUTTON_QUESTION"                       = "Request sent.CNN";
 
-"declaration_form_list"                 = "DECLARATION FORM";
-"legal_appointment"                     = "LEGAL APPOINTMENT";
-"licenses"                              = "PROOF OF LICENSES";
-"others"                                = "OTHER DOCUMENTS";
-"ownership"                             = "PROOF OF OWNERSHIP";
-"registration_form_list"                = "COMPANY REGISTRATION";
+"declaration_form_list"                 = "DECLARATION FORMcnn";
+"legal_appointment"                     = "LEGAL APPOINTMENTcnn";
+"licenses"                              = "PROOF OF LICENSEScnn";
+"others"                                = "OTHER DOCUMENTScnn";
+"ownership"                             = "PROOF OF OWNERSHIPcnn";
+"registration_form_list"                = "COMPANY REGISTRATIONcnn";
 
-"EMAIL_REQUIRED"                        = "Email is required.";
-"USERNAME_REQUIRED"                     = "Username is required.";
-"PASSWORD_REQUIRED"                     = "Password is required.";
-"NEW_PASSWORD_REQUIRED"                 = "New password is required.";
-"FIRSTNAME_REQUIRED"                    = "First Name is required.";
-"LASTNAME_REQUIRED"                     = "Last Name is required.";
+"EMAIL_REQUIRED"                        = "Email is required.CNN";
+"USERNAME_REQUIRED"                     = "Username is required.CNN";
+"PASSWORD_REQUIRED"                     = "Password is required.CNN";
+"NEW_PASSWORD_REQUIRED"                 = "New password is required.CNN";
+"FIRSTNAME_REQUIRED"                    = "First Name is required.CNN";
+"LASTNAME_REQUIRED"                     = "Last Name is required.CNN";
 "PHONE_REQUIRED"                        = "Phone is required.";
-"ADDRESS_REQUIRED"                      = "Address is required.";
-"CONFIRM_PASSWORD_REQUIRED"             = "Confirm password is required.";
-"CONFIRM_PASSWORD_MESSAGE"              = "Confirm password does not match.";
+"ADDRESS_REQUIRED"                      = "Address is required.CNN";
+"CONFIRM_PASSWORD_REQUIRED"             = "Confirm password is required.CNN";
+"CONFIRM_PASSWORD_MESSAGE"              = "Confirm password does not match.CNN";
 
+"FILTER_BULLK_NULL"                     = "Bulk Purchase are comingCNN";
+"FILTER_CROWD_NULL"                     = "Crowdfunding are comingCNN";
+"FILTER_SALE_NULL"                      = "Pre-Sales are comingCNN";
+"FILTER_ALL_NULL"                       = "CoAssets is comingCNN";
 
+"EMAIL_INVALID"                         = "Email is invalid.CNN";
+"PASSWORD_INVALID"                      = "Password is invalid.CNN";
+"USERNAME_INVALID"                      = "Username is invalid.CNN";
+"PASSWORD_ERROR"                        = "Password should consist of alphanumeric and @.+-_ only.CNN";
+"USERNAME_ERROR"                        = "Username should consist of alphanumeric and @.+-_ only.CNN";
 
+"MESSEAGE_RESET_PASSWORD"               = "Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortlyCNN";
+"YOUR_EMAIL_INVALID"                    = "Your email is invalid.CNN";
+"INVALID_GRANT"                         = "Invalid GrantCNN";
+"AMOUNT_REQUIRED"                       = "Amount is required.CNN";
+"MESSAGE_CHECK_EMAIL"                   = "Please agree to allow CoAssets to contact you in order to facilitate the crowdfunding process.CNN";
+"REQUEST_SEND"                          = "Request sent.CNN";
+"TERM_OF_USE"                           = "Terms Of UseCNN";
+"CODE_OF_CONDUCT"                       = "Code of ConductCNN";
+"COMMENTARIES"                          = "CommentariesCNN";
+"PRIVACY"                               = "PrivacyCNN";
+"BASIC_INFO"                            = "Basic InfoCNN";
+"ERROR_QUESTION"                        = "Question content is required.CNN";
+"ERROR_COUNTRY"                         = "Country is invalid.CNN";
 
+"PASSWORD_CHANGE_SUCCESSFULLY"          = "Password has been changed successfullyCNN";
+"PASSWORD_NOT_CHANGED"                  = "Password was not changedCNN";
 
-
-
-
-
-
-
-
-
-
-
-"FILTER_BULLK_NULL"                     = "Bulk Purchase are coming";
-"FILTER_CROWD_NULL"                     = "Crowdfunding are coming";
-"FILTER_SALE_NULL"                      = "Pre-Sales are coming";
-"FILTER_ALL_NULL"                       = "CoAssets is coming";
-
-"EMAIL_INVALID"                         = "Email is invalid.";
-"PASSWORD_INVALID"                      = "Password is invalid.";
-"USERNAME_INVALID"                      = "Username is invalid.";
-"PASSWORD_ERROR"                        = "Password should consist of alphanumeric and @.+-_ only.";
-"USERNAME_ERROR"                        = "Username should consist of alphanumeric and @.+-_ only.";
-
-"MESSEAGE_RESET_PASSWORD"               = "Password Reset Successful We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly";
-"YOUR_EMAIL_INVALID"                    = "Your email is invalid.";
-"INVALID_GRANT"                         = "Invalid Grant";
-"AMOUNT_REQUIRED"                       = "Amount is required.";
-"MESSAGE_CHECK_EMAIL"                   = "Please agree to allow CoAssets to contact you in order to facilitate the crowdfunding process.";
-"REQUEST_SEND"                          = "Request sent.";
-"TERM_OF_USE"                           = "Terms Of Use";
-"CODE_OF_CONDUCT"                       = "Code of Conduct";
-"COMMENTARIES"                          = "Commentaries";
-"PRIVACY"                               = "Privacy";
-"BASIC_INFO"                            = "Basic Info";
-"ERROR_QUESTION"                        = "Question content is required.";
-"ERROR_COUNTRY"                         = "Country is invalid.";
-
-"PASSWORD_CHANGE_SUCCESSFULLY"          = "Password has been changed successfully";
-"PASSWORD_NOT_CHANGED"                  = "Password was not changed";
-
-"UPDATE_PROFILE"                        = "Update profile";
-"UPDATE_PASSWORD"                       = "Update password";
-"MESSAGE_LOGOUT"                        = "Are you sure you want to logout?";
-"INVAlID_USERNAME_OR_PASSWORD"          = "Invalid username or password.";
-"LOG_IN"                                = "Log In";
+"UPDATE_PROFILE"                        = "Update profileCNN";
+"UPDATE_PASSWORD"                       = "Update passwordCNN";
+"MESSAGE_LOGOUT"                        = "Are you sure you want to logout?CNN";
+"INVAlID_USERNAME_OR_PASSWORD"          = "Invalid username or password.CNN";
+"LOG_IN"                                = "Log InCNN";
 "LOG_OUT"                               = "Log Out";
-"USERNAME_ALREADY_EXISTS"               = "Username Already Exists";
-"N/A"                                   = "N/A";
-"INVESTORS"                             = "%@ INVESTORS";
-"MONTHS"                                = "%@ MONTHS";
-"STATUS"                                = "%@";
-"MIN_ANNUAL_RETURN"                     = "%@ %% (%@%%)";
-"DAY_LEFT"                              = "%@";
-"GOAL"                                  = "%tu%% of goal";
+"USERNAME_ALREADY_EXISTS"               = "Username Already ExistsCNN";
+"N/A"                                   = "N/ACNN";
+"INVESTORS"                             = "%@ INVESTORSCNN";
+"MONTHS"                                = "%@ MONTHSCNN";
+"STATUS"                                = "%@CNN";
+"MIN_ANNUAL_RETURN"                     = "%@ %% (%@%%)CNN";
+"DAY_LEFT"                              = "%@CNN";
+"GOAL"                                  = "%tu%% of goalCNN";
 
-"NoDocumentsUploaded"                   = "No Documents Uploaded";
-"DETAIL_DOCUMENT"                       = "The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";
-
-
-"OFFER"                                 = "Offer";
-"PROJECT"                               = "Project";
-"DOCUMENT"                              = "Documents";
-"ADDRESSNAME"                           = "Address";
-
-"Contact"                               = "Contact";
-"News"                                  = "News";
-"Commentaries"                          = "Commentaries";
-"Terms of Use"                          = "Terms of Use";
-"Code of Conduct"                       = "Code of Conduct";
-"Privacy"                               = "Privacy";
-"Log Out"                               = "Log Out";
-
-"Interested_Popup"                      = "Thank you for crowdfunding, \n%@. \n\nPlease e-sign the contract sent to your email & proceed to make fund transfer within 5 working days. \n\nIf you have any queries, please feel free to call 65327008 or email admin@coassets.com. \nThank you & happy crowdfunding.";
-
-"KEY_ACTION_UPDATEPROFILE"              = "Update profile";
-"KEY_ACTION_UPDATECOMPANY"              = "Update company profile";
-"KEY_ACTION_UPDATEINVESTOR"             = "Update investor profile";
-"KEY_ACTION_UPDATECHANGEPASSWORD"       = "Change password";
-
-"COMPANY_NAME"                          = "Org name";
-"COMPANY_ADRESS"                        = "Address";
-
-"INVESTOR_TYPE"                         = "Investor Type";
-"INVESTOR_PREFERENCE"                   = "Project Preference";
-"INVESTOR_AMOUNT"                       = "Investment Amount";
-"INVESTOR_TARGET"                       = "Target Returns (Annualized)";
-"INVESTOR_DURATION"                     = "Duration Preference";
-"INVESTOR_COUNTRIES"                    = "Countries Preference";
-
-"ON_GOING"                              = "Deals that you have supported and are still ongoing.";
-"FUNDED"                                = "Deals that you have supported that are funded successfully.";
-"COMPLETED"                             = "Deals that you have supported that have been completed payout.";
-"SUGEST"                                = "Deals you might be interested in";
-"TITLE_LABEL"                           = "You currently have no deals.";
-"TITLE_BUTTON"                          = "Click Here To Get Started!";
-
-"VIEW_PASSWORD"                         = "Update Password";
-
-"USERNAME"                              = "User name";
+"NoDocumentsUploaded"                   = "No Documents UploadedCNN";
+"DETAIL_DOCUMENT"                       = "The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.CNN";
 
 
+"OFFER"                                 = "OfferCNN";
+"PROJECT"                               = "ProjectCNN";
+"DOCUMENT"                              = "DocumentsCNN";
+"ADDRESSNAME"                           = "AddressCNN";
 
-"C_PROFILE"                             = "Company Profile";
+"Contact"                               = "ContactCNN";
+"News"                                  = "NewsCNN";
+"Commentaries"                          = "CommentariesCNN";
+"Terms of Use"                          = "Terms of UseCNN";
+"Code of Conduct"                       = "Code of ConductCNN";
+"Privacy"                               = "PrivacyCNN";
+"Log Out"                               = "Log OutCNN";
 
-"I_PROFILE"                             = "Investment Profile";
+"Interested_Popup"                      = "Thank you for crowdfunding, \n%@. \n\nPlease e-sign the contract sent to your email & proceed to make fund transfer within 5 working days. \n\nIf you have any queries, please feel free to call 65327008 or email admin@coassets.com. \nThank you & happy crowdfunding.CNN";
 
-"NoCompanyAssociated"                   = "No company associated";
+"KEY_ACTION_UPDATEPROFILE"              = "Update profileCNN";
+"KEY_ACTION_UPDATECOMPANY"              = "Update company profileCNN";
+"KEY_ACTION_UPDATEINVESTOR"             = "Update investor profileCNN";
+"KEY_ACTION_UPDATECHANGEPASSWORD"       = "Change passwordCNN";
 
-"UPDATE_COMPANY_PROFILE"                = "Update profile copany";
+"COMPANY_NAME"                          = "Org nameCNN";
+"COMPANY_ADRESS"                        = "AddressCNN";
 
-"NEW_OFFER"                             = "I want to invest new offer I want to invest new offer I want to invest new offer";
-"TITLE_PRIVATE"         = "PRIVATE";
+"INVESTOR_TYPE"                         = "Investor TypeCNN";
+"INVESTOR_PREFERENCE"                   = "Project PreferenceCNN";
+"INVESTOR_AMOUNT"                       = "Investment AmountCNN";
+"INVESTOR_TARGET"                       = "Target Returns (Annualized)CNN";
+"INVESTOR_DURATION"                     = "Duration PreferenceCNN";
+"INVESTOR_COUNTRIES"                    = "Countries PreferenceCNN";
 
-"MINIMUM_MESSAGE"       = "Minimum investment amount is %@";
-"ORG_NAME_REQUIRED"      = "Org name is required";
+"ON_GOING"                              = "Deals that you have supported and are still ongoing.CNN";
+"FUNDED"                                = "Deals that you have supported that are funded successfully.CNN";
+"COMPLETED"                             = "Deals that you have supported that have been completed payout.CNN";
+"SUGEST"                                = "Deals you might be interested inCNN";
+"TITLE_LABEL"                           = "You currently have no deals.CNN";
+"TITLE_BUTTON"                          = "Click Here To Get Started!CNN";
+
+"VIEW_PASSWORD"                         = "Update PasswordCNN";
+
+"USERNAME"                              = "User nameCNN";
+
+
+
+"C_PROFILE"                             = "Company ProfileCNN";
+
+"I_PROFILE"                             = "Investment ProfileCNN";
+
+"NoCompanyAssociated"                   = "No company associatedCNN";
+
+"UPDATE_COMPANY_PROFILE"                = "Update profile copanyCNN";
+
+"NEW_OFFER"                             = "I want to invest new offer I want to invest new offer I want to invest new offerCNN";
+"TITLE_PRIVATE"         = "PRIVATECNN";
+
+"MINIMUM_MESSAGE"       = "Minimum investment amount is %@CNN";
+"ORG_NAME_REQUIRED"      = "Org name is requiredCNN";
+
+//EditInvestmentProfileVC
+"Investor type:" = "Investor type:CNN";
+"Project preference:" = "Project preference:CNN";
+"Currency:"  = "Currency:CNN";
+"Investment budget:" = "Investment budget:CNN";
+"Duration preference (in months):" = "Duration preference (in months):CNN";
+"Target return (annualized return):" = "Target return (annualized return):CNN";
+"Countries preference (separated by comma):" = "Countries preference (separated by comma):CNN";
+"Description (short self-introduction):" = "Description (short self-introduction):CNN";
+"Website:" = "Website:CNN";
+//EditCompanyVC
+"Org name" = "Org nameCNN";
+"Org type" = "Org typeCNN";
+"Address 1" = "Address 1CNN";
+"Address 2" = "Address 2CNN";
+"Org city"  = "Org cityCNN";
+"Org country" = "Org countryCNN";
+//EditPasswordProfileVC
+"New password" = "New passwordCNN";
+"Password confirm" = "Password confirmCNN";
+
+"First Name" = "First NameCNN";
+"Last Name" = "Last NameCNN";
+"Email" = "EmailCNN";
+"Country code" = "Country codeCNN";
+"Cell phone" = "Cell phoneCNN";
+"Address 1" = "Address 1CNN";
+"Address 2" = "Address 2CNN";
+"City" = "CityCNN";
+"Postal code" = "Postal codeCNN";
+"Region state" = "Region stateCNN";
+"Country" = "CountryCNN";
+
+
