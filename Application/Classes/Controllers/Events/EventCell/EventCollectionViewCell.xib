@@ -8,39 +8,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCollectionViewCell" id="gTV-IL-0wX" customClass="EventCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="321" height="420"/>
+            <rect key="frame" x="0.0" y="0.0" width="321" height="434"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="321" height="420"/>
+                <rect key="frame" x="0.0" y="0.0" width="321" height="434"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait_ph.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UF4-CR-WhB">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="singapore.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UF4-CR-WhB">
                         <rect key="frame" x="1" y="1" width="319" height="220"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="220" id="8fs-Xz-WJi"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8V-am-1T1" userLabel="contentView">
-                        <rect key="frame" x="1" y="221" width="319" height="80"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Age in Property Investment" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xG3-sC-f8S">
-                                <rect key="frame" x="20" y="0.0" width="279" height="80"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xG3-sC-f8S" secondAttribute="trailing" constant="20" id="FNz-MV-Cs2"/>
-                            <constraint firstItem="xG3-sC-f8S" firstAttribute="top" secondItem="I8V-am-1T1" secondAttribute="top" id="LBs-2f-bIn"/>
-                            <constraint firstAttribute="bottom" secondItem="xG3-sC-f8S" secondAttribute="bottom" id="OaV-8V-sc4"/>
-                            <constraint firstAttribute="height" constant="80" id="QFD-D7-5YH"/>
-                            <constraint firstItem="xG3-sC-f8S" firstAttribute="leading" secondItem="I8V-am-1T1" secondAttribute="leading" constant="20" id="crq-xk-bGl"/>
-                        </constraints>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttw-03-BU5" userLabel="dateView">
                         <rect key="frame" x="1" y="196" width="319" height="55"/>
                         <subviews>
@@ -57,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20V-q0-bZt">
-                                <rect key="frame" x="0.0" y="25" width="45" height="30"/>
+                                <rect key="frame" x="0.0" y="25" width="45" height="28"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.87450980392156863" green="0.20000000000000001" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -67,13 +46,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extenal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGf-NA-6kM">
-                                <rect key="frame" x="219" y="20" width="100" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="External" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGf-NA-6kM">
+                                <rect key="frame" x="229" y="20" width="90" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="XiX-mD-7HH"/>
-                                    <constraint firstAttribute="width" constant="100" id="s6m-1J-XxR"/>
+                                    <constraint firstAttribute="width" constant="90" id="s6m-1J-XxR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,38 +69,38 @@
                             <constraint firstAttribute="height" constant="55" id="VhY-8J-E9m"/>
                             <constraint firstItem="20V-q0-bZt" firstAttribute="leading" secondItem="Ttw-03-BU5" secondAttribute="leading" id="dBd-5o-E6V"/>
                             <constraint firstAttribute="trailing" secondItem="xGf-NA-6kM" secondAttribute="trailing" id="nSB-9x-kZs"/>
-                            <constraint firstAttribute="bottom" secondItem="20V-q0-bZt" secondAttribute="bottom" id="zbL-dE-lfk"/>
+                            <constraint firstAttribute="bottom" secondItem="20V-q0-bZt" secondAttribute="bottom" constant="2" id="zbL-dE-lfk"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxo-0d-uxW" userLabel="footerView">
-                        <rect key="frame" x="1" y="301" width="319" height="118"/>
+                        <rect key="frame" x="1" y="341" width="319" height="92"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Trump Asset Management " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHF-sy-vKI">
-                                <rect key="frame" x="16" y="0.0" width="287" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By  E&amp;O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHF-sy-vKI">
+                                <rect key="frame" x="16" y="8" width="287" height="18"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 11:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHe-A4-SZS">
-                                <rect key="frame" x="16" y="43" width="287" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The E&amp;O Gallery, 1 R...,Singapore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c29-PY-U5Q">
+                                <rect key="frame" x="16" y="76" width="287" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19:00 - 22:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHe-A4-SZS">
+                                <rect key="frame" x="16" y="46" width="287" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KL at JW Marriott" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c29-PY-U5Q">
-                                <rect key="frame" x="16" y="73" width="287" height="20.5"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gHF-sy-vKI" firstAttribute="top" secondItem="fxo-0d-uxW" secondAttribute="top" id="ANr-lE-J4w"/>
+                            <constraint firstItem="gHF-sy-vKI" firstAttribute="top" secondItem="fxo-0d-uxW" secondAttribute="top" constant="8" id="ANr-lE-J4w"/>
                             <constraint firstAttribute="trailing" secondItem="gHF-sy-vKI" secondAttribute="trailing" constant="16" id="Bqa-Ap-jeC"/>
                             <constraint firstAttribute="trailing" secondItem="c29-PY-U5Q" secondAttribute="trailing" constant="16" id="ISv-ma-eHc"/>
                             <constraint firstItem="jHe-A4-SZS" firstAttribute="leading" secondItem="fxo-0d-uxW" secondAttribute="leading" constant="16" id="J3N-pD-90D"/>
@@ -129,7 +108,28 @@
                             <constraint firstAttribute="trailing" secondItem="jHe-A4-SZS" secondAttribute="trailing" constant="16" id="ZFT-WB-xFl"/>
                             <constraint firstItem="c29-PY-U5Q" firstAttribute="leading" secondItem="fxo-0d-uxW" secondAttribute="leading" constant="16" id="eki-H0-pQP"/>
                             <constraint firstItem="c29-PY-U5Q" firstAttribute="top" secondItem="jHe-A4-SZS" secondAttribute="bottom" constant="10" id="plK-mb-HYj"/>
-                            <constraint firstItem="jHe-A4-SZS" firstAttribute="top" secondItem="gHF-sy-vKI" secondAttribute="bottom" constant="25" id="u9Z-R5-Tbu"/>
+                            <constraint firstItem="jHe-A4-SZS" firstAttribute="top" secondItem="gHF-sy-vKI" secondAttribute="bottom" constant="20" id="u9Z-R5-Tbu"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8V-am-1T1" userLabel="contentView">
+                        <rect key="frame" x="1" y="221" width="319" height="120"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;High Speed Rail Kuala Lumpur - Singapore and the Iskanda..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xG3-sC-f8S">
+                                <rect key="frame" x="20" y="40" width="279" height="80"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xG3-sC-f8S" secondAttribute="trailing" constant="20" id="FNz-MV-Cs2"/>
+                            <constraint firstItem="xG3-sC-f8S" firstAttribute="top" secondItem="I8V-am-1T1" secondAttribute="top" constant="40" id="LBs-2f-bIn"/>
+                            <constraint firstAttribute="bottom" secondItem="xG3-sC-f8S" secondAttribute="bottom" id="OaV-8V-sc4"/>
+                            <constraint firstAttribute="height" constant="120" id="QFD-D7-5YH"/>
+                            <constraint firstItem="xG3-sC-f8S" firstAttribute="leading" secondItem="I8V-am-1T1" secondAttribute="leading" constant="20" id="crq-xk-bGl"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -153,11 +153,11 @@
                 <constraint firstAttribute="trailing" secondItem="Ttw-03-BU5" secondAttribute="trailing" constant="1" id="qKq-z6-gdw"/>
                 <constraint firstAttribute="bottom" secondItem="fxo-0d-uxW" secondAttribute="bottom" constant="1" id="yb6-D0-N6u"/>
             </constraints>
-            <size key="customSize" width="321" height="490"/>
-            <point key="canvasLocation" x="263.5" y="303"/>
+            <size key="customSize" width="321" height="504"/>
+            <point key="canvasLocation" x="263.5" y="310"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="portrait_ph.jpg" width="635" height="845"/>
+        <image name="singapore.jpg" width="1900" height="1154"/>
     </resources>
 </document>
