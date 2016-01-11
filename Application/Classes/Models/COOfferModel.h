@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSNumber *offerMinInvestment;
 @property (nonatomic, strong) NSNumber *offerTimeHorizon;
 @property (nonatomic, strong) NSString *offerAnnualizedReturn;
+@property (nonatomic, strong) NSString *offerAnnualReturn;
 @property (nonatomic, strong) NSNumber *offerDayLeft;
 @property (nonatomic, strong) NSString *offerShortDescription;
 @property (nonatomic, strong) NSString *offerProjectDescription;

@@ -30,6 +30,7 @@
         @"offerMinInvestment"       : @"min_investment",
         @"offerTimeHorizon"         : @"time_horizon",
         @"offerAnnualizedReturn"    : @"annualized_return",
+        @"offerAnnualReturn"        : @"annual_return",
         @"offerDayLeft"             : @"day_left",
         @"offerShortDescription"    : @"short_description",
         @"offerProjectDescription"  : @"project_description",
@@ -204,7 +205,7 @@
 
 - (NSString *)offerInfoYield {
     if (self.offerAnnualizedReturn) {
-        NSString *annualized = [NSString stringWithFormat:NSLocalizedString(@"MIN_ANNUAL_RETURN", nil),self.offerAnnualizedReturn,self.offerAnnualizedReturn];
+        NSString *annualized = [NSString stringWithFormat:NSLocalizedString(@"MIN_ANNUAL_RETURN", nil),self.offerAnnualReturn,self.offerAnnualizedReturn];
         return annualized;
     } else {
         return NSLocalizedString(@"N/A", nil);
