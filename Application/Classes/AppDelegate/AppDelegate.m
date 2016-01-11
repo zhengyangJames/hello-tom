@@ -495,6 +495,8 @@
             if (message && [message isEqualToString:MESSAGE_DEVICE_TOKEN_EXITS]) {
                 [kUserDefaults setBool:YES forKey:DEVICE_TOKEN_EXIST];
                 [kUserDefaults synchronize];
+            } else {
+                [ErrorManager showError:error];
             }
             [ErrorManager showError:error];
             if (handler) {
