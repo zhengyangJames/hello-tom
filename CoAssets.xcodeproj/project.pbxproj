@@ -405,6 +405,10 @@
 		0EE7F7F51C48A1D000520B05 /* FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F21C48A1D000520B05 /* FormCell.m */; };
 		0EE7F7F61C48A1D000520B05 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F31C48A1D000520B05 /* FormCell.xib */; };
 		0EE7F7F71C48A1D000520B05 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F31C48A1D000520B05 /* FormCell.xib */; };
+		0EE7F7FC1C48B09100520B05 /* StockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FA1C48B09100520B05 /* StockController.m */; };
+		0EE7F7FD1C48B09100520B05 /* StockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FA1C48B09100520B05 /* StockController.m */; };
+		0EE7F7FE1C48B09100520B05 /* StockController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FB1C48B09100520B05 /* StockController.xib */; };
+		0EE7F7FF1C48B09100520B05 /* StockController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FB1C48B09100520B05 /* StockController.xib */; };
 		0EED2E711B5E2B94006730E2 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
 		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
 		0EF3EBA71BFD6EF3000CA9C9 /* COOngoingStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */; };
@@ -789,6 +793,9 @@
 		0EE7F7F11C48A1D000520B05 /* FormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormCell.h; sourceTree = "<group>"; };
 		0EE7F7F21C48A1D000520B05 /* FormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormCell.m; sourceTree = "<group>"; };
 		0EE7F7F31C48A1D000520B05 /* FormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormCell.xib; sourceTree = "<group>"; };
+		0EE7F7F91C48B09100520B05 /* StockController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockController.h; sourceTree = "<group>"; };
+		0EE7F7FA1C48B09100520B05 /* StockController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockController.m; sourceTree = "<group>"; };
+		0EE7F7FB1C48B09100520B05 /* StockController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockController.xib; sourceTree = "<group>"; };
 		0EED2E701B5E2B94006730E2 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		0EED2E731B5E2E08006730E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0EF3EBA51BFD6EF3000CA9C9 /* COOngoingStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOngoingStatusModel.h; sourceTree = "<group>"; };
@@ -1369,6 +1376,7 @@
 		0E8955E81BBE1A78007E36BF /* TabProfiles */ = {
 			isa = PBXGroup;
 			children = (
+				0EE7F7F81C48B06C00520B05 /* Stock */,
 				0E89565C1BBE2497007E36BF /* NProfile */,
 				0E8956221BBE1C75007E36BF /* Protfolio */,
 				0E89561C1BBE1BFF007E36BF /* Deals */,
@@ -1547,6 +1555,16 @@
 				0ECA883C1B27CA7100B5656F /* NMUIHelper.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0EE7F7F81C48B06C00520B05 /* Stock */ = {
+			isa = PBXGroup;
+			children = (
+				0EE7F7F91C48B09100520B05 /* StockController.h */,
+				0EE7F7FA1C48B09100520B05 /* StockController.m */,
+				0EE7F7FB1C48B09100520B05 /* StockController.xib */,
+			);
+			path = Stock;
 			sourceTree = "<group>";
 		};
 		0EFEB4A71B2724B2001195B7 = {
@@ -2904,6 +2922,7 @@
 				0E4F4B041C3E480200CFC23B /* EditInvestmentProfileVC.xib in Resources */,
 				0E4F4B051C3E480200CFC23B /* Australia.png in Resources */,
 				0E0291FB1C3E4D99000D9320 /* CompanyOrgType.plist in Resources */,
+				0EE7F7FF1C48B09100520B05 /* StockController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3083,6 +3102,7 @@
 				1EA610D71BC5071B00BF3A47 /* EditInvestmentProfileVC.xib in Resources */,
 				7F8529211B43935B00CFAEB5 /* Australia.png in Resources */,
 				0E0292061C3E4DA9000D9320 /* CompanyOrgType.plist in Resources */,
+				0EE7F7FE1C48B09100520B05 /* StockController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3264,6 +3284,7 @@
 				0E4F49EF1C3E480200CFC23B /* COUserCompanyModel.m in Sources */,
 				0E4F49F01C3E480200CFC23B /* NSMutableString+FontSize.m in Sources */,
 				0E4F49F11C3E480200CFC23B /* NSString_stripHtml.m in Sources */,
+				0EE7F7FD1C48B09100520B05 /* StockController.m in Sources */,
 				0E4F49F21C3E480200CFC23B /* CODealOngoingModel.m in Sources */,
 				0E4F49F31C3E480200CFC23B /* RegisterViewController.m in Sources */,
 				0E4F49F41C3E480200CFC23B /* NProfileCountrieCell.m in Sources */,
@@ -3430,6 +3451,7 @@
 				0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */,
 				7FB802BB1B4CE25700173A58 /* NSMutableString+FontSize.m in Sources */,
 				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,
+				0EE7F7FC1C48B09100520B05 /* StockController.m in Sources */,
 				B9449AD21BFC8B8900E4C4A4 /* CODealOngoingModel.m in Sources */,
 				7F325FA41B40E50800116445 /* RegisterViewController.m in Sources */,
 				1E5A6FBF1BCCC49F00C4C5A5 /* NProfileCountrieCell.m in Sources */,

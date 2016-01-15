@@ -281,7 +281,8 @@ typedef NS_ENUM(NSInteger, COProfilesStype) {
     COProfilesStypeProfile,
     COProfilesStypeAccount,
     COProfilesStypePortfolio,
-    COProfilesStypeDealsOngoing
+    COProfilesStypeDealsOngoing,
+    COProfilesStypestock
 };
 
 typedef NS_ENUM(NSInteger, TableViewCellStyle) {

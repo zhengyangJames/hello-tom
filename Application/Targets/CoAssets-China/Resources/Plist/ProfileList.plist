@@ -6,5 +6,6 @@
 	<string>AccountCNN</string>
 	<string>PortfolioCNN</string>
 	<string>DealsCNN</string>
+	<string>StockCNN</string>
 </array>
 </plist>

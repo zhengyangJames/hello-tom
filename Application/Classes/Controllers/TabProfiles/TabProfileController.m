@@ -13,6 +13,7 @@
 #import "ProtfolioController.h"
 #import "LoadFileManager.h"
 #import "COLoginManager.h"
+#import "StockController.h"
 
 
 @interface TabProfileController ()<UITableViewDataSource, UITableViewDelegate>
@@ -44,6 +45,11 @@
     [self.navigationController pushViewController:deals animated:YES];
 }
 
+- (void)_pushViewStockVC {
+    StockController *stock = [[StockController alloc]init];
+    [self.navigationController pushViewController:stock animated:YES];
+}
+
 - (void)_pushViewDetailProfileVC {
     NProfileController *vc = [[NProfileController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
@@ -68,6 +74,8 @@
         case COProfilesStypePortfolio: return [self _pushViewPortFolio];
             
         case COProfilesStypeDealsOngoing: return [self _pushViewDealsVC];
+        
+        case COProfilesStypestock: return [self _pushViewStockVC];
     }
 }
 
