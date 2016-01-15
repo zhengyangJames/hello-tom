@@ -2652,7 +2652,7 @@
 				0EFEB4AE1B2724B2001195B7 /* Resources */,
 				7F2D8A851B310B0C000DE953 /* ShellScript */,
 				3C34D0B1319B4947059A75FE /* Copy Pods Resources */,
-				9FE33342528150363FB0E504 /* Embed Pods Frameworks */,
+				175F2443963C1E5889A487EC /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
