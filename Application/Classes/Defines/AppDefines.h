@@ -106,6 +106,9 @@
 
 #define WS_METHOD_COMPANY_PROFILE                   [WS_ENDPOINT stringByAppendingString:@"/profile_organization/"]
 
+#define WS_METHOD_STOCK                  [WS_ENDPOINT stringByAppendingString:@"/stock-price/"]
+#define WS_METHOD_STOCK_POST                  [WS_ENDPOINT stringByAppendingString:@"/buy-share/"]
+
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////

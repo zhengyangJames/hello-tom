@@ -43,6 +43,7 @@
             [kUserDefaults synchronize];
 
             COUserCompanyModel *model = [MTLJSONAdapter modelOfClass:[COUserCompanyModel class] fromJSONDictionary:responseObject error:&error];
+            
             if (handler) {
                 handler(model,response,nil);
             }

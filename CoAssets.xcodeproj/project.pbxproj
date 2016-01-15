@@ -349,6 +349,16 @@
 		0E4F4B041C3E480200CFC23B /* EditInvestmentProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */; };
 		0E4F4B051C3E480200CFC23B /* Australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529111B43935B00CFAEB5 /* Australia.png */; };
 		0E4F4B101C3E48BE00CFC23B /* Info-China.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F4B0E1C3E484700CFC23B /* Info-China.plist */; };
+		0E508EDB1C48D9C900B1DBA0 /* InterstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508ED91C48D9C900B1DBA0 /* InterstController.m */; };
+		0E508EDC1C48D9C900B1DBA0 /* InterstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508ED91C48D9C900B1DBA0 /* InterstController.m */; };
+		0E508EDD1C48D9C900B1DBA0 /* InterstController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */; };
+		0E508EDE1C48D9C900B1DBA0 /* InterstController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */; };
+		0E508EE21C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EE11C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m */; };
+		0E508EE31C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EE11C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m */; };
+		0E508EE61C48E22E00B1DBA0 /* WSStockRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EE51C48E22E00B1DBA0 /* WSStockRequest.m */; };
+		0E508EE71C48E22E00B1DBA0 /* WSStockRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EE51C48E22E00B1DBA0 /* WSStockRequest.m */; };
+		0E508EEB1C48E93F00B1DBA0 /* COProfileStockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EEA1C48E93F00B1DBA0 /* COProfileStockModel.m */; };
+		0E508EEC1C48E93F00B1DBA0 /* COProfileStockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EEA1C48E93F00B1DBA0 /* COProfileStockModel.m */; };
 		0E527CCC1C3F46F800427BB1 /* singapore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0E527CCB1C3F46F800427BB1 /* singapore.jpg */; };
 		0E527CCD1C3F46F800427BB1 /* singapore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0E527CCB1C3F46F800427BB1 /* singapore.jpg */; };
 		0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */; };
@@ -712,6 +722,15 @@
 		0E4F49BA1C3E479500CFC23B /* Info-English.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-English.plist"; sourceTree = "<group>"; };
 		0E4F4B0C1C3E480200CFC23B /* CoAssets-China.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoAssets-China.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4F4B0E1C3E484700CFC23B /* Info-China.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-China.plist"; sourceTree = "<group>"; };
+		0E508ED81C48D9C900B1DBA0 /* InterstController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstController.h; sourceTree = "<group>"; };
+		0E508ED91C48D9C900B1DBA0 /* InterstController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstController.m; sourceTree = "<group>"; };
+		0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterstController.xib; sourceTree = "<group>"; };
+		0E508EE01C48E13E00B1DBA0 /* WSURLSessionManager+Stock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Stock.h"; sourceTree = "<group>"; };
+		0E508EE11C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Stock.m"; sourceTree = "<group>"; };
+		0E508EE41C48E22E00B1DBA0 /* WSStockRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSStockRequest.h; sourceTree = "<group>"; };
+		0E508EE51C48E22E00B1DBA0 /* WSStockRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSStockRequest.m; sourceTree = "<group>"; };
+		0E508EE91C48E93F00B1DBA0 /* COProfileStockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProfileStockModel.h; sourceTree = "<group>"; };
+		0E508EEA1C48E93F00B1DBA0 /* COProfileStockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COProfileStockModel.m; sourceTree = "<group>"; };
 		0E527CCB1C3F46F800427BB1 /* singapore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = singapore.jpg; sourceTree = "<group>"; };
 		0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@2x.png"; sourceTree = "<group>"; };
 		0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@3x.png"; sourceTree = "<group>"; };
@@ -1222,6 +1241,7 @@
 		01D143791B7D1035003DF5F9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0E508EE81C48E90C00B1DBA0 /* ProfileStockModel */,
 				B9449AC31BFC89C300E4C4A4 /* ProfileDealModel */,
 				B9E09DA61BF9B6AB00ACD58C /* NotificationModel */,
 				BB3C84E11B9109D5004B8EF9 /* ContactsModel */,
@@ -1371,6 +1391,25 @@
 				0E4F49BA1C3E479500CFC23B /* Info-English.plist */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0E508ED71C48D99A00B1DBA0 /* Interest */ = {
+			isa = PBXGroup;
+			children = (
+				0E508ED81C48D9C900B1DBA0 /* InterstController.h */,
+				0E508ED91C48D9C900B1DBA0 /* InterstController.m */,
+				0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */,
+			);
+			path = Interest;
+			sourceTree = "<group>";
+		};
+		0E508EE81C48E90C00B1DBA0 /* ProfileStockModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E508EE91C48E93F00B1DBA0 /* COProfileStockModel.h */,
+				0E508EEA1C48E93F00B1DBA0 /* COProfileStockModel.m */,
+			);
+			path = ProfileStockModel;
 			sourceTree = "<group>";
 		};
 		0E8955E81BBE1A78007E36BF /* TabProfiles */ = {
@@ -1560,6 +1599,7 @@
 		0EE7F7F81C48B06C00520B05 /* Stock */ = {
 			isa = PBXGroup;
 			children = (
+				0E508ED71C48D99A00B1DBA0 /* Interest */,
 				0EE7F7F91C48B09100520B05 /* StockController.h */,
 				0EE7F7FA1C48B09100520B05 /* StockController.m */,
 				0EE7F7FB1C48B09100520B05 /* StockController.xib */,
@@ -2313,6 +2353,8 @@
 				B9449AC11BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m */,
 				0E4A17F21C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.h */,
 				0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */,
+				0E508EE01C48E13E00B1DBA0 /* WSURLSessionManager+Stock.h */,
+				0E508EE11C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -2662,6 +2704,8 @@
 				B9449ABE1BFC846600E4C4A4 /* WSGetDealProfileRequest.m */,
 				0E4A17EF1C113A5400839BDC /* WSCompanyProfileRequest.h */,
 				0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */,
+				0E508EE41C48E22E00B1DBA0 /* WSStockRequest.h */,
+				0E508EE51C48E22E00B1DBA0 /* WSStockRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -2891,6 +2935,7 @@
 				0E4F4AE41C3E480200CFC23B /* COOfferProgressCell.xib in Resources */,
 				0E4F4AE51C3E480200CFC23B /* ic_uncheck@2x.png in Resources */,
 				0E4F4AE61C3E480200CFC23B /* ic_peopel@2x.png in Resources */,
+				0E508EDE1C48D9C900B1DBA0 /* InterstController.xib in Resources */,
 				0E4F4AE71C3E480200CFC23B /* ic_notification@2x.png in Resources */,
 				0E4F4AE81C3E480200CFC23B /* United States.png in Resources */,
 				0E4F4AE91C3E480200CFC23B /* OfferDetailsDocumentController.xib in Resources */,
@@ -3071,6 +3116,7 @@
 				0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */,
 				7FA7E6C11B4E7CD500059B13 /* COOfferProgressCell.xib in Resources */,
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
+				0E508EDD1C48D9C900B1DBA0 /* InterstController.xib in Resources */,
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
 				0E84EE9A1C116AF600CDA27C /* ic_notification@2x.png in Resources */,
 				7F85292F1B43935B00CFAEB5 /* United States.png in Resources */,
@@ -3307,6 +3353,7 @@
 				0E4F4A031C3E480200CFC23B /* EditCompanyVC.m in Sources */,
 				0E4F4A041C3E480200CFC23B /* LoginViewController.m in Sources */,
 				0E4F4A051C3E480200CFC23B /* CODocumentItemCell.m in Sources */,
+				0E508EDC1C48D9C900B1DBA0 /* InterstController.m in Sources */,
 				0E4F4A061C3E480200CFC23B /* COUserPortfolioOnGoingInvestmentModel.m in Sources */,
 				0E4F4A071C3E480200CFC23B /* UIHelper.m in Sources */,
 				0E4F4A081C3E480200CFC23B /* WSCompanyProfileRequest.m in Sources */,
@@ -3315,6 +3362,7 @@
 				0E4F4A0B1C3E480200CFC23B /* WSURLSessionManager+Profile.m in Sources */,
 				0E4F4A0C1C3E480200CFC23B /* COCheckBoxButton.m in Sources */,
 				0E4F4A0D1C3E480200CFC23B /* WSURLSessionManager+DealProfile.m in Sources */,
+				0E508EE71C48E22E00B1DBA0 /* WSStockRequest.m in Sources */,
 				0E4F4A0E1C3E480200CFC23B /* CODetailsDelegate.m in Sources */,
 				0EE7F7EE1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */,
 				0E4F4A0F1C3E480200CFC23B /* COProjectFundedAmountModel.m in Sources */,
@@ -3322,6 +3370,7 @@
 				0E4F4A111C3E480200CFC23B /* NSDictionary+NotNULL.m in Sources */,
 				0E4F4A121C3E480200CFC23B /* BaseTableViewCell.m in Sources */,
 				0E4F4A131C3E480200CFC23B /* COUserTokensModel.m in Sources */,
+				0E508EEC1C48E93F00B1DBA0 /* COProfileStockModel.m in Sources */,
 				0E4F4A141C3E480200CFC23B /* COTextCell.m in Sources */,
 				0E4F4A151C3E480200CFC23B /* CODocumentModel.m in Sources */,
 				0E4F4A161C3E480200CFC23B /* EventViewController.m in Sources */,
@@ -3386,6 +3435,7 @@
 				0E4F4A511C3E480200CFC23B /* WSPostSubscribeRequest.m in Sources */,
 				0E4F4A521C3E480200CFC23B /* NProfileDelegate.m in Sources */,
 				0E4F4A531C3E480200CFC23B /* COUserProfileModel.m in Sources */,
+				0E508EE31C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m in Sources */,
 				0E4F4A541C3E480200CFC23B /* UIDevice-Hardware.m in Sources */,
 				0E4F4A551C3E480200CFC23B /* COOfferInfoCell.m in Sources */,
 				0E4F4A561C3E480200CFC23B /* BaseViewController.m in Sources */,
@@ -3474,6 +3524,7 @@
 				0E8956891BBE88E4007E36BF /* EditCompanyVC.m in Sources */,
 				7F325FA21B40E50800116445 /* LoginViewController.m in Sources */,
 				7F325F851B40E50800116445 /* CODocumentItemCell.m in Sources */,
+				0E508EDB1C48D9C900B1DBA0 /* InterstController.m in Sources */,
 				1ECEAE781BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m in Sources */,
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				0E4A17F11C113A5400839BDC /* WSCompanyProfileRequest.m in Sources */,
@@ -3482,6 +3533,7 @@
 				7F85290F1B438F5400CFAEB5 /* WSURLSessionManager+Profile.m in Sources */,
 				7F325FC01B40E50800116445 /* COCheckBoxButton.m in Sources */,
 				B9449AC21BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m in Sources */,
+				0E508EE61C48E22E00B1DBA0 /* WSStockRequest.m in Sources */,
 				7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */,
 				0EE7F7ED1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */,
 				BB25980E1B85526800D947AF /* COProjectFundedAmountModel.m in Sources */,
@@ -3489,6 +3541,7 @@
 				0ECA88431B27CA7100B5656F /* NSDictionary+NotNULL.m in Sources */,
 				7F325F7D1B40E50800116445 /* BaseTableViewCell.m in Sources */,
 				BB368EB51B87E0E00066C646 /* COUserTokensModel.m in Sources */,
+				0E508EEB1C48E93F00B1DBA0 /* COProfileStockModel.m in Sources */,
 				16D2A99A1C0C054F00DAFBA6 /* COTextCell.m in Sources */,
 				BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */,
 				0E8F35601C3DFE4E00CCCE04 /* EventViewController.m in Sources */,
@@ -3553,6 +3606,7 @@
 				BB38EE291B99F74200D15D58 /* WSPostSubscribeRequest.m in Sources */,
 				0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */,
 				BB368EB21B87DF5C0066C646 /* COUserProfileModel.m in Sources */,
+				0E508EE21C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m in Sources */,
 				0ECA88461B27CA7100B5656F /* UIDevice-Hardware.m in Sources */,
 				7F2C77461B4E07BA00C69365 /* COOfferInfoCell.m in Sources */,
 				7F325F7F1B40E50800116445 /* BaseViewController.m in Sources */,
