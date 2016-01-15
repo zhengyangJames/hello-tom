@@ -49,6 +49,9 @@
 "BUTTON_INTERESTED"                     = "I want to invest again!CNN";
 "BUTTON_QUESTION"                       = "Request sent.CNN";
 
+"BUTTON_I'M_INTERESTED"                 = "I'm interestedCNN";
+"BUTTON_I'VE_QUESTION"                   = "I've QuestionsCNN";
+
 "declaration_form_list"                 = "DECLARATION FORMcnn";
 "legal_appointment"                     = "LEGAL APPOINTMENTcnn";
 "licenses"                              = "PROOF OF LICENSEScnn";

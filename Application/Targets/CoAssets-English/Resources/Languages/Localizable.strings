@@ -49,6 +49,9 @@
 "BUTTON_INTERESTED"                     = "I want to invest again!";
 "BUTTON_QUESTION"                       = "Request sent.";
 
+"BUTTON_I'M_INTERESTED"                 = "I'm interested";
+"BUTTON_I'VE_QUESTION"                   = "I've Questions";
+
 "declaration_form_list"                 = "DECLARATION FORM";
 "legal_appointment"                     = "LEGAL APPOINTMENT";
 "licenses"                              = "PROOF OF LICENSES";
