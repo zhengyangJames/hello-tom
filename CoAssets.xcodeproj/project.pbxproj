@@ -393,6 +393,18 @@
 		0ECA884A1B27CA7100B5656F /* NMImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA88381B27CA7100B5656F /* NMImageHelper.m */; };
 		0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883A1B27CA7100B5656F /* NMSecurityHelper.m */; };
 		0ECA884C1B27CA7100B5656F /* NMUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA883C1B27CA7100B5656F /* NMUIHelper.m */; };
+		0EE7F7E61C48933E00520B05 /* CompletedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7E41C48933E00520B05 /* CompletedCell.m */; };
+		0EE7F7E71C48933E00520B05 /* CompletedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7E41C48933E00520B05 /* CompletedCell.m */; };
+		0EE7F7E81C48933E00520B05 /* CompletedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7E51C48933E00520B05 /* CompletedCell.xib */; };
+		0EE7F7E91C48933E00520B05 /* CompletedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7E51C48933E00520B05 /* CompletedCell.xib */; };
+		0EE7F7ED1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7EB1C489D7E00520B05 /* AvailableBalanceCell.m */; };
+		0EE7F7EE1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7EB1C489D7E00520B05 /* AvailableBalanceCell.m */; };
+		0EE7F7EF1C489D7E00520B05 /* AvailableBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7EC1C489D7E00520B05 /* AvailableBalanceCell.xib */; };
+		0EE7F7F01C489D7E00520B05 /* AvailableBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7EC1C489D7E00520B05 /* AvailableBalanceCell.xib */; };
+		0EE7F7F41C48A1D000520B05 /* FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F21C48A1D000520B05 /* FormCell.m */; };
+		0EE7F7F51C48A1D000520B05 /* FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F21C48A1D000520B05 /* FormCell.m */; };
+		0EE7F7F61C48A1D000520B05 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F31C48A1D000520B05 /* FormCell.xib */; };
+		0EE7F7F71C48A1D000520B05 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F31C48A1D000520B05 /* FormCell.xib */; };
 		0EED2E711B5E2B94006730E2 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
 		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
 		0EF3EBA71BFD6EF3000CA9C9 /* COOngoingStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */; };
@@ -768,6 +780,15 @@
 		0ECA883A1B27CA7100B5656F /* NMSecurityHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSecurityHelper.m; sourceTree = "<group>"; };
 		0ECA883B1B27CA7100B5656F /* NMUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMUIHelper.h; sourceTree = "<group>"; };
 		0ECA883C1B27CA7100B5656F /* NMUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMUIHelper.m; sourceTree = "<group>"; };
+		0EE7F7E31C48933E00520B05 /* CompletedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedCell.h; sourceTree = "<group>"; };
+		0EE7F7E41C48933E00520B05 /* CompletedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedCell.m; sourceTree = "<group>"; };
+		0EE7F7E51C48933E00520B05 /* CompletedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedCell.xib; sourceTree = "<group>"; };
+		0EE7F7EA1C489D7E00520B05 /* AvailableBalanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableBalanceCell.h; sourceTree = "<group>"; };
+		0EE7F7EB1C489D7E00520B05 /* AvailableBalanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableBalanceCell.m; sourceTree = "<group>"; };
+		0EE7F7EC1C489D7E00520B05 /* AvailableBalanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableBalanceCell.xib; sourceTree = "<group>"; };
+		0EE7F7F11C48A1D000520B05 /* FormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormCell.h; sourceTree = "<group>"; };
+		0EE7F7F21C48A1D000520B05 /* FormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormCell.m; sourceTree = "<group>"; };
+		0EE7F7F31C48A1D000520B05 /* FormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormCell.xib; sourceTree = "<group>"; };
 		0EED2E701B5E2B94006730E2 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		0EED2E731B5E2E08006730E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0EF3EBA51BFD6EF3000CA9C9 /* COOngoingStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOngoingStatusModel.h; sourceTree = "<group>"; };
@@ -1408,6 +1429,15 @@
 				0E89562F1BBE1F8B007E36BF /* PortFolioCell.h */,
 				0E8956301BBE1F8B007E36BF /* PortFolioCell.m */,
 				0E8956311BBE1F8B007E36BF /* PortFolioCell.xib */,
+				0EE7F7E31C48933E00520B05 /* CompletedCell.h */,
+				0EE7F7E41C48933E00520B05 /* CompletedCell.m */,
+				0EE7F7E51C48933E00520B05 /* CompletedCell.xib */,
+				0EE7F7EA1C489D7E00520B05 /* AvailableBalanceCell.h */,
+				0EE7F7EB1C489D7E00520B05 /* AvailableBalanceCell.m */,
+				0EE7F7EC1C489D7E00520B05 /* AvailableBalanceCell.xib */,
+				0EE7F7F11C48A1D000520B05 /* FormCell.h */,
+				0EE7F7F21C48A1D000520B05 /* FormCell.m */,
+				0EE7F7F31C48A1D000520B05 /* FormCell.xib */,
 			);
 			path = PortFolioCell;
 			sourceTree = "<group>";
@@ -2740,6 +2770,7 @@
 				0E4F4A7E1C3E480200CFC23B /* ContacViewController.xib in Resources */,
 				0E4F4A7F1C3E480200CFC23B /* ic_Earth@3x.png in Resources */,
 				0E4F4A801C3E480200CFC23B /* offer.png in Resources */,
+				0EE7F7F01C489D7E00520B05 /* AvailableBalanceCell.xib in Resources */,
 				0E4F4A811C3E480200CFC23B /* OfferViewController.xib in Resources */,
 				0E4F4A821C3E480200CFC23B /* ic_notification_selected@3x.png in Resources */,
 				0E4F4A831C3E480200CFC23B /* AccountController.xib in Resources */,
@@ -2773,6 +2804,7 @@
 				0E4F4A9E1C3E480200CFC23B /* ic_placeholder.png in Resources */,
 				0E4F4A9F1C3E480200CFC23B /* United Kingdom.png in Resources */,
 				0E4F4AA01C3E480200CFC23B /* AccountCell.xib in Resources */,
+				0EE7F7E91C48933E00520B05 /* CompletedCell.xib in Resources */,
 				0E4F4AA21C3E480200CFC23B /* ic_info@2x.png in Resources */,
 				0E4F4AA31C3E480200CFC23B /* ic_contac_2@2x.png in Resources */,
 				0E4F4AA41C3E480200CFC23B /* ic_Left@3x.png in Resources */,
@@ -2821,6 +2853,7 @@
 				0E0291FC1C3E4D99000D9320 /* FilterList.plist in Resources */,
 				0E4F4ACF1C3E480200CFC23B /* COPopupQuestionView.xib in Resources */,
 				0E4F4AD01C3E480200CFC23B /* NProfileCountrieCell.xib in Resources */,
+				0EE7F7F71C48A1D000520B05 /* FormCell.xib in Resources */,
 				0E4F4AD11C3E480200CFC23B /* ic_peropel@3x.png in Resources */,
 				0E4F4AD21C3E480200CFC23B /* general.png in Resources */,
 				0E4F4AD31C3E480200CFC23B /* ForgotPasswordViewController.xib in Resources */,
@@ -2916,6 +2949,7 @@
 				7F325FBA1B40E50800116445 /* ContacViewController.xib in Resources */,
 				7F3260421B40E50800116445 /* ic_Earth@3x.png in Resources */,
 				B94210FD1BFC2C7400C86FE8 /* offer.png in Resources */,
+				0EE7F7EF1C489D7E00520B05 /* AvailableBalanceCell.xib in Resources */,
 				7F325F9A1B40E50800116445 /* OfferViewController.xib in Resources */,
 				0E84EE991C116AF600CDA27C /* ic_notification_selected@3x.png in Resources */,
 				0E89561B1BBE1BB2007E36BF /* AccountController.xib in Resources */,
@@ -2949,6 +2983,7 @@
 				7F3260711B40E50800116445 /* ic_placeholder.png in Resources */,
 				7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */,
 				0E89562D1BBE1D9F007E36BF /* AccountCell.xib in Resources */,
+				0EE7F7E81C48933E00520B05 /* CompletedCell.xib in Resources */,
 				7F3260471B40E50800116445 /* ic_info@2x.png in Resources */,
 				7F32603A1B40E50800116445 /* ic_contac_2@2x.png in Resources */,
 				7F32604A1B40E50800116445 /* ic_Left@3x.png in Resources */,
@@ -2997,6 +3032,7 @@
 				0E0292071C3E4DA9000D9320 /* FilterList.plist in Resources */,
 				1E5A6FC61BCCC49F00C4C5A5 /* NProfileNodataCell.xib in Resources */,
 				7FA59D951B4CB5DC00AF8E41 /* COPopupQuestionView.xib in Resources */,
+				0EE7F7F61C48A1D000520B05 /* FormCell.xib in Resources */,
 				1E5A6FC01BCCC49F00C4C5A5 /* NProfileCountrieCell.xib in Resources */,
 				7F3260551B40E50800116445 /* ic_peropel@3x.png in Resources */,
 				B94211021BFC2C9E00C86FE8 /* general.png in Resources */,
@@ -3169,21 +3205,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9d7e393b03f9dbda18ba23c707390e03d8cd3d93 b1e6bc41c1bd7e80198e7fa583cfb6b162eb2c33880179f7ada005f23ba5a3c7";
 		};
-		9FE33342528150363FB0E504 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoAssets/Pods-CoAssets-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -3222,6 +3243,7 @@
 				0E4F49DB1C3E480200CFC23B /* COOngoingStatusModel.m in Sources */,
 				0E4F49DC1C3E480200CFC23B /* ContactTableViewCell.m in Sources */,
 				0E4F49DD1C3E480200CFC23B /* COQuestionView.m in Sources */,
+				0EE7F7E71C48933E00520B05 /* CompletedCell.m in Sources */,
 				0E4F49DE1C3E480200CFC23B /* CoDropListButtom.m in Sources */,
 				0E4F49DF1C3E480200CFC23B /* COOfferWebViewCell.m in Sources */,
 				0E4F49E01C3E480200CFC23B /* NotificationCell.m in Sources */,
@@ -3254,6 +3276,7 @@
 				0E4F49FA1C3E480200CFC23B /* WebViewSetting.m in Sources */,
 				0E4F49FB1C3E480200CFC23B /* NSString+Helpers.m in Sources */,
 				0E4F49FC1C3E480200CFC23B /* BaseView.m in Sources */,
+				0EE7F7F51C48A1D000520B05 /* FormCell.m in Sources */,
 				0E4F49FD1C3E480200CFC23B /* NSArray+Sort.m in Sources */,
 				0E4F49FE1C3E480200CFC23B /* OfferDetailsController.m in Sources */,
 				0E4F49FF1C3E480200CFC23B /* WSURLSessionManager.m in Sources */,
@@ -3272,6 +3295,7 @@
 				0E4F4A0C1C3E480200CFC23B /* COCheckBoxButton.m in Sources */,
 				0E4F4A0D1C3E480200CFC23B /* WSURLSessionManager+DealProfile.m in Sources */,
 				0E4F4A0E1C3E480200CFC23B /* CODetailsDelegate.m in Sources */,
+				0EE7F7EE1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */,
 				0E4F4A0F1C3E480200CFC23B /* COProjectFundedAmountModel.m in Sources */,
 				0E4F4A101C3E480200CFC23B /* SettingViewController.m in Sources */,
 				0E4F4A111C3E480200CFC23B /* NSDictionary+NotNULL.m in Sources */,
@@ -3385,6 +3409,7 @@
 				0EF3EBA71BFD6EF3000CA9C9 /* COOngoingStatusModel.m in Sources */,
 				7F325FB71B40E50800116445 /* ContactTableViewCell.m in Sources */,
 				7FA7E6BB1B4E7C4D00059B13 /* COQuestionView.m in Sources */,
+				0EE7F7E61C48933E00520B05 /* CompletedCell.m in Sources */,
 				7F325FC71B40E50800116445 /* CoDropListButtom.m in Sources */,
 				7F8E0BD81B5355A20045EFB0 /* COOfferWebViewCell.m in Sources */,
 				B9E09D9D1BF97E8000ACD58C /* NotificationCell.m in Sources */,
@@ -3417,6 +3442,7 @@
 				7F325FBD1B40E50800116445 /* WebViewSetting.m in Sources */,
 				0ECA88451B27CA7100B5656F /* NSString+Helpers.m in Sources */,
 				7F325F7E1B40E50800116445 /* BaseView.m in Sources */,
+				0EE7F7F41C48A1D000520B05 /* FormCell.m in Sources */,
 				7F325F801B40E50800116445 /* NSArray+Sort.m in Sources */,
 				161E785F1C0C0CB500EB6A04 /* OfferDetailsController.m in Sources */,
 				7F325FDE1B40E50800116445 /* WSURLSessionManager.m in Sources */,
@@ -3435,6 +3461,7 @@
 				7F325FC01B40E50800116445 /* COCheckBoxButton.m in Sources */,
 				B9449AC21BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m in Sources */,
 				7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */,
+				0EE7F7ED1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */,
 				BB25980E1B85526800D947AF /* COProjectFundedAmountModel.m in Sources */,
 				7F325FBB1B40E50800116445 /* SettingViewController.m in Sources */,
 				0ECA88431B27CA7100B5656F /* NSDictionary+NotNULL.m in Sources */,

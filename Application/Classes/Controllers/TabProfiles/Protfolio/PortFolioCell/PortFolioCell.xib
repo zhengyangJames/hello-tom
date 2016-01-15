@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
@@ -24,7 +24,6 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_meoney@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="l4l-7c-aca">
                         <rect key="frame" x="85" y="17" width="45" height="45"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="45" id="EwA-I8-CVT"/>
                             <constraint firstAttribute="width" constant="45" id="L0c-CT-T3C"/>
@@ -32,7 +31,6 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-CH-7V5" userLabel="LabelNumber">
                         <rect key="frame" x="8" y="66" width="200" height="26"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="9d3-GK-CGI"/>
                         </constraints>
@@ -42,7 +40,6 @@
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funded &amp;Completed Projects" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="134" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-2Y-WKU" userLabel="LabelText" customClass="COLabelTextAligin">
                         <rect key="frame" x="0.0" y="100" width="216" height="50"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="tmg-tn-sgK"/>
                         </constraints>
@@ -51,7 +48,6 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Vql-CH-7V5" secondAttribute="trailing" constant="8" id="4f3-z5-GLj"/>
                     <constraint firstItem="Vql-CH-7V5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="6WK-Xa-br0"/>
@@ -64,7 +60,6 @@
                     <constraint firstAttribute="trailing" secondItem="ctf-2Y-WKU" secondAttribute="trailing" id="uLk-EA-jUc"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="_imgThumbnail" destination="l4l-7c-aca" id="Bh7-3g-3Yy"/>
                 <outlet property="_lbNameDetail" destination="ctf-2Y-WKU" id="ynq-oc-osi"/>

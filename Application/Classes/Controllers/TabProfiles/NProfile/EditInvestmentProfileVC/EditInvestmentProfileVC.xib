@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
@@ -54,7 +54,6 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Investor type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="UsK-KM-1ik" customClass="COLabelLanguage">
                                     <rect key="frame" x="20" y="8" width="280" height="21"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="9Nv-GW-ZCD"/>
                                     </constraints>
@@ -64,7 +63,6 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK4-un-Fk8" customClass="CoDropListButtom">
                                     <rect key="frame" x="20" y="37" width="280" height="40"/>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="XEd-6j-Phz"/>
@@ -84,7 +82,6 @@
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project preference:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LVz-ed-Zo2" customClass="COLabelLanguage">
                                     <rect key="frame" x="20" y="85" width="280" height="21"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="0Jq-FE-a1V"/>
                                     </constraints>
@@ -94,7 +91,6 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhY-hI-IJG" customClass="CoDropListButtom">
                                     <rect key="frame" x="20" y="114" width="280" height="40"/>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="2VM-80-4iu"/>
@@ -114,7 +110,6 @@
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-bS-ZtU" customClass="COLabelLanguage">
                                     <rect key="frame" x="20" y="162" width="280" height="21"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="Lhf-pp-XL8"/>
                                     </constraints>
@@ -124,7 +119,6 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azR-Wy-meO" customClass="CoDropListButtom">
                                     <rect key="frame" x="20" y="191" width="280" height="40"/>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="hjH-0y-8bm"/>
@@ -144,7 +138,6 @@
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Investment budget:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="dna-a2-uA5" customClass="COLabelLanguage">
                                     <rect key="frame" x="20" y="239" width="280" height="21"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="PFd-aX-ViY"/>
                                     </constraints>
@@ -154,7 +147,6 @@
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="10000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-nf-1OJ" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="268" width="280" height="40"/>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="PaA-9o-iof"/>
@@ -164,7 +156,6 @@
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration preference (in months):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="l28-yh-U7d" customClass="COLabelLanguage">
                                     <rect key="frame" x="20" y="316" width="280" height="21"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="xtT-IO-oDF"/>
                                     </constraints>
@@ -174,7 +165,6 @@
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ykJ-H8-Cwx" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="345" width="280" height="40"/>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="z6U-pr-LRJ"/>
@@ -184,7 +174,6 @@
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target return (annualized return):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="jmd-L9-TDa" customClass="COLabelLanguage">
                                     <rect key="frame" x="20" y="393" width="280" height="21"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="qRs-dI-Dso"/>
                                     </constraints>
@@ -194,7 +183,6 @@
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rh5-lr-XT8" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="422" width="280" height="40"/>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="nQm-xP-eRG"/>
@@ -204,7 +192,6 @@
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countries preference (separated by comma):" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="i2N-D0-W9o" customClass="COLabelLanguage">
                                     <rect key="frame" x="20" y="470" width="280" height="39"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="39" id="Ncu-oF-NDb"/>
                                         <constraint firstAttribute="height" constant="21" id="n5T-Kr-ium"/>
@@ -220,7 +207,6 @@
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Fk-uN-0gG" customClass="COBorderTextView">
                                     <rect key="frame" x="20" y="517" width="280" height="100"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="zm1-8x-Ge8"/>
                                     </constraints>
@@ -229,7 +215,6 @@
                                 </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description (short self-introduction):" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="M59-vW-bEn" customClass="COLabelLanguage">
                                     <rect key="frame" x="20" y="618" width="280" height="39"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="FVw-Xe-wfs"/>
                                         <constraint firstAttribute="height" constant="39" id="doP-xa-HXb"/>
@@ -245,7 +230,6 @@
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qrp-Rn-eyw" customClass="COBorderTextView">
                                     <rect key="frame" x="20" y="658" width="280" height="100"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="H2a-QX-7q8"/>
                                     </constraints>
@@ -254,7 +238,6 @@
                                 </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmU-L9-Th0" customClass="COLabelLanguage">
                                     <rect key="frame" x="20" y="766" width="280" height="21"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="IUK-KR-N3H"/>
                                     </constraints>
@@ -264,7 +247,6 @@
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Website:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7K-BO-cak" userLabel="First name Text Field" customClass="COBorderTextField">
                                     <rect key="frame" x="20" y="795" width="280" height="40"/>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="6XD-jB-1yV"/>
@@ -273,7 +255,6 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="URL"/>
                                 </textField>
                             </subviews>
-                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="dhY-hI-IJG" firstAttribute="top" secondItem="LVz-ed-Zo2" secondAttribute="bottom" constant="8" id="0tK-Bq-n45"/>
@@ -340,7 +321,6 @@
                             </variation>
                         </view>
                     </subviews>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="GYz-1d-5ql" secondAttribute="bottom" id="8gN-x1-Spm"/>
                         <constraint firstItem="GYz-1d-5ql" firstAttribute="top" secondItem="09D-lU-YzW" secondAttribute="top" id="BsT-Iv-IPV"/>
@@ -350,7 +330,6 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="09D-lU-YzW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="80A-TJ-puI"/>
