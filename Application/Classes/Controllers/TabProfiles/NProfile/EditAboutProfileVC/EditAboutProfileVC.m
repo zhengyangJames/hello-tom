@@ -150,13 +150,13 @@
 
 - (void)_setupUI {
     
-    self.navigationItem.title = NSLocalizedString(@"BASIC_INFO", nil);
+    self.navigationItem.title = m_string(@"BASIC_INFO");
     [self _setupBarButtonCancel];
     [self _setupBarButtonDone];
 }
 
 - (void)_setupBarButtonDone {
-    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
+    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"DONE_TITLE")
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone:)];
@@ -166,7 +166,7 @@
 }
 
 - (void)_setupBarButtonCancel {
-    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"CANCEL_TITLE", nil)
+    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:m_string(@"CANCEL_TITLE")
                                                                 style:UIBarButtonItemStyleDone
                                                                target:self
                                                                action:@selector(__actionDCancel:)];
@@ -178,26 +178,26 @@
 - (BOOL)_isValidation {
     if ([_txtFirstName.text isEmpty]) {
         _currentField = _txtFirstName;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FIRSTNAME_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"FIRSTNAME_REQUIRED") delegate:self tag:0];
         return NO;
     } else if ([_txtLastName.text isEmpty]) {
         _currentField = _txtLastName;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"LASTNAME_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"LASTNAME_REQUIRED") delegate:self tag:0];
         return NO;
     } else if ([emailNameTXT.text isEmpty]) {
         _currentField = emailNameTXT;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"EMAIL_REQUIRED") delegate:self tag:0];
         return NO;
     } else if (![emailNameTXT.text isValidEmail]) {
         _currentField = emailNameTXT;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"EMAIL_INVALID") delegate:self tag:0];
         return NO;
     } else if ([phoneNameTXT.text isEmpty]) {
         _currentField = phoneNameTXT;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PHONE_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"PHONE_REQUIRED") delegate:self tag:0];
         return NO;
     } else if ([self _checkStringIsNumberOrCharacter:countryTXT.text]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"ERROR_COUNTRY", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"ERROR_COUNTRY") delegate:self tag:0];
         return NO;
     }
     return YES;
@@ -251,7 +251,7 @@
 
 - (IBAction)__actionCountryCode:(id)sender {
     [self.view endEditing:YES];
-    [CODropListView presentWithTitle:NSLocalizedString(@"PHONE_CODE_TITLE", nil) data:self.arrayCountryCode selectedIndex:_indexActtionCountryCode
+    [CODropListView presentWithTitle:m_string(@"PHONE_CODE_TITLE") data:self.arrayCountryCode selectedIndex:_indexActtionCountryCode
                            didSelect:^(NSInteger index) {
         [dropListCountryCode setTitle:[self.arrayCountryCode[index] objectForKey:@"code"] forState:UIControlStateNormal];
         _indexActtionCountryCode = index;

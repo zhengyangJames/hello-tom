@@ -34,12 +34,12 @@
 
 #pragma mark SetUp UI
 - (void)_setupUI {
-    self.title = NSLocalizedString(@"QUESTION_TITLE", nil);
+    self.title = m_string(@"QUESTION_TITLE");
     [self _setupRightNavigationButton];
 }
 
 - (void)_setupRightNavigationButton {
-    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
+    UIBarButtonItem *btBack = [[UIBarButtonItem alloc]initWithTitle:m_string(@"DONE_TITLE")
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone)];
@@ -63,7 +63,7 @@
     if (![textView.text isEmpty]) {
         [self wsCallQuestion]; return;
     }
-    [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"ERROR_QUESTION", nil) delegate:nil tag:1];
+    [UIHelper showAlertViewErrorWithMessage:m_string(@"ERROR_QUESTION") delegate:nil tag:1];
 }
 
 #pragma mark - Web Service
@@ -72,7 +72,7 @@
     [[WSURLSessionManager shared] wsPostQuestionWithRequest:[self _createPostQuestionRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             [kNotificationCenter postNotificationName:kNOTIFICATION_QUESTION object:nil];
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"REQUEST_SEND", nil) delegate:self tag:0];
+            [UIHelper showAlertViewErrorWithMessage:m_string(@"REQUEST_SEND") delegate:self tag:0];
         } else {
             [ErrorManager showError:error];
         }

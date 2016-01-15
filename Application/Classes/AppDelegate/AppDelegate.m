@@ -23,6 +23,7 @@
 #import "WSURLSessionManager+Notification.h"
 #import "CONotificationModel.h"
 #import "WebViewSetting.h"
+#import "EventViewController.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate,CONotificationBannerViewDelegate>
 {
@@ -273,7 +274,7 @@
 - (BaseTabBarController*)baseTabBarController {
     if (!_baseTabBarController) {
         BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
-        NSArray *arrayNAV = @[self.baseHomeNAV,self.baseProfileNAV,self.baseNotificationNAV,self.baseSettingNAV];
+        NSArray *arrayNAV = @[self.baseHomeNAV,self.baseProfileNAV,self.baseNotificationNAV,self.baseEventsNAV,self.baseSettingNAV];
         [tabBar setViewControllers:arrayNAV animated:YES];
         _baseTabBarController = tabBar;
     }
@@ -300,7 +301,7 @@
 - (BaseNavigationController*)baseHomeNAV {
     if (!_baseHomeNAV) {
         BaseNavigationController *homeNAV = [[BaseNavigationController alloc] initWithRootViewController:self.homeVC];
-        UITabBarItem *tabbarHome = [[UITabBarItem alloc]initWithTitle:m_string(@"Home")
+        UITabBarItem *tabbarHome = [[UITabBarItem alloc]initWithTitle:m_string(@"HOME")
                                                                 image:[UIImage imageNamed:@"ic_home"]
                                                         selectedImage:[UIImage imageNamed:@"ic_home_heightlight"]];
         homeNAV.tabBarItem = tabbarHome;
@@ -321,7 +322,7 @@
     if (!_baseProfileNAV) {
         TabProfileController *profileVC = [[TabProfileController alloc] init];
         BaseNavigationController *profileNAV = [[BaseNavigationController alloc] initWithRootViewController:profileVC];
-        UITabBarItem *tabbarProfile = [[UITabBarItem alloc]initWithTitle:m_string(@"Profile")
+        UITabBarItem *tabbarProfile = [[UITabBarItem alloc]initWithTitle:m_string(@"PROFILE")
                                                                    image:[UIImage imageNamed:@"ic_contac_2"]
                                                            selectedImage:[UIImage imageNamed:@"ic_contac_2_heightlight"]];
         profileNAV.tabBarItem = tabbarProfile;
@@ -335,19 +336,32 @@
     if (!_baseNotificationNAV) {
         NotificationViewController *notificationVC = [[NotificationViewController alloc]init];
         BaseNavigationController *notificationNAV = [[BaseNavigationController alloc]initWithRootViewController:notificationVC];
-        UITabBarItem *tabbarNotification = [[UITabBarItem alloc]initWithTitle:m_string(@"NOTIFICATION" ) image:[UIImage imageNamed:@"ic_notification"] selectedImage:[UIImage imageNamed:@"ic_notification_selected"]];
+        UITabBarItem *tabbarNotification = [[UITabBarItem alloc]initWithTitle:m_string(@"NOTIFICATIONS" ) image:[UIImage imageNamed:@"ic_notification"] selectedImage:[UIImage imageNamed:@"ic_notification_selected"]];
         notificationNAV.tabBarItem = tabbarNotification;
         _baseNotificationNAV = notificationNAV;
     }
     return _baseNotificationNAV;
 }
 
+//Setup Eventsı
+- (BaseNavigationController*)baseEventsNAV {
+    if (!_baseEventNAV) {
+        EventViewController *eventVC = [[EventViewController alloc]init];
+        BaseNavigationController *eventNAV = [[BaseNavigationController alloc]initWithRootViewController:eventVC];
+        UITabBarItem *tabbarNotification = [[UITabBarItem alloc]initWithTitle:m_string(@"EVENT" ) image:[UIImage imageNamed:@"ic_notification"] selectedImage:[UIImage imageNamed:@"ic_notification_selected"]];
+        eventNAV.tabBarItem = tabbarNotification;
+        _baseEventNAV = eventNAV;
+    }
+    return _baseEventNAV;
+}
+
+
 //Setup Setting
 - (BaseNavigationController*)baseSettingNAV {
     if (!_baseSettingNAV) {
         SettingViewController *settingVC = [[SettingViewController alloc] init];
         BaseNavigationController *settingNAV = [[BaseNavigationController alloc] initWithRootViewController:settingVC];
-        UITabBarItem *tabbarSetting = [[UITabBarItem alloc]initWithTitle:m_string(@"Settings")
+        UITabBarItem *tabbarSetting = [[UITabBarItem alloc]initWithTitle:m_string(@"SETTINGS")
                                                                    image:[UIImage imageNamed:@"ic_setting_2_heighlight"]
                                                            selectedImage:[UIImage imageNamed:@"ic_setting_2"]];
         settingNAV.tabBarItem = tabbarSetting;

@@ -18,6 +18,7 @@
 @property (strong, nonatomic) BaseNavigationController *baseHomeNAV;
 @property (strong, nonatomic) BaseNavigationController *baseProfileNAV;
 @property (strong, nonatomic) BaseNavigationController *baseNotificationNAV;
+@property (strong, nonatomic) BaseNavigationController *baseEventNAV;
 @property (strong, nonatomic) BaseNavigationController *baseSettingNAV;
 
 @property (assign, nonatomic) BOOL keyShowNotificationBanner;

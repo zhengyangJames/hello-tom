@@ -21,7 +21,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _detailsLabel.text  = NSLocalizedString(@"NoDocumentsUploaded", nil);
+    _detailsLabel.text  = m_string(@"NoDocumentsUploaded");
 }
 
 
@@ -34,9 +34,9 @@
     } else {
         NSString *url = [docDetailItem itemUrl];
         if (url && [url isEqualToString:@"N/A"]) {
-            _detailsLabel.text = NSLocalizedString(@"TITLE_PRIVATE", nil);
+            _detailsLabel.text = m_string(@"TITLE_PRIVATE");
         } else {
-            _detailsLabel.text  = NSLocalizedString(@"NoDocumentsUploaded", nil);
+            _detailsLabel.text  = m_string(@"NoDocumentsUploaded");
         }
     }
 }

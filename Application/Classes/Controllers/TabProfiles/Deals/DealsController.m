@@ -70,7 +70,7 @@
 #pragma mark - Private
 
 - (void)_setUpUI {
-    self.navigationItem.title = NSLocalizedString(@"Deals", nil);
+    self.navigationItem.title = m_string(@"DEALS");
     [_segment setSelectedSegmentIndex:0];
     [_segment setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Raleway-Regular" size:15]} forState:UIControlStateNormal];
     [self _setupTableView];

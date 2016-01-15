@@ -35,7 +35,7 @@
 #pragma mark - Private
 
 - (void)_setUpUI {
-    self.navigationItem.title = m_string(@"Account");
+    self.navigationItem.title = m_string(@"ACCOUNT");
     [_tableView registerNib:[UINib nibWithNibName:[AccountCell identifier] bundle:nil] forCellReuseIdentifier:[AccountCell identifier]];
     UIView *view = [[UIView alloc]init];
     _tableView.tableFooterView = view;

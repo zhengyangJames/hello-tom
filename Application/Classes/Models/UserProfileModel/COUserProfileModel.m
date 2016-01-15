@@ -71,7 +71,7 @@
 #pragma mark - user first name protocol
 
 - (NSString *)firstNameTitle {
-    return NSLocalizedString(@"FIRST_NAME", nil);
+    return m_string(@"FIRST_NAME");
 }
 
 - (NSString *)firstNameContent {
@@ -80,7 +80,7 @@
 #pragma mark - user last name protocol
 
 - (NSString *)lastNameTitle {
-    return NSLocalizedString(@"LAST_NAME", nil);
+    return m_string(@"LAST_NAME");
 }
 
 - (NSString *)lastNameContent {
@@ -89,7 +89,7 @@
 #pragma mark - user email protocol
 
 - (NSString *)emailTitle {
-    return NSLocalizedString(@"EMAIL", nil);
+    return m_string(@"EMAIL");
 }
 
 - (NSString *)emailContent {
@@ -98,7 +98,7 @@
 #pragma mark - user phone protocol
 
 - (NSString *)phoneTitle {
-    return NSLocalizedString(@"PHONE", nil);
+    return m_string(@"PHONE");
 }
 
 - (NSString *)phoneContent {

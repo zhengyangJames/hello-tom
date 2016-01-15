@@ -147,7 +147,7 @@
 }
 
 - (void)_setupBarButtonDone {
-    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
+    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"DONE_TITLE")
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone:)];
@@ -157,7 +157,7 @@
 }
 
 - (void)_setupBarButtonCancel {
-    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"CANCEL_TITLE", nil)
+    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:m_string(@"CANCEL_TITLE")
                                                                 style:UIBarButtonItemStyleDone
                                                                target:self
                                                                action:@selector(__actionDCancel:)];

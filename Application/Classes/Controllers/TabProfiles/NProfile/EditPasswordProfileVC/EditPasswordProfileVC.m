@@ -46,7 +46,7 @@
 }
 
 - (void)_setupBarButtonDone {
-    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"DONE_TITLE", nil)
+    UIBarButtonItem *btDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"DONE_TITLE")
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
                                                              action:@selector(__actionDone:)];
@@ -56,7 +56,7 @@
 }
 
 - (void)_setupBarButtonCancel {
-    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"CANCEL_TITLE", nil)
+    UIBarButtonItem *btCancel = [[UIBarButtonItem alloc]initWithTitle:m_string(@"CANCEL_TITLE")
                                                                 style:UIBarButtonItemStyleDone
                                                                target:self
                                                                action:@selector(__actionDCancel:)];
@@ -68,19 +68,19 @@
 - (BOOL)__actionCheckPassword {
     if ([comfilmPassowrdTXT.text isEmpty]&&[newpassowrdTXT.text isEmpty]) {
         _boxTextField = newpassowrdTXT;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_REQUIRED") delegate:self tag:0];
         return NO;
     } else if ([newpassowrdTXT.text isEmpty]) {
         _boxTextField = newpassowrdTXT;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"NEW_PASSWORD_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"NEW_PASSWORD_REQUIRED") delegate:self tag:0];
         return NO;
     } else if ([comfilmPassowrdTXT.text isEmpty]) {
         _boxTextField = comfilmPassowrdTXT;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"CONFIRM_PASSWORD_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"CONFIRM_PASSWORD_REQUIRED") delegate:self tag:0];
         return NO;
     } else if (![newpassowrdTXT.text isEqualToString: comfilmPassowrdTXT.text]) {
         _boxTextField = comfilmPassowrdTXT;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"CONFIRM_PASSWORD_MESSAGE", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"CONFIRM_PASSWORD_MESSAGE") delegate:self tag:0];
         return NO;
     }
     return YES;
@@ -108,9 +108,9 @@
     [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared]wsChangePasswordWithRequest:[self _setChangePassWordRequestWithPass:newPass] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_CHANGE_SUCCESSFULLY", nil) delegate:self tag:1];
+            [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_CHANGE_SUCCESSFULLY") delegate:self tag:1];
         } else {
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_NOT_CHANGED", nil) delegate:self tag:0];
+            [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_NOT_CHANGED") delegate:self tag:0];
         }
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.view endEditing:YES];

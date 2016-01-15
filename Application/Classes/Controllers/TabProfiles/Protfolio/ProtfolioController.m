@@ -34,7 +34,7 @@
 #pragma mark - Private
 
 - (void)_setUpUI {
-    self.navigationItem.title = m_string(@"Portfolio");
+    self.navigationItem.title = m_string(@"PORTFOLIO");
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     [_collectionView registerNib:[UINib nibWithNibName:[PortFolioCell identifier] bundle:nil] forCellWithReuseIdentifier:[PortFolioCell identifier]];

@@ -59,58 +59,58 @@
 - (BOOL)_isValidtion {
     if ([_firstNameTextField.text isEmpty]) {
         _currentField = _firstNameTextField;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"FIRSTNAME_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"FIRSTNAME_REQUIRED") delegate:self tag:0];
         return NO;
     } else if ([_lastNameTextField.text isEmpty]) {
         _currentField = _lastNameTextField;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"LASTNAME_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"LASTNAME_REQUIRED") delegate:self tag:0];
         return NO;
     } else if ([_emailTextField.text isEmpty]) {
         _currentField = _emailTextField;
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"EMAIL_REQUIRED") delegate:self tag:0];
         return NO;
     } else if (![_emailTextField.text isValidEmail]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"EMAIL_INVALID") delegate:self tag:0];
         _currentField = _emailTextField;
         return NO;
     } else if ([_usernameTextField.text isEmpty]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"USERNAME_REQUIRED") delegate:self tag:0];
         _currentField = _usernameTextField;
         return NO;
     } else if ([_usernameTextField.text isCheckWhitleSpace]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"USERNAME_INVALID") delegate:self tag:0];
         _currentField = _usernameTextField;
         return NO;
     }else if ([_usernameTextField.text isCheckCharacterRequiesment]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ERROR", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"USERNAME_ERROR") delegate:self tag:0];
         _currentField = _usernameTextField;
         return NO;
     } else if ([_passwordTextField.text isEmpty]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_REQUIRED") delegate:self tag:0];
         _currentField = _passwordTextField;
         return NO;
     } else if ([_passwordTextField.text isCheckWhitleSpace]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_INVALID") delegate:self tag:0];
         _currentField = _passwordTextField;
         return NO;
     } else if ([_passwordTextField.text isCheckCharacterRequiesment]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_ERROR", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_ERROR") delegate:self tag:0];
         _currentField = _passwordTextField;
         return NO;
     } else if ([_comfilmPasswordTextField.text isEmpty] ) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_REQUIRED") delegate:self tag:0];
         _currentField = _comfilmPasswordTextField;
         return NO;
     } else if ([_comfilmPasswordTextField.text isCheckWhitleSpace]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_INVALID") delegate:self tag:0];
         _currentField = _comfilmPasswordTextField;
         return NO;
     } else if ([_passwordTextField.text isCheckCharacterRequiesment]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"PASSWORD_ERROR", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"PASSWORD_ERROR") delegate:self tag:0];
         _currentField = _comfilmPasswordTextField;
         return NO;
     } else if (![_comfilmPasswordTextField.text isEqualToString:_passwordTextField.text]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"CONFIRM_PASSWORD_MESSAGE", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"CONFIRM_PASSWORD_MESSAGE") delegate:self tag:0];
         _currentField = _comfilmPasswordTextField;
         return NO;
     }
@@ -158,11 +158,11 @@
 //                [kNotificationCenter postNotificationName:kUPDATE_PROFILE object:nil];
                 [self _callWSLogin];
             }else {
-                [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];
+                [UIHelper showAlertViewErrorWithMessage:m_string(@"USERNAME_ALREADY_EXISTS") delegate:self tag:0];
                 [UIHelper hideLoadingFromView:[kAppDelegate window]];
             }
         } else {
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"USERNAME_ALREADY_EXISTS", nil) delegate:self tag:0];
+            [UIHelper showAlertViewErrorWithMessage:m_string(@"USERNAME_ALREADY_EXISTS") delegate:self tag:0];
             [UIHelper hideLoadingFromView:[kAppDelegate window]];
         }
     }];
@@ -173,7 +173,7 @@
         if (object && !error) {
             [[kAppDelegate baseTabBarController] dismissViewControllerAnimated:YES completion:nil];
         } else {
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"INVALID_GRANT", nil) delegate:self tag:100];
+            [UIHelper showAlertViewErrorWithMessage:m_string(@"INVALID_GRANT") delegate:self tag:100];
         }
         [UIHelper hideLoadingFromView:[kAppDelegate window]];
     }];
@@ -187,7 +187,7 @@
 - (IBAction)__actionMR:(id)sender {
     NSArray *arr = @[@"Mr",@"Ms",@"Mdm",@"Dr"];
     [self.view endEditing:YES];
-    [CODropListView presentWithTitle:NSLocalizedString(@"SALUTATION_TITLE", nil) data:arr selectedIndex:_indexActtionSalutation didSelect:^(NSInteger index) {
+    [CODropListView presentWithTitle:m_string(@"SALUTATION_TITLE") data:arr selectedIndex:_indexActtionSalutation didSelect:^(NSInteger index) {
         [btnSalutation setTitle:arr[index] forState:UIControlStateNormal];
         _indexActtionSalutation = index;
     }];
@@ -195,7 +195,7 @@
 
 - (IBAction)__actionPhoneCode:(id)sender {
     [self.view endEditing:YES];
-    [CODropListView presentWithTitle:NSLocalizedString(@"PHONE_CODE_TITLE", nil) data:self.arrayListPhoneCode selectedIndex:_indexActtionPhoneCode didSelect:^(NSInteger index) {
+    [CODropListView presentWithTitle:m_string(@"PHONE_CODE_TITLE") data:self.arrayListPhoneCode selectedIndex:_indexActtionPhoneCode didSelect:^(NSInteger index) {
         [btnMobileNumber setTitle:[self.arrayListPhoneCode[index] objectForKey:@"code"] forState:UIControlStateNormal];
         _indexActtionPhoneCode = index;
     }];
@@ -203,7 +203,7 @@
 
 - (IBAction)__actionOpenSafari:(id)sender {
     WebViewSetting *vc = [[WebViewSetting alloc]init];
-    vc.titler = NSLocalizedString(@"TERM_OF_USE", nil);
+    vc.titler = m_string(@"TERM_OF_USE");
     vc.webLink = WEB_SAFARI_LINK;
     vc.isPresion = YES;
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];

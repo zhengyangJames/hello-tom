@@ -78,7 +78,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Setup
 - (void)_setupUI {
-    self.navigationItem.title = NSLocalizedString(@"COASSETS_TITLE", nil);
+    self.navigationItem.title = m_string(@"COASSETS_TITLE");
     [self _setupLeftBarButton];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
@@ -88,7 +88,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 }
 
 - (void)_setupLeftBarButton {
-    _leftButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
+    _leftButton = [[UIBarButtonItem alloc]initWithTitle:m_string(@"FILTER_TITLE")
                                                   style:UIBarButtonItemStyleDone
                                                  target:self
                                                  action:@selector(__actionFilter)];
@@ -113,13 +113,13 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 - (void)_showViewNoData:(NSString *)filterType{
     _noDataView.hidden = NO;
     if ([filterType isEqualToString:kFILTER_BP]) {
-        _noDataLabel.text = NSLocalizedString(@"FILTER_BULLK_NULL",nil);
+        _noDataLabel.text = m_string(@"FILTER_BULLK_NULL");
     } else if ([filterType isEqualToString:kFILTER_CO]) {
-        _noDataLabel.text = NSLocalizedString(@"FILTER_CROWD_NULL",nil);
+        _noDataLabel.text = m_string(@"FILTER_CROWD_NULL");
     } else if ([filterType isEqualToString:kFILTER_PS]) {
-        _noDataLabel.text = NSLocalizedString(@"FILTER_SALE_NULL",nil);
+        _noDataLabel.text = m_string(@"FILTER_SALE_NULL");
     } else {
-        _noDataLabel.text = NSLocalizedString(@"FILTER_ALL_NULL",nil);
+        _noDataLabel.text = m_string(@"FILTER_ALL_NULL");
     }
 }
 
@@ -140,7 +140,7 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 
 #pragma mark - Action
 - (void)__actionFilter {
-    [CODropListVC presentWithTitle:NSLocalizedString(@"FILTER_TITLE", nil)
+    [CODropListVC presentWithTitle:m_string(@"FILTER_TITLE")
                               data:self.arrayListFilter
                           parentVC:self
                          didSelect:^(NSInteger index) {

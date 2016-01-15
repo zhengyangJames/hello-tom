@@ -33,10 +33,10 @@
 
 - (BOOL)_isValidation {
     if ([emailTextField.text isEmpty]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_REQUIRED", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"EMAIL_REQUIRED") delegate:self tag:0];
         return NO;
     }else if (![emailTextField.text isValidEmail]) {
-        [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"EMAIL_INVALID", nil) delegate:self tag:0];
+        [UIHelper showAlertViewErrorWithMessage:m_string(@"EMAIL_INVALID") delegate:self tag:0];
         return NO;
     }
     return YES;
@@ -68,9 +68,9 @@
     [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsForgotPasswordWithRequest:[self _setForgotPassRequest] handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject && [responseObject isKindOfClass:[NSDictionary class]] && [responseObject valueForKey:@"success"]) {;
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"MESSEAGE_RESET_PASSWORD", nil) delegate:self tag:10];
+            [UIHelper showAlertViewErrorWithMessage:m_string(@"MESSEAGE_RESET_PASSWORD") delegate:self tag:10];
         } else {
-            [UIHelper showAlertViewErrorWithMessage:NSLocalizedString(@"YOUR_EMAIL_INVALID", nil) delegate:self tag:20];
+            [UIHelper showAlertViewErrorWithMessage:m_string(@"YOUR_EMAIL_INVALID") delegate:self tag:20];
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
