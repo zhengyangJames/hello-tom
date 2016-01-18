@@ -14,6 +14,7 @@
 #import "COUserInverstorModel.h"
 #import "COAccountInvestmentModel.h"
 #import "COUserPortFolioModel.h"
+#import "COProfileStockModel.h"
 
 @implementation COLoginManager
 
@@ -220,7 +221,21 @@
     return nil;
 }
 
-#pragma mark - Protfolio 
+#pragma mark - Stock
+- (COProfileStockModel *)stockModel {
+    if (_stockModel) {
+        return _stockModel;
+    }
+    NSError *error;
+    if ([kUserDefaults objectForKey:UPDATE_STOCK_PROFILE_JSON]) {
+       NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_STOCK_PROFILE_JSON] options:0 error:&error];
+        if (dic) {
+            COProfileStockModel *userStockmodel = [MTLJSONAdapter modelOfClass:[COProfileStockModel class] fromJSONDictionary:dic error:&error];
+            return _stockModel = userStockmodel;
+        }
+    }
+    return nil;
+}
 
 
 @end

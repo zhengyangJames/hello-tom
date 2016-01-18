@@ -228,6 +228,7 @@
 
 @end
 
+
 #pragma mark - Portfolio
 
 @protocol COOngoingProjects <NSObject>
@@ -243,6 +244,7 @@
 - (NSString *)COOngoingInvestmentTitle;
 - (NSString *)COOngoingInvestmentImage;
 - (NSNumber *)COOngoingInvestmentValue;
+- (NSString*)COOngoingInvestmentDetail;
 
 @end
 
@@ -259,5 +261,6 @@
 - (NSString *)COCompletedInvestmentTitle;
 - (NSString *)COCompletedInvestmentImage;
 - (NSNumber *)COCompletedInvestmentValue;
+- (NSString*)COCompletedInvestmentDetail;
 
 @end

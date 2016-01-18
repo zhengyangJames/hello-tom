@@ -10,6 +10,7 @@
 #import "COUserData.h"
 
 @class COUserPortFolioModel;
+@class COMultiPortfolioModel;
 
 @interface COAccountInvestmentModel : MTLModel<MTLJSONSerializing,COAccountCompleted,COAccountFunded,COAccountOnGoing,COAccountPotential,COAccountRealised,COOngoingProjects,COOngoingInvestment,COCompletedInvestment,COCompletedProjects>
 
@@ -19,5 +20,6 @@
 @property (nonatomic, strong) NSNumber                  *realisedPayouts;
 @property (nonatomic, strong) NSNumber                  *potentialPayouts;
 @property (nonatomic, strong) COUserPortFolioModel      *userPortfolio;
+
 
 @end

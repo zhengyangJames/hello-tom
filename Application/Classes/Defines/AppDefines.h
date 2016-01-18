@@ -156,6 +156,7 @@
 #define UPDATE_COMPANY_PROFILE_JSON                 @"Update profile copany"
 #define UPDATE_INVESTOR_PROFILE_JSON                @"Update profile investor"
 #define UPDATE_ACCOUNT_PROFILE_JSON                 @"Update profile account"
+#define UPDATE_STOCK_PROFILE_JSON                   @"Update profile stock"
 #define kUPDATE_VERSION                             @"Update_version_2.0"
 #define KEY_DEVICE_TOKEN                            @"KEY_DEVICE_TOKEN"
 #define DEVICE_TOKEN_EXIST                          @"DEVICE_TOKEN_EXIST" 

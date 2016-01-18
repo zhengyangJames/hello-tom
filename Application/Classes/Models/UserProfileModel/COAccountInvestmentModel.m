@@ -11,6 +11,7 @@
 #import "COUserPortfolioOnGoingInvestmentModel.h"
 #import "COUserPortfolioCompleteInvestmentModel.h"
 
+
 @implementation COAccountInvestmentModel
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
@@ -21,13 +22,13 @@
         @"realisedPayouts"         : @"total_paid_payout",
         @"potentialPayouts"        : @"total_unpaid_payout",
         @"userPortfolio"           : @"portfolio",
+//        @"userMultiPortfolio"      : @"multiple_currency_portfolio",
     };
 }
 
 + (NSValueTransformer *)userPortfolioJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:COUserPortFolioModel.class];
 }
-
 
 - (NSString*)accOngoingTitle {
     return m_string(@"Ongoing Investment");
@@ -69,6 +70,7 @@
     return self.potentialPayouts;
 }
 
+
 #pragma mark Portfolio
 
 - (NSString*)OngoingProjectsImage {
@@ -98,6 +100,12 @@
     return ongoing.onGoingAmount;
 }
 
+- (NSString*)COOngoingInvestmentDetail {
+    COUserPortFolioModel *port = self.userPortfolio;
+    COUserPortfolioOnGoingInvestmentModel *ongoing = port.ongoingInvestment;
+    return ongoing.onGoingCrrency;
+}
+
 - (NSString*)COCompletedProjectsImage {
     return @"ic_homes";
 }
@@ -123,6 +131,13 @@
     COUserPortFolioModel *port = self.userPortfolio;
     COUserPortfolioCompleteInvestmentModel *complete = port.fundedAndCompletedInvestment;
     return complete.completedAmount;
+}
+
+
+- (NSString*)COCompletedInvestmentDetail {
+    COUserPortFolioModel *port = self.userPortfolio;
+    COUserPortfolioCompleteInvestmentModel *ongoing = port.fundedAndCompletedInvestment;
+    return ongoing.completedCrrency;
 }
 
 @end

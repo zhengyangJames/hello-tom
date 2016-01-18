@@ -13,6 +13,7 @@
 #import "WSURLSessionManager.h"
 #import "COProfileStockModel.h"
 #import "COPositive&NagitiveButton.h"
+#import "COLoginManager.h"
 
 @interface StockController ()<MFMailComposeViewControllerDelegate>
 {
@@ -24,7 +25,6 @@
     __weak IBOutlet COPositive_NagitiveButton *btnInterest;
 }
 
-@property (nonatomic, strong) COProfileStockModel *stockModel;
 
 @end
 
@@ -33,9 +33,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = m_string(@"STOCK");
-    [self callGetStock:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-    }];
+    [self callGetStock];
+    [self loadData];
+    DBG(@"%@", [[COLoginManager shared] stockModel]);
+}
+
+#pragma mark - Setter, Getter
+- (COProfileStockModel *)stockModel {
+    if (_stockModel) {
+        return _stockModel;
+    }
+    return _stockModel = [[COLoginManager shared] stockModel];
 }
 
 - (void)loadData {
@@ -51,7 +59,7 @@
     InterstController *inter = [[InterstController alloc]init];
     [inter setCallBack:^(NSString *message) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-
+            
             [btnInterest setTitle:message forState:UIControlStateNormal];
         }];
     }];
@@ -59,19 +67,16 @@
     
 }
 
-- (void)callGetStock:(WSURLSessionHandler)handler {
+- (void)callGetStock {
     [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsGetStockProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && (responseObject != nil)) {
-            self.stockModel =  (COProfileStockModel *)responseObject;
-            [self loadData];
             [UIHelper hideLoadingFromView:[kAppDelegate window]];
-            
+            [COLoginManager shared].stockModel = nil;
+            self.stockModel = nil;
+            [self loadData];
         } else {
             [ErrorManager showError:error];
-            if (handler) {
-                handler(nil,response,error);
-            }
         }
     }];
 }

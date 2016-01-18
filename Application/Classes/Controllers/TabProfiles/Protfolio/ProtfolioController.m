@@ -15,10 +15,11 @@
 #import "AvailableBalanceCell.h"
 #import "FormCell.h"
 
+#define NumberOfItemInSection    7
 #define NumberOfCellForWithAndHeight    175
 #define Top_Bottom_Tabar_Nav_Aligin     131
 #define Left_Reight_Aligin              18
-#define Height_ForRow_PortFolioCell        157
+#define Height_ForRow_PortFolioCell        210
 #define Height_ForRow_CompletedCell        138
 #define Height_ForRow_AvailableBalanceCell 119
 #define Height_ForRow_FormCell             260
@@ -68,7 +69,7 @@
 #pragma mark - UICollectionView Delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 7;
+    return NumberOfItemInSection;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

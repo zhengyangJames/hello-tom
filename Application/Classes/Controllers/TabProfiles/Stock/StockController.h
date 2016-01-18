@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 
+@class COProfileStockModel;
 @interface StockController : BaseViewController
-
+@property (strong, nonatomic) COProfileStockModel *stockModel;
 @end
