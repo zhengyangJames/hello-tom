@@ -43,7 +43,7 @@
     _OngoingInvestment = OngoingInvestment;
     [_imgThumbnail setImage:[UIImage imageNamed:[_OngoingInvestment COOngoingInvestmentImage]]];
     _lbNameDetail.text = [_OngoingInvestment COOngoingInvestmentTitle];
-    
+    DBG(@"%@", [_OngoingInvestment COOngoingInvestmentValue]);
     _lbNumOfValue.text = [self bridgeStringCurrency:@"SGD" str1:[UIHelper formartFoatValueWithPortfolio:[_OngoingInvestment COOngoingInvestmentValue]] currency2:@"CNY" str2:[_OngoingInvestment COOngoingInvestmentDetail]];
 }
 
@@ -56,30 +56,36 @@
 
 - (NSString *)bridgeStringCurrency:(NSString *)currency1 str1:(NSString *)str1 currency2:(NSString *)currency2 str2:(NSString *)str2 {
     NSString *str = [[NSString alloc]init];
-    if ([str1 isEqual:nil]) {
-        if ([str2 isEqualToString:@"N/A"]) {
-            str = str2;
-        } else {
-            str = [currency2 stringByAppendingFormat:@"%@ %@", @"-", str2];
-        }
-        return str;
-    } else if ([str2 isEqual:nil]) {
-        
-        if ([str1 isEqualToString:@"N/A"]) {
-            str = str1;
-        } else {
-            str = [currency1 stringByAppendingFormat:@"%@ %@", @"-", str1];
-        }
-        return str;
+    if ([str1 isEqual:nil] && [str2 isEqual:nil]) {
+        return @"";
     } else {
-        if ([str1 isEqualToString:@"N/A"]) {
-            str = [str1 stringByAppendingFormat:@"\n%@%@%@",currency2,@"-", str2];
-        } else if([str2 isEqualToString:@"N/A"]) {
-            str = [currency1 stringByAppendingFormat:@"%@%@\n%@", @"-", str1, str2];
+        if ([str1 isEqual:nil] && str2 != nil) {
+            if ([str2 isEqualToString:@"N/A"]) {
+                str = str2;
+            } else {
+                str = [currency2 stringByAppendingFormat:@"%@ %@", @"-", str2];
+            }
+            return str;
         } else {
-            str = [currency1 stringByAppendingFormat:@"%@%@\n%@%@%@", @"-", str1,currency2,@"-", str2];
+            if (str2 == NULL && str1 != nil) {
+                if ([str1 isEqualToString:@"N/A"]) {
+                    str = str1;
+                } else {
+                    str = [currency1 stringByAppendingFormat:@"%@ %@", @"-", str1];
+                }
+                return str;
+            } else {
+                if ([str1 isEqualToString:@"N/A"]) {
+                    str = [str1 stringByAppendingFormat:@"\n%@%@%@",currency2,@"-", str2];
+                } else if([str2 isEqualToString:@"N/A"]) {
+                    str = [currency1 stringByAppendingFormat:@"%@%@\n%@", @"-", str1, str2];
+                } else {
+                    str = [currency1 stringByAppendingFormat:@"%@%@\n%@%@%@", @"-", str1,currency2,@"-", str2];
+                }
+                return str;
+            }
+            
         }
-        return str;
     }
 }
 

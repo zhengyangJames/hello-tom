@@ -12,8 +12,8 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"onGoingAmount" : @"amount",
-        @"onGoingCrrency" : @"currency",
+        @"onGoingAmount" : @"SGD",
+        @"onGoingCrrency" : @"CNY",
     };
 }
 

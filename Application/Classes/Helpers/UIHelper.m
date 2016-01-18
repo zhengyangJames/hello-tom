@@ -395,7 +395,7 @@
     if ([newString  isEqual: @"0.00"]) {
         return @"N/A";
     }
-    return [NSString stringWithFormat:@"$%@",newString];
+    return [NSString stringWithFormat:@"%@",newString];
 }
 
 + (NSString*)formartFoatValueWithDeal:(NSNumber*)value MinimumFractionDigits:(NSInteger)min {

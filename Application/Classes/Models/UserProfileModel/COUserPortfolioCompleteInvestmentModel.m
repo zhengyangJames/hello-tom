@@ -11,8 +11,8 @@
 @implementation COUserPortfolioCompleteInvestmentModel
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"completedAmount" : @"amount",
-        @"completedCrrency" : @"currency",
+        @"completedAmount" : @"SGD",
+        @"completedCrrency" : @"MYR",
     };
 }
 @end
