@@ -49,7 +49,7 @@
     if (self.stockModel != nil) {
         code.text = [self.stockModel stringOfCode];
         currency.text = [self.stockModel stringOfCurrency];
-        price.text = @"0.1";
+        price.text = [[self.stockModel numberOfPrice] stringValue];
         date.text = [self.stockModel stringOfPriceDate];
     }
 }
@@ -58,11 +58,10 @@
     InterstController *inter = [[InterstController alloc]init];
     [inter setCallBack:^(NSString *message) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            
             [btnInterest setTitle:message forState:UIControlStateNormal];
         }];
     }];
-    [self.navigationController pushViewController:inter animated:true];
+    [self.navigationController pushViewController:inter animated:YES];
     
 }
 
@@ -71,11 +70,14 @@
     [[WSURLSessionManager shared] wsGetStockProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && (responseObject != nil)) {
             [UIHelper hideLoadingFromView:[kAppDelegate window]];
-            [COLoginManager shared].stockModel = nil;
-            self.stockModel = nil;
-            [self loadData];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [COLoginManager shared].stockModel = nil;
+                self.stockModel = nil;
+                [self loadData];
+            }];
         } else {
             [ErrorManager showError:error];
+            [UIHelper hideLoadingFromView:[kAppDelegate window]];
         }
     }];
 }

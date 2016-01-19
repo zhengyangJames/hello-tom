@@ -13,17 +13,17 @@
 @interface FormCell() {
     __weak IBOutlet CoDropListButtom *_btnDrop;
 }
-@property (nonatomic, strong) NSArray *arrayInvertor;
+@property (nonatomic, strong) NSArray *arrayCurrency;
 
 @end
 
 @implementation FormCell
 
-- (NSArray *)arrayInvertor {
-    if (_arrayInvertor) {
-        return _arrayInvertor;
+- (NSArray *)arrayCurrency {
+    if (_arrayCurrency) {
+        return _arrayCurrency;
     }
-    return _arrayInvertor = [UIHelper getInvestorType];
+    return _arrayCurrency = [UIHelper getArrayCurrency];
 }
 
 - (void)awakeFromNib {
@@ -32,8 +32,8 @@
 
 - (IBAction)__actionInvestor:(id)sender {
     //[self.view endEditing:NO];
-    [CODropListView presentWithTitle:@"Investor Type" data:self.arrayInvertor selectedIndex:0 didSelect:^(NSInteger index) {
-        [_btnDrop setTitle:self.arrayInvertor[index] forState:UIControlStateNormal];
+    [CODropListView presentWithTitle:@"Currency" data:self.arrayCurrency selectedIndex:0 didSelect:^(NSInteger index) {
+        [_btnDrop setTitle:self.arrayCurrency[index] forState:UIControlStateNormal];
     }];
 }
 @end
