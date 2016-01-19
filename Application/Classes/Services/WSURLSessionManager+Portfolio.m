@@ -1,0 +1,44 @@
+//
+//  WSURLSessionManager+Portfolio.m
+//  CoAssets
+//
+//  Created by Macintosh HD on 1/19/16.
+//  Copyright © 2016 Sanyi. All rights reserved.
+//
+
+#import "WSURLSessionManager+Portfolio.h"
+#import "WSPortfolioRequest.h"
+
+@implementation WSURLSessionManager (Portfolio)
+- (void)wsGetCompleteDrawalsRequestHandler:(NSString *)username handle:(WSURLSessionHandler)handler {
+    WSPortfolioRequest *request = [[WSPortfolioRequest alloc]init];
+    request = [request getCompleteWitdDrawals:username];
+    [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            if (handler) {
+                handler(responseObject,response,nil);
+            }
+        } else {
+            if (handler) {
+                handler(responseObject,response,error);
+            }
+        }
+    }];
+}
+
+- (void)wsGetBalancesRequestHandler:(NSString *)username handle:(WSURLSessionHandler)handler {
+    WSPortfolioRequest *request = [[WSPortfolioRequest alloc]init];
+    request = [request getBalances:username];
+    [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        if (!error && responseObject) {
+            if (handler) {
+                handler(responseObject,response,nil);
+            }
+        } else {
+            if (handler) {
+                handler(responseObject,response,error);
+            }
+        }
+    }];
+}
+@end

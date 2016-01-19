@@ -25,7 +25,6 @@
     __weak IBOutlet COPositive_NagitiveButton *btnInterest;
 }
 
-
 @end
 
 @implementation StockController
@@ -54,7 +53,7 @@
     }
 }
 
-- (IBAction)actionSendmail:(id)sender {
+- (IBAction)actionInterested:(id)sender {
     InterstController *inter = [[InterstController alloc]init];
     [inter setCallBack:^(NSString *message) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -62,7 +61,6 @@
         }];
     }];
     [self.navigationController pushViewController:inter animated:YES];
-    
 }
 
 - (void)callGetStock {
@@ -71,9 +69,9 @@
         if (!error && (responseObject != nil)) {
             [UIHelper hideLoadingFromView:[kAppDelegate window]];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [COLoginManager shared].stockModel = nil;
                 self.stockModel = nil;
                 [self loadData];
+                [COLoginManager shared].stockModel = nil;
             }];
         } else {
             [ErrorManager showError:error];

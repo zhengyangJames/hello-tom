@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CompletedCell : UICollectionViewCell
-
+@property (nonatomic, strong) NSDictionary *dic;
 @end

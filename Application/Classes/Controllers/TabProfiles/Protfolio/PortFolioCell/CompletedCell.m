@@ -8,11 +8,32 @@
 
 #import "CompletedCell.h"
 
+@interface CompletedCell()
+{
+    __weak IBOutlet UILabel *_lblcurrency;
+    
+    NSString *_strText;
+}
+
+
+@end
 @implementation CompletedCell
 
 - (void)awakeFromNib {
-    // Initialization code
 }
 
+- (void)setDic:(NSDictionary *)dic {
+    _dic = dic;
+    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    
+    for (NSString *key in [dic allKeys]) {
+        NSString *str = [dic objectForKey:key];
+        NSString *content = [key stringByAppendingString:str];
+        _strText = content;
+        [arr addObject:content];
+    }
+    DBG(@"%@", arr);
+    _lblcurrency.text = [_lblcurrency.text stringByAppendingString: _strText];
+}
 
 @end

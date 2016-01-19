@@ -109,6 +109,9 @@
 #define WS_METHOD_STOCK                  [WS_ENDPOINT stringByAppendingString:@"/stock-price/"]
 #define WS_METHOD_STOCK_POST                  [WS_ENDPOINT stringByAppendingString:@"/buy-share/"]
 
+#define WS_METHOD_PORTPOLIO_GET_COMPLETE_DRAWALS    [WS_ENDPOINT stringByAppendingString:@"/profile/get_completed_withdrawal//"]
+#define WS_METHOD_PORTPOLIO_GET_BALANCES    [WS_ENDPOINT stringByAppendingString:@"/profile/get_balance_all/"]
+
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
 ///////////////////////////////////////////////////////////////////
@@ -229,6 +232,8 @@
 #define UPDATE_ABOUT_PROFILE                        @"Update profile"
 #define UPDATE_COMNPANY_PROFILE                     @"Update company profile"
 
+#define KEY_USERNAME                                    @"username"
+
 ////////////////////////////////////////////////////////////////
 
 #define KEY_TABBARSELECT                            @"KEY_TABBARSELECT"
@@ -347,6 +352,12 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
     CODetailsProjectActionQuestions
 };
 
+typedef NS_ENUM(NSInteger, COPortpolioSection) {
+    COPortpolioSection0 = 0,
+    COPortpolioSection1,
+    COPortpolioSection2,
+    COPortpolioSection3
+};
 
 ////////////////////////
 //by vicent

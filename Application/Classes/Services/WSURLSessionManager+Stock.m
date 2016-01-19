@@ -36,7 +36,6 @@
             }
         }
     }];
-    
 }
 
 - (void)wsPostDeviceCompanyProfileTokenRequest:(NSString *)message Handler:(WSURLSessionHandler)handler  {

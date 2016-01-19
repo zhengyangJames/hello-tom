@@ -392,7 +392,7 @@
     [formatter setMaximumFractionDigits:2]; // Set this if you need 2 digits
     [formatter setMinimumFractionDigits:2];
     NSString * newString =  [formatter stringFromNumber:[NSNumber numberWithFloat:[value floatValue]]];
-    if ([newString  isEqual: @"0.00"]) {
+    if ([newString  isEqual: @"0,00"]) {
         return @"N/A";
     }
     return [NSString stringWithFormat:@"%@",newString];

@@ -24,28 +24,29 @@
                                     <constraint firstAttribute="height" constant="30" id="f4d-DD-zE6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGD2.75" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jks-fC-pl7">
-                                <rect key="frame" x="119.5" y="60" width="76.5" height="21.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" red="0.16078431372549021" green="0.16078431372549021" blue="0.16078431372549021" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Withdrawal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjQ-qH-Ggo">
-                                <rect key="frame" x="108" y="89.5" width="100" height="11"/>
+                                <rect key="frame" x="108" y="89" width="100" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.46666666666666667" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your withdrawal request that have been successfully processed. " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgc-BJ-YJC">
-                                <rect key="frame" x="15.5" y="102.5" width="285.5" height="11"/>
+                                <rect key="frame" x="15" y="102" width="285.5" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.46666666666666667" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGD2.75" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jks-fC-pl7">
+                                <rect key="frame" x="8" y="60" width="300" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.16078431372549021" green="0.16078431372549021" blue="0.16078431372549021" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jks-fC-pl7" firstAttribute="centerX" secondItem="bMM-Yh-yIz" secondAttribute="centerX" id="5Ko-jC-NVt"/>
+                            <constraint firstAttribute="trailing" secondItem="jks-fC-pl7" secondAttribute="trailing" constant="8" id="6RM-6U-0QJ"/>
                             <constraint firstItem="Fgc-BJ-YJC" firstAttribute="top" secondItem="ZjQ-qH-Ggo" secondAttribute="bottom" constant="2" id="6Sl-L6-Ta0"/>
                             <constraint firstItem="NcT-aO-UDT" firstAttribute="centerX" secondItem="bMM-Yh-yIz" secondAttribute="centerX" id="IuB-av-aAH"/>
                             <constraint firstItem="ZjQ-qH-Ggo" firstAttribute="top" secondItem="jks-fC-pl7" secondAttribute="bottom" constant="8" id="JeF-LE-9vK"/>
@@ -53,7 +54,13 @@
                             <constraint firstItem="ZjQ-qH-Ggo" firstAttribute="centerX" secondItem="bMM-Yh-yIz" secondAttribute="centerX" id="S1E-MI-Njw"/>
                             <constraint firstItem="NcT-aO-UDT" firstAttribute="top" secondItem="bMM-Yh-yIz" secondAttribute="top" constant="10" id="Ujc-gz-P4H"/>
                             <constraint firstItem="jks-fC-pl7" firstAttribute="top" secondItem="NcT-aO-UDT" secondAttribute="bottom" constant="20" id="dWo-8z-5BJ"/>
+                            <constraint firstItem="jks-fC-pl7" firstAttribute="leading" secondItem="bMM-Yh-yIz" secondAttribute="leading" constant="8" id="uPd-1t-JMv"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Ko-jC-NVt"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <color key="backgroundColor" red="0.24705882352941178" green="0.45882352941176469" blue="0.12941176470588237" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,6 +71,9 @@
                     <constraint firstAttribute="trailing" secondItem="bMM-Yh-yIz" secondAttribute="trailing" constant="1" id="xoa-hH-p7j"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="_lblcurrency" destination="jks-fC-pl7" id="W12-Jd-FFe"/>
+            </connections>
             <point key="canvasLocation" x="255" y="174.5"/>
         </tableViewCell>
     </objects>

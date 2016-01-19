@@ -381,6 +381,10 @@
 		0E8956831BBE2497007E36BF /* NProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956751BBE2497007E36BF /* NProfileController.xib */; };
 		0E8956891BBE88E4007E36BF /* EditCompanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8956871BBE88E4007E36BF /* EditCompanyVC.m */; };
 		0E89568A1BBE88E4007E36BF /* EditCompanyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8956881BBE88E4007E36BF /* EditCompanyVC.xib */; };
+		0E8BDACB1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BDACA1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m */; };
+		0E8BDACC1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BDACA1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m */; };
+		0E8BDACF1C4DD44F00049CFC /* WSPortfolioRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BDACE1C4DD44F00049CFC /* WSPortfolioRequest.m */; };
+		0E8BDAD01C4DD44F00049CFC /* WSPortfolioRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BDACE1C4DD44F00049CFC /* WSPortfolioRequest.m */; };
 		0E8F35601C3DFE4E00CCCE04 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F355E1C3DFE4E00CCCE04 /* EventViewController.m */; };
 		0E8F35611C3DFE4E00CCCE04 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8F355F1C3DFE4E00CCCE04 /* EventViewController.xib */; };
 		0E8F35661C3DFED200CCCE04 /* EventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F35641C3DFED200CCCE04 /* EventCollectionViewCell.m */; };
@@ -760,6 +764,10 @@
 		0E8956861BBE88E4007E36BF /* EditCompanyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCompanyVC.h; sourceTree = "<group>"; };
 		0E8956871BBE88E4007E36BF /* EditCompanyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCompanyVC.m; sourceTree = "<group>"; };
 		0E8956881BBE88E4007E36BF /* EditCompanyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditCompanyVC.xib; sourceTree = "<group>"; };
+		0E8BDAC91C4DD40600049CFC /* WSURLSessionManager+Portfolio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Portfolio.h"; sourceTree = "<group>"; };
+		0E8BDACA1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Portfolio.m"; sourceTree = "<group>"; };
+		0E8BDACD1C4DD44F00049CFC /* WSPortfolioRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPortfolioRequest.h; sourceTree = "<group>"; };
+		0E8BDACE1C4DD44F00049CFC /* WSPortfolioRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPortfolioRequest.m; sourceTree = "<group>"; };
 		0E8F355D1C3DFE4E00CCCE04 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		0E8F355E1C3DFE4E00CCCE04 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		0E8F355F1C3DFE4E00CCCE04 /* EventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
@@ -2355,6 +2363,8 @@
 				0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */,
 				0E508EE01C48E13E00B1DBA0 /* WSURLSessionManager+Stock.h */,
 				0E508EE11C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m */,
+				0E8BDAC91C4DD40600049CFC /* WSURLSessionManager+Portfolio.h */,
+				0E8BDACA1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -2706,6 +2716,8 @@
 				0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */,
 				0E508EE41C48E22E00B1DBA0 /* WSStockRequest.h */,
 				0E508EE51C48E22E00B1DBA0 /* WSStockRequest.m */,
+				0E8BDACD1C4DD44F00049CFC /* WSPortfolioRequest.h */,
+				0E8BDACE1C4DD44F00049CFC /* WSPortfolioRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -3284,6 +3296,7 @@
 				0E4F49C21C3E480200CFC23B /* NProfileAdressCell.m in Sources */,
 				0E4F49C31C3E480200CFC23B /* DropListCell.m in Sources */,
 				0E4F49C41C3E480200CFC23B /* COSlidingView.m in Sources */,
+				0E8BDACC1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m in Sources */,
 				0E4F49C51C3E480200CFC23B /* COOfferHeadingCell.m in Sources */,
 				0E4F49C61C3E480200CFC23B /* BaseTabBarController.m in Sources */,
 				0E4F49C71C3E480200CFC23B /* WSUpdateProfileRequest.m in Sources */,
@@ -3433,6 +3446,7 @@
 				0E4F4A4F1C3E480200CFC23B /* DropListObject.m in Sources */,
 				0E4F4A501C3E480200CFC23B /* CODropListVC.m in Sources */,
 				0E4F4A511C3E480200CFC23B /* WSPostSubscribeRequest.m in Sources */,
+				0E8BDAD01C4DD44F00049CFC /* WSPortfolioRequest.m in Sources */,
 				0E4F4A521C3E480200CFC23B /* NProfileDelegate.m in Sources */,
 				0E4F4A531C3E480200CFC23B /* COUserProfileModel.m in Sources */,
 				0E508EE31C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m in Sources */,
@@ -3455,6 +3469,7 @@
 				1E5A6FBB1BCCC49F00C4C5A5 /* NProfileAdressCell.m in Sources */,
 				7F325FC41B40E50800116445 /* DropListCell.m in Sources */,
 				7F325FCC1B40E50800116445 /* COSlidingView.m in Sources */,
+				0E8BDACB1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m in Sources */,
 				7F325F8C1B40E50800116445 /* COOfferHeadingCell.m in Sources */,
 				7F325F7C1B40E50800116445 /* BaseTabBarController.m in Sources */,
 				BB3A9F6A1B9660DB002EEB1C /* WSUpdateProfileRequest.m in Sources */,
@@ -3604,6 +3619,7 @@
 				7F325FC61B40E50800116445 /* DropListObject.m in Sources */,
 				7F325FC11B40E50800116445 /* CODropListVC.m in Sources */,
 				BB38EE291B99F74200D15D58 /* WSPostSubscribeRequest.m in Sources */,
+				0E8BDACF1C4DD44F00049CFC /* WSPortfolioRequest.m in Sources */,
 				0E39FA631BC4247000880834 /* NProfileDelegate.m in Sources */,
 				BB368EB21B87DF5C0066C646 /* COUserProfileModel.m in Sources */,
 				0E508EE21C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m in Sources */,
