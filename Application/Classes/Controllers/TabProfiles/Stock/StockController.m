@@ -35,7 +35,6 @@
     self.title = m_string(@"STOCK");
     [self callGetStock];
     [self loadData];
-    DBG(@"%@", [[COLoginManager shared] stockModel]);
 }
 
 #pragma mark - Setter, Getter

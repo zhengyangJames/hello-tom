@@ -80,7 +80,7 @@
                     </variation>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0p-n6-F04" customClass="COPositive_NagitiveButton">
-                    <rect key="frame" x="10" y="100" width="300" height="40"/>
+                    <rect key="frame" x="30" y="100" width="260" height="40"/>
                     <color key="backgroundColor" red="0.71372549019607845" green="0.21568627450980393" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="KGv-3S-ecX"/>
@@ -92,6 +92,7 @@
                     </state>
                     <variation key="default">
                         <mask key="constraints">
+                            <exclude reference="KGv-3S-ecX"/>
                             <exclude reference="cnX-SZ-yYR"/>
                         </mask>
                     </variation>
@@ -103,8 +104,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="q0p-n6-F04" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="8ra-tP-MXC"/>
+                <constraint firstAttribute="trailing" secondItem="q0p-n6-F04" secondAttribute="trailing" constant="30" id="9xP-WQ-P5b"/>
                 <constraint firstItem="olW-DM-pwh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="DVx-hp-J8s"/>
+                <constraint firstItem="q0p-n6-F04" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="JQ6-lj-Wod"/>
                 <constraint firstAttribute="trailing" secondItem="olW-DM-pwh" secondAttribute="trailing" constant="10" id="JYN-wD-Dfd"/>
+                <constraint firstItem="q0p-n6-F04" firstAttribute="width" secondItem="olW-DM-pwh" secondAttribute="width" id="QnI-zW-Ldb"/>
                 <constraint firstItem="olW-DM-pwh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="ar7-6b-983"/>
                 <constraint firstItem="q0p-n6-F04" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nXQ-1j-bXp"/>
                 <constraint firstItem="q0p-n6-F04" firstAttribute="top" secondItem="olW-DM-pwh" secondAttribute="bottom" constant="30" id="qdI-7H-JoC"/>
@@ -113,6 +117,7 @@
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="8ra-tP-MXC"/>
+                    <exclude reference="QnI-zW-Ldb"/>
                 </mask>
             </variation>
         </view>

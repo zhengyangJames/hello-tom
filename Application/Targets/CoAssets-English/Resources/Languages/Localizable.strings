@@ -18,7 +18,7 @@
 
 "ACCOUNT"                               = "Account";
 "DEALS"                                 = "Deals";
-"STOCK"                                 = "Stock";
+"STOCK"                                 = "CoAssets' Stock";
 
 //TitleTabbar
 "HOME"                                  = "Home";

@@ -36,12 +36,10 @@
 
 - (void)__actionDone {
     
-    [self callPostStockProfileHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-    }];
+    [self callPostStockProfileHandler];
 }
 
-- (void)callPostStockProfileHandler:(WSURLSessionHandler)handler {
+- (void)callPostStockProfileHandler {
     [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest: tvContent.text Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         [UIHelper hideLoadingFromView:[kAppDelegate window]];
