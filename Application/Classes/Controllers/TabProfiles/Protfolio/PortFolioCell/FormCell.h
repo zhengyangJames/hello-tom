@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FormCell : UICollectionViewCell
+@interface FormCell : UITableViewCell
 
 @end

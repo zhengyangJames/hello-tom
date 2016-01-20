@@ -28,6 +28,7 @@
 
 - (void)awakeFromNib {
     _btnDrop.layer.cornerRadius = 4;
+     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (IBAction)__actionInvestor:(id)sender {

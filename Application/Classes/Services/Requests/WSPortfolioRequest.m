@@ -17,8 +17,10 @@
     if (acc) {
         [request setValue:acc forHTTPHeaderField:@"Authorization"];
     }
-    NSString *urlStr = [[WS_METHOD_PORTPOLIO_GET_COMPLETE_DRAWALS stringByAppendingString: userName] stringByAppendingString:@"/"];
-    [request setURL:[NSURL URLWithString:urlStr]];
+    if (userName) {
+        NSString *urlStr = [[WS_METHOD_PORTPOLIO_GET_COMPLETE_DRAWALS stringByAppendingString: userName] stringByAppendingString:@"/"];
+        [request setURL:[NSURL URLWithString:urlStr]];
+    }
     return request;
 }
 
@@ -29,8 +31,11 @@
     if (acc) {
         [request setValue:acc forHTTPHeaderField:@"Authorization"];
     }
-    NSString *urlStr = [[WS_METHOD_PORTPOLIO_GET_BALANCES stringByAppendingString: userName] stringByAppendingString:@"/"];
-    [request setURL:[NSURL URLWithString:urlStr]];
+    if (userName) {
+        NSString *urlStr = [[WS_METHOD_PORTPOLIO_GET_BALANCES stringByAppendingString: userName] stringByAppendingString:@"/"];
+        [request setURL:[NSURL URLWithString:urlStr]];
+        
+    }
     return request;
 }
 

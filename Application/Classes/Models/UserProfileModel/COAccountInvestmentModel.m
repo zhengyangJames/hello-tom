@@ -10,6 +10,7 @@
 #import "COUserPortFolioModel.h"
 #import "COUserPortfolioOnGoingInvestmentModel.h"
 #import "COUserPortfolioCompleteInvestmentModel.h"
+#import "COMultiPortpolioModel.h"
 
 
 @implementation COAccountInvestmentModel
@@ -21,7 +22,7 @@
         @"completedInvestment"     : @"completed_invested_amt",
         @"realisedPayouts"         : @"total_paid_payout",
         @"potentialPayouts"        : @"total_unpaid_payout",
-        @"userPortfolio"           : @"multiple_currency_portfolio",
+        @"userPortfolio"           : @"portfolio",
 //        @"userMultiPortfolio"      : @"multiple_currency_portfolio",
     };
 }
@@ -29,6 +30,10 @@
 + (NSValueTransformer *)userPortfolioJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:COUserPortFolioModel.class];
 }
+
+//+ (NSValueTransformer *)userMultiPortfolioJSONTransformer {
+//    return [MTLJSONAdapter dictionaryTransformerWithModelClass:COMultiPortpolioModel.class];
+//}
 
 - (NSString*)accOngoingTitle {
     return m_string(@"Ongoing Investment");

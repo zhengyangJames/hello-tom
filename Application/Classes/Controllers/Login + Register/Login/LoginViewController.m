@@ -93,8 +93,6 @@
     [_userName resignFirstResponder];
     [_passWord resignFirstResponder];
     if ([self _isValid]) {
-        [kUserDefaults setObject:_userName.text forKey:KEY_USERNAME];
-        [kUserDefaults synchronize];
         [self _login];
     }
 }

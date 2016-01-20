@@ -10,83 +10,70 @@
 
 @interface PortFolioCell ()
 {
-    __weak IBOutlet UIImageView *_imgThumbnail;
-    __weak IBOutlet UILabel *_lbNameDetail;
-    __weak IBOutlet UILabel *_lbNumOfValue;
+    __weak IBOutlet UIImageView *_imgThumbnail1;
+    __weak IBOutlet UILabel *_lbNameDetail1;
+    __weak IBOutlet UILabel *_lbNumOfValue1;
+    
+    __weak IBOutlet UIImageView *_imgThumbnail2;
+    __weak IBOutlet UILabel *_lbNameDetail2;
+    __weak IBOutlet UILabel *_lbNumOfValue2;
 }
 @end
 
 @implementation PortFolioCell
 
 - (void)awakeFromNib {
-    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 #pragma mark - Set Get
 
-- (void)setCompletedInvestment:(id<COCompletedInvestment>)CompletedInvestment {
-    _CompletedInvestment = CompletedInvestment;
-    [_imgThumbnail setImage:[UIImage imageNamed:[_CompletedInvestment COCompletedInvestmentImage]]];
-    _lbNameDetail.text = [_CompletedInvestment COCompletedInvestmentTitle];
-    
-    _lbNumOfValue.text = [self bridgeStringCurrency:@"SGD" str1:[UIHelper formartFoatValueWithPortfolio:[_CompletedInvestment COCompletedInvestmentValue]] currency2:@"MYR" str2:[_CompletedInvestment COCompletedInvestmentDetail]];
-}
 
-- (void)setCompletedProjects:(id<COCompletedProjects>)CompletedProjects {
-    _CompletedProjects = CompletedProjects;
-    [_imgThumbnail setImage:[UIImage imageNamed:[_CompletedProjects COCompletedProjectsImage]]];
-    _lbNameDetail.text = [_CompletedProjects COCompletedProjectsTitle];
-    _lbNumOfValue.text = [[_CompletedProjects COCompletedProjectsValue] stringValue];
-}
-
-- (void)setOngoingInvestment:(id<COOngoingInvestment>)OngoingInvestment {
+- (void) setOngoingInvestment:(NSDictionary *)OngoingInvestment {
     _OngoingInvestment = OngoingInvestment;
-    [_imgThumbnail setImage:[UIImage imageNamed:[_OngoingInvestment COOngoingInvestmentImage]]];
-    _lbNameDetail.text = [_OngoingInvestment COOngoingInvestmentTitle];
-    DBG(@"%@", [_OngoingInvestment COOngoingInvestmentValue]);
-    _lbNumOfValue.text = [self bridgeStringCurrency:@"SGD" str1:[UIHelper formartFoatValueWithPortfolio:[_OngoingInvestment COOngoingInvestmentValue]] currency2:@"CNY" str2:[_OngoingInvestment COOngoingInvestmentDetail]];
+    [_imgThumbnail2 setImage:[UIImage imageNamed:[self.multiPortlio COOngoingInvestmentImage]]];
+    _lbNameDetail2.text = [self.multiPortlio COOngoingInvestmentTitle];
+     _lbNumOfValue2.text = [self getStringFromDictionary:OngoingInvestment];
 }
 
-- (void)setOngoingProjects:(id<COOngoingProjects>)OngoingProjects {
+- (void) setOngoingProjects:(NSNumber *)OngoingProjects {
     _OngoingProjects = OngoingProjects;
-    [_imgThumbnail setImage:[UIImage imageNamed:[_OngoingProjects OngoingProjectsImage]]];
-    _lbNameDetail.text = [_OngoingProjects OngoingProjectsTitle];
-    _lbNumOfValue.text = [[_OngoingProjects OngoingProjectsValue] stringValue];
+    [_imgThumbnail1 setImage:[UIImage imageNamed:[self.multiPortlio OngoingProjectsImage]]];
+    _lbNameDetail1.text = [self.multiPortlio OngoingProjectsTitle];
+    _lbNumOfValue1.text = [OngoingProjects stringValue];
 }
 
-- (NSString *)bridgeStringCurrency:(NSString *)currency1 str1:(NSString *)str1 currency2:(NSString *)currency2 str2:(NSString *)str2 {
-    NSString *str = [[NSString alloc]init];
-    if ([str1 isEqual:nil] && [str2 isEqual:nil]) {
-        return @"";
-    } else {
-        if ([str1 isEqual:nil] && str2 != nil) {
-            if ([str2 isEqualToString:@"N/A"]) {
-                str = str2;
-            } else {
-                str = [currency2 stringByAppendingFormat:@"%@ %@", @"-", str2];
-            }
-            return str;
+- (void) setCompletedInvestment:(NSDictionary *)CompletedInvestment {
+    _CompletedInvestment = CompletedInvestment;
+    [_imgThumbnail2 setImage:[UIImage imageNamed:[self.multiPortlio COCompletedInvestmentImage]]];
+    _lbNameDetail2.text = [self.multiPortlio COCompletedInvestmentTitle];
+    _lbNumOfValue2.text = [self getStringFromDictionary:CompletedInvestment];
+}
+- (void) setCompletedProjects:(NSNumber *)CompletedProjects {
+    _CompletedProjects = CompletedProjects;
+    [_imgThumbnail1 setImage:[UIImage imageNamed:[self.multiPortlio COCompletedProjectsImage]]];
+    _lbNameDetail1.text = [self.multiPortlio COCompletedProjectsTitle];
+    _lbNumOfValue1.text = [CompletedProjects stringValue];
+}
+
+- (NSString *)getStringFromDictionary:(NSDictionary *)dic {
+    NSString *strText = [[NSString alloc]init];
+    for (NSString *key in [dic allKeys]) {
+        NSString *content = [[NSString alloc] init];
+        NSString *str = [[dic objectForKey:key] stringValue];
+        if ([str isEqualToString:@"0"]) {
+            content = @"N/A";
         } else {
-            if (str2 == NULL && str1 != nil) {
-                if ([str1 isEqualToString:@"N/A"]) {
-                    str = str1;
-                } else {
-                    str = [currency1 stringByAppendingFormat:@"%@ %@", @"-", str1];
-                }
-                return str;
-            } else {
-                if ([str1 isEqualToString:@"N/A"]) {
-                    str = [str1 stringByAppendingFormat:@"\n%@%@%@",currency2,@"-", str2];
-                } else if([str2 isEqualToString:@"N/A"]) {
-                    str = [currency1 stringByAppendingFormat:@"%@%@\n%@", @"-", str1, str2];
-                } else {
-                    str = [currency1 stringByAppendingFormat:@"%@%@\n%@%@%@", @"-", str1,currency2,@"-", str2];
-                }
-                return str;
-            }
-            
+            content = [key stringByAppendingFormat:@"%@%@",@"-",str];
+        }
+        if (strText != nil) {
+            strText = [strText stringByAppendingFormat:@"\n%@",content];
+        } else {
+            strText = content;
         }
     }
+    return strText;
 }
+
 
 @end

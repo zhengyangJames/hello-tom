@@ -15,6 +15,8 @@
 #import "COAccountInvestmentModel.h"
 #import "COUserPortFolioModel.h"
 #import "COProfileStockModel.h"
+#import "COMultiPortpolioModel.h"
+
 
 @implementation COLoginManager
 
@@ -189,9 +191,9 @@
     NSDictionary *paramToken = [UIHelper getParamTokenWithModel:[[COLoginManager shared] userModel]];
     [[WSURLSessionManager shared] wsGetAccountInvestment:paramToken handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (responseObject &&[responseObject isKindOfClass:[NSDictionary class]] && !error) {
-//            DBG(@"%@",responseObject);
             NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
             [dic addEntriesFromDictionary:responseObject];
+            
             NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
             [kUserDefaults setObject:data forKey:UPDATE_ACCOUNT_PROFILE_JSON];
             [kUserDefaults synchronize];
@@ -216,6 +218,23 @@
         if (dic) {
             COAccountInvestmentModel *userProModel = [MTLJSONAdapter modelOfClass:[COAccountInvestmentModel class] fromJSONDictionary:dic error:&error];
             return _accountModel = userProModel;
+        }
+    }
+    return nil;
+}
+
+
+- (COMultiPortpolioModel *)multiPortpolio {
+    if (_multiPortpolio) {
+        return _multiPortpolio;
+    }
+    NSError *error;
+    if ([kUserDefaults objectForKey:UPDATE_ACCOUNT_PROFILE_JSON]) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_ACCOUNT_PROFILE_JSON] options:0 error:&error];
+        if (dic) {
+            NSDictionary *diction = [dic objectForKey:@"multiple_currency_portfolio"];
+            COMultiPortpolioModel *userProModel = [MTLJSONAdapter modelOfClass:[COMultiPortpolioModel class] fromJSONDictionary:diction error:&error];
+            return _multiPortpolio = userProModel;
         }
     }
     return nil;

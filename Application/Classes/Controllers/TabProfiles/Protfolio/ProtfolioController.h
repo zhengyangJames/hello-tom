@@ -8,10 +8,12 @@
 
 #import "BaseViewController.h"
 #import "COAccountInvestmentModel.h"
+#import "COMultiPortpolioModel.h"
 
 @interface ProtfolioController : BaseViewController
 
 @property (readonly,nonatomic) COPortfolioProfile protfolioStyle;
 @property (strong, nonatomic) COAccountInvestmentModel *accountModel;
+@property (strong, nonatomic) COMultiPortpolioModel *multiPortpolio;
 
 @end

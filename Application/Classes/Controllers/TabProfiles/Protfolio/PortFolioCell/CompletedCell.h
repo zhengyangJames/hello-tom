@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CompletedCell : UICollectionViewCell
+@interface CompletedCell : UITableViewCell
 @property (nonatomic, strong) NSDictionary *dic;
 @end

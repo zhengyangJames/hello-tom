@@ -7,35 +7,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProtfolioController">
             <connections>
-                <outlet property="_collectionView" destination="eWS-tr-EpS" id="Sey-CL-1oc"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="_tableView" destination="LUX-F8-FZd" id="FYm-j9-DAY"/>
+                <outlet property="view" destination="krx-vU-II9" id="Tk2-FY-uQs"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+        <view contentMode="scaleToFill" id="krx-vU-II9">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eWS-tr-EpS" customClass="TPKeyboardAvoidingCollectionView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LUX-F8-FZd">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="Jxk-Oq-6UA">
-                        <size key="itemSize" width="150" height="150"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="eWS-tr-EpS" secondAttribute="trailing" id="BjX-Zu-0c8"/>
-                <constraint firstAttribute="bottom" secondItem="eWS-tr-EpS" secondAttribute="bottom" id="OjJ-nE-nV0"/>
-                <constraint firstItem="eWS-tr-EpS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cY7-dP-AnP"/>
-                <constraint firstItem="eWS-tr-EpS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="k1q-47-BOB"/>
+                <constraint firstAttribute="trailing" secondItem="LUX-F8-FZd" secondAttribute="trailing" id="7WB-NO-m7c"/>
+                <constraint firstAttribute="bottom" secondItem="LUX-F8-FZd" secondAttribute="bottom" id="WaT-bO-5l7"/>
+                <constraint firstItem="LUX-F8-FZd" firstAttribute="top" secondItem="krx-vU-II9" secondAttribute="top" id="b3O-ic-cab"/>
+                <constraint firstItem="LUX-F8-FZd" firstAttribute="leading" secondItem="krx-vU-II9" secondAttribute="leading" id="ndh-oG-Kos"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="286" y="254"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="140" y="183"/>
         </view>
     </objects>
 </document>

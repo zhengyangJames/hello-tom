@@ -11,20 +11,29 @@
 @interface AvailableBalanceCell()
 {
     __weak IBOutlet UILabel *_lblConten;
+   
 }
 
 @end
 @implementation AvailableBalanceCell
 
 - (void)awakeFromNib {
-    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-- (void)setDic:(NSDictionary *)dic {
-    _dic = dic;
-    NSString *content1 = [dic objectForKey:@"currency"];
-    NSString *content2  = [dic objectForKey:@"balance_amt"];
-    NSString *content3 = [dic objectForKey:@"updated"];
-    _lblConten.text = [content1 stringByAppendingFormat:@"%@%@\n%@",@"-",content2,content3];
+- (void)setArrayData:(NSArray *)arrayData{
+    _arrayData = arrayData;
+     NSString *_strText;
+    for (NSDictionary *dic in arrayData) {
+        NSString *strCurrency = [dic objectForKey:@"currency"];
+        NSString *strBalance = [dic objectForKey:@"balance_amt"];
+        NSString *content = [strCurrency stringByAppendingFormat:@"%@%@",@"-",strBalance];
+        if (_strText != nil) {
+            _strText = [_strText stringByAppendingFormat:@"\n%@",content];
+        } else {
+            _strText = content;
+        }
+    }
+    _lblConten.text = _strText;
 }
 @end

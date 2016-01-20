@@ -57,7 +57,7 @@
     InterstController *inter = [[InterstController alloc]init];
     [inter setCallBack:^(NSString *message) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [btnInterest setTitle:message forState:UIControlStateNormal];
+            //[btnInterest setTitle:message forState:UIControlStateNormal];
         }];
     }];
     [self.navigationController pushViewController:inter animated:YES];

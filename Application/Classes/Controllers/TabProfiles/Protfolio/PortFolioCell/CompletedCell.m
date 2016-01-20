@@ -12,28 +12,28 @@
 {
     __weak IBOutlet UILabel *_lblcurrency;
     
-    NSString *_strText;
 }
-
 
 @end
 @implementation CompletedCell
 
 - (void)awakeFromNib {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setDic:(NSDictionary *)dic {
     _dic = dic;
-    NSMutableArray *arr = [[NSMutableArray alloc]init];
-    
+    NSString *_strText;
     for (NSString *key in [dic allKeys]) {
         NSString *str = [dic objectForKey:key];
-        NSString *content = [key stringByAppendingString:str];
-        _strText = content;
-        [arr addObject:content];
+        NSString *content = [key stringByAppendingFormat:@"%@%@",@"-",str];
+        if (_strText != nil) {
+            _strText = [_strText stringByAppendingFormat:@"\n%@",content];
+        } else {
+            _strText = content;
+        }
     }
-    DBG(@"%@", arr);
-    _lblcurrency.text = [_lblcurrency.text stringByAppendingString: _strText];
+    _lblcurrency.text = _strText;
 }
 
 @end

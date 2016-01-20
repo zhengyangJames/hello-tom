@@ -361,6 +361,12 @@
 		0E508EEC1C48E93F00B1DBA0 /* COProfileStockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EEA1C48E93F00B1DBA0 /* COProfileStockModel.m */; };
 		0E527CCC1C3F46F800427BB1 /* singapore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0E527CCB1C3F46F800427BB1 /* singapore.jpg */; };
 		0E527CCD1C3F46F800427BB1 /* singapore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0E527CCB1C3F46F800427BB1 /* singapore.jpg */; };
+		0E55D4281C4F2EF40058DDA8 /* AvailableBalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55D4261C4F2EF40058DDA8 /* AvailableBalanceCell.m */; };
+		0E55D4291C4F2EF40058DDA8 /* AvailableBalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55D4261C4F2EF40058DDA8 /* AvailableBalanceCell.m */; };
+		0E55D42A1C4F2EF40058DDA8 /* AvailableBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E55D4271C4F2EF40058DDA8 /* AvailableBalanceCell.xib */; };
+		0E55D42B1C4F2EF40058DDA8 /* AvailableBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E55D4271C4F2EF40058DDA8 /* AvailableBalanceCell.xib */; };
+		0E55D42F1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55D42E1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m */; };
+		0E55D4301C4F4B8C0058DDA8 /* COMultiPortpolioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55D42E1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m */; };
 		0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */; };
 		0E84EE991C116AF600CDA27C /* ic_notification_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */; };
 		0E84EE9A1C116AF600CDA27C /* ic_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE961C116AF600CDA27C /* ic_notification@2x.png */; };
@@ -411,10 +417,6 @@
 		0EE7F7E71C48933E00520B05 /* CompletedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7E41C48933E00520B05 /* CompletedCell.m */; };
 		0EE7F7E81C48933E00520B05 /* CompletedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7E51C48933E00520B05 /* CompletedCell.xib */; };
 		0EE7F7E91C48933E00520B05 /* CompletedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7E51C48933E00520B05 /* CompletedCell.xib */; };
-		0EE7F7ED1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7EB1C489D7E00520B05 /* AvailableBalanceCell.m */; };
-		0EE7F7EE1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7EB1C489D7E00520B05 /* AvailableBalanceCell.m */; };
-		0EE7F7EF1C489D7E00520B05 /* AvailableBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7EC1C489D7E00520B05 /* AvailableBalanceCell.xib */; };
-		0EE7F7F01C489D7E00520B05 /* AvailableBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7EC1C489D7E00520B05 /* AvailableBalanceCell.xib */; };
 		0EE7F7F41C48A1D000520B05 /* FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F21C48A1D000520B05 /* FormCell.m */; };
 		0EE7F7F51C48A1D000520B05 /* FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F21C48A1D000520B05 /* FormCell.m */; };
 		0EE7F7F61C48A1D000520B05 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F31C48A1D000520B05 /* FormCell.xib */; };
@@ -736,6 +738,11 @@
 		0E508EE91C48E93F00B1DBA0 /* COProfileStockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COProfileStockModel.h; sourceTree = "<group>"; };
 		0E508EEA1C48E93F00B1DBA0 /* COProfileStockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COProfileStockModel.m; sourceTree = "<group>"; };
 		0E527CCB1C3F46F800427BB1 /* singapore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = singapore.jpg; sourceTree = "<group>"; };
+		0E55D4251C4F2EF40058DDA8 /* AvailableBalanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableBalanceCell.h; sourceTree = "<group>"; };
+		0E55D4261C4F2EF40058DDA8 /* AvailableBalanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableBalanceCell.m; sourceTree = "<group>"; };
+		0E55D4271C4F2EF40058DDA8 /* AvailableBalanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableBalanceCell.xib; sourceTree = "<group>"; };
+		0E55D42D1C4F4B8C0058DDA8 /* COMultiPortpolioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COMultiPortpolioModel.h; sourceTree = "<group>"; };
+		0E55D42E1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COMultiPortpolioModel.m; sourceTree = "<group>"; };
 		0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@2x.png"; sourceTree = "<group>"; };
 		0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@3x.png"; sourceTree = "<group>"; };
 		0E84EE961C116AF600CDA27C /* ic_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification@2x.png"; sourceTree = "<group>"; };
@@ -814,9 +821,6 @@
 		0EE7F7E31C48933E00520B05 /* CompletedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedCell.h; sourceTree = "<group>"; };
 		0EE7F7E41C48933E00520B05 /* CompletedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedCell.m; sourceTree = "<group>"; };
 		0EE7F7E51C48933E00520B05 /* CompletedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedCell.xib; sourceTree = "<group>"; };
-		0EE7F7EA1C489D7E00520B05 /* AvailableBalanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableBalanceCell.h; sourceTree = "<group>"; };
-		0EE7F7EB1C489D7E00520B05 /* AvailableBalanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableBalanceCell.m; sourceTree = "<group>"; };
-		0EE7F7EC1C489D7E00520B05 /* AvailableBalanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableBalanceCell.xib; sourceTree = "<group>"; };
 		0EE7F7F11C48A1D000520B05 /* FormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormCell.h; sourceTree = "<group>"; };
 		0EE7F7F21C48A1D000520B05 /* FormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormCell.m; sourceTree = "<group>"; };
 		0EE7F7F31C48A1D000520B05 /* FormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormCell.xib; sourceTree = "<group>"; };
@@ -1420,6 +1424,15 @@
 			path = ProfileStockModel;
 			sourceTree = "<group>";
 		};
+		0E55D42C1C4F4B6E0058DDA8 /* COMultiPortfolioModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E55D42D1C4F4B8C0058DDA8 /* COMultiPortpolioModel.h */,
+				0E55D42E1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m */,
+			);
+			path = COMultiPortfolioModel;
+			sourceTree = "<group>";
+		};
 		0E8955E81BBE1A78007E36BF /* TabProfiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1481,15 +1494,15 @@
 		0E89562E1BBE1F7C007E36BF /* PortFolioCell */ = {
 			isa = PBXGroup;
 			children = (
+				0E55D4251C4F2EF40058DDA8 /* AvailableBalanceCell.h */,
+				0E55D4261C4F2EF40058DDA8 /* AvailableBalanceCell.m */,
+				0E55D4271C4F2EF40058DDA8 /* AvailableBalanceCell.xib */,
 				0E89562F1BBE1F8B007E36BF /* PortFolioCell.h */,
 				0E8956301BBE1F8B007E36BF /* PortFolioCell.m */,
 				0E8956311BBE1F8B007E36BF /* PortFolioCell.xib */,
 				0EE7F7E31C48933E00520B05 /* CompletedCell.h */,
 				0EE7F7E41C48933E00520B05 /* CompletedCell.m */,
 				0EE7F7E51C48933E00520B05 /* CompletedCell.xib */,
-				0EE7F7EA1C489D7E00520B05 /* AvailableBalanceCell.h */,
-				0EE7F7EB1C489D7E00520B05 /* AvailableBalanceCell.m */,
-				0EE7F7EC1C489D7E00520B05 /* AvailableBalanceCell.xib */,
 				0EE7F7F11C48A1D000520B05 /* FormCell.h */,
 				0EE7F7F21C48A1D000520B05 /* FormCell.m */,
 				0EE7F7F31C48A1D000520B05 /* FormCell.xib */,
@@ -2642,6 +2655,7 @@
 		BB368EAF1B87DF380066C646 /* UserProfileModel */ = {
 			isa = PBXGroup;
 			children = (
+				0E55D42C1C4F4B6E0058DDA8 /* COMultiPortfolioModel */,
 				BB368EB91B87F3D60066C646 /* COUserData.h */,
 				1ECEAE871BC760A0006FE0CA /* COProfileModel */,
 				1ECEAE841BC75FCF006FE0CA /* COAccountModel */,
@@ -2844,7 +2858,6 @@
 				0E4F4A7E1C3E480200CFC23B /* ContacViewController.xib in Resources */,
 				0E4F4A7F1C3E480200CFC23B /* ic_Earth@3x.png in Resources */,
 				0E4F4A801C3E480200CFC23B /* offer.png in Resources */,
-				0EE7F7F01C489D7E00520B05 /* AvailableBalanceCell.xib in Resources */,
 				0E4F4A811C3E480200CFC23B /* OfferViewController.xib in Resources */,
 				0E4F4A821C3E480200CFC23B /* ic_notification_selected@3x.png in Resources */,
 				0E4F4A831C3E480200CFC23B /* AccountController.xib in Resources */,
@@ -2875,6 +2888,7 @@
 				0E4F4A9B1C3E480200CFC23B /* ic_setting_2@3x.png in Resources */,
 				0E4F4A9C1C3E480200CFC23B /* NProfileAdressCell.xib in Resources */,
 				0E4F4A9D1C3E480200CFC23B /* Singapore.png in Resources */,
+				0E55D42B1C4F2EF40058DDA8 /* AvailableBalanceCell.xib in Resources */,
 				0E4F4A9E1C3E480200CFC23B /* ic_placeholder.png in Resources */,
 				0E4F4A9F1C3E480200CFC23B /* United Kingdom.png in Resources */,
 				0E4F4AA01C3E480200CFC23B /* AccountCell.xib in Resources */,
@@ -3025,7 +3039,6 @@
 				7F325FBA1B40E50800116445 /* ContacViewController.xib in Resources */,
 				7F3260421B40E50800116445 /* ic_Earth@3x.png in Resources */,
 				B94210FD1BFC2C7400C86FE8 /* offer.png in Resources */,
-				0EE7F7EF1C489D7E00520B05 /* AvailableBalanceCell.xib in Resources */,
 				7F325F9A1B40E50800116445 /* OfferViewController.xib in Resources */,
 				0E84EE991C116AF600CDA27C /* ic_notification_selected@3x.png in Resources */,
 				0E89561B1BBE1BB2007E36BF /* AccountController.xib in Resources */,
@@ -3056,6 +3069,7 @@
 				7F3260591B40E50800116445 /* ic_setting_2@3x.png in Resources */,
 				1E5A6FBC1BCCC49F00C4C5A5 /* NProfileAdressCell.xib in Resources */,
 				7F85292C1B43935B00CFAEB5 /* Singapore.png in Resources */,
+				0E55D42A1C4F2EF40058DDA8 /* AvailableBalanceCell.xib in Resources */,
 				7F3260711B40E50800116445 /* ic_placeholder.png in Resources */,
 				7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */,
 				0E89562D1BBE1D9F007E36BF /* AccountCell.xib in Resources */,
@@ -3299,6 +3313,7 @@
 				0E8BDACC1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m in Sources */,
 				0E4F49C51C3E480200CFC23B /* COOfferHeadingCell.m in Sources */,
 				0E4F49C61C3E480200CFC23B /* BaseTabBarController.m in Sources */,
+				0E55D4301C4F4B8C0058DDA8 /* COMultiPortpolioModel.m in Sources */,
 				0E4F49C71C3E480200CFC23B /* WSUpdateProfileRequest.m in Sources */,
 				0E4F49C81C3E480200CFC23B /* CONotificationModel.m in Sources */,
 				0E4F49C91C3E480200CFC23B /* COPopupInteredtedView.m in Sources */,
@@ -3377,7 +3392,6 @@
 				0E4F4A0D1C3E480200CFC23B /* WSURLSessionManager+DealProfile.m in Sources */,
 				0E508EE71C48E22E00B1DBA0 /* WSStockRequest.m in Sources */,
 				0E4F4A0E1C3E480200CFC23B /* CODetailsDelegate.m in Sources */,
-				0EE7F7EE1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */,
 				0E4F4A0F1C3E480200CFC23B /* COProjectFundedAmountModel.m in Sources */,
 				0E4F4A101C3E480200CFC23B /* SettingViewController.m in Sources */,
 				0E4F4A111C3E480200CFC23B /* NSDictionary+NotNULL.m in Sources */,
@@ -3407,6 +3421,7 @@
 				0E4F4A281C3E480200CFC23B /* NMSecurityHelper.m in Sources */,
 				0E4F4A291C3E480200CFC23B /* CODropListView.m in Sources */,
 				0E4F4A2A1C3E480200CFC23B /* COPopupQuestionView.m in Sources */,
+				0E55D4291C4F2EF40058DDA8 /* AvailableBalanceCell.m in Sources */,
 				0E4F4A2B1C3E480200CFC23B /* COLabelTextAligin.m in Sources */,
 				0E4F4A2C1C3E480200CFC23B /* CODealProfileModel.m in Sources */,
 				0E4F4A2D1C3E480200CFC23B /* UIView+AutoLayout.m in Sources */,
@@ -3472,6 +3487,7 @@
 				0E8BDACB1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m in Sources */,
 				7F325F8C1B40E50800116445 /* COOfferHeadingCell.m in Sources */,
 				7F325F7C1B40E50800116445 /* BaseTabBarController.m in Sources */,
+				0E55D42F1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m in Sources */,
 				BB3A9F6A1B9660DB002EEB1C /* WSUpdateProfileRequest.m in Sources */,
 				B9D7723F1BF9E1B2005FA75C /* CONotificationModel.m in Sources */,
 				7FCD18B41B4BBBD0000B81A2 /* COPopupInteredtedView.m in Sources */,
@@ -3550,7 +3566,6 @@
 				B9449AC21BFC851700E4C4A4 /* WSURLSessionManager+DealProfile.m in Sources */,
 				0E508EE61C48E22E00B1DBA0 /* WSStockRequest.m in Sources */,
 				7F325F881B40E50800116445 /* CODetailsDelegate.m in Sources */,
-				0EE7F7ED1C489D7E00520B05 /* AvailableBalanceCell.m in Sources */,
 				BB25980E1B85526800D947AF /* COProjectFundedAmountModel.m in Sources */,
 				7F325FBB1B40E50800116445 /* SettingViewController.m in Sources */,
 				0ECA88431B27CA7100B5656F /* NSDictionary+NotNULL.m in Sources */,
@@ -3580,6 +3595,7 @@
 				0ECA884B1B27CA7100B5656F /* NMSecurityHelper.m in Sources */,
 				7F325FC21B40E50800116445 /* CODropListView.m in Sources */,
 				7FA59D931B4CB5C700AF8E41 /* COPopupQuestionView.m in Sources */,
+				0E55D4281C4F2EF40058DDA8 /* AvailableBalanceCell.m in Sources */,
 				1E8F8A121BC4FA92004CEF26 /* COLabelTextAligin.m in Sources */,
 				B9449AD51BFC8C5B00E4C4A4 /* CODealProfileModel.m in Sources */,
 				0ECA88471B27CA7100B5656F /* UIView+AutoLayout.m in Sources */,

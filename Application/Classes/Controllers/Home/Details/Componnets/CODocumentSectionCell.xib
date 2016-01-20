@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,13 +22,11 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DECLARATION FORM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="GCA-II-QQp">
                         <rect key="frame" x="8" y="8" width="479" height="118.5"/>
-                        <animations/>
                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="15"/>
                         <color key="textColor" red="0.031372549020000001" green="0.60784313729999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstItem="GCA-II-QQp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="FXl-76-AD0"/>
                     <constraint firstItem="GCA-II-QQp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="N4j-XJ-cUl"/>
@@ -36,7 +34,6 @@
                     <constraint firstItem="GCA-II-QQp" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="f6q-RS-FyM"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="_lblSection" destination="GCA-II-QQp" id="MTv-JX-qJH"/>

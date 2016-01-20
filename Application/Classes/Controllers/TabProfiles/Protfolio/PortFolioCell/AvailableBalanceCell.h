@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AvailableBalanceCell : UICollectionViewCell
-@property (nonatomic, strong) NSDictionary *dic;
+@interface AvailableBalanceCell : UITableViewCell
+@property (nonatomic, strong) NSArray *arrayData;
 @end
