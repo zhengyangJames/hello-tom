@@ -57,8 +57,8 @@
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerNib:[UINib nibWithNibName:[PortFolioCell identifier] bundle:nil] forCellReuseIdentifier:[PortFolioCell identifier]];
-    [_tableView registerNib:[UINib nibWithNibName:[CompletedCell identifier] bundle:nil] forCellReuseIdentifier:[CompletedCell identifier]];
-    [_tableView registerNib:[UINib nibWithNibName:[AvailableBalanceCell identifier] bundle:nil] forCellReuseIdentifier:[AvailableBalanceCell identifier]];
+        [_tableView registerNib:[UINib nibWithNibName:[CompletedCell identifier] bundle:nil] forCellReuseIdentifier:[CompletedCell identifier]];
+        [_tableView registerNib:[UINib nibWithNibName:[AvailableBalanceCell identifier] bundle:nil] forCellReuseIdentifier:[AvailableBalanceCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[FormCell identifier] bundle:nil] forCellReuseIdentifier:[FormCell identifier]];
     
 }
@@ -94,10 +94,31 @@
 
 #pragma mark - UITableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if ([self.dicData allKeys].count ==0 && self.arrayBalances.count == 0) {
+        return 3;
+    } else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count != 0) {
+        return 4;
+    }  else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count == 0) {
+        return 4;
+    }
     return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([self.dicData allKeys].count ==0 && self.arrayBalances.count == 0) {
+        return [self loadPortFolioCell:tableView indexpath:indexPath];
+    } else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count != 0) {
+        return [self loadBalanceAndPortPolioCell:tableView indexpath:indexPath];
+    }  else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count == 0) {
+        return [self loadCompleteAndPortPolioCell:tableView indexpath:indexPath];
+    }
+    return [self loadAllCell:tableView indexpath:indexPath];
+    
+}
+
+- (UITableViewCell *)loadAllCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
     if (indexPath.row == 2) {
         return [self tableView:tableView completedCellForRowAtIndexPath:indexPath];
     } else if (indexPath.row == 3) {
@@ -108,22 +129,38 @@
     return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
 }
 
+- (UITableViewCell *)loadPortFolioCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 2) {
+        return [self tableView:tableView formCellForRowAtIndexPath:indexPath];
+    }
+    return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
+}
+
+- (UITableViewCell *)loadBalanceAndPortPolioCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 2) {
+        return  [self tableView:tableView availableBalanceCellForRowAtIndexPath:indexPath];
+    } else if (indexPath.row ==3 ) {
+        return [self tableView:tableView formCellForRowAtIndexPath:indexPath];
+    }
+    return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
+}
+
+- (UITableViewCell *)loadCompleteAndPortPolioCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 2) {
+        return [self tableView:tableView completedCellForRowAtIndexPath:indexPath];
+    } else if (indexPath.row ==3 ) {
+        return [self tableView:tableView formCellForRowAtIndexPath:indexPath];
+    }
+    return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
-    
 }
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0) {
-    
-    if (indexPath.row == 2) {
-        return Height_ForRow_CompletedCell;
-    } else if (indexPath.row == 3) {
-        return Height_ForRow_AvailableBalanceCell;
-    } else if (indexPath.row == 4) {
-        return Height_ForRow_FormCell;
-    }
     return Height_ForRow_PortFolioCell;
-    
 }
+
 #pragma mark - cells
 - (UITableViewCell *)tableView:(UITableView *)tableView portFolioCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -158,7 +195,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView formCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FormCell *cell = [tableView dequeueReusableCellWithIdentifier:[FormCell identifier] forIndexPath:indexPath];
-    
     return cell;
 }
 
