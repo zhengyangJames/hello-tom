@@ -36,6 +36,8 @@
         _iconNotifi.image = [UIImage imageNamed:@"landingpg"];
     } else if ([notifi.notifiData.notifiType isEqual:NOTIFI_ICON_EVENT]) {
          _iconNotifi.image = [UIImage imageNamed:@"event"];
+    }  else if ([notifi.notifiData.notifiType isEqual:NOTIFI_ICON_PAYOUT]) {
+        _iconNotifi.image = [UIImage imageNamed:@"payout"];
     } else {
         _iconNotifi.image = [UIImage imageNamed:@"general"];
     }
