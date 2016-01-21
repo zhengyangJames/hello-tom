@@ -418,6 +418,19 @@
     return nil;
 }
 
++ (NSString *)formatDateStock:(NSString *)dateString {
+    if (!dateString || [dateString isEmpty]) return nil;
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc]init];
+    [dateFormatter2 setDateFormat:@"yyyy-MM-dd"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MMMM d, yyyy"];
+    NSString *stringDate = [dateFormatter stringFromDate:[dateFormatter2 dateFromString:dateString]];
+    if (stringDate.isEmpty == false) {
+          return [@"Dated " stringByAppendingString:stringDate];
+    }
+    return nil;
+}
+
 + (NSString *)setBadgeValueNotification:(id )responseObject {
     NSArray *dataArray = [[NSArray alloc]init];
     dataArray = (NSArray *)responseObject;

@@ -210,3 +210,4 @@
 //Stock
 "EMAIL_MESSAGE" = "Hi, I am interested to invest in CoAssets Stock.CNN";
 "MESSAGE_TITLE_STOCK" = "Interest in CoAssets StockCNN";
+"MESSAGE_COMPLETE_PORTPOLIO" = "Completed Withdrawal\nYour withdrawal request that have been successfully processed.";

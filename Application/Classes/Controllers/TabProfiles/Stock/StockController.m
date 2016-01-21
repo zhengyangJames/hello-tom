@@ -49,7 +49,7 @@
         _lblCode.text = [self.stockModel stringOfCode];
         _lblCurrency.text = [self.stockModel stringOfCurrency];
         _lblPrice.text = [[self.stockModel numberOfPrice] stringValue];
-        _lblDate.text = [self.stockModel stringOfPriceDate];
+        _lblDate.text = [UIHelper formatDateStock:[self.stockModel stringOfPriceDate]];
     }
 }
 

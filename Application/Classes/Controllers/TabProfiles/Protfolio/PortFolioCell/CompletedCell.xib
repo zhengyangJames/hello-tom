@@ -8,7 +8,6 @@
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway-Regular</string>
-            <string>Raleway-Regular</string>
         </mutableArray>
         <mutableArray key="Raleway-SemiBold.ttf">
             <string>Raleway-SemiBold</string>
@@ -17,73 +16,65 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompletedCell" rowHeight="153" id="gHu-Yg-ud7" customClass="CompletedCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompletedCell" rowHeight="138" id="gHu-Yg-ud7" customClass="CompletedCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="138"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gHu-Yg-ud7" id="Ho0-lS-BFi">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="137.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4r-E1-cjs" userLabel="backGroundView">
-                        <rect key="frame" x="10" y="10" width="300" height="132.5"/>
+                        <rect key="frame" x="8" y="8" width="304" height="121.5"/>
                         <color key="backgroundColor" red="0.24705882352941178" green="0.45882352941176469" blue="0.12941176470588237" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foG-cp-OFd">
-                        <rect key="frame" x="11" y="11" width="298" height="130.5"/>
+                        <rect key="frame" x="9" y="9" width="302" height="119.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="SGD2.75" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2B0-J5-veE">
-                                <rect key="frame" x="8" y="50" width="282" height="40"/>
+                                <rect key="frame" x="8" y="40" width="286" height="55"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your withdrawal request that have been successfully processed. " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IQ-K3-jY6">
-                                <rect key="frame" x="0.0" y="108.5" width="298" height="12"/>
-                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="10"/>
-                                <color key="textColor" red="0.32549019607843138" green="0.46666666666666667" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Withdrawal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tja-1l-THx">
-                                <rect key="frame" x="96" y="92.5" width="107.5" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Withdrawal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tja-1l-THx">
+                                <rect key="frame" x="98" y="97.5" width="107.5" height="12"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="10"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.46666666666666667" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_portfolio_checked_green.png" translatesAutoresizingMaskIntoConstraints="NO" id="XQc-xV-Hpv">
-                                <rect key="frame" x="134" y="10" width="30" height="30"/>
+                                <rect key="frame" x="141" y="10" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="6Xb-zQ-Xxd"/>
-                                    <constraint firstAttribute="height" constant="30" id="Da3-2P-FqU"/>
+                                    <constraint firstAttribute="width" constant="20" id="6Xb-zQ-Xxd"/>
+                                    <constraint firstAttribute="height" constant="20" id="Da3-2P-FqU"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7IQ-K3-jY6" firstAttribute="centerX" secondItem="foG-cp-OFd" secondAttribute="centerX" id="3me-nR-vPu"/>
                             <constraint firstItem="Tja-1l-THx" firstAttribute="centerX" secondItem="foG-cp-OFd" secondAttribute="centerX" id="APw-f1-eBr"/>
                             <constraint firstItem="Tja-1l-THx" firstAttribute="top" secondItem="2B0-J5-veE" secondAttribute="bottom" constant="2" id="EkX-LW-CXo"/>
+                            <constraint firstAttribute="bottom" secondItem="Tja-1l-THx" secondAttribute="bottom" constant="10" id="Uo3-YP-JJ1"/>
                             <constraint firstItem="XQc-xV-Hpv" firstAttribute="top" secondItem="foG-cp-OFd" secondAttribute="top" constant="10" id="a3w-0Q-asN"/>
                             <constraint firstAttribute="trailing" secondItem="2B0-J5-veE" secondAttribute="trailing" constant="8" id="gSy-Hf-e1H"/>
                             <constraint firstItem="XQc-xV-Hpv" firstAttribute="centerX" secondItem="foG-cp-OFd" secondAttribute="centerX" id="nJh-Yo-61f"/>
                             <constraint firstItem="2B0-J5-veE" firstAttribute="leading" secondItem="foG-cp-OFd" secondAttribute="leading" constant="8" id="oGk-Rj-yoq"/>
-                            <constraint firstItem="7IQ-K3-jY6" firstAttribute="top" secondItem="Tja-1l-THx" secondAttribute="bottom" constant="4" id="pBG-hu-euP"/>
                             <constraint firstItem="2B0-J5-veE" firstAttribute="top" secondItem="XQc-xV-Hpv" secondAttribute="bottom" constant="10" id="r1S-Zz-Bai"/>
-                            <constraint firstAttribute="bottom" secondItem="7IQ-K3-jY6" secondAttribute="bottom" constant="10" id="vwb-pI-E3e"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="foG-cp-OFd" secondAttribute="bottom" constant="11" id="46M-wt-8Dy"/>
-                    <constraint firstItem="foG-cp-OFd" firstAttribute="top" secondItem="Ho0-lS-BFi" secondAttribute="top" constant="11" id="5Y8-Rx-fhP"/>
-                    <constraint firstAttribute="trailing" secondItem="J4r-E1-cjs" secondAttribute="trailing" constant="10" id="61I-1b-57T"/>
+                    <constraint firstAttribute="bottom" secondItem="foG-cp-OFd" secondAttribute="bottom" constant="9" id="46M-wt-8Dy"/>
+                    <constraint firstItem="foG-cp-OFd" firstAttribute="top" secondItem="Ho0-lS-BFi" secondAttribute="top" constant="9" id="5Y8-Rx-fhP"/>
+                    <constraint firstAttribute="trailing" secondItem="J4r-E1-cjs" secondAttribute="trailing" constant="8" id="61I-1b-57T"/>
                     <constraint firstItem="J4r-E1-cjs" firstAttribute="top" secondItem="Ho0-lS-BFi" secondAttribute="topMargin" constant="10" id="CMB-at-UQr"/>
-                    <constraint firstAttribute="trailing" secondItem="foG-cp-OFd" secondAttribute="trailing" constant="11" id="HIh-ta-sVM"/>
-                    <constraint firstItem="foG-cp-OFd" firstAttribute="leading" secondItem="Ho0-lS-BFi" secondAttribute="leading" constant="11" id="WY5-SL-vEE"/>
+                    <constraint firstAttribute="trailing" secondItem="foG-cp-OFd" secondAttribute="trailing" constant="9" id="HIh-ta-sVM"/>
+                    <constraint firstItem="foG-cp-OFd" firstAttribute="leading" secondItem="Ho0-lS-BFi" secondAttribute="leading" constant="9" id="WY5-SL-vEE"/>
                     <constraint firstAttribute="bottomMargin" secondItem="J4r-E1-cjs" secondAttribute="bottom" constant="10" id="WsD-7B-9J7"/>
-                    <constraint firstAttribute="bottom" secondItem="J4r-E1-cjs" secondAttribute="bottom" constant="10" id="a0d-4p-x9s"/>
-                    <constraint firstItem="J4r-E1-cjs" firstAttribute="leading" secondItem="Ho0-lS-BFi" secondAttribute="leading" constant="10" id="goh-ig-kDa"/>
-                    <constraint firstItem="J4r-E1-cjs" firstAttribute="top" secondItem="Ho0-lS-BFi" secondAttribute="top" constant="10" id="kRs-2d-g9i"/>
+                    <constraint firstAttribute="bottom" secondItem="J4r-E1-cjs" secondAttribute="bottom" constant="8" id="a0d-4p-x9s"/>
+                    <constraint firstItem="J4r-E1-cjs" firstAttribute="leading" secondItem="Ho0-lS-BFi" secondAttribute="leading" constant="8" id="goh-ig-kDa"/>
+                    <constraint firstItem="J4r-E1-cjs" firstAttribute="top" secondItem="Ho0-lS-BFi" secondAttribute="top" constant="8" id="kRs-2d-g9i"/>
                     <constraint firstAttribute="trailingMargin" secondItem="J4r-E1-cjs" secondAttribute="trailing" constant="10" id="qXM-Ha-9Uw"/>
                     <constraint firstItem="J4r-E1-cjs" firstAttribute="leading" secondItem="Ho0-lS-BFi" secondAttribute="leadingMargin" constant="10" id="vhS-Ih-twe"/>
                 </constraints>
@@ -97,9 +88,10 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="_lblTextfooter" destination="Tja-1l-THx" id="RCE-6u-gmq"/>
                 <outlet property="_lblcurrency" destination="2B0-J5-veE" id="KY1-UL-Vxt"/>
             </connections>
-            <point key="canvasLocation" x="275" y="428.5"/>
+            <point key="canvasLocation" x="275" y="421"/>
         </tableViewCell>
     </objects>
     <resources>

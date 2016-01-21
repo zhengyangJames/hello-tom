@@ -66,7 +66,7 @@
         } else {
             content = [key stringByAppendingFormat:@"%@%@",@"-",str];
         }
-        if (strText != nil) {
+        if (strText.isEmpty == false) {
             strText = [strText stringByAppendingFormat:@"\n%@",content];
         } else {
             strText = content;
