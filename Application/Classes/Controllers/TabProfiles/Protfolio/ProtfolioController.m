@@ -192,7 +192,7 @@
 #pragma mark - webservice
 - (void)callGetCompleteDrawals {
     [UIHelper showLoadingInView:[kAppDelegate window]];
-    NSString *username = [kUserDefaults objectForKey:KEY_USERNAME];
+    NSString *username = [self.userModel userName];
     [[WSURLSessionManager shared] wsGetCompleteDrawalsRequestHandler:username handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         self.dicData = nil;
         if (!error && responseObject != nil) {
