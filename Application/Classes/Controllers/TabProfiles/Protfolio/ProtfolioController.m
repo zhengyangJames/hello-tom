@@ -22,7 +22,7 @@
 #define NumberOfCellForWithAndHeight    175
 #define Top_Bottom_Tabar_Nav_Aligin     131
 #define Left_Reight_Aligin              18
-#define Height_ForRow_PortFolioCell        210
+#define Height_ForRow_PortFolioCell        50
 #define Height_ForRow_CompletedCell        138
 #define Height_ForRow_AvailableBalanceCell 119
 #define Height_ForRow_FormCell             260
@@ -102,7 +102,7 @@
         return [self loadPortFolioCell:tableView indexpath:indexPath];
     } else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count != 0) {
         return [self loadBalanceAndPortPolioCell:tableView indexpath:indexPath];
-    }  else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count == 0) {
+    }  else if ([self.dicData allKeys].count !=0 && self.arrayBalances.count == 0) {
         return [self loadCompleteAndPortPolioCell:tableView indexpath:indexPath];
     }
     return [self loadAllCell:tableView indexpath:indexPath];
@@ -112,7 +112,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0) {
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return Height_ForRow_PortFolioCell;
 }
 
