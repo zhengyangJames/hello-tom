@@ -23,6 +23,7 @@
     __weak IBOutlet UILabel *_lblPrice;
     __weak IBOutlet UILabel *_lblDate;
     __weak IBOutlet COPositive_NagitiveButton *_btnInterest;
+     __weak IBOutlet UIView *_viewHeader;
 }
 
 @end
@@ -34,6 +35,8 @@
     self.title = m_string(@"STOCK");
     [self callGetStock];
     [self loadData];
+
+    
 }
 
 #pragma mark - Setter, Getter
@@ -68,6 +71,7 @@
         [UIHelper showLoadingIndicator];
     } else {
         [UIHelper showLoadingInView:self.view];
+        _viewHeader.hidden = true;
     }
     
 //    [UIHelper showLoadingInView:[kAppDelegate window]];
@@ -75,11 +79,11 @@
         if (!error && (responseObject != nil)) {
                 [UIHelper hideLoadingIndicator];
                 [UIHelper hideLoadingFromView:self.view];
-          
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.stockModel = nil;
                 [self loadData];
                 [COLoginManager shared].stockModel = nil;
+                _viewHeader.hidden = false;
             }];
         } else {
             [ErrorManager showError:error];

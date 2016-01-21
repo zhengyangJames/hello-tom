@@ -423,7 +423,7 @@
     NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc]init];
     [dateFormatter2 setDateFormat:@"yyyy-MM-dd"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"MMMM d, yyyy"];
+    [dateFormatter setDateFormat:@"MMM. d, yyyy"];
     NSString *stringDate = [dateFormatter stringFromDate:[dateFormatter2 dateFromString:dateString]];
     if (stringDate.isEmpty == false) {
           return [@"Dated " stringByAppendingString:stringDate];

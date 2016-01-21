@@ -13,6 +13,7 @@
                 <outlet property="_lblCurrency" destination="2Zo-Ba-KbP" id="MUe-S1-v4S"/>
                 <outlet property="_lblDate" destination="vRV-pq-Snd" id="4S6-Q7-kCK"/>
                 <outlet property="_lblPrice" destination="Mhh-Kg-eXf" id="DSV-CO-net"/>
+                <outlet property="_viewHeader" destination="olW-DM-pwh" id="JBS-Xc-xcT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
