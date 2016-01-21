@@ -367,6 +367,8 @@
 		0E55D42B1C4F2EF40058DDA8 /* AvailableBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E55D4271C4F2EF40058DDA8 /* AvailableBalanceCell.xib */; };
 		0E55D42F1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55D42E1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m */; };
 		0E55D4301C4F4B8C0058DDA8 /* COMultiPortpolioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55D42E1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m */; };
+		0E5C7B491C508D5200D02CC3 /* ca_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5C7B481C508D5200D02CC3 /* ca_news.png */; };
+		0E5C7B4A1C508D5200D02CC3 /* ca_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5C7B481C508D5200D02CC3 /* ca_news.png */; };
 		0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */; };
 		0E84EE991C116AF600CDA27C /* ic_notification_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */; };
 		0E84EE9A1C116AF600CDA27C /* ic_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E84EE961C116AF600CDA27C /* ic_notification@2x.png */; };
@@ -745,6 +747,7 @@
 		0E55D4271C4F2EF40058DDA8 /* AvailableBalanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableBalanceCell.xib; sourceTree = "<group>"; };
 		0E55D42D1C4F4B8C0058DDA8 /* COMultiPortpolioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COMultiPortpolioModel.h; sourceTree = "<group>"; };
 		0E55D42E1C4F4B8C0058DDA8 /* COMultiPortpolioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COMultiPortpolioModel.m; sourceTree = "<group>"; };
+		0E5C7B481C508D5200D02CC3 /* ca_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ca_news.png; sourceTree = "<group>"; };
 		0E84EE941C116AF600CDA27C /* ic_notification_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@2x.png"; sourceTree = "<group>"; };
 		0E84EE951C116AF600CDA27C /* ic_notification_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification_selected@3x.png"; sourceTree = "<group>"; };
 		0E84EE961C116AF600CDA27C /* ic_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notification@2x.png"; sourceTree = "<group>"; };
@@ -2587,6 +2590,7 @@
 		B94210F51BFC2C7400C86FE8 /* iconsNotification */ = {
 			isa = PBXGroup;
 			children = (
+				0E5C7B481C508D5200D02CC3 /* ca_news.png */,
 				16DC5B041C50781200942761 /* payout.png */,
 				B94210FE1BFC2C9E00C86FE8 /* event.png */,
 				B94210FF1BFC2C9E00C86FE8 /* general.png */,
@@ -2966,6 +2970,7 @@
 				0E4F4AE41C3E480200CFC23B /* COOfferProgressCell.xib in Resources */,
 				0E4F4AE51C3E480200CFC23B /* ic_uncheck@2x.png in Resources */,
 				0E4F4AE61C3E480200CFC23B /* ic_peopel@2x.png in Resources */,
+				0E5C7B4A1C508D5200D02CC3 /* ca_news.png in Resources */,
 				0E508EDE1C48D9C900B1DBA0 /* InterstController.xib in Resources */,
 				0E4F4AE71C3E480200CFC23B /* ic_notification@2x.png in Resources */,
 				0E4F4AE81C3E480200CFC23B /* United States.png in Resources */,
@@ -3148,6 +3153,7 @@
 				0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */,
 				7FA7E6C11B4E7CD500059B13 /* COOfferProgressCell.xib in Resources */,
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
+				0E5C7B491C508D5200D02CC3 /* ca_news.png in Resources */,
 				0E508EDD1C48D9C900B1DBA0 /* InterstController.xib in Resources */,
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
 				0E84EE9A1C116AF600CDA27C /* ic_notification@2x.png in Resources */,

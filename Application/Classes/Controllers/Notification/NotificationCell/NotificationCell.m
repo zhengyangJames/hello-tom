@@ -38,6 +38,8 @@
          _iconNotifi.image = [UIImage imageNamed:@"event"];
     }  else if ([notifi.notifiData.notifiType isEqual:NOTIFI_ICON_PAYOUT]) {
         _iconNotifi.image = [UIImage imageNamed:@"payout"];
+    }  else if ([notifi.notifiData.notifiType isEqual:NOTIFI_ICON_CANEWS]) {
+        _iconNotifi.image = [UIImage imageNamed:@"ca_news"];
     } else {
         _iconNotifi.image = [UIImage imageNamed:@"general"];
     }
