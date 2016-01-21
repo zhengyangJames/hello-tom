@@ -7,12 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StockController">
             <connections>
-                <outlet property="btnInterest" destination="q0p-n6-F04" id="qnV-yI-uOf"/>
-                <outlet property="code" destination="FNS-Kx-pkf" id="3XB-qg-FbO"/>
-                <outlet property="currency" destination="2Zo-Ba-KbP" id="Q57-Ey-7GO"/>
-                <outlet property="date" destination="vRV-pq-Snd" id="Nzv-3b-EFQ"/>
-                <outlet property="icon" destination="CgS-Sn-6oH" id="T7b-QF-rT7"/>
-                <outlet property="price" destination="Mhh-Kg-eXf" id="QrU-2p-rMj"/>
+                <outlet property="_btnInterest" destination="q0p-n6-F04" id="8tW-g7-AFz"/>
+                <outlet property="_imgIcon" destination="CgS-Sn-6oH" id="Ft1-UI-LSc"/>
+                <outlet property="_lblCode" destination="FNS-Kx-pkf" id="StB-me-E09"/>
+                <outlet property="_lblCurrency" destination="2Zo-Ba-KbP" id="MUe-S1-v4S"/>
+                <outlet property="_lblDate" destination="vRV-pq-Snd" id="4S6-Q7-kCK"/>
+                <outlet property="_lblPrice" destination="Mhh-Kg-eXf" id="DSV-CO-net"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -208,7 +208,5 @@
 "Country" = "CountryCNN";
 
 //Stock
-"EMAIL_SUBJECT" = "Interest in CoAssets Stock";
-"EMAIL_MESSAGE" = "Hi, I am interested to invest in CoAssets Stock.";
-"EMAIL_NAME"    = "investors@coassets.com";
-
+"EMAIL_MESSAGE" = "Hi, I am interested to invest in CoAssets Stock.CNN";
+"MESSAGE_TITLE_STOCK" = "Interest in CoAssets StockCNN";
