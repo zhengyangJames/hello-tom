@@ -24,7 +24,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olW-DM-pwh" userLabel="headerView">
                     <rect key="frame" x="10" y="30" width="300" height="40"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bank.png" translatesAutoresizingMaskIntoConstraints="NO" id="CgS-Sn-6oH">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_nav_stock.png" translatesAutoresizingMaskIntoConstraints="NO" id="CgS-Sn-6oH">
                             <rect key="frame" x="90.5" y="4" width="35" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="35" id="W0E-sJ-zOe"/>
@@ -123,6 +123,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_bank.png" width="25" height="25"/>
+        <image name="ic_nav_stock.png" width="24" height="24"/>
     </resources>
 </document>

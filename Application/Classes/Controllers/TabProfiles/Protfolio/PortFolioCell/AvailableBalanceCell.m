@@ -26,7 +26,8 @@
      NSString *_strText;
     for (NSDictionary *dic in arrayData) {
         NSString *strCurrency = [dic objectForKey:@"currency"];
-        NSString *strBalance = [dic objectForKey:@"balance_amt"];
+        NSString *strBalance = [UIHelper formartFoatValueWithPortfolio:[dic objectForKey:@"balance_amt"]];
+        
         NSString *content = [strCurrency stringByAppendingFormat:@"%@%@",@"-",strBalance];
         if (_strText != nil) {
             _strText = [_strText stringByAppendingFormat:@"\n%@",content];

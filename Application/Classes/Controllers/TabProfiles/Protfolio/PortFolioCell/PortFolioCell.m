@@ -59,9 +59,10 @@
     NSString *strText = [[NSString alloc]init];
     for (NSString *key in [dic allKeys]) {
         NSString *content = [[NSString alloc] init];
-        NSString *str = [[dic objectForKey:key] stringValue];
-        if ([str isEqualToString:@"0"]) {
-            content = @"N/A";
+        NSString *str = [UIHelper formartFoatValueWithPortfolio:[dic objectForKey:key]];
+        
+        if ([str isEqualToString:@"N/A"]) {
+            content = str;
         } else {
             content = [key stringByAppendingFormat:@"%@%@",@"-",str];
         }

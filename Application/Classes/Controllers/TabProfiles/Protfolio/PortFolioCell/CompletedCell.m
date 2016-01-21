@@ -25,7 +25,7 @@
     _dic = dic;
     NSString *_strText;
     for (NSString *key in [dic allKeys]) {
-        NSString *str = [dic objectForKey:key];
+        NSString *str = [UIHelper formartFoatValueWithPortfolio:[dic objectForKey:key]];
         NSString *content = [key stringByAppendingFormat:@"%@%@",@"-",str];
         if (_strText != nil) {
             _strText = [_strText stringByAppendingFormat:@"\n%@",content];
