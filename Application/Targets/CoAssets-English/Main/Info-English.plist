@@ -61,9 +61,15 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleURLName</key>
-			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb503829606442531</string>
+			</array>
 		</dict>
 	</array>
+	<key>FacebookAppID</key>
+	<string>503829606442531</string>
+	<key>FacebookDisplayName</key>
+	<string>com.coassets</string>
 </dict>
 </plist>

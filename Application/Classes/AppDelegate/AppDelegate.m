@@ -24,6 +24,7 @@
 #import "CONotificationModel.h"
 #import "WebViewSetting.h"
 #import "EventViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()<UITabBarControllerDelegate,LoginViewControllerDelegate,CONotificationBannerViewDelegate>
 {
@@ -72,7 +73,18 @@
     }];
     [self.window makeKeyAndVisible];
     [self performNotification:notificationInfo isCheckBannerNotfi:NO];
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation
+            ];
 }
 
 - (void)setupNotifications:(UIApplication*)application
@@ -108,6 +120,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     //    [[COLoginManager shared] setIsReloadListHome:NO];
+    [FBSDKAppEvents activateApp];
     _keyShowNotificationBanner = YES;
 }
 
