@@ -435,8 +435,6 @@
 		16A4943A1C0C350A00547CFC /* OfferDetailsDocumentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A494381C0C350A00547CFC /* OfferDetailsDocumentController.xib */; };
 		16D2A99A1C0C054F00DAFBA6 /* COTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2A9981C0C054F00DAFBA6 /* COTextCell.m */; };
 		16D2A99B1C0C054F00DAFBA6 /* COTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */; };
-		16DC5B021C50779B00942761 /* payout.png in Resources */ = {isa = PBXBuildFile; fileRef = 16DC5B011C50779B00942761 /* payout.png */; };
-		16DC5B031C50779B00942761 /* payout.png in Resources */ = {isa = PBXBuildFile; fileRef = 16DC5B011C50779B00942761 /* payout.png */; };
 		1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; };
 		1E5A6FBB1BCCC49F00C4C5A5 /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA71BCCC49F00C4C5A5 /* NProfileAdressCell.m */; };
 		1E5A6FBC1BCCC49F00C4C5A5 /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA81BCCC49F00C4C5A5 /* NProfileAdressCell.xib */; };
@@ -845,7 +843,6 @@
 		16D2A9971C0C054F00DAFBA6 /* COTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTextCell.h; sourceTree = "<group>"; };
 		16D2A9981C0C054F00DAFBA6 /* COTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTextCell.m; sourceTree = "<group>"; };
 		16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COTextCell.xib; sourceTree = "<group>"; };
-		16DC5B011C50779B00942761 /* payout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payout.png; sourceTree = "<group>"; };
 		1E4B347A1BC62846006F2200 /* COBorderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COBorderTextView.h; sourceTree = "<group>"; };
 		1E4B347B1BC62846006F2200 /* COBorderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COBorderTextView.m; sourceTree = "<group>"; };
 		1E5A6FA61BCCC49F00C4C5A5 /* NProfileAdressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileAdressCell.h; sourceTree = "<group>"; };
@@ -2587,7 +2584,6 @@
 		B94210F51BFC2C7400C86FE8 /* iconsNotification */ = {
 			isa = PBXGroup;
 			children = (
-				16DC5B011C50779B00942761 /* payout.png */,
 				B94210FE1BFC2C9E00C86FE8 /* event.png */,
 				B94210FF1BFC2C9E00C86FE8 /* general.png */,
 				B94211001BFC2C9E00C86FE8 /* landingpg.png */,
@@ -2893,7 +2889,6 @@
 				0E4F4A9C1C3E480200CFC23B /* NProfileAdressCell.xib in Resources */,
 				0E4F4A9D1C3E480200CFC23B /* Singapore.png in Resources */,
 				0E55D42B1C4F2EF40058DDA8 /* AvailableBalanceCell.xib in Resources */,
-				16DC5B031C50779B00942761 /* payout.png in Resources */,
 				0E4F4A9E1C3E480200CFC23B /* ic_placeholder.png in Resources */,
 				0E4F4A9F1C3E480200CFC23B /* United Kingdom.png in Resources */,
 				0E4F4AA01C3E480200CFC23B /* AccountCell.xib in Resources */,
@@ -3075,7 +3070,6 @@
 				1E5A6FBC1BCCC49F00C4C5A5 /* NProfileAdressCell.xib in Resources */,
 				7F85292C1B43935B00CFAEB5 /* Singapore.png in Resources */,
 				0E55D42A1C4F2EF40058DDA8 /* AvailableBalanceCell.xib in Resources */,
-				16DC5B021C50779B00942761 /* payout.png in Resources */,
 				7F3260711B40E50800116445 /* ic_placeholder.png in Resources */,
 				7FC6D5101B44D4090098EC8D /* United Kingdom.png in Resources */,
 				0E89562D1BBE1D9F007E36BF /* AccountCell.xib in Resources */,
