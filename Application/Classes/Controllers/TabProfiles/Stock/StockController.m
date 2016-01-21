@@ -64,10 +64,18 @@
 }
 
 - (void)callGetStock {
-    [UIHelper showLoadingInView:[kAppDelegate window]];
+    if (self.stockModel != nil) {
+        [UIHelper showLoadingIndicator];
+    } else {
+        [UIHelper showLoadingInView:self.view];
+    }
+    
+//    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsGetStockProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && (responseObject != nil)) {
-            [UIHelper hideLoadingFromView:[kAppDelegate window]];
+                [UIHelper hideLoadingIndicator];
+                [UIHelper hideLoadingFromView:self.view];
+          
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.stockModel = nil;
                 [self loadData];
@@ -75,7 +83,8 @@
             }];
         } else {
             [ErrorManager showError:error];
-            [UIHelper hideLoadingFromView:[kAppDelegate window]];
+            [UIHelper hideLoadingIndicator];
+            [UIHelper hideLoadingFromView:self.view];
         }
     }];
 }

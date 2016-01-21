@@ -215,12 +215,12 @@
         NSString *urlString = [data objectForKeyNotNull:@"url"];
         NSString *type = [data objectForKeyNotNull:@"type"];
         if (urlString && ![urlString isEmpty]) {
-//            if ([self.baseNotificationNAV.topViewController isKindOfClass:[WebViewSetting class]]) {
-//                WebViewSetting *webViewSetting = (WebViewSetting *)self.baseNotificationNAV.topViewController;
-//                webViewSetting.webLink = urlString;
-//                [webViewSetting loadWebView];
-//                [self.baseTabBarController setSelectedIndex:2];
-//            } else
+            //            if ([self.baseNotificationNAV.topViewController isKindOfClass:[WebViewSetting class]]) {
+            //                WebViewSetting *webViewSetting = (WebViewSetting *)self.baseNotificationNAV.topViewController;
+            //                webViewSetting.webLink = urlString;
+            //                [webViewSetting loadWebView];
+            //                [self.baseTabBarController setSelectedIndex:2];
+            //            } else
             if ([[self _getCurrentViewController] isKindOfClass:[WebViewSetting class]]) {
                 WebViewSetting *webViewSetting = (WebViewSetting *)[self _getCurrentViewController];
                 webViewSetting.webLink = urlString;
@@ -421,6 +421,8 @@
     [kUserDefaults removeObjectForKey:UPDATE_STOCK_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:KEY_ACCESS_TOKEN];
+    [kUserDefaults removeObjectForKey:UPDATE_PORTPOLIO_BALANCE];
+    [kUserDefaults removeObjectForKey:UPDATE_PORTPOLIO_COMPLTETE];
     [kUserDefaults synchronize];
     [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue: nil];
     [self.baseProfileNAV popToRootViewControllerAnimated:NO];
@@ -542,7 +544,7 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     NSString *device_token = [kUserDefaults objectForKey:KEY_DEVICE_TOKEN];
     if (device_token) {
-         [dic setObject:device_token forKey:device_token_dic];
+        [dic setObject:device_token forKey:device_token_dic];
     }
     [dic setObject:device_type forKey:device_type_dic];
     [dic setObject:application_name forKey:application_name_dic];

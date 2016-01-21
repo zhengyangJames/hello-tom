@@ -16,7 +16,11 @@
     [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
-                handler(responseObject,response,nil);
+                if ([kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE] != responseObject) {
+                    [kUserDefaults setObject:responseObject forKey:UPDATE_PORTPOLIO_COMPLTETE];
+                    [kUserDefaults synchronize];
+                }
+                handler([kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE],response,nil);
             }
         } else {
             if (handler) {
@@ -32,7 +36,12 @@
     [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
             if (handler) {
-                handler(responseObject,response,nil);
+                if ([kUserDefaults objectForKey:UPDATE_PORTPOLIO_BALANCE] != responseObject) {
+                    [kUserDefaults setObject:[responseObject allObjects] forKey:UPDATE_PORTPOLIO_BALANCE];
+                    [kUserDefaults synchronize];
+                }
+
+                handler([kUserDefaults objectForKey:UPDATE_PORTPOLIO_BALANCE],response,nil);
             }
         } else {
             if (handler) {

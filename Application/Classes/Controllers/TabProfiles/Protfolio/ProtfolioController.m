@@ -80,6 +80,20 @@
     return _multiPortpolio = [[COLoginManager shared] multiPortpolio];
 }
 
+- (NSDictionary *)dicData {
+    if (_dicData) {
+        return _dicData;
+    }
+    return _dicData = [kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE];
+}
+
+- (NSArray *)arrayBalances {
+    if (_arrayBalances) {
+        return _arrayBalances;
+    }
+    return _arrayBalances = [kUserDefaults objectForKey:UPDATE_PORTPOLIO_BALANCE];
+}
+
 #pragma mark - UITableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -188,35 +202,46 @@
 
 #pragma mark - webservice
 - (void)callGetCompleteDrawals {
-    [UIHelper showLoadingInView:[kAppDelegate window]];
+    if (self.dicData != nil) {
+        [UIHelper showLoadingIndicator];
+    } else {
+        [UIHelper showLoadingInView:self.view];
+    }
+    
     NSString *username = [self.userModel userName];
     [[WSURLSessionManager shared] wsGetCompleteDrawalsRequestHandler:username handle:^(id responseObject, NSURLResponse *response, NSError *error) {
-        self.dicData = nil;
         if (!error && responseObject != nil) {
-            [UIHelper hideLoadingFromView:[kAppDelegate window]];
+            [UIHelper hideLoadingIndicator];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.dicData = responseObject;
                 [self callGetBalances];
+                [UIHelper hideLoadingIndicator];
+                [UIHelper hideLoadingFromView:self.view];
             }];
         } else {
             [ErrorManager showError:error];
-            [UIHelper hideLoadingFromView:[kAppDelegate window]];
+            [UIHelper hideLoadingIndicator];
+            [UIHelper hideLoadingFromView:self.view];
         }
     }];
 }
 - (void)callGetBalances {
-    [UIHelper showLoadingInView:[kAppDelegate window]];
+    if (self.arrayBalances != nil) {
+        [UIHelper showLoadingIndicator];
+    } else {
+        [UIHelper showLoadingInView:self.view];
+    }
     NSString *username = [self.userModel userName];
     [[WSURLSessionManager shared] wsGetBalancesRequestHandler:username handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
-            [UIHelper hideLoadingFromView:[kAppDelegate window]];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.arrayBalances = [responseObject allObjects];
                 [_tableView reloadData];
+                [UIHelper hideLoadingIndicator];
+                [UIHelper hideLoadingFromView:self.view];
             }];
         } else {
             [ErrorManager showError:error];
-            [UIHelper hideLoadingFromView:[kAppDelegate window]];
+            [UIHelper hideLoadingIndicator];
+            [UIHelper hideLoadingFromView:self.view];
         }
     }];
 }

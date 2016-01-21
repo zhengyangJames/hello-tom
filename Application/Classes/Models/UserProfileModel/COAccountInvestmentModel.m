@@ -23,7 +23,7 @@
         @"realisedPayouts"         : @"total_paid_payout",
         @"potentialPayouts"        : @"total_unpaid_payout",
         @"userPortfolio"           : @"portfolio",
-//        @"userMultiPortfolio"      : @"multiple_currency_portfolio",
+        @"userMultiPortfolio"      : @"multiple_currency_portfolio",
     };
 }
 
@@ -31,9 +31,9 @@
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:COUserPortFolioModel.class];
 }
 
-//+ (NSValueTransformer *)userMultiPortfolioJSONTransformer {
-//    return [MTLJSONAdapter dictionaryTransformerWithModelClass:COMultiPortpolioModel.class];
-//}
++ (NSValueTransformer *)userMultiPortfolioJSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:COMultiPortpolioModel.class];
+}
 
 - (NSString*)accOngoingTitle {
     return m_string(@"Ongoing Investment");
