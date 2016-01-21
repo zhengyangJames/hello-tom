@@ -528,7 +528,6 @@
             } else {
                 [ErrorManager showError:error];
             }
-            [ErrorManager showError:error];
             if (handler) {
                 handler(nil, response, error);
             }
