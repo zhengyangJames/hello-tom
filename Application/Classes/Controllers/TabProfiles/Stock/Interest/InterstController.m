@@ -11,7 +11,8 @@
 #import "WSURLSessionManager.h"
 
 @interface InterstController () {
-    __weak IBOutlet UITextView *tvContent;
+    __weak IBOutlet UITextView *_tvContent;
+    __weak IBOutlet UILabel *_lblTitle;
 }
 
 @end
@@ -25,7 +26,8 @@
 
 -(void)setupUI {
     self.title = m_string(@"STOCK");
-    tvContent.text = m_string(@"EMAIL_MESSAGE");
+    _tvContent.text = m_string(@"EMAIL_MESSAGE");
+    _lblTitle.text = m_string(@"MESSAGE_TITLE_STOCK");
     UIBarButtonItem *btnDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
                                                                style:UIBarButtonItemStyleDone
                                                               target:self
@@ -41,7 +43,7 @@
 
 - (void)callPostStockProfileHandler {
     [UIHelper showLoadingInView:[kAppDelegate window]];
-    [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest: tvContent.text Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest: _tvContent.text Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         [UIHelper hideLoadingFromView:[kAppDelegate window]];
         [self showAlertView:[responseObject objectForKey:@"message"]];
     }];

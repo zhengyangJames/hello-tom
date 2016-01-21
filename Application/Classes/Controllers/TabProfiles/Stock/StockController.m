@@ -17,12 +17,12 @@
 
 @interface StockController ()<MFMailComposeViewControllerDelegate>
 {
-    __weak IBOutlet UIImageView *icon;
-    __weak IBOutlet UILabel *code;
-    __weak IBOutlet UILabel *currency;
-    __weak IBOutlet UILabel *price;
-    __weak IBOutlet UILabel *date;
-    __weak IBOutlet COPositive_NagitiveButton *btnInterest;
+    __weak IBOutlet UIImageView *_imgIcon;
+    __weak IBOutlet UILabel *_lblCode;
+    __weak IBOutlet UILabel *_lblCurrency;
+    __weak IBOutlet UILabel *_lblPrice;
+    __weak IBOutlet UILabel *_lblDate;
+    __weak IBOutlet COPositive_NagitiveButton *_btnInterest;
 }
 
 @end
@@ -46,10 +46,10 @@
 
 - (void)loadData {
     if (self.stockModel != nil) {
-        code.text = [self.stockModel stringOfCode];
-        currency.text = [self.stockModel stringOfCurrency];
-        price.text = [[self.stockModel numberOfPrice] stringValue];
-        date.text = [self.stockModel stringOfPriceDate];
+        _lblCode.text = [self.stockModel stringOfCode];
+        _lblCurrency.text = [self.stockModel stringOfCurrency];
+        _lblPrice.text = [[self.stockModel numberOfPrice] stringValue];
+        _lblDate.text = [self.stockModel stringOfPriceDate];
     }
 }
 

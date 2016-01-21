@@ -23,9 +23,6 @@
 #define Top_Bottom_Tabar_Nav_Aligin     131
 #define Left_Reight_Aligin              18
 #define Height_ForRow_PortFolioCell        50
-#define Height_ForRow_CompletedCell        138
-#define Height_ForRow_AvailableBalanceCell 119
-#define Height_ForRow_FormCell             260
 
 @interface ProtfolioController ()<UITableViewDataSource, UITableViewDelegate>
 {

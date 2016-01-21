@@ -13,7 +13,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InterstController">
             <connections>
-                <outlet property="tvContent" destination="MJZ-ez-atS" id="uIR-i6-sRh"/>
+                <outlet property="_lblTitle" destination="Vgt-6H-ddg" id="W2u-gA-FvG"/>
+                <outlet property="_tvContent" destination="MJZ-ez-atS" id="xt5-RV-Ysb"/>
                 <outlet property="view" destination="zUh-I2-zUq" id="Mn0-ek-SKX"/>
             </connections>
         </placeholder>

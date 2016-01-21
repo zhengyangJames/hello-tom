@@ -11,5 +11,6 @@ pod 'TPKeyboardAvoiding';
 pod 'Mantle', '~> 2.0'
 pod 'Parse'
 pod 'ParseCrashReporting'
+pod 'Facebook-iOS-SDK'
 end
 
