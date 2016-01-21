@@ -19,8 +19,6 @@
 #import "COUserProfileModel.h"
 #import "COMultiPortpolioModel.h"
 
-#define NumberSectionOfCollectionview    4
-#define NumberOfItemInSection    7
 #define NumberOfCellForWithAndHeight    175
 #define Top_Bottom_Tabar_Nav_Aligin     131
 #define Left_Reight_Aligin              18
@@ -57,8 +55,8 @@
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerNib:[UINib nibWithNibName:[PortFolioCell identifier] bundle:nil] forCellReuseIdentifier:[PortFolioCell identifier]];
-        [_tableView registerNib:[UINib nibWithNibName:[CompletedCell identifier] bundle:nil] forCellReuseIdentifier:[CompletedCell identifier]];
-        [_tableView registerNib:[UINib nibWithNibName:[AvailableBalanceCell identifier] bundle:nil] forCellReuseIdentifier:[AvailableBalanceCell identifier]];
+    [_tableView registerNib:[UINib nibWithNibName:[CompletedCell identifier] bundle:nil] forCellReuseIdentifier:[CompletedCell identifier]];
+    [_tableView registerNib:[UINib nibWithNibName:[AvailableBalanceCell identifier] bundle:nil] forCellReuseIdentifier:[AvailableBalanceCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[FormCell identifier] bundle:nil] forCellReuseIdentifier:[FormCell identifier]];
     
 }
@@ -76,13 +74,6 @@
         return _userModel;
     }
     return _userModel = [[COLoginManager shared] userModel];
-}
-
-- (COAccountInvestmentModel *)accountModel {
-    if (_accountModel) {
-        return _accountModel;
-    }
-    return _accountModel = [[COLoginManager shared] accountModel];
 }
 
 - (COMultiPortpolioModel *)multiPortpolio {
@@ -118,6 +109,14 @@
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0) {
+    return Height_ForRow_PortFolioCell;
+}
+
+#pragma mark - LoadCell
 - (UITableViewCell *)loadAllCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
     if (indexPath.row == 2) {
         return [self tableView:tableView completedCellForRowAtIndexPath:indexPath];
@@ -154,13 +153,6 @@
     return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
-}
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0) {
-    return Height_ForRow_PortFolioCell;
-}
-
 #pragma mark - cells
 - (UITableViewCell *)tableView:(UITableView *)tableView portFolioCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -173,7 +165,6 @@
         cell.CompletedInvestment = [self.multiPortpolio completeInvestment];
         cell.CompletedProjects = [self.multiPortpolio completeProject];
     }
-    
     return cell;
 }
 

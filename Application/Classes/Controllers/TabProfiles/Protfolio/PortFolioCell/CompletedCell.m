@@ -11,7 +11,6 @@
 @interface CompletedCell()
 {
     __weak IBOutlet UILabel *_lblcurrency;
-    
 }
 
 @end
@@ -21,6 +20,7 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
+#pragma mark - Set Get
 - (void)setDic:(NSDictionary *)dic {
     _dic = dic;
     NSString *_strText;

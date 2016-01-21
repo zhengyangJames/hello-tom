@@ -32,7 +32,7 @@
 }
 
 - (IBAction)__actionInvestor:(id)sender {
-    //[self.view endEditing:NO];
+    [self endEditing:NO];
     [CODropListView presentWithTitle:@"Currency" data:self.arrayCurrency selectedIndex:0 didSelect:^(NSInteger index) {
         [_btnDrop setTitle:self.arrayCurrency[index] forState:UIControlStateNormal];
     }];

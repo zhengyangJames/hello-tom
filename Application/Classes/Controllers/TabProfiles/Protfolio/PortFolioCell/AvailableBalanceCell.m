@@ -11,7 +11,6 @@
 @interface AvailableBalanceCell()
 {
     __weak IBOutlet UILabel *_lblConten;
-   
 }
 
 @end
@@ -21,6 +20,7 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
+#pragma mark - Set Get
 - (void)setArrayData:(NSArray *)arrayData{
     _arrayData = arrayData;
      NSString *_strText;

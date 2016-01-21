@@ -27,29 +27,28 @@
 }
 
 #pragma mark - Set Get
-
-
-- (void) setOngoingInvestment:(NSDictionary *)OngoingInvestment {
+- (void)setOngoingInvestment:(NSDictionary *)OngoingInvestment {
     _OngoingInvestment = OngoingInvestment;
     [_imgThumbnail2 setImage:[UIImage imageNamed:[self.multiPortlio COOngoingInvestmentImage]]];
     _lbNameDetail2.text = [self.multiPortlio COOngoingInvestmentTitle];
      _lbNumOfValue2.text = [self getStringFromDictionary:OngoingInvestment];
 }
 
-- (void) setOngoingProjects:(NSNumber *)OngoingProjects {
+- (void)setOngoingProjects:(NSNumber *)OngoingProjects {
     _OngoingProjects = OngoingProjects;
     [_imgThumbnail1 setImage:[UIImage imageNamed:[self.multiPortlio OngoingProjectsImage]]];
     _lbNameDetail1.text = [self.multiPortlio OngoingProjectsTitle];
     _lbNumOfValue1.text = [OngoingProjects stringValue];
 }
 
-- (void) setCompletedInvestment:(NSDictionary *)CompletedInvestment {
+- (void)setCompletedInvestment:(NSDictionary *)CompletedInvestment {
     _CompletedInvestment = CompletedInvestment;
     [_imgThumbnail2 setImage:[UIImage imageNamed:[self.multiPortlio COCompletedInvestmentImage]]];
     _lbNameDetail2.text = [self.multiPortlio COCompletedInvestmentTitle];
     _lbNumOfValue2.text = [self getStringFromDictionary:CompletedInvestment];
 }
-- (void) setCompletedProjects:(NSNumber *)CompletedProjects {
+
+- (void)setCompletedProjects:(NSNumber *)CompletedProjects {
     _CompletedProjects = CompletedProjects;
     [_imgThumbnail1 setImage:[UIImage imageNamed:[self.multiPortlio COCompletedProjectsImage]]];
     _lbNameDetail1.text = [self.multiPortlio COCompletedProjectsTitle];
