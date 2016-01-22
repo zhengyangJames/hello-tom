@@ -3855,7 +3855,7 @@
 				New_Setting = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coassets;
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "94069af6-cd6e-4724-8835-ae2f6b17fe05";
+				PROVISIONING_PROFILE = "4a645d9e-9aad-4701-b71b-123774dfed29";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -3880,7 +3880,7 @@
 				New_Setting = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coassets;
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "94069af6-cd6e-4724-8835-ae2f6b17fe05";
+				PROVISIONING_PROFILE = "4a645d9e-9aad-4701-b71b-123774dfed29";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
