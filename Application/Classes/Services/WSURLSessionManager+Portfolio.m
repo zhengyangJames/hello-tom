@@ -14,12 +14,14 @@
     WSPortfolioRequest *request = [[WSPortfolioRequest alloc]init];
     request = [request getCompleteWitdDrawals:username];
     [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        [kUserDefaults removeObjectForKey:UPDATE_PORTPOLIO_COMPLTETE];
+        [kUserDefaults synchronize];
         if (!error && responseObject) {
+            if ([kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE] != responseObject) {
+                [kUserDefaults setObject:responseObject forKey:UPDATE_PORTPOLIO_COMPLTETE];
+                [kUserDefaults synchronize];
+            }
             if (handler) {
-                if ([kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE] != responseObject) {
-                    [kUserDefaults setObject:responseObject forKey:UPDATE_PORTPOLIO_COMPLTETE];
-                    [kUserDefaults synchronize];
-                }
                 handler([kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE],response,nil);
             }
         } else {
