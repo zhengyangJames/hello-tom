@@ -423,6 +423,7 @@
     [kUserDefaults removeObjectForKey:KEY_ACCESS_TOKEN];
     [kUserDefaults removeObjectForKey:UPDATE_PORTPOLIO_BALANCE];
     [kUserDefaults removeObjectForKey:UPDATE_PORTPOLIO_COMPLTETE];
+    [kUserDefaults removeObjectForKey:UPDATE_CURRENCY];
     [kUserDefaults synchronize];
     [[self.baseTabBarController.tabBar.items objectAtIndex:2] setBadgeValue: nil];
     [self.baseProfileNAV popToRootViewControllerAnimated:NO];
