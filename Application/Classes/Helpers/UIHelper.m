@@ -159,7 +159,8 @@
 }
 
 + (NSString *)getStringCurrencyOfferWithValue:(NSString*)value {
-    NSDictionary *objCurrency = @ {@"SGD": @"Singapore Dollars",
+    NSDictionary *objCurrency = @ {
+        @"SGD": @"Singapore Dollars",
         @"USD" : @"US Dollars",
         @"GBP" : @"British Pounds",
         @"EUR" : @"Euros",
@@ -414,6 +415,19 @@
         NSDate *date = [format dateFromString:strDate];
         NSString *strdate = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
         return strdate;
+    }
+    return nil;
+}
+
++ (NSString *)formatDateStock:(NSString *)dateString {
+    if (!dateString || [dateString isEmpty]) return nil;
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc]init];
+    [dateFormatter2 setDateFormat:@"yyyy-MM-dd"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MMM. d, yyyy"];
+    NSString *stringDate = [dateFormatter stringFromDate:[dateFormatter2 dateFromString:dateString]];
+    if (stringDate.isEmpty == false) {
+          return [@"Dated " stringByAppendingString:stringDate];
     }
     return nil;
 }

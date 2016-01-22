@@ -58,10 +58,10 @@
     return @"Ongoing Investment Amount";
 }
 - (NSString*)COCompletedProjectsTitle {
-    return @"Funded &Completed Projects";
+    return @"Funded & Completed Projects";
 }
 - (NSString*)COCompletedInvestmentTitle {
-    return @"Funded &Completed Investment Amount";
+    return @"Funded & Completed Investment Amount";
 }
 
 @end

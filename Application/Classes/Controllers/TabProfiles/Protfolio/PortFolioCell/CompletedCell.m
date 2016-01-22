@@ -11,6 +11,8 @@
 @interface CompletedCell()
 {
     __weak IBOutlet UILabel *_lblcurrency;
+    __weak IBOutlet UILabel *_lblTextfooter;
+    
 }
 
 @end
@@ -18,6 +20,7 @@
 
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    _lblTextfooter.text = m_string(@"MESSAGE_COMPLETE_PORTPOLIO");
 }
 
 #pragma mark - Set Get

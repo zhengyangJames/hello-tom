@@ -60,5 +60,6 @@
 + (NSString *)formatStringDateToString:(NSString*)strDate;
 + (NSString *)setBadgeValueNotification:(id )responseObject;
 + (NSString*)formartFoatValueWithDeal:(NSNumber*)value MinimumFractionDigits:(NSInteger)min;
++ (NSString *)formatDateStock:(NSString *)dateString;
 
 @end
