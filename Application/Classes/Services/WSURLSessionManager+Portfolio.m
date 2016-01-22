@@ -22,7 +22,7 @@
                 [kUserDefaults synchronize];
             }
             if (handler) {
-                handler([kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE],response,nil);
+                handler(responseObject,response,nil);
             }
         } else {
             if (handler) {
@@ -43,7 +43,7 @@
                     [kUserDefaults synchronize];
                 }
 
-                handler([kUserDefaults objectForKey:UPDATE_PORTPOLIO_BALANCE],response,nil);
+                handler([responseObject allObjects],response,nil);
             }
         } else {
             if (handler) {

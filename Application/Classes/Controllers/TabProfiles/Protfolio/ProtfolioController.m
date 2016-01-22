@@ -84,14 +84,14 @@
     if (_dicData) {
         return _dicData;
     }
-    return _dicData = [kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE];
+    return _dicData = [[NSDictionary alloc] init];//[kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE];
 }
 
 - (NSArray *)arrayBalances {
     if (_arrayBalances) {
         return _arrayBalances;
     }
-    return _arrayBalances = [kUserDefaults objectForKey:UPDATE_PORTPOLIO_BALANCE];
+    return _arrayBalances = [[NSArray alloc] init];//[kUserDefaults objectForKey:UPDATE_PORTPOLIO_BALANCE];
 }
 
 #pragma mark - UITableView Delegate
@@ -101,7 +101,7 @@
         return 3;
     } else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count != 0) {
         return 4;
-    }  else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count == 0) {
+    }  else if ([self.dicData allKeys].count !=0 && self.arrayBalances.count == 0) {
         return 4;
     }
     return 5;
@@ -213,11 +213,15 @@
         if (!error && responseObject != nil) {
             [UIHelper hideLoadingIndicator];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                self.dicData = responseObject;
                 [self callGetBalances];
                 [UIHelper hideLoadingIndicator];
                 [UIHelper hideLoadingFromView:self.view];
             }];
         } else {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [_tableView reloadData];
+            }];
             [ErrorManager showError:error];
             [UIHelper hideLoadingIndicator];
             [UIHelper hideLoadingFromView:self.view];
@@ -234,6 +238,7 @@
     [[WSURLSessionManager shared] wsGetBalancesRequestHandler:username handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                self.arrayBalances = responseObject;
                 [_tableView reloadData];
                 [UIHelper hideLoadingIndicator];
                 [UIHelper hideLoadingFromView:self.view];
