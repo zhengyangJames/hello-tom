@@ -61,7 +61,7 @@
                                             <constraint firstAttribute="height" constant="30" id="OP4-aE-e9W"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcn-E3-TmB">
                                         <rect key="frame" x="106" y="189.5" width="90" height="34"/>

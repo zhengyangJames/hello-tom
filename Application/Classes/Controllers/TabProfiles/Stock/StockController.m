@@ -18,12 +18,12 @@
 @interface StockController ()<MFMailComposeViewControllerDelegate>
 {
     __weak IBOutlet UIImageView *_imgIcon;
-    __weak IBOutlet UILabel *_lblCode;
-    __weak IBOutlet UILabel *_lblCurrency;
-    __weak IBOutlet UILabel *_lblPrice;
-    __weak IBOutlet UILabel *_lblDate;
+    __weak IBOutlet UIButton *_btnCode;
+    __weak IBOutlet UIButton *_btnCurrency;
+    __weak IBOutlet UIButton *_btnPrice;
+    __weak IBOutlet UIButton *_btnlDate;
     __weak IBOutlet COPositive_NagitiveButton *_btnInterest;
-     __weak IBOutlet UIView *_viewHeader;
+    __weak IBOutlet UIView *_viewHeader;
 }
 
 @end
@@ -35,7 +35,7 @@
     self.title = m_string(@"STOCK");
     [self callGetStock];
     [self loadData];
-
+    
     
 }
 
@@ -49,13 +49,14 @@
 
 - (void)loadData {
     if (self.stockModel != nil) {
-        _lblCode.text = [self.stockModel stringOfCode];
-        _lblCurrency.text = [self.stockModel stringOfCurrency];
-        _lblPrice.text = [[self.stockModel numberOfPrice] stringValue];
-        _lblDate.text = [UIHelper formatDateStock:[self.stockModel stringOfPriceDate]];
+        [_btnCode setTitle:[self.stockModel stringOfCode] forState:UIControlStateNormal];
+        [_btnCurrency setTitle:[self.stockModel stringOfCurrency] forState:UIControlStateNormal];
+        [_btnPrice setTitle:[[self.stockModel numberOfPrice] stringValue] forState:UIControlStateNormal];
+        [_btnlDate setTitle:[UIHelper formatDateStock:[self.stockModel stringOfPriceDate]] forState:UIControlStateNormal];
     }
 }
 
+#pragma mark: Action
 - (IBAction)actionInterested:(id)sender {
     InterstController *inter = [[InterstController alloc]init];
     [inter setCallBack:^(NSString *message) {
@@ -74,15 +75,15 @@
         _viewHeader.hidden = true;
     }
     
-//    [UIHelper showLoadingInView:[kAppDelegate window]];
+    //    [UIHelper showLoadingInView:[kAppDelegate window]];
     [[WSURLSessionManager shared] wsGetStockProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && (responseObject != nil)) {
-                [UIHelper hideLoadingIndicator];
-                [UIHelper hideLoadingFromView:self.view];
+            [UIHelper hideLoadingIndicator];
+            [UIHelper hideLoadingFromView:self.view];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.stockModel = nil;
-                [self loadData];
                 [COLoginManager shared].stockModel = nil;
+                [self loadData];
                 _viewHeader.hidden = false;
             }];
         } else {
