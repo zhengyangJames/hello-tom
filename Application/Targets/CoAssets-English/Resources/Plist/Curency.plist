@@ -2,35 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Vietnamese Dong</key>
-	<string>VND</string>
-	<key>Indonesia Rupiah</key>
-	<string>IDR</string>
-	<key>Philippine Peso</key>
-	<string>PHP</string>
-	<key>Thai Baht</key>
-	<string>THB</string>
-	<key>Malaysia Ringit</key>
-	<string>MYR</string>
-	<key>Australia Dollar</key>
-	<string>AUD</string>
-	<key>Hongkong Dollar</key>
-	<string>HKD</string>
-	<key>Canadian Dollars</key>
-	<string>CAD</string>
-	<key>Taiwan Dollar</key>
-	<string>TWD</string>
-	<key>Chinese Yuan</key>
-	<string>CNY</string>
-	<key>Japanese Yen</key>
-	<string>JPY</string>
-	<key>Euros</key>
-	<string>EUR</string>
-	<key>British Pounds</key>
-	<string>GBP</string>
-	<key>US Dollars</key>
-	<string>USD</string>
 	<key>Singapore Dollars</key>
 	<string>SGD</string>
+	<key>US Dollars</key>
+	<string>USD</string>
+	<key>British Pounds</key>
+	<string>GBP</string>
+	<key>Euros</key>
+	<string>EUR</string>
+	<key>Japanese Yen</key>
+	<string>JPY</string>
+	<key>Chinese Yuan</key>
+	<string>CNY</string>
+	<key>Taiwan Dollar</key>
+	<string>TWD</string>
+	<key>Canadian Dollars</key>
+	<string>CAD</string>
+	<key>Hongkong Dollar</key>
+	<string>HKD</string>
+	<key>Australia Dollar</key>
+	<string>AUD</string>
+	<key>Malaysia Ringit</key>
+	<string>MYR</string>
+	<key>Thai Baht</key>
+	<string>THB</string>
+	<key>Philippine Peso</key>
+	<string>PHP</string>
+	<key>Indonesia Rupiah</key>
+	<string>IDR</string>
+	<key>Vietnamese Dong</key>
+	<string>VND</string>
 </dict>
 </plist>

@@ -37,7 +37,7 @@
 
 - (IBAction)__actionInvestor:(id)sender {
     [self endEditing:NO];
-    [CODropListView presentWithTitle:@"Currency" data:[self.dicCurrency allKeys]  selectedIndex:0 didSelect:^(NSInteger index) {
+    [CODropListView presentWithTitle:@"Currency" data:[self.dicCurrency allKeys]  selectedIndex:1 didSelect:^(NSInteger index) {
         [_btnDrop setTitle:[self.dicCurrency objectForKey:[self.dicCurrency allKeys][index]] forState:UIControlStateNormal];
     }];
 }
