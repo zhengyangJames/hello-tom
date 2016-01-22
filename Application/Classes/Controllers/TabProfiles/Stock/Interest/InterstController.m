@@ -12,7 +12,6 @@
 
 @interface InterstController () {
     __weak IBOutlet UITextView *_tvContent;
-    __weak IBOutlet UILabel *_lblTitle;
 }
 
 @end
@@ -25,9 +24,8 @@
 }
 
 -(void)setupUI {
-    self.title = m_string(@"STOCK");
+    self.title = m_string(@"MESSAGE_TITLE_STOCK");
     _tvContent.text = m_string(@"EMAIL_MESSAGE");
-    _lblTitle.text = m_string(@"MESSAGE_TITLE_STOCK");
     UIBarButtonItem *btnDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
                                                                style:UIBarButtonItemStyleDone
                                                               target:self

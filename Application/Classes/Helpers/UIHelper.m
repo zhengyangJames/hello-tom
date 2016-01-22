@@ -159,7 +159,8 @@
 }
 
 + (NSString *)getStringCurrencyOfferWithValue:(NSString*)value {
-    NSDictionary *objCurrency = @ {@"SGD": @"Singapore Dollars",
+    NSDictionary *objCurrency = @ {
+        @"SGD": @"Singapore Dollars",
         @"USD" : @"US Dollars",
         @"GBP" : @"British Pounds",
         @"EUR" : @"Euros",

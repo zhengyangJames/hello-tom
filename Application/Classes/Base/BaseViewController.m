@@ -19,6 +19,7 @@
 - (void)_initUI
 {
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
 }
 
 - (void)dealloc {

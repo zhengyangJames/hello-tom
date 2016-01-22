@@ -7,13 +7,11 @@
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway-Regular</string>
-            <string>Raleway-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InterstController">
             <connections>
-                <outlet property="_lblTitle" destination="Vgt-6H-ddg" id="W2u-gA-FvG"/>
                 <outlet property="_tvContent" destination="MJZ-ez-atS" id="xt5-RV-Ysb"/>
                 <outlet property="view" destination="zUh-I2-zUq" id="Mn0-ek-SKX"/>
             </connections>
@@ -30,30 +28,18 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Hi, I am interested to invest in CoAssets Stock." translatesAutoresizingMaskIntoConstraints="NO" id="MJZ-ez-atS">
-                                    <rect key="frame" x="8" y="84" width="304" height="468"/>
+                                    <rect key="frame" x="16" y="16" width="288" height="536"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interest in CoAssets Stock" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="Vgt-6H-ddg">
-                                    <rect key="frame" x="8" y="16" width="304" height="65"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="65" id="mwe-JQ-0bP"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Vgt-6H-ddg" secondAttribute="trailing" constant="8" id="Ctj-v8-1WS"/>
-                                <constraint firstItem="Vgt-6H-ddg" firstAttribute="leading" secondItem="7vR-sq-9NG" secondAttribute="leading" constant="8" id="GXu-02-lcf"/>
-                                <constraint firstItem="MJZ-ez-atS" firstAttribute="leading" secondItem="7vR-sq-9NG" secondAttribute="leading" constant="8" id="YEE-55-j1g"/>
-                                <constraint firstItem="Vgt-6H-ddg" firstAttribute="top" secondItem="7vR-sq-9NG" secondAttribute="top" constant="16" id="i1y-WU-E3y"/>
+                                <constraint firstItem="MJZ-ez-atS" firstAttribute="top" secondItem="7vR-sq-9NG" secondAttribute="top" constant="16" id="TxR-vC-s1t"/>
+                                <constraint firstItem="MJZ-ez-atS" firstAttribute="leading" secondItem="7vR-sq-9NG" secondAttribute="leading" constant="16" id="YEE-55-j1g"/>
                                 <constraint firstAttribute="bottom" secondItem="MJZ-ez-atS" secondAttribute="bottom" constant="16" id="jpy-uT-ihp"/>
-                                <constraint firstAttribute="trailing" secondItem="MJZ-ez-atS" secondAttribute="trailing" constant="8" id="utA-h5-JeH"/>
-                                <constraint firstItem="MJZ-ez-atS" firstAttribute="top" secondItem="Vgt-6H-ddg" secondAttribute="bottom" constant="3" id="yu6-ZU-gcf"/>
+                                <constraint firstAttribute="trailing" secondItem="MJZ-ez-atS" secondAttribute="trailing" constant="16" id="utA-h5-JeH"/>
                             </constraints>
                         </view>
                     </subviews>

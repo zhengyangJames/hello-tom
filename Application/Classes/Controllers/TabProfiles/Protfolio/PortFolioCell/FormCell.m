@@ -13,28 +13,33 @@
 @interface FormCell() {
     __weak IBOutlet CoDropListButtom *_btnDrop;
 }
-@property (nonatomic, strong) NSArray *arrayCurrency;
+@property (nonatomic, strong) NSDictionary *dicCurrency;
 
 @end
 
 @implementation FormCell
 
-- (NSArray *)arrayCurrency {
-    if (_arrayCurrency) {
-        return _arrayCurrency;
-    }
-    return _arrayCurrency = [UIHelper getArrayCurrency];
-}
-
 - (void)awakeFromNib {
     _btnDrop.layer.cornerRadius = 4;
-     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
+
+#pragma mark - setter, getter
+- (NSDictionary *)dicCurrency {
+    if (_dicCurrency) {
+        return _dicCurrency;
+    }
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Curency" ofType:@"plist"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:filePath];
+    return _dicCurrency = dic;
+}
+
 
 - (IBAction)__actionInvestor:(id)sender {
     [self endEditing:NO];
-    [CODropListView presentWithTitle:@"Currency" data:self.arrayCurrency selectedIndex:0 didSelect:^(NSInteger index) {
-        [_btnDrop setTitle:self.arrayCurrency[index] forState:UIControlStateNormal];
+    [CODropListView presentWithTitle:@"Currency" data:[self.dicCurrency allKeys]  selectedIndex:0 didSelect:^(NSInteger index) {
+        [_btnDrop setTitle:[self.dicCurrency objectForKey:[self.dicCurrency allKeys][index]] forState:UIControlStateNormal];
     }];
 }
+
 @end

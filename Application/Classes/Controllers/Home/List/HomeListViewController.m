@@ -278,6 +278,10 @@ typedef void(^ActionGetIndexPath)(NSIndexPath *indexPath);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return HEIGHT_FOR_ROW_HOME;
 }
 

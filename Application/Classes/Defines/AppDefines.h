@@ -223,7 +223,7 @@
 #define DEFAULT_ADDRESS_CELL                         44
 #define IS_IOS8_OR_ABOVE                            [[[UIDevice currentDevice] systemVersion] floatValue] >= 8
 
-#define HEIGHT_FOR_ROW_HOME                         248
+#define HEIGHT_FOR_ROW_HOME                         273
 #define HEIGHT_SECTION_CONTACT                      40
 #define ESTIMATE_HEIGHT_FOR_ROW_CONTACT              185
 
