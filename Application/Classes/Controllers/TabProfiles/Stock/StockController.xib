@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olW-DM-pwh" userLabel="headerView">
-                    <rect key="frame" x="101.5" y="30" width="117.5" height="40"/>
+                    <rect key="frame" x="88.5" y="30" width="143.5" height="40"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_nav_stock.png" translatesAutoresizingMaskIntoConstraints="NO" id="CgS-Sn-6oH">
                             <rect key="frame" x="0.0" y="8" width="24" height="24"/>
@@ -39,25 +39,25 @@
                             </variation>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abcd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-Kx-pkf">
-                            <rect key="frame" x="28" y="13.5" width="28.5" height="14.5"/>
+                            <rect key="frame" x="34" y="13.5" width="28.5" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.47843137254901963" green="0.47843137254901963" blue="0.47843137254901963" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ac" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-Ba-KbP">
-                            <rect key="frame" x="60.5" y="10" width="18.5" height="20.5"/>
+                            <rect key="frame" x="76.5" y="10" width="18.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhh-Kg-eXf">
-                            <rect key="frame" x="83" y="10.5" width="16" height="20.5"/>
+                            <rect key="frame" x="99" y="10.5" width="16" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRV-pq-Snd">
-                            <rect key="frame" x="103" y="13" width="14.5" height="14.5"/>
+                            <rect key="frame" x="129" y="13" width="14.5" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -73,9 +73,9 @@
                         <constraint firstAttribute="height" constant="40" id="MB1-yA-KQ2"/>
                         <constraint firstItem="Mhh-Kg-eXf" firstAttribute="centerX" secondItem="olW-DM-pwh" secondAttribute="centerX" id="TeY-pS-A6l"/>
                         <constraint firstItem="Mhh-Kg-eXf" firstAttribute="leading" secondItem="2Zo-Ba-KbP" secondAttribute="trailing" constant="4" id="UWk-yw-pIN"/>
-                        <constraint firstItem="2Zo-Ba-KbP" firstAttribute="leading" secondItem="FNS-Kx-pkf" secondAttribute="trailing" constant="4" id="Wou-3S-cFm"/>
-                        <constraint firstItem="FNS-Kx-pkf" firstAttribute="leading" secondItem="CgS-Sn-6oH" secondAttribute="trailing" constant="4" id="bne-M0-gyx"/>
-                        <constraint firstItem="vRV-pq-Snd" firstAttribute="leading" secondItem="Mhh-Kg-eXf" secondAttribute="trailing" constant="4" id="eJn-e1-Chf"/>
+                        <constraint firstItem="2Zo-Ba-KbP" firstAttribute="leading" secondItem="FNS-Kx-pkf" secondAttribute="trailing" constant="14" id="Wou-3S-cFm"/>
+                        <constraint firstItem="FNS-Kx-pkf" firstAttribute="leading" secondItem="CgS-Sn-6oH" secondAttribute="trailing" constant="10" id="bne-M0-gyx"/>
+                        <constraint firstItem="vRV-pq-Snd" firstAttribute="leading" secondItem="Mhh-Kg-eXf" secondAttribute="trailing" constant="14" id="eJn-e1-Chf"/>
                         <constraint firstItem="2Zo-Ba-KbP" firstAttribute="centerY" secondItem="olW-DM-pwh" secondAttribute="centerY" id="fco-m2-VaN"/>
                         <constraint firstItem="CgS-Sn-6oH" firstAttribute="centerY" secondItem="olW-DM-pwh" secondAttribute="centerY" id="hwC-cF-x5s"/>
                         <constraint firstItem="CgS-Sn-6oH" firstAttribute="leading" secondItem="olW-DM-pwh" secondAttribute="leading" id="rFw-d3-pjc"/>
@@ -125,11 +125,11 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="DVx-hp-J8s"/>
-                    <exclude reference="JYN-wD-Dfd"/>
                     <exclude reference="8ra-tP-MXC"/>
                     <exclude reference="QnI-zW-Ldb"/>
                     <exclude reference="nXQ-1j-bXp"/>
+                    <exclude reference="DVx-hp-J8s"/>
+                    <exclude reference="JYN-wD-Dfd"/>
                 </mask>
             </variation>
         </view>

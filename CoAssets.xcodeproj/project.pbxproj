@@ -349,8 +349,8 @@
 		0E4F4B041C3E480200CFC23B /* EditInvestmentProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */; };
 		0E4F4B051C3E480200CFC23B /* Australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529111B43935B00CFAEB5 /* Australia.png */; };
 		0E4F4B101C3E48BE00CFC23B /* Info-China.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F4B0E1C3E484700CFC23B /* Info-China.plist */; };
-		0E4FFEB41C51BC1F00A7DECC /* Curency.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FFEB31C51BC1F00A7DECC /* Curency.plist */; };
-		0E4FFEB51C51BC1F00A7DECC /* Curency.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FFEB31C51BC1F00A7DECC /* Curency.plist */; };
+		0E4FFEB41C51BC1F00A7DECC /* Currency.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FFEB31C51BC1F00A7DECC /* Currency.plist */; };
+		0E4FFEB51C51BC1F00A7DECC /* Currency.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FFEB31C51BC1F00A7DECC /* Currency.plist */; };
 		0E508EDB1C48D9C900B1DBA0 /* InterstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508ED91C48D9C900B1DBA0 /* InterstController.m */; };
 		0E508EDC1C48D9C900B1DBA0 /* InterstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508ED91C48D9C900B1DBA0 /* InterstController.m */; };
 		0E508EDD1C48D9C900B1DBA0 /* InterstController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */; };
@@ -738,7 +738,7 @@
 		0E4F49BA1C3E479500CFC23B /* Info-English.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-English.plist"; sourceTree = "<group>"; };
 		0E4F4B0C1C3E480200CFC23B /* CoAssets-China.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoAssets-China.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4F4B0E1C3E484700CFC23B /* Info-China.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-China.plist"; sourceTree = "<group>"; };
-		0E4FFEB31C51BC1F00A7DECC /* Curency.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Curency.plist; sourceTree = "<group>"; };
+		0E4FFEB31C51BC1F00A7DECC /* Currency.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Currency.plist; sourceTree = "<group>"; };
 		0E508ED81C48D9C900B1DBA0 /* InterstController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstController.h; sourceTree = "<group>"; };
 		0E508ED91C48D9C900B1DBA0 /* InterstController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstController.m; sourceTree = "<group>"; };
 		0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterstController.xib; sourceTree = "<group>"; };
@@ -1298,7 +1298,7 @@
 				0E0292031C3E4DA9000D9320 /* FortFolioPlist.plist */,
 				0E0292041C3E4DA9000D9320 /* ProfileList.plist */,
 				0E0292051C3E4DA9000D9320 /* SettingPlist.plist */,
-				0E4FFEB31C51BC1F00A7DECC /* Curency.plist */,
+				0E4FFEB31C51BC1F00A7DECC /* Currency.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -3001,7 +3001,7 @@
 				0E4F4AEB1C3E480200CFC23B /* NProfileButtonCell.xib in Resources */,
 				0E4F4AEC1C3E480200CFC23B /* ic_Check_red@3x.png in Resources */,
 				0E4F4AED1C3E480200CFC23B /* NProfileHeaderView.xib in Resources */,
-				0E4FFEB51C51BC1F00A7DECC /* Curency.plist in Resources */,
+				0E4FFEB51C51BC1F00A7DECC /* Currency.plist in Resources */,
 				0E4F4AEE1C3E480200CFC23B /* Raleway-BlackItalic.ttf in Resources */,
 				0E4F4AEF1C3E480200CFC23B /* Vietnam.png in Resources */,
 				0E4F4AF01C3E480200CFC23B /* OfferDetailsController.xib in Resources */,
@@ -3187,7 +3187,7 @@
 				1E5A6FC81BCCC49F00C4C5A5 /* NProfileTextCell.xib in Resources */,
 				1E5A6FBE1BCCC49F00C4C5A5 /* NProfileButtonCell.xib in Resources */,
 				1EF23C251BBE85C9006020C2 /* ic_Check_red@3x.png in Resources */,
-				0E4FFEB41C51BC1F00A7DECC /* Curency.plist in Resources */,
+				0E4FFEB41C51BC1F00A7DECC /* Currency.plist in Resources */,
 				1E5A6FC21BCCC49F00C4C5A5 /* NProfileHeaderView.xib in Resources */,
 				7F32601E1B40E50800116445 /* Raleway-BlackItalic.ttf in Resources */,
 				7F8529301B43935B00CFAEB5 /* Vietnam.png in Resources */,

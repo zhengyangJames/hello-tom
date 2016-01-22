@@ -235,6 +235,7 @@
 
 #define UPDATE_ABOUT_PROFILE                        @"Update profile"
 #define UPDATE_COMNPANY_PROFILE                     @"Update company profile"
+#define UPDATE_CURRENCY                             @"Update currency"
 
 #define KEY_USERNAME                                    @"username"
 
