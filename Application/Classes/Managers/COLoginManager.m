@@ -16,6 +16,7 @@
 #import "COUserPortFolioModel.h"
 #import "COProfileStockModel.h"
 #import "COMultiPortpolioModel.h"
+#import "COCurrencyModel.h"
 
 
 @implementation COLoginManager
@@ -247,7 +248,7 @@
     }
     NSError *error;
     if ([kUserDefaults objectForKey:UPDATE_STOCK_PROFILE_JSON]) {
-       NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_STOCK_PROFILE_JSON] options:0 error:&error];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_STOCK_PROFILE_JSON] options:0 error:&error];
         if (dic) {
             COProfileStockModel *userStockmodel = [MTLJSONAdapter modelOfClass:[COProfileStockModel class] fromJSONDictionary:dic error:&error];
             return _stockModel = userStockmodel;
@@ -256,5 +257,36 @@
     return nil;
 }
 
+#pragma mark - Portpolio-Currency
+- (NSDictionary *)currencyPortpolio {
+    if (_currencyPortpolio) {
+        return _currencyPortpolio;
+    }
+//    NSError *error;
+    NSDictionary *dic = [[NSDictionary alloc]init];
+    dic = @{
+            @"VND": @"Vietnamese Dong",
+            @"USD": @"US Dollars",
+            @"AUD": @"Australia Dollar",
+            @"TWD": @"Taiwan Dollar",
+            @"MYR": @"Malaysia Ringit",
+            @"IDR": @"Indonesia Rupiah",
+            @"THB": @"Thai Baht",
+            @"CNY": @"Chinese Yuan",
+            @"JPY": @"Japanese Yen",
+            @"PHP": @"Philippine Peso",
+            @"CAT": @"CoAssets Token",
+            @"GBP": @"British Pounds",
+            @"CAD": @"Canadian Dollars",
+            @"SGD": @"Singapore Dollars",
+            @"HKD": @"Hongkong Dollar",
+            @"EUR": @"Euros",
+            };
+    if (dic) {
+//        COCurrencyModel *currency = [MTLJSONAdapter modelOfClass:[COCurrencyModel class] fromJSONDictionary:dic error:&error];
+        return _currencyPortpolio = dic;
+    }
+    return nil;
+}
 
 @end

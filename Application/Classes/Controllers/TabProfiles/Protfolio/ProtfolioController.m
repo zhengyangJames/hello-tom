@@ -48,14 +48,13 @@
 - (void)_setUpUI {
     self.navigationItem.title = m_string(@"PORTFOLIO");
     [self callGetCompleteDrawals];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerNib:[UINib nibWithNibName:[PortFolioCell identifier] bundle:nil] forCellReuseIdentifier:[PortFolioCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[CompletedCell identifier] bundle:nil] forCellReuseIdentifier:[CompletedCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[AvailableBalanceCell identifier] bundle:nil] forCellReuseIdentifier:[AvailableBalanceCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[FormCell identifier] bundle:nil] forCellReuseIdentifier:[FormCell identifier]];
-    
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
 }
 
 #pragma mark - Set Get
@@ -96,7 +95,6 @@
 
 #pragma mark - UITableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     if ([self.dicData allKeys].count ==0 && self.arrayBalances.count == 0) {
         return 3;
     } else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count != 0) {
