@@ -28,6 +28,8 @@
 		0E3B132F1C0C449100AAAFD9 /* DealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */; };
 		0E4A17F11C113A5400839BDC /* WSCompanyProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */; };
 		0E4A17F41C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */; };
+		0E4AC4491C55B43000AF7E4E /* COCurrencyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AC4481C55B43000AF7E4E /* COCurrencyModel.m */; };
+		0E4AC44A1C55B43000AF7E4E /* COCurrencyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AC4481C55B43000AF7E4E /* COCurrencyModel.m */; };
 		0E4F49B71C3E471200CFC23B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F49B41C3E471200CFC23B /* Localizable.strings */; };
 		0E4F49BB1C3E479500CFC23B /* Info-English.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F49BA1C3E479500CFC23B /* Info-English.plist */; };
 		0E4F49BF1C3E480200CFC23B /* WSRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F5D1B961692002EEB1C /* WSRegisterRequest.m */; };
@@ -733,6 +735,8 @@
 		0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCompanyProfileRequest.m; sourceTree = "<group>"; };
 		0E4A17F21C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+CompanyProfile.h"; sourceTree = "<group>"; };
 		0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+CompanyProfile.m"; sourceTree = "<group>"; };
+		0E4AC4471C55B43000AF7E4E /* COCurrencyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COCurrencyModel.h; sourceTree = "<group>"; };
+		0E4AC4481C55B43000AF7E4E /* COCurrencyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COCurrencyModel.m; sourceTree = "<group>"; };
 		0E4F49AE1C3E471200CFC23B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0E4F49B41C3E471200CFC23B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0E4F49BA1C3E479500CFC23B /* Info-English.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-English.plist"; sourceTree = "<group>"; };
@@ -1341,6 +1345,15 @@
 				0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */,
 			);
 			path = DealCell;
+			sourceTree = "<group>";
+		};
+		0E4AC4461C55B40D00AF7E4E /* COCurrencyModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E4AC4471C55B43000AF7E4E /* COCurrencyModel.h */,
+				0E4AC4481C55B43000AF7E4E /* COCurrencyModel.m */,
+			);
+			path = COCurrencyModel;
 			sourceTree = "<group>";
 		};
 		0E4F49A91C3E471200CFC23B /* Targets */ = {
@@ -2683,6 +2696,7 @@
 		BB368EAF1B87DF380066C646 /* UserProfileModel */ = {
 			isa = PBXGroup;
 			children = (
+				0E4AC4461C55B40D00AF7E4E /* COCurrencyModel */,
 				0E55D42C1C4F4B6E0058DDA8 /* COMultiPortfolioModel */,
 				BB368EB91B87F3D60066C646 /* COUserData.h */,
 				1ECEAE871BC760A0006FE0CA /* COProfileModel */,
@@ -3440,6 +3454,7 @@
 				0E4F4A151C3E480200CFC23B /* CODocumentModel.m in Sources */,
 				0E4F4A161C3E480200CFC23B /* EventViewController.m in Sources */,
 				0E4F4A171C3E480200CFC23B /* CODocumentSectionCell.m in Sources */,
+				0E4AC44A1C55B43000AF7E4E /* COCurrencyModel.m in Sources */,
 				0E4F4A181C3E480200CFC23B /* NProfileButtonCell.m in Sources */,
 				0E4F4A191C3E480200CFC23B /* BaseLabel.m in Sources */,
 				0E4F4A1A1C3E480200CFC23B /* COAwatarView.m in Sources */,
@@ -3614,6 +3629,7 @@
 				BB3097D71B8243F000BF6861 /* CODocumentModel.m in Sources */,
 				0E8F35601C3DFE4E00CCCE04 /* EventViewController.m in Sources */,
 				7F325F951B40E50800116445 /* CODocumentSectionCell.m in Sources */,
+				0E4AC4491C55B43000AF7E4E /* COCurrencyModel.m in Sources */,
 				1E5A6FBD1BCCC49F00C4C5A5 /* NProfileButtonCell.m in Sources */,
 				1E67FAC41BBB9149008F433C /* BaseLabel.m in Sources */,
 				1E67FAB41BBB8882008F433C /* COAwatarView.m in Sources */,
