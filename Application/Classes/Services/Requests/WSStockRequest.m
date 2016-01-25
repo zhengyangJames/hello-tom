@@ -21,14 +21,13 @@
     return request;
 }
 
-- (WSStockRequest *)postStockProfile:(NSString *)content  {
-    WSStockRequest *request = [[WSStockRequest alloc]init];
-    
-    [request setValue:content forHTTPHeaderField: @"custom_message"];
-    [request setHTTPMethod:METHOD_POST];
-    [request setURL:[NSURL URLWithString:WS_METHOD_STOCK_POST]];
-    return request;
+- (void)postStockProfile:(NSString *)content  {
+    [self setHTTPMethod:METHOD_POST];
+    [self setBodyParam:content forKey:@"custom_message"];
+    [self setURL:[NSURL URLWithString:WS_METHOD_STOCK_POST]];
 }
+
+
 
 
 @end

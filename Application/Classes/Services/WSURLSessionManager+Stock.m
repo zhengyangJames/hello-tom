@@ -38,10 +38,11 @@
     }];
 }
 
+
 - (void)wsPostDeviceCompanyProfileTokenRequest:(NSString *)message Handler:(WSURLSessionHandler)handler  {
     
     WSStockRequest *request = [[WSStockRequest alloc]init];
-    request = [request postStockProfile:message];
+    [request postStockProfile:message];
     
     [self sendRequest:request requiredLogin:YES clearCache:NO handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && [responseObject isKindOfClass:[NSDictionary class]]) {

@@ -49,11 +49,11 @@
 
 #pragma mark - Action
 - (void)__actionDone {
-    [self _callAPIPostStockProfileWithHandler];
+    [self _callAPIPostStockProfile];
 }
 
 #pragma mark - CallAPI
-- (void)_callAPIPostStockProfileWithHandler {
+- (void)_callAPIPostStockProfile {
     [UIHelper showLoadingInView:[kAppDelegate window]];
     NSString *message = [_tvContent.text trim];
     [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest: message Handler:^(id responseObject, NSURLResponse *response, NSError *error) {

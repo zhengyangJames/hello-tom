@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WSRequest.h"
 
-@interface WSStockRequest : NSMutableURLRequest
+@interface WSStockRequest : WSRequest
 
 - (WSStockRequest *)getStockRequset;
-- (WSStockRequest *)postStockProfile:(NSString *)content;
+- (void)postStockProfile:(NSString *)content;
 @end
