@@ -77,9 +77,7 @@
     [CODropListView presentWithTitle:@"Currency" data:self.arrCurrency[@"values"] selectedIndex:[self.index integerValue] didSelect:^(NSInteger index) {
         [kUserDefaults setObject:[NSNumber numberWithInteger:index] forKey:UPDATE_CURRENCY];
         [kUserDefaults synchronize];
-        NSString *key = self.arrCurrency[@"values"] [index];
-        NSString *value = [self.currencyModel valueForKey:key];
-        [_btnDrop setTitle:value forState:UIControlStateNormal];
+        [_btnDrop setTitle:self.arrCurrency[@"keys"] [index] forState:UIControlStateNormal];
     }];
 }
 
