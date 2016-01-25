@@ -19,21 +19,16 @@
 #import "COUserProfileModel.h"
 #import "COMultiPortFolioModel.h"
 
-#define NumberOfCellForWithAndHeight    175
-#define Top_Bottom_Tabar_Nav_Aligin     131
-#define Left_Reight_Aligin              18
 #define Height_ForRow_PortFolioCell        50
 
 @interface PortFolioController ()<UITableViewDataSource, UITableViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
 }
-@property (strong,nonatomic) NSArray *arrayList;
 @property (strong,nonatomic) NSArray *arrayBalances;
-@property (strong,nonatomic) NSDictionary *dicData;
+@property (strong,nonatomic) NSDictionary *dicCompleted;
 @property (nonatomic, strong) COUserProfileModel *userModel;
 
-@property (readonly,nonatomic) COPortfolioProfile protfolioStyle;
 @property (strong, nonatomic) COMultiPortFolioModel *multiPortpolio;
 @property (strong, nonatomic) NSMutableArray *arrType;
 
@@ -66,22 +61,15 @@
     }
     _arrType = [[NSMutableArray alloc] initWithArray:@[[NSNumber numberWithInteger:COPortpolioCellPortFolio], [NSNumber numberWithInteger:COPortpolioCellPortFolio]]];
     
-    if (self.dicData && self.dicData.allKeys.count > 0) {
+    if (self.dicCompleted && self.dicCompleted.allKeys.count > 0) {
         [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellComplete]];
     }
     
     if (self.arrayBalances && self.arrayBalances.count > 0) {
-        [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellAvailable]];
+        [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellAvailableBalance]];
         [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellForm]];
     }
     return _arrType;
-}
-
-- (NSArray*)arrayList {
-    if (!_arrayList) {
-        _arrayList = [LoadFileManager loadFilePlistWithName:@"FortFolioPlist"];
-    }
-    return _arrayList;
 }
 
 - (COUserProfileModel *)userModel {
@@ -98,11 +86,11 @@
     return _multiPortpolio = [[COLoginManager shared] multiPortpolio];
 }
 
-- (NSDictionary *)dicData {
-    if (_dicData) {
-        return _dicData;
+- (NSDictionary *)dicCompleted {
+    if (_dicCompleted) {
+        return _dicCompleted;
     }
-    return _dicData = [kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE];
+    return _dicCompleted = [kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE];
 }
 
 - (NSArray *)arrayBalances {
@@ -124,7 +112,7 @@
         case COPortpolioCellPortFolio:
             return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
             break;
-        case COPortpolioCellAvailable:
+        case COPortpolioCellAvailableBalance:
             return  [self tableView:tableView availableBalanceCellForRowAtIndexPath:indexPath];
             break;
         case COPortpolioCellComplete:
@@ -139,9 +127,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return Height_ForRow_PortFolioCell;
 }
+
 #pragma mark - cells
 - (UITableViewCell *)tableView:(UITableView *)tableView portFolioCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -159,9 +149,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView completedCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CompletedCell *cellComplete = [tableView dequeueReusableCellWithIdentifier:[CompletedCell identifier] forIndexPath:indexPath];
-    if (self.dicData != nil) {
-        cellComplete.dic = self.dicData;
-    }
+        cellComplete.dic = self.dicCompleted;
     return cellComplete;
 }
 
@@ -183,7 +171,7 @@
 
 #pragma mark - CallAPI
 - (void)_callAPIGetCompleteDrawals {
-    if (self.dicData != nil) {
+    if (self.dicCompleted != nil) {
         [UIHelper showLoadingIndicator];
     } else {
         [UIHelper showLoadingInView:self.view];
@@ -193,7 +181,7 @@
         if (!error && responseObject != nil) {
             [UIHelper hideLoadingIndicator];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.dicData = responseObject;
+                self.dicCompleted = responseObject;
                 [self _callAPIGetBalances];
             }];
         } else {

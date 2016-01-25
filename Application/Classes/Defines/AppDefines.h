@@ -165,7 +165,7 @@
 
 #define kUPDATE_VERSION                             @"Update_version_2.0"
 #define KEY_DEVICE_TOKEN                            @"KEY_DEVICE_TOKEN"
-#define DEVICE_TOKEN_EXIST                          @"DEVICE_TOKEN_EXIST" 
+#define DEVICE_TOKEN_EXIST                          @"DEVICE_TOKEN_EXIST"
 ////////////////////////////////////////////////////////////////
 #pragma mark - KEY
 
@@ -358,8 +358,8 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
 
 typedef NS_ENUM(NSInteger, COPortFolioSection) {
     COPortpolioCellPortFolio = 0,
-    COPortpolioCellAvailable,
     COPortpolioCellComplete,
+    COPortpolioCellAvailableBalance,
     COPortpolioCellForm
 };
 
