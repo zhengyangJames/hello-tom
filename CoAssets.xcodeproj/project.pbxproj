@@ -28,6 +28,8 @@
 		0E3B132F1C0C449100AAAFD9 /* DealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B132D1C0C449100AAAFD9 /* DealTableViewCell.xib */; };
 		0E4A17F11C113A5400839BDC /* WSCompanyProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */; };
 		0E4A17F41C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */; };
+		0E4AC44F1C55CD0500AF7E4E /* InterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AC44D1C55CD0500AF7E4E /* InterestViewController.m */; };
+		0E4AC4501C55CD0500AF7E4E /* InterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AC44E1C55CD0500AF7E4E /* InterestViewController.xib */; };
 		0E4F49B71C3E471200CFC23B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F49B41C3E471200CFC23B /* Localizable.strings */; };
 		0E4F49BB1C3E479500CFC23B /* Info-English.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F49BA1C3E479500CFC23B /* Info-English.plist */; };
 		0E4F49BF1C3E480200CFC23B /* WSRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F5D1B961692002EEB1C /* WSRegisterRequest.m */; };
@@ -351,10 +353,6 @@
 		0E4F4B101C3E48BE00CFC23B /* Info-China.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F4B0E1C3E484700CFC23B /* Info-China.plist */; };
 		0E4FFEB41C51BC1F00A7DECC /* Currency.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FFEB31C51BC1F00A7DECC /* Currency.plist */; };
 		0E4FFEB51C51BC1F00A7DECC /* Currency.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FFEB31C51BC1F00A7DECC /* Currency.plist */; };
-		0E508EDB1C48D9C900B1DBA0 /* InterstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508ED91C48D9C900B1DBA0 /* InterstController.m */; };
-		0E508EDC1C48D9C900B1DBA0 /* InterstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508ED91C48D9C900B1DBA0 /* InterstController.m */; };
-		0E508EDD1C48D9C900B1DBA0 /* InterstController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */; };
-		0E508EDE1C48D9C900B1DBA0 /* InterstController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */; };
 		0E508EE21C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EE11C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m */; };
 		0E508EE31C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EE11C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m */; };
 		0E508EE61C48E22E00B1DBA0 /* WSStockRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EE51C48E22E00B1DBA0 /* WSStockRequest.m */; };
@@ -429,10 +427,10 @@
 		0EE7F7F51C48A1D000520B05 /* FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F21C48A1D000520B05 /* FormCell.m */; };
 		0EE7F7F61C48A1D000520B05 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F31C48A1D000520B05 /* FormCell.xib */; };
 		0EE7F7F71C48A1D000520B05 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7F31C48A1D000520B05 /* FormCell.xib */; };
-		0EE7F7FC1C48B09100520B05 /* StockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FA1C48B09100520B05 /* StockController.m */; };
-		0EE7F7FD1C48B09100520B05 /* StockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FA1C48B09100520B05 /* StockController.m */; };
-		0EE7F7FE1C48B09100520B05 /* StockController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FB1C48B09100520B05 /* StockController.xib */; };
-		0EE7F7FF1C48B09100520B05 /* StockController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FB1C48B09100520B05 /* StockController.xib */; };
+		0EE7F7FC1C48B09100520B05 /* StockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FA1C48B09100520B05 /* StockViewController.m */; };
+		0EE7F7FD1C48B09100520B05 /* StockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FA1C48B09100520B05 /* StockViewController.m */; };
+		0EE7F7FE1C48B09100520B05 /* StockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FB1C48B09100520B05 /* StockViewController.xib */; };
+		0EE7F7FF1C48B09100520B05 /* StockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7F7FB1C48B09100520B05 /* StockViewController.xib */; };
 		0EED2E711B5E2B94006730E2 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E701B5E2B94006730E2 /* appicon.png */; };
 		0EED2E741B5E2E08006730E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED2E721B5E2E08006730E2 /* LaunchScreen.xib */; };
 		0EF3EBA71BFD6EF3000CA9C9 /* COOngoingStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */; };
@@ -733,15 +731,15 @@
 		0E4A17F01C113A5400839BDC /* WSCompanyProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCompanyProfileRequest.m; sourceTree = "<group>"; };
 		0E4A17F21C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+CompanyProfile.h"; sourceTree = "<group>"; };
 		0E4A17F31C113F8C00839BDC /* WSURLSessionManager+CompanyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+CompanyProfile.m"; sourceTree = "<group>"; };
+		0E4AC44C1C55CD0500AF7E4E /* InterestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestViewController.h; sourceTree = "<group>"; };
+		0E4AC44D1C55CD0500AF7E4E /* InterestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestViewController.m; sourceTree = "<group>"; };
+		0E4AC44E1C55CD0500AF7E4E /* InterestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterestViewController.xib; sourceTree = "<group>"; };
 		0E4F49AE1C3E471200CFC23B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0E4F49B41C3E471200CFC23B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0E4F49BA1C3E479500CFC23B /* Info-English.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-English.plist"; sourceTree = "<group>"; };
 		0E4F4B0C1C3E480200CFC23B /* CoAssets-China.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoAssets-China.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4F4B0E1C3E484700CFC23B /* Info-China.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-China.plist"; sourceTree = "<group>"; };
 		0E4FFEB31C51BC1F00A7DECC /* Currency.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Currency.plist; sourceTree = "<group>"; };
-		0E508ED81C48D9C900B1DBA0 /* InterstController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstController.h; sourceTree = "<group>"; };
-		0E508ED91C48D9C900B1DBA0 /* InterstController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstController.m; sourceTree = "<group>"; };
-		0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterstController.xib; sourceTree = "<group>"; };
 		0E508EE01C48E13E00B1DBA0 /* WSURLSessionManager+Stock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSURLSessionManager+Stock.h"; sourceTree = "<group>"; };
 		0E508EE11C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Stock.m"; sourceTree = "<group>"; };
 		0E508EE41C48E22E00B1DBA0 /* WSStockRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSStockRequest.h; sourceTree = "<group>"; };
@@ -838,9 +836,9 @@
 		0EE7F7F11C48A1D000520B05 /* FormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormCell.h; sourceTree = "<group>"; };
 		0EE7F7F21C48A1D000520B05 /* FormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormCell.m; sourceTree = "<group>"; };
 		0EE7F7F31C48A1D000520B05 /* FormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormCell.xib; sourceTree = "<group>"; };
-		0EE7F7F91C48B09100520B05 /* StockController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockController.h; sourceTree = "<group>"; };
-		0EE7F7FA1C48B09100520B05 /* StockController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockController.m; sourceTree = "<group>"; };
-		0EE7F7FB1C48B09100520B05 /* StockController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockController.xib; sourceTree = "<group>"; };
+		0EE7F7F91C48B09100520B05 /* StockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockViewController.h; sourceTree = "<group>"; };
+		0EE7F7FA1C48B09100520B05 /* StockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockViewController.m; sourceTree = "<group>"; };
+		0EE7F7FB1C48B09100520B05 /* StockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockViewController.xib; sourceTree = "<group>"; };
 		0EED2E701B5E2B94006730E2 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		0EED2E731B5E2E08006730E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0EF3EBA51BFD6EF3000CA9C9 /* COOngoingStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOngoingStatusModel.h; sourceTree = "<group>"; };
@@ -1343,6 +1341,16 @@
 			path = DealCell;
 			sourceTree = "<group>";
 		};
+		0E4AC44B1C55CD0500AF7E4E /* InterestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0E4AC44C1C55CD0500AF7E4E /* InterestViewController.h */,
+				0E4AC44D1C55CD0500AF7E4E /* InterestViewController.m */,
+				0E4AC44E1C55CD0500AF7E4E /* InterestViewController.xib */,
+			);
+			path = InterestViewController;
+			sourceTree = "<group>";
+		};
 		0E4F49A91C3E471200CFC23B /* Targets */ = {
 			isa = PBXGroup;
 			children = (
@@ -1419,16 +1427,6 @@
 				0E4F49BA1C3E479500CFC23B /* Info-English.plist */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		0E508ED71C48D99A00B1DBA0 /* Interest */ = {
-			isa = PBXGroup;
-			children = (
-				0E508ED81C48D9C900B1DBA0 /* InterstController.h */,
-				0E508ED91C48D9C900B1DBA0 /* InterstController.m */,
-				0E508EDA1C48D9C900B1DBA0 /* InterstController.xib */,
-			);
-			path = Interest;
 			sourceTree = "<group>";
 		};
 		0E508EE81C48E90C00B1DBA0 /* ProfileStockModel */ = {
@@ -1645,10 +1643,10 @@
 		0EE7F7F81C48B06C00520B05 /* Stock */ = {
 			isa = PBXGroup;
 			children = (
-				0E508ED71C48D99A00B1DBA0 /* Interest */,
-				0EE7F7F91C48B09100520B05 /* StockController.h */,
-				0EE7F7FA1C48B09100520B05 /* StockController.m */,
-				0EE7F7FB1C48B09100520B05 /* StockController.xib */,
+				0E4AC44B1C55CD0500AF7E4E /* InterestViewController */,
+				0EE7F7F91C48B09100520B05 /* StockViewController.h */,
+				0EE7F7FA1C48B09100520B05 /* StockViewController.m */,
+				0EE7F7FB1C48B09100520B05 /* StockViewController.xib */,
 			);
 			path = Stock;
 			sourceTree = "<group>";
@@ -2993,7 +2991,6 @@
 				0E4F4AE51C3E480200CFC23B /* ic_uncheck@2x.png in Resources */,
 				0E4F4AE61C3E480200CFC23B /* ic_peopel@2x.png in Resources */,
 				0E5C7B4A1C508D5200D02CC3 /* ca_news.png in Resources */,
-				0E508EDE1C48D9C900B1DBA0 /* InterstController.xib in Resources */,
 				0E4F4AE71C3E480200CFC23B /* ic_notification@2x.png in Resources */,
 				0E4F4AE81C3E480200CFC23B /* United States.png in Resources */,
 				0E4F4AE91C3E480200CFC23B /* OfferDetailsDocumentController.xib in Resources */,
@@ -3026,7 +3023,7 @@
 				0E4F4B041C3E480200CFC23B /* EditInvestmentProfileVC.xib in Resources */,
 				0E4F4B051C3E480200CFC23B /* Australia.png in Resources */,
 				0E0291FB1C3E4D99000D9320 /* CompanyOrgType.plist in Resources */,
-				0EE7F7FF1C48B09100520B05 /* StockController.xib in Resources */,
+				0EE7F7FF1C48B09100520B05 /* StockViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3135,6 +3132,7 @@
 				0E3B132F1C0C449100AAAFD9 /* DealTableViewCell.xib in Resources */,
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
 				1EF23C291BBE85C9006020C2 /* ic_loadding@3x.png in Resources */,
+				0E4AC4501C55CD0500AF7E4E /* InterestViewController.xib in Resources */,
 				7FA7E6BC1B4E7C4D00059B13 /* COQuestionView.xib in Resources */,
 				7F32603B1B40E50800116445 /* ic_contac_2@3x.png in Resources */,
 				7F325F9C1B40E50800116445 /* HomeListViewCell.xib in Resources */,
@@ -3179,7 +3177,6 @@
 				7FA7E6C11B4E7CD500059B13 /* COOfferProgressCell.xib in Resources */,
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
 				0E5C7B491C508D5200D02CC3 /* ca_news.png in Resources */,
-				0E508EDD1C48D9C900B1DBA0 /* InterstController.xib in Resources */,
 				7F3260501B40E50800116445 /* ic_peopel@2x.png in Resources */,
 				0E84EE9A1C116AF600CDA27C /* ic_notification@2x.png in Resources */,
 				7F85292F1B43935B00CFAEB5 /* United States.png in Resources */,
@@ -3212,7 +3209,7 @@
 				1EA610D71BC5071B00BF3A47 /* EditInvestmentProfileVC.xib in Resources */,
 				7F8529211B43935B00CFAEB5 /* Australia.png in Resources */,
 				0E0292061C3E4DA9000D9320 /* CompanyOrgType.plist in Resources */,
-				0EE7F7FE1C48B09100520B05 /* StockController.xib in Resources */,
+				0EE7F7FE1C48B09100520B05 /* StockViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3396,7 +3393,7 @@
 				0E4F49EF1C3E480200CFC23B /* COUserCompanyModel.m in Sources */,
 				0E4F49F01C3E480200CFC23B /* NSMutableString+FontSize.m in Sources */,
 				0E4F49F11C3E480200CFC23B /* NSString_stripHtml.m in Sources */,
-				0EE7F7FD1C48B09100520B05 /* StockController.m in Sources */,
+				0EE7F7FD1C48B09100520B05 /* StockViewController.m in Sources */,
 				0E4F49F21C3E480200CFC23B /* CODealOngoingModel.m in Sources */,
 				0E4F49F31C3E480200CFC23B /* RegisterViewController.m in Sources */,
 				0E4F49F41C3E480200CFC23B /* NProfileCountrieCell.m in Sources */,
@@ -3419,7 +3416,6 @@
 				0E4F4A031C3E480200CFC23B /* EditCompanyVC.m in Sources */,
 				0E4F4A041C3E480200CFC23B /* LoginViewController.m in Sources */,
 				0E4F4A051C3E480200CFC23B /* CODocumentItemCell.m in Sources */,
-				0E508EDC1C48D9C900B1DBA0 /* InterstController.m in Sources */,
 				0E4F4A061C3E480200CFC23B /* COUserPortfolioOnGoingInvestmentModel.m in Sources */,
 				0E4F4A071C3E480200CFC23B /* UIHelper.m in Sources */,
 				0E4F4A081C3E480200CFC23B /* WSCompanyProfileRequest.m in Sources */,
@@ -3547,6 +3543,7 @@
 				0ECA883F1B27CA7100B5656F /* NMTableView.m in Sources */,
 				BB368EB81B87E1F30066C646 /* COUserProfileDetailModel.m in Sources */,
 				0EF3EBA71BFD6EF3000CA9C9 /* COOngoingStatusModel.m in Sources */,
+				0E4AC44F1C55CD0500AF7E4E /* InterestViewController.m in Sources */,
 				7F325FB71B40E50800116445 /* ContactTableViewCell.m in Sources */,
 				7FA7E6BB1B4E7C4D00059B13 /* COQuestionView.m in Sources */,
 				0EE7F7E61C48933E00520B05 /* CompletedCell.m in Sources */,
@@ -3570,7 +3567,7 @@
 				0E93F8C81BBD6FFC0079D5AE /* COUserCompanyModel.m in Sources */,
 				7FB802BB1B4CE25700173A58 /* NSMutableString+FontSize.m in Sources */,
 				7F8EE69E1B4A6ACF00F92852 /* NSString_stripHtml.m in Sources */,
-				0EE7F7FC1C48B09100520B05 /* StockController.m in Sources */,
+				0EE7F7FC1C48B09100520B05 /* StockViewController.m in Sources */,
 				B9449AD21BFC8B8900E4C4A4 /* CODealOngoingModel.m in Sources */,
 				7F325FA41B40E50800116445 /* RegisterViewController.m in Sources */,
 				1E5A6FBF1BCCC49F00C4C5A5 /* NProfileCountrieCell.m in Sources */,
@@ -3593,7 +3590,6 @@
 				0E8956891BBE88E4007E36BF /* EditCompanyVC.m in Sources */,
 				7F325FA21B40E50800116445 /* LoginViewController.m in Sources */,
 				7F325F851B40E50800116445 /* CODocumentItemCell.m in Sources */,
-				0E508EDB1C48D9C900B1DBA0 /* InterstController.m in Sources */,
 				1ECEAE781BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m in Sources */,
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
 				0E4A17F11C113A5400839BDC /* WSCompanyProfileRequest.m in Sources */,

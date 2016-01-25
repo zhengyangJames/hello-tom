@@ -29,12 +29,16 @@
 
 + (void)showLoadingIndicator
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    }];
 }
 
 + (void)hideLoadingIndicator
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }];
 }
 
 + (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton delegate:(id)delegate tag:(NSInteger)tag arrayTitleButton:(NSArray *)arrayTitel {
@@ -54,15 +58,15 @@
 }
 
 + (void)showAlertViewErrorWithMessage:(NSString *)message delegate:(id)delegate tag:(NSInteger)tag {
-   [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-       UIAlertView *alert = [[UIAlertView alloc]initWithTitle:m_string(@"COASSETS_TITLE")
-                                                      message: message
-                                                     delegate: delegate
-                                            cancelButtonTitle:m_string(@"OK_TITLE")
-                                            otherButtonTitles: nil];
-       alert.tag = tag;
-       [alert show];
-   }];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:m_string(@"COASSETS_TITLE")
+                                                       message: message
+                                                      delegate: delegate
+                                             cancelButtonTitle:m_string(@"OK_TITLE")
+                                             otherButtonTitles: nil];
+        alert.tag = tag;
+        [alert show];
+    }];
 }
 
 
@@ -191,21 +195,21 @@
 
 + (NSArray*)getArrayCurrency {
     NSArray *objCurrency = @[@"Singapore Dollars",
-        @"US Dollars",
-        @"British Pounds",
-        @"Euros",
-        @"Japanese Yen",
-        @"Chinese Yuan",
-        @"Taiwan Dollar",
-        @"Canadian Dollars",
-        @"Hongkong Dollar",
-        @"Australia Dollar",
-        @"Malaysia Ringit",
-        @"Thai Baht",
-        @"Philippine Peso",
-        @"Indonesia Rupiah",
-        @"Vietnamese Dong"
-    ];
+                             @"US Dollars",
+                             @"British Pounds",
+                             @"Euros",
+                             @"Japanese Yen",
+                             @"Chinese Yuan",
+                             @"Taiwan Dollar",
+                             @"Canadian Dollars",
+                             @"Hongkong Dollar",
+                             @"Australia Dollar",
+                             @"Malaysia Ringit",
+                             @"Thai Baht",
+                             @"Philippine Peso",
+                             @"Indonesia Rupiah",
+                             @"Vietnamese Dong"
+                             ];
     return objCurrency;
 }
 
@@ -427,7 +431,7 @@
     [dateFormatter setDateFormat:@"MMM. d, yyyy"];
     NSString *stringDate = [dateFormatter stringFromDate:[dateFormatter2 dateFromString:dateString]];
     if (stringDate.isEmpty == false) {
-          return [@"Dated " stringByAppendingString:stringDate];
+        return [@"Dated " stringByAppendingString:stringDate];
     }
     return nil;
 }
@@ -438,7 +442,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"notifiData.notifiStatus == %@", @"UNREAD"];
     NSArray *filtered  = [dataArray filteredArrayUsingPredicate:predicate];
     NSString *inStr = [NSString stringWithFormat: @"%lu", (unsigned long)filtered.count];
-
+    
     if (inStr != nil) {
         return inStr;
     }

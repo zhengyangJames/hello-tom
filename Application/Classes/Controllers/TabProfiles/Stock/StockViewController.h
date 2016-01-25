@@ -1,5 +1,5 @@
 //
-//  InterstController.h
+//  StockController.h
 //  CoAssets
 //
 //  Created by Macintosh HD on 1/15/16.
@@ -8,8 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface InterstController : BaseViewController
-
-@property (nonatomic, strong) void (^callBack)(NSString *);
-
+@class COProfileStockModel;
+@interface StockViewController : BaseViewController
 @end

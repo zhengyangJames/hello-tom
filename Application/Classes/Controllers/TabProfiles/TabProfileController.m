@@ -13,7 +13,7 @@
 #import "ProtfolioController.h"
 #import "LoadFileManager.h"
 #import "COLoginManager.h"
-#import "StockController.h"
+#import "StockViewController.h"
 
 
 @interface TabProfileController ()<UITableViewDataSource, UITableViewDelegate>
@@ -46,8 +46,8 @@
 }
 
 - (void)_pushViewStockVC {
-    StockController *stock = [[StockController alloc]init];
-    [self.navigationController pushViewController:stock animated:YES];
+    StockViewController *stockVC = [[StockViewController alloc]initWithNibName:@"StockViewController" bundle:nil];
+    [self.navigationController pushViewController:stockVC animated:YES];
 }
 
 - (void)_pushViewDetailProfileVC {

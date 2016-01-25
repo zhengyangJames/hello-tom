@@ -10,7 +10,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InterstController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InterestViewController">
             <connections>
                 <outlet property="_tvContent" destination="MJZ-ez-atS" id="xt5-RV-Ysb"/>
                 <outlet property="view" destination="zUh-I2-zUq" id="Mn0-ek-SKX"/>

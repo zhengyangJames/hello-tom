@@ -15,7 +15,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StockController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StockViewController">
             <connections>
                 <outlet property="_btnCode" destination="biz-9O-OL2" id="afY-F4-v93"/>
                 <outlet property="_btnCurrency" destination="Amx-Pd-d1W" id="nzX-0X-t9c"/>
@@ -51,28 +51,28 @@
                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biz-9O-OL2">
                             <rect key="frame" x="34" y="12" width="30" height="27"/>
                             <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="12"/>
-                            <state key="normal" title="a">
+                            <state key="normal">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amx-Pd-d1W">
                             <rect key="frame" x="78" y="8" width="30" height="32"/>
                             <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="17"/>
-                            <state key="normal" title="b">
+                            <state key="normal">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUR-Mq-586">
                             <rect key="frame" x="154.5" y="12" width="30" height="27"/>
                             <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="12"/>
-                            <state key="normal" title="d">
+                            <state key="normal">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wP-or-o7H">
                             <rect key="frame" x="110" y="7" width="30" height="32"/>
                             <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="17"/>
-                            <state key="normal" title="c">
+                            <state key="normal">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -111,7 +111,7 @@
                         </mask>
                     </variation>
                     <connections>
-                        <action selector="actionInterested:" destination="-1" eventType="touchUpInside" id="urd-yW-1xU"/>
+                        <action selector="__actionInterested:" destination="-1" eventType="touchUpInside" id="yap-uE-IFY"/>
                     </connections>
                 </button>
             </subviews>

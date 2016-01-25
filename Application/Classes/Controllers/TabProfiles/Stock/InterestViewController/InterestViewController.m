@@ -6,59 +6,59 @@
 //  Copyright © 2016 Sanyi. All rights reserved.
 //
 
-#import "InterstController.h"
+#import "InterestViewController.h"
 #import "WSURLSessionManager+Stock.h"
 #import "WSURLSessionManager.h"
 
-@interface InterstController () {
+@interface InterestViewController () {
     __weak IBOutlet UITextView *_tvContent;
 }
-
 @end
 
-@implementation InterstController
+@implementation InterestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUI];
+    [self _setupUI];
 }
 
--(void)setupUI {
+-(void)_setupUI {
     self.title = m_string(@"MESSAGE_TITLE_STOCK");
     _tvContent.text = m_string(@"EMAIL_MESSAGE");
+    [self.navigationItem setRightBarButtonItem:[self _doneButtonItem]];
+}
+
+- (UIBarButtonItem *)_doneButtonItem {
     UIBarButtonItem *btnDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
                                                                style:UIBarButtonItemStyleDone
                                                               target:self
                                                               action:@selector(__actionDone)];
-    [self.navigationItem setRightBarButtonItem:btnDone];
-    
+    return btnDone;
 }
 
-- (void)__actionDone {
-    
-    [self callPostStockProfileHandler];
-}
-
-- (void)callPostStockProfileHandler {
-    [UIHelper showLoadingInView:[kAppDelegate window]];
-    [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest: _tvContent.text Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        [UIHelper hideLoadingFromView:[kAppDelegate window]];
-        [self showAlertView:[responseObject objectForKey:@"message"]];
-    }];
-}
-
-- (void)showAlertView:(NSString *)message {
+#pragma mark - Private
+- (void)_showAlertView:(NSString *)message {
     [UIHelper showAlertViewWithTitle:m_string(@"APP_NAME") message:message cancelButton:@"OK" delegate:self tag:1 arrayTitleButton: nil];
-    if (self.callBack) {
-        self.callBack(message);
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        
+    if (buttonIndex == alertView.cancelButtonIndex) {
         [self.navigationController popViewControllerAnimated:true];
     }
+}
+
+#pragma mark - Action
+- (void)__actionDone {
+    [self _callAPIPostStockProfileWithHandler];
+}
+
+#pragma mark - CallAPI
+- (void)_callAPIPostStockProfileWithHandler {
+    [UIHelper showLoadingInView:[kAppDelegate window]];
+    [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest: _tvContent.text Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+        [UIHelper hideLoadingFromView:[kAppDelegate window]];
+        [self _showAlertView:[responseObject objectForKey:@"message"]];
+    }];
 }
 
 @end
