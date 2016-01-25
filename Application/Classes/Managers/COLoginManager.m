@@ -16,7 +16,6 @@
 #import "COUserPortFolioModel.h"
 #import "COProfileStockModel.h"
 #import "COMultiPortpolioModel.h"
-#import "COCurrencyModel.h"
 
 
 @implementation COLoginManager
@@ -262,30 +261,10 @@
     if (_currencyPortpolio) {
         return _currencyPortpolio;
     }
-//    NSError *error;
-    NSDictionary *dic = [[NSDictionary alloc]init];
-    dic = @{
-            @"VND": @"Vietnamese Dong",
-            @"USD": @"US Dollars",
-            @"AUD": @"Australia Dollar",
-            @"TWD": @"Taiwan Dollar",
-            @"MYR": @"Malaysia Ringit",
-            @"IDR": @"Indonesia Rupiah",
-            @"THB": @"Thai Baht",
-            @"CNY": @"Chinese Yuan",
-            @"JPY": @"Japanese Yen",
-            @"PHP": @"Philippine Peso",
-            @"CAT": @"CoAssets Token",
-            @"GBP": @"British Pounds",
-            @"CAD": @"Canadian Dollars",
-            @"SGD": @"Singapore Dollars",
-            @"HKD": @"Hongkong Dollar",
-            @"EUR": @"Euros",
-            };
-    if (dic) {
+//    if (dic) {
 //        COCurrencyModel *currency = [MTLJSONAdapter modelOfClass:[COCurrencyModel class] fromJSONDictionary:dic error:&error];
-        return _currencyPortpolio = dic;
-    }
+//        return _currencyPortpolio = dic;
+//    }
     return nil;
 }
 

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FormCell : UITableViewCell
+//@property(nonatomic, strong)
 
 @end

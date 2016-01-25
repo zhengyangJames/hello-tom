@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AvailableBalanceCell : UITableViewCell
-@property (nonatomic, strong) NSArray *arrayData;
+@property (nonatomic, strong) NSArray *arrayAvailableBalances;
 @end

@@ -6,18 +6,17 @@
 //  Copyright © 2016 Sanyi. All rights reserved.
 //
 
-#import "COCurrencyModel.h"
+#import "COBalanceModel.h"
 
-@implementation COCurrencyModel
+@implementation COBalanceModel
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
-        @"currencyPofolio"       : @"currency_list",
+        @"balance_amt"       : @"balance_amt",
+        @"currency"       : @"currency",
+        @"updated"       : @"updated",
     };
 }
 
-- (NSDictionary *)dictionOfCurrncy {
-    return self.currencyPofolio;
-}
 
 @end

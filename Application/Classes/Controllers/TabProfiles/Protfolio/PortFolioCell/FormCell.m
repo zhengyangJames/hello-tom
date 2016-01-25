@@ -10,7 +10,6 @@
 #import "CODropListView.h"
 #import "CoDropListButtom.h"
 #import "COLoginManager.h"
-#import "COCurrencyModel.h"
 
 
 @interface FormCell() {
@@ -27,8 +26,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-//    _btnDrop.layer.cornerRadius = 4;
-//    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    _btnDrop.layer.cornerRadius = 4;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 //    NSDictionary *dic = self.arrCurrency[[self.index integerValue]];
 //    NSString *value = [dic objectForKey:@"currencySymbol"];
 //    [_btnDrop setTitle:value forState:UIControlStateNormal];

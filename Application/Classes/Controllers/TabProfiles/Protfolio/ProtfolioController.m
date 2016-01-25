@@ -83,14 +83,15 @@
     if (_dicData) {
         return _dicData;
     }
-    return _dicData = [[NSDictionary alloc] init];//[kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE];
+    return _dicData = [kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE];
+//    return @{};
 }
 
 - (NSArray *)arrayBalances {
     if (_arrayBalances) {
         return _arrayBalances;
     }
-    return _arrayBalances = [[NSArray alloc] init];//[kUserDefaults objectForKey:UPDATE_PORTPOLIO_BALANCE];
+    return _arrayBalances = [[NSArray alloc] init];
 }
 
 #pragma mark - UITableView Delegate
@@ -188,7 +189,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView availableBalanceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AvailableBalanceCell *cell = [tableView dequeueReusableCellWithIdentifier:[AvailableBalanceCell identifier] forIndexPath:indexPath];
     if (self.arrayBalances.count > 0) {
-        cell.arrayData = self.arrayBalances;
+        cell.arrayAvailableBalances = self.arrayBalances;
     }
     return cell;
 }
@@ -234,18 +235,17 @@
     }
     NSString *username = [self.userModel userName];
     [[WSURLSessionManager shared] wsGetBalancesRequestHandler:username handle:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && responseObject != nil) {
+        if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.arrayBalances = responseObject;
                 [_tableView reloadData];
-                [UIHelper hideLoadingIndicator];
-                [UIHelper hideLoadingFromView:self.view];
+                
             }];
         } else {
             [ErrorManager showError:error];
-            [UIHelper hideLoadingIndicator];
-            [UIHelper hideLoadingFromView:self.view];
         }
+        [UIHelper hideLoadingIndicator];
+        [UIHelper hideLoadingFromView:self.view];
     }];
 }
 

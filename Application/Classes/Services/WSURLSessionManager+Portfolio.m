@@ -8,6 +8,7 @@
 
 #import "WSURLSessionManager+Portfolio.h"
 #import "WSPortfolioRequest.h"
+#import "COBalanceModel.h"
 
 @implementation WSURLSessionManager (Portfolio)
 - (void)wsGetCompleteDrawalsRequestHandler:(NSString *)username handle:(WSURLSessionHandler)handler {
@@ -36,14 +37,16 @@
     WSPortfolioRequest *request = [[WSPortfolioRequest alloc]init];
     request = [request getBalances:username];
     [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && responseObject) {
+        if (!error && responseObject && [responseObject isKindOfClass:[NSArray class]]) {
+            NSArray *arrayTemp_ = (NSArray *)responseObject;
+            NSMutableArray *arrayBalance = [[NSMutableArray alloc] init];
+            for (NSDictionary *dict in arrayTemp_) {
+                COBalanceModel *balanceModel = [MTLJSONAdapter modelOfClass:[COBalanceModel class] fromJSONDictionary:dict error:&error];
+                [arrayBalance addObject:balanceModel];
+                
+            }
             if (handler) {
-                if ([kUserDefaults objectForKey:UPDATE_PORTPOLIO_BALANCE] != responseObject) {
-                    [kUserDefaults setObject:[responseObject allObjects] forKey:UPDATE_PORTPOLIO_BALANCE];
-                    [kUserDefaults synchronize];
-                }
-
-                handler([responseObject allObjects],response,nil);
+                handler(arrayBalance,response,nil);
             }
         } else {
             if (handler) {

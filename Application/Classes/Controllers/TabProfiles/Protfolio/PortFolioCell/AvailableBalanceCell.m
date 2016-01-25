@@ -7,6 +7,7 @@
 //
 
 #import "AvailableBalanceCell.h"
+#import "COBalanceModel.h"
 
 @interface AvailableBalanceCell()
 {
@@ -21,12 +22,13 @@
 }
 
 #pragma mark - Set Get
-- (void)setArrayData:(NSArray *)arrayData{
-    _arrayData = arrayData;
+- (void) setArrayAvailableBalances:(NSArray *)arrayAvailableBalances {
+    _arrayAvailableBalances = arrayAvailableBalances;
      NSString *_strText;
-    for (NSDictionary *dic in arrayData) {
-        NSString *strCurrency = [dic objectForKey:@"currency"];
-        NSString *strBalance = [UIHelper formartFoatValueWithPortfolio:[dic objectForKey:@"balance_amt"]];
+    
+    for (COBalanceModel *balanceModel in arrayAvailableBalances) {
+        NSString *strCurrency = balanceModel.currency;
+        NSString *strBalance = [UIHelper formartFoatValueWithPortfolio:balanceModel.balance_amt];
         
         NSString *content = [strCurrency stringByAppendingFormat:@"%@%@",@"-",strBalance];
         if (_strText != nil) {

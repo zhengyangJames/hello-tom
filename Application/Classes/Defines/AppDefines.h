@@ -161,7 +161,6 @@
 #define UPDATE_ACCOUNT_PROFILE_JSON                 @"Update profile account"
 #define UPDATE_STOCK_PROFILE_JSON                   @"Update profile stock"
 
-#define UPDATE_PORTPOLIO_BALANCE                    @"Update portpolio balance"
 #define UPDATE_PORTPOLIO_COMPLTETE                   @"Update portpolio complete"
 
 #define kUPDATE_VERSION                             @"Update_version_2.0"
