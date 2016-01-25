@@ -356,12 +356,13 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
     CODetailsProjectActionQuestions
 };
 
-typedef NS_ENUM(NSInteger, COPortpolioSection) {
-    COPortpolioSection0 = 0,
-    COPortpolioSection1,
-    COPortpolioSection2,
-    COPortpolioSection3
+typedef NS_ENUM(NSInteger, COPortFolioSection) {
+    COPortpolioCellPortFolio = 0,
+    COPortpolioCellAvailable,
+    COPortpolioCellComplete,
+    COPortpolioCellForm
 };
+
 
 ////////////////////////
 //by vicent

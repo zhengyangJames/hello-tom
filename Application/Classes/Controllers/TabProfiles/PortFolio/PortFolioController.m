@@ -35,6 +35,7 @@
 
 @property (readonly,nonatomic) COPortfolioProfile protfolioStyle;
 @property (strong, nonatomic) COMultiPortFolioModel *multiPortpolio;
+@property (strong, nonatomic) NSMutableArray *arrType;
 
 @end
 
@@ -59,6 +60,23 @@
 }
 
 #pragma mark - Set Get
+- (NSMutableArray *)arrType {
+    if (_arrType) {
+        return _arrType;
+    }
+    _arrType = [[NSMutableArray alloc] initWithArray:@[[NSNumber numberWithInteger:COPortpolioCellPortFolio], [NSNumber numberWithInteger:COPortpolioCellPortFolio]]];
+    
+    if (self.dicData && self.dicData.allKeys.count > 0) {
+        [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellComplete]];
+    }
+    
+    if (self.arrayBalances && self.arrayBalances.count > 0) {
+        [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellAvailable]];
+        [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellForm]];
+    }
+    return _arrType;
+}
+
 - (NSArray*)arrayList {
     if (!_arrayList) {
         _arrayList = [LoadFileManager loadFilePlistWithName:@"FortFolioPlist"];
@@ -96,27 +114,26 @@
 
 #pragma mark - UITableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([self.dicData allKeys].count == 0 && self.arrayBalances.count == 0) {
-        return 2;
-    } else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count != 0) {
-        return 4;
-    }  else if ([self.dicData allKeys].count !=0 && self.arrayBalances.count == 0) {
-        return 3;
-    }
-    return 5;
+    return self.arrType.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([self.dicData allKeys].count ==0 && self.arrayBalances.count == 0) {
-        return [self loadPortFolioCell:tableView indexpath:indexPath];
-    } else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count != 0) {
-        return [self loadBalanceAndPortPolioCell:tableView indexpath:indexPath];
-    }  else if ([self.dicData allKeys].count !=0 && self.arrayBalances.count == 0) {
-        return [self loadCompleteAndPortPolioCell:tableView indexpath:indexPath];
+    COPortFolioSection type = [[self.arrType objectAtIndex:indexPath.row] integerValue];
+    switch (type) {
+        case COPortpolioCellPortFolio:
+            return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
+            break;
+        case COPortpolioCellAvailable:
+            return  [self tableView:tableView availableBalanceCellForRowAtIndexPath:indexPath];
+            break;
+        case COPortpolioCellComplete:
+            return [self tableView:tableView completedCellForRowAtIndexPath:indexPath];
+            break;
+        case COPortpolioCellForm:
+            return [self tableView:tableView formCellForRowAtIndexPath:indexPath];
+            break;
     }
-    return [self loadAllCell:tableView indexpath:indexPath];
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -125,39 +142,6 @@
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return Height_ForRow_PortFolioCell;
 }
-
-#pragma mark - LoadCell
-- (UITableViewCell *)loadAllCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 2) {
-        return [self tableView:tableView completedCellForRowAtIndexPath:indexPath];
-    } else if (indexPath.row == 3) {
-        return  [self tableView:tableView availableBalanceCellForRowAtIndexPath:indexPath];
-    } else if (indexPath.row == 4) {
-        return [self tableView:tableView formCellForRowAtIndexPath:indexPath];
-    }
-    return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
-}
-
-- (UITableViewCell *)loadPortFolioCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
-    return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
-}
-
-- (UITableViewCell *)loadBalanceAndPortPolioCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 2) {
-        return  [self tableView:tableView availableBalanceCellForRowAtIndexPath:indexPath];
-    } else if (indexPath.row ==3 ) {
-        return [self tableView:tableView formCellForRowAtIndexPath:indexPath];
-    }
-    return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
-}
-
-- (UITableViewCell *)loadCompleteAndPortPolioCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 2) {
-        return [self tableView:tableView completedCellForRowAtIndexPath:indexPath];
-    } 
-    return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
-}
-
 #pragma mark - cells
 - (UITableViewCell *)tableView:(UITableView *)tableView portFolioCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -214,7 +198,7 @@
             }];
         } else {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [_tableView reloadData];
+                [self _reloadData];
             }];
             [ErrorManager showError:error];
         }
@@ -233,7 +217,7 @@
         if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.arrayBalances = responseObject;
-                [_tableView reloadData];
+                [self _reloadData];
                 
             }];
         } else {
@@ -242,6 +226,11 @@
         [UIHelper hideLoadingIndicator];
         [UIHelper hideLoadingFromView:self.view];
     }];
+}
+
+- (void)_reloadData {
+    self.arrType = nil;
+    [_tableView reloadData];
 }
 
 @end

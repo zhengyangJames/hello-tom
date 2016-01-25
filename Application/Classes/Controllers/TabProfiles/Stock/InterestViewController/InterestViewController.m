@@ -55,7 +55,8 @@
 #pragma mark - CallAPI
 - (void)_callAPIPostStockProfileWithHandler {
     [UIHelper showLoadingInView:[kAppDelegate window]];
-    [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest: _tvContent.text Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
+    NSString *message = [_tvContent.text trim];
+    [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest: message Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
         [UIHelper hideLoadingFromView:[kAppDelegate window]];
         [self _showAlertView:[responseObject objectForKey:@"message"]];
     }];
