@@ -13,4 +13,6 @@
 @property(nonatomic, strong) NSString *currency;
 @property(nonatomic, strong) NSString *updated;
 
+- (NSString *)currencyName;
+
 @end

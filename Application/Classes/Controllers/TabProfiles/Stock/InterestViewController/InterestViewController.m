@@ -38,7 +38,7 @@
 
 #pragma mark - Private
 - (void)_showAlertView:(NSString *)message {
-    [UIHelper showAlertViewWithTitle:m_string(@"APP_NAME") message:message cancelButton:@"OK" delegate:self tag:1 arrayTitleButton: nil];
+    [UIHelper showAlertViewWithTitle:m_string(m_string(@"TITLE_MESSAGE_STOCK")) message:message cancelButton:@"OK" delegate:self tag:1 arrayTitleButton: nil];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

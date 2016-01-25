@@ -449,4 +449,15 @@
     return nil;
 }
 
++ (BOOL)isStringDecimalNumber:(NSString *)stringValue {  
+    
+    NSScanner *scan = [NSScanner scannerWithString:stringValue];
+//    [scan setCharactersToBeSkipped:[[NSCharacterSet characterSetWithCharactersInString:@"1234567890."] invertedSet]];
+    if ([scan scanDouble:nil]){
+        return [scan isAtEnd];
+        
+    } else {
+        return NO;
+    }}
+
 @end

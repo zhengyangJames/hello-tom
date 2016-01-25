@@ -61,7 +61,7 @@
                                             <constraint firstAttribute="height" constant="30" id="OP4-aE-e9W"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcn-E3-TmB">
                                         <rect key="frame" x="106" y="189.5" width="90" height="34"/>
@@ -72,6 +72,9 @@
                                         <state key="normal" title="Withdraw">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="__actionWithDraw:" destination="zGe-sG-445" eventType="touchUpInside" id="mfD-9s-2N4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,6 +116,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="_btnDrop" destination="eNB-S3-RfQ" id="MnP-J0-T7u"/>
+                <outlet property="_tfAmount" destination="JSk-w6-zLq" id="d7P-O2-VD9"/>
             </connections>
             <point key="canvasLocation" x="174" y="535.5"/>
         </tableViewCell>

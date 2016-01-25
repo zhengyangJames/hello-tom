@@ -211,3 +211,7 @@
 "EMAIL_MESSAGE" = "Hi, I am interested to invest in CoAssets Stock.CNN";
 "MESSAGE_TITLE_STOCK" = "Interest in CoAssets StockCNN";
 "MESSAGE_COMPLETE_PORTPOLIO" = "Completed Withdrawal\nYour withdrawal request that have been successfully processed.";
+"TITLE_MESSAGE_STOCK" = "Thank You For Your Interest!CNN";
+"MESSAGE_TEXTFIELD_NULL" = "Please key in correct amount.CNN";
+"MESSAGE_TEXTFIELD_VALI" = "Amount is invalid.CNN";
+"MESSAGE_TEXTFIELD_MAX_AMOUNT" = "Maximum amount isCNN ";

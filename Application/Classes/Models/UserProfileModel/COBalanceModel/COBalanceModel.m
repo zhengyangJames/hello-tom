@@ -18,5 +18,16 @@
     };
 }
 
+- (NSString *)currencyName {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Currency" ofType:@"plist"];
+    NSArray *array = [NSArray arrayWithContentsOfFile:filePath];
+    for (NSDictionary *dict in array ) {
+        NSString *curencySymbol = dict[@"currencySymbol"];
+        if ([curencySymbol isEqualToString:self.currency]) {
+            return dict[@"currencyName"];
+        }
+    }
+    return @"";
+}
 
 @end

@@ -61,5 +61,6 @@
 + (NSString *)setBadgeValueNotification:(id )responseObject;
 + (NSString*)formartFoatValueWithDeal:(NSNumber*)value MinimumFractionDigits:(NSInteger)min;
 + (NSString *)formatDateStock:(NSString *)dateString;
++ (BOOL)isStringDecimalNumber:(NSString *)stringValue;
 
 @end

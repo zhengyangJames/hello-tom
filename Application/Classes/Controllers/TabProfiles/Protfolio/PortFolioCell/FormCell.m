@@ -10,15 +10,15 @@
 #import "CODropListView.h"
 #import "CoDropListButtom.h"
 #import "COLoginManager.h"
-
+#import "COBalanceModel.h"
 
 @interface FormCell() {
     __weak IBOutlet CoDropListButtom *_btnDrop;
+    __weak IBOutlet UITextField *_tfAmount;
+    
 }
-
-@property (nonatomic, strong) NSNumber *index;
-@property (nonatomic, strong) NSDictionary *arrCurrency;
-@property (nonatomic, strong) NSDictionary *currencyModel;
+@property (nonatomic, assign) NSInteger index;
+@property (nonatomic, strong) NSMutableArray *arrCurrencyName;
 
 @end
 
@@ -28,41 +28,35 @@
     [super awakeFromNib];
     _btnDrop.layer.cornerRadius = 4;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-//    NSDictionary *dic = self.arrCurrency[[self.index integerValue]];
-//    NSString *value = [dic objectForKey:@"currencySymbol"];
-//    [_btnDrop setTitle:value forState:UIControlStateNormal];
-    
 }
 
 #pragma mark - setter, getter
-- (NSDictionary *)arrCurrency {
-    if (_arrCurrency) {
-        return _arrCurrency;
-    }
-    NSMutableArray *keys = [[NSMutableArray alloc] init];
-    NSMutableArray *values = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < self.currencyModel.allKeys.count; i++) {
-        NSString *key = self.currencyModel.allKeys[i];
-        NSString *value = [self.currencyModel objectForKey:key];
-        [keys addObject:key];
-        [values addObject:value];
-    }
-    
-    return _arrCurrency = @{@"keys":keys, @"values":values};
+
+- (void)setArrayAvailableBalance:(NSArray *)arrayAvailableBalance {
+    _arrayAvailableBalance = arrayAvailableBalance;
+    self.arrCurrencyName = nil;
+    COBalanceModel *balanceModel = [arrayAvailableBalance objectAtIndex:self.index];
+    [_btnDrop setTitle:[balanceModel currency] forState:UIControlStateNormal];
 }
 
-- (NSNumber *)index {
-    if ([kUserDefaults objectForKey:UPDATE_CURRENCY]) {
-        return  _index = [kUserDefaults objectForKey:UPDATE_CURRENCY];
+- (NSMutableArray *)arrCurrencyName {
+    if (_arrCurrencyName) {
+        return _arrCurrencyName;
+    }
+    _arrCurrencyName = [[NSMutableArray alloc] init];
+    for (COBalanceModel *balanceModel in self.arrayAvailableBalance) {
+        NSString *currencyName = [balanceModel currencyName];
+        [_arrCurrencyName addObject:currencyName];
+    }
+    return _arrCurrencyName;
+}
+
+- (NSInteger )index {
+    NSNumber *indexNumber = [kUserDefaults objectForKey:UPDATE_CURRENCY];
+    if (indexNumber) {
+        return [indexNumber integerValue];
     }
     return 0;
-}
-
-- (NSDictionary *)currencyModel {
-    if (_currencyModel) {
-        return _currencyModel;
-    }
-    return  _currencyModel = [[COLoginManager shared] currencyPortpolio];
 }
 
 
@@ -70,14 +64,47 @@
 
 - (IBAction)__actionInvestor:(id)sender {
     [self endEditing:NO];
-    
-    DBG(@"%@",[self.currencyModel allKeys]);
-
-    [CODropListView presentWithTitle:@"Currency" data:self.arrCurrency[@"values"] selectedIndex:[self.index integerValue] didSelect:^(NSInteger index) {
+    [CODropListView presentWithTitle:@"Currency" data:self.arrCurrencyName selectedIndex:self.index didSelect:^(NSInteger index) {
         [kUserDefaults setObject:[NSNumber numberWithInteger:index] forKey:UPDATE_CURRENCY];
         [kUserDefaults synchronize];
-        [_btnDrop setTitle:self.arrCurrency[@"keys"] [index] forState:UIControlStateNormal];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            COBalanceModel *balanceModel = [self.arrayAvailableBalance objectAtIndex:self.index];
+            [_btnDrop setTitle:[balanceModel currency] forState:UIControlStateNormal];
+        }];
     }];
+}
+
+- (IBAction)__actionWithDraw:(id)sender {
+     COBalanceModel *balanceModel = [self.arrayAvailableBalance objectAtIndex:self.index];
+    NSNumber *number = balanceModel.balance_amt;
+    if (_tfAmount.text.isEmpty == false) {
+        BOOL doubleValid = [UIHelper isStringDecimalNumber:_tfAmount.text];
+        if ( doubleValid) {
+            if ([_tfAmount.text doubleValue] < [number doubleValue]) {
+                DBG(@"OK");
+            } else {
+                NSString *message = [NSString stringWithFormat:@"%@ %@",m_string(@"MESSAGE_TEXTFIELD_MAX_AMOUNT"), [number stringValue]];
+                [self _showAlertView:message];
+            }
+        } else {
+            [self _showAlertView:m_string(@"MESSAGE_TEXTFIELD_VALI")];
+        }
+        
+    } else {
+        [self _showAlertView:m_string(@"MESSAGE_TEXTFIELD_NULL")];
+    }
+    
+}
+
+#pragma mark - Private
+- (void)_showAlertView:(NSString *)message {
+    [UIHelper showAlertViewWithTitle:m_string(m_string(@"APP_NAME")) message:message cancelButton:@"OK" delegate:self tag:1 arrayTitleButton: nil];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == alertView.cancelButtonIndex) {
+        //        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 @end

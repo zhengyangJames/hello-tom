@@ -196,6 +196,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView formCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FormCell *cell = [tableView dequeueReusableCellWithIdentifier:[FormCell identifier] forIndexPath:indexPath];
+    if (self.arrayBalances.count > 0) {
+        cell.arrayAvailableBalance = self.arrayBalances;
+    }
     return cell;
 }
 

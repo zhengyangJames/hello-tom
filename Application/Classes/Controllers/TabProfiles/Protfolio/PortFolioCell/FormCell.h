@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FormCell : UITableViewCell
-//@property(nonatomic, strong)
+@property(nonatomic, strong) NSArray *arrayAvailableBalance;
 
 @end
