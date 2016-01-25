@@ -96,12 +96,12 @@
 
 #pragma mark - UITableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([self.dicData allKeys].count ==0 && self.arrayBalances.count == 0) {
-        return 3;
+    if ([self.dicData allKeys].count == 0 && self.arrayBalances.count == 0) {
+        return 2;
     } else if ([self.dicData allKeys].count ==0 && self.arrayBalances.count != 0) {
         return 4;
     }  else if ([self.dicData allKeys].count !=0 && self.arrayBalances.count == 0) {
-        return 4;
+        return 3;
     }
     return 5;
 }
@@ -139,9 +139,6 @@
 }
 
 - (UITableViewCell *)loadPortFolioCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 2) {
-        return [self tableView:tableView formCellForRowAtIndexPath:indexPath];
-    }
     return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
 }
 
@@ -157,9 +154,7 @@
 - (UITableViewCell *)loadCompleteAndPortPolioCell:(UITableView *)tableView indexpath:(NSIndexPath *)indexPath {
     if (indexPath.row == 2) {
         return [self tableView:tableView completedCellForRowAtIndexPath:indexPath];
-    } else if (indexPath.row ==3 ) {
-        return [self tableView:tableView formCellForRowAtIndexPath:indexPath];
-    }
+    } 
     return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
 }
 
