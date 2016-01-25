@@ -18,7 +18,7 @@
 }
 
 @property (nonatomic, strong) NSNumber *index;
-@property (nonatomic, strong) NSArray *arrCurrency;
+@property (nonatomic, strong) NSDictionary *arrCurrency;
 @property (nonatomic, strong) NSDictionary *currencyModel;
 
 @end
@@ -36,12 +36,20 @@
 }
 
 #pragma mark - setter, getter
-- (NSArray *)arrCurrency {
+- (NSDictionary *)arrCurrency {
     if (_arrCurrency) {
         return _arrCurrency;
     }
-
-    return _arrCurrency = [self.currencyModel allKeys];
+    NSMutableArray *keys = [[NSMutableArray alloc] init];
+    NSMutableArray *values = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < self.currencyModel.allKeys.count; i++) {
+        NSString *key = self.currencyModel.allKeys[i];
+        NSString *value = [self.currencyModel objectForKey:key];
+        [keys addObject:key];
+        [values addObject:value];
+    }
+    
+    return _arrCurrency = @{@"keys":keys, @"values":values};
 }
 
 - (NSNumber *)index {
@@ -64,13 +72,13 @@
 - (IBAction)__actionInvestor:(id)sender {
     [self endEditing:NO];
     
-    DBG(@"%@",self.currencyModel);
+    DBG(@"%@",[self.currencyModel allKeys]);
 
-    [CODropListView presentWithTitle:@"Currency" data:self.arrCurrency selectedIndex:[self.index integerValue] didSelect:^(NSInteger index) {
+    [CODropListView presentWithTitle:@"Currency" data:self.arrCurrency[@"values"] selectedIndex:[self.index integerValue] didSelect:^(NSInteger index) {
         [kUserDefaults setObject:[NSNumber numberWithInteger:index] forKey:UPDATE_CURRENCY];
         [kUserDefaults synchronize];
-        
-        NSString *value = [self.currencyModel objectForKey:self.arrCurrency[index]];
+        NSString *key = self.arrCurrency[@"values"] [index];
+        NSString *value = [self.currencyModel valueForKey:key];
         [_btnDrop setTitle:value forState:UIControlStateNormal];
     }];
 }
