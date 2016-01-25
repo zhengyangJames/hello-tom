@@ -80,7 +80,7 @@
     if (_tfAmount.text.isEmpty == false) {
         BOOL doubleValid = [UIHelper isStringDecimalNumber:_tfAmount.text];
         if ( doubleValid) {
-            if ([_tfAmount.text doubleValue] < [number doubleValue]) {
+            if ([_tfAmount.text doubleValue] <= [number doubleValue]) {
                 DBG(@"OK");
             } else {
                 NSString *message = [NSString stringWithFormat:@"%@ %@",m_string(@"MESSAGE_TEXTFIELD_MAX_AMOUNT"), [number stringValue]];
