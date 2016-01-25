@@ -7,7 +7,7 @@
 //
 
 
-#import "ProtfolioController.h"
+#import "PortFolioController.h"
 #import "LoadFileManager.h"
 #import "PortFolioCell.h"
 #import "COLoginManager.h"
@@ -17,26 +17,28 @@
 #import "COLoginManager.h"
 #import "WSURLSessionManager+Portfolio.h"
 #import "COUserProfileModel.h"
-#import "COMultiPortpolioModel.h"
+#import "COMultiPortFolioModel.h"
 
 #define NumberOfCellForWithAndHeight    175
 #define Top_Bottom_Tabar_Nav_Aligin     131
 #define Left_Reight_Aligin              18
 #define Height_ForRow_PortFolioCell        50
 
-@interface ProtfolioController ()<UITableViewDataSource, UITableViewDelegate>
+@interface PortFolioController ()<UITableViewDataSource, UITableViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
 }
-
 @property (strong,nonatomic) NSArray *arrayList;
 @property (strong,nonatomic) NSArray *arrayBalances;
 @property (strong,nonatomic) NSDictionary *dicData;
 @property (nonatomic, strong) COUserProfileModel *userModel;
 
+@property (readonly,nonatomic) COPortfolioProfile protfolioStyle;
+@property (strong, nonatomic) COMultiPortFolioModel *multiPortpolio;
+
 @end
 
-@implementation ProtfolioController
+@implementation PortFolioController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,10 +46,9 @@
 }
 
 #pragma mark - Private
-
 - (void)_setUpUI {
     self.navigationItem.title = m_string(@"PORTFOLIO");
-    [self callGetCompleteDrawals];
+    [self _callAPIGetCompleteDrawals];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerNib:[UINib nibWithNibName:[PortFolioCell identifier] bundle:nil] forCellReuseIdentifier:[PortFolioCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[CompletedCell identifier] bundle:nil] forCellReuseIdentifier:[CompletedCell identifier]];
@@ -72,7 +73,7 @@
     return _userModel = [[COLoginManager shared] userModel];
 }
 
-- (COMultiPortpolioModel *)multiPortpolio {
+- (COMultiPortFolioModel *)multiPortpolio {
     if (_multiPortpolio) {
         return _multiPortpolio;
     }
@@ -84,7 +85,6 @@
         return _dicData;
     }
     return _dicData = [kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE];
-//    return @{};
 }
 
 - (NSArray *)arrayBalances {
@@ -169,11 +169,11 @@
     PortFolioCell *cell = [tableView dequeueReusableCellWithIdentifier:[PortFolioCell identifier] forIndexPath:indexPath];
     cell.multiPortlio = self.multiPortpolio;
     if (indexPath.row == 0) {
-        cell.OngoingProjects = [self.multiPortpolio ongoingProject];
-        cell.OngoingInvestment = [self.multiPortpolio ongoingInvestment];
+        cell.ongoingProjects = [self.multiPortpolio ongoingProject];
+        cell.ongoingInvestment = [self.multiPortpolio ongoingInvestment];
     } else {
-        cell.CompletedInvestment = [self.multiPortpolio completeInvestment];
-        cell.CompletedProjects = [self.multiPortpolio completeProject];
+        cell.completedInvestment = [self.multiPortpolio completeInvestment];
+        cell.completedProjects = [self.multiPortpolio completeProject];
     }
     return cell;
 }
@@ -202,35 +202,32 @@
     return cell;
 }
 
-#pragma mark - webservice
-- (void)callGetCompleteDrawals {
+#pragma mark - CallAPI
+- (void)_callAPIGetCompleteDrawals {
     if (self.dicData != nil) {
         [UIHelper showLoadingIndicator];
     } else {
         [UIHelper showLoadingInView:self.view];
     }
-    
     NSString *username = [self.userModel userName];
     [[WSURLSessionManager shared] wsGetCompleteDrawalsRequestHandler:username handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
             [UIHelper hideLoadingIndicator];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.dicData = responseObject;
-                [self callGetBalances];
-                [UIHelper hideLoadingIndicator];
-                [UIHelper hideLoadingFromView:self.view];
+                [self _callAPIGetBalances];
             }];
         } else {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [_tableView reloadData];
             }];
             [ErrorManager showError:error];
-            [UIHelper hideLoadingIndicator];
-            [UIHelper hideLoadingFromView:self.view];
         }
+        [UIHelper hideLoadingIndicator];
+        [UIHelper hideLoadingFromView:self.view];
     }];
 }
-- (void)callGetBalances {
+- (void)_callAPIGetBalances {
     if (self.arrayBalances != nil) {
         [UIHelper showLoadingIndicator];
     } else {

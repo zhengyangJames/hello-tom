@@ -10,7 +10,7 @@
 #import "COUserPortFolioModel.h"
 #import "COUserPortfolioOnGoingInvestmentModel.h"
 #import "COUserPortfolioCompleteInvestmentModel.h"
-#import "COMultiPortpolioModel.h"
+#import "COMultiPortFolioModel.h"
 
 
 @implementation COAccountInvestmentModel
@@ -32,7 +32,7 @@
 }
 
 + (NSValueTransformer *)userMultiPortfolioJSONTransformer {
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:COMultiPortpolioModel.class];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:COMultiPortFolioModel.class];
 }
 
 - (NSString*)accOngoingTitle {

@@ -10,7 +10,7 @@
 #import "AccountController.h"
 #import "DealsController.h"
 #import "NProfileController.h"
-#import "ProtfolioController.h"
+#import "PortFolioController.h"
 #import "LoadFileManager.h"
 #import "COLoginManager.h"
 #import "StockViewController.h"
@@ -61,8 +61,8 @@
 }
 
 - (void)_pushViewPortFolio {
-    ProtfolioController *vc = [[ProtfolioController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    PortFolioController *portFolioVC = [[PortFolioController alloc]init];
+    [self.navigationController pushViewController:portFolioVC animated:YES];
 }
 
 - (void)_pushViewControllerWithIndexPath:(NSInteger)index{

@@ -19,6 +19,7 @@
 @implementation CompletedCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     _lblTextfooter.text = m_string(@"MESSAGE_COMPLETE_PORTPOLIO");
 }

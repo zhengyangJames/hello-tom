@@ -18,13 +18,14 @@
 @implementation AvailableBalanceCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 #pragma mark - Set Get
 - (void) setArrayAvailableBalances:(NSArray *)arrayAvailableBalances {
     _arrayAvailableBalances = arrayAvailableBalances;
-     NSString *_strText;
+    NSString *_strText;
     
     for (COBalanceModel *balanceModel in arrayAvailableBalances) {
         NSString *strCurrency = balanceModel.currency;

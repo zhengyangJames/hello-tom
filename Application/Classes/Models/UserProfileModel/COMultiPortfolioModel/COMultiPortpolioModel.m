@@ -6,9 +6,9 @@
 //  Copyright © 2016 Sanyi. All rights reserved.
 //
 
-#import "COMultiPortpolioModel.h"
+#import "COMultiPortFolioModel.h"
 
-@implementation COMultiPortpolioModel
+@implementation COMultiPortFolioModel
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @ {
         @"ongoingInvestment"       : @"ongoing_investment",

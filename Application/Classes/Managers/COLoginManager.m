@@ -15,7 +15,7 @@
 #import "COAccountInvestmentModel.h"
 #import "COUserPortFolioModel.h"
 #import "COProfileStockModel.h"
-#import "COMultiPortpolioModel.h"
+#import "COMultiPortFolioModel.h"
 
 
 @implementation COLoginManager
@@ -224,7 +224,7 @@
 }
 
 
-- (COMultiPortpolioModel *)multiPortpolio {
+- (COMultiPortFolioModel *)multiPortpolio {
     if (_multiPortpolio) {
         return _multiPortpolio;
     }
@@ -233,7 +233,7 @@
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_ACCOUNT_PROFILE_JSON] options:0 error:&error];
         if (dic) {
             NSDictionary *diction = [dic objectForKey:@"multiple_currency_portfolio"];
-            COMultiPortpolioModel *userProModel = [MTLJSONAdapter modelOfClass:[COMultiPortpolioModel class] fromJSONDictionary:diction error:&error];
+            COMultiPortFolioModel *userProModel = [MTLJSONAdapter modelOfClass:[COMultiPortFolioModel class] fromJSONDictionary:diction error:&error];
             return _multiPortpolio = userProModel;
         }
     }

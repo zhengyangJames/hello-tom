@@ -14,7 +14,7 @@
 @class COUserInverstorModel;
 @class COAccountInvestmentModel;
 @class COProfileStockModel;
-@class COMultiPortpolioModel;
+@class COMultiPortFolioModel;
 @class COCurrencyModel;
 
 typedef void(^ActionLoginManager)(id object, NSError *error);
@@ -29,7 +29,7 @@ typedef void(^ProfileGetInvestor)(id object, NSError *errorInvestor);
 @property (nonatomic, strong) COUserCompanyModel *companyModel;
 @property (nonatomic, strong) COUserInverstorModel *investorModel;
 @property (nonatomic, strong) COAccountInvestmentModel *accountModel;
-@property (nonatomic, strong) COMultiPortpolioModel *multiPortpolio;
+@property (nonatomic, strong) COMultiPortFolioModel *multiPortpolio;
 @property (nonatomic, strong) COProfileStockModel *stockModel;
 @property (nonatomic, strong) NSDictionary *currencyPortpolio;
 

@@ -23,36 +23,37 @@
 @implementation PortFolioCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 #pragma mark - Set Get
-- (void)setOngoingInvestment:(NSDictionary *)OngoingInvestment {
-    _OngoingInvestment = OngoingInvestment;
+- (void)setOngoingInvestment:(NSDictionary *)ongoingInvestment {
+    _ongoingInvestment = ongoingInvestment;
     [_imgThumbnail2 setImage:[UIImage imageNamed:[self.multiPortlio COOngoingInvestmentImage]]];
     _lbNameDetail2.text = [self.multiPortlio COOngoingInvestmentTitle];
-     _lbNumOfValue2.text = [self getStringFromDictionary:OngoingInvestment];
+     _lbNumOfValue2.text = [self getStringFromDictionary:ongoingInvestment];
 }
 
-- (void)setOngoingProjects:(NSNumber *)OngoingProjects {
-    _OngoingProjects = OngoingProjects;
+- (void)setOngoingProjects:(NSNumber *)ongoingProjects {
+    _ongoingProjects = ongoingProjects;
     [_imgThumbnail1 setImage:[UIImage imageNamed:[self.multiPortlio OngoingProjectsImage]]];
     _lbNameDetail1.text = [self.multiPortlio OngoingProjectsTitle];
-    _lbNumOfValue1.text = [OngoingProjects stringValue];
+    _lbNumOfValue1.text = [ongoingProjects stringValue];
 }
 
-- (void)setCompletedInvestment:(NSDictionary *)CompletedInvestment {
-    _CompletedInvestment = CompletedInvestment;
+- (void)setCompletedInvestment:(NSDictionary *)completedInvestment {
+    _completedInvestment = completedInvestment;
     [_imgThumbnail2 setImage:[UIImage imageNamed:[self.multiPortlio COCompletedInvestmentImage]]];
     _lbNameDetail2.text = [self.multiPortlio COCompletedInvestmentTitle];
-    _lbNumOfValue2.text = [self getStringFromDictionary:CompletedInvestment];
+    _lbNumOfValue2.text = [self getStringFromDictionary:completedInvestment];
 }
 
-- (void)setCompletedProjects:(NSNumber *)CompletedProjects {
-    _CompletedProjects = CompletedProjects;
+- (void)setCompletedProjects:(NSNumber *)completedProjects {
+    _completedProjects = completedProjects;
     [_imgThumbnail1 setImage:[UIImage imageNamed:[self.multiPortlio COCompletedProjectsImage]]];
     _lbNameDetail1.text = [self.multiPortlio COCompletedProjectsTitle];
-    _lbNumOfValue1.text = [CompletedProjects stringValue];
+    _lbNumOfValue1.text = [completedProjects stringValue];
 }
 
 - (NSString *)getStringFromDictionary:(NSDictionary *)dic {

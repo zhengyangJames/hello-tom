@@ -101,10 +101,5 @@
     [UIHelper showAlertViewWithTitle:m_string(m_string(@"APP_NAME")) message:message cancelButton:@"OK" delegate:self tag:1 arrayTitleButton: nil];
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == alertView.cancelButtonIndex) {
-        //        [self.navigationController popViewControllerAnimated:true];
-    }
-}
 
 @end
