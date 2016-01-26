@@ -23,7 +23,6 @@
     NSString *_selectedOfferID;
     NSInteger count1 ;
 }
-
 @property (strong, nonatomic) NSArray *arrayData;
 
 @end
