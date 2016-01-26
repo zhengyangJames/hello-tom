@@ -137,13 +137,7 @@
     
     PortfolioCell *cell = [tableView dequeueReusableCellWithIdentifier:[PortfolioCell identifier] forIndexPath:indexPath];
     cell.multiPortlio = self.multiPortpolio;
-    if (indexPath.row == 0) {
-        cell.ongoingProjects = [self.multiPortpolio ongoingProject];
-        cell.ongoingInvestment = [self.multiPortpolio ongoingInvestment];
-    } else {
-        cell.completedInvestment = [self.multiPortpolio completeInvestment];
-        cell.completedProjects = [self.multiPortpolio completeProject];
-    }
+    cell.indexPath = indexPath;
     return cell;
 }
 
