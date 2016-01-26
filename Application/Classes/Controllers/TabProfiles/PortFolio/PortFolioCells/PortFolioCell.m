@@ -32,7 +32,7 @@
     _ongoingInvestment = ongoingInvestment;
     [_imgThumbnail2 setImage:[UIImage imageNamed:[self.multiPortlio COOngoingInvestmentImage]]];
     _lbNameDetail2.text = [self.multiPortlio COOngoingInvestmentTitle];
-     _lbNumOfValue2.text = [self getStringFromDictionary:ongoingInvestment];
+    _lbNumOfValue2.text = [self getStringFromDictionary:ongoingInvestment];
 }
 
 - (void)setOngoingProjects:(NSNumber *)ongoingProjects {

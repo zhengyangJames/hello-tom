@@ -7,12 +7,12 @@
 //
 
 #import "CompletedCell.h"
+#import "COCompleteModel.h"
 
 @interface CompletedCell()
 {
     __weak IBOutlet UILabel *_lblcurrency;
     __weak IBOutlet UILabel *_lblTextfooter;
-    
 }
 
 @end
@@ -25,12 +25,13 @@
 }
 
 #pragma mark - Set Get
-- (void)setDic:(NSDictionary *)dic {
-    _dic = dic;
+- (void)setArrayComplete:(NSArray *)arrayComplete {
+    _arrayComplete = arrayComplete;
     NSString *_strText;
-    for (NSString *key in [dic allKeys]) {
-        NSString *str = [UIHelper formartFoatValueWithPortfolio:[dic objectForKey:key]];
-        NSString *content = [key stringByAppendingFormat:@"%@%@",@"-",str];
+    for (COCompleteModel *model in arrayComplete) {
+        NSString *key = model.keyComplete;
+        NSString *value = [UIHelper formartFoatValueWithPortfolio: model.valueComplete];
+        NSString *content = [key stringByAppendingFormat:@"%@%@",@"-",value];
         if (_strText != nil) {
             _strText = [_strText stringByAppendingFormat:@"\n%@",content];
         } else {

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CompletedCell : UITableViewCell
-@property (nonatomic, strong) NSDictionary *dic;
+@property (nonatomic, strong) NSArray *arrayComplete;
 @end

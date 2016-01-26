@@ -11,7 +11,4 @@
 #import "COMultiPortFolioModel.h"
 
 @interface PortFolioController : BaseViewController
-
-
-
 @end

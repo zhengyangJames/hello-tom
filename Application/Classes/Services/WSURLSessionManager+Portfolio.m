@@ -9,21 +9,26 @@
 #import "WSURLSessionManager+Portfolio.h"
 #import "WSPortfolioRequest.h"
 #import "COBalanceModel.h"
+#import "COCompleteModel.h"
 
 @implementation WSURLSessionManager (Portfolio)
 - (void)wsGetCompleteDrawalsRequestHandler:(NSString *)username handle:(WSURLSessionHandler)handler {
     WSPortfolioRequest *request = [[WSPortfolioRequest alloc]init];
     request = [request getCompleteWitdDrawals:username];
     [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        [kUserDefaults removeObjectForKey:UPDATE_PORTPOLIO_COMPLTETE];
-        [kUserDefaults synchronize];
         if (!error && responseObject) {
-            if ([kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE] != responseObject) {
-                [kUserDefaults setObject:responseObject forKey:UPDATE_PORTPOLIO_COMPLTETE];
-                [kUserDefaults synchronize];
+            NSDictionary *dicResponseObject = (NSDictionary *)responseObject;
+            NSDictionary *dicComplete = [[NSDictionary alloc] init];
+            NSMutableArray *arrComplete = [[NSMutableArray alloc] init];
+
+            for (NSString *key in [dicResponseObject allKeys]) {
+                NSString *value = [dicResponseObject objectForKey:key];
+                 dicComplete = @{@"key": key, @"value": value};
+                COCompleteModel *model = [MTLJSONAdapter modelOfClass:[COCompleteModel class] fromJSONDictionary:dicComplete error:&error];
+                [arrComplete addObject:model];
             }
             if (handler) {
-                handler(responseObject,response,nil);
+                handler(arrComplete,response,nil);
             }
         } else {
             if (handler) {

@@ -26,7 +26,7 @@
     __weak IBOutlet UITableView *_tableView;
 }
 @property (strong,nonatomic) NSArray *arrayBalances;
-@property (strong,nonatomic) NSDictionary *dicCompleted;
+@property (strong,nonatomic) NSArray *arrayCompleted;
 @property (nonatomic, strong) COUserProfileModel *userModel;
 
 @property (strong, nonatomic) COMultiPortFolioModel *multiPortpolio;
@@ -61,7 +61,7 @@
     }
     _arrType = [[NSMutableArray alloc] initWithArray:@[[NSNumber numberWithInteger:COPortpolioCellPortFolio], [NSNumber numberWithInteger:COPortpolioCellPortFolio]]];
     
-    if (self.dicCompleted && self.dicCompleted.allKeys.count > 0) {
+    if (self.arrayCompleted && self.arrayCompleted.count > 0) {
         [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellComplete]];
     }
     
@@ -86,11 +86,11 @@
     return _multiPortpolio = [[COLoginManager shared] multiPortpolio];
 }
 
-- (NSDictionary *)dicCompleted {
-    if (_dicCompleted) {
-        return _dicCompleted;
+- (NSArray *)arrayCompleted {
+    if (_arrayCompleted) {
+        return _arrayCompleted;
     }
-    return _dicCompleted = [kUserDefaults objectForKey:UPDATE_PORTPOLIO_COMPLTETE];
+    return _arrayCompleted = [[NSArray alloc] init];
 }
 
 - (NSArray *)arrayBalances {
@@ -149,7 +149,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView completedCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CompletedCell *cellComplete = [tableView dequeueReusableCellWithIdentifier:[CompletedCell identifier] forIndexPath:indexPath];
-        cellComplete.dic = self.dicCompleted;
+    cellComplete.arrayComplete = self.arrayCompleted;
     return cellComplete;
 }
 
@@ -171,7 +171,7 @@
 
 #pragma mark - CallAPI
 - (void)_callAPIGetCompleteDrawals {
-    if (self.dicCompleted != nil) {
+    if (self.arrayCompleted.count > 0 ) {
         [UIHelper showLoadingIndicator];
     } else {
         [UIHelper showLoadingInView:self.view];
@@ -179,23 +179,20 @@
     NSString *username = [self.userModel userName];
     [[WSURLSessionManager shared] wsGetCompleteDrawalsRequestHandler:username handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
-            [UIHelper hideLoadingIndicator];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.dicCompleted = responseObject;
-                [self _callAPIGetBalances];
+                self.arrayCompleted = responseObject;
+                [self _callAPIGetAvailableBalances];
             }];
         } else {
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [self _reloadData];
-            }];
             [ErrorManager showError:error];
         }
         [UIHelper hideLoadingIndicator];
         [UIHelper hideLoadingFromView:self.view];
     }];
 }
-- (void)_callAPIGetBalances {
-    if (self.arrayBalances != nil) {
+
+- (void)_callAPIGetAvailableBalances {
+    if (self.arrayBalances.count > 0) {
         [UIHelper showLoadingIndicator];
     } else {
         [UIHelper showLoadingInView:self.view];
@@ -206,7 +203,6 @@
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.arrayBalances = responseObject;
                 [self _reloadData];
-                
             }];
         } else {
             [ErrorManager showError:error];

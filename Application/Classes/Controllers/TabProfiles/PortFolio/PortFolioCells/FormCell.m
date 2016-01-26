@@ -31,7 +31,6 @@
 }
 
 #pragma mark - setter, getter
-
 - (void)setArrayAvailableBalance:(NSArray *)arrayAvailableBalance {
     _arrayAvailableBalance = arrayAvailableBalance;
     self.arrCurrencyName = nil;
@@ -59,9 +58,12 @@
     return 0;
 }
 
+#pragma mark - Private
+- (void)_showAlertView:(NSString *)message {
+    [UIHelper showAlertViewWithTitle:m_string(m_string(@"APP_NAME")) message:message cancelButton:@"OK" delegate:self tag:1 arrayTitleButton: nil];
+}
 
 #pragma mark - Action
-
 - (IBAction)__actionInvestor:(id)sender {
     [self endEditing:NO];
     [CODropListView presentWithTitle:@"Currency" data:self.arrCurrencyName selectedIndex:self.index didSelect:^(NSInteger index) {
@@ -75,13 +77,14 @@
 }
 
 - (IBAction)__actionWithDraw:(id)sender {
-     COBalanceModel *balanceModel = [self.arrayAvailableBalance objectAtIndex:self.index];
+    COBalanceModel *balanceModel = [self.arrayAvailableBalance objectAtIndex:self.index];
     NSNumber *number = balanceModel.balance_amt;
+    
     if (_tfAmount.text.isEmpty == false) {
         BOOL doubleValid = [UIHelper isStringDecimalNumber:_tfAmount.text];
         if ( doubleValid) {
             if ([_tfAmount.text doubleValue] <= [number doubleValue]) {
-                DBG(@"OK");
+                [self _checkconditionSuccess];
             } else {
                 NSString *message = [NSString stringWithFormat:@"%@ %@",m_string(@"MESSAGE_TEXTFIELD_MAX_AMOUNT"), [number stringValue]];
                 [self _showAlertView:message];
@@ -93,13 +96,10 @@
     } else {
         [self _showAlertView:m_string(@"MESSAGE_TEXTFIELD_NULL")];
     }
-    
 }
 
-#pragma mark - Private
-- (void)_showAlertView:(NSString *)message {
-    [UIHelper showAlertViewWithTitle:m_string(m_string(@"APP_NAME")) message:message cancelButton:@"OK" delegate:self tag:1 arrayTitleButton: nil];
+- (void)_checkconditionSuccess {
+    DBG(@"OK");
 }
-
 
 @end

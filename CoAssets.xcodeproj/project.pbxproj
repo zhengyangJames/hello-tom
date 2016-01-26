@@ -407,6 +407,8 @@
 		0E8BDACC1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BDACA1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m */; };
 		0E8BDACF1C4DD44F00049CFC /* WSPortfolioRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BDACE1C4DD44F00049CFC /* WSPortfolioRequest.m */; };
 		0E8BDAD01C4DD44F00049CFC /* WSPortfolioRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BDACE1C4DD44F00049CFC /* WSPortfolioRequest.m */; };
+		0E8D50631C570FBC00298046 /* COCompleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D50621C570FBC00298046 /* COCompleteModel.m */; };
+		0E8D50641C570FBC00298046 /* COCompleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D50621C570FBC00298046 /* COCompleteModel.m */; };
 		0E8F35601C3DFE4E00CCCE04 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F355E1C3DFE4E00CCCE04 /* EventViewController.m */; };
 		0E8F35611C3DFE4E00CCCE04 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8F355F1C3DFE4E00CCCE04 /* EventViewController.xib */; };
 		0E8F35661C3DFED200CCCE04 /* EventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F35641C3DFED200CCCE04 /* EventCollectionViewCell.m */; };
@@ -797,6 +799,8 @@
 		0E8BDACA1C4DD40600049CFC /* WSURLSessionManager+Portfolio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSURLSessionManager+Portfolio.m"; sourceTree = "<group>"; };
 		0E8BDACD1C4DD44F00049CFC /* WSPortfolioRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPortfolioRequest.h; sourceTree = "<group>"; };
 		0E8BDACE1C4DD44F00049CFC /* WSPortfolioRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPortfolioRequest.m; sourceTree = "<group>"; };
+		0E8D50611C570FBC00298046 /* COCompleteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COCompleteModel.h; sourceTree = "<group>"; };
+		0E8D50621C570FBC00298046 /* COCompleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COCompleteModel.m; sourceTree = "<group>"; };
 		0E8F355D1C3DFE4E00CCCE04 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		0E8F355E1C3DFE4E00CCCE04 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		0E8F355F1C3DFE4E00CCCE04 /* EventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
@@ -1569,6 +1573,15 @@
 				0E8956881BBE88E4007E36BF /* EditCompanyVC.xib */,
 			);
 			path = EditCompanyVC;
+			sourceTree = "<group>";
+		};
+		0E8D50601C570FA800298046 /* COCompleteModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E8D50611C570FBC00298046 /* COCompleteModel.h */,
+				0E8D50621C570FBC00298046 /* COCompleteModel.m */,
+			);
+			path = COCompleteModel;
 			sourceTree = "<group>";
 		};
 		0E8F35571C3DFDF000CCCE04 /* Events */ = {
@@ -2694,6 +2707,7 @@
 		BB368EAF1B87DF380066C646 /* UserProfileModel */ = {
 			isa = PBXGroup;
 			children = (
+				0E8D50601C570FA800298046 /* COCompleteModel */,
 				0E4AC4561C55D36700AF7E4E /* COBalanceModel */,
 				0E55D42C1C4F4B6E0058DDA8 /* COMultiPortfolioModel */,
 				BB368EB91B87F3D60066C646 /* COUserData.h */,
@@ -3401,6 +3415,7 @@
 				0E4F49E61C3E480200CFC23B /* WSGetProfileRequest.m in Sources */,
 				0E4F49E71C3E480200CFC23B /* WSLoginRequest.m in Sources */,
 				0E4F49E81C3E480200CFC23B /* NMViewController.m in Sources */,
+				0E8D50641C570FBC00298046 /* COCompleteModel.m in Sources */,
 				0E4F49E91C3E480200CFC23B /* COFilterListModel.m in Sources */,
 				0E4F49EA1C3E480200CFC23B /* COOfferDescriptionTextCell.m in Sources */,
 				0E4F49EB1C3E480200CFC23B /* CONotificationBannerView.m in Sources */,
@@ -3588,6 +3603,7 @@
 				1E5A6FBF1BCCC49F00C4C5A5 /* NProfileCountrieCell.m in Sources */,
 				7F325F7B1B40E50800116445 /* BaseNavigationController.m in Sources */,
 				0ECA88401B27CA7100B5656F /* NMTableViewCell.m in Sources */,
+				0E8D50631C570FBC00298046 /* COCompleteModel.m in Sources */,
 				01D1437C1B7D1053003DF5F9 /* COOfferModel.m in Sources */,
 				0ECA88481B27CA7100B5656F /* UIView+Identifier.m in Sources */,
 				0E02920E1C3E5B76000D9320 /* COLabelLanguage.m in Sources */,
