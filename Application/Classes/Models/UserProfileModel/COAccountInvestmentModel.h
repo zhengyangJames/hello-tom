@@ -11,8 +11,6 @@
 
 @class COUserPortFolioModel;
 @class COMultiPortfolioModel;
-@class COMultiPortpolioModel;
-@class COMultiPortpolioModel;
 
 @interface COAccountInvestmentModel : MTLModel<MTLJSONSerializing,COAccountCompleted,COAccountFunded,COAccountOnGoing,COAccountPotential,COAccountRealised,COOngoingProjects,COOngoingInvestment,COCompletedInvestment,COCompletedProjects>
 
@@ -22,6 +20,5 @@
 @property (nonatomic, strong) NSNumber                  *realisedPayouts;
 @property (nonatomic, strong) NSNumber                  *potentialPayouts;
 @property (nonatomic, strong) COUserPortFolioModel      *userPortfolio;
-@property (nonatomic, strong) COMultiPortpolioModel     *userMultiPortfolio;
 
 @end

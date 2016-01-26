@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface COMultiPortFolioModel : MTLModel<MTLJSONSerializing>
+@interface COMultiPortfolioModel : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, strong) NSDictionary  *ongoingInvestment;
 @property (nonatomic, strong) NSDictionary  *completeInvestment;

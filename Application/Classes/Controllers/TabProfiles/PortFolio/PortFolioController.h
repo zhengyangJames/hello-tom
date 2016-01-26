@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 #import "COAccountInvestmentModel.h"
-#import "COMultiPortFolioModel.h"
+#import "COMultiPortfolioModel.h"
 
 @interface PortfolioController : BaseViewController
 @end

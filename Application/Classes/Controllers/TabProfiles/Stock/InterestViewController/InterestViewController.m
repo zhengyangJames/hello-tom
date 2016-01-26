@@ -22,12 +22,14 @@
     [self _setupUI];
 }
 
--(void)_setupUI {
+- (void)_setupUI {
     self.title = m_string(@"MESSAGE_TITLE_STOCK");
     _tvContent.text = m_string(@"EMAIL_MESSAGE");
     [self.navigationItem setRightBarButtonItem:[self _doneButtonItem]];
 }
 
+
+#pragma mark - Private
 - (UIBarButtonItem *)_doneButtonItem {
     UIBarButtonItem *btnDone = [[UIBarButtonItem alloc]initWithTitle:m_string(@"Done")
                                                                style:UIBarButtonItemStyleDone
@@ -36,7 +38,6 @@
     return btnDone;
 }
 
-#pragma mark - Private
 - (void)_showAlertView:(NSString *)message {
     [UIHelper showAlertViewWithTitle:m_string(m_string(@"TITLE_MESSAGE_STOCK")) message:message cancelButton:@"OK" delegate:self tag:1 arrayTitleButton: nil];
 }
@@ -54,10 +55,10 @@
 
 #pragma mark - CallAPI
 - (void)_callAPIPostStockProfile {
-    [UIHelper showLoadingInView:[kAppDelegate window]];
+    [UIHelper showLoadingInView:self.view];
     NSString *message = [_tvContent.text trim];
     [[WSURLSessionManager shared] wsPostDeviceCompanyProfileTokenRequest: message Handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        [UIHelper hideLoadingFromView:[kAppDelegate window]];
+        [UIHelper hideLoadingFromView:self.view];
         [self _showAlertView:[responseObject objectForKey:@"message"]];
     }];
 }

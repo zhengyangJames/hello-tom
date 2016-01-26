@@ -224,17 +224,17 @@
 }
 
 
-- (COMultiPortFolioModel *)multiPortpolio {
-    if (_multiPortpolio) {
-        return _multiPortpolio;
+- (COMultiPortfolioModel *)multiPortfolio {
+    if (_multiPortfolio) {
+        return _multiPortfolio;
     }
     NSError *error;
     if ([kUserDefaults objectForKey:UPDATE_ACCOUNT_PROFILE_JSON]) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[kUserDefaults objectForKey:UPDATE_ACCOUNT_PROFILE_JSON] options:0 error:&error];
         if (dic) {
             NSDictionary *diction = [dic objectForKey:@"multiple_currency_portfolio"];
-            COMultiPortFolioModel *userProModel = [MTLJSONAdapter modelOfClass:[COMultiPortFolioModel class] fromJSONDictionary:diction error:&error];
-            return _multiPortpolio = userProModel;
+            COMultiPortfolioModel *userProModel = [MTLJSONAdapter modelOfClass:[COMultiPortfolioModel class] fromJSONDictionary:diction error:&error];
+            return _multiPortfolio = userProModel;
         }
     }
     return nil;
@@ -256,16 +256,5 @@
     return nil;
 }
 
-#pragma mark - Portpolio-Currency
-- (NSDictionary *)currencyPortpolio {
-    if (_currencyPortpolio) {
-        return _currencyPortpolio;
-    }
-//    if (dic) {
-//        COCurrencyModel *currency = [MTLJSONAdapter modelOfClass:[COCurrencyModel class] fromJSONDictionary:dic error:&error];
-//        return _currencyPortpolio = dic;
-//    }
-    return nil;
-}
 
 @end

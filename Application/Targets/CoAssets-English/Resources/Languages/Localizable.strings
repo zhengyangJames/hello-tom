@@ -181,7 +181,7 @@
 "EMAIL_MESSAGE" = "Hi, I am interested to invest in CoAssets Stock.";
 "EMAIL_NAME"    = "investors@coassets.com";
 "MESSAGE_TITLE_STOCK" = "Interest in CoAssets Stock";
-"MESSAGE_COMPLETE_PORTPOLIO" = "Completed Withdrawal\nYour withdrawal request that have been successfully processed.";
+"MESSAGE_COMPLETE_PORTFOLIO" = "Completed Withdrawal\nYour withdrawal request that have been successfully processed.";
 "TITLE_MESSAGE_STOCK" = "Thank You For Your Interest!";
 "MESSAGE_TEXTFIELD_NULL" = "Please key in correct amount.";
 "MESSAGE_TEXTFIELD_VALI" = "Amount is invalid.";

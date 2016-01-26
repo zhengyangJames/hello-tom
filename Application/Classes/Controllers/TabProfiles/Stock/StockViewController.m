@@ -46,6 +46,7 @@
     return _stockModel = [[COLoginManager shared] stockModel];
 }
 
+#pragma mark - Private
 - (void)_setupData {
     if (self.stockModel != nil) {
         [_btnCode setTitle:[self.stockModel stringOfCode] forState:UIControlStateNormal];

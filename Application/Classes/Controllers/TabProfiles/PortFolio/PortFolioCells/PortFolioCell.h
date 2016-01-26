@@ -11,7 +11,7 @@
 #import "COMultiPortFolioModel.h"
 
 @interface PortfolioCell : UITableViewCell
-@property (nonatomic, strong) COMultiPortFolioModel *multiPortlio;
+@property (nonatomic, strong) COMultiPortfolioModel *multiPortfolio;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 
 @end

@@ -28,36 +28,36 @@
 }
 
 #pragma mark - Set Get
-- (void)setMultiPortlio:(COMultiPortFolioModel *)multiPortlio {
-    _multiPortlio = multiPortlio;
+- (void)setMultiPortfolio:(COMultiPortfolioModel *)multiPortfolio  {
+    _multiPortfolio = multiPortfolio;
     if (self.indexPath) {
         if (self.indexPath.row ==0) {
-            [self _setDataWhenIndexPathIs0:multiPortlio];
+            [self _setDataWhenIndexPathIs0:multiPortfolio];
         } else {
-            [self _setDataWhenIndexPathIs1:multiPortlio];
+            [self _setDataWhenIndexPathIs1:multiPortfolio];
         }
     }
 }
 
 #pragma mark - Private
-- (void)_setDataWhenIndexPathIs0:(COMultiPortFolioModel *)multiPortlio {
-    [_imgThumbnail1 setImage:[UIImage imageNamed:[multiPortlio OngoingProjectsImage]]];
-    _lbNameDetail1.text = [multiPortlio OngoingProjectsTitle];
-    _lbNumOfValue1.text = [[multiPortlio ongoingProject] stringValue];
+- (void)_setDataWhenIndexPathIs0:(COMultiPortfolioModel *)multiPortfolio {
+    [_imgThumbnail1 setImage:[UIImage imageNamed:[multiPortfolio OngoingProjectsImage]]];
+    _lbNameDetail1.text = [multiPortfolio OngoingProjectsTitle];
+    _lbNumOfValue1.text = [[multiPortfolio ongoingProject] stringValue];
     
-    [_imgThumbnail2 setImage:[UIImage imageNamed:[multiPortlio COOngoingInvestmentImage]]];
-    _lbNameDetail2.text = [multiPortlio COOngoingInvestmentTitle];
-    _lbNumOfValue2.text = [self _getStringFromDictionary:[multiPortlio ongoingInvestment]];
+    [_imgThumbnail2 setImage:[UIImage imageNamed:[multiPortfolio COOngoingInvestmentImage]]];
+    _lbNameDetail2.text = [multiPortfolio COOngoingInvestmentTitle];
+    _lbNumOfValue2.text = [self _getStringFromDictionary:[multiPortfolio ongoingInvestment]];
 }
 
-- (void)_setDataWhenIndexPathIs1:(COMultiPortFolioModel *)multiPortlio {
-    [_imgThumbnail1 setImage:[UIImage imageNamed:[self.multiPortlio COCompletedProjectsImage]]];
-    _lbNameDetail1.text = [self.multiPortlio COCompletedProjectsTitle];
-    _lbNumOfValue1.text = [[multiPortlio completeProject] stringValue];
+- (void)_setDataWhenIndexPathIs1:(COMultiPortfolioModel *)multiPortfolio {
+    [_imgThumbnail1 setImage:[UIImage imageNamed:[self.multiPortfolio COCompletedProjectsImage]]];
+    _lbNameDetail1.text = [self.multiPortfolio COCompletedProjectsTitle];
+    _lbNumOfValue1.text = [[multiPortfolio completeProject] stringValue];
     
-    [_imgThumbnail2 setImage:[UIImage imageNamed:[self.multiPortlio COCompletedInvestmentImage]]];
-    _lbNameDetail2.text = [self.multiPortlio COCompletedInvestmentTitle];
-    _lbNumOfValue2.text = [self _getStringFromDictionary:[multiPortlio completeInvestment]];
+    [_imgThumbnail2 setImage:[UIImage imageNamed:[self.multiPortfolio COCompletedInvestmentImage]]];
+    _lbNameDetail2.text = [self.multiPortfolio COCompletedInvestmentTitle];
+    _lbNumOfValue2.text = [self _getStringFromDictionary:[multiPortfolio completeInvestment]];
 }
 
 - (NSString *)_getStringFromDictionary:(NSDictionary *)dic {

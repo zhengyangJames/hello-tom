@@ -14,7 +14,7 @@
 @class COUserInverstorModel;
 @class COAccountInvestmentModel;
 @class COProfileStockModel;
-@class COMultiPortFolioModel;
+@class COMultiPortfolioModel;
 @class COCurrencyModel;
 
 typedef void(^ActionLoginManager)(id object, NSError *error);
@@ -29,9 +29,8 @@ typedef void(^ProfileGetInvestor)(id object, NSError *errorInvestor);
 @property (nonatomic, strong) COUserCompanyModel *companyModel;
 @property (nonatomic, strong) COUserInverstorModel *investorModel;
 @property (nonatomic, strong) COAccountInvestmentModel *accountModel;
-@property (nonatomic, strong) COMultiPortFolioModel *multiPortpolio;
+@property (nonatomic, strong) COMultiPortfolioModel *multiPortfolio;
 @property (nonatomic, strong) COProfileStockModel *stockModel;
-@property (nonatomic, strong) NSDictionary *currencyPortpolio;
 
 @property (nonatomic, assign) BOOL isReloadListHome;
 @property (nonatomic, strong) NSNumber *offerId;

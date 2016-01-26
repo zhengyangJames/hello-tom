@@ -29,7 +29,7 @@
 @property (strong,nonatomic) NSArray *arrayCompleted;
 @property (nonatomic, strong) COUserProfileModel *userModel;
 
-@property (strong, nonatomic) COMultiPortFolioModel *multiPortpolio;
+@property (strong, nonatomic) COMultiPortfolioModel *multiPortfolio;
 @property (strong, nonatomic) NSMutableArray *arrType;
 
 @end
@@ -54,20 +54,25 @@
     _tableView.dataSource = self;
 }
 
+- (void)_reloadData {
+    self.arrType = nil;
+    [_tableView reloadData];
+}
+
 #pragma mark - Set Get
 - (NSMutableArray *)arrType {
     if (_arrType) {
         return _arrType;
     }
-    _arrType = [[NSMutableArray alloc] initWithArray:@[[NSNumber numberWithInteger:COPortpolioCellPortFolio], [NSNumber numberWithInteger:COPortpolioCellPortFolio]]];
+    _arrType = [[NSMutableArray alloc] initWithArray:@[[NSNumber numberWithInteger:COPortfolioCellPortfolio], [NSNumber numberWithInteger:COPortfolioCellPortfolio]]];
     
     if (self.arrayCompleted && self.arrayCompleted.count > 0) {
-        [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellComplete]];
+        [_arrType addObject:[NSNumber numberWithInteger:COPortfolioCellComplete]];
     }
     
     if (self.arrayBalances && self.arrayBalances.count > 0) {
-        [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellAvailableBalance]];
-        [_arrType addObject:[NSNumber numberWithInteger:COPortpolioCellForm]];
+        [_arrType addObject:[NSNumber numberWithInteger:COPortfolioCellAvailableBalance]];
+        [_arrType addObject:[NSNumber numberWithInteger:COPortfolioCellForm]];
     }
     return _arrType;
 }
@@ -79,11 +84,11 @@
     return _userModel = [[COLoginManager shared] userModel];
 }
 
-- (COMultiPortFolioModel *)multiPortpolio {
-    if (_multiPortpolio) {
-        return _multiPortpolio;
+- (COMultiPortfolioModel *)multiPortfolio {
+    if (_multiPortfolio) {
+        return _multiPortfolio;
     }
-    return _multiPortpolio = [[COLoginManager shared] multiPortpolio];
+    return _multiPortfolio = [[COLoginManager shared] multiPortfolio];
 }
 
 - (NSArray *)arrayCompleted {
@@ -107,18 +112,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    COPortFolioSection type = [[self.arrType objectAtIndex:indexPath.row] integerValue];
+    COPortfolioSection type = [[self.arrType objectAtIndex:indexPath.row] integerValue];
     switch (type) {
-        case COPortpolioCellPortFolio:
-            return [self tableView:tableView portFolioCellForRowAtIndexPath:indexPath];
+        case COPortfolioCellPortfolio:
+            return [self tableView:tableView portfolioCellForRowAtIndexPath:indexPath];
             break;
-        case COPortpolioCellAvailableBalance:
+        case COPortfolioCellAvailableBalance:
             return  [self tableView:tableView availableBalanceCellForRowAtIndexPath:indexPath];
             break;
-        case COPortpolioCellComplete:
+        case COPortfolioCellComplete:
             return [self tableView:tableView completedCellForRowAtIndexPath:indexPath];
             break;
-        case COPortpolioCellForm:
+        case COPortfolioCellForm:
             return [self tableView:tableView formCellForRowAtIndexPath:indexPath];
             break;
     }
@@ -133,11 +138,10 @@
 }
 
 #pragma mark - cells
-- (UITableViewCell *)tableView:(UITableView *)tableView portFolioCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView portfolioCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PortfolioCell *cell = [tableView dequeueReusableCellWithIdentifier:[PortfolioCell identifier] forIndexPath:indexPath];
-    cell.multiPortlio = self.multiPortpolio;
     cell.indexPath = indexPath;
+    cell.multiPortfolio = self.multiPortfolio;
     return cell;
 }
 
@@ -149,17 +153,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView availableBalanceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AvailableBalanceCell *cell = [tableView dequeueReusableCellWithIdentifier:[AvailableBalanceCell identifier] forIndexPath:indexPath];
-    if (self.arrayBalances.count > 0) {
-        cell.arrayAvailableBalances = self.arrayBalances;
-    }
+    cell.arrayAvailableBalances = self.arrayBalances;
     return cell;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView formCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FormCell *cell = [tableView dequeueReusableCellWithIdentifier:[FormCell identifier] forIndexPath:indexPath];
-    if (self.arrayBalances.count > 0) {
-        cell.arrayAvailableBalance = self.arrayBalances;
-    }
+    cell.arrayAvailableBalance = self.arrayBalances;
     return cell;
 }
 
@@ -194,11 +194,6 @@
         }
         [UIHelper hideLoadingFromView:self.view];
     }];
-}
-
-- (void)_reloadData {
-    self.arrType = nil;
-    [_tableView reloadData];
 }
 
 @end

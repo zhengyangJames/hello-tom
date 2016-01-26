@@ -109,8 +109,8 @@
 #define WS_METHOD_STOCK                  [WS_ENDPOINT stringByAppendingString:@"/stock-price/"]
 #define WS_METHOD_STOCK_POST                  [WS_ENDPOINT stringByAppendingString:@"/buy-share/"]
 
-#define WS_METHOD_PORTPOLIO_GET_COMPLETE_DRAWALS    [WS_ENDPOINT stringByAppendingString:@"/profile/get_completed_withdrawal//"]
-#define WS_METHOD_PORTPOLIO_GET_BALANCES    [WS_ENDPOINT stringByAppendingString:@"/profile/get_balance_all/"]
+#define WS_METHOD_PORTFOLIO_GET_COMPLETE_DRAWALS    [WS_ENDPOINT stringByAppendingString:@"/profile/get_completed_withdrawal//"]
+#define WS_METHOD_PORTFOLIO_GET_BALANCES    [WS_ENDPOINT stringByAppendingString:@"/profile/get_balance_all/"]
 
 ///////////////////////////////////////////////////////////////////
 #pragma mark - Color defines
@@ -354,11 +354,11 @@ typedef NS_ENUM(NSInteger, CODetailsProjectAction) {
     CODetailsProjectActionQuestions
 };
 
-typedef NS_ENUM(NSInteger, COPortFolioSection) {
-    COPortpolioCellPortFolio = 0,
-    COPortpolioCellComplete,
-    COPortpolioCellAvailableBalance,
-    COPortpolioCellForm
+typedef NS_ENUM(NSInteger, COPortfolioSection) {
+    COPortfolioCellPortfolio = 0,
+    COPortfolioCellComplete,
+    COPortfolioCellAvailableBalance,
+    COPortfolioCellForm
 };
 
 
