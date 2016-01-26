@@ -443,6 +443,10 @@
 		16D2A99B1C0C054F00DAFBA6 /* COTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */; };
 		16DC5B051C50781200942761 /* payout.png in Resources */ = {isa = PBXBuildFile; fileRef = 16DC5B041C50781200942761 /* payout.png */; };
 		16DC5B061C50781200942761 /* payout.png in Resources */ = {isa = PBXBuildFile; fileRef = 16DC5B041C50781200942761 /* payout.png */; };
+		16DE9B6B1C57301F00CBBEA5 /* PortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE9B691C57301F00CBBEA5 /* PortfolioCell.m */; };
+		16DE9B6C1C57301F00CBBEA5 /* PortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE9B691C57301F00CBBEA5 /* PortfolioCell.m */; };
+		16DE9B6D1C57301F00CBBEA5 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16DE9B6A1C57301F00CBBEA5 /* PortfolioCell.xib */; };
+		16DE9B6E1C57301F00CBBEA5 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16DE9B6A1C57301F00CBBEA5 /* PortfolioCell.xib */; };
 		1E4B347C1BC62846006F2200 /* COBorderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B347B1BC62846006F2200 /* COBorderTextView.m */; };
 		1E5A6FBB1BCCC49F00C4C5A5 /* NProfileAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA71BCCC49F00C4C5A5 /* NProfileAdressCell.m */; };
 		1E5A6FBC1BCCC49F00C4C5A5 /* NProfileAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A6FA81BCCC49F00C4C5A5 /* NProfileAdressCell.xib */; };
@@ -857,6 +861,9 @@
 		16D2A9981C0C054F00DAFBA6 /* COTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTextCell.m; sourceTree = "<group>"; };
 		16D2A9991C0C054F00DAFBA6 /* COTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COTextCell.xib; sourceTree = "<group>"; };
 		16DC5B041C50781200942761 /* payout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payout.png; sourceTree = "<group>"; };
+		16DE9B681C57301F00CBBEA5 /* PortfolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortfolioCell.h; path = Application/Classes/Controllers/TabProfiles/PortFolio/PortFolioCells/PortfolioCell.h; sourceTree = SOURCE_ROOT; };
+		16DE9B691C57301F00CBBEA5 /* PortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PortfolioCell.m; path = Application/Classes/Controllers/TabProfiles/PortFolio/PortFolioCells/PortfolioCell.m; sourceTree = SOURCE_ROOT; };
+		16DE9B6A1C57301F00CBBEA5 /* PortfolioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PortfolioCell.xib; path = Application/Classes/Controllers/TabProfiles/PortFolio/PortFolioCells/PortfolioCell.xib; sourceTree = SOURCE_ROOT; };
 		1E4B347A1BC62846006F2200 /* COBorderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COBorderTextView.h; sourceTree = "<group>"; };
 		1E4B347B1BC62846006F2200 /* COBorderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COBorderTextView.m; sourceTree = "<group>"; };
 		1E5A6FA61BCCC49F00C4C5A5 /* NProfileAdressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProfileAdressCell.h; sourceTree = "<group>"; };
@@ -1561,6 +1568,9 @@
 		0E8D50661C571F4C00298046 /* PortfolioCells */ = {
 			isa = PBXGroup;
 			children = (
+				16DE9B681C57301F00CBBEA5 /* PortfolioCell.h */,
+				16DE9B691C57301F00CBBEA5 /* PortfolioCell.m */,
+				16DE9B6A1C57301F00CBBEA5 /* PortfolioCell.xib */,
 				0E8D50671C571F4C00298046 /* AvailableBalanceCell.h */,
 				0E8D50681C571F4C00298046 /* AvailableBalanceCell.m */,
 				0E8D50691C571F4C00298046 /* AvailableBalanceCell.xib */,
@@ -2884,6 +2894,7 @@
 				0E4F4A6D1C3E480200CFC23B /* LoginViewController.xib in Resources */,
 				0E4F4A6E1C3E480200CFC23B /* ic_setting@3x.png in Resources */,
 				0E4F4A6F1C3E480200CFC23B /* ic_line_char@2x.png in Resources */,
+				16DE9B6E1C57301F00CBBEA5 /* PortfolioCell.xib in Resources */,
 				0E4F4A701C3E480200CFC23B /* ic_line_char@3x.png in Resources */,
 				0E4F4A711C3E480200CFC23B /* landingpg.png in Resources */,
 				0E4F4A721C3E480200CFC23B /* event.png in Resources */,
@@ -3190,6 +3201,7 @@
 				7F3260441B40E50800116445 /* ic_home@3x.png in Resources */,
 				7F32603C1B40E50800116445 /* ic_contac_2_heightlight@2x.png in Resources */,
 				0E84EE981C116AF600CDA27C /* ic_notification_selected@2x.png in Resources */,
+				16DE9B6D1C57301F00CBBEA5 /* PortfolioCell.xib in Resources */,
 				7FA7E6C11B4E7CD500059B13 /* COOfferProgressCell.xib in Resources */,
 				7F32605F1B40E50800116445 /* ic_uncheck@2x.png in Resources */,
 				0E5C7B491C508D5200D02CC3 /* ca_news.png in Resources */,
@@ -3355,6 +3367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16DE9B6C1C57301F00CBBEA5 /* PortfolioCell.m in Sources */,
 				0E4F49BF1C3E480200CFC23B /* WSRegisterRequest.m in Sources */,
 				0E4F49C01C3E480200CFC23B /* WSPostDeviceTokenRequest.m in Sources */,
 				0E4F49C11C3E480200CFC23B /* NProfileDataSource.m in Sources */,
@@ -3696,6 +3709,7 @@
 				7F325F7F1B40E50800116445 /* BaseViewController.m in Sources */,
 				1E6A5DCF1BC4BEC200D587BC /* COAccountInvestmentModel.m in Sources */,
 				1E5A6FCB1BCCE46E00C4C5A5 /* WSGetInvestorProfile.m in Sources */,
+				16DE9B6B1C57301F00CBBEA5 /* PortfolioCell.m in Sources */,
 				0E8956821BBE2497007E36BF /* NProfileController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
