@@ -401,10 +401,6 @@
 		0E8D507F1C571F4C00298046 /* FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D506E1C571F4C00298046 /* FormCell.m */; };
 		0E8D50801C571F4C00298046 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8D506F1C571F4C00298046 /* FormCell.xib */; };
 		0E8D50811C571F4C00298046 /* FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8D506F1C571F4C00298046 /* FormCell.xib */; };
-		0E8D50821C571F4C00298046 /* PortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D50711C571F4C00298046 /* PortfolioCell.m */; };
-		0E8D50831C571F4C00298046 /* PortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D50711C571F4C00298046 /* PortfolioCell.m */; };
-		0E8D50841C571F4C00298046 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8D50721C571F4C00298046 /* PortfolioCell.xib */; };
-		0E8D50851C571F4C00298046 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8D50721C571F4C00298046 /* PortfolioCell.xib */; };
 		0E8D50861C571F4C00298046 /* PortfolioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D50741C571F4C00298046 /* PortfolioController.m */; };
 		0E8D50871C571F4C00298046 /* PortfolioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D50741C571F4C00298046 /* PortfolioController.m */; };
 		0E8D50881C571F4C00298046 /* PortfolioController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8D50751C571F4C00298046 /* PortfolioController.xib */; };
@@ -795,9 +791,6 @@
 		0E8D506D1C571F4C00298046 /* FormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormCell.h; sourceTree = "<group>"; };
 		0E8D506E1C571F4C00298046 /* FormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormCell.m; sourceTree = "<group>"; };
 		0E8D506F1C571F4C00298046 /* FormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormCell.xib; sourceTree = "<group>"; };
-		0E8D50701C571F4C00298046 /* PortfolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortfolioCell.h; sourceTree = "<group>"; };
-		0E8D50711C571F4C00298046 /* PortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortfolioCell.m; sourceTree = "<group>"; };
-		0E8D50721C571F4C00298046 /* PortfolioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortfolioCell.xib; sourceTree = "<group>"; };
 		0E8D50731C571F4C00298046 /* PortfolioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortfolioController.h; sourceTree = "<group>"; };
 		0E8D50741C571F4C00298046 /* PortfolioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortfolioController.m; sourceTree = "<group>"; };
 		0E8D50751C571F4C00298046 /* PortfolioController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortfolioController.xib; sourceTree = "<group>"; };
@@ -1577,9 +1570,6 @@
 				0E8D506D1C571F4C00298046 /* FormCell.h */,
 				0E8D506E1C571F4C00298046 /* FormCell.m */,
 				0E8D506F1C571F4C00298046 /* FormCell.xib */,
-				0E8D50701C571F4C00298046 /* PortfolioCell.h */,
-				0E8D50711C571F4C00298046 /* PortfolioCell.m */,
-				0E8D50721C571F4C00298046 /* PortfolioCell.xib */,
 			);
 			path = PortfolioCells;
 			sourceTree = "<group>";
@@ -3021,7 +3011,6 @@
 				0E4F4AE81C3E480200CFC23B /* United States.png in Resources */,
 				0E4F4AE91C3E480200CFC23B /* OfferDetailsDocumentController.xib in Resources */,
 				0E4F4AEA1C3E480200CFC23B /* NProfileTextCell.xib in Resources */,
-				0E8D50851C571F4C00298046 /* PortfolioCell.xib in Resources */,
 				0E4F4AEB1C3E480200CFC23B /* NProfileButtonCell.xib in Resources */,
 				0E4F4AEC1C3E480200CFC23B /* ic_Check_red@3x.png in Resources */,
 				0E4F4AED1C3E480200CFC23B /* NProfileHeaderView.xib in Resources */,
@@ -3116,7 +3105,6 @@
 				7F3260251B40E50800116445 /* Raleway-Italic.ttf in Resources */,
 				7F8529221B43935B00CFAEB5 /* Brazil.png in Resources */,
 				7F3260521B40E50800116445 /* ic_people_heightline@2x.png in Resources */,
-				0E8D50841C571F4C00298046 /* PortfolioCell.xib in Resources */,
 				7F3260491B40E50800116445 /* ic_Left@2x.png in Resources */,
 				0E8956151BBE1AC9007E36BF /* TabProfileController.xib in Resources */,
 				0E84EE9B1C116AF600CDA27C /* ic_notification@3x.png in Resources */,
@@ -3391,7 +3379,6 @@
 				0E4F49D11C3E480200CFC23B /* BaseCollectionViewCell.m in Sources */,
 				0E4F49D21C3E480200CFC23B /* WSPostQuestionRequest.m in Sources */,
 				0E4F49D31C3E480200CFC23B /* COOfferProgressCell.m in Sources */,
-				0E8D50831C571F4C00298046 /* PortfolioCell.m in Sources */,
 				0E4F49D41C3E480200CFC23B /* COLoginManager.m in Sources */,
 				0E4F49D51C3E480200CFC23B /* DealTableViewCell.m in Sources */,
 				0E4F49D61C3E480200CFC23B /* CODocumentItemModel.m in Sources */,
@@ -3623,7 +3610,6 @@
 				7F325F851B40E50800116445 /* CODocumentItemCell.m in Sources */,
 				1ECEAE781BC75D80006FE0CA /* COUserPortfolioOnGoingInvestmentModel.m in Sources */,
 				7F325FD11B40E50800116445 /* UIHelper.m in Sources */,
-				0E8D50821C571F4C00298046 /* PortfolioCell.m in Sources */,
 				0E4A17F11C113A5400839BDC /* WSCompanyProfileRequest.m in Sources */,
 				7F325FC91B40E50800116445 /* COPositive&NagitiveButton.m in Sources */,
 				7F32601B1B40E50800116445 /* main.m in Sources */,
