@@ -16,7 +16,7 @@
     WSPortfolioRequest *request = [[WSPortfolioRequest alloc]init];
     request = [request getCompleteWitdDrawals:username];
     [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && responseObject) {
+        if (!error && responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *dicResponseObject = (NSDictionary *)responseObject;
             NSDictionary *dicComplete = [[NSDictionary alloc] init];
             NSMutableArray *arrComplete = [[NSMutableArray alloc] init];

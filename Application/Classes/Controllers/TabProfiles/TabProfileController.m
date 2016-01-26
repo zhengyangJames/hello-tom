@@ -61,8 +61,8 @@
 }
 
 - (void)_pushViewPortFolio {
-    PortFolioController *portFolioVC = [[PortFolioController alloc]init];
-    [self.navigationController pushViewController:portFolioVC animated:YES];
+    PortfolioController *portfolioVC = [[PortfolioController alloc]init];
+    [self.navigationController pushViewController:portfolioVC animated:YES];
 }
 
 - (void)_pushViewControllerWithIndexPath:(NSInteger)index{

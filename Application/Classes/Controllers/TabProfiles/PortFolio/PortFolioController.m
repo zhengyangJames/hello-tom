@@ -21,7 +21,7 @@
 
 #define Height_ForRow_PortFolioCell        50
 
-@interface PortFolioController ()<UITableViewDataSource, UITableViewDelegate>
+@interface PortfolioController ()<UITableViewDataSource, UITableViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
 }
@@ -34,7 +34,7 @@
 
 @end
 
-@implementation PortFolioController
+@implementation PortfolioController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,7 +46,7 @@
     self.navigationItem.title = m_string(@"PORTFOLIO");
     [self _callAPIGetCompleteDrawals];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_tableView registerNib:[UINib nibWithNibName:[PortFolioCell identifier] bundle:nil] forCellReuseIdentifier:[PortFolioCell identifier]];
+    [_tableView registerNib:[UINib nibWithNibName:[PortfolioCell identifier] bundle:nil] forCellReuseIdentifier:[PortfolioCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[CompletedCell identifier] bundle:nil] forCellReuseIdentifier:[CompletedCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[AvailableBalanceCell identifier] bundle:nil] forCellReuseIdentifier:[AvailableBalanceCell identifier]];
     [_tableView registerNib:[UINib nibWithNibName:[FormCell identifier] bundle:nil] forCellReuseIdentifier:[FormCell identifier]];
@@ -135,7 +135,7 @@
 #pragma mark - cells
 - (UITableViewCell *)tableView:(UITableView *)tableView portFolioCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    PortFolioCell *cell = [tableView dequeueReusableCellWithIdentifier:[PortFolioCell identifier] forIndexPath:indexPath];
+    PortfolioCell *cell = [tableView dequeueReusableCellWithIdentifier:[PortfolioCell identifier] forIndexPath:indexPath];
     cell.multiPortlio = self.multiPortpolio;
     if (indexPath.row == 0) {
         cell.ongoingProjects = [self.multiPortpolio ongoingProject];
@@ -171,11 +171,7 @@
 
 #pragma mark - CallAPI
 - (void)_callAPIGetCompleteDrawals {
-    if (self.arrayCompleted.count > 0 ) {
-        [UIHelper showLoadingIndicator];
-    } else {
-        [UIHelper showLoadingInView:self.view];
-    }
+    [UIHelper showLoadingInView:self.view];
     NSString *username = [self.userModel userName];
     [[WSURLSessionManager shared] wsGetCompleteDrawalsRequestHandler:username handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject != nil) {
@@ -186,17 +182,12 @@
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingIndicator];
         [UIHelper hideLoadingFromView:self.view];
     }];
 }
 
 - (void)_callAPIGetAvailableBalances {
-    if (self.arrayBalances.count > 0) {
-        [UIHelper showLoadingIndicator];
-    } else {
-        [UIHelper showLoadingInView:self.view];
-    }
+    [UIHelper showLoadingInView:self.view];
     NSString *username = [self.userModel userName];
     [[WSURLSessionManager shared] wsGetBalancesRequestHandler:username handle:^(id responseObject, NSURLResponse *response, NSError *error) {
         if (!error && responseObject) {
@@ -207,7 +198,6 @@
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingIndicator];
         [UIHelper hideLoadingFromView:self.view];
     }];
 }

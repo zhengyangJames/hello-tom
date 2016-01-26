@@ -10,5 +10,5 @@
 #import "COAccountInvestmentModel.h"
 #import "COMultiPortFolioModel.h"
 
-@interface PortFolioController : BaseViewController
+@interface PortfolioController : BaseViewController
 @end
