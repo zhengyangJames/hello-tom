@@ -16,17 +16,8 @@
     WSStockRequest *request = [[WSStockRequest alloc]init];
     request = [request getStockRequset];
     [self sendRequest:request requiredLogin:YES clearCache:YES handler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        
-        if (!error && responseObject) {
+        if (!error && responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
             COProfileStockModel *model = [MTLJSONAdapter modelOfClass:[COProfileStockModel class] fromJSONDictionary:responseObject error:&error];
-            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-            [dic addEntriesFromDictionary:responseObject];
-            NSData *data =  [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
-            NSData *dt = [kUserDefaults objectForKey:UPDATE_STOCK_PROFILE_JSON];
-            if (data != dt) {
-                [kUserDefaults setObject:data forKey:UPDATE_STOCK_PROFILE_JSON];
-                [kUserDefaults synchronize];
-            }
             if (handler) {
                 handler(model,response,nil);
             }

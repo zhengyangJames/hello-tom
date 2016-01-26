@@ -13,7 +13,6 @@
 #import "WSURLSessionManager.h"
 #import "COProfileStockModel.h"
 #import "COPositive&NagitiveButton.h"
-#import "COLoginManager.h"
 
 @interface StockViewController ()<MFMailComposeViewControllerDelegate>
 {
@@ -34,16 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = m_string(@"STOCK");
+    _viewHeader.hidden = true;
     [self _callAPIGetStock];
     [self _setupData];
-}
-
-#pragma mark - Setter, Getter
-- (COProfileStockModel *)stockModel {
-    if (_stockModel) {
-        return _stockModel;
-    }
-    return _stockModel = [[COLoginManager shared] stockModel];
 }
 
 #pragma mark - Private
@@ -64,24 +56,17 @@
 
 #pragma mark - CallAPI
 - (void)_callAPIGetStock {
-    if (self.stockModel != nil) {
-        [UIHelper showLoadingIndicator];
-    } else {
-        [UIHelper showLoadingInView:self.view];
-        _viewHeader.hidden = true;
-    }
+    [UIHelper showLoadingInView:self.view];
     [[WSURLSessionManager shared] wsGetStockProfileRequestHandler:^(id responseObject, NSURLResponse *response, NSError *error) {
-        if (!error && (responseObject != nil)) {
+        if (!error && responseObject) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.stockModel = nil;
-                [COLoginManager shared].stockModel = nil;
+                self.stockModel = responseObject;
                 [self _setupData];
                 _viewHeader.hidden = false;
             }];
         } else {
             [ErrorManager showError:error];
         }
-        [UIHelper hideLoadingIndicator];
         [UIHelper hideLoadingFromView:self.view];
     }];
 }

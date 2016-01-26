@@ -419,7 +419,6 @@
     [kUserDefaults removeObjectForKey:kPROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_INVESTOR_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_ACCOUNT_PROFILE_JSON];
-    [kUserDefaults removeObjectForKey:UPDATE_STOCK_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:UPDATE_COMPANY_PROFILE_JSON];
     [kUserDefaults removeObjectForKey:KEY_ACCESS_TOKEN];
     [kUserDefaults removeObjectForKey:UPDATE_CURRENCY];
