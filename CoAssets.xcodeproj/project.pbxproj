@@ -3867,8 +3867,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3879,7 +3879,7 @@
 				New_Setting = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coassets;
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "4a645d9e-9aad-4701-b71b-123774dfed29";
+				PROVISIONING_PROFILE = "400cb912-c631-4419-a75a-0b77828bdfed";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -3892,8 +3892,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huan Kiat Seh (WQSC5U7QKQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CoAssets Pte Ltd (WBK63F87UK)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3904,7 +3904,7 @@
 				New_Setting = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coassets;
 				PRODUCT_NAME = CoAssets;
-				PROVISIONING_PROFILE = "4a645d9e-9aad-4701-b71b-123774dfed29";
+				PROVISIONING_PROFILE = "400cb912-c631-4419-a75a-0b77828bdfed";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
