@@ -21,7 +21,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    _lblTextfooter.text = m_string(@"MESSAGE_COMPLETE_PORTPOLIO");
+    _lblTextfooter.text = m_string(@"MESSAGE_COMPLETE_PORTFOLIO");
 }
 
 #pragma mark - Set Get
