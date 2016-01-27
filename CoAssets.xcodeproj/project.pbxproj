@@ -434,6 +434,8 @@
 		0EF3EBA71BFD6EF3000CA9C9 /* COOngoingStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EBA61BFD6EF3000CA9C9 /* COOngoingStatusModel.m */; };
 		161E785F1C0C0CB500EB6A04 /* OfferDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161E785D1C0C0CB500EB6A04 /* OfferDetailsController.m */; };
 		161E78601C0C0CB500EB6A04 /* OfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161E785E1C0C0CB500EB6A04 /* OfferDetailsController.xib */; };
+		163451111C589BE70083FF75 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 163451101C589BE70083FF75 /* PortfolioCell.xib */; };
+		163451121C589BE70083FF75 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 163451101C589BE70083FF75 /* PortfolioCell.xib */; };
 		166792A71C040AC400CABD42 /* ErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166792A61C040AC400CABD42 /* ErrorManager.m */; };
 		16A494391C0C350A00547CFC /* OfferDetailsDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A494371C0C350A00547CFC /* OfferDetailsDocumentController.m */; };
 		16A4943A1C0C350A00547CFC /* OfferDetailsDocumentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A494381C0C350A00547CFC /* OfferDetailsDocumentController.xib */; };
@@ -848,6 +850,7 @@
 		161E785C1C0C0CB500EB6A04 /* OfferDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferDetailsController.h; sourceTree = "<group>"; };
 		161E785D1C0C0CB500EB6A04 /* OfferDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailsController.m; sourceTree = "<group>"; };
 		161E785E1C0C0CB500EB6A04 /* OfferDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfferDetailsController.xib; sourceTree = "<group>"; };
+		163451101C589BE70083FF75 /* PortfolioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PortfolioCell.xib; path = Application/Classes/Controllers/TabProfiles/PortFolio/PortFolioCells/PortfolioCell.xib; sourceTree = SOURCE_ROOT; };
 		166792A51C040AC400CABD42 /* ErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorManager.h; sourceTree = "<group>"; };
 		166792A61C040AC400CABD42 /* ErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorManager.m; sourceTree = "<group>"; };
 		16A494361C0C350A00547CFC /* OfferDetailsDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferDetailsDocumentController.h; sourceTree = "<group>"; };
@@ -1565,6 +1568,7 @@
 			children = (
 				16DE9B681C57301F00CBBEA5 /* PortfolioCell.h */,
 				16DE9B691C57301F00CBBEA5 /* PortfolioCell.m */,
+				163451101C589BE70083FF75 /* PortfolioCell.xib */,
 				0E8D50671C571F4C00298046 /* AvailableBalanceCell.h */,
 				0E8D50681C571F4C00298046 /* AvailableBalanceCell.m */,
 				0E8D50691C571F4C00298046 /* AvailableBalanceCell.xib */,
@@ -3035,6 +3039,7 @@
 				0E4F4AFC1C3E480200CFC23B /* ic_setting_2_heighlight@3x.png in Resources */,
 				0E4F4AFD1C3E480200CFC23B /* ic_homes@3x.png in Resources */,
 				0E4F4AFE1C3E480200CFC23B /* COSlidingCell.xib in Resources */,
+				163451121C589BE70083FF75 /* PortfolioCell.xib in Resources */,
 				0E4F4AFF1C3E480200CFC23B /* COTextCell.xib in Resources */,
 				0E4F4B001C3E480200CFC23B /* Raleway-Medium.ttf in Resources */,
 				0E4F4B011C3E480200CFC23B /* Raleway-BoldItalic.ttf in Resources */,
@@ -3071,6 +3076,7 @@
 				7F8529261B43935B00CFAEB5 /* Globe.png in Resources */,
 				7F325FA31B40E50800116445 /* LoginViewController.xib in Resources */,
 				7F3260571B40E50800116445 /* ic_setting@3x.png in Resources */,
+				163451111C589BE70083FF75 /* PortfolioCell.xib in Resources */,
 				7F32604B1B40E50800116445 /* ic_line_char@2x.png in Resources */,
 				7F32604C1B40E50800116445 /* ic_line_char@3x.png in Resources */,
 				B94211031BFC2C9E00C86FE8 /* landingpg.png in Resources */,
