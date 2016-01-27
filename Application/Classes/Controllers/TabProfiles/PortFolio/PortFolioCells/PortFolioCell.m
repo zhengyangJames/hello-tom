@@ -39,6 +39,7 @@
     }
 }
 
+
 #pragma mark - Private
 - (void)_setDataWhenIndexPathIs0:(COMultiPortfolioModel *)multiPortfolio {
     [_imgThumbnail1 setImage:[UIImage imageNamed:[multiPortfolio OngoingProjectsImage]]];
