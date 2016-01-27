@@ -33,7 +33,6 @@
 		0E4AC4591C55D36700AF7E4E /* COBalanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AC4581C55D36700AF7E4E /* COBalanceModel.m */; };
 		0E4AC45A1C55D36700AF7E4E /* COBalanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AC4581C55D36700AF7E4E /* COBalanceModel.m */; };
 		0E4F49B71C3E471200CFC23B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F49B41C3E471200CFC23B /* Localizable.strings */; };
-		0E4F49BB1C3E479500CFC23B /* Info-English.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F49BA1C3E479500CFC23B /* Info-English.plist */; };
 		0E4F49BF1C3E480200CFC23B /* WSRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A9F5D1B961692002EEB1C /* WSRegisterRequest.m */; };
 		0E4F49C01C3E480200CFC23B /* WSPostDeviceTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A4A4E1BF42C090080D5E2 /* WSPostDeviceTokenRequest.m */; };
 		0E4F49C11C3E480200CFC23B /* NProfileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39FA4C1BC4247000880834 /* NProfileDataSource.m */; };
@@ -348,7 +347,6 @@
 		0E4F4B031C3E480200CFC23B /* ic_meoney@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F325F4B1B40E50800116445 /* ic_meoney@2x.png */; };
 		0E4F4B041C3E480200CFC23B /* EditInvestmentProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA610D51BC5071B00BF3A47 /* EditInvestmentProfileVC.xib */; };
 		0E4F4B051C3E480200CFC23B /* Australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F8529111B43935B00CFAEB5 /* Australia.png */; };
-		0E4F4B101C3E48BE00CFC23B /* Info-China.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F4B0E1C3E484700CFC23B /* Info-China.plist */; };
 		0E4FFEB41C51BC1F00A7DECC /* Currency.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FFEB31C51BC1F00A7DECC /* Currency.plist */; };
 		0E4FFEB51C51BC1F00A7DECC /* Currency.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FFEB31C51BC1F00A7DECC /* Currency.plist */; };
 		0E508EE21C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E508EE11C48E13E00B1DBA0 /* WSURLSessionManager+Stock.m */; };
@@ -2842,7 +2840,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Sanyi;
 				TargetAttributes = {
 					0EFEB4AF1B2724B2001195B7 = {
@@ -2961,7 +2959,6 @@
 				0E4F4AAA1C3E480200CFC23B /* ic_setting_2@2x.png in Resources */,
 				0E4F4AAB1C3E480200CFC23B /* EditCompanyVC.xib in Resources */,
 				0E4F4AAC1C3E480200CFC23B /* ic_Check.png in Resources */,
-				0E4F4B101C3E48BE00CFC23B /* Info-China.plist in Resources */,
 				0E4F4AAD1C3E480200CFC23B /* JsonPhoneCode.json in Resources */,
 				0E4F4AAE1C3E480200CFC23B /* COSlidingView.xib in Resources */,
 				0E4F4AAF1C3E480200CFC23B /* Close_Circle_Line@2x.png in Resources */,
@@ -3154,7 +3151,6 @@
 				7F3260361B40E50800116445 /* ic_calendar@3x.png in Resources */,
 				1E87908C1BBE4667003B2CED /* EditAboutProfileVC.xib in Resources */,
 				7F325FB81B40E50800116445 /* ContactTableViewCell.xib in Resources */,
-				0E4F49BB1C3E479500CFC23B /* Info-English.plist in Resources */,
 				0E3B132F1C0C449100AAAFD9 /* DealTableViewCell.xib in Resources */,
 				7F3260541B40E50800116445 /* ic_peropel@2x.png in Resources */,
 				1EF23C291BBE85C9006020C2 /* ic_loadding@3x.png in Resources */,
