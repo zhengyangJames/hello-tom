@@ -1,15 +1,48 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, '6.0'
+platform :ios, '8.0'
+use_frameworks!
 
-target 'CoAssets' do
-pod 'AFNetworking';
-pod 'SDWebImage';
-pod 'Crashlytics';
-pod 'Fabric';
-pod 'MBProgressHUD';
-pod 'TPKeyboardAvoiding';
-pod 'Mantle', '~> 2.0'
-pod 'Parse'
-pod 'ParseCrashReporting'
+target 'Agent' do
+   pod 'Fabric'
+   pod 'Crashlytics'
+   pod 'PureLayout'
+   pod 'SwiftyJSON'
+   pod 'Alamofire', '~> 3.0'
+   pod 'TPKeyboardAvoiding'
+   pod 'SlideMenuControllerSwift'
+   pod 'SVProgressHUD'
+   pod 'SDWebImage', '~>3.7'
+   pod 'Parse'
+end
+
+target 'Investor-English' do
+   pod 'Bolts-Swift'
+   pod 'Bolts'
+   pod 'Fabric'
+   pod 'Crashlytics'
+   pod 'PureLayout'
+   pod 'SwiftyJSON'
+   pod 'Alamofire', '~> 3.0'
+   pod 'TPKeyboardAvoiding'
+   pod 'SlideMenuControllerSwift'
+   pod 'SVProgressHUD'
+   pod 'SDWebImage', '~>3.7'
+   pod 'Parse'
+   pod 'FBSDKCoreKit'
+end
+
+target 'Investor-China' do
+    pod 'Bolts-Swift'
+    pod 'Bolts'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    pod 'PureLayout'
+    pod 'SwiftyJSON'
+    pod 'Alamofire', '~> 3.0'
+    pod 'TPKeyboardAvoiding'
+    pod 'SlideMenuControllerSwift'
+    pod 'SVProgressHUD'
+    pod 'SDWebImage', '~>3.7'
+    pod 'Parse'
+    pod 'FBSDKCoreKit'
 end
 

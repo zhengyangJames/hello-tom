@@ -1,0 +1,322 @@
+/* 
+  Localizable.strings
+  CoAssets-Agent
+
+  Created by Linh NGUYEN on 11/24/15.
+  Copyright © 2015 Nikmesoft Ltd. All rights reserved.
+*/
+
+
+"APP_NAME"      = "CoAssets";
+
+"CHECK_LOGIN"   = "登录";
+"SIGN_IN"                                = "登录";
+"SIGN_OUT"                               = "登出";
+// TITLE
+"TITLE_WELCOME" = "Welcome";
+"TITLE_INVESTMENT_MADE"   = "Investment Made";
+"TITLE_MANAGE_INVESTMENT" = "Manage Investment";
+"TITLE_FAQ_PAGE"          = "FAQ";
+"TITLE_CLIENT_PAGE"       = "Client";
+"TITLE_PROJECT_LIST"      = "Project List";
+"TITLE_PROJECT_LIST_DETAIL" = "项目详情";
+
+"TITLE_SIGN_UP" = "YOU ARE REGISTERED AS OUR USER, BUT YOU ARE\nCURRENTLY NOT AN AGENT. YOU CAN APPLY TO BE\nONE BY FILLING IN THE FORM BELOW";
+"TITLE_MESSAGE_INVESTMENT" = "Lorem lpsum is simply dummy text of the industry.";
+"TITLE_MESSAGE_PROJECT" = "Lorem lpsum is simply dummy text of the industry.";
+
+"TITLE_BACK"        = "背部";
+"TITLE_DONE"        = "完成";
+"TITLE_DONE_UPDATE" = "完成";
+"TITLE_BUTTON_OK"   = "确定";
+"TITLE_BUTTON_CANCEL"   = "取消";
+"TITLE_BUTTON_MALE" = "Male";
+"TITLE_BUTTON_FEMALE" = "Female";
+"TITLE_BUTTON_OTHER"  = "Other";
+
+"TITLE_UNKNOWN"     = "未知";
+
+//MARK: Message
+//MARK: Message Error Network
+"MESSAGE_ERROR_NETWORK" = "无法连接到服务器";
+
+//MANAGE INVESTMENT
+"MESSAGE_INVESTMENT_MADE" = "Total Investment made:";
+"MESSAGE_POTENTIAL_COMMISSON" = "Total Potential Commission:";
+
+//ProjectList
+"MESSAGE_ALL"    =    "全部";
+"MESSAGE_BULK"   =   "批量";
+"MESSAGE_CROUDFUNDING" = "众筹";
+"MESSAGE_PRE_SALES"    = "预售";
+
+//Message
+"MESSAGE_REQUEST_LOGIN" = "Thanks for registering, we will process your request and get back to you soon.";
+"MESSAGE_IM_INTRESTER_INVEST"  = "Investment Successful!";
+"MESSAGE_QUESTION_NOT_CONTENT" = "需要输入问题内容";
+"MESSAGE_QUESTION_CONTENT"     = "请求已发送";
+
+//Verify message
+"MESSAGE_USERNAME" = "需要会员名";
+"MESSAGE_PASSWORD" = "需要登录密码";
+"MESSAGE_CONFIRM_PASSWORD" = "需要确定密码";
+
+"MESSAGE_FIRST_NAME" = "需要姓名";
+"MESSAGE_LAST_NAME" = "需要姓名";
+"MESSAGE_EMAIL" = "需要电邮地址";
+"MESSAGE_EMAIL_VALID" = "无效的电邮地址";
+"MESSAGE_PHONE" = "需要电话号码";
+"MESSAGE_PHONE_VALID" = "电话号码不正确";
+"MESSAGE_COUNTRY_CODE" = "请选择手机的代码。";
+"MESSAGE_amount" = "请输入正确的投资金额.";
+"MESSAGE_AMOUNT_MINIMUM" = "最少投资额 %.0f.";
+"MESSAGE_NO_CHECK" = "请同意让CoAssets与您联系来促进您的众筹过程。";
+
+"MESSAGE_CONFIRM_PASSWORD_MATCH" = "确认密码不匹配。";
+//OverView
+"MESSAGE_CONTENT_PROJECT_TYPE" = "Project Type";
+"MESSAGE_CONTENT_PROJECT_DEVELOP" = "Project Developer";
+
+//Investment
+
+"TITLE_INVEST_STATUS" = "Status:";
+"TITLE_INVEST_INDICATIVE" = "Indicative Amount:";
+"TITLE_INVEST_COMMISSION" = "commission:";
+"TITLE_INVEST_COMMISSION_PAYNT" = "CommissionPaynt date:";
+
+//Title MenuController
+"TITLE_HOME" = "首页";
+"TITLE_PROFILE" = "用户简介";
+"TITLE_NOTIFICATIONS" = "通知";
+"TITLE_SETTINGS" = "设置";
+
+//TITLE
+"PORTFOLIO" = "组合";
+"CURRENTSTATUS" = "现状";
+"INVESTOR" = "投资者";
+"COASSETSSTOCK" = "CoAssets' 股票";
+"DEALS" = "交易";
+
+//UPDATE
+"TITLE_UPDATE_PROFILE" = "更新用户简介";
+"TITLE_UPDATE_PASSWORD" = "更新登录密码";
+
+//TITLE UPDATE COMPANY
+"OrgName" = "组织名称";
+"OrgType" = "组织类型";
+"Address1" = "地址 1";
+"Address2" = "地址 2";
+"OrgCity" = "组织城市";
+"OrgCountry" = "组织国家";
+
+
+"TAKE_PHOTO_TITLE"                      = "拍照";
+"CHOOSE_EXISTING_TITLE"                 = "选择已存有的照片";
+
+//TITLE UPDATE INVESTOR
+"InvestorType" = "投资者类型";
+"ProjectPreference" = "项目偏好";
+"Currency" = "货币";
+"InvestmentBudget" = "投资预算";
+"DurationPreference" = "期限偏好（月数）";
+"TargetReturn" = "目标回报（年化）";
+"CountryPreference" = "国家偏好 （用逗号分隔）";
+"Description" = "说明 （简介）";
+"Website" = "网站";
+
+//UPDATE PAWSSWORD
+"newPasswordRequired"                 = "需要新密码";
+"ConfirmPasswordRequired"             = "需要确定密码";
+"ConfirmPasswordMessage"              = "确认密码不匹配。";
+
+"NEW_PASSWORD" = "新密码";
+"CONFIRM_PASSWORD" = "确定密码";
+
+"PASSWORD_CHANGE_SUCCESSFULLY"          = "成功更改密码";
+"PASSWORD_NOT_CHANGED"                  = "还未更改密码";
+
+//KEY UPDATE
+"KEY_ACTION_UPDATEPROFILE"              = "更新用户简介";
+"KEY_ACTION_UPDATECOMPANY"              = "更新公司简介";
+"KEY_ACTION_UPDATEINVESTOR"             = "更新投资者简介";
+//Login follow
+"TITLE_NEW_USER_SIGN_UP" = "新用户？在这里注册";
+"TITLE_ALEADY_HAVE_ACCOUNT" = "已经有一个帐户？登录";
+"TITLE_USERNAME" = "会员名";
+"TITLE_PASSWORD" = "密码";
+
+"TITLE_FIRSTNAME" = "姓名";
+"TITLE_LASTNAME" = "姓";
+"TITLE_EMAIL" = "电邮地址";
+"TITLE_MOBILE_CODE" = "移动代码";
+"TITLE_MOBILE_NUMBER" = "手机号码";
+"TITLE_CONFIRM_PASSWORD" = "确定密码";
+
+"TITLE_RESET_PASSWORD" = "更换密码";
+"TITLE_BACK_TO_SIGNIN" = "返回登录";
+"FORGOTPASSWORD_DESCRIPTION" = "忘记了你的密码？请在下面输入您的电子邮件地址，我们将通过电子邮件派有关如何设置密码的指导";
+"INVAlID_USERNAME_OR_PASSWORD"          = "无效的用户名或密码";
+//ADD BY VINCENT
+"TITLE_CONTACT" = "联络";
+"NEWS"                                  = "新闻";
+"TERM_OF_USE"                           = "使用条款";
+"CODE_OF_CONDUCT"                       = "行为准则";
+"PRIVACY"                               = "隐私";
+"MESSAGE_LOGOUT"                        = "您确定要登出吗？";
+"Ongoing Investment" = "现行投资";
+"Funded Investment" = "投资资助";
+"Completed Investment" = "完成的投资";
+
+"Realised Payouts" = "已实现赔率";
+"Potential Payouts" = "潜在赔率";
+
+"INVESTOR_TYPE"                         = "投资者类型";
+"INVESTOR_PREFERENCE"                   = "项目偏好";
+"INVESTOR_AMOUNT"                       = "投资额";
+"INVESTOR_CURRENCY"                     = "货币";
+"INVESTOR_TARGET"                       = "目标回报 （年化）";
+"INVESTOR_DURATION"                     = "期限偏好";
+"INVESTOR_COUNTRIES"                    = "国家偏好";
+"DEALS"             = "交易";
+"Ongoing"           = "进行中";
+"Funded"            = "全额资助";
+"Completed"         = "完成";
+"TITLE_LABEL"       = "您现在没有交易。";
+"TITLE_BUTTON"      = "从这里开始！";
+"ON_GOING"                              = "您支持和仍在进行的交易";
+"FUNDED"                                = "您支持和已成功资助的交易";
+"COMPLETED"                             = "您支持和已经完成支付的交易";
+
+// List Offer
+"FILTER_BULLK_NULL"                     = "即将推出团购项目";
+"FILTER_CROWD_NULL"                     = "即将推出众筹项目";
+"FILTER_SALE_NULL"                      = "即将推出预售项目";
+"FILTER_ALL_NULL"                       = "即将推出CoAssets";
+
+// OfferDetail
+"TITLE_HEADER_DOCUMENT" = "以下证件由项目提供商所提供。如想要阅读私营证件可与我们联络。";
+"Project_status" = "项目状况";
+"INVESTORS"                             = "投资者";
+"Interested_in_project" = "对项目感兴趣";
+"INVESTMENT_HORIZON" = "投资期限";
+"DaysToGo" = "剩余的天";
+"YIELD_(ANNUALIZED)" = "回报 (年化)";
+"MONTHS"                                = " 月数";
+"MIN.INVESTMENT" = "最少投资额 \n";
+"GOAL"                                  = " 筹款进度";
+"OF"                                    = " 目标筹资 ";
+"BUTTON_I'M_INTERESTED"                 = "投资";
+"BUTTON_I'VE_QUESTION"                   = "我有疑问";
+"QUESTION_TITLE"                        = "问题";
+"INTERESTED_TITLE"                      = "感兴趣";
+
+"TITLE_QUESTION_HOME"                   = "请在以下输入问题。电邮将会发到CoAssets帮助中心。";
+"DONE_TITLE"                            = "完成";
+"Expressing_Interest_Home"              = "您对此项目表达兴趣。合同将被发送到您的电邮。";
+"Verify_Your_Email_Home"                = "请核实您的电邮地址。如果电邮地址不正确，请作出调整。";
+"Provide_Indicative_Home"               = "请提供指标性的投资额";
+"CoAssets_Share_Home"                   = "我同意让Coassets与项目提供商分享我的联络资料也同意让项目提供商与我联系。";
+"Interested_Popup"                      = "谢谢您与我们众筹 \n%@。\n\n请在电子合同上签字然后在五个工作日内转移投资额。如果您有任何疑问\n\n请拨打65327008或者电邮到admin@coassets.com询问";
+
+"MESSAGE_TITLE_STOCK"                   = "对CoAssets股票有兴趣";
+"MESSAGE_STOCK"                         = "嗨，我有兴趣投资CoAssets股票";
+
+"MESSAGE_TEXTFIELD_MAX_AMOUNT"          = "最高金额为";
+"MESSAGE_TEXTFIELD_VALID"               = "投资金额是不正确";
+"MESSAGE_TEXTFIELD_NULL"                = "请输入正确的投资金额.";
+
+//DOCUMENT
+"declaration_form_list"                 = "声明表";
+"legal_appointment"                     = "法律委员";
+"licenses"                              = "执照证明";
+"others"                                = "其他证件";
+"ownership"                             = "所有权证明";
+"registration_form_list"                = "公司注册";
+
+"declaration_private"                   = "声明表 - 私人文件";
+"comapny_private"                       = "公司注册 - 私人文件";
+"licenses_private"                      = "执照证明 - 私人文件";
+"ownership_private"                     = "所有权证明 - 私人文件";
+"legal_appointment_private"             = "法律委员 - 私人文件";
+"others_private"                        = "其他证件 - 私人文件";
+
+// UPDATE COMPANY
+"TITLE_FIRST_NAME" = "姓名";
+"TITLE_LAST_NAME" = "姓";
+"TITLE_EMAIL_ADDRESS" = "电邮地址";
+"TITLE_COUNTRY_CODE" = "国家代码";
+"TITLE_CELL_PHONE" = "手机号码";
+"TITLE_ADDRESS1" = "地址 1";
+"TITLE_ADDRESS2" = "地址 2";
+"TITLE_CITY" = "城市";
+"TITLE_POSTAL_CODE" = "邮递区号";
+"TITLE_REGION_STATE" = "地区";
+"TITLE_COUNTRY" = "国家";
+
+// HOME
+"Pre-Sales" = "预售";
+"Crowdfunding" = "众筹";
+"Bulk Purchase" = "团购";
+
+//OFFER DETAIL
+"Detail_Offer_Invest" = "投资";
+"Detail_Offer_Overview" = "概观";
+"Detail_Offer_Detail" = "详情";
+"Detail_Offer_Document" = "证件";
+
+// PORTFOLIO
+"Ongoing_Projects" = "进行中的项目";
+"Ongoing_Investment_Amount" = "现行投资额";
+"Funded_&_Completed_Projects" = "资助&已完成项目";
+"Funded_&_Completed_Investment_Amount" = "资助&完成投资额";
+"portfolio_available_balance" = "$ 可用余额：";
+"portfolio_withdraw" = "提款";
+"portfolio_withdraw_form" = "提款申请表";
+"portfolio_amount" = "量";
+"portfolio_Completed" = "完成提款\n 已成功处理您的取款请求。";
+
+//DEALS
+"deal_introduction_suggest" = "你可能会感兴趣的交易";
+"deal_sign_your_contract" = "签下合同";
+"deal_how_to_make_payment" = "如何付款";
+"deal_investment_amount" = "投资额:";
+"deal_potential_return" = "潜在的回报:";
+"deal_next_payout_date" = "下一个回报日期:";
+"deal_contract_sign" = "合同：已签下";
+"deal_contract_paid" = "合同：已付款";
+"deal_sign" = "已签下";
+"deal_paid" = "已付款";
+
+// MORE INFO OFFER
+"offer_pledged" = "投资额";
+"offer_funded" = "资助";
+"offer_days_left" = "剩余期限";
+"offer_interested" = "感兴趣";
+"offer_minimum_investment" = "最低投资额";
+"offer_annualized_yield" = "回报（年化）";
+
+//STOCK
+"stock_i_invest" = "我有意投资";
+"stock_date_x" = "最后更新时间是 ";
+
+// DETAIL OFFER _ INVEST
+"Singapore Dollars" = "新币";
+"US Dollars" = "美金";
+"British Pounds" = "英镑";
+"Euros" = "欧币";
+"Japanese Yen" = "日元";
+"Chinese Yuan" = "人民币";
+"Taiwan Dollar" = "台币";
+"Hongkong Dollar" = "港币";
+"Canadian Dollars" = "加元";
+"Australia Dollar" = "澳币";
+"Malaysia Ringit" = "林吉特";
+"Thai Baht" = "泰铢";
+"Philippine Peso" = "比索";
+"Indonesia Rupiah" = "卢比";
+"Vietnamese Dong" = "越南盾";
+
+//LOADING...
+"please_wait" = "請稍候...";
+
+

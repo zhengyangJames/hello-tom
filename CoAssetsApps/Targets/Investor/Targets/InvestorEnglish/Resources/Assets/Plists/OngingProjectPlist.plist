@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>Na Thai Estate - Phase 1</string>
+		<key>detail</key>
+		<string>Investors - 2</string>
+		<key>investment</key>
+		<string>$10,000</string>
+		<key>potential</key>
+		<string>$1000</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Na Thai Estate - Phase 2</string>
+		<key>detail</key>
+		<string>Investors - 5</string>
+		<key>investment</key>
+		<string>$10,000</string>
+		<key>potential</key>
+		<string>$1000</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Na Thai Estate - Phase 3</string>
+		<key>detail</key>
+		<string>Investors - 12</string>
+		<key>investment</key>
+		<string>$10,000</string>
+		<key>potential</key>
+		<string>$1000</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Na Thai Estate - Phase 4</string>
+		<key>detail</key>
+		<string>Investors - 8</string>
+		<key>investment</key>
+		<string>$10,000</string>
+		<key>potential</key>
+		<string>$1000</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Na Thai Estate - Phase 5</string>
+		<key>detail</key>
+		<string>Investors - 24</string>
+		<key>investment</key>
+		<string>$10,000</string>
+		<key>potential</key>
+		<string>$1000</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Na Thai Estate - Phase 6</string>
+		<key>detail</key>
+		<string>Investors - 3</string>
+		<key>investment</key>
+		<string>$10,000</string>
+		<key>potential</key>
+		<string>$1000</string>
+	</dict>
+</array>
+</plist>

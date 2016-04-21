@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>散户投资者</string>
+		<key>code</key>
+		<string>NRM</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>高净值</string>
+		<key>code</key>
+		<string>HNW</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>机构投资者</string>
+		<key>code</key>
+		<string>INI</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>发展商</string>
+		<key>code</key>
+		<string>DEV</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>机构</string>
+		<key>code</key>
+		<string>AGY</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>业务</string>
+		<key>code</key>
+		<string>BSN</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>资助者</string>
+		<key>code</key>
+		<string>FIN</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>媒体</string>
+		<key>code</key>
+		<string>MED</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>教育</string>
+		<key>code</key>
+		<string>EDU</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>其它</string>
+		<key>code</key>
+		<string>OTH</string>
+	</dict>
+</array>
+</plist>

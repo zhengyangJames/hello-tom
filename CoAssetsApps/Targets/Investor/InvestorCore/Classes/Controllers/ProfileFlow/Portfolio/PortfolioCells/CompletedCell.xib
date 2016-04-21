@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompletedCell" rowHeight="138" id="Gkl-j1-vpS" customClass="CompletedCell" customModule="CoAssets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="138"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gkl-j1-vpS" id="mOa-Os-jWd">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="137.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTX-89-vZ9" userLabel="backGroundView">
+                        <rect key="frame" x="8" y="8" width="304" height="121"/>
+                        <color key="backgroundColor" red="0.2470588235" green="0.45882352939999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBn-JR-ILL">
+                        <rect key="frame" x="9" y="9" width="302" height="119"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="FpW-sz-nRJ" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                <rect key="frame" x="8" y="40" width="286" height="53"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Withdrawal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txf-3M-12U" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="95" width="302" height="14"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                <color key="textColor" red="0.32549019610000002" green="0.46666666670000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_portfolio_checked_green" translatesAutoresizingMaskIntoConstraints="NO" id="0Z9-OM-opT">
+                                <rect key="frame" x="141" y="10" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="FbK-Wb-6eO"/>
+                                    <constraint firstAttribute="height" constant="20" id="q55-5L-5cB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="txf-3M-12U" firstAttribute="top" secondItem="FpW-sz-nRJ" secondAttribute="bottom" constant="2" id="3fv-j9-0hh"/>
+                            <constraint firstAttribute="trailing" secondItem="FpW-sz-nRJ" secondAttribute="trailing" constant="8" id="AGE-SR-fdC"/>
+                            <constraint firstAttribute="bottom" secondItem="txf-3M-12U" secondAttribute="bottom" constant="10" id="AzV-o6-QmC"/>
+                            <constraint firstItem="txf-3M-12U" firstAttribute="leading" secondItem="KBn-JR-ILL" secondAttribute="leading" id="Ngv-y2-sHY"/>
+                            <constraint firstItem="FpW-sz-nRJ" firstAttribute="top" secondItem="0Z9-OM-opT" secondAttribute="bottom" constant="10" id="Sg4-4D-pPt"/>
+                            <constraint firstItem="FpW-sz-nRJ" firstAttribute="leading" secondItem="KBn-JR-ILL" secondAttribute="leading" constant="8" id="Tj8-11-QJE"/>
+                            <constraint firstItem="txf-3M-12U" firstAttribute="centerX" secondItem="KBn-JR-ILL" secondAttribute="centerX" id="YFs-am-rVn"/>
+                            <constraint firstItem="0Z9-OM-opT" firstAttribute="top" secondItem="KBn-JR-ILL" secondAttribute="top" constant="10" id="dSE-d5-7kv"/>
+                            <constraint firstItem="0Z9-OM-opT" firstAttribute="centerX" secondItem="KBn-JR-ILL" secondAttribute="centerX" id="iU1-2h-7Zr"/>
+                            <constraint firstAttribute="trailing" secondItem="txf-3M-12U" secondAttribute="trailing" id="y9r-BZ-TPj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YFs-am-rVn"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="sTX-89-vZ9" firstAttribute="top" secondItem="mOa-Os-jWd" secondAttribute="topMargin" constant="10" id="Dhk-6D-Bgk"/>
+                    <constraint firstItem="KBn-JR-ILL" firstAttribute="leading" secondItem="mOa-Os-jWd" secondAttribute="leading" constant="9" id="Mcf-ty-F5l"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="sTX-89-vZ9" secondAttribute="bottom" constant="10" id="OqY-JD-ncx"/>
+                    <constraint firstAttribute="bottom" secondItem="sTX-89-vZ9" secondAttribute="bottom" constant="8" id="SfL-Ly-t1b"/>
+                    <constraint firstAttribute="bottom" secondItem="KBn-JR-ILL" secondAttribute="bottom" constant="9" id="W97-A2-nmy"/>
+                    <constraint firstItem="KBn-JR-ILL" firstAttribute="top" secondItem="mOa-Os-jWd" secondAttribute="top" constant="9" id="Zy7-ID-6cv"/>
+                    <constraint firstItem="sTX-89-vZ9" firstAttribute="top" secondItem="mOa-Os-jWd" secondAttribute="top" constant="8" id="b2f-xh-GPa"/>
+                    <constraint firstAttribute="trailing" secondItem="sTX-89-vZ9" secondAttribute="trailing" constant="8" id="bGf-vw-S88"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sTX-89-vZ9" secondAttribute="trailing" constant="10" id="eAT-SO-p6B"/>
+                    <constraint firstItem="sTX-89-vZ9" firstAttribute="leading" secondItem="mOa-Os-jWd" secondAttribute="leadingMargin" constant="10" id="hHN-1l-vrw"/>
+                    <constraint firstItem="sTX-89-vZ9" firstAttribute="leading" secondItem="mOa-Os-jWd" secondAttribute="leading" constant="8" id="vXm-dc-maJ"/>
+                    <constraint firstAttribute="trailing" secondItem="KBn-JR-ILL" secondAttribute="trailing" constant="9" id="xDo-ee-SeS"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Dhk-6D-Bgk"/>
+                        <exclude reference="OqY-JD-ncx"/>
+                        <exclude reference="eAT-SO-p6B"/>
+                        <exclude reference="hHN-1l-vrw"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="currencyLabel" destination="FpW-sz-nRJ" id="6kj-dq-HAt"/>
+                <outlet property="textFooterLabel" destination="txf-3M-12U" id="NtD-hK-2mz"/>
+            </connections>
+            <point key="canvasLocation" x="391" y="262"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_portfolio_checked_green" width="24" height="24"/>
+    </resources>
+</document>

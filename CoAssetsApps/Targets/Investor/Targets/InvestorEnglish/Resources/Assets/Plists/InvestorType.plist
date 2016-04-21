@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Retail Investor</string>
+		<key>code</key>
+		<string>NRM</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>High Net Worth</string>
+		<key>code</key>
+		<string>HNW</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Institutional Investor</string>
+		<key>code</key>
+		<string>INI</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Developer</string>
+		<key>code</key>
+		<string>DEV</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Agent</string>
+		<key>code</key>
+		<string>AGY</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Business</string>
+		<key>code</key>
+		<string>BSN</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Financier</string>
+		<key>code</key>
+		<string>FIN</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Media</string>
+		<key>code</key>
+		<string>MED</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Educator</string>
+		<key>code</key>
+		<string>EDU</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Others</string>
+		<key>code</key>
+		<string>OTH</string>
+	</dict>
+</array>
+</plist>

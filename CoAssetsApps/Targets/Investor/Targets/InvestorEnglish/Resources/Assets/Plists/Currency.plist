@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Singapore Dollars</string>
+		<key>code</key>
+		<string>SGD</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>US Dollars</string>
+		<key>code</key>
+		<string>USD</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>British Pounds</string>
+		<key>code</key>
+		<string>GBP</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Euros</string>
+		<key>code</key>
+		<string>EUR</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Japanese Yen</string>
+		<key>code</key>
+		<string>JPY</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Chinese Yuan</string>
+		<key>code</key>
+		<string>CNY</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Taiwan Dollar</string>
+		<key>code</key>
+		<string>TWD</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Canadian Dollars</string>
+		<key>code</key>
+		<string>CAD</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hongkong Dollar</string>
+		<key>code</key>
+		<string>HKD</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Australia Dollar</string>
+		<key>code</key>
+		<string>AUD</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Malaysia Ringit</string>
+		<key>code</key>
+		<string>MYR</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Thai Baht</string>
+		<key>code</key>
+		<string>THB</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Philippine Peso</string>
+		<key>code</key>
+		<string>PHP</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Indonesia Rupiah</string>
+		<key>code</key>
+		<string>IDR</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Vietnamese Dong</string>
+		<key>code</key>
+		<string>VND</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Ren Min Bi</string>
+		<key>code</key>
+		<string>RMB</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>CoAssets Token</string>
+		<key>code</key>
+		<string>CAT</string>
+	</dict>
+</array>
+</plist>

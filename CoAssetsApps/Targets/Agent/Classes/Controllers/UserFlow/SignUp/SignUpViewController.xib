@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="Agent" customModuleProvider="target">
+            <connections>
+                <outlet property="adressTextField" destination="trG-08-H39" id="U9h-ao-bb2"/>
+                <outlet property="cityTextField" destination="i1b-FR-Qki" id="ee2-NC-nkr"/>
+                <outlet property="countryCodeTextField" destination="uzf-ee-X0E" id="Uqj-32-UF7"/>
+                <outlet property="countryTextField" destination="AaN-BD-neW" id="F8g-gd-PW5"/>
+                <outlet property="dateofBirthTextField" destination="qJY-aM-oVU" id="pGk-3d-ief"/>
+                <outlet property="emailTextField" destination="Zws-2X-B6d" id="u7N-Qy-3Pv"/>
+                <outlet property="firstNameTextField" destination="hlV-rz-cUk" id="vSC-H1-WFz"/>
+                <outlet property="genderTextField" destination="YkP-Yq-4pU" id="rS0-3W-RAD"/>
+                <outlet property="lastNameTextField" destination="Le8-TJ-y5o" id="Sn5-xQ-gEd"/>
+                <outlet property="passWordConfirmationTextField" destination="nuG-ty-X45" id="IHE-en-cWe"/>
+                <outlet property="passWordTextField" destination="egY-NC-mR2" id="b9t-DS-eRB"/>
+                <outlet property="phoneTextField" destination="16a-Ju-my8" id="S0s-KJ-2dK"/>
+                <outlet property="postalCodeTextField" destination="egB-jt-q4x" id="TUo-sV-j1t"/>
+                <outlet property="salutionTextField" destination="4Vo-q6-S7p" id="8tM-20-etb"/>
+                <outlet property="userNameTextField" destination="VTF-wz-TSU" id="irq-Xy-0uD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="COBackgroundView" customModule="Agent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="1144"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrX-Pl-pLw" customClass="COScrollView" customModule="Agent" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1144"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ay-zn-mzT" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1099"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-rz-cUk" userLabel="firstName" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="18" width="270" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="hlV-rz-cUk" secondAttribute="height" multiplier="54:11" id="30y-Az-DZh" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                    </constraints>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="FIRST NAME"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YkP-Yq-4pU" userLabel="gender" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="140" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="GENDER"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Vo-q6-S7p" userLabel="salutation" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="201" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="SALUTATION"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uzf-ee-X0E" userLabel="countryCode" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="323" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="COUNTRY CODE"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16a-Ju-my8" userLabel="phone" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="384" width="270" height="56"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="PHONE"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zws-2X-B6d" userLabel="email" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="446" width="270" height="56"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="EMAIL"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trG-08-H39" userLabel="adrees" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="507" width="270" height="56"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="ADDRESS"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i1b-FR-Qki" userLabel="city" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="569" width="270" height="57"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="CITY"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egB-jt-q4x" userLabel="postalCode" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="632" width="270" height="57"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="POSTAL CODE"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-wz-TSU" userLabel="userName" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="757" width="270" height="58"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="USERNAME"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egY-NC-mR2" userLabel="passWord" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="821" width="270" height="58"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="PASSWORD"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nuG-ty-X45" userLabel="passwordConfirmation" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="884" width="270" height="58"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="PASSWORD CONFIRMATION"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSZ-TG-2IA" userLabel="signUpButton" customClass="CORedButton" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="982" width="270" height="47"/>
+                                    <color key="backgroundColor" red="0.85098039219999999" green="0.1137254902" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="gSZ-TG-2IA" secondAttribute="height" multiplier="270:47" id="LIQ-Ow-5AF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                    <state key="normal" title="Sign Up">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionSignUp:" destination="-1" eventType="touchUpInside" id="vuu-7m-KiP"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qJY-aM-oVU" userLabel="dateofBirths" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="262" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="DATE OF BIRTH"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Le8-TJ-y5o" userLabel="lastName" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="79" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="LAST NAME"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-r2-Eez" userLabel="footerView">
+                                    <rect key="frame" x="25" y="1053" width="270" height="25"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALREADY HAVE AN ACCOUNT?    LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vml-Tw-QdK" customClass="BaseLabel" customModule="Agent" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="5" width="270" height="14"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9q-aQ-9oW" userLabel="Signin">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="25"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                            <connections>
+                                                <action selector="actionLogin:" destination="-1" eventType="touchUpInside" id="fcq-M3-Qra"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="Vml-Tw-QdK" firstAttribute="leading" secondItem="ffk-r2-Eez" secondAttribute="leading" id="C0c-TC-xx8"/>
+                                        <constraint firstItem="b9q-aQ-9oW" firstAttribute="top" secondItem="ffk-r2-Eez" secondAttribute="top" id="DiV-zR-CUu"/>
+                                        <constraint firstAttribute="bottom" secondItem="b9q-aQ-9oW" secondAttribute="bottom" id="FfM-jm-h98"/>
+                                        <constraint firstItem="Vml-Tw-QdK" firstAttribute="centerY" secondItem="ffk-r2-Eez" secondAttribute="centerY" id="L1x-SA-yUe"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vml-Tw-QdK" secondAttribute="trailing" id="idN-V1-wxx"/>
+                                        <constraint firstAttribute="height" constant="25" id="mZa-5M-jDJ" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                        <constraint firstAttribute="trailing" secondItem="b9q-aQ-9oW" secondAttribute="trailing" id="sF1-Qc-WDz"/>
+                                        <constraint firstItem="b9q-aQ-9oW" firstAttribute="leading" secondItem="ffk-r2-Eez" secondAttribute="leading" id="uob-yU-vNS"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rf-CL-dRf">
+                                    <rect key="frame" x="25" y="140" width="270" height="55"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="actionGender:" destination="-1" eventType="touchUpInside" id="rVR-d5-c4u"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AaN-BD-neW" userLabel="country" customClass="COTextFieldBottomLine" customModule="Agent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="694" width="270" height="57"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="COUNTRY"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="YkP-Yq-4pU" firstAttribute="top" secondItem="Le8-TJ-y5o" secondAttribute="bottom" constant="6" id="0oQ-NZ-mYu" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="uzf-ee-X0E" secondAttribute="trailing" constant="25" id="1yh-7m-Zdw" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="YkP-Yq-4pU" secondAttribute="trailing" constant="25" id="5F2-3Z-9lR" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="nuG-ty-X45" secondAttribute="trailing" constant="25" id="5SK-pS-wQU" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="VTF-wz-TSU" secondAttribute="trailing" constant="25" id="5YG-2L-E65" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="VTF-wz-TSU" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="6Hj-Fo-CAv" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="16a-Ju-my8" firstAttribute="height" secondItem="uzf-ee-X0E" secondAttribute="height" id="6Pz-B5-SDp"/>
+                                <constraint firstItem="YkP-Yq-4pU" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="6vy-Ur-8H4" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="Zws-2X-B6d" firstAttribute="top" secondItem="16a-Ju-my8" secondAttribute="bottom" constant="6" id="8Ci-tZ-pm3" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="Zws-2X-B6d" firstAttribute="height" secondItem="16a-Ju-my8" secondAttribute="height" id="8s9-Pc-IIb"/>
+                                <constraint firstAttribute="trailing" secondItem="Zws-2X-B6d" secondAttribute="trailing" constant="25" id="9yE-UH-1nU" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="i1b-FR-Qki" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="A9F-G5-L6R" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="ffk-r2-Eez" secondAttribute="trailing" constant="25" id="Aot-gD-Klu" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="16a-Ju-my8" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="Ay0-KZ-IK1" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="qJY-aM-oVU" secondAttribute="trailing" constant="25" id="BmB-Vs-E5S" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="Le8-TJ-y5o" firstAttribute="height" secondItem="hlV-rz-cUk" secondAttribute="height" id="C9x-GG-W9C"/>
+                                <constraint firstItem="trG-08-H39" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="CYu-Do-oi9" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="bottom" secondItem="ffk-r2-Eez" secondAttribute="bottom" constant="21" id="CsP-87-6fY" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="AaN-BD-neW" firstAttribute="top" secondItem="egB-jt-q4x" secondAttribute="bottom" constant="6" id="Cxo-d3-crt" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="hlV-rz-cUk" firstAttribute="top" secondItem="0Ay-zn-mzT" secondAttribute="top" constant="18" id="DIq-7e-tiZ" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="i1b-FR-Qki" secondAttribute="trailing" constant="25" id="Dwk-Mw-TYd" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="16a-Ju-my8" firstAttribute="top" secondItem="uzf-ee-X0E" secondAttribute="bottom" constant="6" id="GIM-qb-9Wb" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="hlV-rz-cUk" secondAttribute="trailing" constant="25" id="HTx-19-y2P" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="egB-jt-q4x" secondAttribute="trailing" constant="25" id="HYw-Lt-V17" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="egY-NC-mR2" secondAttribute="trailing" constant="25" id="HsI-cd-mfw" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="qJY-aM-oVU" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="IXe-dR-LPF" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="4Vo-q6-S7p" firstAttribute="top" secondItem="YkP-Yq-4pU" secondAttribute="bottom" constant="6" id="JFV-NI-kdZ" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="uzf-ee-X0E" firstAttribute="height" secondItem="qJY-aM-oVU" secondAttribute="height" id="Jqc-uQ-MSa"/>
+                                <constraint firstItem="uzf-ee-X0E" firstAttribute="top" secondItem="qJY-aM-oVU" secondAttribute="bottom" constant="6" id="K7D-an-x07" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="1rf-CL-dRf" firstAttribute="width" secondItem="YkP-Yq-4pU" secondAttribute="width" id="KOR-lL-dVK" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="ffk-r2-Eez" firstAttribute="top" secondItem="gSZ-TG-2IA" secondAttribute="bottom" constant="24" id="LbN-XX-pI0" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="VTF-wz-TSU" firstAttribute="top" secondItem="AaN-BD-neW" secondAttribute="bottom" constant="6" id="Mya-al-TRv" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="qJY-aM-oVU" firstAttribute="top" secondItem="4Vo-q6-S7p" secondAttribute="bottom" constant="6" id="NQ8-kM-OkZ" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="4Vo-q6-S7p" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="OOQ-MD-8MZ" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="4Vo-q6-S7p" secondAttribute="trailing" constant="25" id="Qfu-4c-MjI" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="i1b-FR-Qki" firstAttribute="height" secondItem="trG-08-H39" secondAttribute="height" id="Ryb-kL-0ac"/>
+                                <constraint firstItem="trG-08-H39" firstAttribute="top" secondItem="Zws-2X-B6d" secondAttribute="bottom" constant="6" id="SB5-na-1yJ" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="1rf-CL-dRf" firstAttribute="centerY" secondItem="YkP-Yq-4pU" secondAttribute="centerY" id="TGK-YY-jbN"/>
+                                <constraint firstItem="Zws-2X-B6d" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="TLs-ow-JXm" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="ffk-r2-Eez" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="Tek-zg-cNS" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="Le8-TJ-y5o" secondAttribute="trailing" constant="25" id="Utn-Ux-nO8" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="1rf-CL-dRf" firstAttribute="height" secondItem="YkP-Yq-4pU" secondAttribute="height" id="Uvb-mO-1QO"/>
+                                <constraint firstItem="egB-jt-q4x" firstAttribute="height" secondItem="i1b-FR-Qki" secondAttribute="height" id="VZa-Si-tzE"/>
+                                <constraint firstItem="hlV-rz-cUk" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="XIn-5Z-Lxn" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="4Vo-q6-S7p" firstAttribute="height" secondItem="YkP-Yq-4pU" secondAttribute="height" id="Xn7-ap-j94"/>
+                                <constraint firstItem="nuG-ty-X45" firstAttribute="top" secondItem="egY-NC-mR2" secondAttribute="bottom" constant="6" id="ZZq-CJ-O3Q" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="egB-jt-q4x" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="bXQ-Kx-GfU" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="AaN-BD-neW" firstAttribute="height" secondItem="egB-jt-q4x" secondAttribute="height" id="dnw-Gm-9CF"/>
+                                <constraint firstAttribute="trailing" secondItem="16a-Ju-my8" secondAttribute="trailing" constant="25" id="ebI-nw-bOS" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="trG-08-H39" firstAttribute="height" secondItem="Zws-2X-B6d" secondAttribute="height" id="enD-UP-Zn1"/>
+                                <constraint firstItem="Le8-TJ-y5o" firstAttribute="top" secondItem="hlV-rz-cUk" secondAttribute="bottom" constant="6" id="fLU-DS-l84" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="AaN-BD-neW" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="gRR-xR-h7q" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="trG-08-H39" secondAttribute="trailing" constant="25" id="ga8-1S-A9c" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="qJY-aM-oVU" firstAttribute="height" secondItem="4Vo-q6-S7p" secondAttribute="height" id="gfm-Dh-OSA"/>
+                                <constraint firstItem="YkP-Yq-4pU" firstAttribute="height" secondItem="Le8-TJ-y5o" secondAttribute="height" id="hwb-QV-aCo"/>
+                                <constraint firstItem="1rf-CL-dRf" firstAttribute="centerX" secondItem="YkP-Yq-4pU" secondAttribute="centerX" id="jwe-AL-8FX"/>
+                                <constraint firstItem="egY-NC-mR2" firstAttribute="height" secondItem="VTF-wz-TSU" secondAttribute="height" id="lL8-Ov-7JZ" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="nuG-ty-X45" firstAttribute="height" secondItem="egY-NC-mR2" secondAttribute="height" id="nxt-fj-uFS"/>
+                                <constraint firstItem="Le8-TJ-y5o" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="ohs-IQ-RQc" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="nuG-ty-X45" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="pGO-wy-Nqv" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="gSZ-TG-2IA" secondAttribute="trailing" constant="25" id="pM4-7t-LQo" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="gSZ-TG-2IA" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="pUJ-Fh-3D0" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="i1b-FR-Qki" firstAttribute="top" secondItem="trG-08-H39" secondAttribute="bottom" constant="6" id="pXb-Rm-oek" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="AaN-BD-neW" secondAttribute="trailing" constant="25" id="rqG-cf-UdK" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="uzf-ee-X0E" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="sW2-0J-5TE" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="egY-NC-mR2" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="tyz-0p-uFt" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="gSZ-TG-2IA" firstAttribute="top" secondItem="nuG-ty-X45" secondAttribute="bottom" constant="40" id="u3F-vL-A9O" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="egB-jt-q4x" firstAttribute="top" secondItem="i1b-FR-Qki" secondAttribute="bottom" constant="6" id="vWS-tE-Bs8" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="egY-NC-mR2" firstAttribute="top" secondItem="VTF-wz-TSU" secondAttribute="bottom" constant="6" id="z14-r9-lfI" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                                <constraint firstItem="VTF-wz-TSU" firstAttribute="height" secondItem="AaN-BD-neW" secondAttribute="height" id="z6U-ND-eBw"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="0Ay-zn-mzT" firstAttribute="leading" secondItem="rrX-Pl-pLw" secondAttribute="leading" id="1mE-Gs-qLa"/>
+                        <constraint firstAttribute="trailing" secondItem="0Ay-zn-mzT" secondAttribute="trailing" id="BEG-Ds-obV"/>
+                        <constraint firstAttribute="bottom" secondItem="0Ay-zn-mzT" secondAttribute="bottom" id="Rdk-XS-UsP"/>
+                        <constraint firstItem="0Ay-zn-mzT" firstAttribute="width" secondItem="rrX-Pl-pLw" secondAttribute="width" id="gSg-Ts-JBv"/>
+                        <constraint firstItem="0Ay-zn-mzT" firstAttribute="top" secondItem="rrX-Pl-pLw" secondAttribute="top" id="tvf-73-nM2"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rrX-Pl-pLw" secondAttribute="trailing" id="8G3-f1-jl8"/>
+                <constraint firstItem="rrX-Pl-pLw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="J53-tv-R0v"/>
+                <constraint firstAttribute="bottom" secondItem="rrX-Pl-pLw" secondAttribute="bottom" id="Va7-Gv-rWF"/>
+                <constraint firstItem="rrX-Pl-pLw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oLr-Rt-53L"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="LoginBackground"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="202" y="558"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LoginBackground" width="26" height="26"/>
+    </resources>
+</document>

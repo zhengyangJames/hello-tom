@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OverviewProjectCell" rowHeight="104" id="KGk-i7-Jjw" customClass="OverviewProjectCell" customModule="CoAssetsAgent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="103.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHO-fE-NI1" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="18" y="10" width="106" height="19.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12.5"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Residential" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znh-tl-QJS" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="124" y="11" width="188" height="17.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="164" id="I9q-1q-hM9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12.5"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="I9q-1q-hM9"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Site" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPy-fO-FnD" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="18" y="34" width="106" height="17.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12.5"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Johor Bahru, Malaysia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oci-F3-BKQ" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="124" y="34" width="180" height="17.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12.5"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYm-CW-aMb" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="18" y="57" width="106" height="17.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12.5"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Eco World Development Group Berhad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il4-Xm-2rM" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="124" y="56" width="180" height="37.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12.5"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hPy-fO-FnD" firstAttribute="top" secondItem="ZHO-fE-NI1" secondAttribute="bottom" constant="5" id="2lW-mb-ohs" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="Il4-Xm-2rM" secondAttribute="trailing" constant="16" id="8ew-3J-nl0" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="iYm-CW-aMb" firstAttribute="top" secondItem="hPy-fO-FnD" secondAttribute="bottom" constant="5" id="Czr-27-mdN" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="iYm-CW-aMb" firstAttribute="width" secondItem="hPy-fO-FnD" secondAttribute="width" id="I4s-d9-cX2"/>
+                    <constraint firstAttribute="bottom" secondItem="Il4-Xm-2rM" secondAttribute="bottom" constant="10" id="J2h-IC-bvI" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="znh-tl-QJS" secondAttribute="trailing" constant="8" id="Q3i-NP-4Nw" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="Oci-F3-BKQ" firstAttribute="centerY" secondItem="hPy-fO-FnD" secondAttribute="centerY" id="Sug-wT-yOA"/>
+                    <constraint firstItem="Il4-Xm-2rM" firstAttribute="top" secondItem="Oci-F3-BKQ" secondAttribute="bottom" constant="5" id="Y6r-yh-the" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="ZHO-fE-NI1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Z6S-Qd-KOd" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="ZHO-fE-NI1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="cpe-4A-ZXF"/>
+                    <constraint firstItem="hPy-fO-FnD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="elm-ZY-dDR" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="ZHO-fE-NI1" firstAttribute="centerY" secondItem="znh-tl-QJS" secondAttribute="centerY" id="gAq-68-9bk"/>
+                    <constraint firstAttribute="trailing" secondItem="Oci-F3-BKQ" secondAttribute="trailing" constant="16" id="hHN-xr-Mml" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="Il4-Xm-2rM" firstAttribute="leading" secondItem="iYm-CW-aMb" secondAttribute="trailing" id="hQN-Ax-y7q"/>
+                    <constraint firstItem="iYm-CW-aMb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="j4L-PG-NoA" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="hPy-fO-FnD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="jhF-Hd-XXh"/>
+                    <constraint firstItem="znh-tl-QJS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jj0-aJ-uaV"/>
+                    <constraint firstItem="ZHO-fE-NI1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="l3M-4G-I0L" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="hPy-fO-FnD" firstAttribute="width" secondItem="ZHO-fE-NI1" secondAttribute="width" id="mys-kE-Zgp"/>
+                    <constraint firstItem="znh-tl-QJS" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="20:34" id="qr1-sj-ZMh"/>
+                    <constraint firstItem="Oci-F3-BKQ" firstAttribute="leading" secondItem="hPy-fO-FnD" secondAttribute="trailing" id="sqb-C6-4LP"/>
+                    <constraint firstItem="Oci-F3-BKQ" firstAttribute="top" secondItem="znh-tl-QJS" secondAttribute="bottom" constant="5" id="whT-W6-2Dh" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="znh-tl-QJS" firstAttribute="leading" secondItem="ZHO-fE-NI1" secondAttribute="trailing" id="zLQ-CE-bFj"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="l3M-4G-I0L"/>
+                        <exclude reference="elm-ZY-dDR"/>
+                        <exclude reference="jj0-aJ-uaV"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="developLabel" destination="iYm-CW-aMb" id="e5G-zf-fLJ"/>
+                <outlet property="projectTypeLabel" destination="ZHO-fE-NI1" id="lg1-LB-Ntq"/>
+            </connections>
+            <point key="canvasLocation" x="213" y="173"/>
+        </tableViewCell>
+    </objects>
+</document>

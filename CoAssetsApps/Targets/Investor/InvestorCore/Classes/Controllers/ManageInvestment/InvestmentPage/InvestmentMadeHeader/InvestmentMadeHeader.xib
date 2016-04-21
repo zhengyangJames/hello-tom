@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="mJj-iK-kde" customClass="InvestmentMadeHeader" customModule="CoAssetsAgent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="302" height="215"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhz-M3-Yp4" userLabel="FirstView">
+                    <rect key="frame" x="0.0" y="0.0" width="302" height="110.5"/>
+                    <subviews>
+                        <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIA-V6-VDx">
+                            <rect key="frame" x="0.0" y="0.0" width="302" height="110.5"/>
+                            <color key="backgroundColor" red="0.85882352941176465" green="0.90196078431372551" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eva-MS-6K5" userLabel="CenterView">
+                            <rect key="frame" x="0.0" y="67" width="302" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="bwa-nW-X3x" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="473-79-xZ2" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="29" width="302" height="38"/>
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="27.5"/>
+                            <color key="textColor" red="0.19607843137254902" green="0.40784313725490196" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Potential Commission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sax-YZ-U40" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="68" width="302" height="18.5"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13.5"/>
+                            <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="sax-YZ-U40" firstAttribute="leading" secondItem="Qhz-M3-Yp4" secondAttribute="leading" id="CCW-Pc-3du" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        <constraint firstAttribute="trailing" secondItem="473-79-xZ2" secondAttribute="trailing" id="IqE-KR-aht" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        <constraint firstItem="Eva-MS-6K5" firstAttribute="centerY" secondItem="Qhz-M3-Yp4" secondAttribute="centerY" constant="12" id="KYW-NN-XbK" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        <constraint firstAttribute="trailing" secondItem="Eva-MS-6K5" secondAttribute="trailing" id="Svw-Oh-QHM"/>
+                        <constraint firstItem="sax-YZ-U40" firstAttribute="top" secondItem="Eva-MS-6K5" secondAttribute="top" constant="1" id="UcR-co-BUc" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        <constraint firstItem="FIA-V6-VDx" firstAttribute="width" secondItem="Qhz-M3-Yp4" secondAttribute="width" id="Vzn-qK-4e7"/>
+                        <constraint firstItem="473-79-xZ2" firstAttribute="bottom" secondItem="Eva-MS-6K5" secondAttribute="top" id="W6V-00-1z8" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        <constraint firstItem="Eva-MS-6K5" firstAttribute="leading" secondItem="Qhz-M3-Yp4" secondAttribute="leading" id="bhi-lE-3pX"/>
+                        <constraint firstItem="473-79-xZ2" firstAttribute="leading" secondItem="Qhz-M3-Yp4" secondAttribute="leading" id="dSK-TN-Yj2" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        <constraint firstAttribute="trailing" secondItem="sax-YZ-U40" secondAttribute="trailing" id="deP-lX-rbm" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        <constraint firstItem="FIA-V6-VDx" firstAttribute="height" secondItem="Qhz-M3-Yp4" secondAttribute="height" id="fMB-Z0-g7Y"/>
+                        <constraint firstItem="FIA-V6-VDx" firstAttribute="centerY" secondItem="Qhz-M3-Yp4" secondAttribute="centerY" id="qWt-OO-neB"/>
+                        <constraint firstItem="FIA-V6-VDx" firstAttribute="centerX" secondItem="Qhz-M3-Yp4" secondAttribute="centerX" id="sZD-U4-JOi"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0Z-Fb-FML" userLabel="SecondView">
+                    <rect key="frame" x="0.0" y="110" width="302" height="105"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdM-Ll-jwd" userLabel="LeftView">
+                            <rect key="frame" x="-1" y="0.0" width="150.5" height="105"/>
+                            <subviews>
+                                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KnE-W0-5bx">
+                                    <rect key="frame" x="-0.5" y="0.5" width="151" height="105"/>
+                                    <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vce-5f-B69" userLabel="CenterView">
+                                    <rect key="frame" x="0.0" y="59" width="150.5" height="1"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="vos-fX-X8Z"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commission Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mD-8P-NBj" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="60" width="150.5" height="18.5"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13.5"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyS-zQ-fpQ" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="21.5" width="150.5" height="38"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="27.5"/>
+                                    <color key="textColor" red="0.88627450980392153" green="0.20392156862745098" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="vce-5f-B69" firstAttribute="leading" secondItem="pdM-Ll-jwd" secondAttribute="leading" id="9Zq-9M-Fef"/>
+                                <constraint firstItem="6mD-8P-NBj" firstAttribute="top" secondItem="vce-5f-B69" secondAttribute="bottom" id="GUX-YL-qgq" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="6mD-8P-NBj" secondAttribute="trailing" id="JT0-HV-W74" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="OyS-zQ-fpQ" firstAttribute="leading" secondItem="pdM-Ll-jwd" secondAttribute="leading" id="O9l-IC-ayt" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="vce-5f-B69" secondAttribute="trailing" id="Q3O-di-pax"/>
+                                <constraint firstItem="KnE-W0-5bx" firstAttribute="height" secondItem="pdM-Ll-jwd" secondAttribute="height" id="TBB-Yq-Nj3"/>
+                                <constraint firstItem="vce-5f-B69" firstAttribute="centerY" secondItem="pdM-Ll-jwd" secondAttribute="centerY" constant="7" id="WuO-GN-IEm"/>
+                                <constraint firstItem="OyS-zQ-fpQ" firstAttribute="bottom" secondItem="vce-5f-B69" secondAttribute="top" id="isk-hm-yii" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="KnE-W0-5bx" firstAttribute="centerX" secondItem="pdM-Ll-jwd" secondAttribute="centerX" id="jzt-BE-wfv"/>
+                                <constraint firstItem="KnE-W0-5bx" firstAttribute="centerY" secondItem="pdM-Ll-jwd" secondAttribute="centerY" id="kRv-v7-b42"/>
+                                <constraint firstItem="KnE-W0-5bx" firstAttribute="width" secondItem="pdM-Ll-jwd" secondAttribute="width" id="kVk-lJ-Ucm"/>
+                                <constraint firstItem="6mD-8P-NBj" firstAttribute="leading" secondItem="pdM-Ll-jwd" secondAttribute="leading" id="oD4-3a-maB" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="OyS-zQ-fpQ" secondAttribute="trailing" id="uTB-lP-8te" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-h7-XlD" userLabel="RightView">
+                            <rect key="frame" x="149.5" y="0.0" width="153" height="105"/>
+                            <subviews>
+                                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiD-HJ-qML">
+                                    <rect key="frame" x="0.0" y="0.5" width="153" height="105"/>
+                                    <color key="backgroundColor" red="0.75686274509803919" green="0.93333333333333335" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19i-cS-gTM" userLabel="CenterView">
+                                    <rect key="frame" x="0.0" y="59" width="153" height="1"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="yo3-1a-N6f"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjs-pK-Lrh" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="21.5" width="153" height="38"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="27.5"/>
+                                    <color key="textColor" red="0.21568627450980393" green="0.63529411764705879" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Paid Commission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URO-AL-Xsp" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="60" width="153" height="18.5"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13.5"/>
+                                    <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="FiD-HJ-qML" firstAttribute="height" secondItem="RdU-h7-XlD" secondAttribute="height" id="1HY-eu-FWh"/>
+                                <constraint firstItem="FiD-HJ-qML" firstAttribute="centerX" secondItem="RdU-h7-XlD" secondAttribute="centerX" id="4sG-uz-TZe"/>
+                                <constraint firstAttribute="trailing" secondItem="xjs-pK-Lrh" secondAttribute="trailing" id="5Vd-Wo-YR2" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="19i-cS-gTM" firstAttribute="leading" secondItem="RdU-h7-XlD" secondAttribute="leading" id="9eE-aB-Gaw"/>
+                                <constraint firstItem="19i-cS-gTM" firstAttribute="centerY" secondItem="RdU-h7-XlD" secondAttribute="centerY" constant="7" id="DzQ-qf-Kbh"/>
+                                <constraint firstItem="xjs-pK-Lrh" firstAttribute="bottom" secondItem="19i-cS-gTM" secondAttribute="top" id="Lsm-g9-ubV" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="FiD-HJ-qML" firstAttribute="centerY" secondItem="RdU-h7-XlD" secondAttribute="centerY" id="TiI-Pp-25H"/>
+                                <constraint firstAttribute="trailing" secondItem="URO-AL-Xsp" secondAttribute="trailing" id="d6v-OZ-MUo" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="URO-AL-Xsp" firstAttribute="leading" secondItem="RdU-h7-XlD" secondAttribute="leading" id="eh5-CF-6KA" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="19i-cS-gTM" secondAttribute="trailing" id="lqh-OA-YI9"/>
+                                <constraint firstItem="URO-AL-Xsp" firstAttribute="top" secondItem="19i-cS-gTM" secondAttribute="bottom" id="pyv-OO-YUc" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="FiD-HJ-qML" firstAttribute="width" secondItem="RdU-h7-XlD" secondAttribute="width" id="wAs-hX-eoO"/>
+                                <constraint firstItem="xjs-pK-Lrh" firstAttribute="leading" secondItem="RdU-h7-XlD" secondAttribute="leading" id="y2U-9s-Dr7" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="pdM-Ll-jwd" firstAttribute="leading" secondItem="W0Z-Fb-FML" secondAttribute="leading" constant="-1" id="5Yy-pZ-Lza"/>
+                        <constraint firstItem="RdU-h7-XlD" firstAttribute="top" secondItem="W0Z-Fb-FML" secondAttribute="top" id="Zc4-KJ-mab"/>
+                        <constraint firstAttribute="bottom" secondItem="RdU-h7-XlD" secondAttribute="bottom" id="aYv-Fw-Aem"/>
+                        <constraint firstAttribute="bottom" secondItem="pdM-Ll-jwd" secondAttribute="bottom" id="ax3-sy-wrs"/>
+                        <constraint firstItem="RdU-h7-XlD" firstAttribute="width" secondItem="pdM-Ll-jwd" secondAttribute="width" multiplier="1.016" id="d8L-NG-icf"/>
+                        <constraint firstItem="pdM-Ll-jwd" firstAttribute="top" secondItem="W0Z-Fb-FML" secondAttribute="top" id="e5i-96-NeR"/>
+                        <constraint firstAttribute="trailing" secondItem="RdU-h7-XlD" secondAttribute="trailing" constant="-1" id="mEj-ff-Mdd"/>
+                        <constraint firstItem="RdU-h7-XlD" firstAttribute="leading" secondItem="pdM-Ll-jwd" secondAttribute="trailing" id="usE-Cu-byE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Qhz-M3-Yp4" secondAttribute="trailing" id="8HO-c8-1h8"/>
+                <constraint firstItem="Qhz-M3-Yp4" firstAttribute="leading" secondItem="mJj-iK-kde" secondAttribute="leading" id="Ayc-HC-2QB"/>
+                <constraint firstItem="Qhz-M3-Yp4" firstAttribute="top" secondItem="mJj-iK-kde" secondAttribute="top" id="DTT-5L-IzY"/>
+                <constraint firstItem="W0Z-Fb-FML" firstAttribute="height" secondItem="Qhz-M3-Yp4" secondAttribute="height" multiplier="0.95" id="EMw-xO-WQD"/>
+                <constraint firstAttribute="bottom" secondItem="W0Z-Fb-FML" secondAttribute="bottom" id="O0D-lC-SNn"/>
+                <constraint firstAttribute="trailing" secondItem="W0Z-Fb-FML" secondAttribute="trailing" id="gH8-l2-1Xe"/>
+                <constraint firstItem="W0Z-Fb-FML" firstAttribute="leading" secondItem="mJj-iK-kde" secondAttribute="leading" id="gJf-t2-Y9O"/>
+                <constraint firstItem="W0Z-Fb-FML" firstAttribute="top" secondItem="Qhz-M3-Yp4" secondAttribute="bottom" id="vgg-7K-WVU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="leftView" destination="pdM-Ll-jwd" id="9ny-BV-jCr"/>
+                <outlet property="rightView" destination="RdU-h7-XlD" id="vYw-Mb-IbH"/>
+            </connections>
+            <point key="canvasLocation" x="116" y="205.5"/>
+        </view>
+    </objects>
+</document>

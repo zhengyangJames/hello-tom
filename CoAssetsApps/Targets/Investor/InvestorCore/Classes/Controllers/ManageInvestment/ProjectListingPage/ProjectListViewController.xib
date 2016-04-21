@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectListViewController" customModule="CoAssets" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="kZm-A8-wS6" id="BwE-Ae-rHc"/>
+                <outlet property="firstView" destination="0eg-PR-0aQ" id="01r-87-pZm"/>
+                <outlet property="fourView" destination="bbz-II-A9N" id="2gq-8d-CVt"/>
+                <outlet property="pageControl" destination="Anb-B1-CxF" id="93U-FP-OGr"/>
+                <outlet property="secondView" destination="1cV-by-15o" id="jNB-1H-0ta"/>
+                <outlet property="threeView" destination="2oj-XQ-Oag" id="HU7-lF-OKu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="FPc-2v-Aav"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YaD-GF-N6r">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kZm-A8-wS6">
+                            <rect key="frame" x="0.0" y="5" width="375" height="565"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rdz-I8-w7F">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <pageControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Anb-B1-CxF">
+                            <rect key="frame" x="0.0" y="570" width="375" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Po2-Kj-hOX" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                            </constraints>
+                        </pageControl>
+                    </subviews>
+                    <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kZm-A8-wS6" secondAttribute="trailing" id="D1b-YD-bLc"/>
+                        <constraint firstItem="kZm-A8-wS6" firstAttribute="top" secondItem="YaD-GF-N6r" secondAttribute="top" constant="5" id="DEi-WV-ufK" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstItem="Anb-B1-CxF" firstAttribute="top" secondItem="kZm-A8-wS6" secondAttribute="bottom" id="TEO-me-4lu"/>
+                        <constraint firstAttribute="trailing" secondItem="Anb-B1-CxF" secondAttribute="trailing" id="dC1-Fd-GsD"/>
+                        <constraint firstItem="Anb-B1-CxF" firstAttribute="leading" secondItem="YaD-GF-N6r" secondAttribute="leading" id="qya-Xi-B3A"/>
+                        <constraint firstAttribute="bottom" secondItem="Anb-B1-CxF" secondAttribute="bottom" id="tGs-m6-FKo"/>
+                        <constraint firstItem="kZm-A8-wS6" firstAttribute="leading" secondItem="YaD-GF-N6r" secondAttribute="leading" id="uQt-Xt-SfG"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ax-HQ-Fdu" userLabel="tabbarView">
+                    <rect key="frame" x="0.0" y="600" width="375" height="67"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oj-XQ-Oag" userLabel="threeView" customClass="COTabbaView" customModule="CoAssets" customModuleProvider="target">
+                            <rect key="frame" x="188" y="0.0" width="94" height="67"/>
+                            <color key="backgroundColor" red="0.14117647059999999" green="0.30588235289999999" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbz-II-A9N" userLabel="fourView" customClass="COTabbaView" customModule="CoAssets" customModuleProvider="target">
+                            <rect key="frame" x="282" y="0.0" width="94" height="67"/>
+                            <color key="backgroundColor" red="0.85882352939999995" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-by-15o" userLabel="secondView" customClass="COTabbaView" customModule="CoAssets" customModuleProvider="target">
+                            <rect key="frame" x="94" y="0.0" width="94" height="67"/>
+                            <color key="backgroundColor" red="0.83921568629999999" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eg-PR-0aQ" userLabel="firstView" customClass="COTabbaView" customModule="CoAssets" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="67"/>
+                            <color key="backgroundColor" red="0.94117647058823528" green="1" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="2oj-XQ-Oag" firstAttribute="top" secondItem="9Ax-HQ-Fdu" secondAttribute="top" id="4q5-3Q-tM2"/>
+                        <constraint firstItem="bbz-II-A9N" firstAttribute="leading" secondItem="2oj-XQ-Oag" secondAttribute="trailing" id="ESo-Jc-0Fq"/>
+                        <constraint firstItem="2oj-XQ-Oag" firstAttribute="leading" secondItem="1cV-by-15o" secondAttribute="trailing" id="Eaf-WJ-2cl"/>
+                        <constraint firstItem="bbz-II-A9N" firstAttribute="top" secondItem="9Ax-HQ-Fdu" secondAttribute="top" id="OIT-Rn-G0K"/>
+                        <constraint firstAttribute="bottom" secondItem="bbz-II-A9N" secondAttribute="bottom" id="Rr3-s7-LaB"/>
+                        <constraint firstItem="0eg-PR-0aQ" firstAttribute="top" secondItem="9Ax-HQ-Fdu" secondAttribute="top" id="UYG-pB-VHo"/>
+                        <constraint firstItem="0eg-PR-0aQ" firstAttribute="leading" secondItem="9Ax-HQ-Fdu" secondAttribute="leading" id="UeL-0g-6Qn"/>
+                        <constraint firstAttribute="height" constant="67" id="YpK-qg-6S4" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstItem="1cV-by-15o" firstAttribute="leading" secondItem="0eg-PR-0aQ" secondAttribute="trailing" id="Z8h-Xa-hYX"/>
+                        <constraint firstAttribute="bottom" secondItem="0eg-PR-0aQ" secondAttribute="bottom" id="eZU-E2-Adq"/>
+                        <constraint firstItem="2oj-XQ-Oag" firstAttribute="width" secondItem="bbz-II-A9N" secondAttribute="width" id="hFd-VM-nYK"/>
+                        <constraint firstItem="0eg-PR-0aQ" firstAttribute="width" secondItem="1cV-by-15o" secondAttribute="width" id="iIl-Iw-7YK"/>
+                        <constraint firstItem="1cV-by-15o" firstAttribute="width" secondItem="2oj-XQ-Oag" secondAttribute="width" id="iy4-yg-7ax"/>
+                        <constraint firstAttribute="bottom" secondItem="1cV-by-15o" secondAttribute="bottom" id="kXt-Ow-JAh"/>
+                        <constraint firstAttribute="trailing" secondItem="bbz-II-A9N" secondAttribute="trailing" constant="-1" id="u80-qz-dod"/>
+                        <constraint firstAttribute="bottom" secondItem="2oj-XQ-Oag" secondAttribute="bottom" id="v6H-T0-LUy"/>
+                        <constraint firstItem="1cV-by-15o" firstAttribute="top" secondItem="9Ax-HQ-Fdu" secondAttribute="top" id="xlE-cf-AF0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="9Ax-HQ-Fdu" secondAttribute="bottom" id="6FJ-CO-8bY"/>
+                <constraint firstItem="9Ax-HQ-Fdu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BVa-jt-3gt"/>
+                <constraint firstAttribute="trailing" secondItem="YaD-GF-N6r" secondAttribute="trailing" id="FXx-rh-qBv"/>
+                <constraint firstItem="YaD-GF-N6r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cUW-Wn-4p1"/>
+                <constraint firstItem="YaD-GF-N6r" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jEu-hl-Rct"/>
+                <constraint firstAttribute="trailing" secondItem="9Ax-HQ-Fdu" secondAttribute="trailing" id="ndz-5l-VgH"/>
+                <constraint firstItem="9Ax-HQ-Fdu" firstAttribute="top" secondItem="YaD-GF-N6r" secondAttribute="bottom" id="yVu-N7-YNq"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="251.5" y="206.5"/>
+        </view>
+    </objects>
+</document>

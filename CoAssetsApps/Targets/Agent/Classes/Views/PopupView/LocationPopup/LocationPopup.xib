@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LocationPopup" customModule="CoAssetsAgent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vaw-56-2MN">
+                    <rect key="frame" x="16" y="64" width="288" height="449"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-dp-vxa" userLabel="FirstView">
+                            <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K54-jC-Kdz" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="13" width="236" height="24"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17.5"/>
+                                    <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHB-Pq-Kfo">
+                                    <rect key="frame" x="252" y="15" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="PYk-NH-FS3" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                        <constraint firstAttribute="width" constant="20" id="bNu-fe-amr" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                    </constraints>
+                                    <state key="normal" image="delete.png"/>
+                                    <connections>
+                                        <action selector="actionClose:" destination="iN0-l3-epB" eventType="touchUpInside" id="KTJ-UF-uFW"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="yHB-Pq-Kfo" secondAttribute="trailing" constant="16" id="IWP-bB-cW3" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="yHB-Pq-Kfo" firstAttribute="leading" secondItem="K54-jC-Kdz" secondAttribute="trailing" constant="8" id="O9b-Gb-6XH" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="K54-jC-Kdz" firstAttribute="centerY" secondItem="0r8-dp-vxa" secondAttribute="centerY" id="OqT-Na-96u"/>
+                                <constraint firstAttribute="height" constant="50" id="YeZ-cZ-Bg3" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="K54-jC-Kdz" firstAttribute="leading" secondItem="0r8-dp-vxa" secondAttribute="leading" constant="8" id="jg9-nK-fSl" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="yHB-Pq-Kfo" firstAttribute="centerY" secondItem="0r8-dp-vxa" secondAttribute="centerY" id="mnR-US-tAi"/>
+                            </constraints>
+                        </view>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ltb-6n-GO3">
+                            <rect key="frame" x="0.0" y="50" width="288" height="399"/>
+                        </mapView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.55705238769999998" green="1" blue="0.67448295000000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Ltb-6n-GO3" firstAttribute="leading" secondItem="Vaw-56-2MN" secondAttribute="leading" id="8jS-Ee-fMN"/>
+                        <constraint firstAttribute="trailing" secondItem="Ltb-6n-GO3" secondAttribute="trailing" id="VBp-Db-6Ge"/>
+                        <constraint firstItem="Ltb-6n-GO3" firstAttribute="top" secondItem="0r8-dp-vxa" secondAttribute="bottom" id="WA7-vI-gSP"/>
+                        <constraint firstAttribute="trailing" secondItem="0r8-dp-vxa" secondAttribute="trailing" id="abE-Nn-Zvz"/>
+                        <constraint firstAttribute="bottom" secondItem="Ltb-6n-GO3" secondAttribute="bottom" id="cKt-pC-YHP"/>
+                        <constraint firstItem="0r8-dp-vxa" firstAttribute="leading" secondItem="Vaw-56-2MN" secondAttribute="leading" id="egM-lV-8lZ"/>
+                        <constraint firstItem="0r8-dp-vxa" firstAttribute="top" secondItem="Vaw-56-2MN" secondAttribute="top" id="m1Z-l8-pdb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Vaw-56-2MN" secondAttribute="trailing" constant="16" id="7Sa-Bb-Rd3" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                <constraint firstItem="Vaw-56-2MN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Xn6-oh-4Bc" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                <constraint firstAttribute="bottom" secondItem="Vaw-56-2MN" secondAttribute="bottom" constant="55" id="pgb-8G-Yxk" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                <constraint firstItem="Vaw-56-2MN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="zGo-0s-R64" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="map" destination="Ltb-6n-GO3" id="Qyp-vF-jpO"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="delete.png" width="25" height="25"/>
+    </resources>
+</document>

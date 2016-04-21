@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>dawin.widjaja@coassets.com</string>
+		<key>investment</key>
+		<string>$5,000</string>
+		<key>potential</key>
+		<string>$500</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Justin.pierce@coasset.com</string>
+		<key>investment</key>
+		<string>$5,000</string>
+		<key>potential</key>
+		<string>$500</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>morgan@coassets.com</string>
+		<key>investment</key>
+		<string>$5,000</string>
+		<key>potential</key>
+		<string>$500</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>andrew.lincon@coassets.com</string>
+		<key>investment</key>
+		<string>$5,000</string>
+		<key>potential</key>
+		<string>$500</string>
+	</dict>
+</array>
+</plist>

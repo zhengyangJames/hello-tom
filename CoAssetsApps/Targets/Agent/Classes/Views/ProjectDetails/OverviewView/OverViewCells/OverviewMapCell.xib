@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OverviewMapCell" rowHeight="65" id="KGk-i7-Jjw" customClass="OverviewMapCell" customModule="CoAssetsAgent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" image="icon_location" translatesAutoresizingMaskIntoConstraints="NO" id="X0Q-mj-0eQ">
+                        <rect key="frame" x="18" y="44" width="8" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="8" id="RI3-V3-9sP" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            <constraint firstAttribute="height" constant="14" id="pH8-TH-QXj" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Eco Boulevard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJP-pO-XAq" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="18" y="5" width="294" height="35"/>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17.510000228881836"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="N 01° 28' 59&quot; E 103° 39' 48&quot;, johor Babru, Malaysia " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brc-Rr-eat" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="28" y="42" width="276" height="17.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="232" id="Aes-J4-E2t"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12.5"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Aes-J4-E2t"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="brc-Rr-eat" firstAttribute="leading" secondItem="X0Q-mj-0eQ" secondAttribute="trailing" constant="2" id="19b-3A-cbZ" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="brc-Rr-eat" firstAttribute="top" secondItem="jJP-pO-XAq" secondAttribute="bottom" constant="2" id="AFp-Qn-NxT" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="jJP-pO-XAq" secondAttribute="trailing" id="As4-Rt-KUf"/>
+                    <constraint firstAttribute="bottom" secondItem="brc-Rr-eat" secondAttribute="bottom" constant="5" id="N6p-ej-eOb"/>
+                    <constraint firstItem="X0Q-mj-0eQ" firstAttribute="top" secondItem="jJP-pO-XAq" secondAttribute="bottom" constant="3" id="NS5-Z8-qmP" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="X0Q-mj-0eQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="QxZ-z9-Erq" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="jJP-pO-XAq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="RH5-fv-Kpk" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="X0Q-mj-0eQ" firstAttribute="centerY" secondItem="brc-Rr-eat" secondAttribute="centerY" id="Rrf-Pj-Zur"/>
+                    <constraint firstItem="X0Q-mj-0eQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="SHb-lU-624"/>
+                    <constraint firstAttribute="bottom" secondItem="brc-Rr-eat" secondAttribute="bottom" constant="12" id="boS-QW-P6j"/>
+                    <constraint firstItem="jJP-pO-XAq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="dHK-PV-Jg9" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="brc-Rr-eat" secondAttribute="trailing" constant="8" id="dtl-Ab-CQC" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="jJP-pO-XAq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="qJi-oj-Qf9" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="jJP-pO-XAq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="x0g-8I-5RP"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="RH5-fv-Kpk"/>
+                        <exclude reference="dHK-PV-Jg9"/>
+                        <exclude reference="NS5-Z8-qmP"/>
+                        <exclude reference="QxZ-z9-Erq"/>
+                        <exclude reference="boS-QW-P6j"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="290" y="280.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_location" width="5" height="8"/>
+    </resources>
+</document>

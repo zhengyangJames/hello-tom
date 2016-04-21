@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>Na Thai Estate - Phase 1</string>
+		<key>Status</key>
+		<string> OUT_FOR_SI</string>
+		<key>Indicative</key>
+		<string> SGD5,000</string>
+		<key>Commission</key>
+		<string>SGD100 (Unpaid)</string>
+		<key>CommissionPaynt</key>
+		<string>21-12-2015</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Maldives Villa</string>
+		<key>Status</key>
+		<string> OUT_FOR_SI</string>
+		<key>Indicative</key>
+		<string> SGD5,000</string>
+		<key>Commission</key>
+		<string>SGD100 (Unpaid)</string>
+		<key>CommissionPaynt</key>
+		<string>21-12-2015</string>
+	</dict>
+</array>
+</plist>

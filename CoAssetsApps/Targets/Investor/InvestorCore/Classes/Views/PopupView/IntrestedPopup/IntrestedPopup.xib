@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="OAE-nJ-02c" customClass="IntrestedPopup" customModule="CoAssets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZ4-3O-faQ" userLabel="firstView">
+                    <rect key="frame" x="16" y="90" width="288" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhT-Vu-bvM">
+                            <rect key="frame" x="0.0" y="49" width="288" height="1"/>
+                            <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="taq-tv-lmd"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm Intrested" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkH-sQ-Muv" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                            <rect key="frame" x="16" y="0.0" width="233" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="uEV-vh-q3x" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17.5"/>
+                            <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="uEV-vh-q3x"/>
+                                </mask>
+                            </variation>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woK-Jb-rdE">
+                            <rect key="frame" x="249" y="14" width="23" height="23"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="23" id="5R0-Zg-sDJ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="height" constant="23" id="eJy-y7-DpJ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                            </constraints>
+                            <state key="normal" image="delete.png"/>
+                            <connections>
+                                <action selector="actionClose:" destination="OAE-nJ-02c" eventType="touchUpInside" id="JbS-gC-RTE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="LkH-sQ-Muv" secondAttribute="bottom" id="0HA-b8-IT2" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstItem="jhT-Vu-bvM" firstAttribute="leading" secondItem="hZ4-3O-faQ" secondAttribute="leading" id="2Xh-VQ-fg9"/>
+                        <constraint firstItem="woK-Jb-rdE" firstAttribute="leading" secondItem="LkH-sQ-Muv" secondAttribute="trailing" id="FTl-n2-aGD" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstAttribute="trailing" secondItem="jhT-Vu-bvM" secondAttribute="trailing" id="Kep-XK-zCL"/>
+                        <constraint firstItem="LkH-sQ-Muv" firstAttribute="leading" secondItem="hZ4-3O-faQ" secondAttribute="leading" constant="16" id="LC1-ib-WFF" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstAttribute="height" constant="50" id="MSo-GS-gfe" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstAttribute="trailing" secondItem="woK-Jb-rdE" secondAttribute="trailing" constant="16" id="czd-uC-m9n" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstItem="woK-Jb-rdE" firstAttribute="centerY" secondItem="LkH-sQ-Muv" secondAttribute="centerY" id="hqL-Da-pfM"/>
+                        <constraint firstAttribute="bottom" secondItem="jhT-Vu-bvM" secondAttribute="bottom" id="lYk-at-0a2"/>
+                        <constraint firstItem="LkH-sQ-Muv" firstAttribute="top" secondItem="hZ4-3O-faQ" secondAttribute="top" id="nqi-3X-br2" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVh-Cq-49I" userLabel="contentView">
+                    <rect key="frame" x="16" y="140" width="288" height="273"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-3G-SxA">
+                            <rect key="frame" x="0.0" y="0.0" width="288" height="273"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY6-cV-fYp" userLabel="contentView">
+                                    <rect key="frame" x="0.0" y="0.0" width="288" height="273"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYc-Sd-wuJ" userLabel="secondView">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="62"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSJ-kQ-SP5" userLabel="footerSecondView">
+                                                    <rect key="frame" x="0.0" y="61" width="288" height="1"/>
+                                                    <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="9R7-A4-Gh6" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are expressing interest in this project." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pz-oj-IoN" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="10" width="272" height="41"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                    <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="pSJ-kQ-SP5" firstAttribute="top" secondItem="8Pz-oj-IoN" secondAttribute="bottom" constant="10" id="5g2-aB-tZa" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstAttribute="bottom" secondItem="pSJ-kQ-SP5" secondAttribute="bottom" id="6bj-Xh-quh"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Pz-oj-IoN" secondAttribute="trailing" id="7Ru-ub-utx" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="8Pz-oj-IoN" firstAttribute="top" secondItem="uYc-Sd-wuJ" secondAttribute="top" constant="10" id="N3e-SY-o46" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstAttribute="height" constant="45" id="Pr2-jM-g8Y" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="pSJ-kQ-SP5" firstAttribute="leading" secondItem="uYc-Sd-wuJ" secondAttribute="leading" id="YjP-n4-ciP"/>
+                                                <constraint firstAttribute="trailing" secondItem="pSJ-kQ-SP5" secondAttribute="trailing" id="j29-bm-gWZ"/>
+                                                <constraint firstItem="8Pz-oj-IoN" firstAttribute="leading" secondItem="uYc-Sd-wuJ" secondAttribute="leading" constant="16" id="nwp-OS-tdV" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Pr2-jM-g8Y"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHn-bi-hw7" userLabel="threeView">
+                                            <rect key="frame" x="0.0" y="62" width="288" height="151"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLN-b2-Uh9" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="12" width="264" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                    <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mel-gb-f2U" customClass="COBoderColorTextField" customModule="CoAssets" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="41" width="256" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="HCW-aS-iVe"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="mel-gb-f2U" secondAttribute="height" multiplier="137:19" id="l0B-Vp-OOZ"/>
+                                                        <constraint firstAttribute="width" secondItem="mel-gb-f2U" secondAttribute="height" multiplier="137:19" id="nPI-pY-LMR" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="HCW-aS-iVe"/>
+                                                            <exclude reference="nPI-pY-LMR"/>
+                                                        </mask>
+                                                    </variation>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Me-yH-axg" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="85" width="256" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                    <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eji-90-tfL" customClass="COBoderColorTextField" customModule="CoAssets" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="114" width="256" height="36"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="OAE-nJ-02c" id="XYh-m7-9lD"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="rLN-b2-Uh9" firstAttribute="leading" secondItem="xHn-bi-hw7" secondAttribute="leading" constant="16" id="ASd-1g-dwY" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="mel-gb-f2U" firstAttribute="leading" secondItem="xHn-bi-hw7" secondAttribute="leading" constant="16" id="S5y-24-Jld" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstAttribute="bottom" secondItem="eji-90-tfL" secondAttribute="bottom" constant="1" id="T6M-BH-70Z" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="eji-90-tfL" firstAttribute="top" secondItem="0Me-yH-axg" secondAttribute="bottom" constant="8" id="Xt4-TF-Vmq" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="mel-gb-f2U" firstAttribute="top" secondItem="rLN-b2-Uh9" secondAttribute="bottom" constant="8" id="YLu-PE-3SX" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="rLN-b2-Uh9" firstAttribute="top" secondItem="xHn-bi-hw7" secondAttribute="top" constant="12" id="bci-Yk-SpB" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Me-yH-axg" secondAttribute="trailing" constant="16" id="dCx-Al-Tdi" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstAttribute="trailing" secondItem="eji-90-tfL" secondAttribute="trailing" constant="16" id="dsT-gy-5ni" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="eji-90-tfL" firstAttribute="leading" secondItem="xHn-bi-hw7" secondAttribute="leading" constant="16" id="ium-PC-NBE" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstAttribute="trailing" secondItem="mel-gb-f2U" secondAttribute="trailing" constant="16" id="jU2-Ff-h6Q" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstAttribute="trailing" secondItem="rLN-b2-Uh9" secondAttribute="trailing" constant="8" id="rY0-oI-zaP" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="0Me-yH-axg" firstAttribute="top" secondItem="mel-gb-f2U" secondAttribute="bottom" constant="8" id="xBd-XS-9xA"/>
+                                                <constraint firstItem="0Me-yH-axg" firstAttribute="leading" secondItem="xHn-bi-hw7" secondAttribute="leading" constant="16" id="xba-MI-j62" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="eji-90-tfL" firstAttribute="height" secondItem="mel-gb-f2U" secondAttribute="height" id="zEU-79-JqN"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRp-Hm-fGr" userLabel="fourView">
+                                            <rect key="frame" x="0.0" y="213" width="288" height="60"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree to let CoAssets share my contact info with the OP and for OP to contact me on this project." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5i-sY-1VF" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                                    <rect key="frame" x="41" y="0.0" width="231" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="pCx-m5-ar0" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                    <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xG-MN-GOA" customClass="COCheckButton" customModule="CoAssets" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="20" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="BHn-bh-5Rm" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                        <constraint firstAttribute="height" constant="20" id="IrY-Xy-BQS" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="actionCheck:" destination="OAE-nJ-02c" eventType="touchUpInside" id="iaH-w7-45E"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="1xG-MN-GOA" firstAttribute="top" secondItem="S5i-sY-1VF" secondAttribute="top" constant="14" id="57A-e3-h9J" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstItem="1xG-MN-GOA" firstAttribute="leading" secondItem="SRp-Hm-fGr" secondAttribute="leading" constant="16" id="AtQ-1O-f8a" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                                <constraint firstAttribute="trailing" secondItem="S5i-sY-1VF" secondAttribute="trailing" constant="16" id="PXV-It-LeJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="S5i-sY-1VF" secondAttribute="bottom" id="VVi-kW-NLN"/>
+                                                <constraint firstItem="1xG-MN-GOA" firstAttribute="centerY" secondItem="S5i-sY-1VF" secondAttribute="centerY" id="WLW-5y-HxR"/>
+                                                <constraint firstItem="S5i-sY-1VF" firstAttribute="top" secondItem="SRp-Hm-fGr" secondAttribute="top" id="ijt-TP-RZZ"/>
+                                                <constraint firstItem="S5i-sY-1VF" firstAttribute="leading" secondItem="1xG-MN-GOA" secondAttribute="trailing" constant="5" id="yRe-Ao-zlQ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="57A-e3-h9J"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="uYc-Sd-wuJ" firstAttribute="leading" secondItem="YY6-cV-fYp" secondAttribute="leading" id="9rx-hG-3VK"/>
+                                        <constraint firstAttribute="bottom" secondItem="SRp-Hm-fGr" secondAttribute="bottom" id="AcV-zb-QFN"/>
+                                        <constraint firstItem="xHn-bi-hw7" firstAttribute="top" secondItem="uYc-Sd-wuJ" secondAttribute="bottom" id="C5C-oR-JeB"/>
+                                        <constraint firstAttribute="trailing" secondItem="xHn-bi-hw7" secondAttribute="trailing" id="E92-48-qWu"/>
+                                        <constraint firstAttribute="trailing" secondItem="uYc-Sd-wuJ" secondAttribute="trailing" id="VyE-JU-kj2"/>
+                                        <constraint firstItem="SRp-Hm-fGr" firstAttribute="leading" secondItem="YY6-cV-fYp" secondAttribute="leading" id="X1F-M1-PXa"/>
+                                        <constraint firstAttribute="trailing" secondItem="SRp-Hm-fGr" secondAttribute="trailing" id="ZFq-gF-hMo"/>
+                                        <constraint firstItem="uYc-Sd-wuJ" firstAttribute="top" secondItem="YY6-cV-fYp" secondAttribute="top" id="bRz-Uf-Rar"/>
+                                        <constraint firstItem="SRp-Hm-fGr" firstAttribute="top" secondItem="xHn-bi-hw7" secondAttribute="bottom" id="iXl-aj-YkL"/>
+                                        <constraint firstItem="xHn-bi-hw7" firstAttribute="leading" secondItem="YY6-cV-fYp" secondAttribute="leading" id="wXp-xX-hKg"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="YY6-cV-fYp" firstAttribute="width" secondItem="Oaf-3G-SxA" secondAttribute="width" id="31f-xs-TOK"/>
+                                <constraint firstItem="YY6-cV-fYp" firstAttribute="height" secondItem="Oaf-3G-SxA" secondAttribute="height" priority="250" id="BZe-SQ-Ek5"/>
+                                <constraint firstItem="YY6-cV-fYp" firstAttribute="top" secondItem="Oaf-3G-SxA" secondAttribute="top" id="aFu-kG-o03"/>
+                                <constraint firstAttribute="trailing" secondItem="YY6-cV-fYp" secondAttribute="trailing" id="jt4-Vg-nJp"/>
+                                <constraint firstItem="YY6-cV-fYp" firstAttribute="leading" secondItem="Oaf-3G-SxA" secondAttribute="leading" id="lBa-Pj-Jt2"/>
+                                <constraint firstAttribute="bottom" secondItem="YY6-cV-fYp" secondAttribute="bottom" id="wrC-2L-m5d"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Oaf-3G-SxA" firstAttribute="leading" secondItem="NVh-Cq-49I" secondAttribute="leading" id="2m9-Th-0TW"/>
+                        <constraint firstItem="Oaf-3G-SxA" firstAttribute="top" secondItem="NVh-Cq-49I" secondAttribute="top" id="VUg-Su-M8E"/>
+                        <constraint firstAttribute="trailing" secondItem="Oaf-3G-SxA" secondAttribute="trailing" id="sXY-OH-W7F"/>
+                        <constraint firstAttribute="bottom" secondItem="Oaf-3G-SxA" secondAttribute="bottom" id="wnJ-ja-xWU"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-SX-Wb8" customClass="CORedButton" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="16" y="413" width="288" height="65"/>
+                    <color key="backgroundColor" red="0.8862745098" green="0.20392156859999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="Px4-Pc-WUp" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                    </constraints>
+                    <state key="normal" title="DONE">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionSubmit:" destination="OAE-nJ-02c" eventType="touchUpInside" id="iqG-eU-9Wu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="NVh-Cq-49I" firstAttribute="leading" secondItem="OAE-nJ-02c" secondAttribute="leading" constant="16" id="5YR-vN-Lbm" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="hZ4-3O-faQ" firstAttribute="leading" secondItem="OAE-nJ-02c" secondAttribute="leading" constant="16" id="5hd-1l-wcA" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="NVh-Cq-49I" firstAttribute="centerX" secondItem="OAE-nJ-02c" secondAttribute="centerX" id="8Eq-Oc-gUv"/>
+                <constraint firstAttribute="trailing" secondItem="hZ4-3O-faQ" secondAttribute="trailing" constant="16" id="FnO-Yo-bcE" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="hZ4-3O-faQ" firstAttribute="bottom" secondItem="NVh-Cq-49I" secondAttribute="top" id="HEa-Zp-F1v"/>
+                <constraint firstItem="hZ4-3O-faQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OAE-nJ-02c" secondAttribute="top" constant="8" id="Kbb-6c-UZF"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ggR-SX-Wb8" secondAttribute="bottom" constant="8" id="P0p-zE-HUG"/>
+                <constraint firstAttribute="trailing" secondItem="ggR-SX-Wb8" secondAttribute="trailing" constant="16" id="gVG-qq-xl1" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="ggR-SX-Wb8" firstAttribute="leading" secondItem="OAE-nJ-02c" secondAttribute="leading" constant="16" id="ibN-7b-ONF" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="ggR-SX-Wb8" firstAttribute="top" secondItem="NVh-Cq-49I" secondAttribute="bottom" id="pjO-mS-cnA"/>
+                <constraint firstItem="NVh-Cq-49I" firstAttribute="centerY" secondItem="OAE-nJ-02c" secondAttribute="centerY" priority="250" constant="-8" id="yfi-cx-s5P" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstAttribute="trailing" secondItem="NVh-Cq-49I" secondAttribute="trailing" constant="16" id="z9B-Qz-Qtp" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="amountLabel" destination="0Me-yH-axg" id="0PP-55-fn6"/>
+                <outlet property="amountTexfield" destination="eji-90-tfL" id="YlH-vW-gmT"/>
+                <outlet property="bottomContrain" destination="P0p-zE-HUG" id="NFi-kn-Cwe"/>
+                <outlet property="checkBoxButton" destination="1xG-MN-GOA" id="EeY-ow-BMf"/>
+                <outlet property="checkboxTitleLabel" destination="S5i-sY-1VF" id="Xnb-nq-DnO"/>
+                <outlet property="doneButton" destination="ggR-SX-Wb8" id="QW4-IW-9Pn"/>
+                <outlet property="emailLabel" destination="rLN-b2-Uh9" id="L9Z-Q5-Boa"/>
+                <outlet property="emailTextField" destination="mel-gb-f2U" id="g66-6u-N00"/>
+                <outlet property="shortDescriptionLabel" destination="8Pz-oj-IoN" id="LvV-Pb-aTl"/>
+                <outlet property="titleLabel" destination="LkH-sQ-Muv" id="u9u-0S-KSR"/>
+            </connections>
+            <point key="canvasLocation" x="224" y="191"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="delete.png" width="25" height="25"/>
+    </resources>
+</document>

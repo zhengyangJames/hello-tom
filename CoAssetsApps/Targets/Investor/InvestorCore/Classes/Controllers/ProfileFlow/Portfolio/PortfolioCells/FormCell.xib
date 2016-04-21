@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FormCell" rowHeight="228" id="3dX-9j-XVZ" customClass="FormCell" customModule="CoAssets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="238"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3dX-9j-XVZ" id="yRR-b8-fkt">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="237.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TwP-tJ-CJe" customClass="BaseViewPorfolio" customModule="CoAssets" customModuleProvider="target">
+                        <rect key="frame" x="8" y="8" width="304" height="221"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Withdrawal Form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="62a-Ck-7dB" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="288" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="34T-Cx-Oww"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jo6-Qn-z5d" userLabel="Currency" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                <rect key="frame" x="16" y="40" width="272" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Aoy-vH-eyv"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="City"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorTitle">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vd-OD-Xs0" customClass="CODropDownButton" customModule="CoAssets" customModuleProvider="target">
+                                <rect key="frame" x="16" y="40" width="272" height="55"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title=" ">
+                                    <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionInvestor:" destination="3dX-9j-XVZ" eventType="touchUpInside" id="Ean-IY-Rcc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6LF-qj-wzM" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                <rect key="frame" x="16" y="103" width="272" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="2Lc-Ab-edv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorTitle">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8C-la-6nO" customClass="BaseButton" customModule="CoAssets" customModuleProvider="target">
+                                <rect key="frame" x="102" y="168" width="100" height="44"/>
+                                <color key="backgroundColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="LcZ-D9-27S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Withdraw">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionWithDraw:" destination="3dX-9j-XVZ" eventType="touchUpInside" id="88g-42-y3c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jo6-Qn-z5d" firstAttribute="leading" secondItem="TwP-tJ-CJe" secondAttribute="leading" constant="16" id="GCf-VK-ah5"/>
+                            <constraint firstItem="62a-Ck-7dB" firstAttribute="top" secondItem="TwP-tJ-CJe" secondAttribute="top" constant="8" id="HKL-Qm-foL"/>
+                            <constraint firstItem="b8C-la-6nO" firstAttribute="centerX" secondItem="TwP-tJ-CJe" secondAttribute="centerX" id="ID3-t0-UJP"/>
+                            <constraint firstAttribute="trailing" secondItem="Jo6-Qn-z5d" secondAttribute="trailing" constant="16" id="IRf-2g-B1P"/>
+                            <constraint firstItem="4vd-OD-Xs0" firstAttribute="centerX" secondItem="Jo6-Qn-z5d" secondAttribute="centerX" id="KeG-9m-bqu"/>
+                            <constraint firstItem="4vd-OD-Xs0" firstAttribute="height" secondItem="Jo6-Qn-z5d" secondAttribute="height" id="MQx-i4-5TZ"/>
+                            <constraint firstAttribute="trailing" secondItem="6LF-qj-wzM" secondAttribute="trailing" constant="16" id="MkZ-tU-6eN"/>
+                            <constraint firstItem="Jo6-Qn-z5d" firstAttribute="top" secondItem="62a-Ck-7dB" secondAttribute="bottom" constant="8" id="Mnc-pG-T46"/>
+                            <constraint firstItem="4vd-OD-Xs0" firstAttribute="centerY" secondItem="Jo6-Qn-z5d" secondAttribute="centerY" id="PiS-Wc-ZC1"/>
+                            <constraint firstItem="b8C-la-6nO" firstAttribute="top" secondItem="6LF-qj-wzM" secondAttribute="bottom" constant="10" id="QMW-pF-NLv"/>
+                            <constraint firstAttribute="bottom" secondItem="b8C-la-6nO" secondAttribute="bottom" constant="8.5" id="YD6-Yp-ADl"/>
+                            <constraint firstAttribute="trailing" secondItem="62a-Ck-7dB" secondAttribute="trailing" constant="8" id="ajt-cY-JMj"/>
+                            <constraint firstItem="62a-Ck-7dB" firstAttribute="leading" secondItem="TwP-tJ-CJe" secondAttribute="leading" constant="8" id="d0b-iB-5AH"/>
+                            <constraint firstItem="6LF-qj-wzM" firstAttribute="leading" secondItem="TwP-tJ-CJe" secondAttribute="leading" constant="16" id="ntY-zY-uhT"/>
+                            <constraint firstItem="4vd-OD-Xs0" firstAttribute="width" secondItem="Jo6-Qn-z5d" secondAttribute="width" id="oaS-na-Kpr"/>
+                            <constraint firstItem="6LF-qj-wzM" firstAttribute="top" secondItem="Jo6-Qn-z5d" secondAttribute="bottom" constant="8" id="tbF-pR-xiu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="TwP-tJ-CJe" firstAttribute="top" secondItem="yRR-b8-fkt" secondAttribute="topMargin" id="4JM-zR-ecE"/>
+                    <constraint firstItem="TwP-tJ-CJe" firstAttribute="leading" secondItem="yRR-b8-fkt" secondAttribute="leadingMargin" id="JyG-lB-Nqj"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="TwP-tJ-CJe" secondAttribute="bottom" id="rFQ-bE-TA6"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TwP-tJ-CJe" secondAttribute="trailing" id="wBf-HL-Fn8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="amountTextField" destination="6LF-qj-wzM" id="yPZ-45-ag2"/>
+                <outlet property="currencyTextField" destination="Jo6-Qn-z5d" id="S7p-77-oRs"/>
+                <outlet property="dropButton" destination="4vd-OD-Xs0" id="NCi-VU-Uda"/>
+                <outlet property="withdrawButton" destination="b8C-la-6nO" id="FAc-Zi-36P"/>
+                <outlet property="withdrawalFormLabel" destination="62a-Ck-7dB" id="ICY-wp-F1j"/>
+            </connections>
+            <point key="canvasLocation" x="336" y="306"/>
+        </tableViewCell>
+    </objects>
+</document>

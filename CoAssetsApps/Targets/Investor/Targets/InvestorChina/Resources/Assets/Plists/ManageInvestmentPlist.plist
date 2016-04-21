@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>icon_projectList</string>
+		<key>title</key>
+		<string>Project Listing Page</string>
+		<key>detail</key>
+		<string>Lorem lpsum is simply dummy text of the industry.</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_FAQpage</string>
+		<key>title</key>
+		<string>FAQ Page</string>
+		<key>detail</key>
+		<string>Lorem lpsum is simply dummy text of the industry.</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>Icon_ClientPage</string>
+		<key>title</key>
+		<string>Client Page</string>
+		<key>detail</key>
+		<string>Lorem lpsum is simply dummy text of the industry.</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_investment</string>
+		<key>title</key>
+		<string>Investment Page</string>
+		<key>detail</key>
+		<string>Lorem lpsum is simply dummy text of the industry.</string>
+	</dict>
+</array>
+</plist>
