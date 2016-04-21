@@ -1,0 +1,322 @@
+/* 
+  Localizable.strings
+  CoAssets-Agent
+
+  Created by Linh NGUYEN on 11/24/15.
+  Copyright © 2015 Nikmesoft Ltd. All rights reserved.
+*/
+
+
+"APP_NAME"      = "CoAssets";
+"CHECK_LOGIN"   = "login";
+"SIGN_IN"                                = "Sign In";
+"SIGN_OUT"                               = "Sign Out";
+// TITLE
+"TITLE_WELCOME" = "Welcome";
+"TITLE_INVESTMENT_MADE"   = "Investment Made";
+"TITLE_MANAGE_INVESTMENT" = "Manage Investment";
+"TITLE_FAQ_PAGE"          = "FAQ";
+"TITLE_CLIENT_PAGE"       = "Client";
+"TITLE_PROJECT_LIST"      = "Project List";
+"TITLE_PROJECT_LIST_DETAIL" = "Project Details";
+
+"TITLE_SIGN_UP" = "YOU ARE REGISTERED AS OUR USER, BUT YOU ARE\nCURRENTLY NOT AN AGENT. YOU CAN APPLY TO BE\nONE BY FILLING IN THE FORM BELOW";
+"TITLE_MESSAGE_INVESTMENT" = "Lorem lpsum is simply dummy text of the industry.";
+"TITLE_MESSAGE_PROJECT" = "Lorem lpsum is simply dummy text of the industry.";
+
+"TITLE_BACK"        = "Back";
+"TITLE_DONE"        = "DONE";
+"TITLE_DONE_UPDATE" = "Done";
+"TITLE_BUTTON_OK"   = "OK";
+"TITLE_BUTTON_CANCEL"   = "Cancel";
+"TITLE_BUTTON_MALE" = "Male";
+"TITLE_BUTTON_FEMALE" = "Female";
+"TITLE_BUTTON_OTHER"  = "Other";
+"BACK_TITLE"          = "Back";
+
+"TITLE_UNKNOWN"     = "Unknown";
+
+//MARK: Message
+    //MARK: Message Error Network
+    "MESSAGE_ERROR_NETWORK" = "Can not connect to server.";
+
+//MANAGE INVESTMENT
+"MESSAGE_INVESTMENT_MADE" = "Total Investment made:";
+"MESSAGE_POTENTIAL_COMMISSON" = "Total Potential Commission:";
+
+//ProjectList
+"MESSAGE_ALL"    =    "All";
+"MESSAGE_BULK"   =   "Bulk";
+"MESSAGE_CROUDFUNDING" = "Crowdfunding";
+"MESSAGE_PRE_SALES"    = "Pre-Sales";
+
+//Message
+"MESSAGE_REQUEST_LOGIN" = "Thanks for registering, we will process your request and get back to you soon.";
+"MESSAGE_IM_INTRESTER_INVEST"  = "Investment Successful!";
+"MESSAGE_QUESTION_NOT_CONTENT" = "Question content is required.";
+"MESSAGE_QUESTION_CONTENT"     = "Request sent.";
+
+//Verify message
+"MESSAGE_USERNAME" = "Username is required.";
+"MESSAGE_PASSWORD" = "Password is required.";
+"MESSAGE_CONFIRM_PASSWORD" = "Confirm password is required.";
+
+"MESSAGE_FIRST_NAME" = "First name is required.";
+"MESSAGE_LAST_NAME" = "Last name is required.";
+"MESSAGE_EMAIL" = "Email is required.";
+"MESSAGE_EMAIL_VALID" = "Email is invalid.";
+"MESSAGE_PHONE" = "Mobile number is required.";
+"MESSAGE_PHONE_VALID" = "Mobile number is invalid.";
+"MESSAGE_COUNTRY_CODE" = "Please choose mobile code.";
+"MESSAGE_amount" = "Please key in correct amount.";
+"MESSAGE_AMOUNT_MINIMUM" = "Minimum investment amount is %.0f.";
+"MESSAGE_NO_CHECK" = "Please agree to allow CoAsset to contact you in order to facilitate the crowdfunding process";
+
+"MESSAGE_CONFIRM_PASSWORD_MATCH" = "Confirm password does not match.";
+//OverView
+"MESSAGE_CONTENT_PROJECT_TYPE" = "Project Type";
+"MESSAGE_CONTENT_PROJECT_DEVELOP" = "Project Developer";
+
+//Investment
+
+"TITLE_INVEST_STATUS" = "Status:";
+"TITLE_INVEST_INDICATIVE" = "Indicative Amount:";
+"TITLE_INVEST_COMMISSION" = "commission:";
+"TITLE_INVEST_COMMISSION_PAYNT" = "CommissionPaynt date:";
+
+//Title MenuController
+"TITLE_HOME" = "Home";
+"TITLE_PROFILE" = "Profile";
+"TITLE_NOTIFICATIONS" = "Notifications";
+"TITLE_SETTINGS" = "Settings";
+
+//TITLE
+"PORTFOLIO" = "Portfolio";
+"CURRENTSTATUS" = "Current Status";
+"INVESTOR" = "Investor Profile";
+"COASSETSSTOCK" = "CoAssets' Stock";
+"DEALS" = "Deals";
+
+//TITLE UPDATE COMPANY
+"OrgName" = "Org Name";
+"OrgType" = "Org Type";
+"Address1" = "Address 1";
+"Address2" = "Address 2";
+"OrgCity" = "Org City";
+"OrgCountry" = "Org Country";
+
+
+"TAKE_PHOTO_TITLE"                      = "Take a photo";
+"CHOOSE_EXISTING_TITLE"                 = "Choose existing";
+
+//TITLE UPDATE INVESTOR
+"InvestorType" = "Investor type";
+"ProjectPreference" = "Project preference";
+"Currency" = "Currency";
+"InvestmentBudget" = "Investment budget";
+"DurationPreference" = "Duration preference(in months)";
+"TargetReturn" = "Target return(annualized return)";
+"CountryPreference" = "Countries preference(separated by comma)";
+"Description" = "Description (short self-introduction)";
+"Website" = "Website";
+
+//UPDATE
+"TITLE_UPDATE_PROFILE" = "Update profile";
+"TITLE_UPDATE_PASSWORD" = "Update password";
+
+//UPDATE PAWSSWORD
+"newPasswordRequired"                 = "New password is required.";
+"ConfirmPasswordRequired"             = "Confirm password is required.";
+"ConfirmPasswordMessage"              = "Confirm password does not match.";
+
+"NEW_PASSWORD" = "New password";
+"CONFIRM_PASSWORD" = "Confirm password";
+
+"PASSWORD_CHANGE_SUCCESSFULLY"          = "Password has been changed successfully";
+"PASSWORD_NOT_CHANGED"                  = "Password was not changed";
+
+//KEY UPDATE
+"KEY_ACTION_UPDATEPROFILE"              = "Update profile";
+"KEY_ACTION_UPDATECOMPANY"              = "Update company profile";
+"KEY_ACTION_UPDATEINVESTOR"             = "Update investor profile";
+//Login follow
+"TITLE_NEW_USER_SIGN_UP" = "NEW USER? SIGN UP";
+"TITLE_ALEADY_HAVE_ACCOUNT" = "ALREADY HAVE AN ACCOUNT? SIGN IN";
+"TITLE_USERNAME" = "Username";
+"TITLE_PASSWORD" = "Password";
+
+"TITLE_FIRSTNAME" = "First Name";
+"TITLE_LASTNAME" = "Last Name/Surname";
+"TITLE_EMAIL" = "E-mail Address";
+"TITLE_MOBILE_CODE" = "Mobile Code";
+"TITLE_MOBILE_NUMBER" = "Mobile Number";
+"TITLE_CONFIRM_PASSWORD" = "Confirm Password";
+
+"TITLE_RESET_PASSWORD" = "Reset Password";
+"TITLE_BACK_TO_SIGNIN" = "BACK TO SIGN IN";
+"FORGOTPASSWORD_DESCRIPTION" = "Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions for setting a new one.";
+"INVAlID_USERNAME_OR_PASSWORD"          = "Invalid username or password.";
+//ADD BY VINCENT
+"TITLE_CONTACT" = "Contact";
+"NEWS"                                  = "News";
+"TERM_OF_USE"                           = "Terms Of Use";
+"CODE_OF_CONDUCT"                       = "Code of Conduct";
+"PRIVACY"                               = "Privacy";
+"MESSAGE_LOGOUT"                        = "Are you sure you want to logout?";
+"Ongoing Investment" = "Ongoing Investment";
+"Funded Investment" = "Funded Investment";
+"Completed Investment" = "Completed Investment";
+
+"Realised Payouts" = "Realised Payouts";
+"Potential Payouts" = "Potential Payouts";
+
+"INVESTOR_TYPE"                         = "Investor Type";
+"INVESTOR_PREFERENCE"                   = "Project Preference";
+"INVESTOR_AMOUNT"                       = "Investment Amount";
+"INVESTOR_CURRENCY"                     = "Currency";
+"INVESTOR_TARGET"                       = "Target Returns (Annualized)";
+"INVESTOR_DURATION"                     = "Duration Preference";
+"INVESTOR_COUNTRIES"                    = "Countries Preference";
+"DEALS"             = "Deals";
+"Ongoing"           = "Ongoing";
+"Funded"            = "Funded";
+"Completed"         = "Completed";
+"TITLE_LABEL"       = "You currently have no deals.";
+"TITLE_BUTTON"      = "Click Here To Get Started!";
+"ON_GOING"                              = "Deals that you have supported and are still ongoing.";
+"FUNDED"                                = "Deals that you have supported that are funded successfully.";
+"COMPLETED"                             = "Deals that you have supported that have been completed payout.";
+
+// List Offer
+"FILTER_BULLK_NULL"                     = "Bulk Purchase are coming";
+"FILTER_CROWD_NULL"                     = "Crowdfunding are coming";
+"FILTER_SALE_NULL"                      = "Pre-Sales are coming";
+"FILTER_ALL_NULL"                       = "CoAssets is coming";
+
+// OfferDetail
+"TITLE_HEADER_DOCUMENT" = "The following are documents uploaded by OP for the projects. For documents that are marked as PRIVATE - please contact us to review.";
+"Project_status" = "Project status";
+"INVESTORS"                             = "INVESTORS";
+"Interested_in_project" = "Interested in project";
+"INVESTMENT_HORIZON" = "INVESTMENT HORIZON";
+"DaysToGo" = "Days to go";
+"YIELD_(ANNUALIZED)" = "YIELD (ANNUALIZED)";
+"MONTHS"                                = " MONTHS";
+"MIN.INVESTMENT" = "MIN. INVESTMENT \n";
+"GOAL"                                  = " of goal";
+"OF"                                    = " of ";
+"BUTTON_I'M_INTERESTED"                 = "INVEST";
+"BUTTON_I'VE_QUESTION"                  = "I'VE QUESTIONS.";
+"QUESTION_TITLE"                        = "Question";
+"INTERESTED_TITLE"                      = "Interested";
+
+"TITLE_QUESTION_HOME"                   = "Please type your question below. Email will be sent to coassets admin.";
+"DONE_TITLE"                            = "DONE";
+"Expressing_Interest_Home"              = "You are expressing interest in this project. A CONTRACT will be sent to your email address on file for your e-signature";
+"Verify_Your_Email_Home"                = "Please verify your email and correct if it is wrong.";
+"Provide_Indicative_Home"               = "Please provide indicative amount";
+"CoAssets_Share_Home"                   = "I agree to let CoAssets share my contact info with the OP and for OP to contact me on this project.";
+"Interested_Popup"                      = "Thank you for crowdfunding, \n%@. \n\nPlease e-sign the contract sent to your email & proceed to make fund transfer within 5 working days. \n\nIf you have any queries, please feel free to call 65327008 or email admin@coassets.com. \nThank you & happy crowdfunding.";
+
+"MESSAGE_TITLE_STOCK"                   = "Interest in CoAssets Stock";
+"MESSAGE_STOCK"                         = "Hi, I am interested to invest in CoAssets Stock.";
+
+"MESSAGE_TEXTFIELD_MAX_AMOUNT"          = "Maximum amount is ";
+"MESSAGE_TEXTFIELD_VALID"               = "Amount is invalid.";
+"MESSAGE_TEXTFIELD_NULL"                = "Please key in correct amount.";
+
+//DOCUMENT
+"declaration_form_list"                 = "DECLARATION FORM";
+"legal_appointment"                     = "LEGAL APPOINTMENT";
+"licenses"                              = "PROOF OF LICENSES";
+"others"                                = "OTHER DOCUMENTS";
+"ownership"                             = "PROOF OF OWNERSHIP";
+"registration_form_list"                = "COMPANY REGISTRATION";
+
+"declaration_private"                   = "Declaration Form - PRIVATE DOCUMENT";
+"comapny_private"                       = "Company Registration Form - PRIVATE DOCUMENT";
+"licenses_private"                      = "Proof of Licences - PRIVATE DOCUMENT";
+"ownership_private"                     = "Proof of Ownership - PRIVATE DOCUMENT";
+"legal_appointment_private"                     = "Legal Appointment - PRIVATE DOCUMENT";
+"others_private"                        = "Other Documents - PRIVATE DOCUMENT";
+
+// UPDATE COMPANY
+"TITLE_FIRST_NAME" = "First Name";
+"TITLE_LAST_NAME" = "Last Name";
+"TITLE_EMAIL_ADDRESS" = "E-mail Address";
+"TITLE_COUNTRY_CODE" = "Country code";
+"TITLE_CELL_PHONE" = "Cellphone";
+"TITLE_ADDRESS1" = "Address 1";
+"TITLE_ADDRESS2" = "Address 2";
+"TITLE_CITY" = "City";
+"TITLE_POSTAL_CODE" = "Postal code";
+"TITLE_REGION_STATE" = "Region state";
+"TITLE_COUNTRY" = "Country";
+
+// HOME
+"Pre-Sales" = "Pre-Sales";
+"Crowdfunding" = "Crowdfunding";
+"Bulk Purchase" = "Bulk Purchase";
+
+//OFFER DETAIL
+"Detail_Offer_Invest" = "Invest";
+"Detail_Offer_Overview" = "Overview";
+"Detail_Offer_Detail" = "Detail";
+"Detail_Offer_Document" = "Document";
+
+// PORTFOLIO
+"Ongoing_Projects" = "Ongoing Projects";
+"Ongoing_Investment_Amount" = "Ongoing Investment Amount";
+"Funded_&_Completed_Projects" = "Funded & Completed Projects";
+"Funded_&_Completed_Investment_Amount" = "Funded & Completed Investment Amount";
+"portfolio_available_balance" = "$ Available balance:";
+"portfolio_withdraw" = "Withdraw";
+"portfolio_withdraw_form" = "Withdrawal Form";
+"portfolio_amount" = "Amount";
+"portfolio_Completed" = "Completed Withdrawal\n Your withdrawal request that have been successfully processed.";
+
+//DEALS
+"deal_introduction_suggest" = "Deals you might be interested in.";
+"deal_sign_your_contract" = "Sign Your Contract";
+"deal_how_to_make_payment" = "How to Make Payment";
+"deal_investment_amount" = "Investment Amount:";
+"deal_potential_return" = "Potential Returns:";
+"deal_next_payout_date" = "Next Payout Date:";
+"deal_contract_sign" = "Contract: Signed";
+"deal_contract_paid" = "Contract: Paid";
+"deal_sign" = "Signed";
+"deal_paid" = "Paid";
+
+// MORE INFO OFFER
+"offer_pledged" = "pledged";
+"offer_funded" = "funded";
+"offer_days_left" = "days left";
+"offer_interested" = "interested";
+"offer_minimum_investment" = "minimum investment";
+"offer_annualized_yield" = "annualized yield";
+
+//STOCK
+"stock_i_invest"                        = "I'm Interested to Invest";
+"stock_date_x" = "Dated ";
+
+// DETAIL OFFER _ INVEST
+"Singapore Dollars" = "Singapore Dollars";
+"US Dollars" = "US Dollars";
+"British Pounds" = "British Pounds";
+"Euros" = "Euros";
+"Japanese Yen" = "Japanese Yen";
+"Chinese Yuan" = "Chinese Yuan";
+"Taiwan Dollar" = "Taiwan Dollar";
+"Hongkong Dollar" = "Hongkong Dollar";
+"Canadian Dollars" = "Canadian Dollars";
+"Australia Dollar" = "Australia Dollar";
+"Malaysia Ringit" = "Malaysia Ringit";
+"Thai Baht" = "Thai Baht";
+"Philippine Peso" = "Philippine Peso";
+"Indonesia Rupiah" = "Indonesia Rupiah";
+"Vietnamese Dong" = "Vietnamese Dong";
+
+//LOADING...
+"please_wait" = "Please wait...";
+
+

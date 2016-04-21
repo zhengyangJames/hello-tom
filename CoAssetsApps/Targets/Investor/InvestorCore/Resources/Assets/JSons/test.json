@@ -1,0 +1,59 @@
+{
+    "funded" :  [ {
+                 "next_payout_date" : "1",
+                 "sign_contract_instruction" : "a",
+                 "currency": "a",
+                 "invest_amount" : 1,
+                 "next_payout_amount" : 1,
+                 "potential_return_amount" : 1,
+                 "potential_return_percent" : 1,
+                 "project_name" : "tuan",
+                 "status": {
+                 "is_paid" : 1,
+                 "is_signed" : 0
+                 },
+                 "payment_instruction" : "a"
+                 
+                 },
+                 {
+                 "next_payout_date" : "2",
+                 "sign_contract_instruction" : "b",
+                 "currency": "b",
+                 "invest_amount" : 2,
+                 "next_payout_amount" : 2,
+                 "potential_return_amount" : 2,
+                 "potential_return_percent" : 2,
+                 "project_name" : "tuan1",
+                 "status": {
+                 "is_paid" : 0,
+                 "is_signed" : 1
+                 },
+                 "payment_instruction" : "b"
+                 
+                 }  
+                 ],
+    
+    "completed" : [
+                   {
+                   "next_payout_date" : "2",
+                   "sign_contract_instruction" : "b",
+                   "currency": "b",
+                   "invest_amount" : 2,
+                   "next_payout_amount" : 2,
+                   "potential_return_amount" : 2,
+                   "potential_return_percent" : 2,
+                   "project_name" : "tuan1",
+                   "status": {
+                   "is_paid" : 0,
+                   "is_signed" : 1
+                   },
+                   "payment_instruction" : "b"
+                   
+                   }  
+    
+    ],
+    "ongoing" : [
+				
+    
+    ]
+}

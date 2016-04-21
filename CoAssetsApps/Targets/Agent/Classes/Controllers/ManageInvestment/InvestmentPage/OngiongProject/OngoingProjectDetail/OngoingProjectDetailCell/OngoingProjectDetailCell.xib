@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OngoingProjectDetailCell" rowHeight="273" id="Vkw-y2-S0b" customClass="OngoingProjectDetailCell" customModule="CoAssetsAgent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="273"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vkw-y2-S0b" id="nyK-do-tnI">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="272.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSQ-W7-Yn5">
+                        <rect key="frame" x="8" y="5.5" width="304" height="262.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9M-qu-k6T" userLabel="HeaderView">
+                        <rect key="frame" x="8" y="5" width="304" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8N-Mm-bvL" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                                <rect key="frame" x="16" y="8" width="280" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                                <color key="textColor" red="0.85882352939999995" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOP-QO-gDI">
+                                <rect key="frame" x="0.0" y="43.5" width="304" height="0.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="FK8-u2-fbZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="0Gi-Hf-9j3" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            <constraint firstItem="qOP-QO-gDI" firstAttribute="leading" secondItem="U9M-qu-k6T" secondAttribute="leading" id="0or-AM-vE6"/>
+                            <constraint firstAttribute="bottom" secondItem="P8N-Mm-bvL" secondAttribute="bottom" constant="8" id="4DC-mQ-hi1" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            <constraint firstItem="P8N-Mm-bvL" firstAttribute="leading" secondItem="U9M-qu-k6T" secondAttribute="leading" constant="16" id="GuD-bF-4QO" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="qOP-QO-gDI" secondAttribute="trailing" id="PzT-DX-l6F"/>
+                            <constraint firstAttribute="bottom" secondItem="qOP-QO-gDI" secondAttribute="bottom" id="Sx2-PB-TKz"/>
+                            <constraint firstItem="P8N-Mm-bvL" firstAttribute="top" secondItem="U9M-qu-k6T" secondAttribute="top" constant="8" id="UVg-5d-QCS" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            <constraint firstItem="P8N-Mm-bvL" firstAttribute="centerY" secondItem="U9M-qu-k6T" secondAttribute="centerY" id="kNi-gN-tN1"/>
+                            <constraint firstAttribute="trailing" secondItem="P8N-Mm-bvL" secondAttribute="trailing" constant="8" id="wFf-ua-MBE" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kNi-gN-tN1"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Client:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xG-0Y-h4u" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="24" y="71" width="50" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="jPp-ic-sq9" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiR-Cn-pdH" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="74" y="71" width="230" height="20"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erk-0C-lU0" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="24" y="109" width="54" height="27.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="OjR-WN-vRR" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAx-TS-3jt" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="78" y="113.5" width="226" height="20"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3T-4j-lPH" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="167" y="154" width="137" height="20"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="commission:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgB-YL-ItQ" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="24" y="192.5" width="96" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="96" id="qak-vV-WtR" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXw-7V-Sa5" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="120" y="192.5" width="184" height="20"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CommissionPaynt date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acs-F5-e0b" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="24" y="230.5" width="180" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="180" id="elF-y5-4zC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe4-dH-uD7" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="204" y="230.5" width="100" height="20"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Indicative Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZB-be-uEO" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="24" y="154.5" width="143" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="143" id="J7J-cv-0G7" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14.5"/>
+                        <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="MSQ-W7-Yn5" secondAttribute="bottom" id="1jD-n9-AOe"/>
+                    <constraint firstItem="MSQ-W7-Yn5" firstAttribute="leading" secondItem="nyK-do-tnI" secondAttribute="leading" constant="8" id="2Ch-Vh-7Vy"/>
+                    <constraint firstItem="dgB-YL-ItQ" firstAttribute="top" secondItem="0ZB-be-uEO" secondAttribute="bottom" constant="18" id="2pl-h3-CWv" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="MSQ-W7-Yn5" secondAttribute="trailing" constant="8" id="CK8-yn-qHN"/>
+                    <constraint firstItem="MSQ-W7-Yn5" firstAttribute="top" secondItem="nyK-do-tnI" secondAttribute="top" constant="5" id="Cwy-RU-kOJ"/>
+                    <constraint firstItem="erk-0C-lU0" firstAttribute="top" secondItem="4xG-0Y-h4u" secondAttribute="bottom" constant="18" id="EHZ-cJ-TuZ" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="4xG-0Y-h4u" firstAttribute="leading" secondItem="nyK-do-tnI" secondAttribute="leadingMargin" constant="16" id="EJB-ne-RdE" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="a3T-4j-lPH" secondAttribute="trailing" constant="16" id="Etw-uE-xMC" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="uiR-Cn-pdH" secondAttribute="trailing" constant="8" id="FbS-Ro-MbE" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="a3T-4j-lPH" firstAttribute="centerY" secondItem="0ZB-be-uEO" secondAttribute="centerY" id="GPH-RR-eTr"/>
+                    <constraint firstItem="U9M-qu-k6T" firstAttribute="leading" secondItem="nyK-do-tnI" secondAttribute="leading" constant="8" id="Gqt-0P-TvC" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="a3T-4j-lPH" firstAttribute="leading" secondItem="0ZB-be-uEO" secondAttribute="trailing" id="IZo-7y-5hR"/>
+                    <constraint firstItem="pe4-dH-uD7" firstAttribute="centerY" secondItem="Acs-F5-e0b" secondAttribute="centerY" id="J5Q-I1-Old"/>
+                    <constraint firstItem="YAx-TS-3jt" firstAttribute="centerY" secondItem="erk-0C-lU0" secondAttribute="centerY" id="NCO-10-iDZ"/>
+                    <constraint firstItem="YAx-TS-3jt" firstAttribute="leading" secondItem="erk-0C-lU0" secondAttribute="trailing" id="Nmb-vv-Fa0"/>
+                    <constraint firstItem="MSQ-W7-Yn5" firstAttribute="leading" secondItem="nyK-do-tnI" secondAttribute="leadingMargin" id="Poj-SJ-a9v"/>
+                    <constraint firstItem="dgB-YL-ItQ" firstAttribute="leading" secondItem="nyK-do-tnI" secondAttribute="leading" constant="24" id="Q1P-Jm-oOx" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="0ZB-be-uEO" firstAttribute="leading" secondItem="nyK-do-tnI" secondAttribute="leading" constant="24" id="QJA-Jd-lGQ" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="Acs-F5-e0b" firstAttribute="top" secondItem="dgB-YL-ItQ" secondAttribute="bottom" constant="18" id="R0u-LD-ADm" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="pe4-dH-uD7" firstAttribute="leading" secondItem="Acs-F5-e0b" secondAttribute="trailing" id="Tir-Ty-GlK"/>
+                    <constraint firstAttribute="trailing" secondItem="pe4-dH-uD7" secondAttribute="trailing" constant="16" id="U0r-YA-emL" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="4xG-0Y-h4u" firstAttribute="top" secondItem="U9M-qu-k6T" secondAttribute="bottom" constant="22" id="Vge-fU-qLH" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="4xG-0Y-h4u" firstAttribute="leading" secondItem="erk-0C-lU0" secondAttribute="trailing" constant="16" id="bg9-be-hiQ"/>
+                    <constraint firstItem="uiR-Cn-pdH" firstAttribute="centerY" secondItem="4xG-0Y-h4u" secondAttribute="centerY" id="bwe-2F-w1f"/>
+                    <constraint firstAttribute="bottom" secondItem="Acs-F5-e0b" secondAttribute="bottom" constant="22" id="ccf-mf-xGF" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="U9M-qu-k6T" secondAttribute="trailing" constant="8" id="cpd-Bq-85y" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="erk-0C-lU0" firstAttribute="leading" secondItem="nyK-do-tnI" secondAttribute="leading" constant="24" id="e3C-ja-AYy" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="Acs-F5-e0b" firstAttribute="leading" secondItem="nyK-do-tnI" secondAttribute="leading" constant="24" id="fBF-Hd-EUW" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="gXw-7V-Sa5" firstAttribute="leading" secondItem="dgB-YL-ItQ" secondAttribute="trailing" id="feU-1i-G2Q"/>
+                    <constraint firstAttribute="trailing" secondItem="YAx-TS-3jt" secondAttribute="trailing" constant="16" id="hAn-OK-E5M" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="MSQ-W7-Yn5" secondAttribute="trailing" id="j5I-CU-Agb"/>
+                    <constraint firstAttribute="trailing" secondItem="gXw-7V-Sa5" secondAttribute="trailing" constant="16" id="lwM-LH-mRG" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="U9M-qu-k6T" firstAttribute="top" secondItem="nyK-do-tnI" secondAttribute="top" constant="5" id="mOg-uQ-wmY" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="gXw-7V-Sa5" firstAttribute="centerY" secondItem="dgB-YL-ItQ" secondAttribute="centerY" id="nLR-mX-eLa"/>
+                    <constraint firstItem="uiR-Cn-pdH" firstAttribute="leading" secondItem="4xG-0Y-h4u" secondAttribute="trailing" id="qpE-xX-YY2"/>
+                    <constraint firstAttribute="bottom" secondItem="MSQ-W7-Yn5" secondAttribute="bottom" constant="5" id="tYe-1J-TmN"/>
+                    <constraint firstItem="MSQ-W7-Yn5" firstAttribute="top" secondItem="nyK-do-tnI" secondAttribute="topMargin" id="wbH-1V-I44"/>
+                    <constraint firstItem="0ZB-be-uEO" firstAttribute="top" secondItem="erk-0C-lU0" secondAttribute="bottom" constant="18" id="xCN-LE-DgM" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="erk-0C-lU0" firstAttribute="top" secondItem="U9M-qu-k6T" secondAttribute="bottom" constant="22" id="zeM-I1-OSg"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="1jD-n9-AOe"/>
+                        <exclude reference="Poj-SJ-a9v"/>
+                        <exclude reference="j5I-CU-Agb"/>
+                        <exclude reference="wbH-1V-I44"/>
+                        <exclude reference="bg9-be-hiQ"/>
+                        <exclude reference="zeM-I1-OSg"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="client" destination="4xG-0Y-h4u" id="cmG-z8-MFp"/>
+                <outlet property="clientDetailDetailLabel" destination="uiR-Cn-pdH" id="OMe-3h-5rq"/>
+                <outlet property="commissionDetailLabel" destination="gXw-7V-Sa5" id="2Vh-jI-76V"/>
+                <outlet property="commissionLabel" destination="dgB-YL-ItQ" id="aGR-SP-57O"/>
+                <outlet property="commissionPayntDetailLabel" destination="pe4-dH-uD7" id="0dz-Sh-NF2"/>
+                <outlet property="commissionPayntLabel" destination="Acs-F5-e0b" id="c5V-Pk-fan"/>
+                <outlet property="indicativeDetailLabel" destination="a3T-4j-lPH" id="ZIO-cu-KTX"/>
+                <outlet property="indicativeLabel" destination="0ZB-be-uEO" id="IhE-cw-hE0"/>
+                <outlet property="statusDetailLabel" destination="YAx-TS-3jt" id="jzJ-Uu-FxY"/>
+                <outlet property="statusLabel" destination="erk-0C-lU0" id="2TQ-Fm-fGL"/>
+                <outlet property="titleLabel" destination="P8N-Mm-bvL" id="xTh-Rk-bf1"/>
+                <outlet property="view" destination="MSQ-W7-Yn5" id="akc-k6-a9M"/>
+                <outlet property="widthClientLabel" destination="jPp-ic-sq9" id="QGL-LI-zRI"/>
+                <outlet property="widthCommissionLabel" destination="qak-vV-WtR" id="UWL-Ui-YCR"/>
+                <outlet property="widthCommissionPayntLabel" destination="elF-y5-4zC" id="OiD-Kg-7iP"/>
+                <outlet property="widthIndicativeLabel" destination="J7J-cv-0G7" id="3FW-zB-4hz"/>
+                <outlet property="widthStatusLabel" destination="OjR-WN-vRR" id="wv0-aR-jTG"/>
+            </connections>
+            <point key="canvasLocation" x="233" y="239.5"/>
+        </tableViewCell>
+    </objects>
+</document>

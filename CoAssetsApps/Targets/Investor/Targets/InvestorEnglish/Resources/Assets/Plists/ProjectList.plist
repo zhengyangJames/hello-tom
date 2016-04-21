@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>type</key>
+		<string>1</string>
+		<key>title</key>
+		<string>CROUDFUNDING</string>
+		<key>icon</key>
+		<string>icon_croudfunding_white</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>2</string>
+		<key>title</key>
+		<string>PRE-SALES</string>
+		<key>icon</key>
+		<string>icon_presale_white</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>0</string>
+		<key>title</key>
+		<string>BULK</string>
+		<key>icon</key>
+		<string>icon_bulk_white</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>0</string>
+		<key>title</key>
+		<string>BULK</string>
+		<key>icon</key>
+		<string>icon_bulk_white</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>1</string>
+		<key>title</key>
+		<string>CROUDFUNDING</string>
+		<key>icon</key>
+		<string>icon_croudfunding_white</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>1</string>
+		<key>title</key>
+		<string>CROUDFUNDING</string>
+		<key>icon</key>
+		<string>icon_croudfunding_white</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>2</string>
+		<key>title</key>
+		<string>PRE-SALES</string>
+		<key>icon</key>
+		<string>icon_presale_white</string>
+	</dict>
+</array>
+</plist>

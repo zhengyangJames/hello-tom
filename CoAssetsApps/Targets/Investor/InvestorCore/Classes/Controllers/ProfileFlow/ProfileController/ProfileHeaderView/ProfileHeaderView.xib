@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0R1-Dy-JfX" customClass="ProfileHeaderView" customModule="CoAssets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait_ph.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="J0C-4F-NaV" userLabel="Image View - Avatar" customClass="COCircleImageView" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="83" y="12" width="154" height="154"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="J0C-4F-NaV" secondAttribute="height" multiplier="1:1" id="jKx-d3-CJy"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0o-fk-hxR" userLabel="Label - Name" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="12" y="174" width="296" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="oYg-q8-LxB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_country.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bvh-MY-8qt" userLabel="Image View - Country">
+                    <rect key="frame" x="12" y="225" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="750" constant="12" id="SIT-7n-mPi" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstAttribute="width" constant="12" id="q9V-ir-ZU1" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-YG-ewz" userLabel="Label - Country" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="32" y="223" width="276" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="KGU-Bw-lTV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_investor.png" translatesAutoresizingMaskIntoConstraints="NO" id="sLi-tN-4Gy" userLabel="Image View - Investor">
+                    <rect key="frame" x="12" y="243" width="12" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="c78-IM-AJt" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstAttribute="height" priority="750" constant="12" id="nKZ-2N-J2s" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ks-vL-bCW" userLabel="Label - Investor" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="32" y="235" width="276" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="8U5-yh-Djf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_company.png" translatesAutoresizingMaskIntoConstraints="NO" id="3NK-oM-gsY" userLabel="Image View - Company">
+                    <rect key="frame" x="12" y="249" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="0eh-gg-aPa" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstAttribute="height" constant="12" id="aoZ-PZ-dwC" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuq-bG-LTL" userLabel="Label - Company" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="32" y="247" width="276" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="ZPd-gI-Mdv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_email.png" translatesAutoresizingMaskIntoConstraints="NO" id="544-kP-gfE" userLabel="Image View - Email">
+                    <rect key="frame" x="12" y="267" width="12" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="g1Y-LA-mgN" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstAttribute="height" priority="750" constant="12" id="soK-7T-eee" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSg-z0-gPn" userLabel="Label - Email" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="32" y="259" width="276" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="kmS-6b-vzp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qpj-Dc-wLW" userLabel="Image View - Phone">
+                    <rect key="frame" x="12" y="273" width="12" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="750" constant="12" id="EHB-VA-iUI" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstAttribute="width" constant="12" id="GFS-N2-26u" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-qi-nYA" userLabel="Label - Phone" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="32" y="265" width="276" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="Df7-4Y-szC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlf-ld-964" userLabel="Button - Update Password" customClass="BaseButton" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="165" y="285" width="143" height="33"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                    <state key="normal" title="Update password"/>
+                    <connections>
+                        <action selector="__actionUpdatePassword:" destination="0R1-Dy-JfX" eventType="touchUpInside" id="QwE-JH-rW8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkY-sT-lhJ" userLabel="Button - Update Profile">
+                    <rect key="frame" x="12" y="285" width="143" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="9vc-RL-L3F" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                    <state key="normal" title="Update profile"/>
+                    <connections>
+                        <action selector="__actionUpdateProfile:" destination="0R1-Dy-JfX" eventType="touchUpInside" id="IEW-10-hCC"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sLi-tN-4Gy" firstAttribute="leading" secondItem="0R1-Dy-JfX" secondAttribute="leading" constant="12" id="1b7-04-AHh" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="Qpj-Dc-wLW" firstAttribute="width" relation="lessThanOrEqual" secondItem="JM2-qi-nYA" secondAttribute="width" id="2hf-g4-Hp5"/>
+                <constraint firstItem="Bvh-MY-8qt" firstAttribute="height" relation="lessThanOrEqual" secondItem="3g4-YG-ewz" secondAttribute="height" id="39j-MA-2g3"/>
+                <constraint firstAttribute="trailing" secondItem="JM2-qi-nYA" secondAttribute="trailing" constant="12" id="3nB-Xw-972" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstAttribute="trailing" secondItem="Zuq-bG-LTL" secondAttribute="trailing" constant="12" id="3zy-Bl-BcV" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="6ks-vL-bCW" firstAttribute="leading" secondItem="sLi-tN-4Gy" secondAttribute="trailing" constant="8" id="4wA-yX-BcE" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="sLi-tN-4Gy" firstAttribute="top" secondItem="Bvh-MY-8qt" secondAttribute="bottom" constant="6" id="6E7-iz-HAZ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="3g4-YG-ewz" firstAttribute="centerY" secondItem="Bvh-MY-8qt" secondAttribute="centerY" constant="1" id="7B7-hr-moX"/>
+                <constraint firstAttribute="trailing" secondItem="3g4-YG-ewz" secondAttribute="trailing" constant="12" id="CIz-mR-fQ6" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="3g4-YG-ewz" firstAttribute="top" secondItem="i0o-fk-hxR" secondAttribute="bottom" constant="8" id="DJt-OG-MKF" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="nlf-ld-964" firstAttribute="centerY" secondItem="qkY-sT-lhJ" secondAttribute="centerY" id="G9z-eJ-mEh"/>
+                <constraint firstItem="3NK-oM-gsY" firstAttribute="height" relation="lessThanOrEqual" secondItem="Zuq-bG-LTL" secondAttribute="height" id="GeX-ME-1jz"/>
+                <constraint firstItem="qkY-sT-lhJ" firstAttribute="width" secondItem="nlf-ld-964" secondAttribute="width" id="Gzv-j2-TgV" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="544-kP-gfE" firstAttribute="height" relation="lessThanOrEqual" secondItem="pSg-z0-gPn" secondAttribute="height" id="HNQ-Xv-dKD"/>
+                <constraint firstItem="Qpj-Dc-wLW" firstAttribute="height" relation="lessThanOrEqual" secondItem="JM2-qi-nYA" secondAttribute="height" id="JtH-yU-47j"/>
+                <constraint firstItem="544-kP-gfE" firstAttribute="top" secondItem="3NK-oM-gsY" secondAttribute="bottom" constant="6" id="OE3-Na-CBt" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="qkY-sT-lhJ" firstAttribute="leading" secondItem="0R1-Dy-JfX" secondAttribute="leading" constant="12" id="OGo-Gj-YmA" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstAttribute="trailing" secondItem="i0o-fk-hxR" secondAttribute="trailing" constant="12" id="PKr-zb-xhT" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="3NK-oM-gsY" firstAttribute="top" secondItem="sLi-tN-4Gy" secondAttribute="bottom" constant="6" id="QFe-Og-imE" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="6ks-vL-bCW" firstAttribute="centerY" secondItem="sLi-tN-4Gy" secondAttribute="centerY" constant="1" id="QWJ-3R-C1V" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="Qpj-Dc-wLW" firstAttribute="leading" secondItem="0R1-Dy-JfX" secondAttribute="leading" constant="12" id="QY1-8Z-iRi" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="Bvh-MY-8qt" firstAttribute="leading" secondItem="0R1-Dy-JfX" secondAttribute="leading" constant="12" id="R98-4Y-7TQ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="qkY-sT-lhJ" firstAttribute="height" secondItem="nlf-ld-964" secondAttribute="height" id="RzV-9f-siZ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="nlf-ld-964" firstAttribute="leading" secondItem="qkY-sT-lhJ" secondAttribute="trailing" constant="10" id="TkO-rR-SsY" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstAttribute="trailing" secondItem="6ks-vL-bCW" secondAttribute="trailing" constant="12" id="U7K-Ka-4R3" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="qkY-sT-lhJ" firstAttribute="top" secondItem="Qpj-Dc-wLW" secondAttribute="bottom" constant="12" id="UCm-Gd-HiN" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="JM2-qi-nYA" firstAttribute="centerY" secondItem="Qpj-Dc-wLW" secondAttribute="centerY" constant="1" id="VRj-bW-ynC"/>
+                <constraint firstItem="J0C-4F-NaV" firstAttribute="centerX" secondItem="0R1-Dy-JfX" secondAttribute="centerX" id="WdE-Xp-vto"/>
+                <constraint firstItem="sLi-tN-4Gy" firstAttribute="height" relation="lessThanOrEqual" secondItem="6ks-vL-bCW" secondAttribute="height" id="XtB-dg-0Bo"/>
+                <constraint firstAttribute="bottom" secondItem="qkY-sT-lhJ" secondAttribute="bottom" constant="12" id="bac-73-8Nx" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="JM2-qi-nYA" firstAttribute="leading" secondItem="Qpj-Dc-wLW" secondAttribute="trailing" constant="8" id="dl3-OQ-tC2" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="Zuq-bG-LTL" firstAttribute="centerY" secondItem="3NK-oM-gsY" secondAttribute="centerY" constant="1" id="eVM-V1-EFZ"/>
+                <constraint firstItem="Zuq-bG-LTL" firstAttribute="leading" secondItem="3NK-oM-gsY" secondAttribute="trailing" constant="8" id="em3-Ns-Uiq" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstAttribute="trailing" secondItem="nlf-ld-964" secondAttribute="trailing" constant="12" id="f9V-q1-uuH" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="i0o-fk-hxR" firstAttribute="leading" secondItem="0R1-Dy-JfX" secondAttribute="leading" constant="12" id="gbe-BX-QYh" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="i0o-fk-hxR" firstAttribute="top" secondItem="J0C-4F-NaV" secondAttribute="bottom" constant="8" id="jsn-Ix-K0o" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="544-kP-gfE" firstAttribute="leading" secondItem="0R1-Dy-JfX" secondAttribute="leading" constant="12" id="luT-h2-6P4" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstAttribute="trailing" secondItem="pSg-z0-gPn" secondAttribute="trailing" constant="12" id="mAO-C5-07Z" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="pSg-z0-gPn" firstAttribute="centerY" secondItem="544-kP-gfE" secondAttribute="centerY" constant="1" id="rWA-dq-8Pk"/>
+                <constraint firstItem="pSg-z0-gPn" firstAttribute="leading" secondItem="544-kP-gfE" secondAttribute="trailing" constant="8" id="uqc-Zz-b4e" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="Qpj-Dc-wLW" firstAttribute="top" secondItem="544-kP-gfE" secondAttribute="bottom" constant="6" id="vfW-V9-Fkq" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="3g4-YG-ewz" firstAttribute="leading" secondItem="Bvh-MY-8qt" secondAttribute="trailing" constant="8" id="wNz-yM-9Hy" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="3NK-oM-gsY" firstAttribute="leading" secondItem="0R1-Dy-JfX" secondAttribute="leading" constant="12" id="wn9-GQ-TaX" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                <constraint firstItem="J0C-4F-NaV" firstAttribute="top" secondItem="0R1-Dy-JfX" secondAttribute="top" constant="12" id="y5W-wB-yc2" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="2hf-g4-Hp5"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="avatarImageVIew" destination="J0C-4F-NaV" id="PFd-mL-BxM"/>
+                <outlet property="companyLabel" destination="Zuq-bG-LTL" id="dPs-Q4-MOT"/>
+                <outlet property="countryLabel" destination="3g4-YG-ewz" id="fVu-wE-l0d"/>
+                <outlet property="emailLabel" destination="pSg-z0-gPn" id="2Ud-YJ-gaY"/>
+                <outlet property="investorLabel" destination="6ks-vL-bCW" id="hid-Jg-ZNH"/>
+                <outlet property="lblCompanyCT" destination="ZPd-gI-Mdv" id="gk4-in-JhY"/>
+                <outlet property="lblCountryCT" destination="KGU-Bw-lTV" id="oTh-Tg-Au9"/>
+                <outlet property="lblEmailCT" destination="kmS-6b-vzp" id="JiJ-Tl-pTu"/>
+                <outlet property="lblInverCT" destination="8U5-yh-Djf" id="dZJ-qW-ReU"/>
+                <outlet property="lblPhoneCT" destination="Df7-4Y-szC" id="5wf-jD-JFu"/>
+                <outlet property="passwordButton" destination="nlf-ld-964" id="D8P-Hq-uM2"/>
+                <outlet property="phoneLabel" destination="JM2-qi-nYA" id="YBD-RF-xHo"/>
+                <outlet property="profileButton" destination="qkY-sT-lhJ" id="6Mr-39-rdI"/>
+                <outlet property="userNameLabel" destination="i0o-fk-hxR" id="VGV-Io-9Ae"/>
+            </connections>
+            <point key="canvasLocation" x="289" y="-262"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_profile_company.png" width="12" height="12"/>
+        <image name="ic_profile_country.png" width="12" height="12"/>
+        <image name="ic_profile_email.png" width="12" height="12"/>
+        <image name="ic_profile_investor.png" width="12" height="12"/>
+        <image name="ic_profile_phone.png" width="12" height="12"/>
+        <image name="portrait_ph.jpg" width="635" height="845"/>
+    </resources>
+</document>

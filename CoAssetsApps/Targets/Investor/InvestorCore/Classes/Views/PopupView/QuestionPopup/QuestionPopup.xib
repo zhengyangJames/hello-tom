@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="yKO-tZ-iWr" customClass="QuestionPopup" customModule="CoAssets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jZ-NP-feU" userLabel="firstView">
+                    <rect key="frame" x="16" y="132" width="288" height="53"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="id4-HR-Pvo">
+                            <rect key="frame" x="250" y="15" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="5Ka-84-YlP" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="width" constant="22" id="bb5-Sd-0cI" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                            </constraints>
+                            <state key="normal" image="delete.png"/>
+                            <connections>
+                                <action selector="actionClose:" destination="yKO-tZ-iWr" eventType="touchUpInside" id="uPq-eq-BS5"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PD5-5s-OLL" userLabel="LineView">
+                            <rect key="frame" x="0.0" y="53" width="288" height="0.0"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="SB9-Ri-eP5" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have a question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eO-BX-QG4" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                            <rect key="frame" x="16" y="13" width="226" height="27"/>
+                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="19.5"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="highlightedColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="id4-HR-Pvo" firstAttribute="centerY" secondItem="8eO-BX-QG4" secondAttribute="centerY" id="0UZ-pb-QnT"/>
+                        <constraint firstItem="PD5-5s-OLL" firstAttribute="leading" secondItem="8jZ-NP-feU" secondAttribute="leading" id="1Om-jb-LEg"/>
+                        <constraint firstAttribute="trailing" secondItem="id4-HR-Pvo" secondAttribute="trailing" constant="16" id="2Ye-qQ-YvJ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstAttribute="bottom" secondItem="PD5-5s-OLL" secondAttribute="bottom" id="7M0-y8-ebw"/>
+                        <constraint firstAttribute="height" constant="53" id="E1B-tx-dCo"/>
+                        <constraint firstAttribute="trailing" secondItem="PD5-5s-OLL" secondAttribute="trailing" id="ZK5-nr-xDW"/>
+                        <constraint firstItem="id4-HR-Pvo" firstAttribute="leading" secondItem="8eO-BX-QG4" secondAttribute="trailing" constant="8" id="bxx-xM-cLb" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstItem="id4-HR-Pvo" firstAttribute="centerY" secondItem="8jZ-NP-feU" secondAttribute="centerY" id="mCk-VB-rXZ"/>
+                        <constraint firstItem="8eO-BX-QG4" firstAttribute="leading" secondItem="8jZ-NP-feU" secondAttribute="leading" constant="16" id="uFq-3m-lnu" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        <constraint firstItem="8eO-BX-QG4" firstAttribute="centerY" secondItem="8jZ-NP-feU" secondAttribute="centerY" id="yhq-ZV-LAL"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="mCk-VB-rXZ"/>
+                        </mask>
+                    </variation>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBf-x2-tsf">
+                    <rect key="frame" x="16" y="185" width="288" height="149"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9d7-Iz-4tu" userLabel="contentView">
+                            <rect key="frame" x="0.0" y="0.0" width="288" height="149"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOi-3E-eJz" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="8" width="264" height="41"/>
+                                    <string key="text">Please type your question below.
+</string>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1iz-Cq-pGM" customClass="COTextView" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="57" width="256" height="80"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="S0B-8x-G3x" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="cOi-3E-eJz" firstAttribute="leading" secondItem="9d7-Iz-4tu" secondAttribute="leading" constant="16" id="8CO-7D-R6m" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="1iz-Cq-pGM" firstAttribute="leading" secondItem="9d7-Iz-4tu" secondAttribute="leading" constant="16" id="8wH-7j-Pqt" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="cOi-3E-eJz" firstAttribute="top" secondItem="9d7-Iz-4tu" secondAttribute="top" constant="8" id="bxF-Gb-nfd" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="cOi-3E-eJz" secondAttribute="trailing" constant="8" id="h6V-jo-dke" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="1iz-Cq-pGM" firstAttribute="top" secondItem="cOi-3E-eJz" secondAttribute="bottom" constant="8" id="krv-WU-D6h"/>
+                                <constraint firstAttribute="bottom" secondItem="1iz-Cq-pGM" secondAttribute="bottom" constant="12" id="wKR-u5-gMn" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="1iz-Cq-pGM" secondAttribute="trailing" constant="16" id="zQ2-Gb-1sB" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="9d7-Iz-4tu" firstAttribute="top" secondItem="uBf-x2-tsf" secondAttribute="top" id="0xx-Yw-7jL"/>
+                        <constraint firstAttribute="trailing" secondItem="9d7-Iz-4tu" secondAttribute="trailing" id="72N-c3-6UA"/>
+                        <constraint firstItem="9d7-Iz-4tu" firstAttribute="width" secondItem="uBf-x2-tsf" secondAttribute="width" id="Dwt-sL-lgH"/>
+                        <constraint firstAttribute="bottom" secondItem="9d7-Iz-4tu" secondAttribute="bottom" id="Iad-od-eBA"/>
+                        <constraint firstItem="9d7-Iz-4tu" firstAttribute="leading" secondItem="uBf-x2-tsf" secondAttribute="leading" id="Pqo-LP-wTk"/>
+                        <constraint firstItem="9d7-Iz-4tu" firstAttribute="height" secondItem="uBf-x2-tsf" secondAttribute="height" priority="250" id="x0x-UC-0wi"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opD-IN-A3C" customClass="CORedButton" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="16" y="334" width="288" height="65"/>
+                    <color key="backgroundColor" red="0.8862745098" green="0.20392156859999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="70d-8y-VC1" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                    </constraints>
+                    <state key="normal" title="DONE">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionSubmit:" destination="yKO-tZ-iWr" eventType="touchUpInside" id="K0f-KL-7Zn"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="opD-IN-A3C" secondAttribute="bottom" constant="16" id="9lu-6n-OwP"/>
+                <constraint firstItem="8jZ-NP-feU" firstAttribute="leading" secondItem="yKO-tZ-iWr" secondAttribute="leading" constant="16" id="Cr6-hB-hG3"/>
+                <constraint firstAttribute="trailing" secondItem="8jZ-NP-feU" secondAttribute="trailing" constant="16" id="Fvc-XG-ML0"/>
+                <constraint firstAttribute="trailing" secondItem="opD-IN-A3C" secondAttribute="trailing" constant="16" id="NAQ-J5-9Rx"/>
+                <constraint firstItem="uBf-x2-tsf" firstAttribute="top" secondItem="8jZ-NP-feU" secondAttribute="bottom" id="aWK-AE-MUM"/>
+                <constraint firstItem="opD-IN-A3C" firstAttribute="top" secondItem="uBf-x2-tsf" secondAttribute="bottom" id="czU-vb-BJq"/>
+                <constraint firstAttribute="trailing" secondItem="uBf-x2-tsf" secondAttribute="trailing" constant="16" id="dZ7-w6-ppJ"/>
+                <constraint firstItem="uBf-x2-tsf" firstAttribute="leading" secondItem="yKO-tZ-iWr" secondAttribute="leading" constant="16" id="feb-jw-Bjs"/>
+                <constraint firstItem="8jZ-NP-feU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yKO-tZ-iWr" secondAttribute="top" constant="16" id="n85-gG-Ed9"/>
+                <constraint firstItem="uBf-x2-tsf" firstAttribute="centerY" secondItem="yKO-tZ-iWr" secondAttribute="centerY" priority="250" constant="-25" id="pEW-Hp-uRD"/>
+                <constraint firstItem="opD-IN-A3C" firstAttribute="leading" secondItem="yKO-tZ-iWr" secondAttribute="leading" constant="16" id="r8I-af-R0R"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="bottomConstrain" destination="9lu-6n-OwP" id="MgY-Up-xe7"/>
+                <outlet property="contentTextView" destination="1iz-Cq-pGM" id="7c7-sq-Ho6"/>
+                <outlet property="doneButton" destination="opD-IN-A3C" id="ojD-Ud-VyS"/>
+                <outlet property="headerView" destination="8jZ-NP-feU" id="5if-DH-897"/>
+                <outlet property="scrollView" destination="uBf-x2-tsf" id="7Z5-o2-G1o"/>
+                <outlet property="shortDescriptionLabel" destination="cOi-3E-eJz" id="e37-Xn-A1u"/>
+                <outlet property="titleLabel" destination="8eO-BX-QG4" id="HMQ-1C-Bo1"/>
+            </connections>
+            <point key="canvasLocation" x="277" y="312"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="delete.png" width="25" height="25"/>
+    </resources>
+</document>

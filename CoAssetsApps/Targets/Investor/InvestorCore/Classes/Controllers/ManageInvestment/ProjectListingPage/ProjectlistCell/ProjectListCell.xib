@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProjectListCell" id="gTV-IL-0wX" customClass="ProjectListCell" customModule="CoAssets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="464"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="297" height="464"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zgd-TM-7Wx">
+                        <rect key="frame" x="0.0" y="0.0" width="297" height="416"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tableView>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d2-22-OF6" customClass="COIconLeftButton" customModule="CoAssets" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="416" width="297" height="48"/>
+                        <color key="backgroundColor" red="0.8862745098" green="0.20392156859999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="SE2-uY-sCs" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                        </constraints>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zgd-TM-7Wx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="175-dM-QD4"/>
+                <constraint firstItem="5d2-22-OF6" firstAttribute="top" secondItem="zgd-TM-7Wx" secondAttribute="bottom" id="2E5-VF-Mmp"/>
+                <constraint firstAttribute="trailing" secondItem="5d2-22-OF6" secondAttribute="trailing" id="D9B-cH-BWG"/>
+                <constraint firstItem="zgd-TM-7Wx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HM8-j4-WDV"/>
+                <constraint firstAttribute="bottom" secondItem="zgd-TM-7Wx" secondAttribute="bottom" id="NPe-zd-uLi"/>
+                <constraint firstAttribute="bottom" secondItem="5d2-22-OF6" secondAttribute="bottom" id="Na5-PY-Ejh"/>
+                <constraint firstAttribute="bottom" secondItem="zgd-TM-7Wx" secondAttribute="bottom" constant="48" id="Ovh-Pt-bh6"/>
+                <constraint firstAttribute="trailing" secondItem="zgd-TM-7Wx" secondAttribute="trailing" id="Pxu-5Y-BQC"/>
+                <constraint firstItem="5d2-22-OF6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ctb-k5-apN"/>
+            </constraints>
+            <size key="customSize" width="297" height="464"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="NPe-zd-uLi"/>
+                    <exclude reference="Ovh-Pt-bh6"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="footerButton" destination="5d2-22-OF6" id="tpK-eM-Ycl"/>
+                <outlet property="tableview" destination="zgd-TM-7Wx" id="QSy-Sq-fqp"/>
+            </connections>
+            <point key="canvasLocation" x="258.5" y="325"/>
+        </collectionViewCell>
+    </objects>
+</document>

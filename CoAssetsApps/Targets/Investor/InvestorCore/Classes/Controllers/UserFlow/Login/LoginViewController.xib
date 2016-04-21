@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="CoAssets" customModuleProvider="target">
+            <connections>
+                <outlet property="forgotPasswordButton" destination="5b4-h9-Ea3" id="4iJ-Tl-qZQ"/>
+                <outlet property="loginButton" destination="X0y-FD-NA3" id="4d4-9a-CTb"/>
+                <outlet property="marginLeftLogo" destination="BAf-jr-dpd" id="73i-3p-ZRS"/>
+                <outlet property="marginRightLogo" destination="Kcz-MN-bFv" id="zS0-VX-Exv"/>
+                <outlet property="marginTopLogo" destination="O6A-Y5-GQ4" id="3LG-5A-9IV"/>
+                <outlet property="passWordTextField" destination="ccM-z1-3J6" id="Q3Z-EF-cK7"/>
+                <outlet property="signUplabel" destination="5Up-R6-KV9" id="emd-8O-Lsr"/>
+                <outlet property="userNameTextField" destination="hNC-NH-51P" id="AsF-CN-BVu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="1be-vS-fxm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="COBackgroundView" customModule="CoAssets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bB7-5T-mcI" customClass="COScrollView" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acc-IK-vOX" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccM-z1-3J6" userLabel="TfPassWord" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="335" width="270" height="54"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5b4-h9-Ea3" customClass="BaseButton" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="183" y="350" width="112" height="37"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="37" id="CLj-zR-dii" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                    <state key="normal" title="Forgot Password?">
+                                        <color key="titleColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionForgotPassWord:" destination="-1" eventType="touchUpInside" id="FH4-JI-HTa"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0y-FD-NA3" customClass="COAcitvityButton" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="433" width="270" height="45"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="X0y-FD-NA3" secondAttribute="height" multiplier="6:1" id="CKf-fG-Edp"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                    <state key="normal" title="Sign In">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionSignIn:" destination="-1" eventType="touchUpInside" id="4Hi-XY-Tks"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kV-5B-Hzl" userLabel="back button" customClass="BaseButton" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="8" width="46" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="46" id="PyR-7i-GQO"/>
+                                        <constraint firstAttribute="height" constant="30" id="tAp-bj-lDi"/>
+                                    </constraints>
+                                    <color key="tintColor" red="0.79829727564102559" green="0.79829727564102559" blue="0.79829727564102559" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="icon_back"/>
+                                    <connections>
+                                        <action selector="actionBackToMenu:" destination="-1" eventType="touchUpInside" id="PGt-JM-9bb"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5EF-In-heG" userLabel="footerView">
+                                    <rect key="frame" x="69" y="502" width="183" height="25"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DON'T HAVE AN ACCOUNT?   SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Up-R6-KV9" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="183" height="25"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7u-aA-iYl" userLabel="signUp">
+                                            <rect key="frame" x="0.0" y="0.0" width="183" height="25"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <connections>
+                                                <action selector="actionSignUp:" destination="-1" eventType="touchUpInside" id="w4k-2r-pv0"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="5Up-R6-KV9" firstAttribute="leading" secondItem="5EF-In-heG" secondAttribute="leading" id="1ge-ay-IXK"/>
+                                        <constraint firstItem="f7u-aA-iYl" firstAttribute="top" secondItem="5EF-In-heG" secondAttribute="top" id="4xL-xz-lhr"/>
+                                        <constraint firstItem="5Up-R6-KV9" firstAttribute="centerY" secondItem="5EF-In-heG" secondAttribute="centerY" id="6p9-bK-JSC"/>
+                                        <constraint firstAttribute="bottom" secondItem="f7u-aA-iYl" secondAttribute="bottom" id="E93-CA-yPx"/>
+                                        <constraint firstItem="f7u-aA-iYl" firstAttribute="leading" secondItem="5EF-In-heG" secondAttribute="leading" id="UfC-Hp-oRb"/>
+                                        <constraint firstAttribute="height" constant="25" id="cOp-6M-N9l" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                        <constraint firstAttribute="trailing" secondItem="f7u-aA-iYl" secondAttribute="trailing" id="i0i-gT-xCP" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                        <constraint firstAttribute="height" secondItem="5Up-R6-KV9" secondAttribute="height" id="rc6-gp-c6z"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Up-R6-KV9" secondAttribute="trailing" id="yT5-Zw-0uy"/>
+                                    </constraints>
+                                </view>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNC-NH-51P" userLabel="TfUserName" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="275" width="270" height="54"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="hNC-NH-51P" secondAttribute="height" multiplier="5:1" id="Rof-YK-4vN" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                    </constraints>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                </textField>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo" translatesAutoresizingMaskIntoConstraints="NO" id="nW5-Hv-lDs">
+                                    <rect key="frame" x="69" y="70" width="182" height="56"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="nW5-Hv-lDs" secondAttribute="height" multiplier="183:56" id="xcR-hJ-FG1"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.88627450980392153" green="0.20392156862745098" blue="0.15686274509803921" alpha="0.0" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="hNC-NH-51P" secondAttribute="trailing" constant="25" id="1By-k0-cTw" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="5EF-In-heG" firstAttribute="top" secondItem="X0y-FD-NA3" secondAttribute="bottom" constant="24" id="5Ns-BM-0Pq" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="ccM-z1-3J6" firstAttribute="leading" secondItem="acc-IK-vOX" secondAttribute="leading" constant="25" id="66h-Si-8KV" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="ccM-z1-3J6" secondAttribute="trailing" constant="25" id="8yj-ap-1j5" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="nW5-Hv-lDs" firstAttribute="leading" secondItem="acc-IK-vOX" secondAttribute="leading" constant="69" id="BAf-jr-dpd"/>
+                                <constraint firstAttribute="trailing" secondItem="5b4-h9-Ea3" secondAttribute="trailing" constant="25" id="BS3-Wh-jiv" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="9kV-5B-Hzl" firstAttribute="top" secondItem="acc-IK-vOX" secondAttribute="top" constant="8" id="CfB-qz-H4i"/>
+                                <constraint firstItem="hNC-NH-51P" firstAttribute="leading" secondItem="acc-IK-vOX" secondAttribute="leading" constant="25" id="II7-CQ-2wW" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="nW5-Hv-lDs" secondAttribute="trailing" constant="69" id="Kcz-MN-bFv"/>
+                                <constraint firstItem="X0y-FD-NA3" firstAttribute="leading" secondItem="acc-IK-vOX" secondAttribute="leading" constant="25" id="LsU-Hd-k0f" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="nW5-Hv-lDs" firstAttribute="top" secondItem="acc-IK-vOX" secondAttribute="top" constant="70" id="O6A-Y5-GQ4" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="5EF-In-heG" firstAttribute="centerX" secondItem="acc-IK-vOX" secondAttribute="centerX" id="P7c-T4-gIj"/>
+                                <constraint firstItem="ccM-z1-3J6" firstAttribute="top" secondItem="hNC-NH-51P" secondAttribute="bottom" constant="6" id="P7l-Jd-MVm" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="X0y-FD-NA3" firstAttribute="top" secondItem="5b4-h9-Ea3" secondAttribute="bottom" constant="46" id="Y8p-yJ-OyG" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="bottom" secondItem="5EF-In-heG" secondAttribute="bottom" constant="21" id="a4D-KO-dlU" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="ccM-z1-3J6" firstAttribute="height" secondItem="hNC-NH-51P" secondAttribute="height" id="nFm-k9-Nto" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="X0y-FD-NA3" secondAttribute="trailing" constant="25" id="rG6-MS-1Kn" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="9kV-5B-Hzl" firstAttribute="leading" secondItem="acc-IK-vOX" secondAttribute="leading" constant="8" id="sid-PK-o34"/>
+                                <constraint firstItem="hNC-NH-51P" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nW5-Hv-lDs" secondAttribute="bottom" constant="20" id="vvN-ai-0eI"/>
+                                <constraint firstItem="X0y-FD-NA3" firstAttribute="top" secondItem="ccM-z1-3J6" secondAttribute="bottom" constant="44" id="yhQ-up-G0o" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="acc-IK-vOX" secondAttribute="bottom" id="4fo-yJ-Ak3"/>
+                        <constraint firstItem="acc-IK-vOX" firstAttribute="top" secondItem="bB7-5T-mcI" secondAttribute="top" id="JG7-7R-zKv"/>
+                        <constraint firstItem="acc-IK-vOX" firstAttribute="leading" secondItem="bB7-5T-mcI" secondAttribute="leading" id="Lof-Z5-kg0"/>
+                        <constraint firstItem="acc-IK-vOX" firstAttribute="width" secondItem="bB7-5T-mcI" secondAttribute="width" id="St7-BX-wob"/>
+                        <constraint firstAttribute="trailing" secondItem="acc-IK-vOX" secondAttribute="trailing" id="mDc-zi-dmt"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bB7-5T-mcI" secondAttribute="bottom" id="1X3-cy-bMf"/>
+                <constraint firstItem="bB7-5T-mcI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7Ed-EC-64H"/>
+                <constraint firstItem="bB7-5T-mcI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JeV-9k-c5s"/>
+                <constraint firstAttribute="trailing" secondItem="bB7-5T-mcI" secondAttribute="trailing" id="t3N-e7-e3K"/>
+                <constraint firstItem="acc-IK-vOX" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="750" constant="-20" id="y1m-d8-2vn"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="LoginBackground"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="396" y="17"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LoginBackground" width="375" height="667"/>
+        <image name="icon_back" width="12" height="22"/>
+        <image name="icon_logo" width="250" height="70"/>
+    </resources>
+</document>

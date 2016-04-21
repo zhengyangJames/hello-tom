@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RequestViewController" customModule="CoAssetsAgent" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="vVa-ed-zNp" id="dKY-Uq-cAn"/>
+                <outlet property="firstNameTextField" destination="HWi-aI-RT5" id="ku7-Ua-bNH"/>
+                <outlet property="lastNameTextField" destination="hXI-Ic-yrr" id="pfm-Za-GHW"/>
+                <outlet property="phoneTextField" destination="zwU-Td-9qy" id="W2P-Fp-8K0"/>
+                <outlet property="titleSignUpLabel" destination="Wi2-1t-Zu2" id="67o-XC-N8O"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="COBackgroundView" customModule="CoAssetsAgent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dL1-Y1-1yu" customClass="COScrollView" customModule="CoAssetsAgent" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="899-DU-rA7" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HWi-aI-RT5" userLabel="TfFirst" customClass="COTextFieldBottomLine" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="148" width="270" height="55"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="HWi-aI-RT5" secondAttribute="height" multiplier="54:11" id="P9d-Sk-fIS"/>
+                                    </constraints>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="FIRST NAME"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hXI-Ic-yrr" userLabel="TfLastName" customClass="COTextFieldBottomLine" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="210" width="270" height="55"/>
+                                    <animations/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="LAST NAME"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwU-Td-9qy" userLabel="TfPhone" customClass="COTextFieldBottomLine" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="332" width="270" height="55"/>
+                                    <animations/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="PHONE"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wV6-ZC-ndx" customClass="CORedButton" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="431" width="270" height="47"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="wV6-ZC-ndx" secondAttribute="height" multiplier="270:47" id="o8c-33-5BH"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                    <state key="normal" title="Request to be Agent"/>
+                                    <connections>
+                                        <action selector="actionRequest:" destination="-1" eventType="touchUpInside" id="a6W-hv-FGf"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qby-Ly-3qw">
+                                    <rect key="frame" x="70" y="503" width="180.5" height="24"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DON'T HAVE AN ACCOUNT?  SIGN UP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4V-21-u7F" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="180.5" height="24"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AV8-xB-2Ec">
+                                            <rect key="frame" x="0.0" y="0.0" width="180.5" height="24"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <connections>
+                                                <action selector="actionSignUp:" destination="-1" eventType="touchUpInside" id="dje-bm-qQe"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="AV8-xB-2Ec" secondAttribute="trailing" id="5zc-5f-HSD"/>
+                                        <constraint firstItem="b4V-21-u7F" firstAttribute="centerY" secondItem="Qby-Ly-3qw" secondAttribute="centerY" id="8Fd-Gb-8SM"/>
+                                        <constraint firstAttribute="trailing" secondItem="b4V-21-u7F" secondAttribute="trailing" id="F4V-5V-lH8"/>
+                                        <constraint firstAttribute="bottom" secondItem="AV8-xB-2Ec" secondAttribute="bottom" id="RaE-X0-R6W"/>
+                                        <constraint firstItem="b4V-21-u7F" firstAttribute="leading" secondItem="Qby-Ly-3qw" secondAttribute="leading" id="b07-kl-Yeu"/>
+                                        <constraint firstItem="AV8-xB-2Ec" firstAttribute="leading" secondItem="Qby-Ly-3qw" secondAttribute="leading" id="gj7-5a-3OQ"/>
+                                        <constraint firstAttribute="height" constant="24" id="hIZ-BE-5ap" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                        <constraint firstItem="AV8-xB-2Ec" firstAttribute="top" secondItem="Qby-Ly-3qw" secondAttribute="top" id="llT-X6-1cm"/>
+                                        <constraint firstItem="b4V-21-u7F" firstAttribute="height" secondItem="Qby-Ly-3qw" secondAttribute="height" id="m5Y-bN-3j3"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="5" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wi2-1t-Zu2" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="22" width="273" height="118"/>
+                                    <animations/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="YOU ARE REGISTERED AS OUR USER, BUT YOU ARE CURRENTLY NOT AN AGENT. YOU CAN APPLY TO BE ONE BY FILLING IN THE FORM BELOW.">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="12.5" name="Avenir-Roman"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVa-ed-zNp" userLabel="TfEmail" customClass="COTextFieldBottomLine" customModule="CoAssetsAgent" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="271" width="270" height="55"/>
+                                    <animations/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="EMAIL"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="HWi-aI-RT5" firstAttribute="top" relation="lessThanOrEqual" secondItem="Wi2-1t-Zu2" secondAttribute="bottom" constant="75" id="2a8-xI-u8Y" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="hXI-Ic-yrr" firstAttribute="leading" secondItem="899-DU-rA7" secondAttribute="leading" constant="25" id="4vc-Vi-qt0" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="hXI-Ic-yrr" firstAttribute="top" secondItem="HWi-aI-RT5" secondAttribute="bottom" constant="7" id="59s-kQ-W2H" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="hXI-Ic-yrr" secondAttribute="trailing" constant="25" id="79w-0M-VFB" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="zwU-Td-9qy" firstAttribute="height" secondItem="vVa-ed-zNp" secondAttribute="height" id="7Ci-6y-vha"/>
+                                <constraint firstAttribute="trailing" secondItem="HWi-aI-RT5" secondAttribute="trailing" constant="25" id="BBL-eb-yHw" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="Qby-Ly-3qw" firstAttribute="top" secondItem="wV6-ZC-ndx" secondAttribute="bottom" constant="25" id="Br9-wf-hJd" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="HWi-aI-RT5" firstAttribute="leading" secondItem="899-DU-rA7" secondAttribute="leading" constant="25" id="CW3-2d-ncK" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="HWi-aI-RT5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wi2-1t-Zu2" secondAttribute="bottom" constant="8" id="F1C-7g-L2g" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="hXI-Ic-yrr" firstAttribute="height" secondItem="HWi-aI-RT5" secondAttribute="height" id="FD0-cp-eZH"/>
+                                <constraint firstAttribute="bottom" secondItem="Qby-Ly-3qw" secondAttribute="bottom" constant="21" id="G93-PM-QZ4" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="Qby-Ly-3qw" firstAttribute="centerX" secondItem="899-DU-rA7" secondAttribute="centerX" id="H2Q-tb-hzC"/>
+                                <constraint firstAttribute="trailing" secondItem="vVa-ed-zNp" secondAttribute="trailing" constant="25" id="IFF-fT-MDv" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="HWi-aI-RT5" firstAttribute="top" secondItem="Wi2-1t-Zu2" secondAttribute="bottom" constant="8" id="N6I-1V-PQp"/>
+                                <constraint firstItem="zwU-Td-9qy" firstAttribute="leading" secondItem="899-DU-rA7" secondAttribute="leading" constant="25" id="Pdx-xW-tDL" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="Wi2-1t-Zu2" firstAttribute="top" secondItem="899-DU-rA7" secondAttribute="top" constant="22" id="U2f-d4-Vlp" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="wV6-ZC-ndx" secondAttribute="trailing" constant="25" id="WAq-85-ieK" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="vVa-ed-zNp" firstAttribute="height" secondItem="hXI-Ic-yrr" secondAttribute="height" id="bKZ-sR-lzS"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="548" id="d5J-nm-eoG"/>
+                                <constraint firstItem="zwU-Td-9qy" firstAttribute="top" secondItem="vVa-ed-zNp" secondAttribute="bottom" constant="6" id="dQ4-PC-6IL" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="wV6-ZC-ndx" firstAttribute="leading" secondItem="899-DU-rA7" secondAttribute="leading" constant="25" id="g4l-cG-eIL" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="Wi2-1t-Zu2" firstAttribute="top" relation="lessThanOrEqual" secondItem="899-DU-rA7" secondAttribute="top" constant="54" id="gZ7-mt-WPG"/>
+                                <constraint firstItem="vVa-ed-zNp" firstAttribute="leading" secondItem="899-DU-rA7" secondAttribute="leading" constant="25" id="h7w-qz-QfO" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="vVa-ed-zNp" firstAttribute="top" secondItem="hXI-Ic-yrr" secondAttribute="bottom" constant="6" id="iRS-M2-U0B" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstItem="wV6-ZC-ndx" firstAttribute="top" secondItem="zwU-Td-9qy" secondAttribute="bottom" constant="44" id="nPa-Y1-5Jg" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="Wi2-1t-Zu2" secondAttribute="trailing" constant="22" id="vnP-KG-V3M"/>
+                                <constraint firstItem="Wi2-1t-Zu2" firstAttribute="leading" secondItem="899-DU-rA7" secondAttribute="leading" constant="25" id="vq3-Mb-KDe"/>
+                                <constraint firstAttribute="trailing" secondItem="zwU-Td-9qy" secondAttribute="trailing" constant="25" id="wEd-Rt-TTG" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="d5J-nm-eoG"/>
+                                    <exclude reference="gZ7-mt-WPG"/>
+                                    <exclude reference="2a8-xI-u8Y"/>
+                                    <exclude reference="F1C-7g-L2g"/>
+                                </mask>
+                            </variation>
+                        </view>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="899-DU-rA7" firstAttribute="top" secondItem="dL1-Y1-1yu" secondAttribute="top" id="CYv-2Z-Y4f"/>
+                        <constraint firstItem="899-DU-rA7" firstAttribute="leading" secondItem="dL1-Y1-1yu" secondAttribute="leading" id="Lga-tx-Ji3"/>
+                        <constraint firstAttribute="bottom" secondItem="899-DU-rA7" secondAttribute="bottom" id="XsW-0H-ryK"/>
+                        <constraint firstItem="899-DU-rA7" firstAttribute="width" secondItem="dL1-Y1-1yu" secondAttribute="width" id="ZA0-aJ-hx3"/>
+                        <constraint firstAttribute="trailing" secondItem="899-DU-rA7" secondAttribute="trailing" id="frV-z8-1hh"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="dL1-Y1-1yu" secondAttribute="bottom" id="1zD-qd-sQG"/>
+                <constraint firstItem="899-DU-rA7" firstAttribute="height" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="height" constant="-20" id="3k1-qK-mRp"/>
+                <constraint firstAttribute="trailing" secondItem="dL1-Y1-1yu" secondAttribute="trailing" id="SgP-Eh-cwS"/>
+                <constraint firstItem="dL1-Y1-1yu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UTS-rN-Fl1"/>
+                <constraint firstItem="dL1-Y1-1yu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VH3-eL-T96"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="LoginBackground"/>
+            </userDefinedRuntimeAttributes>
+        </view>
+    </objects>
+    <resources>
+        <image name="LoginBackground" width="25" height="25"/>
+    </resources>
+</document>

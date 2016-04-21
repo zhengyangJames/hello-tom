@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OngoingProjectDetailViewController" customModule="CoAssetsAgent" customModuleProvider="target">
+            <connections>
+                <outlet property="tableview" destination="v5R-kA-5ae" id="pid-Bc-2ar"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v5R-kA-5ae">
+                    <rect key="frame" x="3" y="6" width="314" height="557"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.88459770930000003" green="0.88459770930000003" blue="0.88459770930000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="v5R-kA-5ae" secondAttribute="trailing" constant="3" id="CF7-UT-IF5" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                <constraint firstItem="v5R-kA-5ae" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="3" id="Lbb-DS-1ew" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                <constraint firstItem="v5R-kA-5ae" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="6" id="PB5-iD-39b" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                <constraint firstAttribute="bottom" secondItem="v5R-kA-5ae" secondAttribute="bottom" constant="5" id="qGT-ab-eBE" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

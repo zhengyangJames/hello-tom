@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="InvestProgressCell" rowHeight="81" id="KGk-i7-Jjw" customClass="InvestProgressCell" customModule="CoAssets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$98,000 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="5nQ-eh-hyh">
+                        <rect key="frame" x="16" y="10" width="59" height="18"/>
+                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="u2D-t2-uhO">
+                        <rect key="frame" x="16" y="36" width="288" height="8"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.7377710218487179" green="0.0" blue="0.0069068319530918021" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="Fnn-4S-YVH"/>
+                        </constraints>
+                        <color key="progressTintColor" red="0.80345611795384619" green="0.0078380265675781179" blue="0.015360150206223038" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="trackTintColor" red="0.46117788461538445" green="0.46117788461538445" blue="0.46117788461538445" alpha="1" colorSpace="calibratedRGB"/>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="jKH-bh-WUx">
+                        <rect key="frame" x="16" y="52" width="288" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="JaN-o5-qWz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$100,000 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="ilA-ub-0av" userLabel="$100,000">
+                        <rect key="frame" x="75" y="12" width="63" height="17"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="jKH-bh-WUx" secondAttribute="bottom" constant="10" id="CvU-eA-9vc"/>
+                    <constraint firstItem="5nQ-eh-hyh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="QMX-DF-bVb"/>
+                    <constraint firstItem="ilA-ub-0av" firstAttribute="leading" secondItem="5nQ-eh-hyh" secondAttribute="trailing" id="UEo-eI-IXD"/>
+                    <constraint firstItem="5nQ-eh-hyh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bfn-Kw-2zl"/>
+                    <constraint firstItem="ilA-ub-0av" firstAttribute="centerY" secondItem="5nQ-eh-hyh" secondAttribute="centerY" id="gfX-kX-9HW"/>
+                    <constraint firstAttribute="trailing" secondItem="jKH-bh-WUx" secondAttribute="trailing" constant="16" id="iIH-1a-H5H"/>
+                    <constraint firstItem="u2D-t2-uhO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="mlX-16-Gtv"/>
+                    <constraint firstAttribute="trailing" secondItem="u2D-t2-uhO" secondAttribute="trailing" constant="16" id="pvD-Mr-a0r"/>
+                    <constraint firstItem="u2D-t2-uhO" firstAttribute="top" secondItem="5nQ-eh-hyh" secondAttribute="bottom" constant="8" id="sLJ-Mu-Kag"/>
+                    <constraint firstAttribute="trailing" secondItem="5nQ-eh-hyh" secondAttribute="trailing" constant="16" id="sjn-0q-12N"/>
+                    <constraint firstItem="jKH-bh-WUx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="tWh-JK-1Ao"/>
+                    <constraint firstItem="jKH-bh-WUx" firstAttribute="top" secondItem="u2D-t2-uhO" secondAttribute="bottom" constant="8" id="yK7-b2-e24"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="sjn-0q-12N"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="currentLabel" destination="5nQ-eh-hyh" id="SjZ-v3-Kvx"/>
+                <outlet property="goalLabel" destination="jKH-bh-WUx" id="wXb-j7-fnx"/>
+                <outlet property="progressBar" destination="u2D-t2-uhO" id="U5d-tc-dJF"/>
+                <outlet property="totalLabel" destination="ilA-ub-0av" id="LS3-5Y-Sdz"/>
+            </connections>
+            <point key="canvasLocation" x="259" y="324.5"/>
+        </tableViewCell>
+    </objects>
+</document>

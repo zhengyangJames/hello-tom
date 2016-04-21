@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="0.0" reuseIdentifier="ClientInvestmentCell" rowHeight="88" id="cpX-hX-qSD" customClass="ClientInvestmentCell" customModule="Agent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cpX-hX-qSD" id="j8r-xs-CBY">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="87"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMw-ER-5aH" userLabel="title" customClass="BaseLabel" customModule="Agent" customModuleProvider="target">
+                        <rect key="frame" x="16" y="12" width="263" height="21"/>
+                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                        <color key="textColor" red="0.85490196078431369" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="ToTal Investment made:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ov-dL-RNR" customClass="BaseLabel" customModule="Agent" customModuleProvider="target">
+                        <rect key="frame" x="16" y="34" width="263" height="21"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total Potential Commission:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uol-R8-Zwv" customClass="BaseLabel" customModule="Agent" customModuleProvider="target">
+                        <rect key="frame" x="16" y="57" width="263" height="19"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="uol-R8-Zwv" secondAttribute="bottom" constant="12" id="6XJ-8e-HfZ" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                    <constraint firstItem="3Ov-dL-RNR" firstAttribute="leading" secondItem="j8r-xs-CBY" secondAttribute="leading" constant="16" id="IVo-W6-7hq" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="uol-R8-Zwv" secondAttribute="trailing" constant="8" id="MMX-3r-uC6" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                    <constraint firstItem="tMw-ER-5aH" firstAttribute="leading" secondItem="j8r-xs-CBY" secondAttribute="leading" constant="16" id="PjL-ox-v9b" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="3Ov-dL-RNR" secondAttribute="trailing" constant="8" id="Q6Z-xg-Olv" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                    <constraint firstItem="uol-R8-Zwv" firstAttribute="top" secondItem="3Ov-dL-RNR" secondAttribute="bottom" constant="2" id="bJs-AF-kw7" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="tMw-ER-5aH" secondAttribute="trailing" constant="8" id="cNZ-fv-Ixy" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                    <constraint firstItem="tMw-ER-5aH" firstAttribute="top" secondItem="j8r-xs-CBY" secondAttribute="top" constant="12" id="cmn-ei-V8m" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                    <constraint firstItem="uol-R8-Zwv" firstAttribute="leading" secondItem="j8r-xs-CBY" secondAttribute="leading" constant="16" id="pG6-H7-PrM" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                    <constraint firstItem="3Ov-dL-RNR" firstAttribute="top" secondItem="tMw-ER-5aH" secondAttribute="bottom" constant="2" id="r8R-2E-Bic" customClass="COLayoutConstraint" customModule="Agent" customModuleProvider="target"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="investmentLabel" destination="3Ov-dL-RNR" id="fN8-uM-JAW"/>
+                <outlet property="potentialLabel" destination="uol-R8-Zwv" id="0QD-OZ-f3u"/>
+                <outlet property="titleLabel" destination="tMw-ER-5aH" id="zGn-mB-4mZ"/>
+            </connections>
+            <point key="canvasLocation" x="216" y="146"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="CoAssets" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonSingup" destination="gSZ-TG-2IA" id="jlv-hD-Nn3"/>
+                <outlet property="emailTextField" destination="YkP-Yq-4pU" id="KTT-dH-c0A"/>
+                <outlet property="firstNameTextField" destination="hlV-rz-cUk" id="W8h-c2-3S5"/>
+                <outlet property="lastNameTextField" destination="Le8-TJ-y5o" id="bXJ-hc-XJE"/>
+                <outlet property="passWordConfirmationTextField" destination="16a-Ju-my8" id="2Yc-eP-2KV"/>
+                <outlet property="passWordTextField" destination="uzf-ee-X0E" id="Zu4-Tt-Goi"/>
+                <outlet property="phoneCodeTextField" destination="tlh-Tv-SII" id="LT2-Pp-GDt"/>
+                <outlet property="phoneTextField" destination="4Vo-q6-S7p" id="YYe-h9-Cqk"/>
+                <outlet property="signInlabel" destination="Vml-Tw-QdK" id="0Gs-lJ-aoN"/>
+                <outlet property="userNameTextField" destination="qJY-aM-oVU" id="jDT-4w-tTo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="widthContraintMobileCode" destination="xBq-XS-Lqd" id="BdR-1a-iyv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="COBackgroundView" customModule="CoAssets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="573"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrX-Pl-pLw" customClass="COScrollView" customModule="CoAssets" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="573"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ay-zn-mzT" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="594"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-rz-cUk" userLabel="firstName" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="20" width="270" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="hlV-rz-cUk" secondAttribute="height" multiplier="54:11" id="30y-Az-DZh" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                    </constraints>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Le8-TJ-y5o" userLabel="lastName" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="81" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YkP-Yq-4pU" userLabel="email adress" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="142" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tlh-Tv-SII" userLabel="mobile code" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="203" width="100" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="xBq-XS-Lqd"/>
+                                    </constraints>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8V-tY-RWS" userLabel="action Phone code">
+                                    <rect key="frame" x="25" y="203" width="100" height="55"/>
+                                    <connections>
+                                        <action selector="actionChoicePhoneCode:" destination="-1" eventType="touchUpInside" id="0EU-MA-NMI"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Vo-q6-S7p" userLabel="mobile number" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="131" y="203" width="164" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qJY-aM-oVU" userLabel="username" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="264" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uzf-ee-X0E" userLabel="password" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="325" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16a-Ju-my8" userLabel="confirm password" customClass="COTextFieldBottomLine" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="386" width="270" height="55"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSZ-TG-2IA" userLabel="signUpButton" customClass="CORedButton" customModule="CoAssets" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="477" width="270" height="47"/>
+                                    <color key="backgroundColor" red="0.85098039219999999" green="0.1137254902" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="gSZ-TG-2IA" secondAttribute="height" multiplier="270:47" id="LIQ-Ow-5AF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                    <state key="normal" title="Sign Up">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionSignUp:" destination="-1" eventType="touchUpInside" id="vuu-7m-KiP"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-r2-Eez" userLabel="footerView">
+                                    <rect key="frame" x="25" y="548" width="270" height="25"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALREADY HAVE AN ACCOUNT?    LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vml-Tw-QdK" customClass="BaseLabel" customModule="CoAssets" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="5" width="270" height="14"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9q-aQ-9oW" userLabel="Signin">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="25"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                            <connections>
+                                                <action selector="actionLogin:" destination="-1" eventType="touchUpInside" id="fcq-M3-Qra"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="Vml-Tw-QdK" firstAttribute="leading" secondItem="ffk-r2-Eez" secondAttribute="leading" id="C0c-TC-xx8"/>
+                                        <constraint firstItem="b9q-aQ-9oW" firstAttribute="top" secondItem="ffk-r2-Eez" secondAttribute="top" id="DiV-zR-CUu"/>
+                                        <constraint firstAttribute="bottom" secondItem="b9q-aQ-9oW" secondAttribute="bottom" id="FfM-jm-h98"/>
+                                        <constraint firstItem="Vml-Tw-QdK" firstAttribute="centerY" secondItem="ffk-r2-Eez" secondAttribute="centerY" id="L1x-SA-yUe"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vml-Tw-QdK" secondAttribute="trailing" id="idN-V1-wxx"/>
+                                        <constraint firstAttribute="height" constant="25" id="mZa-5M-jDJ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                        <constraint firstAttribute="trailing" secondItem="b9q-aQ-9oW" secondAttribute="trailing" id="sF1-Qc-WDz"/>
+                                        <constraint firstItem="b9q-aQ-9oW" firstAttribute="leading" secondItem="ffk-r2-Eez" secondAttribute="leading" id="uob-yU-vNS"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="YkP-Yq-4pU" firstAttribute="top" secondItem="Le8-TJ-y5o" secondAttribute="bottom" constant="6" id="0oQ-NZ-mYu" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="uzf-ee-X0E" secondAttribute="trailing" constant="25" id="1yh-7m-Zdw" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="tlh-Tv-SII" firstAttribute="height" secondItem="4Vo-q6-S7p" secondAttribute="height" id="4AB-0I-cXn"/>
+                                <constraint firstAttribute="trailing" secondItem="YkP-Yq-4pU" secondAttribute="trailing" constant="25" id="5F2-3Z-9lR" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="16a-Ju-my8" firstAttribute="height" secondItem="uzf-ee-X0E" secondAttribute="height" id="6Pz-B5-SDp"/>
+                                <constraint firstItem="YkP-Yq-4pU" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="6vy-Ur-8H4" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="gSZ-TG-2IA" firstAttribute="top" secondItem="16a-Ju-my8" secondAttribute="bottom" constant="36" id="9sM-Gp-Guw"/>
+                                <constraint firstAttribute="trailing" secondItem="ffk-r2-Eez" secondAttribute="trailing" constant="25" id="Aot-gD-Klu" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="16a-Ju-my8" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="Ay0-KZ-IK1" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="qJY-aM-oVU" secondAttribute="trailing" constant="25" id="BmB-Vs-E5S" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="Le8-TJ-y5o" firstAttribute="height" secondItem="hlV-rz-cUk" secondAttribute="height" id="C9x-GG-W9C"/>
+                                <constraint firstAttribute="bottom" secondItem="ffk-r2-Eez" secondAttribute="bottom" constant="21" id="CsP-87-6fY" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="hlV-rz-cUk" firstAttribute="top" secondItem="0Ay-zn-mzT" secondAttribute="top" constant="20" id="DIq-7e-tiZ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="4Vo-q6-S7p" firstAttribute="leading" secondItem="tlh-Tv-SII" secondAttribute="trailing" constant="6" id="EMy-jL-fgi"/>
+                                <constraint firstItem="16a-Ju-my8" firstAttribute="top" secondItem="uzf-ee-X0E" secondAttribute="bottom" constant="6" id="GIM-qb-9Wb" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="hlV-rz-cUk" secondAttribute="trailing" constant="25" id="HTx-19-y2P" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="g8V-tY-RWS" firstAttribute="height" secondItem="tlh-Tv-SII" secondAttribute="height" id="HXM-mY-XNH"/>
+                                <constraint firstItem="g8V-tY-RWS" firstAttribute="width" secondItem="tlh-Tv-SII" secondAttribute="width" id="I5d-jr-0XO"/>
+                                <constraint firstItem="qJY-aM-oVU" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="IXe-dR-LPF" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="4Vo-q6-S7p" firstAttribute="top" secondItem="YkP-Yq-4pU" secondAttribute="bottom" constant="6" id="JFV-NI-kdZ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="uzf-ee-X0E" firstAttribute="height" secondItem="qJY-aM-oVU" secondAttribute="height" id="Jqc-uQ-MSa"/>
+                                <constraint firstItem="tlh-Tv-SII" firstAttribute="centerY" secondItem="4Vo-q6-S7p" secondAttribute="centerY" id="Jt2-Tf-nYe"/>
+                                <constraint firstItem="uzf-ee-X0E" firstAttribute="top" secondItem="qJY-aM-oVU" secondAttribute="bottom" constant="6" id="K7D-an-x07" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="ffk-r2-Eez" firstAttribute="top" secondItem="gSZ-TG-2IA" secondAttribute="bottom" constant="24" id="LbN-XX-pI0" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="qJY-aM-oVU" firstAttribute="top" secondItem="4Vo-q6-S7p" secondAttribute="bottom" constant="6" id="NQ8-kM-OkZ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="4Vo-q6-S7p" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="200" id="OOQ-MD-8MZ" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="4Vo-q6-S7p" secondAttribute="trailing" constant="25" id="Qfu-4c-MjI" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="ffk-r2-Eez" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="Tek-zg-cNS" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="Le8-TJ-y5o" secondAttribute="trailing" constant="25" id="Utn-Ux-nO8" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="g8V-tY-RWS" firstAttribute="trailing" secondItem="tlh-Tv-SII" secondAttribute="trailing" id="V53-uo-oTN"/>
+                                <constraint firstItem="hlV-rz-cUk" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="XIn-5Z-Lxn" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="4Vo-q6-S7p" firstAttribute="height" secondItem="YkP-Yq-4pU" secondAttribute="height" id="Xn7-ap-j94"/>
+                                <constraint firstItem="g8V-tY-RWS" firstAttribute="centerX" secondItem="tlh-Tv-SII" secondAttribute="centerX" id="b0H-40-jtS"/>
+                                <constraint firstAttribute="trailing" secondItem="16a-Ju-my8" secondAttribute="trailing" constant="25" id="ebI-nw-bOS" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="Le8-TJ-y5o" firstAttribute="top" secondItem="hlV-rz-cUk" secondAttribute="bottom" constant="6" id="fLU-DS-l84" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="qJY-aM-oVU" firstAttribute="height" secondItem="4Vo-q6-S7p" secondAttribute="height" id="gfm-Dh-OSA"/>
+                                <constraint firstItem="YkP-Yq-4pU" firstAttribute="height" secondItem="Le8-TJ-y5o" secondAttribute="height" id="hwb-QV-aCo"/>
+                                <constraint firstItem="tlh-Tv-SII" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="hyt-9y-7sA"/>
+                                <constraint firstItem="Le8-TJ-y5o" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="ohs-IQ-RQc" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstAttribute="trailing" secondItem="gSZ-TG-2IA" secondAttribute="trailing" constant="25" id="pM4-7t-LQo" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="gSZ-TG-2IA" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="pUJ-Fh-3D0" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                                <constraint firstItem="g8V-tY-RWS" firstAttribute="centerY" secondItem="tlh-Tv-SII" secondAttribute="centerY" id="q5g-Ux-RZU"/>
+                                <constraint firstItem="uzf-ee-X0E" firstAttribute="leading" secondItem="0Ay-zn-mzT" secondAttribute="leading" constant="25" id="sW2-0J-5TE" customClass="COLayoutConstraint" customModule="CoAssets" customModuleProvider="target"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="V53-uo-oTN"/>
+                                    <exclude reference="OOQ-MD-8MZ"/>
+                                </mask>
+                            </variation>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="0Ay-zn-mzT" firstAttribute="leading" secondItem="rrX-Pl-pLw" secondAttribute="leading" id="1mE-Gs-qLa"/>
+                        <constraint firstAttribute="trailing" secondItem="0Ay-zn-mzT" secondAttribute="trailing" id="BEG-Ds-obV"/>
+                        <constraint firstAttribute="bottom" secondItem="0Ay-zn-mzT" secondAttribute="bottom" id="Rdk-XS-UsP"/>
+                        <constraint firstItem="0Ay-zn-mzT" firstAttribute="width" secondItem="rrX-Pl-pLw" secondAttribute="width" id="gSg-Ts-JBv"/>
+                        <constraint firstItem="0Ay-zn-mzT" firstAttribute="top" secondItem="rrX-Pl-pLw" secondAttribute="top" id="tvf-73-nM2"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rrX-Pl-pLw" secondAttribute="trailing" id="8G3-f1-jl8"/>
+                <constraint firstItem="rrX-Pl-pLw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="J53-tv-R0v"/>
+                <constraint firstAttribute="bottom" secondItem="rrX-Pl-pLw" secondAttribute="bottom" id="Va7-Gv-rWF"/>
+                <constraint firstItem="rrX-Pl-pLw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oLr-Rt-53L"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="LoginBackground"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="67" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LoginBackground" width="26" height="26"/>
+    </resources>
+</document>

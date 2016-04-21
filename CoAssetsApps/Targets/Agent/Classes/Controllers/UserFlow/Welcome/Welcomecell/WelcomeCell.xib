@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WelcomeCell" rowHeight="276" id="Zy3-Bc-WCr" customClass="WelcomeCell" customModule="CoAssetsAgent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="275"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zy3-Bc-WCr" id="IwW-sG-gao">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="274.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ewh-iK-4Fo">
+                        <rect key="frame" x="6" y="3" width="308" height="268.5"/>
+                        <color key="backgroundColor" red="0.2156862745" green="0.63529411759999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Investment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ty-pi-mER" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="76" width="320" height="42.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="31"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem lpsum is simply dummy text of the industry" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ms-0D-xux" customClass="BaseLabel" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="63" y="118" width="194" height="38.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wellcome" translatesAutoresizingMaskIntoConstraints="NO" id="pSR-ce-ZAn">
+                        <rect key="frame" x="147" y="166" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="Fke-Xr-fC3" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                            <constraint firstAttribute="height" constant="26" id="tGw-HF-dVu" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                        </constraints>
+                    </imageView>
+                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTl-C5-Uxq" customClass="COSelectView" customModule="CoAssetsAgent" customModuleProvider="target">
+                        <rect key="frame" x="6" y="3" width="308" height="268.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.83137254901960778" green="0.83137254901960778" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="HTl-C5-Uxq" firstAttribute="centerX" secondItem="Ewh-iK-4Fo" secondAttribute="centerX" id="7qi-nM-siS"/>
+                    <constraint firstItem="1Ty-pi-mER" firstAttribute="leading" secondItem="IwW-sG-gao" secondAttribute="leading" id="AHu-22-gWA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5ms-0D-xux" secondAttribute="trailing" constant="55" id="DRE-Eu-OEP" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="Ewh-iK-4Fo" firstAttribute="leading" secondItem="IwW-sG-gao" secondAttribute="leading" constant="6" id="GZ2-Po-BUB"/>
+                    <constraint firstItem="HTl-C5-Uxq" firstAttribute="top" secondItem="IwW-sG-gao" secondAttribute="top" constant="3" id="IJ2-wt-SuL"/>
+                    <constraint firstItem="HTl-C5-Uxq" firstAttribute="height" secondItem="Ewh-iK-4Fo" secondAttribute="height" id="LcO-Wz-Odo"/>
+                    <constraint firstAttribute="trailing" secondItem="1Ty-pi-mER" secondAttribute="trailing" id="N8r-nh-7bs"/>
+                    <constraint firstAttribute="trailing" secondItem="Ewh-iK-4Fo" secondAttribute="trailing" constant="6" id="NAl-eC-IN2"/>
+                    <constraint firstItem="pSR-ce-ZAn" firstAttribute="top" secondItem="5ms-0D-xux" secondAttribute="bottom" constant="9" id="OEu-Kk-abh" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="5ms-0D-xux" firstAttribute="top" secondItem="1Ty-pi-mER" secondAttribute="bottom" id="QfS-t0-5Wc"/>
+                    <constraint firstItem="5ms-0D-xux" firstAttribute="leading" secondItem="IwW-sG-gao" secondAttribute="leadingMargin" constant="55" id="V7A-Bw-aBs" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="pSR-ce-ZAn" firstAttribute="centerX" secondItem="IwW-sG-gao" secondAttribute="centerX" id="YHa-10-tCT"/>
+                    <constraint firstAttribute="bottom" secondItem="HTl-C5-Uxq" secondAttribute="bottom" constant="3" id="e0l-dV-Him"/>
+                    <constraint firstItem="Ewh-iK-4Fo" firstAttribute="top" secondItem="IwW-sG-gao" secondAttribute="top" constant="3" id="fGD-7B-RYm" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="HTl-C5-Uxq" firstAttribute="leading" secondItem="IwW-sG-gao" secondAttribute="leading" constant="6" id="h7Z-dA-ueC"/>
+                    <constraint firstAttribute="bottom" secondItem="Ewh-iK-4Fo" secondAttribute="bottom" constant="3" id="jg3-4O-KXw" customClass="COLayoutConstraint" customModule="CoAssetsAgent" customModuleProvider="target"/>
+                    <constraint firstItem="HTl-C5-Uxq" firstAttribute="centerY" secondItem="Ewh-iK-4Fo" secondAttribute="centerY" id="nBw-dY-LK2"/>
+                    <constraint firstItem="HTl-C5-Uxq" firstAttribute="width" secondItem="Ewh-iK-4Fo" secondAttribute="width" id="nk7-yh-zrc"/>
+                    <constraint firstItem="5ms-0D-xux" firstAttribute="centerY" secondItem="IwW-sG-gao" secondAttribute="centerY" id="tC3-88-N0o"/>
+                    <constraint firstAttribute="trailing" secondItem="HTl-C5-Uxq" secondAttribute="trailing" constant="6" id="yzu-8U-fsr"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="IJ2-wt-SuL"/>
+                        <exclude reference="e0l-dV-Him"/>
+                        <exclude reference="h7Z-dA-ueC"/>
+                        <exclude reference="yzu-8U-fsr"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="backgroundImage" destination="Ewh-iK-4Fo" id="Kh1-yV-zi3"/>
+                <outlet property="bottomContrains" destination="jg3-4O-KXw" id="Eyt-Cv-DOb"/>
+                <outlet property="detailLabel" destination="5ms-0D-xux" id="RYb-M1-JBe"/>
+                <outlet property="selectedView" destination="HTl-C5-Uxq" id="iMp-lK-RaS"/>
+                <outlet property="titleLabel" destination="1Ty-pi-mER" id="Xpz-lK-GIT"/>
+                <outlet property="topContrains" destination="fGD-7B-RYm" id="f6q-QG-zAn"/>
+                <outlet property="view" destination="IwW-sG-gao" id="b4X-r0-mBM"/>
+            </connections>
+            <point key="canvasLocation" x="160" y="262"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_wellcome" width="26" height="26"/>
+    </resources>
+</document>
